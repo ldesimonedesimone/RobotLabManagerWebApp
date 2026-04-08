@@ -7,9 +7,10 @@ import './schedule.css'
 
 type Props = {
   doc: ScheduleDocument
+  filterKey?: string
 }
 
-export default function PilotViewPanel({ doc }: Props) {
+export default function PilotViewPanel({ doc, filterKey }: Props) {
   const times = timeLabels(doc.day_start, doc.day_end)
   const tc = timeSlotCount(doc.day_start, doc.day_end)
 
@@ -47,12 +48,13 @@ export default function PilotViewPanel({ doc }: Props) {
     return { allRows: rows, options: opts }
   }, [doc.groups, doc.day_start, doc.day_end, tc])
 
-  const [filter, setFilter] = useState('')
+  const [dropdownFilter, setDropdownFilter] = useState('')
 
   const visibleRows = useMemo(() => {
-    if (!filter) return allRows
-    return allRows.filter((r) => r.key === filter)
-  }, [allRows, filter])
+    if (filterKey) return allRows.filter((r) => r.key === filterKey)
+    if (!dropdownFilter) return allRows
+    return allRows.filter((r) => r.key === dropdownFilter)
+  }, [allRows, filterKey, dropdownFilter])
 
   if (doc.groups.length === 0) {
     return (
@@ -62,22 +64,24 @@ export default function PilotViewPanel({ doc }: Props) {
 
   return (
     <div className="sched-pilot-panel">
-      <div className="sched-pilot-toolbar">
-        <label>
-          Focus pilot
-          <select
-            value={filter}
-            onChange={(e) => setFilter(e.target.value)}
-            className="sched-select"
-          >
-            {options.map((o) => (
-              <option key={o.value || 'all'} value={o.value}>
-                {o.label}
-              </option>
-            ))}
-          </select>
-        </label>
-      </div>
+      {!filterKey && (
+        <div className="sched-pilot-toolbar">
+          <label>
+            Focus pilot
+            <select
+              value={dropdownFilter}
+              onChange={(e) => setDropdownFilter(e.target.value)}
+              className="sched-select"
+            >
+              {options.map((o) => (
+                <option key={o.value || 'all'} value={o.value}>
+                  {o.label}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
+      )}
       <p className="sched-muted sched-readonly-note">
         Read-only — derived from Robot view.
       </p>

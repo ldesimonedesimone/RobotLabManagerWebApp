@@ -1,7 +1,7 @@
 .sched-page {
   padding: 1rem 1.25rem 2rem;
-  max-width: 1600px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
 }
 
 .sched-title {
@@ -73,16 +73,64 @@
   color: #5f6368;
 }
 
-.sched-editor-grid {
-  display: grid;
-  gap: 2rem;
+.sched-time-controls {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
 }
 
-@media (min-width: 1100px) {
-  .sched-editor-grid {
-    grid-template-columns: 1fr 1fr;
-    align-items: start;
-  }
+.sched-time-label {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #5f6368;
+}
+
+.sched-time-input {
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 0.25rem 0.4rem;
+  border: 1px solid #dadce0;
+  border-radius: 6px;
+  background: #fff;
+  color: #202124;
+}
+
+.sched-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  border-bottom: 2px solid #dadce0;
+  margin-bottom: 1rem;
+}
+
+.sched-tab {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #5f6368;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  white-space: nowrap;
+}
+
+.sched-tab:hover {
+  color: #202124;
+  background: #f1f3f4;
+}
+
+.sched-tab.active {
+  color: #1a73e8;
+  border-bottom-color: #1a73e8;
+}
+
+.sched-tab-body {
+  width: 100%;
 }
 
 .sched-section h2 {

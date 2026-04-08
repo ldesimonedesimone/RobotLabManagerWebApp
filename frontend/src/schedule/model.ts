@@ -80,6 +80,32 @@ export function emptyGrid(
   )
 }
 
+export function resizeGrid(
+  oldGrid: (string | null)[][],
+  oldStart: string,
+  oldEnd: string,
+  newStart: string,
+  newEnd: string,
+  nRows: number,
+): (string | null)[][] {
+  const oldT0 = parseHm(oldStart)
+  const newT0 = parseHm(newStart)
+  const newSlots = timeSlotCount(newStart, newEnd)
+  const oldSlots = timeSlotCount(oldStart, oldEnd)
+
+  const result: (string | null)[][] = []
+  for (let i = 0; i < newSlots; i++) {
+    const absMinute = newT0 + i * 15
+    const oldIdx = (absMinute - oldT0) / 15
+    if (oldIdx >= 0 && oldIdx < oldSlots && Number.isInteger(oldIdx) && oldGrid[oldIdx]) {
+      result.push(oldGrid[oldIdx].slice())
+    } else {
+      result.push(Array.from({ length: nRows }, () => null))
+    }
+  }
+  return result
+}
+
 export function newId(): string {
   if (typeof crypto !== 'undefined' && crypto.randomUUID) {
     return crypto.randomUUID()
