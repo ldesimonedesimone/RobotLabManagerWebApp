@@ -1,0 +1,505 @@
+.wbw-app {
+  max-width: 100%;
+  padding: 1rem 1rem 2rem;
+  background: #ececec;
+  color: #111;
+  font-family: "Arial Narrow", "Helvetica Neue", Arial, "Liberation Sans", sans-serif;
+}
+
+.wbw-app .hdr {
+  margin-bottom: 0.75rem;
+}
+
+.wbw-app .wbw-title {
+  margin: 0 0 0.25rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #111;
+}
+
+.wbw-app .wbw-legend {
+  font-weight: 600;
+  font-size: 0.92em;
+  color: #333;
+}
+
+.wbw-app .wbw-friday {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.wbw-app .sub {
+  margin: 0 0 0.75rem;
+  font-size: 0.82rem;
+  color: #444;
+  max-width: 52rem;
+  line-height: 1.4;
+}
+
+.wbw-app .sub code {
+  font-size: 0.9em;
+  background: #ddd;
+  padding: 0.08em 0.3em;
+  border-radius: 3px;
+}
+
+.wbw-app .toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: center;
+}
+
+.wbw-app .wbw-globals {
+  margin-top: 0.55rem;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(10rem, max-content));
+  gap: 0.45rem 0.55rem;
+  align-items: end;
+}
+
+.wbw-app .wbw-globals label {
+  display: grid;
+  gap: 0.2rem;
+  font-size: 0.72rem;
+  color: #333;
+}
+
+.wbw-app .wbw-globals input,
+.wbw-app .wbw-globals select {
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 0.28rem 0.35rem;
+  font-size: 0.78rem;
+  background: #fff;
+}
+
+.wbw-app .wbw-warnings {
+  margin-top: 0.55rem;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid #f0b429;
+  background: #fff7e6;
+  color: #8a4b08;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  line-height: 1.35;
+}
+
+.wbw-app .wbw-mode-toggle {
+  display: inline-flex;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #888;
+}
+
+.wbw-app .wbw-mode-toggle .btn {
+  border-radius: 0;
+  border: none;
+  border-right: 1px solid #888;
+}
+
+.wbw-app .wbw-mode-toggle .btn:last-child {
+  border-right: none;
+}
+
+.wbw-app .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.38rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid #888;
+  background: #fff;
+  color: #222;
+}
+
+.wbw-app .btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.wbw-app .btn.pri {
+  background: #1f4e79;
+  border-color: #1a4266;
+  color: #fff;
+}
+
+.wbw-app .btn.pri:hover:not(:disabled) {
+  background: #163a5c;
+}
+
+.wbw-app .btn.sec:hover:not(:disabled) {
+  background: #f2f2f2;
+}
+
+.wbw-figure {
+  margin-top: 0.75rem;
+  background: transparent;
+}
+
+.wbw-app .wrap {
+  overflow-x: auto;
+  overflow-y: visible;
+  padding: 0.25rem;
+  background: #ececec;
+}
+
+.wbw-app .grid {
+  border-collapse: separate;
+  border-spacing: 6px 8px;
+  font-size: 0.74rem;
+  min-width: max(100%, 760px);
+  font-variant-numeric: tabular-nums;
+}
+
+.wbw-app .grid th,
+.wbw-app .grid td {
+  border: none;
+  vertical-align: top;
+}
+
+.wbw-app .grid thead th {
+  background: transparent;
+  color: #111;
+  font-weight: 700;
+  padding: 0 0.15rem 0.35rem;
+  text-align: center;
+  vertical-align: bottom;
+}
+
+.wbw-app .th-stream {
+  text-align: left !important;
+  padding-left: 0.35rem !important;
+  font-size: 0.78rem;
+  color: #333;
+}
+
+.wbw-app .week .wd {
+  display: inline-block;
+  transform: rotate(-45deg);
+  transform-origin: center bottom;
+  font-weight: 700;
+  font-size: 0.78rem;
+  margin-bottom: 1.35rem;
+  white-space: nowrap;
+  min-height: 2.5rem;
+  color: #111;
+}
+
+.wbw-app .ioe {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 3px;
+  font-size: 0.58rem;
+  color: #555;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-top: 0.15rem;
+}
+
+.wbw-app .sticky.c0 {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  background: #ececec;
+  min-width: 9.5rem;
+  max-width: 12rem;
+  text-align: right;
+  padding: 0.5rem 0.45rem 0.5rem 0;
+  font-weight: 700;
+  font-size: 0.78rem;
+  border: none;
+  box-shadow: 6px 0 8px -4px rgba(0, 0, 0, 0.08);
+}
+
+.wbw-app .name {
+  white-space: nowrap;
+}
+
+.wbw-app .band-ultra .c0 {
+  color: #4a2f6b;
+}
+
+.wbw-app .band-robot .c0 {
+  color: #0d3d6b;
+}
+
+.wbw-app .band-s1 .c0 {
+  color: #6b5a0a;
+}
+
+.wbw-app .band-s2 .c0 {
+  color: #7a2040;
+}
+
+.wbw-app .band-s3 .c0 {
+  color: #0d5c4a;
+}
+
+.wbw-app .band-pt .c0 {
+  color: #333;
+}
+
+.wbw-app .trip {
+  padding: 0;
+  width: 9.35rem;
+  min-width: 9.35rem;
+  max-width: 9.35rem;
+}
+
+.wbw-card {
+  position: relative;
+  min-height: 5.5rem;
+  padding: 0.35rem 0.4rem 1.35rem;
+  width: 9.35rem;
+  min-width: 9.35rem;
+  max-width: 9.35rem;
+  border-radius: 9px;
+  border: 1.5px solid #333;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.wbw-app .wbw-local-chips {
+  position: absolute;
+  left: 0.28rem;
+  right: 0.28rem;
+  top: -0.62rem;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.wbw-card-end {
+  position: absolute;
+  top: 0.35rem;
+  right: 0.45rem;
+  font-weight: 800;
+  font-size: 0.88rem;
+  line-height: 1;
+  color: #111;
+}
+
+.wbw-card--ultra {
+  min-height: 4.5rem;
+  padding: 0.35rem;
+  background: #f3edfb;
+  border-color: #7e57c2;
+}
+
+.wbw-card--robot {
+  background: #e8f1fb;
+  border-color: #1565c0;
+}
+
+.wbw-card--s1 {
+  background: #fff9e0;
+  border-color: #c9a227;
+}
+
+.wbw-card--s2 {
+  background: #fce8ef;
+  border-color: #c2185b;
+}
+
+.wbw-card--s3 {
+  background: #e5f6f1;
+  border-color: #00897b;
+}
+
+.wbw-card--pt {
+  background: #ececec;
+  border-color: #555;
+}
+
+.wbw-card--usable {
+  background: #efedf8;
+  border-color: #6b4aa1;
+}
+
+.wbw-card .inputs {
+  display: grid;
+  gap: 3px;
+  padding-top: 1.35rem;
+  align-items: stretch;
+}
+
+.wbw-card--ultra .inputs {
+  padding-top: 0;
+}
+
+.wbw-app .inputs-std {
+  grid-template-columns: 1fr 1fr 2rem 1fr;
+}
+
+.wbw-app .inputs-dc {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.wbw-app .inputs input {
+  width: 100%;
+  min-width: 0;
+  padding: 0.22rem 0.15rem;
+  border: 1px solid rgba(0, 0, 0, 0.28);
+  border-radius: 4px;
+  font-size: 0.72rem;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.wbw-app .inputs input:disabled {
+  background: rgba(0, 0, 0, 0.06);
+  color: #111;
+  border-style: dashed;
+}
+
+.wbw-app .wbw-out-na {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  font-size: 0.95rem;
+  user-select: none;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px dashed rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+}
+
+.wbw-card-bar {
+  position: absolute;
+  left: 0.35rem;
+  right: 0.35rem;
+  bottom: 0.28rem;
+  height: 5px;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.wbw-card-bar > span {
+  display: block;
+  height: 100%;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.35);
+  transition: width 0.15s ease;
+}
+
+.wbw-card--robot .wbw-card-bar > span {
+  background: #1565c0;
+}
+
+.wbw-card--s1 .wbw-card-bar > span {
+  background: #c9a227;
+}
+
+.wbw-card--s2 .wbw-card-bar > span {
+  background: #c2185b;
+}
+
+.wbw-card--s3 .wbw-card-bar > span {
+  background: #00897b;
+}
+
+.wbw-card--pt .wbw-card-bar > span {
+  background: #555;
+}
+
+.wbw-card--ultra .wbw-card-bar {
+  display: none;
+}
+
+.wbw-app .ultra-ta {
+  width: 100%;
+  min-height: 3.5rem;
+  resize: vertical;
+  padding: 0.35rem 0.4rem;
+  border: 1px solid #9575cd;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-family: inherit;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.wbw-app .wbw-conn td {
+  background: transparent;
+  padding: 0.1rem 0.15rem 0.35rem;
+  vertical-align: middle;
+}
+
+.wbw-app .conn-gutter {
+  box-shadow: 6px 0 8px -4px rgba(0, 0, 0, 0.06);
+}
+
+.wbw-app .wbw-conn-cell {
+  min-height: 1.5rem;
+}
+
+.wbw-app .wbw-flow-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  justify-content: center;
+  align-items: center;
+  min-height: 1.1rem;
+}
+
+.wbw-app .wbw-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
+  padding: 0.08rem 0.38rem;
+  border-radius: 999px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.wbw-app .wbw-chip-arrow {
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+.wbw-app .wbw-chip-newin {
+  border: 1.5px solid #1565c0;
+  background: #e3f2fd;
+  color: #0d47a1;
+}
+
+.wbw-app .wbw-chip-transfer {
+  border: 1.5px solid #c62828;
+  background: #ffebee;
+  color: #b71c1c;
+}
+
+.wbw-app .wbw-chip-pass {
+  border: 1.5px solid #7b1fa2;
+  background: #f3e5f5;
+  color: #4a148c;
+}
+
+.wbw-app .wbw-gap-cell {
+  height: 1.8rem;
+  position: relative;
+}
+
+.wbw-app .wbw-gap-cell::before {
+  content: "";
+  position: absolute;
+  left: 0.25rem;
+  right: 0.25rem;
+  top: 28%;
+  border-top: 2px dotted rgba(90, 90, 90, 0.55);
+}
+
+.wbw-app .wbw-gap-gutter {
+  box-shadow: none;
+}

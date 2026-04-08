@@ -1,0 +1,34 @@
+.shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.shell-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  align-items: center;
+  padding: 0.65rem 1rem;
+  background: #1a237e;
+  border-bottom: 1px solid #0d1642;
+}
+
+.shell-link {
+  color: #c5cae9;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.35rem 0.5rem;
+  border-radius: 6px;
+}
+
+.shell-link:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.shell-link.active {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.18);
+}
