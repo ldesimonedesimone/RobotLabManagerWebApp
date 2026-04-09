@@ -447,3 +447,30 @@
 .sched-promote-btn:hover {
   background: #d2e3fc;
 }
+
+/* Playhead — current Mexico City time */
+
+.sched-scroll-playhead {
+  position: relative;
+}
+
+.sched-playhead {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #c5221f;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.sched-playhead::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -3px;
+  width: 8px;
+  height: 8px;
+  background: #c5221f;
+  border-radius: 50%;
+}

@@ -1,9 +1,21 @@
-import { useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { ScheduleDocument } from './model'
-import { timeLabels, timeSlotCount } from './model'
+import { parseHm, timeLabels, timeSlotCount } from './model'
 import { buildActivityFillMap } from './activityFills'
 import { transposeGroup } from './transpose'
 import './schedule.css'
+
+function getMexicoCityMinutes(): number {
+  const parts = new Intl.DateTimeFormat('en-US', {
+    timeZone: 'America/Mexico_City',
+    hour: 'numeric',
+    minute: 'numeric',
+    hour12: false,
+  }).formatToParts(new Date())
+  const h = Number(parts.find((p) => p.type === 'hour')?.value ?? 0) % 24
+  const m = Number(parts.find((p) => p.type === 'minute')?.value ?? 0)
+  return h * 60 + m
+}
 
 type Props = {
   doc: ScheduleDocument
@@ -56,9 +68,59 @@ export default function PilotViewPanel({ doc, filterKey }: Props) {
     return allRows.filter((r) => r.key === dropdownFilter)
   }, [allRows, filterKey, dropdownFilter])
 
+  // Playhead — Mexico City time
+  const scrollRef = useRef<HTMLDivElement>(null)
+  const [playheadLeft, setPlayheadLeft] = useState<number | null>(null)
+
+  const measurePlayhead = useCallback(() => {
+    const el = scrollRef.current
+    if (!el) {
+      setPlayheadLeft(null)
+      return
+    }
+
+    const mxMin = getMexicoCityMinutes()
+    const startMin = parseHm(doc.day_start)
+    const endMin = parseHm(doc.day_end)
+
+    if (mxMin < startMin || mxMin > endMin) {
+      setPlayheadLeft(null)
+      return
+    }
+
+    const ths = el.querySelectorAll<HTMLElement>('thead th')
+    if (ths.length < 2) {
+      setPlayheadLeft(null)
+      return
+    }
+
+    const firstTime = ths[1]
+    const lastTime = ths[ths.length - 1]
+    const containerRect = el.getBoundingClientRect()
+    const leftEdge =
+      firstTime.getBoundingClientRect().left - containerRect.left + el.scrollLeft
+    const rightEdge =
+      lastTime.getBoundingClientRect().right - containerRect.left + el.scrollLeft
+
+    const frac = (mxMin - startMin) / (endMin - startMin)
+    setPlayheadLeft(leftEdge + frac * (rightEdge - leftEdge))
+  }, [doc.day_start, doc.day_end])
+
+  useEffect(() => {
+    measurePlayhead()
+    const id = setInterval(measurePlayhead, 30_000)
+    window.addEventListener('resize', measurePlayhead)
+    return () => {
+      clearInterval(id)
+      window.removeEventListener('resize', measurePlayhead)
+    }
+  }, [measurePlayhead])
+
   if (doc.groups.length === 0) {
     return (
-      <p className="sched-muted">Add a group in Robot view to see pilot schedules.</p>
+      <p className="sched-muted">
+        Add a group in Robot view to see pilot schedules.
+      </p>
     )
   }
 
@@ -85,7 +147,10 @@ export default function PilotViewPanel({ doc, filterKey }: Props) {
       <p className="sched-muted sched-readonly-note">
         Read-only — derived from Robot view.
       </p>
-      <div className="sched-scroll">
+      <div className="sched-scroll sched-scroll-playhead" ref={scrollRef}>
+        {playheadLeft != null && (
+          <div className="sched-playhead" style={{ left: playheadLeft }} />
+        )}
         <table className="sched-pilot-table">
           <thead>
             <tr>
