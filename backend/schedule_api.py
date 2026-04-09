@@ -8,6 +8,23 @@ from typing import Any, Literal
 import psycopg
 from pydantic import BaseModel, Field, field_validator, model_validator
 
+# ---------------------------------------------------------------------------
+# Template models
+# ---------------------------------------------------------------------------
+
+
+class TemplateInfo(BaseModel):
+    id: int
+    name: str
+    n_pilots: int
+    n_robots: int
+    n_tasks: int
+    n_slots: int
+
+
+class TemplateDetail(TemplateInfo):
+    grid: list[list[int | None]]
+
 SCHEDULE_VERSION = 1
 DEFAULT_DAY_START = "06:00"
 DEFAULT_DAY_END = "16:00"
@@ -161,3 +178,49 @@ def put_schedule(conn: psycopg.Connection, doc: ScheduleDocument) -> datetime:
         )
     conn.commit()
     return now
+
+
+# ---------------------------------------------------------------------------
+# Template DB helpers
+# ---------------------------------------------------------------------------
+
+CREATE_TEMPLATES_SQL = """
+CREATE TABLE IF NOT EXISTS schedule_templates (
+    id SERIAL PRIMARY KEY,
+    name TEXT NOT NULL UNIQUE,
+    n_pilots INTEGER NOT NULL,
+    n_robots INTEGER NOT NULL,
+    n_tasks INTEGER NOT NULL,
+    grid JSONB NOT NULL,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+"""
+
+
+def list_templates(conn: psycopg.Connection) -> list[TemplateInfo]:
+    with conn.cursor() as cur:
+        cur.execute(
+            "SELECT id, name, n_pilots, n_robots, n_tasks, jsonb_array_length(grid) "
+            "FROM schedule_templates ORDER BY n_pilots, n_robots, n_tasks, name"
+        )
+        return [
+            TemplateInfo(id=r[0], name=r[1], n_pilots=r[2], n_robots=r[3], n_tasks=r[4], n_slots=r[5])
+            for r in cur.fetchall()
+        ]
+
+
+def get_template_by_id(conn: psycopg.Connection, template_id: int) -> TemplateDetail | None:
+    with conn.cursor() as cur:
+        cur.execute(
+            "SELECT id, name, n_pilots, n_robots, n_tasks, grid, jsonb_array_length(grid) "
+            "FROM schedule_templates WHERE id = %s",
+            (template_id,),
+        )
+        r = cur.fetchone()
+    if not r:
+        return None
+    grid = r[5] if isinstance(r[5], list) else json.loads(r[5])
+    return TemplateDetail(
+        id=r[0], name=r[1], n_pilots=r[2], n_robots=r[3],
+        n_tasks=r[4], grid=grid, n_slots=r[6],
+    )

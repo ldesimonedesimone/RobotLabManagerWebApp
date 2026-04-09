@@ -133,3 +133,53 @@ const PILOT_PALETTE = [
 export function pilotColorForIndex(i: number): string {
   return PILOT_PALETTE[i % PILOT_PALETTE.length]
 }
+
+// ---------------------------------------------------------------------------
+// Templates
+// ---------------------------------------------------------------------------
+
+export type TemplateInfo = {
+  id: number
+  name: string
+  n_pilots: number
+  n_robots: number
+  n_tasks: number
+  n_slots: number
+}
+
+export type TemplateDetail = TemplateInfo & {
+  grid: (number | null)[][]
+}
+
+export function applyTemplate(
+  tpl: TemplateDetail,
+  pilots: SchedulePilot[],
+  dayStart: string,
+  dayEnd: string,
+  templateStartTime: string,
+): (string | null)[][] {
+  const nSlots = timeSlotCount(dayStart, dayEnd)
+  const nRows = pilots.length
+  const grid: (string | null)[][] = Array.from({ length: nSlots }, () =>
+    Array.from({ length: nRows }, () => null),
+  )
+
+  const schedStart = parseHm(dayStart)
+  const tplStart = parseHm(templateStartTime)
+
+  for (let t = 0; t < nSlots; t++) {
+    const absMinute = schedStart + t * 15
+    const tplIdx = (absMinute - tplStart) / 15
+    if (tplIdx < 0 || tplIdx >= tpl.grid.length || !Number.isInteger(tplIdx))
+      continue
+    const tplSlot = tpl.grid[tplIdx]
+    for (let r = 0; r < nRows; r++) {
+      const pilotIdx = tplSlot?.[r]
+      if (pilotIdx != null && pilotIdx >= 0 && pilotIdx < pilots.length) {
+        grid[t][r] = pilots[pilotIdx].id
+      }
+    }
+  }
+
+  return grid
+}

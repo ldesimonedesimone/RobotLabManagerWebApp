@@ -369,3 +369,81 @@
   gap: 0.25rem;
   font-size: 0.875rem;
 }
+
+/* Editable text */
+
+.sched-editable {
+  cursor: text;
+  border-bottom: 1px dashed transparent;
+}
+
+.sched-editable:hover {
+  border-bottom-color: #dadce0;
+}
+
+.sched-editable-input {
+  font: inherit;
+  border: 1px solid #1a73e8;
+  border-radius: 4px;
+  padding: 0 0.25rem;
+  outline: none;
+  background: #fff;
+  color: #202124;
+  width: 100%;
+  max-width: 14rem;
+}
+
+/* Template section in modal */
+
+.sched-template-section {
+  border-top: 1px solid #e8eaed;
+  padding-top: 0.5rem;
+}
+
+.sched-checkbox-row {
+  flex-direction: row !important;
+  align-items: center;
+  gap: 0.5rem !important;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.sched-checkbox-row input[type='checkbox'] {
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+}
+
+.sched-template-opts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  padding-left: 1.5rem;
+}
+
+.sched-template-opts label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Promote button (tomorrow → today) */
+
+.sched-promote-btn {
+  background: #e8f0fe;
+  color: #1a73e8;
+  border: 1px solid #c2d7f5;
+  padding: 0.35rem 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.sched-promote-btn:hover {
+  background: #d2e3fc;
+}

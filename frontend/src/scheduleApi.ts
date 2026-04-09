@@ -1,4 +1,4 @@
-import type { ScheduleDocument } from './schedule/model'
+import type { ScheduleDocument, TemplateDetail, TemplateInfo } from './schedule/model'
 
 const API_BASE = import.meta.env.VITE_API_BASE ?? ''
 
@@ -42,4 +42,16 @@ export async function putSchedule(
     body: JSON.stringify(doc),
   })
   if (!r.ok) throw new Error(await readErrorBody(r))
+}
+
+export async function listTemplates(): Promise<TemplateInfo[]> {
+  const r = await fetch(`${API_BASE}/api/schedule/templates`)
+  if (!r.ok) return []
+  return r.json() as Promise<TemplateInfo[]>
+}
+
+export async function getTemplateDetail(id: number): Promise<TemplateDetail> {
+  const r = await fetch(`${API_BASE}/api/schedule/templates/${id}`)
+  if (!r.ok) throw new Error(await readErrorBody(r))
+  return r.json() as Promise<TemplateDetail>
 }

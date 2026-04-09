@@ -1,6 +1,7 @@
 import { useCallback } from 'react'
 import type { ScheduleGroup } from './model'
 import { resourceRowLabels, timeLabels } from './model'
+import EditableText from './EditableText'
 import './schedule.css'
 
 type Props = {
@@ -31,8 +32,7 @@ export default function GroupBlock({
 
   const applyPaint = useCallback(
     (timeIdx: number, rowIdx: number) => {
-      const value =
-        eraser || !activePilotId ? null : activePilotId
+      const value = eraser || !activePilotId ? null : activePilotId
       const next = group.grid.map((row) => row.slice())
       if (!next[timeIdx]) return
       const copy = [...next[timeIdx]]
@@ -49,15 +49,44 @@ export default function GroupBlock({
     applyPaint(t, r)
   }
 
-  const onCellMouseEnter = (t: number, r: number) => (e: React.MouseEvent) => {
-    if (e.buttons !== 1) return
-    applyPaint(t, r)
+  const onCellMouseEnter =
+    (t: number, r: number) => (e: React.MouseEvent) => {
+      if (e.buttons !== 1) return
+      applyPaint(t, r)
+    }
+
+  const renameLabel = (rowIdx: number, newLabel: string) => {
+    const isRobot = rowIdx < group.robot_labels.length
+    if (isRobot) {
+      const next = [...group.robot_labels]
+      next[rowIdx] = newLabel
+      onChange({ ...group, robot_labels: next })
+    } else {
+      const ti = rowIdx - group.robot_labels.length
+      const next = [...group.task_labels]
+      next[ti] = newLabel
+      onChange({ ...group, task_labels: next })
+    }
+  }
+
+  const renamePilot = (pilotId: string, newName: string) => {
+    onChange({
+      ...group,
+      pilots: group.pilots.map((p) =>
+        p.id === pilotId ? { ...p, name: newName } : p,
+      ),
+    })
   }
 
   return (
     <section className="sched-group">
       <div className="sched-group-head">
-        <h3>{group.name}</h3>
+        <h3>
+          <EditableText
+            value={group.name}
+            onChange={(n) => onChange({ ...group, name: n })}
+          />
+        </h3>
         <button type="button" className="sched-danger" onClick={onDelete}>
           Delete group
         </button>
@@ -66,7 +95,11 @@ export default function GroupBlock({
         <span className="sched-legend-title">Pilots</span>
         <button
           type="button"
-          className={eraser ? 'sched-swatch active sched-eraser' : 'sched-swatch sched-eraser'}
+          className={
+            eraser
+              ? 'sched-swatch active sched-eraser'
+              : 'sched-swatch sched-eraser'
+          }
           onClick={onPickEraser}
           title="Eraser"
         >
@@ -85,7 +118,12 @@ export default function GroupBlock({
             title={p.name}
             onClick={() => onPickPilot(p.id)}
           >
-            <span className="sched-swatch-label">{p.name}</span>
+            <EditableText
+              value={p.name}
+              className="sched-swatch-label"
+              onChange={(n) => renamePilot(p.id, n)}
+              doubleClick
+            />
           </button>
         ))}
       </div>
@@ -104,7 +142,12 @@ export default function GroupBlock({
           <tbody>
             {labels.map((lab, r) => (
               <tr key={r}>
-                <th className="sched-row-h">{lab}</th>
+                <th className="sched-row-h">
+                  <EditableText
+                    value={lab}
+                    onChange={(n) => renameLabel(r, n)}
+                  />
+                </th>
                 {times.map((_, t) => {
                   const pid = group.grid[t]?.[r] ?? null
                   const pilot = pid

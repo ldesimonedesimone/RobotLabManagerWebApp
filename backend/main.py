@@ -69,8 +69,12 @@ except Exception:  # pragma: no cover - optional for week-by-week-only deploys
 
 from schedule_api import (  # noqa: E402
     ScheduleDocument,
+    TemplateDetail,
+    TemplateInfo,
     default_document,
     get_schedule,
+    get_template_by_id,
+    list_templates,
     put_schedule,
     slot_key,
 )
@@ -158,6 +162,33 @@ def get_schedule_database_url() -> str:
 @app.get("/api/health")
 def health() -> dict[str, str]:
     return {"status": "ok"}
+
+
+@app.get("/api/schedule/templates")
+def api_list_templates() -> list[dict]:
+    db_url = get_schedule_database_url()
+    try:
+        with psycopg.connect(db_url, connect_timeout=30) as conn:
+            return [t.model_dump() for t in list_templates(conn)]
+    except psycopg.errors.UndefinedTable:
+        return []
+    except psycopg.Error as e:
+        raise HTTPException(status_code=503, detail=f"Database error: {e}") from e
+
+
+@app.get("/api/schedule/templates/{template_id}")
+def api_get_template(template_id: int) -> dict:
+    db_url = get_schedule_database_url()
+    try:
+        with psycopg.connect(db_url, connect_timeout=30) as conn:
+            tpl = get_template_by_id(conn, template_id)
+    except psycopg.errors.UndefinedTable:
+        raise HTTPException(status_code=404, detail="Template table not found. Run migration 002.")
+    except psycopg.Error as e:
+        raise HTTPException(status_code=503, detail=f"Database error: {e}") from e
+    if not tpl:
+        raise HTTPException(status_code=404, detail="Template not found")
+    return tpl.model_dump()
 
 
 @app.get("/api/schedule/{shift}/{day}")

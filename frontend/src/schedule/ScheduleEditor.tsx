@@ -1,15 +1,20 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
-import { getSchedule, putSchedule } from '../scheduleApi'
-import type { ScheduleDocument, ScheduleGroup } from './model'
-import { SCHEDULE_VERSION, resizeGrid, timeSlotCount } from './model'
+import { Link, useNavigate, useParams } from 'react-router-dom'
+import { getSchedule, listTemplates, putSchedule } from '../scheduleApi'
+import type { ScheduleDocument, ScheduleGroup, TemplateInfo } from './model'
+import {
+  DEFAULT_DAY_END,
+  DEFAULT_DAY_START,
+  SCHEDULE_VERSION,
+  resizeGrid,
+  timeSlotCount,
+} from './model'
 import AddGroupModal from './AddGroupModal'
 import GroupBlock from './GroupBlock'
 import PilotViewPanel from './PilotViewPanel'
 import './schedule.css'
 
 type Brush = { pilotId: string | null; eraser: boolean }
-
 type TabId = 'robot' | 'pilots' | `pilot:${string}`
 
 export default function ScheduleEditor() {
@@ -19,6 +24,7 @@ export default function ScheduleEditor() {
   }>()
   const shift = Number(shiftStr)
   const day = dayStr === 'tomorrow' ? 'tomorrow' : 'today'
+  const navigate = useNavigate()
 
   const [doc, setDoc] = useState<ScheduleDocument | null>(null)
   const [err, setErr] = useState<string | null>(null)
@@ -28,8 +34,13 @@ export default function ScheduleEditor() {
   const [modalOpen, setModalOpen] = useState(false)
   const [brushes, setBrushes] = useState<Record<string, Brush>>({})
   const [activeTab, setActiveTab] = useState<TabId>('robot')
+  const [templates, setTemplates] = useState<TemplateInfo[]>([])
 
   const skipFirstSave = useRef(true)
+
+  useEffect(() => {
+    listTemplates().then(setTemplates).catch(() => {})
+  }, [])
 
   useEffect(() => {
     if (shiftStr !== '1' && shiftStr !== '2' && shiftStr !== '3') {
@@ -97,7 +108,9 @@ export default function ScheduleEditor() {
   }, [])
 
   const addGroup = useCallback((g: ScheduleGroup) => {
-    setDoc((prev) => (prev ? { ...prev, groups: [...prev.groups, g] } : prev))
+    setDoc((prev) =>
+      prev ? { ...prev, groups: [...prev.groups, g] } : prev,
+    )
   }, [])
 
   const handleTimeChange = useCallback(
@@ -131,6 +144,32 @@ export default function ScheduleEditor() {
     },
     [],
   )
+
+  const promoteTomorrow = useCallback(async () => {
+    if (!doc) return
+    if (
+      !confirm(
+        'Copy this schedule to Today and clear Tomorrow for Shift ' +
+          shift +
+          '?',
+      )
+    )
+      return
+    try {
+      await putSchedule(shift, 'today', { ...doc, slot_key: '' })
+      const emptyDoc: ScheduleDocument = {
+        version: SCHEDULE_VERSION,
+        slot_key: '',
+        day_start: DEFAULT_DAY_START,
+        day_end: DEFAULT_DAY_END,
+        groups: [],
+      }
+      await putSchedule(shift, 'tomorrow', emptyDoc)
+      navigate(`/schedule/shift/${shift}/today`)
+    } catch (e) {
+      alert(`Failed to promote: ${e instanceof Error ? e.message : e}`)
+    }
+  }, [doc, shift, navigate])
 
   const pilotTabs = useMemo(() => {
     if (!doc) return []
@@ -200,6 +239,15 @@ export default function ScheduleEditor() {
           {saveState === 'saved' && 'Saved'}
           {saveState === 'error' && 'Save failed'}
         </span>
+        {day === 'tomorrow' && (
+          <button
+            type="button"
+            className="sched-promote-btn"
+            onClick={promoteTomorrow}
+          >
+            Make this Today →
+          </button>
+        )}
       </header>
 
       <nav className="sched-tabs">
@@ -212,7 +260,9 @@ export default function ScheduleEditor() {
         </button>
         <button
           type="button"
-          className={activeTab === 'pilots' ? 'sched-tab active' : 'sched-tab'}
+          className={
+            activeTab === 'pilots' ? 'sched-tab active' : 'sched-tab'
+          }
           onClick={() => setActiveTab('pilots')}
         >
           All Pilots
@@ -222,7 +272,9 @@ export default function ScheduleEditor() {
             key={pt.key}
             type="button"
             className={
-              activeTab === `pilot:${pt.key}` ? 'sched-tab active' : 'sched-tab'
+              activeTab === `pilot:${pt.key}`
+                ? 'sched-tab active'
+                : 'sched-tab'
             }
             onClick={() => setActiveTab(`pilot:${pt.key}`)}
           >
@@ -283,6 +335,7 @@ export default function ScheduleEditor() {
 
       <AddGroupModal
         doc={doc}
+        templates={templates}
         open={modalOpen}
         onClose={() => setModalOpen(false)}
         onCreate={addGroup}
