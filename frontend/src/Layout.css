@@ -10,25 +10,26 @@
   gap: 0.35rem 1rem;
   align-items: center;
   padding: 0.65rem 1rem;
-  background: #1a237e;
-  border-bottom: 1px solid #0d1642;
+  background: #0d1117;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.15);
 }
 
 .shell-link {
-  color: #c5cae9;
+  color: #8a94a0;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9rem;
   padding: 0.35rem 0.5rem;
   border-radius: 6px;
+  transition: color 0.15s, background 0.15s;
 }
 
 .shell-link:hover {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.08);
+  color: #e2e8f0;
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .shell-link.active {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.18);
+  color: #00d4aa;
+  background: rgba(0, 212, 170, 0.1);
 }

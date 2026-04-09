@@ -153,7 +153,7 @@ export default function GroupBlock({
                   const pilot = pid
                     ? group.pilots.find((x) => x.id === pid)
                     : null
-                  const bg = pilot?.color_hex ?? '#ffffff'
+                  const bg = pilot?.color_hex ?? '#151c28'
                   return (
                     <td
                       key={t}

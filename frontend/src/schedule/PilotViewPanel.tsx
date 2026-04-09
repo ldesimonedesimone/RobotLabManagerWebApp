@@ -174,7 +174,7 @@ export default function PilotViewPanel({ doc, filterKey }: Props) {
                   <td
                     key={i}
                     className="sched-pilot-cell"
-                    style={{ background: row.cellFills[i] ?? '#ffffff' }}
+                    style={{ background: row.cellFills[i] ?? '#151c28' }}
                   >
                     {lab}
                   </td>

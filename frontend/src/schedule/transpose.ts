@@ -34,7 +34,7 @@ export function transposeGroup(
   timeCount: number,
 ): PilotViewRow[] {
   const labels = resourceRowLabels(g)
-  const defaultFill = '#FFFFFF'
+  const defaultFill = '#151c28'
   const rows: PilotViewRow[] = []
   for (const p of g.pilots) {
     const cells: string[] = []

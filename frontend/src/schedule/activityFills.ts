@@ -85,5 +85,5 @@ export function fillForLabel(
   for (const [k, v] of Object.entries(m)) {
     if (k.toLowerCase() === ll) return v
   }
-  return '#FFFFFF'
+  return '#151c28'
 }
