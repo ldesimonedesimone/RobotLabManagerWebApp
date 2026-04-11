@@ -670,7 +670,7 @@ def main() -> None:
         "main:app",
         host="0.0.0.0",
         port=int(os.environ.get("PORT", "8000")),
-        reload=True,
+        reload=os.environ.get("RAILWAY_ENVIRONMENT") is None,
     )
 
 
