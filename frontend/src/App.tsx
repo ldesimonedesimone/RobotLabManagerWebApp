@@ -10,9 +10,9 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route element={<Layout />}>
-          <Route path="/" element={<Navigate to="/pilot" replace />} />
+          <Route path="/" element={<Navigate to="/schedule" replace />} />
           <Route path="/pilot" element={<PilotDashboard />} />
-          <Route path="/weekly" element={<WeekbyWeekFlow />} />
+          <Route path="/weekbyweekflow" element={<WeekbyWeekFlow />} />
           <Route path="/schedule" element={<ScheduleHome />} />
           <Route path="/schedule/shift/:shift/:day" element={<ScheduleEditor />} />
         </Route>
