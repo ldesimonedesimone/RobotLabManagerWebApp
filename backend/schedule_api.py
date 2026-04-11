@@ -39,6 +39,8 @@ def time_slot_count(start: str = DEFAULT_DAY_START, end: str = DEFAULT_DAY_END) 
     m1 = parse_hm(end)
     if m1 <= m0:
         raise ValueError("day end must be after day start")
+    if (m1 - m0) % 15 != 0:
+        raise ValueError("time range must be a multiple of 15 minutes")
     return (m1 - m0) // 15
 
 

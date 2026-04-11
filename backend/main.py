@@ -6,6 +6,9 @@ from datetime import datetime
 from pathlib import Path
 from typing import Literal
 
+from contextlib import contextmanager
+
+import psycopg_pool
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
@@ -159,6 +162,53 @@ def get_schedule_database_url() -> str:
     )
 
 
+_schedule_pool: psycopg_pool.ConnectionPool | None = None
+_metrics_pool: psycopg_pool.ConnectionPool | None = None
+
+
+def _get_schedule_pool() -> psycopg_pool.ConnectionPool:
+    global _schedule_pool
+    if _schedule_pool is None:
+        url = get_schedule_database_url()
+        _schedule_pool = psycopg_pool.ConnectionPool(
+            url, min_size=2, max_size=20, open=True,
+        )
+    return _schedule_pool
+
+
+def _get_metrics_pool() -> psycopg_pool.ConnectionPool:
+    global _metrics_pool
+    if _metrics_pool is None:
+        s = get_settings()
+        _metrics_pool = psycopg_pool.ConnectionPool(
+            s.database_url, min_size=1, max_size=10, open=True,
+        )
+    return _metrics_pool
+
+
+@contextmanager
+def schedule_conn():
+    with _get_schedule_pool().connection() as conn:
+        yield conn
+
+
+@contextmanager
+def metrics_conn():
+    with _get_metrics_pool().connection() as conn:
+        yield conn
+
+
+@app.on_event("shutdown")
+def _close_pools():
+    global _schedule_pool, _metrics_pool
+    if _schedule_pool:
+        _schedule_pool.close()
+        _schedule_pool = None
+    if _metrics_pool:
+        _metrics_pool.close()
+        _metrics_pool = None
+
+
 @app.get("/api/health")
 def health() -> dict[str, str]:
     return {"status": "ok"}
@@ -166,9 +216,8 @@ def health() -> dict[str, str]:
 
 @app.get("/api/schedule/templates")
 def api_list_templates() -> list[dict]:
-    db_url = get_schedule_database_url()
     try:
-        with psycopg.connect(db_url, connect_timeout=30) as conn:
+        with schedule_conn() as conn:
             return [t.model_dump() for t in list_templates(conn)]
     except psycopg.errors.UndefinedTable:
         return []
@@ -178,9 +227,8 @@ def api_list_templates() -> list[dict]:
 
 @app.get("/api/schedule/templates/{template_id}")
 def api_get_template(template_id: int) -> dict:
-    db_url = get_schedule_database_url()
     try:
-        with psycopg.connect(db_url, connect_timeout=30) as conn:
+        with schedule_conn() as conn:
             tpl = get_template_by_id(conn, template_id)
     except psycopg.errors.UndefinedTable:
         raise HTTPException(status_code=404, detail="Template table not found. Run migration 002.")
@@ -199,9 +247,8 @@ def api_get_schedule(
     if shift not in (1, 2, 3):
         raise HTTPException(status_code=400, detail="shift must be 1, 2, or 3")
     sk = slot_key(shift, day)
-    db_url = get_schedule_database_url()
     try:
-        with psycopg.connect(db_url, connect_timeout=30) as conn:
+        with schedule_conn() as conn:
             doc = get_schedule(conn, sk)
     except psycopg.errors.UndefinedTable:
         doc = default_document(sk)
@@ -216,9 +263,8 @@ def api_get_schedule(
 
 @app.get("/api/weekbyweek", response_model=WeekByWeekStateEnvelope)
 def api_get_weekbyweek() -> WeekByWeekStateEnvelope:
-    db_url = get_schedule_database_url()
     try:
-        with psycopg.connect(db_url, connect_timeout=30) as conn:
+        with schedule_conn() as conn:
             state, updated_at = get_weekbyweek_state(conn)
     except psycopg.Error as e:
         raise HTTPException(
@@ -230,9 +276,8 @@ def api_get_weekbyweek() -> WeekByWeekStateEnvelope:
 
 @app.put("/api/weekbyweek", response_model=WeekByWeekStateEnvelope)
 def api_put_weekbyweek(body: WeekByWeekState) -> WeekByWeekStateEnvelope:
-    db_url = get_schedule_database_url()
     try:
-        with psycopg.connect(db_url, connect_timeout=30) as conn:
+        with schedule_conn() as conn:
             updated_at = put_weekbyweek_state(conn, body)
     except psycopg.errors.ReadOnlySqlTransaction as e:
         raise HTTPException(
@@ -260,9 +305,8 @@ def api_put_schedule(
         raise HTTPException(status_code=400, detail="shift must be 1, 2, or 3")
     sk = slot_key(shift, day)
     doc = body.model_copy(update={"slot_key": sk})
-    db_url = get_schedule_database_url()
     try:
-        with psycopg.connect(db_url, connect_timeout=30) as conn:
+        with schedule_conn() as conn:
             put_schedule(conn, doc)
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e)) from e
@@ -295,7 +339,6 @@ def search_operators(
     q: str = Query("", max_length=200),
     limit: int = Query(50, ge=1, le=100),
 ) -> list[dict[str, int | str]]:
-    settings = get_settings()
     qstrip = q.strip()
     like = f"%{qstrip}%"
     id_prefix = qstrip
@@ -341,7 +384,7 @@ def search_operators(
             limit,
         )
     try:
-        with psycopg.connect(settings.database_url, connect_timeout=30) as conn:
+        with metrics_conn() as conn:
             with conn.cursor() as cur:
                 cur.execute(
                     f"SET statement_timeout = {int(STMT_TIMEOUT_MS)}"
@@ -446,14 +489,10 @@ def post_series(body: SeriesRequest) -> SeriesResponse:
     if t1 < t0:
         raise HTTPException(400, detail="end_iso must be >= start_iso")
 
-    settings = get_settings()
-    if not settings.database_url:
-        raise HTTPException(503, detail="DATABASE_URL not configured")
-
     ids = list(dict.fromkeys(body.teleoperator_ids))
 
     try:
-        with psycopg.connect(settings.database_url, connect_timeout=30) as conn:
+        with metrics_conn() as conn:
             with conn.cursor() as cur:
                 cur.execute(
                     f"SET statement_timeout = {int(STMT_TIMEOUT_MS)}"

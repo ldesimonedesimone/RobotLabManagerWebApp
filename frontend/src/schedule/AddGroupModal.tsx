@@ -1,7 +1,8 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { getTemplateDetail } from '../scheduleApi'
 import type { ScheduleDocument, ScheduleGroup, TemplateInfo } from './model'
 import {
+  TIME_OPTIONS_15,
   applyTemplate,
   emptyGrid,
   newId,
@@ -43,6 +44,10 @@ export default function AddGroupModal({
   const [selectedTplId, setSelectedTplId] = useState<number | null>(null)
   const [tplStartTime, setTplStartTime] = useState(doc.day_start)
 
+  useEffect(() => {
+    setTplStartTime(doc.day_start)
+  }, [doc.day_start])
+
   const counts = useMemo(() => {
     const r = parseLines(robots).length
     const t = parseLines(tasks).length
@@ -54,6 +59,17 @@ export default function AddGroupModal({
     () => templates.filter((t) => t.n_pilots === counts.pilots),
     [templates, counts.pilots],
   )
+
+  function resetForm() {
+    setName('New group')
+    setRobots('Robot A\nRobot B')
+    setTasks('Break')
+    setPilots('Pat\nAlex\nSam')
+    setErr(null)
+    setUseTemplate(false)
+    setSelectedTplId(null)
+    setTplStartTime(doc.day_start)
+  }
 
   if (!open) return null
 
@@ -97,8 +113,7 @@ export default function AddGroupModal({
 
     onCreate(g)
     onClose()
-    setName('New group')
-    setErr(null)
+    resetForm()
   }
 
   return (
@@ -186,13 +201,15 @@ export default function AddGroupModal({
                   </label>
                   <label className="sched-time-label">
                     Template starts at
-                    <input
-                      type="time"
-                      step={900}
+                    <select
                       value={tplStartTime}
                       onChange={(e) => setTplStartTime(e.target.value)}
                       className="sched-time-input"
-                    />
+                    >
+                      {TIME_OPTIONS_15.map((t) => (
+                        <option key={t} value={t}>{t}</option>
+                      ))}
+                    </select>
                   </label>
                   <p className="sched-muted">
                     Template slots outside the schedule window ({doc.day_start}–
@@ -206,7 +223,7 @@ export default function AddGroupModal({
 
         {err ? <p className="sched-error">{err}</p> : null}
         <div className="sched-modal-actions">
-          <button type="button" onClick={onClose} disabled={submitting}>
+          <button type="button" onClick={() => { onClose(); resetForm() }} disabled={submitting}>
             Cancel
           </button>
           <button

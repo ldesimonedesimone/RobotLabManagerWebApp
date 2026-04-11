@@ -25,9 +25,24 @@ export const SCHEDULE_VERSION = 1
 export const DEFAULT_DAY_START = '06:00'
 export const DEFAULT_DAY_END = '16:00'
 
+export const TIME_OPTIONS_15: string[] = (() => {
+  const opts: string[] = []
+  for (let m = 0; m < 24 * 60; m += 15) {
+    const h = Math.floor(m / 60)
+    const mm = m % 60
+    opts.push(`${String(h).padStart(2, '0')}:${String(mm).padStart(2, '0')}`)
+  }
+  return opts
+})()
+
 export function parseHm(s: string): number {
-  const [h, m] = s.trim().split(':').map((x) => Number(x))
-  return (h ?? 0) * 60 + (m ?? 0)
+  const parts = s.trim().split(':')
+  if (parts.length !== 2) throw new Error(`invalid time format: "${s}"`)
+  const h = Number(parts[0])
+  const m = Number(parts[1])
+  if (!Number.isFinite(h) || !Number.isFinite(m) || h < 0 || h > 23 || m < 0 || m > 59)
+    throw new Error(`invalid time: "${s}"`)
+  return h * 60 + m
 }
 
 export function timeSlotCount(
@@ -37,6 +52,7 @@ export function timeSlotCount(
   const t0 = parseHm(dayStart)
   const t1 = parseHm(dayEnd)
   if (t1 <= t0) throw new Error('day end must be after day start')
+  if ((t1 - t0) % 15 !== 0) throw new Error('time range must be a multiple of 15 minutes')
   return (t1 - t0) / 15
 }
 

@@ -6,6 +6,7 @@ import {
   DEFAULT_DAY_END,
   DEFAULT_DAY_START,
   SCHEDULE_VERSION,
+  TIME_OPTIONS_15,
   resizeGrid,
   timeSlotCount,
 } from './model'
@@ -105,6 +106,11 @@ export default function ScheduleEditor() {
       delete next[id]
       return next
     })
+    setActiveTab((prev) => {
+      if (prev === 'robot' || prev === 'pilots') return prev
+      if (prev.startsWith('pilot:') && prev.includes(id)) return 'robot'
+      return prev
+    })
   }, [])
 
   const addGroup = useCallback((g: ScheduleGroup) => {
@@ -156,7 +162,7 @@ export default function ScheduleEditor() {
     )
       return
     try {
-      await putSchedule(shift, 'today', { ...doc, slot_key: '' })
+      await putSchedule(shift, 'today', { ...doc, slot_key: `s${shift}-today` })
       const emptyDoc: ScheduleDocument = {
         version: SCHEDULE_VERSION,
         slot_key: '',
@@ -215,23 +221,27 @@ export default function ScheduleEditor() {
         <div className="sched-time-controls">
           <label className="sched-time-label">
             Start
-            <input
-              type="time"
+            <select
               value={doc.day_start}
-              step={900}
               onChange={(e) => handleTimeChange('day_start', e.target.value)}
               className="sched-time-input"
-            />
+            >
+              {TIME_OPTIONS_15.map((t) => (
+                <option key={t} value={t}>{t}</option>
+              ))}
+            </select>
           </label>
           <label className="sched-time-label">
             End
-            <input
-              type="time"
+            <select
               value={doc.day_end}
-              step={900}
               onChange={(e) => handleTimeChange('day_end', e.target.value)}
               className="sched-time-input"
-            />
+            >
+              {TIME_OPTIONS_15.map((t) => (
+                <option key={t} value={t}>{t}</option>
+              ))}
+            </select>
           </label>
         </div>
         <span className="sched-save">
