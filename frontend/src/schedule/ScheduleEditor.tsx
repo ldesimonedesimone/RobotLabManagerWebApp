@@ -2,6 +2,12 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { getSchedule, listRoster, listTemplates, putSchedule, type RosterOperator } from '../scheduleApi'
 import type { ScheduleDocument, ScheduleGroup, TemplateInfo } from './model'
+
+function pilotNamesInDoc(doc: ScheduleDocument): Set<string> {
+  const names = new Set<string>()
+  for (const g of doc.groups) for (const p of g.pilots) names.add(p.name)
+  return names
+}
 import {
   DEFAULT_DAY_END,
   DEFAULT_DAY_START,
@@ -37,6 +43,7 @@ export default function ScheduleEditor() {
   const [activeTab, setActiveTab] = useState<TabId>('robot')
   const [templates, setTemplates] = useState<TemplateInfo[]>([])
   const [rosterOps, setRosterOps] = useState<RosterOperator[]>([])
+  const [otherDayDoc, setOtherDayDoc] = useState<ScheduleDocument | null>(null)
 
   const skipFirstSave = useRef(true)
 
@@ -44,6 +51,11 @@ export default function ScheduleEditor() {
     listTemplates().then(setTemplates).catch(() => {})
     listRoster().then(setRosterOps).catch(() => {})
   }, [])
+
+  useEffect(() => {
+    const otherDay = day === 'today' ? 'tomorrow' : 'today'
+    getSchedule(shift, otherDay).then(setOtherDayDoc).catch(() => setOtherDayDoc(null))
+  }, [shift, day])
 
   useEffect(() => {
     if (shiftStr !== '1' && shiftStr !== '2' && shiftStr !== '3') {
@@ -368,6 +380,8 @@ export default function ScheduleEditor() {
         doc={doc}
         templates={templates}
         rosterOperators={rosterOps.filter((o) => o.shift === shift)}
+        todayPilots={day === 'today' ? (doc ? pilotNamesInDoc(doc) : new Set()) : (otherDayDoc ? pilotNamesInDoc(otherDayDoc) : new Set())}
+        tomorrowPilots={day === 'tomorrow' ? (doc ? pilotNamesInDoc(doc) : new Set()) : (otherDayDoc ? pilotNamesInDoc(otherDayDoc) : new Set())}
         open={modalOpen}
         onClose={() => setModalOpen(false)}
         onCreate={addGroup}

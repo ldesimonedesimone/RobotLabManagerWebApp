@@ -22,6 +22,8 @@ type Props = {
   doc: ScheduleDocument
   templates: TemplateInfo[]
   rosterOperators: RosterOperator[]
+  todayPilots: Set<string>
+  tomorrowPilots: Set<string>
   open: boolean
   onClose: () => void
   onCreate: (g: ScheduleGroup) => void
@@ -31,6 +33,8 @@ export default function AddGroupModal({
   doc,
   templates,
   rosterOperators,
+  todayPilots,
+  tomorrowPilots,
   open,
   onClose,
   onCreate,
@@ -190,7 +194,13 @@ export default function AddGroupModal({
                         })
                       }}
                     />
-                    {op.name}
+                    <span className="sched-roster-name">{op.name}</span>
+                    {todayPilots.has(op.name) && (
+                      <span className="sched-roster-badge" title="In today's schedule">T</span>
+                    )}
+                    {tomorrowPilots.has(op.name) && (
+                      <span className="sched-roster-badge sched-roster-badge-tmrw" title="In tomorrow's schedule">Tm</span>
+                    )}
                   </label>
                 ))
               )}
