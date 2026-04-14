@@ -118,9 +118,6 @@ export default function PilotViewPanel({ doc, filterKey }: Props) {
 
   return (
     <div className="sched-pilot-panel">
-      <p className="sched-muted sched-readonly-note">
-        Read-only — derived from Robot view.
-      </p>
       <div className="sched-scroll sched-scroll-playhead" ref={scrollRef}>
         {playheadLeft != null && (
           <div className="sched-playhead" style={{ left: playheadLeft }} />
