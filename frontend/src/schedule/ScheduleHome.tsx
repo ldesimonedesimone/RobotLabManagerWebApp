@@ -23,10 +23,17 @@ function SlotButton({
 export default function ScheduleHome() {
   return (
     <div className="sched-page sched-home">
-      <h1 className="sched-title">Schedule builder</h1>
-      <p className="sched-lead">
-        Pick a shift and day. Each slot has its own saved schedule.
-      </p>
+      <div className="sched-home-header">
+        <div>
+          <h1 className="sched-title">Schedule builder</h1>
+          <p className="sched-lead">
+            Pick a shift and day. Each slot has its own saved schedule.
+          </p>
+        </div>
+        <Link to="/schedule/roster" className="sched-primary sched-roster-link">
+          Operator Roster
+        </Link>
+      </div>
       <div className="sched-home-grid">
         <section className="sched-shift-block">
           <h2>Shift 1</h2>

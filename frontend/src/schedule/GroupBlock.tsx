@@ -1,6 +1,6 @@
 import { useCallback } from 'react'
 import type { ScheduleGroup } from './model'
-import { resourceRowLabels, timeLabels } from './model'
+import { newId, resourceRowLabels, timeLabels } from './model'
 import EditableText from './EditableText'
 import './schedule.css'
 
@@ -12,6 +12,7 @@ type Props = {
   eraser: boolean
   onChange: (g: ScheduleGroup) => void
   onDelete: () => void
+  onCopy: (g: ScheduleGroup) => void
   onPickPilot: (id: string) => void
   onPickEraser: () => void
 }
@@ -24,6 +25,7 @@ export default function GroupBlock({
   eraser,
   onChange,
   onDelete,
+  onCopy,
   onPickPilot,
   onPickEraser,
 }: Props) {
@@ -87,9 +89,29 @@ export default function GroupBlock({
             onChange={(n) => onChange({ ...group, name: n })}
           />
         </h3>
-        <button type="button" className="sched-danger" onClick={onDelete}>
-          Delete group
-        </button>
+        <div className="sched-group-actions">
+          <button
+            type="button"
+            className="sched-secondary"
+            onClick={() => {
+              const idMap = new Map<string, string>()
+              const pilots = group.pilots.map((p) => {
+                const pid = newId()
+                idMap.set(p.id, pid)
+                return { ...p, id: pid }
+              })
+              const grid = group.grid.map((slot) =>
+                slot.map((cell) => (cell ? idMap.get(cell) ?? null : null)),
+              )
+              onCopy({ ...group, id: newId(), name: `${group.name} (copy)`, pilots, grid })
+            }}
+          >
+            Copy group
+          </button>
+          <button type="button" className="sched-danger" onClick={onDelete}>
+            Delete group
+          </button>
+        </div>
       </div>
       <div className="sched-legend">
         <span className="sched-legend-title">Pilots</span>

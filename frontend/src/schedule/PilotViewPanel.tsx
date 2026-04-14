@@ -26,7 +26,7 @@ export default function PilotViewPanel({ doc, filterKey }: Props) {
   const times = timeLabels(doc.day_start, doc.day_end)
   const tc = timeSlotCount(doc.day_start, doc.day_end)
 
-  const { allRows, options } = useMemo(() => {
+  const allRows = useMemo(() => {
     const rows: {
       key: string
       groupName: string
@@ -34,22 +34,14 @@ export default function PilotViewPanel({ doc, filterKey }: Props) {
       cells: string[]
       cellFills: string[]
     }[] = []
-    const opts: { value: string; label: string }[] = [
-      { value: '', label: 'All pilots' },
-    ]
     for (const g of doc.groups) {
       const labels = [...g.robot_labels, ...g.task_labels]
       const fills = buildActivityFillMap(labels)
       const map = new Map(Object.entries(fills))
       const trows = transposeGroup(g, map, tc)
       for (const pr of trows) {
-        const key = `${g.id}:${pr.pilotId}`
-        opts.push({
-          value: key,
-          label: `${g.name} — ${pr.pilotName}`,
-        })
         rows.push({
-          key,
+          key: `${g.id}:${pr.pilotId}`,
           groupName: g.name,
           pilotName: pr.pilotName,
           cells: pr.cells,
@@ -57,18 +49,14 @@ export default function PilotViewPanel({ doc, filterKey }: Props) {
         })
       }
     }
-    return { allRows: rows, options: opts }
+    return rows
   }, [doc.groups, doc.day_start, doc.day_end, tc])
-
-  const [dropdownFilter, setDropdownFilter] = useState('')
 
   const visibleRows = useMemo(() => {
     if (filterKey) return allRows.filter((r) => r.key === filterKey)
-    if (!dropdownFilter) return allRows
-    return allRows.filter((r) => r.key === dropdownFilter)
-  }, [allRows, filterKey, dropdownFilter])
+    return allRows
+  }, [allRows, filterKey])
 
-  // Playhead — Mexico City time
   const scrollRef = useRef<HTMLDivElement>(null)
   const [playheadLeft, setPlayheadLeft] = useState<number | null>(null)
 
@@ -88,22 +76,22 @@ export default function PilotViewPanel({ doc, filterKey }: Props) {
       return
     }
 
+    const slotsFrac = (mxMin - startMin) / 15
+    const slotIdx = Math.floor(slotsFrac)
+    const intraFrac = slotsFrac - slotIdx
+
     const ths = el.querySelectorAll<HTMLElement>('thead th')
-    if (ths.length < 2) {
+    const cell = ths[slotIdx + 1]
+    if (!cell) {
       setPlayheadLeft(null)
       return
     }
 
-    const firstTime = ths[1]
-    const lastTime = ths[ths.length - 1]
     const containerRect = el.getBoundingClientRect()
-    const leftEdge =
-      firstTime.getBoundingClientRect().left - containerRect.left + el.scrollLeft
-    const rightEdge =
-      lastTime.getBoundingClientRect().right - containerRect.left + el.scrollLeft
-
-    const frac = (mxMin - startMin) / (endMin - startMin)
-    setPlayheadLeft(leftEdge + frac * (rightEdge - leftEdge))
+    const cellRect = cell.getBoundingClientRect()
+    setPlayheadLeft(
+      cellRect.left - containerRect.left + el.scrollLeft + intraFrac * cellRect.width,
+    )
   }, [doc.day_start, doc.day_end])
 
   useEffect(() => {
@@ -126,24 +114,6 @@ export default function PilotViewPanel({ doc, filterKey }: Props) {
 
   return (
     <div className="sched-pilot-panel">
-      {!filterKey && (
-        <div className="sched-pilot-toolbar">
-          <label>
-            Focus pilot
-            <select
-              value={dropdownFilter}
-              onChange={(e) => setDropdownFilter(e.target.value)}
-              className="sched-select"
-            >
-              {options.map((o) => (
-                <option key={o.value || 'all'} value={o.value}>
-                  {o.label}
-                </option>
-              ))}
-            </select>
-          </label>
-        </div>
-      )}
       <p className="sched-muted sched-readonly-note">
         Read-only — derived from Robot view.
       </p>
@@ -151,7 +121,10 @@ export default function PilotViewPanel({ doc, filterKey }: Props) {
         {playheadLeft != null && (
           <div className="sched-playhead" style={{ left: playheadLeft }} />
         )}
-        <table className="sched-pilot-table">
+        <table
+          className="sched-pilot-table"
+          style={{ width: `calc(8rem + ${times.length} * 2.5rem)` }}
+        >
           <thead>
             <tr>
               <th className="sched-corner">Group / Pilot</th>

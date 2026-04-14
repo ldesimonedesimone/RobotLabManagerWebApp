@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { getTemplateDetail } from '../scheduleApi'
+import { getTemplateDetail, type RosterOperator } from '../scheduleApi'
 import type { ScheduleDocument, ScheduleGroup, TemplateInfo } from './model'
 import {
   TIME_OPTIONS_15,
@@ -21,6 +21,7 @@ function parseLines(text: string): string[] {
 type Props = {
   doc: ScheduleDocument
   templates: TemplateInfo[]
+  rosterOperators: RosterOperator[]
   open: boolean
   onClose: () => void
   onCreate: (g: ScheduleGroup) => void
@@ -29,6 +30,7 @@ type Props = {
 export default function AddGroupModal({
   doc,
   templates,
+  rosterOperators,
   open,
   onClose,
   onCreate,
@@ -40,6 +42,8 @@ export default function AddGroupModal({
   const [err, setErr] = useState<string | null>(null)
   const [submitting, setSubmitting] = useState(false)
 
+  const [useRoster, setUseRoster] = useState(rosterOperators.length > 0)
+  const [selectedRosterIds, setSelectedRosterIds] = useState<Set<number>>(new Set())
   const [useTemplate, setUseTemplate] = useState(false)
   const [selectedTplId, setSelectedTplId] = useState<number | null>(null)
   const [tplStartTime, setTplStartTime] = useState(doc.day_start)
@@ -51,9 +55,9 @@ export default function AddGroupModal({
   const counts = useMemo(() => {
     const r = parseLines(robots).length
     const t = parseLines(tasks).length
-    const p = parseLines(pilots).length
+    const p = useRoster ? selectedRosterIds.size : parseLines(pilots).length
     return { robots: r, tasks: t, pilots: p }
-  }, [robots, tasks, pilots])
+  }, [robots, tasks, pilots, useRoster, selectedRosterIds])
 
   const matchingTemplates = useMemo(
     () => templates.filter((t) => t.n_pilots === counts.pilots),
@@ -66,6 +70,8 @@ export default function AddGroupModal({
     setTasks('Break')
     setPilots('Pat\nAlex\nSam')
     setErr(null)
+    setUseRoster(rosterOperators.length > 0)
+    setSelectedRosterIds(new Set())
     setUseTemplate(false)
     setSelectedTplId(null)
     setTplStartTime(doc.day_start)
@@ -77,7 +83,9 @@ export default function AddGroupModal({
     setErr(null)
     const robot_labels = parseLines(robots)
     const task_labels = parseLines(tasks)
-    const pilotNames = parseLines(pilots)
+    const pilotNames = useRoster
+      ? rosterOperators.filter((o) => selectedRosterIds.has(o.id)).map((o) => o.name)
+      : parseLines(pilots)
     const g: ScheduleGroup = {
       id: newId(),
       name: name.trim() || 'Untitled group',
@@ -150,15 +158,58 @@ export default function AddGroupModal({
             className="sched-textarea"
           />
         </label>
-        <label>
-          Pilots (names, in order)
-          <textarea
-            value={pilots}
-            onChange={(e) => setPilots(e.target.value)}
-            rows={4}
-            className="sched-textarea"
-          />
-        </label>
+        <div className="sched-pilots-section">
+          <div className="sched-pilots-toggle">
+            <span className="sched-pilots-label">Pilots</span>
+            {rosterOperators.length > 0 && (
+              <button
+                type="button"
+                className="sched-toggle-link"
+                onClick={() => setUseRoster(!useRoster)}
+              >
+                {useRoster ? 'Manual entry instead' : 'Pick from roster'}
+              </button>
+            )}
+          </div>
+          {useRoster ? (
+            <div className="sched-roster-pick">
+              {rosterOperators.filter((o) => !o.absent).length === 0 ? (
+                <p className="sched-muted">No available operators on roster for this shift.</p>
+              ) : (
+                rosterOperators.filter((o) => !o.absent).map((op) => (
+                  <label key={op.id} className="sched-checkbox-row sched-roster-cb">
+                    <input
+                      type="checkbox"
+                      checked={selectedRosterIds.has(op.id)}
+                      onChange={() => {
+                        setSelectedRosterIds((prev) => {
+                          const next = new Set(prev)
+                          if (next.has(op.id)) next.delete(op.id)
+                          else next.add(op.id)
+                          return next
+                        })
+                      }}
+                    />
+                    {op.name}
+                  </label>
+                ))
+              )}
+              <p className="sched-muted" style={{ marginTop: '0.25rem' }}>
+                {selectedRosterIds.size} selected
+              </p>
+            </div>
+          ) : (
+            <label>
+              Names (one per line or comma-separated)
+              <textarea
+                value={pilots}
+                onChange={(e) => setPilots(e.target.value)}
+                rows={4}
+                className="sched-textarea"
+              />
+            </label>
+          )}
+        </div>
 
         <div className="sched-template-section">
           <label className="sched-checkbox-row">

@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
-import { getSchedule, listTemplates, putSchedule } from '../scheduleApi'
+import { getSchedule, listRoster, listTemplates, putSchedule, type RosterOperator } from '../scheduleApi'
 import type { ScheduleDocument, ScheduleGroup, TemplateInfo } from './model'
 import {
   DEFAULT_DAY_END,
@@ -36,11 +36,13 @@ export default function ScheduleEditor() {
   const [brushes, setBrushes] = useState<Record<string, Brush>>({})
   const [activeTab, setActiveTab] = useState<TabId>('robot')
   const [templates, setTemplates] = useState<TemplateInfo[]>([])
+  const [rosterOps, setRosterOps] = useState<RosterOperator[]>([])
 
   const skipFirstSave = useRef(true)
 
   useEffect(() => {
     listTemplates().then(setTemplates).catch(() => {})
+    listRoster().then(setRosterOps).catch(() => {})
   }, [])
 
   useEffect(() => {
@@ -249,6 +251,24 @@ export default function ScheduleEditor() {
           {saveState === 'saved' && 'Saved'}
           {saveState === 'error' && 'Save failed'}
         </span>
+        {day === 'today' && (
+          <button
+            type="button"
+            className="sched-promote-btn"
+            onClick={async () => {
+              if (!doc) return
+              if (!confirm(`Copy today's Shift ${shift} schedule to tomorrow?`)) return
+              try {
+                await putSchedule(shift, 'tomorrow', { ...doc, slot_key: `s${shift}-tomorrow` })
+                navigate(`/schedule/shift/${shift}/tomorrow`)
+              } catch (e) {
+                alert(`Failed to copy: ${e instanceof Error ? e.message : e}`)
+              }
+            }}
+          >
+            Copy to Tomorrow →
+          </button>
+        )}
         {day === 'tomorrow' && (
           <button
             type="button"
@@ -313,6 +333,7 @@ export default function ScheduleEditor() {
                 eraser={brushes[g.id]?.eraser ?? false}
                 onChange={(ng) => updateGroup(g.id, ng)}
                 onDelete={() => removeGroup(g.id)}
+                onCopy={addGroup}
                 onPickPilot={(id) =>
                   setBrushes((s) => ({
                     ...s,
@@ -346,6 +367,7 @@ export default function ScheduleEditor() {
       <AddGroupModal
         doc={doc}
         templates={templates}
+        rosterOperators={rosterOps.filter((o) => o.shift === shift)}
         open={modalOpen}
         onClose={() => setModalOpen(false)}
         onCreate={addGroup}

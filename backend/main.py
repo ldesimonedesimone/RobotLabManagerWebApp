@@ -81,6 +81,15 @@ from schedule_api import (  # noqa: E402
     put_schedule,
     slot_key,
 )
+from roster_api import (  # noqa: E402
+    OperatorCreate,
+    OperatorUpdate,
+    add_operator,
+    delete_operator,
+    ensure_roster_table,
+    list_operators,
+    update_operator,
+)
 from weekbyweek_api import (  # noqa: E402
     WeekByWeekState,
     WeekByWeekStateEnvelope,
@@ -293,6 +302,61 @@ def api_put_weekbyweek(body: WeekByWeekState) -> WeekByWeekStateEnvelope:
             detail=f"Database error: {e}",
         ) from e
     return WeekByWeekStateEnvelope(state=body, updated_at=updated_at)
+
+
+# ---------------------------------------------------------------------------
+# Operator roster
+# ---------------------------------------------------------------------------
+
+@app.get("/api/roster")
+def api_list_roster(shift: int | None = Query(default=None, ge=1, le=3)) -> list[dict]:
+    try:
+        with schedule_conn() as conn:
+            ensure_roster_table(conn)
+            return [op.model_dump() for op in list_operators(conn, shift)]
+    except psycopg.Error as e:
+        raise HTTPException(status_code=503, detail=f"Database error: {e}") from e
+
+
+@app.post("/api/roster")
+def api_add_roster(body: OperatorCreate) -> dict:
+    try:
+        with schedule_conn() as conn:
+            ensure_roster_table(conn)
+            op = add_operator(conn, body)
+    except psycopg.errors.UniqueViolation:
+        raise HTTPException(status_code=409, detail=f"'{body.name}' already exists in shift {body.shift}")
+    except psycopg.Error as e:
+        raise HTTPException(status_code=503, detail=f"Database error: {e}") from e
+    return op.model_dump()
+
+
+@app.patch("/api/roster/{op_id}")
+def api_update_roster(op_id: int, body: OperatorUpdate) -> dict:
+    try:
+        with schedule_conn() as conn:
+            ensure_roster_table(conn)
+            op = update_operator(conn, op_id, body)
+    except psycopg.errors.UniqueViolation:
+        raise HTTPException(status_code=409, detail="Duplicate name+shift combination")
+    except psycopg.Error as e:
+        raise HTTPException(status_code=503, detail=f"Database error: {e}") from e
+    if not op:
+        raise HTTPException(status_code=404, detail="Operator not found")
+    return op.model_dump()
+
+
+@app.delete("/api/roster/{op_id}")
+def api_delete_roster(op_id: int) -> dict[str, str]:
+    try:
+        with schedule_conn() as conn:
+            ensure_roster_table(conn)
+            ok = delete_operator(conn, op_id)
+    except psycopg.Error as e:
+        raise HTTPException(status_code=503, detail=f"Database error: {e}") from e
+    if not ok:
+        raise HTTPException(status_code=404, detail="Operator not found")
+    return {"ok": "true"}
 
 
 @app.put("/api/schedule/{shift}/{day}")

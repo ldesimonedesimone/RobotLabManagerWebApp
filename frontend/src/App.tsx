@@ -3,6 +3,7 @@ import Layout from './Layout'
 import PilotDashboard from './PilotDashboard'
 import ScheduleEditor from './schedule/ScheduleEditor'
 import ScheduleHome from './schedule/ScheduleHome'
+import RosterPage from './schedule/RosterPage'
 import WeekbyWeekFlow from './weekbyweek/WeekbyWeekFlow'
 
 export default function App() {
@@ -14,6 +15,7 @@ export default function App() {
           <Route path="/pilot" element={<PilotDashboard />} />
           <Route path="/weekbyweekflow" element={<WeekbyWeekFlow />} />
           <Route path="/schedule" element={<ScheduleHome />} />
+          <Route path="/schedule/roster" element={<RosterPage />} />
           <Route path="/schedule/shift/:shift/:day" element={<ScheduleEditor />} />
         </Route>
       </Routes>

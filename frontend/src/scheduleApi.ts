@@ -55,3 +55,46 @@ export async function getTemplateDetail(id: number): Promise<TemplateDetail> {
   if (!r.ok) throw new Error(await readErrorBody(r))
   return r.json() as Promise<TemplateDetail>
 }
+
+// ---------------------------------------------------------------------------
+// Operator roster
+// ---------------------------------------------------------------------------
+
+export type RosterOperator = {
+  id: number
+  name: string
+  shift: number
+  absent: boolean
+  sort_order: number
+}
+
+export async function listRoster(): Promise<RosterOperator[]> {
+  const r = await fetch(`${API_BASE}/api/roster`)
+  if (!r.ok) return []
+  return r.json() as Promise<RosterOperator[]>
+}
+
+export async function addRosterOperator(name: string, shift: number): Promise<RosterOperator> {
+  const r = await fetch(`${API_BASE}/api/roster`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name, shift }),
+  })
+  if (!r.ok) throw new Error(await readErrorBody(r))
+  return r.json() as Promise<RosterOperator>
+}
+
+export async function patchRosterOperator(id: number, patch: Partial<Pick<RosterOperator, 'name' | 'shift' | 'absent' | 'sort_order'>>): Promise<RosterOperator> {
+  const r = await fetch(`${API_BASE}/api/roster/${id}`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(patch),
+  })
+  if (!r.ok) throw new Error(await readErrorBody(r))
+  return r.json() as Promise<RosterOperator>
+}
+
+export async function deleteRosterOperator(id: number): Promise<void> {
+  const r = await fetch(`${API_BASE}/api/roster/${id}`, { method: 'DELETE' })
+  if (!r.ok) throw new Error(await readErrorBody(r))
+}
