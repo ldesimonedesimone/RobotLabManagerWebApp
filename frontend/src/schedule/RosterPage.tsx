@@ -66,12 +66,12 @@ export default function RosterPage() {
       setRoster((prev) => [...prev, op])
       setNewName((prev) => ({ ...prev, [shift]: '' }))
     } catch (e) {
-      alert(e instanceof Error ? e.message : 'Failed to add operator')
+      alert(e instanceof Error ? e.message : 'Failed to add pilot')
     }
   }
 
   const handleDelete = async (id: number) => {
-    if (!confirm('Remove this operator from the roster?')) return
+    if (!confirm('Remove this pilot from the roster?')) return
     try {
       await deleteRosterOperator(id)
       setRoster((prev) => prev.filter((o) => o.id !== id))
@@ -102,7 +102,7 @@ export default function RosterPage() {
     <div className="sched-page">
       <header className="sched-editor-head">
         <Link to="/schedule" className="sched-home-link">← Home</Link>
-        <h1>Operator Roster</h1>
+        <h1>Pilot Roster</h1>
       </header>
 
       <div className="roster-shifts">
@@ -157,13 +157,13 @@ export default function RosterPage() {
                     )
                   })}
                   {ops.length === 0 && (
-                    <tr><td colSpan={5} className="roster-empty">No operators yet</td></tr>
+                    <tr><td colSpan={5} className="roster-empty">No pilots yet</td></tr>
                   )}
                 </tbody>
               </table>
               <div className="roster-add-row">
                 <input
-                  placeholder="New operator name"
+                  placeholder="New pilot name"
                   value={newName[shift] ?? ''}
                   onChange={(e) => setNewName((p) => ({ ...p, [shift]: e.target.value }))}
                   onKeyDown={(e) => { if (e.key === 'Enter') handleAdd(shift) }}

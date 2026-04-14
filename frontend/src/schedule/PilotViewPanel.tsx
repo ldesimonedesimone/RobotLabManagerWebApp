@@ -26,7 +26,7 @@ export default function PilotViewPanel({ doc, filterKey }: Props) {
   const times = timeLabels(doc.day_start, doc.day_end)
   const tc = timeSlotCount(doc.day_start, doc.day_end)
 
-  const allRows = useMemo(() => {
+  const { allRows, legendByKey } = useMemo(() => {
     const rows: {
       key: string
       groupName: string
@@ -34,14 +34,18 @@ export default function PilotViewPanel({ doc, filterKey }: Props) {
       cells: string[]
       cellFills: string[]
     }[] = []
+    const legend: Record<string, { label: string; fill: string }[]> = {}
     for (const g of doc.groups) {
       const labels = [...g.robot_labels, ...g.task_labels]
       const fills = buildActivityFillMap(labels)
       const map = new Map(Object.entries(fills))
       const trows = transposeGroup(g, map, tc)
+      const groupLegend = labels.map((l) => ({ label: l, fill: fills[l] }))
       for (const pr of trows) {
+        const key = `${g.id}:${pr.pilotId}`
+        legend[key] = groupLegend
         rows.push({
-          key: `${g.id}:${pr.pilotId}`,
+          key,
           groupName: g.name,
           pilotName: pr.pilotName,
           cells: pr.cells,
@@ -49,7 +53,7 @@ export default function PilotViewPanel({ doc, filterKey }: Props) {
         })
       }
     }
-    return rows
+    return { allRows: rows, legendByKey: legend }
   }, [doc.groups, doc.day_start, doc.day_end, tc])
 
   const visibleRows = useMemo(() => {
@@ -123,7 +127,7 @@ export default function PilotViewPanel({ doc, filterKey }: Props) {
         )}
         <table
           className="sched-pilot-table"
-          style={{ width: `calc(8rem + ${times.length} * 2.5rem)` }}
+          style={{ width: `calc(8rem + ${times.length} * 3.75rem)` }}
         >
           <thead>
             <tr>
@@ -157,6 +161,19 @@ export default function PilotViewPanel({ doc, filterKey }: Props) {
           </tbody>
         </table>
       </div>
+      {filterKey && legendByKey[filterKey] && (
+        <div className="sched-legend">
+          {legendByKey[filterKey].map((item) => (
+            <span key={item.label} className="sched-legend-item">
+              <span
+                className="sched-legend-swatch"
+                style={{ background: item.fill }}
+              />
+              {item.label}
+            </span>
+          ))}
+        </div>
+      )}
     </div>
   )
 }

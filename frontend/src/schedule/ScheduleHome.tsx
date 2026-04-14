@@ -31,7 +31,7 @@ export default function ScheduleHome() {
           </p>
         </div>
         <Link to="/schedule/roster" className="sched-primary sched-roster-link">
-          Operator Roster
+          Pilot Roster
         </Link>
       </div>
       <div className="sched-home-grid">
