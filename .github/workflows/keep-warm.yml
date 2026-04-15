@@ -1,0 +1,21 @@
+name: Keep Neon DB warm
+
+on:
+  schedule:
+    # Every 4 minutes, 5am–8pm ET (9:00–00:00 UTC), Mon–Fri + Sunday
+    # GitHub cron is UTC. ET offset: EDT (summer) = UTC-4, EST (winter) = UTC-5.
+    # Using UTC 9:00–00:00 covers 5am–8pm EDT / 4am–7pm EST (close enough).
+    - cron: '*/4 9-23 * * 0,1-5'  # Sun=0, Mon-Fri=1-5
+  workflow_dispatch: {}
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+    steps:
+      - name: Ping schedule endpoint (warms DB connection pool)
+        env:
+          APP_URL: ${{ secrets.APP_URL }}
+        run: |
+          curl -sf --max-time 15 "${APP_URL}/api/schedule/1/today" > /dev/null
+          echo "Pinged ${APP_URL}/api/schedule/1/today — DB warm"
