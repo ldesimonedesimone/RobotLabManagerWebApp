@@ -1,4 +1,4 @@
-import type { ScheduleDocument, TemplateDetail, TemplateInfo } from './schedule/model'
+import type { ScheduleDocument, TemplateDetail, TemplateInfo, GeneratedGrid } from './schedule/model'
 
 const API_BASE = import.meta.env.VITE_API_BASE ?? ''
 
@@ -54,6 +54,23 @@ export async function getTemplateDetail(id: number): Promise<TemplateDetail> {
   const r = await fetch(`${API_BASE}/api/schedule/templates/${id}`)
   if (!r.ok) throw new Error(await readErrorBody(r))
   return r.json() as Promise<TemplateDetail>
+}
+
+export async function generateTemplate(params: {
+  n_pilots: number
+  n_robots: number
+  n_tasks: number
+  swap_min?: number
+  shift_min?: number
+  total_hours?: number
+}): Promise<GeneratedGrid> {
+  const r = await fetch(`${API_BASE}/api/schedule/generate`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(params),
+  })
+  if (!r.ok) throw new Error(await readErrorBody(r))
+  return r.json() as Promise<GeneratedGrid>
 }
 
 // ---------------------------------------------------------------------------

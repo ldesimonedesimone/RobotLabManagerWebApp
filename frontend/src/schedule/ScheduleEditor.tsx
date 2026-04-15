@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
-import { getSchedule, listRoster, listTemplates, putSchedule, type RosterOperator } from '../scheduleApi'
-import type { ScheduleDocument, ScheduleGroup, TemplateInfo } from './model'
+import { getSchedule, listRoster, putSchedule, type RosterOperator } from '../scheduleApi'
+import type { ScheduleDocument, ScheduleGroup } from './model'
 
 function pilotNamesInDoc(doc: ScheduleDocument): Set<string> {
   const names = new Set<string>()
@@ -41,14 +41,12 @@ export default function ScheduleEditor() {
   const [modalOpen, setModalOpen] = useState(false)
   const [brushes, setBrushes] = useState<Record<string, Brush>>({})
   const [activeTab, setActiveTab] = useState<TabId>('robot')
-  const [templates, setTemplates] = useState<TemplateInfo[]>([])
   const [rosterOps, setRosterOps] = useState<RosterOperator[]>([])
   const [otherDayDoc, setOtherDayDoc] = useState<ScheduleDocument | null>(null)
 
   const skipFirstSave = useRef(true)
 
   useEffect(() => {
-    listTemplates().then(setTemplates).catch(() => {})
     listRoster().then(setRosterOps).catch(() => {})
   }, [])
 
@@ -378,7 +376,6 @@ export default function ScheduleEditor() {
 
       <AddGroupModal
         doc={doc}
-        templates={templates}
         rosterOperators={rosterOps.filter((o) => o.shift === shift)}
         todayPilots={day === 'today' ? (doc ? pilotNamesInDoc(doc) : new Set()) : (otherDayDoc ? pilotNamesInDoc(otherDayDoc) : new Set())}
         tomorrowPilots={day === 'tomorrow' ? (doc ? pilotNamesInDoc(doc) : new Set()) : (otherDayDoc ? pilotNamesInDoc(otherDayDoc) : new Set())}

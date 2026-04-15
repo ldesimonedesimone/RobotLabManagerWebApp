@@ -183,6 +183,72 @@ def put_schedule(conn: psycopg.Connection, doc: ScheduleDocument) -> datetime:
 
 
 # ---------------------------------------------------------------------------
+# On-the-fly template generation
+# ---------------------------------------------------------------------------
+
+import math
+import sys
+from pathlib import Path as _Path
+
+_WEBAPP_DIR = _Path(__file__).resolve().parent.parent
+if str(_WEBAPP_DIR) not in sys.path:
+    sys.path.insert(0, str(_WEBAPP_DIR))
+
+from generate_cascade_template import (
+    generate_block_rotation_template,
+    generate_cascade_template,
+)
+
+
+class GenerateRequest(BaseModel):
+    n_pilots: int = Field(..., ge=2, le=30)
+    n_robots: int = Field(..., ge=1, le=20)
+    n_tasks: int = Field(..., ge=1, le=20)
+    swap_min: int = Field(45, ge=15, le=60)
+    shift_min: int = Field(60, ge=15, le=60)
+    total_hours: float = Field(9, ge=1, le=24)
+
+
+class GenerateResponse(BaseModel):
+    grid: list[list[int | None]]
+    algorithm: str
+    n_slots: int
+    n_pilots: int
+    n_robots: int
+    n_tasks: int
+
+
+def generate_schedule_grid(req: GenerateRequest) -> GenerateResponse:
+    SLOT_MINUTES = 15
+    total_slots = int(req.total_hours * 60 / SLOT_MINUTES)
+    use_block = req.n_pilots % req.n_robots == 0
+
+    if use_block:
+        assert req.swap_min % SLOT_MINUTES == 0, "swap_min must be a multiple of 15"
+        swap_slots = req.swap_min // SLOT_MINUTES
+        grid = generate_block_rotation_template(
+            req.n_pilots, req.n_robots, req.n_tasks, swap_slots, total_slots,
+        )
+        algo = "block_rotation"
+    else:
+        assert req.shift_min % SLOT_MINUTES == 0, "shift_min must be a multiple of 15"
+        shift_slots = req.shift_min // SLOT_MINUTES
+        grid = generate_cascade_template(
+            req.n_pilots, req.n_robots, req.n_tasks, shift_slots, total_slots,
+        )
+        algo = "cascade"
+
+    return GenerateResponse(
+        grid=grid,
+        algorithm=algo,
+        n_slots=len(grid),
+        n_pilots=req.n_pilots,
+        n_robots=req.n_robots,
+        n_tasks=req.n_tasks,
+    )
+
+
+# ---------------------------------------------------------------------------
 # Template DB helpers
 # ---------------------------------------------------------------------------
 

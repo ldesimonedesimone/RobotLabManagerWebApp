@@ -71,10 +71,13 @@ except Exception:  # pragma: no cover - optional for week-by-week-only deploys
     trim_workflow_duration_tails = _pilot_missing
 
 from schedule_api import (  # noqa: E402
+    GenerateRequest,
+    GenerateResponse,
     ScheduleDocument,
     TemplateDetail,
     TemplateInfo,
     default_document,
+    generate_schedule_grid,
     get_schedule,
     get_template_by_id,
     list_templates,
@@ -246,6 +249,14 @@ def api_get_template(template_id: int) -> dict:
     if not tpl:
         raise HTTPException(status_code=404, detail="Template not found")
     return tpl.model_dump()
+
+
+@app.post("/api/schedule/generate", response_model=GenerateResponse)
+def api_generate_template(body: GenerateRequest) -> GenerateResponse:
+    try:
+        return generate_schedule_grid(body)
+    except AssertionError as e:
+        raise HTTPException(status_code=400, detail=str(e)) from e
 
 
 @app.get("/api/schedule/{shift}/{day}")

@@ -142,8 +142,14 @@ const PILOT_PALETTE = [
   '#3949AB',
   '#D81B60',
   '#1B5E20',
-  '#000000',
   '#546E7A',
+  '#F06292',
+  '#AED581',
+  '#CE93D8',
+  '#4DD0E1',
+  '#A1887F',
+  '#90A4AE',
+  '#FFD54F',
 ]
 
 export function pilotColorForIndex(i: number): string {
@@ -151,7 +157,53 @@ export function pilotColorForIndex(i: number): string {
 }
 
 // ---------------------------------------------------------------------------
-// Templates
+// Generated grids (on-the-fly)
+// ---------------------------------------------------------------------------
+
+export type GeneratedGrid = {
+  grid: (number | null)[][]
+  algorithm: string
+  n_slots: number
+  n_pilots: number
+  n_robots: number
+  n_tasks: number
+}
+
+export function applyGeneratedGrid(
+  gen: GeneratedGrid,
+  pilots: SchedulePilot[],
+  dayStart: string,
+  dayEnd: string,
+  templateStartTime: string,
+): (string | null)[][] {
+  const nSlots = timeSlotCount(dayStart, dayEnd)
+  const nRows = pilots.length
+  const grid: (string | null)[][] = Array.from({ length: nSlots }, () =>
+    Array.from({ length: nRows }, () => null),
+  )
+
+  const schedStart = parseHm(dayStart)
+  const tplStart = parseHm(templateStartTime)
+
+  for (let t = 0; t < nSlots; t++) {
+    const absMinute = schedStart + t * 15
+    const tplIdx = (absMinute - tplStart) / 15
+    if (tplIdx < 0 || tplIdx >= gen.grid.length || !Number.isInteger(tplIdx))
+      continue
+    const tplSlot = gen.grid[tplIdx]
+    for (let r = 0; r < nRows; r++) {
+      const pilotIdx = tplSlot?.[r]
+      if (pilotIdx != null && pilotIdx >= 0 && pilotIdx < pilots.length) {
+        grid[t][r] = pilots[pilotIdx].id
+      }
+    }
+  }
+
+  return grid
+}
+
+// ---------------------------------------------------------------------------
+// Templates (DB-stored, legacy)
 // ---------------------------------------------------------------------------
 
 export type TemplateInfo = {

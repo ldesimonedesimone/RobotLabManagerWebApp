@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useState } from 'react'
-import { getTemplateDetail, type RosterOperator } from '../scheduleApi'
-import type { ScheduleDocument, ScheduleGroup, TemplateInfo } from './model'
+import { generateTemplate, type RosterOperator } from '../scheduleApi'
+import type { ScheduleDocument, ScheduleGroup } from './model'
 import {
   TIME_OPTIONS_15,
-  applyTemplate,
+  applyGeneratedGrid,
   emptyGrid,
   newId,
   pilotColorForIndex,
@@ -18,9 +18,10 @@ function parseLines(text: string): string[] {
     .filter(Boolean)
 }
 
+const SWAP_OPTIONS = [15, 30, 45, 60] as const
+
 type Props = {
   doc: ScheduleDocument
-  templates: TemplateInfo[]
   rosterOperators: RosterOperator[]
   todayPilots: Set<string>
   tomorrowPilots: Set<string>
@@ -31,7 +32,6 @@ type Props = {
 
 export default function AddGroupModal({
   doc,
-  templates,
   rosterOperators,
   todayPilots,
   tomorrowPilots,
@@ -48,9 +48,10 @@ export default function AddGroupModal({
 
   const [useRoster, setUseRoster] = useState(rosterOperators.length > 0)
   const [selectedRosterIds, setSelectedRosterIds] = useState<Set<number>>(new Set())
-  const [useTemplate, setUseTemplate] = useState(false)
-  const [selectedTplId, setSelectedTplId] = useState<number | null>(null)
+  const [useGenerate, setUseGenerate] = useState(false)
   const [tplStartTime, setTplStartTime] = useState(doc.day_start)
+  const [swapMin, setSwapMin] = useState(45)
+  const [totalHours, setTotalHours] = useState(9)
 
   useEffect(() => {
     setTplStartTime(doc.day_start)
@@ -63,10 +64,9 @@ export default function AddGroupModal({
     return { robots: r, tasks: t, pilots: p }
   }, [robots, tasks, pilots, useRoster, selectedRosterIds])
 
-  const matchingTemplates = useMemo(
-    () => templates.filter((t) => t.n_pilots === counts.pilots),
-    [templates, counts.pilots],
-  )
+  const countsValid = counts.pilots >= 2 && counts.robots >= 1 && counts.tasks >= 1 && counts.pilots === counts.robots + counts.tasks
+  const ratioOk = counts.robots > 0 && counts.pilots / counts.robots >= 4 / 3
+  const isBlockRotation = counts.robots > 0 && counts.pilots % counts.robots === 0
 
   function resetForm() {
     setName('New group')
@@ -76,9 +76,10 @@ export default function AddGroupModal({
     setErr(null)
     setUseRoster(rosterOperators.length > 0)
     setSelectedRosterIds(new Set())
-    setUseTemplate(false)
-    setSelectedTplId(null)
+    setUseGenerate(false)
     setTplStartTime(doc.day_start)
+    setSwapMin(45)
+    setTotalHours(9)
   }
 
   if (!open) return null
@@ -108,13 +109,20 @@ export default function AddGroupModal({
       return
     }
 
-    if (useTemplate && selectedTplId != null) {
+    if (useGenerate) {
       setSubmitting(true)
       try {
-        const tpl = await getTemplateDetail(selectedTplId)
-        g.grid = applyTemplate(tpl, g.pilots, doc.day_start, doc.day_end, tplStartTime)
+        const gen = await generateTemplate({
+          n_pilots: g.pilots.length,
+          n_robots: robot_labels.length,
+          n_tasks: task_labels.length,
+          swap_min: swapMin,
+          shift_min: 60,
+          total_hours: totalHours,
+        })
+        g.grid = applyGeneratedGrid(gen, g.pilots, doc.day_start, doc.day_end, tplStartTime)
       } catch (e) {
-        setErr(`Template load failed: ${e instanceof Error ? e.message : e}`)
+        setErr(`Generation failed: ${e instanceof Error ? e.message : e}`)
         setSubmitting(false)
         return
       }
@@ -225,43 +233,56 @@ export default function AddGroupModal({
           <label className="sched-checkbox-row">
             <input
               type="checkbox"
-              checked={useTemplate}
-              onChange={(e) => setUseTemplate(e.target.checked)}
+              checked={useGenerate}
+              onChange={(e) => setUseGenerate(e.target.checked)}
             />
-            Apply a rotation template
+            Auto-generate rotation schedule
           </label>
 
-          {useTemplate && (
+          {useGenerate && (
             <div className="sched-template-opts">
-              {matchingTemplates.length === 0 ? (
+              {!countsValid ? (
                 <p className="sched-muted">
-                  No templates for {counts.pilots} pilots. Load one via{' '}
-                  <code>parse_templates.py</code>.
+                  Robots ({counts.robots}) + Tasks ({counts.tasks}) must equal
+                  Pilots ({counts.pilots}) to generate.
+                </p>
+              ) : !ratioOk ? (
+                <p className="sched-error">
+                  Pilot/robot ratio ({(counts.pilots / counts.robots).toFixed(2)}) is
+                  below 1.33 — operators would get insufficient rest.
                 </p>
               ) : (
                 <>
-                  <label>
-                    Template
+                  <p className="sched-muted" style={{ marginBottom: '0.5rem' }}>
+                    Algorithm: <strong>{isBlockRotation ? 'Block Rotation' : 'Cascade'}</strong>
+                    {' '}({counts.pilots}P-{counts.robots}R-{counts.tasks}T)
+                  </p>
+                  <label className="sched-time-label">
+                    Swap duration
                     <select
                       className="sched-select"
-                      value={selectedTplId ?? ''}
-                      onChange={(e) =>
-                        setSelectedTplId(
-                          e.target.value ? Number(e.target.value) : null,
-                        )
-                      }
+                      value={swapMin}
+                      onChange={(e) => setSwapMin(Number(e.target.value))}
                     >
-                      <option value="">— choose —</option>
-                      {matchingTemplates.map((t) => (
-                        <option key={t.id} value={t.id}>
-                          {t.name} ({t.n_robots}R {t.n_tasks}T, {t.n_slots}{' '}
-                          slots)
-                        </option>
+                      {SWAP_OPTIONS.map((m) => (
+                        <option key={m} value={m}>{m} min</option>
                       ))}
                     </select>
                   </label>
                   <label className="sched-time-label">
-                    Template starts at
+                    Template duration
+                    <select
+                      className="sched-select"
+                      value={totalHours}
+                      onChange={(e) => setTotalHours(Number(e.target.value))}
+                    >
+                      {[4, 5, 6, 7, 8, 9, 10, 11, 12].map((h) => (
+                        <option key={h} value={h}>{h} hours</option>
+                      ))}
+                    </select>
+                  </label>
+                  <label className="sched-time-label">
+                    Schedule starts at
                     <select
                       value={tplStartTime}
                       onChange={(e) => setTplStartTime(e.target.value)}
@@ -273,7 +294,7 @@ export default function AddGroupModal({
                     </select>
                   </label>
                   <p className="sched-muted">
-                    Template slots outside the schedule window ({doc.day_start}–
+                    Slots outside the schedule window ({doc.day_start}–
                     {doc.day_end}) are clipped.
                   </p>
                 </>
