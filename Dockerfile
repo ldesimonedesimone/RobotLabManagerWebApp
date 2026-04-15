@@ -14,6 +14,7 @@ COPY backend/requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY backend/ ./
+COPY generate_cascade_template.py /app/generate_cascade_template.py
 COPY --from=frontend-build /app/frontend/dist /app/frontend/dist
 
 EXPOSE 8000
