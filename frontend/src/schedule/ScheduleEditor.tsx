@@ -39,6 +39,7 @@ export default function ScheduleEditor() {
     'idle' | 'saving' | 'saved' | 'error'
   >('idle')
   const [modalOpen, setModalOpen] = useState(false)
+  const [editingGroup, setEditingGroup] = useState<ScheduleGroup | null>(null)
   const [brushes, setBrushes] = useState<Record<string, Brush>>({})
   const [activeTab, setActiveTab] = useState<TabId>('robot')
   const [rosterOps, setRosterOps] = useState<RosterOperator[]>([])
@@ -344,6 +345,7 @@ export default function ScheduleEditor() {
                 onChange={(ng) => updateGroup(g.id, ng)}
                 onDelete={() => removeGroup(g.id)}
                 onCopy={addGroup}
+                onEdit={() => { setEditingGroup(g); setModalOpen(true) }}
                 onPickPilot={(id) =>
                   setBrushes((s) => ({
                     ...s,
@@ -380,8 +382,10 @@ export default function ScheduleEditor() {
         todayPilots={day === 'today' ? (doc ? pilotNamesInDoc(doc) : new Set()) : (otherDayDoc ? pilotNamesInDoc(otherDayDoc) : new Set())}
         tomorrowPilots={day === 'tomorrow' ? (doc ? pilotNamesInDoc(doc) : new Set()) : (otherDayDoc ? pilotNamesInDoc(otherDayDoc) : new Set())}
         open={modalOpen}
-        onClose={() => setModalOpen(false)}
+        onClose={() => { setModalOpen(false); setEditingGroup(null) }}
         onCreate={addGroup}
+        editGroup={editingGroup}
+        onUpdate={(g) => { updateGroup(g.id, g); setEditingGroup(null) }}
       />
     </div>
   )

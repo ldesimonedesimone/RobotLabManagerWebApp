@@ -28,6 +28,8 @@ type Props = {
   open: boolean
   onClose: () => void
   onCreate: (g: ScheduleGroup) => void
+  editGroup?: ScheduleGroup | null
+  onUpdate?: (g: ScheduleGroup) => void
 }
 
 export default function AddGroupModal({
@@ -38,7 +40,11 @@ export default function AddGroupModal({
   open,
   onClose,
   onCreate,
+  editGroup,
+  onUpdate,
 }: Props) {
+  const isEdit = !!editGroup
+
   const [name, setName] = useState('New group')
   const [robots, setRobots] = useState('Robot A\nRobot B')
   const [tasks, setTasks] = useState('Break')
@@ -56,6 +62,18 @@ export default function AddGroupModal({
   useEffect(() => {
     setTplStartTime(doc.day_start)
   }, [doc.day_start])
+
+  useEffect(() => {
+    if (!editGroup) return
+    setName(editGroup.name)
+    setRobots(editGroup.robot_labels.join('\n'))
+    setTasks(editGroup.task_labels.join('\n'))
+    setPilots(editGroup.pilots.map((p) => p.name).join('\n'))
+    setUseRoster(false)
+    setSelectedRosterIds(new Set())
+    setUseGenerate(false)
+    setErr(null)
+  }, [editGroup])
 
   const counts = useMemo(() => {
     const r = parseLines(robots).length
@@ -92,12 +110,12 @@ export default function AddGroupModal({
       ? rosterOperators.filter((o) => selectedRosterIds.has(o.id)).map((o) => o.name)
       : parseLines(pilots)
     const g: ScheduleGroup = {
-      id: newId(),
+      id: isEdit ? editGroup.id : newId(),
       name: name.trim() || 'Untitled group',
       robot_labels,
       task_labels,
       pilots: pilotNames.map((n, i) => ({
-        id: newId(),
+        id: isEdit && i < editGroup.pilots.length ? editGroup.pilots[i].id : newId(),
         name: n,
         color_hex: pilotColorForIndex(i),
       })),
@@ -127,11 +145,17 @@ export default function AddGroupModal({
         return
       }
       setSubmitting(false)
+    } else if (isEdit && !useGenerate) {
+      g.grid = editGroup.grid
     } else {
       g.grid = emptyGrid(doc.day_start, doc.day_end, robot_labels.length + task_labels.length)
     }
 
-    onCreate(g)
+    if (isEdit && onUpdate) {
+      onUpdate(g)
+    } else {
+      onCreate(g)
+    }
     onClose()
     resetForm()
   }
@@ -139,7 +163,7 @@ export default function AddGroupModal({
   return (
     <div className="sched-modal-overlay" role="dialog" aria-modal>
       <div className="sched-modal">
-        <h3>Add group</h3>
+        <h3>{isEdit ? 'Edit group' : 'Add group'}</h3>
         <p className="sched-modal-hint">
           One entry per line (or comma-separated). Robots + tasks must equal
           number of pilots.

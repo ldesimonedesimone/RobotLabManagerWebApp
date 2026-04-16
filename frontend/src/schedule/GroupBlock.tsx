@@ -13,6 +13,7 @@ type Props = {
   onChange: (g: ScheduleGroup) => void
   onDelete: () => void
   onCopy: (g: ScheduleGroup) => void
+  onEdit: () => void
   onPickPilot: (id: string) => void
   onPickEraser: () => void
 }
@@ -26,6 +27,7 @@ export default function GroupBlock({
   onChange,
   onDelete,
   onCopy,
+  onEdit,
   onPickPilot,
   onPickEraser,
 }: Props) {
@@ -107,6 +109,9 @@ export default function GroupBlock({
             }}
           >
             Copy group
+          </button>
+          <button type="button" className="sched-secondary" onClick={onEdit}>
+            Edit group
           </button>
           <button type="button" className="sched-danger" onClick={onDelete}>
             Delete group
