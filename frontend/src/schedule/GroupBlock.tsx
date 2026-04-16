@@ -110,6 +110,23 @@ export default function GroupBlock({
           >
             Copy group
           </button>
+          <button
+            type="button"
+            className="sched-secondary"
+            onClick={() => {
+              const colors = group.pilots.map((p) => p.color_hex)
+              for (let i = colors.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1))
+                ;[colors[i], colors[j]] = [colors[j], colors[i]]
+              }
+              onChange({
+                ...group,
+                pilots: group.pilots.map((p, i) => ({ ...p, color_hex: colors[i] })),
+              })
+            }}
+          >
+            Shuffle colors
+          </button>
           <button type="button" className="sched-secondary" onClick={onEdit}>
             Edit group
           </button>
