@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import asyncio
+import logging
 import os
 import sys
 from datetime import datetime
@@ -210,9 +212,39 @@ def metrics_conn():
         yield conn
 
 
+_keepalive_task: asyncio.Task | None = None
+_KEEPALIVE_INTERVAL = 240
+
+logger = logging.getLogger("keepalive")
+
+
+async def _db_keepalive() -> None:
+    while True:
+        await asyncio.sleep(_KEEPALIVE_INTERVAL)
+        try:
+            with _get_schedule_pool().connection() as conn:
+                conn.execute("SELECT 1")
+            logger.debug("DB keepalive ping OK")
+        except Exception as exc:
+            logger.warning("DB keepalive ping failed: %s", exc)
+
+
+@app.on_event("startup")
+def _start_keepalive() -> None:
+    global _keepalive_task
+    try:
+        _get_schedule_pool()
+        _keepalive_task = asyncio.get_event_loop().create_task(_db_keepalive())
+    except Exception:
+        pass
+
+
 @app.on_event("shutdown")
 def _close_pools():
-    global _schedule_pool, _metrics_pool
+    global _schedule_pool, _metrics_pool, _keepalive_task
+    if _keepalive_task:
+        _keepalive_task.cancel()
+        _keepalive_task = None
     if _schedule_pool:
         _schedule_pool.close()
         _schedule_pool = None
@@ -224,6 +256,17 @@ def _close_pools():
 @app.get("/api/health")
 def health() -> dict[str, str]:
     return {"status": "ok"}
+
+
+class UnlockRequest(BaseModel):
+    password: str
+
+
+@app.post("/api/auth/unlock")
+def auth_unlock(body: UnlockRequest) -> dict[str, bool]:
+    expected = os.environ.get("EDIT_PASSWORD", "")
+    assert expected, "EDIT_PASSWORD env var not set on server"
+    return {"ok": body.password == expected}
 
 
 @app.get("/api/schedule/templates")

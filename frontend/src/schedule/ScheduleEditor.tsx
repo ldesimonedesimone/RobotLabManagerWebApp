@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { getSchedule, listRoster, putSchedule, type RosterOperator } from '../scheduleApi'
+import { useEditMode } from '../EditModeContext'
 import type { ScheduleDocument, ScheduleGroup } from './model'
 
 function pilotNamesInDoc(doc: ScheduleDocument): Set<string> {
@@ -32,6 +33,7 @@ export default function ScheduleEditor() {
   const shift = Number(shiftStr)
   const day = dayStr === 'tomorrow' ? 'tomorrow' : 'today'
   const navigate = useNavigate()
+  const { isEditMode } = useEditMode()
 
   const [doc, setDoc] = useState<ScheduleDocument | null>(null)
   const [err, setErr] = useState<string | null>(null)
@@ -79,7 +81,7 @@ export default function ScheduleEditor() {
   }, [shift, day, shiftStr, dayStr])
 
   useEffect(() => {
-    if (!doc) return
+    if (!doc || !isEditMode) return
     if (skipFirstSave.current) {
       skipFirstSave.current = false
       return
@@ -94,7 +96,7 @@ export default function ScheduleEditor() {
         .catch(() => setSaveState('error'))
     }, 450)
     return () => window.clearTimeout(t)
-  }, [doc, shift, day])
+  }, [doc, shift, day, isEditMode])
 
   const updateGroup = useCallback((id: string, g: ScheduleGroup) => {
     setDoc((prev) => {
@@ -238,6 +240,7 @@ export default function ScheduleEditor() {
               value={doc.day_start}
               onChange={(e) => handleTimeChange('day_start', e.target.value)}
               className="sched-time-input"
+              disabled={!isEditMode}
             >
               {TIME_OPTIONS_15.map((t) => (
                 <option key={t} value={t}>{t}</option>
@@ -250,6 +253,7 @@ export default function ScheduleEditor() {
               value={doc.day_end}
               onChange={(e) => handleTimeChange('day_end', e.target.value)}
               className="sched-time-input"
+              disabled={!isEditMode}
             >
               {TIME_OPTIONS_15.map((t) => (
                 <option key={t} value={t}>{t}</option>
@@ -262,7 +266,7 @@ export default function ScheduleEditor() {
           {saveState === 'saved' && 'Saved'}
           {saveState === 'error' && 'Save failed'}
         </span>
-        {day === 'today' && (
+        {day === 'today' && isEditMode && (
           <button
             type="button"
             className="sched-promote-btn"
@@ -280,7 +284,7 @@ export default function ScheduleEditor() {
             Copy to Tomorrow →
           </button>
         )}
-        {day === 'tomorrow' && (
+        {day === 'tomorrow' && isEditMode && (
           <button
             type="button"
             className="sched-promote-btn"
@@ -327,13 +331,15 @@ export default function ScheduleEditor() {
       <div className="sched-tab-body">
         {activeTab === 'robot' && (
           <section className="sched-section sched-robot-section">
-            <button
-              type="button"
-              className="sched-primary"
-              onClick={() => setModalOpen(true)}
-            >
-              Add group
-            </button>
+            {isEditMode && (
+              <button
+                type="button"
+                className="sched-primary"
+                onClick={() => setModalOpen(true)}
+              >
+                Add group
+              </button>
+            )}
             {doc.groups.map((g) => (
               <GroupBlock
                 key={g.id}
@@ -342,6 +348,7 @@ export default function ScheduleEditor() {
                 group={g}
                 activePilotId={brushes[g.id]?.pilotId ?? null}
                 eraser={brushes[g.id]?.eraser ?? false}
+                editable={isEditMode}
                 onChange={(ng) => updateGroup(g.id, ng)}
                 onDelete={() => removeGroup(g.id)}
                 onCopy={addGroup}

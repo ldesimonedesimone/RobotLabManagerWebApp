@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState, type ChangeEvent, ty
 import { applyForward, applyForwardDetailed, pinKey, type PinEndSet } from "./recalc";
 import { parseWorkbookToGrid } from "./parseXlsx";
 import { getWeekByWeekState, putWeekByWeekState } from "../api";
+import { useEditMode } from "../EditModeContext";
 import type { FlowCell, GridModel, StreamId } from "./types";
 import {
   DC_ROBOTS_ID,
@@ -335,6 +336,7 @@ function WeekCell({
 }
 
 export default function WeekbyWeekFlow() {
+  const { isEditMode } = useEditMode();
   const [base, setBase] = useState<GridModel>(() => applyForward(emptyGrid(6), new Set()));
   const [pinEnd, setPinEnd] = useState<PinEndSet>(() => new Set());
   const [sheetMode, setSheetMode] = useState<SheetMode>("flow");
@@ -373,7 +375,7 @@ export default function WeekbyWeekFlow() {
   }, []);
 
   useEffect(() => {
-    if (!hydrated.current) return;
+    if (!hydrated.current || !isEditMode) return;
     if (saveTimer.current != null) window.clearTimeout(saveTimer.current);
     saveTimer.current = window.setTimeout(() => {
       putWeekByWeekState({
@@ -388,7 +390,7 @@ export default function WeekbyWeekFlow() {
     return () => {
       if (saveTimer.current != null) window.clearTimeout(saveTimer.current);
     };
-  }, [base, pinEnd, sheetMode, settings]);
+  }, [base, pinEnd, sheetMode, settings, isEditMode]);
 
   const setSheetModeSafe = useCallback((m: SheetMode) => {
     setSheetMode(m);
@@ -581,6 +583,7 @@ export default function WeekbyWeekFlow() {
                   onChange={(e) => setUltra(w, e.target.value)}
                   rows={3}
                   className="ultra-ta"
+                  readOnly={!isEditMode}
                 />
               </div>
             </td>
@@ -693,7 +696,7 @@ export default function WeekbyWeekFlow() {
             <WeekCell
               sid={sid}
               week={w}
-              readOnly={false}
+              readOnly={!isEditMode}
               isDc={isDc}
               band={bandShort}
               mirroredIn={mirroredIn}
@@ -746,6 +749,7 @@ export default function WeekbyWeekFlow() {
               className={sheetMode === "flow" ? "btn pri" : "btn sec"}
               onClick={() => setSheetModeSafe("flow")}
               title="Edit in and out; end follows the balance"
+              disabled={!isEditMode}
             >
               In / out
             </button>
@@ -754,41 +758,47 @@ export default function WeekbyWeekFlow() {
               className={sheetMode === "end" ? "btn pri" : "btn sec"}
               onClick={() => setSheetModeSafe("end")}
               title="Edit end counts; pins that week and derives in from out where applicable"
+              disabled={!isEditMode}
             >
               End
             </button>
           </div>
-          <label className="btn sec">
-            Load .xlsx
-            <input type="file" accept=".xlsx" hidden onChange={onFile} />
-          </label>
-          <button type="button" className="btn sec" onClick={addWeek}>
-            Add week
-          </button>
-          <button
-            type="button"
-            className="btn sec"
-            disabled={!canTrimWeek}
-            onClick={() => trimWeeks("first")}
-            title="Remove the earliest week column"
-          >
-            Remove first week
-          </button>
-          <button
-            type="button"
-            className="btn sec"
-            disabled={!canTrimWeek}
-            onClick={() => trimWeeks("last")}
-            title="Remove the latest week column"
-          >
-            Remove last week
-          </button>
+          {isEditMode && (
+            <>
+              <label className="btn sec">
+                Load .xlsx
+                <input type="file" accept=".xlsx" hidden onChange={onFile} />
+              </label>
+              <button type="button" className="btn sec" onClick={addWeek}>
+                Add week
+              </button>
+              <button
+                type="button"
+                className="btn sec"
+                disabled={!canTrimWeek}
+                onClick={() => trimWeeks("first")}
+                title="Remove the earliest week column"
+              >
+                Remove first week
+              </button>
+              <button
+                type="button"
+                className="btn sec"
+                disabled={!canTrimWeek}
+                onClick={() => trimWeeks("last")}
+                title="Remove the latest week column"
+              >
+                Remove last week
+              </button>
+            </>
+          )}
         </div>
         <div className="wbw-globals">
           <label>
             Days in work week
             <select
               value={settings.days_in_week}
+              disabled={!isEditMode}
               onChange={(e) =>
                 setSettings((p) => ({
                   ...p,
@@ -807,6 +817,7 @@ export default function WeekbyWeekFlow() {
               type="number"
               min={0}
               max={100}
+              disabled={!isEditMode}
               value={settings.percent_usable}
               onChange={(e) =>
                 setSettings((p) => ({
@@ -822,6 +833,7 @@ export default function WeekbyWeekFlow() {
               type="number"
               min={0}
               max={100}
+              disabled={!isEditMode}
               value={settings.uptime_percent}
               onChange={(e) =>
                 setSettings((p) => ({
@@ -837,6 +849,7 @@ export default function WeekbyWeekFlow() {
               type="number"
               min={0}
               step="0.25"
+              disabled={!isEditMode}
               value={settings.hours_shift_1}
               onChange={(e) => setHours("hours_shift_1", Number(e.target.value) || 0)}
             />
@@ -847,6 +860,7 @@ export default function WeekbyWeekFlow() {
               type="number"
               min={0}
               step="0.25"
+              disabled={!isEditMode}
               value={settings.hours_shift_2}
               onChange={(e) => setHours("hours_shift_2", Number(e.target.value) || 0)}
             />
@@ -857,6 +871,7 @@ export default function WeekbyWeekFlow() {
               type="number"
               min={0}
               step="0.25"
+              disabled={!isEditMode}
               value={settings.hours_shift_3}
               onChange={(e) => setHours("hours_shift_3", Number(e.target.value) || 0)}
             />

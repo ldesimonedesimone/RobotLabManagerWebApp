@@ -5,6 +5,7 @@ type Props = {
   onChange: (v: string) => void
   className?: string
   doubleClick?: boolean
+  disabled?: boolean
 }
 
 export default function EditableText({
@@ -12,6 +13,7 @@ export default function EditableText({
   onChange,
   className,
   doubleClick,
+  disabled,
 }: Props) {
   const [editing, setEditing] = useState(false)
   const [draft, setDraft] = useState(value)
@@ -27,6 +29,7 @@ export default function EditableText({
 
   if (!editing) {
     const handler = (e: React.MouseEvent) => {
+      if (disabled) return
       e.stopPropagation()
       setEditing(true)
     }

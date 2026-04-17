@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useEditMode } from '../EditModeContext'
 import {
   addRosterOperator,
   deleteRosterOperator,
@@ -25,6 +26,7 @@ const SHIFTS = [1, 2, 3] as const
 const DAYS = ['today', 'tomorrow'] as const
 
 export default function RosterPage() {
+  const { isEditMode } = useEditMode()
   const [roster, setRoster] = useState<RosterOperator[]>([])
   const [schedules, setSchedules] = useState<ScheduleMap>({})
   const [newName, setNewName] = useState<Record<number, string>>({ 1: '', 2: '', 3: '' })
@@ -141,17 +143,20 @@ export default function RosterPage() {
                             onChange={() => toggleAbsent(op)}
                             className="roster-absent-cb"
                             title="Mark absent"
+                            disabled={!isEditMode}
                           />
                         </td>
                         <td>
-                          <button
-                            type="button"
-                            className="roster-remove-btn"
-                            onClick={() => handleDelete(op.id)}
-                            title="Remove from roster"
-                          >
-                            ×
-                          </button>
+                          {isEditMode && (
+                            <button
+                              type="button"
+                              className="roster-remove-btn"
+                              onClick={() => handleDelete(op.id)}
+                              title="Remove from roster"
+                            >
+                              ×
+                            </button>
+                          )}
                         </td>
                       </tr>
                     )
@@ -161,18 +166,20 @@ export default function RosterPage() {
                   )}
                 </tbody>
               </table>
-              <div className="roster-add-row">
-                <input
-                  placeholder="New pilot name"
-                  value={newName[shift] ?? ''}
-                  onChange={(e) => setNewName((p) => ({ ...p, [shift]: e.target.value }))}
-                  onKeyDown={(e) => { if (e.key === 'Enter') handleAdd(shift) }}
-                  className="sched-input roster-add-input"
-                />
-                <button type="button" className="sched-primary roster-add-btn" onClick={() => handleAdd(shift)}>
-                  Add
-                </button>
-              </div>
+              {isEditMode && (
+                <div className="roster-add-row">
+                  <input
+                    placeholder="New pilot name"
+                    value={newName[shift] ?? ''}
+                    onChange={(e) => setNewName((p) => ({ ...p, [shift]: e.target.value }))}
+                    onKeyDown={(e) => { if (e.key === 'Enter') handleAdd(shift) }}
+                    className="sched-input roster-add-input"
+                  />
+                  <button type="button" className="sched-primary roster-add-btn" onClick={() => handleAdd(shift)}>
+                    Add
+                  </button>
+                </div>
+              )}
             </section>
           )
         })}

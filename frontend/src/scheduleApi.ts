@@ -1,6 +1,6 @@
 import type { ScheduleDocument, TemplateDetail, TemplateInfo, GeneratedGrid } from './schedule/model'
 
-const API_BASE = import.meta.env.VITE_API_BASE ?? ''
+export const API_BASE = import.meta.env.VITE_API_BASE ?? ''
 
 async function readErrorBody(r: Response): Promise<string> {
   const t = await r.text()

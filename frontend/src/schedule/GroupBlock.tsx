@@ -10,6 +10,7 @@ type Props = {
   group: ScheduleGroup
   activePilotId: string | null
   eraser: boolean
+  editable: boolean
   onChange: (g: ScheduleGroup) => void
   onDelete: () => void
   onCopy: (g: ScheduleGroup) => void
@@ -24,6 +25,7 @@ export default function GroupBlock({
   group,
   activePilotId,
   eraser,
+  editable,
   onChange,
   onDelete,
   onCopy,
@@ -36,6 +38,7 @@ export default function GroupBlock({
 
   const applyPaint = useCallback(
     (timeIdx: number, rowIdx: number) => {
+      if (!editable) return
       const value = eraser || !activePilotId ? null : activePilotId
       const next = group.grid.map((row) => row.slice())
       if (!next[timeIdx]) return
@@ -44,7 +47,7 @@ export default function GroupBlock({
       next[timeIdx] = copy
       onChange({ ...group, grid: next })
     },
-    [group, activePilotId, eraser, onChange],
+    [group, activePilotId, eraser, editable, onChange],
   )
 
   const onCellMouseDown = (t: number, r: number) => (e: React.MouseEvent) => {
@@ -89,51 +92,54 @@ export default function GroupBlock({
           <EditableText
             value={group.name}
             onChange={(n) => onChange({ ...group, name: n })}
+            disabled={!editable}
           />
         </h3>
-        <div className="sched-group-actions">
-          <button
-            type="button"
-            className="sched-secondary"
-            onClick={() => {
-              const idMap = new Map<string, string>()
-              const pilots = group.pilots.map((p) => {
-                const pid = newId()
-                idMap.set(p.id, pid)
-                return { ...p, id: pid }
-              })
-              const grid = group.grid.map((slot) =>
-                slot.map((cell) => (cell ? idMap.get(cell) ?? null : null)),
-              )
-              onCopy({ ...group, id: newId(), name: `${group.name} (copy)`, pilots, grid })
-            }}
-          >
-            Copy group
-          </button>
-          <button
-            type="button"
-            className="sched-secondary"
-            onClick={() => {
-              const colors = group.pilots.map((p) => p.color_hex)
-              for (let i = colors.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1))
-                ;[colors[i], colors[j]] = [colors[j], colors[i]]
-              }
-              onChange({
-                ...group,
-                pilots: group.pilots.map((p, i) => ({ ...p, color_hex: colors[i] })),
-              })
-            }}
-          >
-            Shuffle colors
-          </button>
-          <button type="button" className="sched-secondary" onClick={onEdit}>
-            Edit group
-          </button>
-          <button type="button" className="sched-danger" onClick={onDelete}>
-            Delete group
-          </button>
-        </div>
+        {editable && (
+          <div className="sched-group-actions">
+            <button
+              type="button"
+              className="sched-secondary"
+              onClick={() => {
+                const idMap = new Map<string, string>()
+                const pilots = group.pilots.map((p) => {
+                  const pid = newId()
+                  idMap.set(p.id, pid)
+                  return { ...p, id: pid }
+                })
+                const grid = group.grid.map((slot) =>
+                  slot.map((cell) => (cell ? idMap.get(cell) ?? null : null)),
+                )
+                onCopy({ ...group, id: newId(), name: `${group.name} (copy)`, pilots, grid })
+              }}
+            >
+              Copy group
+            </button>
+            <button
+              type="button"
+              className="sched-secondary"
+              onClick={() => {
+                const names = group.pilots.map((p) => p.name)
+                for (let i = names.length - 1; i > 0; i--) {
+                  const j = Math.floor(Math.random() * (i + 1))
+                  ;[names[i], names[j]] = [names[j], names[i]]
+                }
+                onChange({
+                  ...group,
+                  pilots: group.pilots.map((p, i) => ({ ...p, name: names[i] })),
+                })
+              }}
+            >
+              Shuffle names
+            </button>
+            <button type="button" className="sched-secondary" onClick={onEdit}>
+              Edit group
+            </button>
+            <button type="button" className="sched-danger" onClick={onDelete}>
+              Delete group
+            </button>
+          </div>
+        )}
       </div>
       <div className="sched-legend">
         <span className="sched-legend-title">Pilots</span>
@@ -167,6 +173,7 @@ export default function GroupBlock({
               className="sched-swatch-label"
               onChange={(n) => renamePilot(p.id, n)}
               doubleClick
+              disabled={!editable}
             />
           </button>
         ))}
@@ -190,6 +197,7 @@ export default function GroupBlock({
                   <EditableText
                     value={lab}
                     onChange={(n) => renameLabel(r, n)}
+                    disabled={!editable}
                   />
                 </th>
                 {times.map((_, t) => {
