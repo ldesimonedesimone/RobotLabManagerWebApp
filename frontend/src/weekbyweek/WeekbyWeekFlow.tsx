@@ -248,7 +248,7 @@ function WeekCell({
   const lockInForEndMode = sheetMode === "end" && freeInStream;
   const disableIn = readOnly || mirroredIn || lockInForEndMode;
   const disableEnd = readOnly || sheetMode === "flow";
-  const showSourceInChip = !readOnly && freeInStream && c.in > 0;
+  const showSourceInChip = freeInStream && c.in > 0;
 
   return (
     <div className={`wbw-card wbw-card--${band}`}>
