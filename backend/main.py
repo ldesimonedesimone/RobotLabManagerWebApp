@@ -101,6 +101,14 @@ from weekbyweek_api import (  # noqa: E402
     get_state as get_weekbyweek_state,
     put_state as put_weekbyweek_state,
 )
+from survey_api import (  # noqa: E402
+    SurveyAck,
+    SurveyResponseRow,
+    SurveySubmission,
+    ensure_survey_table,
+    insert_response as insert_survey_response,
+    list_responses as list_survey_responses,
+)
 
 
 class Settings(BaseSettings):
@@ -411,6 +419,46 @@ def api_delete_roster(op_id: int) -> dict[str, str]:
     if not ok:
         raise HTTPException(status_code=404, detail="Operator not found")
     return {"ok": "true"}
+
+
+def _parse_iso_simple(s: str | None) -> datetime | None:
+    if not s:
+        return None
+    t = s.strip()
+    if t.endswith("Z"):
+        t = t[:-1] + "+00:00"
+    return datetime.fromisoformat(t)
+
+
+@app.get("/api/survey/responses", response_model=list[SurveyResponseRow])
+def api_list_survey_responses(
+    start_iso: str | None = Query(default=None),
+    end_iso: str | None = Query(default=None),
+    limit: int = Query(default=1000, ge=1, le=5000),
+) -> list[SurveyResponseRow]:
+    start = _parse_iso_simple(start_iso)
+    end = _parse_iso_simple(end_iso)
+    try:
+        with schedule_conn() as conn:
+            ensure_survey_table(conn)
+            return list_survey_responses(conn, start=start, end=end, limit=limit)
+    except psycopg.Error as e:
+        raise HTTPException(status_code=503, detail=f"Database error: {e}") from e
+
+
+@app.post("/api/survey/submit", response_model=SurveyAck)
+def api_submit_survey(body: SurveySubmission) -> SurveyAck:
+    try:
+        with schedule_conn() as conn:
+            ensure_survey_table(conn)
+            return insert_survey_response(conn, body)
+    except psycopg.errors.ReadOnlySqlTransaction as e:
+        raise HTTPException(
+            status_code=503,
+            detail="Database is read-only for survey writes. Use a writable SCHEDULE_DATABASE_URL.",
+        ) from e
+    except psycopg.Error as e:
+        raise HTTPException(status_code=503, detail=f"Database error: {e}") from e
 
 
 @app.put("/api/schedule/{shift}/{day}")

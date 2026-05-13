@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet, NavLink } from 'react-router-dom'
 import { EditModeProvider, useEditMode } from './EditModeContext'
 import './Layout.css'
 
@@ -59,6 +59,19 @@ export default function Layout() {
     <EditModeProvider>
       <div className="shell">
         <nav className="shell-topbar">
+          <NavLink
+            to="/survey"
+            end
+            className={({ isActive }) => 'topbar-link' + (isActive ? ' active' : '')}
+          >
+            Pilot survey
+          </NavLink>
+          <NavLink
+            to="/survey/results"
+            className={({ isActive }) => 'topbar-link' + (isActive ? ' active' : '')}
+          >
+            Survey results
+          </NavLink>
           <LockToggle />
         </nav>
         <Outlet />

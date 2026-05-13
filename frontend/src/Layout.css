@@ -38,9 +38,33 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  gap: 0.6rem;
   padding: 0.4rem 1rem;
   background: #0d1117;
   border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.topbar-link {
+  color: #8a94a0;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  transition: color 0.15s, background 0.15s, border-color 0.15s;
+}
+
+.topbar-link:hover {
+  color: #e2e8f0;
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(148, 163, 184, 0.25);
+}
+
+.topbar-link.active {
+  color: #00d4aa;
+  background: rgba(0, 212, 170, 0.1);
+  border-color: rgba(0, 212, 170, 0.35);
 }
 
 .lock-toggle {

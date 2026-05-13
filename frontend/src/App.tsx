@@ -5,6 +5,8 @@ import ScheduleEditor from './schedule/ScheduleEditor'
 import ScheduleHome from './schedule/ScheduleHome'
 import RosterPage from './schedule/RosterPage'
 import WeekbyWeekFlow from './weekbyweek/WeekbyWeekFlow'
+import SurveyPage from './survey/SurveyPage'
+import SurveyResultsPage from './survey/SurveyResultsPage'
 
 export default function App() {
   return (
@@ -17,6 +19,8 @@ export default function App() {
           <Route path="/schedule" element={<ScheduleHome />} />
           <Route path="/schedule/roster" element={<RosterPage />} />
           <Route path="/schedule/shift/:shift/:day" element={<ScheduleEditor />} />
+          <Route path="/survey" element={<SurveyPage />} />
+          <Route path="/survey/results" element={<SurveyResultsPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
