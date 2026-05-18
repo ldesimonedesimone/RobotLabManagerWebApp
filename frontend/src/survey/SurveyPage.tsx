@@ -1,95 +1,114 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { API_BASE } from '../scheduleApi'
+import { t, type Lang } from './strings'
 import './SurveyPage.css'
 
-const SATISFACTION = ['Very satisfied', 'Satisfied', 'Neutral', 'Unsatisfied', 'Very unsatisfied'] as const
-const MANAGEABLE = ['Very manageable', 'Manageable', 'Neutral', 'Unmanageable', 'Very unmanageable'] as const
-const WELL = ['Very well', 'Well', 'Neutral', 'Poorly', 'Very poorly'] as const
+type ScaleKey =
+  | 'PILOT_ROLE'
+  | 'SATISFACTION'
+  | 'MANAGEABLE'
+  | 'WELL'
+  | 'HEADSET_APP'
+  | 'LATENCY_WOW'
+  | 'SCHEDULING'
+  | 'COMFORT'
+  | 'TRAINING'
+
+type ScaleOption = { value: string; labelKey: string }
+
+const SCALES: Record<ScaleKey, ScaleOption[]> = {
+  PILOT_ROLE: [
+    { value: 'Trainee Pilot', labelKey: 'role_trainee' },
+    { value: 'Data Collection Pilot', labelKey: 'role_data_collection' },
+    { value: 'Customer Pilot', labelKey: 'role_customer' },
+  ],
+  SATISFACTION: [
+    { value: 'Very satisfied', labelKey: 'sat_vsat' },
+    { value: 'Satisfied', labelKey: 'sat_sat' },
+    { value: 'Neutral', labelKey: 'sat_neu' },
+    { value: 'Unsatisfied', labelKey: 'sat_uns' },
+    { value: 'Very unsatisfied', labelKey: 'sat_vuns' },
+  ],
+  MANAGEABLE: [
+    { value: 'Very manageable', labelKey: 'man_vman' },
+    { value: 'Manageable', labelKey: 'man_man' },
+    { value: 'Neutral', labelKey: 'man_neu' },
+    { value: 'Unmanageable', labelKey: 'man_unman' },
+    { value: 'Very unmanageable', labelKey: 'man_vunman' },
+  ],
+  WELL: [
+    { value: 'Very well', labelKey: 'well_vwell' },
+    { value: 'Well', labelKey: 'well_well' },
+    { value: 'Neutral', labelKey: 'well_neu' },
+    { value: 'Poorly', labelKey: 'well_poor' },
+    { value: 'Very poorly', labelKey: 'well_vpoor' },
+  ],
+  HEADSET_APP: [
+    { value: 'Worked great', labelKey: 'hs_great' },
+    { value: 'Worked well', labelKey: 'hs_well' },
+    { value: 'Some issues', labelKey: 'hs_some' },
+    { value: 'Lots of issues', labelKey: 'hs_lots' },
+    { value: "Couldn't use it", labelKey: 'hs_unusable' },
+  ],
+  LATENCY_WOW: [
+    { value: 'Better than last week', labelKey: 'lat_better' },
+    { value: 'Same as last week', labelKey: 'lat_same' },
+    { value: 'Worse than last week', labelKey: 'lat_worse' },
+  ],
+  SCHEDULING: [
+    { value: 'Worked great', labelKey: 'sch_great' },
+    { value: 'Worked well', labelKey: 'sch_well' },
+    { value: 'Neutral', labelKey: 'sch_neu' },
+    { value: 'Clunky', labelKey: 'sch_clunky' },
+    { value: 'Broken', labelKey: 'sch_broken' },
+  ],
+  COMFORT: [
+    { value: 'Very comfortable', labelKey: 'cmf_vcomf' },
+    { value: 'Comfortable', labelKey: 'cmf_comf' },
+    { value: 'Neutral', labelKey: 'cmf_neu' },
+    { value: 'Uncomfortable', labelKey: 'cmf_uncomf' },
+    { value: 'Very uncomfortable', labelKey: 'cmf_vuncomf' },
+  ],
+  TRAINING: [
+    { value: 'Very well', labelKey: 'trn_vwell' },
+    { value: 'Well', labelKey: 'trn_well' },
+    { value: 'Neutral', labelKey: 'trn_neu' },
+    { value: 'Poorly', labelKey: 'trn_poor' },
+    { value: 'Very poorly', labelKey: 'trn_vpoor' },
+    { value: "Doesn't apply to me", labelKey: 'trn_na' },
+  ],
+}
 
 type RatedQuestion = {
   id: string
-  title: string
-  options: readonly string[]
-  commentPrompt: string | null
+  titleKey: string
+  scale: ScaleKey
+  commentKey: string | null
+  required?: boolean
 }
 
 type TextQuestion = {
   id: string
-  title: string
+  titleKey: string
   textOnly: true
-  placeholder?: string
+  placeholderKey: string
 }
 
 type Question = RatedQuestion | TextQuestion
 
 const QUESTIONS: Question[] = [
-  {
-    id: 'job_satisfaction',
-    title: 'How satisfied are you with your job as an Ultra Pilot overall?',
-    options: SATISFACTION,
-    commentPrompt: null,
-  },
-  {
-    id: 'teleop_experience',
-    title: 'How satisfied are you with the teleoperation experience overall?',
-    options: SATISFACTION,
-    commentPrompt: 'Any specific comments?',
-  },
-  {
-    id: 'ultra_app',
-    title: 'How satisfied are you with the Ultra app overall?',
-    options: SATISFACTION,
-    commentPrompt: 'Any specific comments?',
-  },
-  {
-    id: 'shift_schedule_breaks',
-    title: 'How satisfied are you with shift scheduling and breaks while at work?',
-    options: SATISFACTION,
-    commentPrompt: 'Any specific comments?',
-  },
-  {
-    id: 'leaderboard_badges',
-    title: 'How satisfied are you with pilot leaderboard and badge functionality in the web app?',
-    options: SATISFACTION,
-    commentPrompt: 'Any specific comments?',
-  },
-  {
-    id: 'office_equipment',
-    title: 'How satisfied are you with the equipment in the office (chairs, computers, headsets, etc.)?',
-    options: SATISFACTION,
-    commentPrompt: 'Any specific comments?',
-  },
-  {
-    id: 'training_program',
-    title: 'How satisfied are you with pilot training program?',
-    options: SATISFACTION,
-    commentPrompt: 'Any specific comments?',
-  },
-  {
-    id: 'physical_demand',
-    title:
-      'How manageable is the physical demand of operating (headset fatigue, eye strain, break frequency) during a typical shift?',
-    options: MANAGEABLE,
-    commentPrompt: 'What specifically could be improved?',
-  },
-  {
-    id: 'ultra_growth_support',
-    title: 'How well does Ultra support your growth and recognize your performance as a pilot?',
-    options: WELL,
-    commentPrompt: 'Anything specific that can be improved?',
-  },
-  {
-    id: 'remotics_growth_support',
-    title: 'How well does Remotics support your growth and recognize your performance as a pilot?',
-    options: WELL,
-    commentPrompt: 'Anything specific that can be improved?',
-  },
-  {
-    id: 'anything_else',
-    title: 'Anything else on your mind?',
-    textOnly: true,
-    placeholder: 'Open the floor: praise, frustrations, ideas, anything at all.',
-  },
+  { id: 'pilot_role', titleKey: 'q_pilot_role', scale: 'PILOT_ROLE', commentKey: null, required: true },
+  { id: 'job_satisfaction', titleKey: 'q_job_satisfaction', scale: 'SATISFACTION', commentKey: 'comment_any' },
+  { id: 'teleop_experience', titleKey: 'q_teleop_experience', scale: 'SATISFACTION', commentKey: 'comment_any' },
+  { id: 'headset_app', titleKey: 'q_headset_app', scale: 'HEADSET_APP', commentKey: 'comment_any' },
+  { id: 'latency_wow', titleKey: 'q_latency_wow', scale: 'LATENCY_WOW', commentKey: 'comment_latency' },
+  { id: 'shift_schedule', titleKey: 'q_shift_schedule', scale: 'SCHEDULING', commentKey: 'comment_any' },
+  { id: 'leaderboard_badges', titleKey: 'q_leaderboard_badges', scale: 'SATISFACTION', commentKey: 'comment_any' },
+  { id: 'comfort_overall', titleKey: 'q_comfort_overall', scale: 'COMFORT', commentKey: 'comment_any' },
+  { id: 'training_program', titleKey: 'q_training_program', scale: 'TRAINING', commentKey: 'comment_any' },
+  { id: 'physical_demand', titleKey: 'q_physical_demand', scale: 'MANAGEABLE', commentKey: 'comment_improve' },
+  { id: 'growth_support', titleKey: 'q_growth_support', scale: 'WELL', commentKey: 'comment_anything_improve' },
+  { id: 'anything_else', titleKey: 'q_anything_else', textOnly: true, placeholderKey: 'q_anything_else_placeholder' },
 ]
 
 type AnswerEntry = { rating?: string; comment?: string }
@@ -99,20 +118,81 @@ function isRated(q: Question): q is RatedQuestion {
   return !('textOnly' in q)
 }
 
+const LANG_STORAGE_KEY = 'survey.lang'
+const CONFETTI_PIECES = 18
+
+// RGB triplets used as `--answer-rgb` CSS variable for per-answer glow/label/check tints.
+const ANSWER_COLORS: string[] = [
+  '0, 212, 170',   // teal
+  '94, 234, 212',  // mint
+  '251, 191, 36',  // amber
+  '244, 114, 182', // pink
+  '167, 139, 250', // violet
+  '96, 165, 250',  // blue
+  '74, 222, 128',  // green
+  '248, 113, 113', // coral
+]
+
+function pickAnswerColor(prev: string | undefined): string {
+  if (ANSWER_COLORS.length <= 1) return ANSWER_COLORS[0]
+  let next = ANSWER_COLORS[Math.floor(Math.random() * ANSWER_COLORS.length)]
+  if (next === prev) {
+    // avoid back-to-back same color
+    next = ANSWER_COLORS[(ANSWER_COLORS.indexOf(next) + 1) % ANSWER_COLORS.length]
+  }
+  return next
+}
+
 export default function SurveyPage() {
-  const [pilotName, setPilotName] = useState('')
+  const [lang, setLang] = useState<Lang>(() => {
+    const stored = (typeof window !== 'undefined' && localStorage.getItem(LANG_STORAGE_KEY)) || 'en'
+    return stored === 'es' ? 'es' : 'en'
+  })
   const [answers, setAnswers] = useState<Answers>({})
   const [status, setStatus] = useState<'idle' | 'submitting' | 'done' | 'error'>('idle')
   const [errorMsg, setErrorMsg] = useState('')
+  const [justAnswered, setJustAnswered] = useState<Record<string, number>>({})
+  const [answerColor, setAnswerColor] = useState<Record<string, string>>({})
+  const timersRef = useRef<Record<string, ReturnType<typeof setTimeout>>>({})
 
-  const hasAnyAnswer = useMemo(() => {
-    return Object.values(answers).some(
-      (a) => (a.rating && a.rating.trim()) || (a.comment && a.comment.trim()),
+  useEffect(() => {
+    localStorage.setItem(LANG_STORAGE_KEY, lang)
+  }, [lang])
+
+  useEffect(() => {
+    return () => {
+      Object.values(timersRef.current).forEach((id) => clearTimeout(id))
+    }
+  }, [])
+
+  const ratedAnswered = useMemo(() => {
+    return QUESTIONS.filter((q) => isRated(q) && answers[q.id]?.rating).length
+  }, [answers])
+
+  const ratedTotal = useMemo(() => QUESTIONS.filter(isRated).length, [])
+
+  const progressPct = ratedTotal ? Math.round((ratedAnswered / ratedTotal) * 100) : 0
+
+  const hasRole = !!answers['pilot_role']?.rating
+  const hasAnyOther = useMemo(() => {
+    return Object.entries(answers).some(
+      ([qid, a]) => qid !== 'pilot_role' && ((a.rating && a.rating.trim()) || (a.comment && a.comment.trim())),
     )
   }, [answers])
+  const canSubmit = hasRole && hasAnyOther
 
   function setRating(qid: string, value: string) {
     setAnswers((prev) => ({ ...prev, [qid]: { ...prev[qid], rating: value } }))
+    setAnswerColor((prev) => ({ ...prev, [qid]: pickAnswerColor(prev[qid]) }))
+    setJustAnswered((prev) => ({ ...prev, [qid]: (prev[qid] || 0) + 1 }))
+    if (timersRef.current[qid]) clearTimeout(timersRef.current[qid])
+    timersRef.current[qid] = setTimeout(() => {
+      setJustAnswered((prev) => {
+        const next = { ...prev }
+        delete next[qid]
+        return next
+      })
+    }, 750)
   }
 
   function setComment(qid: string, value: string) {
@@ -121,21 +201,18 @@ export default function SurveyPage() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    if (!hasAnyAnswer || status === 'submitting') return
+    if (!canSubmit || status === 'submitting') return
     setStatus('submitting')
     setErrorMsg('')
     try {
       const r = await fetch(`${API_BASE}/api/survey/submit`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          pilot_name: pilotName.trim() || null,
-          answers,
-        }),
+        body: JSON.stringify({ pilot_name: null, answers }),
       })
       if (!r.ok) {
-        const t = await r.text()
-        throw new Error(t || r.statusText)
+        const body = await r.text()
+        throw new Error(body || r.statusText)
       }
       setStatus('done')
     } catch (err) {
@@ -145,22 +222,25 @@ export default function SurveyPage() {
   }
 
   function reset() {
-    setPilotName('')
     setAnswers({})
     setStatus('idle')
     setErrorMsg('')
+    setJustAnswered({})
   }
 
   if (status === 'done') {
     return (
       <div className="survey-page">
         <div className="survey-card survey-done">
-          <h1>Thanks for the feedback</h1>
-          <p>
-            Your responses were recorded. Honest input is how this place gets better — appreciated.
-          </p>
+          <div className="confetti" aria-hidden="true">
+            {Array.from({ length: CONFETTI_PIECES }).map((_, i) => (
+              <span key={i} className={`confetti-piece c${i % 6}`} style={{ ['--i' as string]: i }} />
+            ))}
+          </div>
+          <h1>{t(lang, 'thanks_title')}</h1>
+          <p>{t(lang, 'thanks_body')}</p>
           <button type="button" className="survey-btn" onClick={reset}>
-            Submit another
+            {t(lang, 'submit_another')}
           </button>
         </div>
       </div>
@@ -170,91 +250,130 @@ export default function SurveyPage() {
   return (
     <div className="survey-page">
       <form className="survey-card" onSubmit={handleSubmit}>
-        <h1>Pilot survey</h1>
-        <p className="survey-lead">
-          Eleven short questions. Skip anything that doesn't apply. Name is optional —
-          submit anonymously if you prefer.
-        </p>
+        <header className="survey-header">
+          <h1>{t(lang, 'page_title')}</h1>
+          <div className="lang-toggle" role="group" aria-label={t(lang, 'lang_toggle_aria')}>
+            <button
+              type="button"
+              className={`lang-btn${lang === 'en' ? ' active' : ''}`}
+              onClick={() => setLang('en')}
+            >
+              {t(lang, 'lang_en')}
+            </button>
+            <button
+              type="button"
+              className={`lang-btn${lang === 'es' ? ' active' : ''}`}
+              onClick={() => setLang('es')}
+            >
+              {t(lang, 'lang_es')}
+            </button>
+          </div>
+        </header>
 
-        <div className="survey-field">
-          <label htmlFor="pilot-name" className="survey-field-label">
-            Your name <span className="survey-optional">(optional)</span>
-          </label>
-          <input
-            id="pilot-name"
-            type="text"
-            className="survey-input"
-            value={pilotName}
-            onChange={(e) => setPilotName(e.target.value)}
-            placeholder="e.g. Sebastian"
-            maxLength={120}
-          />
+        <p className="survey-lead">{t(lang, 'page_lead')}</p>
+
+        <div className="survey-progress" aria-hidden="true">
+          <div className="survey-progress-bar" style={{ width: `${progressPct}%` }} />
+          <div className="survey-progress-text">
+            {ratedAnswered} / {ratedTotal} {t(lang, 'progress')}
+          </div>
         </div>
 
-        {QUESTIONS.map((q, idx) => (
-          <fieldset className="survey-q" key={q.id}>
-            <legend className="survey-q-title">
-              <span className="survey-q-num">{idx + 1}.</span> {q.title}
-            </legend>
+        {QUESTIONS.map((q, idx) => {
+          const pulse = justAnswered[q.id] || 0
+          const rgb = answerColor[q.id]
+          const fsStyle = rgb ? ({ ['--answer-rgb' as string]: rgb } as React.CSSProperties) : undefined
+          return (
+            <fieldset
+              className={`survey-q${pulse ? ' just-answered' : ''}`}
+              key={q.id}
+              style={fsStyle}
+            >
+              <legend className="survey-q-title">
+                <span className="survey-q-num">{idx + 1}.</span> {t(lang, q.titleKey)}
+                {isRated(q) && q.required && <span className="survey-required"> *</span>}
+              </legend>
 
-            {isRated(q) ? (
-              <>
-                <div className="survey-options">
-                  {q.options.map((opt) => {
-                    const selected = answers[q.id]?.rating === opt
-                    return (
-                      <label
-                        key={opt}
-                        className={`survey-option${selected ? ' selected' : ''}`}
-                      >
-                        <input
-                          type="radio"
-                          name={q.id}
-                          value={opt}
-                          checked={selected}
-                          onChange={() => setRating(q.id, opt)}
-                        />
-                        <span>{opt}</span>
-                      </label>
-                    )
-                  })}
-                </div>
-                {q.commentPrompt && (
-                  <div className="survey-comment">
-                    <label className="survey-comment-label" htmlFor={`${q.id}-comment`}>
-                      {q.commentPrompt}
-                    </label>
-                    <textarea
-                      id={`${q.id}-comment`}
-                      className="survey-textarea"
-                      rows={3}
-                      maxLength={4000}
-                      value={answers[q.id]?.comment ?? ''}
-                      onChange={(e) => setComment(q.id, e.target.value)}
-                    />
+              {isRated(q) ? (
+                <>
+                  <div className="survey-options">
+                    {SCALES[q.scale].map((opt) => {
+                      const selected = answers[q.id]?.rating === opt.value
+                      return (
+                        <label
+                          key={opt.value}
+                          className={`survey-option${selected ? ' selected' : ''}`}
+                        >
+                          <input
+                            type="radio"
+                            name={q.id}
+                            value={opt.value}
+                            checked={selected}
+                            onChange={() => setRating(q.id, opt.value)}
+                          />
+                          <span className="survey-option-label" key={selected ? `s-${pulse}` : 'u'}>
+                            {t(lang, opt.labelKey)}
+                          </span>
+                          {selected && (
+                            <svg
+                              className="survey-check"
+                              viewBox="0 0 24 24"
+                              aria-hidden="true"
+                              key={`check-${pulse}`}
+                            >
+                              <path d="M5 12l4 4 10-10" />
+                            </svg>
+                          )}
+                        </label>
+                      )
+                    })}
                   </div>
-                )}
-              </>
-            ) : (
-              <textarea
-                className="survey-textarea"
-                rows={5}
-                maxLength={4000}
-                placeholder={q.placeholder}
-                value={answers[q.id]?.comment ?? ''}
-                onChange={(e) => setComment(q.id, e.target.value)}
-              />
-            )}
-          </fieldset>
-        ))}
+                  {q.commentKey && (
+                    <div className="survey-comment">
+                      <label className="survey-comment-label" htmlFor={`${q.id}-comment`}>
+                        {t(lang, q.commentKey)}
+                      </label>
+                      <textarea
+                        id={`${q.id}-comment`}
+                        className="survey-textarea"
+                        rows={3}
+                        maxLength={4000}
+                        value={answers[q.id]?.comment ?? ''}
+                        onChange={(e) => setComment(q.id, e.target.value)}
+                      />
+                    </div>
+                  )}
+                </>
+              ) : (
+                <textarea
+                  className="survey-textarea"
+                  rows={5}
+                  maxLength={4000}
+                  placeholder={t(lang, q.placeholderKey)}
+                  value={answers[q.id]?.comment ?? ''}
+                  onChange={(e) => setComment(q.id, e.target.value)}
+                />
+              )}
+            </fieldset>
+          )
+        })}
 
         {status === 'error' && (
-          <div className="survey-error">Couldn't submit: {errorMsg || 'unknown error'}</div>
+          <div className="survey-error">
+            {t(lang, 'error_prefix')} {errorMsg || t(lang, 'unknown_error')}
+          </div>
         )}
 
         <div className="survey-actions">
-          <button type="submit" className="survey-btn" disabled={!hasAnyAnswer || status === 'submitting'}>
-            {status === 'submitting' ? 'Submitting…' : 'Submit responses'}
+          {!hasRole && (
+            <div className="survey-submit-hint">{t(lang, 'submit_disabled_role')}</div>
+          )}
+          <button
+            type="submit"
+            className="survey-btn"
+            disabled={!canSubmit || status === 'submitting'}
+          >
+            {status === 'submitting' ? t(lang, 'submitting') : t(lang, 'submit')}
           </button>
         </div>
       </form>

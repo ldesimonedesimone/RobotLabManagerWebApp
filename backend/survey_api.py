@@ -5,6 +5,13 @@ evolve without DDL. Each entry is one of:
   { "rating": "Satisfied", "comment": "optional free text" }
   { "rating": "Satisfied" }                         # rating-only
   { "comment": "free text" }                        # text-only question
+
+Notes:
+  - The `pilot_name` column is retained for backwards compatibility with
+    historical rows. New submissions from the web survey no longer collect a
+    name; the field is left NULL.
+  - The pilot's role lives in `answers["pilot_role"]["rating"]` and is one of
+    "Trainee Pilot" | "Data Collection Pilot" | "Customer Pilot".
 """
 
 from __future__ import annotations
@@ -22,6 +29,7 @@ class SurveyResponseRow(BaseModel):
     answers: dict[str, dict[str, str]] = Field(default_factory=dict)
 
 # Idempotent: handles fresh installs and the earlier sample schema (3 columns).
+# `pilot_name` is intentionally kept for legacy rows; new submissions write NULL.
 MIGRATE_SQL = """
 CREATE TABLE IF NOT EXISTS pilot_survey_responses (
     id BIGSERIAL PRIMARY KEY,
