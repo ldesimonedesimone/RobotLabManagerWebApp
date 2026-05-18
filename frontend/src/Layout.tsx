@@ -66,12 +66,6 @@ export default function Layout() {
           >
             Pilot survey
           </NavLink>
-          <NavLink
-            to="/survey/results"
-            className={({ isActive }) => 'topbar-link' + (isActive ? ' active' : '')}
-          >
-            Survey results
-          </NavLink>
           <LockToggle />
         </nav>
         <Outlet />
