@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { API_BASE } from '../scheduleApi'
-import { useEditMode } from '../EditModeContext'
 import './SurveyResultsPage.css'
 
 const SATISFACTION = ['Very satisfied', 'Satisfied', 'Neutral', 'Unsatisfied', 'Very unsatisfied'] as const
@@ -91,6 +90,7 @@ const ROLE_FILTERS: { key: RoleFilter; label: string }[] = [
 
 const HIDDEN_STORAGE_KEY = 'surveyResults.hiddenQuestions'
 const LEGACY_OPEN_KEY = 'surveyResults.legacyOpen'
+const UNLOCK_SESSION_KEY = 'surveyResults.unlocked'
 
 function isRated(q: Question): q is RatedQuestion {
   return !('textOnly' in q)
@@ -139,7 +139,12 @@ function translateUrl(text: string): string {
 }
 
 export default function SurveyResultsPage() {
-  const { isEditMode } = useEditMode()
+  const [unlocked, setUnlocked] = useState<boolean>(() => {
+    return sessionStorage.getItem(UNLOCK_SESSION_KEY) === '1'
+  })
+  const [pwInput, setPwInput] = useState('')
+  const [pwError, setPwError] = useState('')
+  const [pwSubmitting, setPwSubmitting] = useState(false)
   const [windowKey, setWindowKey] = useState<WindowKey>('30d')
   const [rows, setRows] = useState<SurveyRow[]>([])
   const [loading, setLoading] = useState(false)
@@ -191,9 +196,42 @@ export default function SurveyResultsPage() {
   }, [startIso])
 
   useEffect(() => {
-    if (!isEditMode) return
+    if (!unlocked) return
     fetchRows()
-  }, [fetchRows, isEditMode])
+  }, [fetchRows, unlocked])
+
+  async function attemptUnlock(e: React.FormEvent) {
+    e.preventDefault()
+    if (!pwInput || pwSubmitting) return
+    setPwSubmitting(true)
+    setPwError('')
+    try {
+      const r = await fetch(`${API_BASE}/api/auth/unlock-survey-results`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password: pwInput }),
+      })
+      if (!r.ok) throw new Error(await r.text())
+      const data = (await r.json()) as { ok: boolean }
+      if (!data.ok) {
+        setPwError('Incorrect password.')
+        return
+      }
+      sessionStorage.setItem(UNLOCK_SESSION_KEY, '1')
+      setUnlocked(true)
+      setPwInput('')
+    } catch (err) {
+      setPwError(err instanceof Error ? err.message : String(err))
+    } finally {
+      setPwSubmitting(false)
+    }
+  }
+
+  function relock() {
+    sessionStorage.removeItem(UNLOCK_SESSION_KEY)
+    setUnlocked(false)
+    setRows([])
+  }
 
   const filteredRows = useMemo(() => {
     if (roleFilter === 'all') return rows
@@ -276,16 +314,32 @@ export default function SurveyResultsPage() {
     setHidden(new Set())
   }
 
-  if (!isEditMode) {
+  if (!unlocked) {
     return (
       <div className="survey-results-page">
-        <div className="survey-results-locked">
+        <form className="survey-results-locked" onSubmit={attemptUnlock}>
           <h1>Survey results are locked</h1>
           <p>
-            Responses may contain candid feedback. Unlock edit mode in the top-right
-            corner to view aggregated results.
+            Responses may contain candid feedback. Enter the survey results password to view
+            aggregated results.
           </p>
-        </div>
+          <input
+            type="password"
+            className="survey-results-pw"
+            placeholder="Password"
+            value={pwInput}
+            onChange={(e) => setPwInput(e.target.value)}
+            autoFocus
+          />
+          {pwError && <div className="survey-results-pw-error">{pwError}</div>}
+          <button
+            type="submit"
+            className="survey-results-pw-btn"
+            disabled={!pwInput || pwSubmitting}
+          >
+            {pwSubmitting ? 'Checking…' : 'Unlock'}
+          </button>
+        </form>
       </div>
     )
   }
@@ -299,17 +353,22 @@ export default function SurveyResultsPage() {
             Aggregated responses from the pilot feedback form.
           </p>
         </div>
-        <div className="survey-window-picker">
-          {WINDOW_OPTIONS.map((opt) => (
-            <button
-              key={opt.key}
-              type="button"
-              className={`survey-window-btn${windowKey === opt.key ? ' active' : ''}`}
-              onClick={() => setWindowKey(opt.key)}
-            >
-              {opt.label}
-            </button>
-          ))}
+        <div className="survey-results-header-right">
+          <div className="survey-window-picker">
+            {WINDOW_OPTIONS.map((opt) => (
+              <button
+                key={opt.key}
+                type="button"
+                className={`survey-window-btn${windowKey === opt.key ? ' active' : ''}`}
+                onClick={() => setWindowKey(opt.key)}
+              >
+                {opt.label}
+              </button>
+            ))}
+          </div>
+          <button type="button" className="survey-relock-btn" onClick={relock} title="Lock this view">
+            Lock
+          </button>
         </div>
       </header>
 

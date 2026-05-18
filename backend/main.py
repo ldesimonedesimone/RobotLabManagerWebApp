@@ -277,6 +277,13 @@ def auth_unlock(body: UnlockRequest) -> dict[str, bool]:
     return {"ok": body.password == expected}
 
 
+@app.post("/api/auth/unlock-survey-results")
+def auth_unlock_survey_results(body: UnlockRequest) -> dict[str, bool]:
+    expected = os.environ.get("SURVEY_RESULTS_PASSWORD", "")
+    assert expected, "SURVEY_RESULTS_PASSWORD env var not set on server"
+    return {"ok": body.password == expected}
+
+
 @app.get("/api/schedule/templates")
 def api_list_templates() -> list[dict]:
     try:
