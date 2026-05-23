@@ -89,9 +89,12 @@ const ROLE_FILTERS: { key: RoleFilter; label: string }[] = [
   { key: 'Customer Pilot', label: 'Customer' },
 ]
 
-const HIDDEN_STORAGE_KEY = 'surveyResults.hiddenQuestions'
 const LEGACY_OPEN_KEY = 'surveyResults.legacyOpen'
 const UNLOCK_SESSION_KEY = 'surveyResults.unlocked'
+const UNLOCK_PW_KEY = 'surveyResults.unlockPw'
+// pilot_role drives the role-filter chips and the form's submit gate; it is
+// not exposed in the deactivate-questions toolbar to avoid breaking the form.
+const NON_DEACTIVATABLE_IDS = new Set(['pilot_role'])
 
 function isRated(q: Question): q is RatedQuestion {
   return !('textOnly' in q)
@@ -152,26 +155,33 @@ export default function SurveyResultsPage() {
   const [error, setError] = useState('')
   const [expanded, setExpanded] = useState<Record<string, boolean>>({})
   const [roleFilter, setRoleFilter] = useState<RoleFilter>('all')
-  const [hidden, setHidden] = useState<Set<string>>(() => {
-    try {
-      const raw = localStorage.getItem(HIDDEN_STORAGE_KEY)
-      if (raw) return new Set(JSON.parse(raw) as string[])
-    } catch {
-      // ignore parse errors; fall back to empty
-    }
-    return new Set()
-  })
+  const [deactivated, setDeactivated] = useState<Set<string>>(new Set())
+  const [savingConfig, setSavingConfig] = useState(false)
+  const [configError, setConfigError] = useState('')
   const [legacyOpen, setLegacyOpen] = useState<boolean>(() => {
     return localStorage.getItem(LEGACY_OPEN_KEY) === '1'
   })
 
   useEffect(() => {
-    localStorage.setItem(HIDDEN_STORAGE_KEY, JSON.stringify([...hidden]))
-  }, [hidden])
-
-  useEffect(() => {
     localStorage.setItem(LEGACY_OPEN_KEY, legacyOpen ? '1' : '0')
   }, [legacyOpen])
+
+  const fetchConfig = useCallback(async () => {
+    try {
+      const r = await fetch(`${API_BASE}/api/survey/config`)
+      if (!r.ok) return
+      const data = (await r.json()) as { deactivated_question_ids?: string[] }
+      const ids = Array.isArray(data.deactivated_question_ids) ? data.deactivated_question_ids : []
+      setDeactivated(new Set(ids))
+    } catch {
+      // Fail open — don't break the dashboard if config endpoint is down.
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!unlocked) return
+    fetchConfig()
+  }, [fetchConfig, unlocked])
 
   const startIso = useMemo(() => {
     const opt = WINDOW_OPTIONS.find((o) => o.key === windowKey)
@@ -219,6 +229,7 @@ export default function SurveyResultsPage() {
         return
       }
       sessionStorage.setItem(UNLOCK_SESSION_KEY, '1')
+      sessionStorage.setItem(UNLOCK_PW_KEY, pwInput)
       setUnlocked(true)
       setPwInput('')
     } catch (err) {
@@ -230,8 +241,42 @@ export default function SurveyResultsPage() {
 
   function relock() {
     sessionStorage.removeItem(UNLOCK_SESSION_KEY)
+    sessionStorage.removeItem(UNLOCK_PW_KEY)
     setUnlocked(false)
     setRows([])
+  }
+
+  async function persistDeactivated(next: Set<string>) {
+    const pw = sessionStorage.getItem(UNLOCK_PW_KEY)
+    if (!pw) {
+      setConfigError('Session expired. Please relock and re-enter the password.')
+      return
+    }
+    setSavingConfig(true)
+    setConfigError('')
+    try {
+      const r = await fetch(`${API_BASE}/api/survey/config`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          password: pw,
+          deactivated_question_ids: [...next],
+        }),
+      })
+      if (!r.ok) {
+        const detail = await r.text()
+        throw new Error(detail || `HTTP ${r.status}`)
+      }
+      const data = (await r.json()) as { deactivated_question_ids?: string[] }
+      const ids = Array.isArray(data.deactivated_question_ids) ? data.deactivated_question_ids : []
+      setDeactivated(new Set(ids))
+    } catch (e) {
+      setConfigError(e instanceof Error ? e.message : String(e))
+      // Roll back optimistic UI by refetching.
+      fetchConfig()
+    } finally {
+      setSavingConfig(false)
+    }
   }
 
   const filteredRows = useMemo(() => {
@@ -302,17 +347,19 @@ export default function SurveyResultsPage() {
     })
   }, [allQuestions, filteredRows])
 
-  function toggleHidden(id: string) {
-    setHidden((prev) => {
-      const next = new Set(prev)
-      if (next.has(id)) next.delete(id)
-      else next.add(id)
-      return next
-    })
+  function toggleDeactivated(id: string) {
+    if (NON_DEACTIVATABLE_IDS.has(id)) return
+    const next = new Set(deactivated)
+    if (next.has(id)) next.delete(id)
+    else next.add(id)
+    setDeactivated(next)
+    persistDeactivated(next)
   }
 
-  function showAll() {
-    setHidden(new Set())
+  function activateAll() {
+    const next = new Set<string>()
+    setDeactivated(next)
+    persistDeactivated(next)
   }
 
   if (!unlocked) {
@@ -415,26 +462,40 @@ export default function SurveyResultsPage() {
 
       <section className="visibility-panel">
         <div className="visibility-head">
-          <span className="visibility-title">Questions shown</span>
+          <span className="visibility-title">Questions on the pilot form</span>
           <span className="visibility-meta">
-            {QUESTIONS.length - QUESTIONS.filter((q) => hidden.has(q.id)).length} / {QUESTIONS.length} active
+            {QUESTIONS.filter((q) => !NON_DEACTIVATABLE_IDS.has(q.id) && !deactivated.has(q.id)).length}
+            {' / '}
+            {QUESTIONS.filter((q) => !NON_DEACTIVATABLE_IDS.has(q.id)).length} active
+            {savingConfig && <span className="visibility-saving"> · saving…</span>}
           </span>
-          {hidden.size > 0 && (
-            <button type="button" className="visibility-reset" onClick={showAll}>
-              Show all
+          {deactivated.size > 0 && (
+            <button
+              type="button"
+              className="visibility-reset"
+              onClick={activateAll}
+              disabled={savingConfig}
+            >
+              Activate all
             </button>
           )}
         </div>
+        <div className="visibility-hint">
+          Click a pill to remove that question from the survey form. Pilots will not see deactivated
+          questions; existing responses remain visible below.
+        </div>
+        {configError && <div className="visibility-error">{configError}</div>}
         <div className="visibility-pills">
-          {QUESTIONS.map((q) => {
-            const active = !hidden.has(q.id)
+          {QUESTIONS.filter((q) => !NON_DEACTIVATABLE_IDS.has(q.id)).map((q) => {
+            const active = !deactivated.has(q.id)
             return (
               <button
                 key={q.id}
                 type="button"
                 className={`vis-pill${active ? ' active' : ''}`}
-                onClick={() => toggleHidden(q.id)}
-                title={active ? 'Click to hide this question' : 'Click to show this question'}
+                onClick={() => toggleDeactivated(q.id)}
+                disabled={savingConfig}
+                title={active ? 'Click to remove from form' : 'Click to add back to form'}
               >
                 {q.title}
               </button>
@@ -452,9 +513,17 @@ export default function SurveyResultsPage() {
 
       <section className="survey-questions">
         {perQuestion
-          .filter(({ q }) => !q.legacy && !hidden.has(q.id))
+          .filter(({ q }) => !q.legacy)
           .map(({ q, totalAnswered, distribution, comments }) =>
-            renderQuestionCard(q, totalAnswered, distribution, comments, expanded, setExpanded),
+            renderQuestionCard(
+              q,
+              totalAnswered,
+              distribution,
+              comments,
+              expanded,
+              setExpanded,
+              deactivated.has(q.id),
+            ),
           )}
       </section>
 
@@ -470,9 +539,17 @@ export default function SurveyResultsPage() {
           {legacyOpen && (
             <div className="survey-questions legacy-questions">
               {perQuestion
-                .filter(({ q }) => q.legacy && !hidden.has(q.id))
+                .filter(({ q }) => q.legacy)
                 .map(({ q, totalAnswered, distribution, comments }) =>
-                  renderQuestionCard(q, totalAnswered, distribution, comments, expanded, setExpanded),
+                  renderQuestionCard(
+                    q,
+                    totalAnswered,
+                    distribution,
+                    comments,
+                    expanded,
+                    setExpanded,
+                    deactivated.has(q.id),
+                  ),
                 )}
             </div>
           )}
@@ -489,13 +566,20 @@ function renderQuestionCard(
   comments: { row: SurveyRow; comment: string }[],
   expanded: Record<string, boolean>,
   setExpanded: React.Dispatch<React.SetStateAction<Record<string, boolean>>>,
+  isDeactivated: boolean,
 ) {
   const isOpen = !!expanded[q.id]
   const colors = isRated(q) ? colorsFor(q.options) : SCALE_COLORS_5
+  const classNames = ['qcard']
+  if (q.legacy) classNames.push('qcard-legacy')
+  if (isDeactivated) classNames.push('qcard-deactivated')
   return (
-    <article key={q.id} className={`qcard${q.legacy ? ' qcard-legacy' : ''}`}>
+    <article key={q.id} className={classNames.join(' ')}>
       <header className="qcard-head">
-        <div className="qcard-title">{q.title}</div>
+        <div className="qcard-title">
+          {q.title}
+          {isDeactivated && <span className="qcard-deactivated-badge">Hidden from form</span>}
+        </div>
         <div className="qcard-meta">
           {totalAnswered} {totalAnswered === 1 ? 'response' : 'responses'}
           {comments.length > 0 && (

@@ -30,6 +30,8 @@ class SurveyResponseRow(BaseModel):
 
 # Idempotent: handles fresh installs and the earlier sample schema (3 columns).
 # `pilot_name` is intentionally kept for legacy rows; new submissions write NULL.
+# `survey_config` is a singleton row holding admin-controlled state — currently
+# the list of question ids that should be hidden from the pilot-facing form.
 MIGRATE_SQL = """
 CREATE TABLE IF NOT EXISTS pilot_survey_responses (
     id BIGSERIAL PRIMARY KEY,
@@ -41,6 +43,14 @@ ALTER TABLE pilot_survey_responses ADD COLUMN IF NOT EXISTS answers JSONB;
 ALTER TABLE pilot_survey_responses DROP COLUMN IF EXISTS shift_rating;
 ALTER TABLE pilot_survey_responses DROP COLUMN IF EXISTS trouble_area;
 ALTER TABLE pilot_survey_responses DROP COLUMN IF EXISTS notes;
+
+CREATE TABLE IF NOT EXISTS survey_config (
+    id INT PRIMARY KEY DEFAULT 1,
+    deactivated_question_ids JSONB NOT NULL DEFAULT '[]'::jsonb,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT survey_config_singleton CHECK (id = 1)
+);
+INSERT INTO survey_config (id) VALUES (1) ON CONFLICT (id) DO NOTHING;
 """
 
 
@@ -111,6 +121,43 @@ def list_responses(
                 )
             )
     return out
+
+
+class SurveyConfig(BaseModel):
+    deactivated_question_ids: list[str] = Field(default_factory=list)
+
+
+def get_config(conn: psycopg.Connection) -> SurveyConfig:
+    with conn.cursor() as cur:
+        cur.execute("SELECT deactivated_question_ids FROM survey_config WHERE id = 1")
+        row = cur.fetchone()
+    if row is None:
+        return SurveyConfig()
+    raw = row[0] or []
+    ids = [str(x) for x in raw if isinstance(x, str)]
+    return SurveyConfig(deactivated_question_ids=ids)
+
+
+def set_config(conn: psycopg.Connection, config: SurveyConfig) -> SurveyConfig:
+    import json
+
+    cleaned = sorted({s.strip() for s in config.deactivated_question_ids if s and s.strip()})
+    with conn.cursor() as cur:
+        cur.execute(
+            """
+            INSERT INTO survey_config (id, deactivated_question_ids, updated_at)
+            VALUES (1, %s::jsonb, CURRENT_TIMESTAMP)
+            ON CONFLICT (id) DO UPDATE
+              SET deactivated_question_ids = EXCLUDED.deactivated_question_ids,
+                  updated_at = CURRENT_TIMESTAMP
+            RETURNING deactivated_question_ids
+            """,
+            (json.dumps(cleaned),),
+        )
+        row = cur.fetchone()
+    conn.commit()
+    assert row is not None, "set_config returned no row"
+    return SurveyConfig(deactivated_question_ids=[str(x) for x in (row[0] or [])])
 
 
 def insert_response(conn: psycopg.Connection, body: SurveySubmission) -> SurveyAck:

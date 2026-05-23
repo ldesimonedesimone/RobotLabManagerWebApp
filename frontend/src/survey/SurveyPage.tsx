@@ -161,11 +161,34 @@ export default function SurveyPage() {
   const [errorMsg, setErrorMsg] = useState('')
   const [justAnswered, setJustAnswered] = useState<Record<string, number>>({})
   const [answerColor, setAnswerColor] = useState<Record<string, string>>({})
+  const [deactivatedIds, setDeactivatedIds] = useState<Set<string>>(new Set())
   const timersRef = useRef<Record<string, ReturnType<typeof setTimeout>>>({})
 
   useEffect(() => {
     localStorage.setItem(LANG_STORAGE_KEY, lang)
   }, [lang])
+
+  useEffect(() => {
+    let cancelled = false
+    fetch(`${API_BASE}/api/survey/config`)
+      .then((r) => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))))
+      .then((data: { deactivated_question_ids?: string[] }) => {
+        if (cancelled) return
+        const ids = Array.isArray(data.deactivated_question_ids) ? data.deactivated_question_ids : []
+        setDeactivatedIds(new Set(ids))
+      })
+      .catch(() => {
+        // Fail open: if the config endpoint is unreachable, show the full question set.
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [])
+
+  const visibleQuestions = useMemo(
+    () => QUESTIONS.filter((q) => !deactivatedIds.has(q.id)),
+    [deactivatedIds],
+  )
 
   useEffect(() => {
     return () => {
@@ -174,20 +197,24 @@ export default function SurveyPage() {
   }, [])
 
   const ratedAnswered = useMemo(() => {
-    return QUESTIONS.filter((q) => isRated(q) && answers[q.id]?.rating).length
-  }, [answers])
+    return visibleQuestions.filter((q) => isRated(q) && answers[q.id]?.rating).length
+  }, [answers, visibleQuestions])
 
-  const ratedTotal = useMemo(() => QUESTIONS.filter(isRated).length, [])
+  const ratedTotal = useMemo(
+    () => visibleQuestions.filter(isRated).length,
+    [visibleQuestions],
+  )
 
   const progressPct = ratedTotal ? Math.round((ratedAnswered / ratedTotal) * 100) : 0
 
+  const roleRequired = !deactivatedIds.has('pilot_role')
   const hasRole = !!answers['pilot_role']?.rating
   const hasAnyOther = useMemo(() => {
     return Object.entries(answers).some(
       ([qid, a]) => qid !== 'pilot_role' && ((a.rating && a.rating.trim()) || (a.comment && a.comment.trim())),
     )
   }, [answers])
-  const canSubmit = hasRole && hasAnyOther
+  const canSubmit = (!roleRequired || hasRole) && hasAnyOther
 
   function setRating(qid: string, value: string) {
     setAnswers((prev) => ({ ...prev, [qid]: { ...prev[qid], rating: value } }))
@@ -287,7 +314,7 @@ export default function SurveyPage() {
           </div>
         </div>
 
-        {QUESTIONS.map((q, idx) => {
+        {visibleQuestions.map((q, idx) => {
           const pulse = justAnswered[q.id] || 0
           const rgb = answerColor[q.id]
           const fsStyle = rgb ? ({ ['--answer-rgb' as string]: rgb } as React.CSSProperties) : undefined
@@ -373,7 +400,7 @@ export default function SurveyPage() {
         )}
 
         <div className="survey-actions">
-          {!hasRole && (
+          {roleRequired && !hasRole && (
             <div className="survey-submit-hint">{t(lang, 'submit_disabled_role')}</div>
           )}
           <button

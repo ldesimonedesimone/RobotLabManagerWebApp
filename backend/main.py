@@ -103,11 +103,14 @@ from weekbyweek_api import (  # noqa: E402
 )
 from survey_api import (  # noqa: E402
     SurveyAck,
+    SurveyConfig,
     SurveyResponseRow,
     SurveySubmission,
     ensure_survey_table,
+    get_config as get_survey_config,
     insert_response as insert_survey_response,
     list_responses as list_survey_responses,
+    set_config as set_survey_config,
 )
 
 
@@ -464,6 +467,38 @@ def api_submit_survey(body: SurveySubmission) -> SurveyAck:
             status_code=503,
             detail="Database is read-only for survey writes. Use a writable SCHEDULE_DATABASE_URL.",
         ) from e
+    except psycopg.Error as e:
+        raise HTTPException(status_code=503, detail=f"Database error: {e}") from e
+
+
+@app.get("/api/survey/config", response_model=SurveyConfig)
+def api_get_survey_config() -> SurveyConfig:
+    try:
+        with schedule_conn() as conn:
+            ensure_survey_table(conn)
+            return get_survey_config(conn)
+    except psycopg.Error as e:
+        raise HTTPException(status_code=503, detail=f"Database error: {e}") from e
+
+
+class SurveyConfigUpdate(BaseModel):
+    password: str
+    deactivated_question_ids: list[str] = Field(default_factory=list)
+
+
+@app.put("/api/survey/config", response_model=SurveyConfig)
+def api_put_survey_config(body: SurveyConfigUpdate) -> SurveyConfig:
+    expected = os.environ.get("SURVEY_RESULTS_PASSWORD", "")
+    assert expected, "SURVEY_RESULTS_PASSWORD env var not set on server"
+    if body.password != expected:
+        raise HTTPException(status_code=401, detail="Incorrect password")
+    try:
+        with schedule_conn() as conn:
+            ensure_survey_table(conn)
+            return set_survey_config(
+                conn,
+                SurveyConfig(deactivated_question_ids=body.deactivated_question_ids),
+            )
     except psycopg.Error as e:
         raise HTTPException(status_code=503, detail=f"Database error: {e}") from e
 
