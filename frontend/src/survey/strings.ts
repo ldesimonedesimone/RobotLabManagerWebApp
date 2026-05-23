@@ -29,13 +29,13 @@ const EN: Dict = {
 
   // Question titles
   q_pilot_role: 'I am currently, primarily a:',
-  q_job_satisfaction: 'How satisfied are you with your job as an Ultra Pilot overall?',
+  q_job_satisfaction: 'How satisfied are you with your job as a robot pilot overall?',
   q_teleop_experience: 'How satisfied are you with the teleoperation experience overall?',
   q_headset_app: 'How well did the headset app work this week?',
   q_latency_wow: 'How was the latency this week?',
   q_shift_schedule: 'How well did the shift scheduling tool/process work this week?',
   q_leaderboard_badges:
-    'How satisfied are you with pilot leaderboard and badge functionality in the web app?',
+    'How satisfied are you with pilot performance features (badges, pilot data viewer, etc.) in the web app?',
   q_comfort_overall:
     'How comfortable are you overall while piloting the robot (from equipment to UI)?',
   q_training_program:
@@ -43,7 +43,7 @@ const EN: Dict = {
   q_physical_demand:
     'How manageable is the physical demand of operating (headset fatigue, eye strain, break frequency) during a typical shift?',
   q_growth_support:
-    'How well does Ultra/Remotics support your growth and recognize your performance as a pilot?',
+    'Do you feel as though your growth is supported and your performance as a pilot is recognized?',
   q_anything_else: 'Anything else on your mind?',
   q_anything_else_placeholder:
     'Open the floor: praise, frustrations, ideas, anything at all.',
@@ -73,6 +73,13 @@ const EN: Dict = {
   well_neu: 'Neutral',
   well_poor: 'Poorly',
   well_vpoor: 'Very poorly',
+
+  // Extent scale (for "Do you feel..." style questions)
+  ext_def: 'Definitely',
+  ext_mostly: 'Mostly',
+  ext_neu: 'Neutral',
+  ext_not_really: 'Not really',
+  ext_not_at_all: 'Not at all',
 
   // Headset-app scale
   hs_great: 'Worked great',
@@ -134,7 +141,7 @@ const ES: Dict = {
 
   q_pilot_role: 'Actualmente soy, principalmente:',
   q_job_satisfaction:
-    '¿Qué tan satisfecho estás con tu trabajo como Piloto Ultra en general?',
+    '¿Qué tan satisfecho estás con tu trabajo como piloto de robot en general?',
   q_teleop_experience:
     '¿Qué tan satisfecho estás con la experiencia de teleoperación en general?',
   q_headset_app: '¿Qué tan bien funcionó la app del headset esta semana?',
@@ -142,7 +149,7 @@ const ES: Dict = {
   q_shift_schedule:
     '¿Qué tan bien funcionó la herramienta/proceso de horarios esta semana?',
   q_leaderboard_badges:
-    '¿Qué tan satisfecho estás con la tabla de líderes y las insignias en la app?',
+    '¿Qué tan satisfecho estás con las funciones de desempeño del piloto (insignias, visor de datos del piloto, etc.) en la app?',
   q_comfort_overall:
     '¿Qué tan cómodo te sientes en general operando el robot (equipo e interfaz)?',
   q_training_program:
@@ -150,7 +157,7 @@ const ES: Dict = {
   q_physical_demand:
     '¿Qué tan manejable es la demanda física de operar (fatiga del headset, vista cansada, frecuencia de descansos) en un turno típico?',
   q_growth_support:
-    '¿Qué tan bien apoyan Ultra/Remotics tu crecimiento y reconocen tu desempeño como piloto?',
+    '¿Sientes que tu crecimiento es apoyado y tu desempeño como piloto es reconocido?',
   q_anything_else: '¿Algo más en tu mente?',
   q_anything_else_placeholder:
     'Comparte lo que sea: felicitaciones, frustraciones, ideas, lo que quieras.',
@@ -176,6 +183,12 @@ const ES: Dict = {
   well_neu: 'Neutral',
   well_poor: 'Mal',
   well_vpoor: 'Muy mal',
+
+  ext_def: 'Definitivamente',
+  ext_mostly: 'En su mayoría',
+  ext_neu: 'Neutral',
+  ext_not_really: 'La verdad no',
+  ext_not_at_all: 'Para nada',
 
   hs_great: 'Funcionó muy bien',
   hs_well: 'Funcionó bien',

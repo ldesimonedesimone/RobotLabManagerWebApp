@@ -8,6 +8,7 @@ type ScaleKey =
   | 'SATISFACTION'
   | 'MANAGEABLE'
   | 'WELL'
+  | 'EXTENT'
   | 'HEADSET_APP'
   | 'LATENCY_WOW'
   | 'SCHEDULING'
@@ -42,6 +43,13 @@ const SCALES: Record<ScaleKey, ScaleOption[]> = {
     { value: 'Neutral', labelKey: 'well_neu' },
     { value: 'Poorly', labelKey: 'well_poor' },
     { value: 'Very poorly', labelKey: 'well_vpoor' },
+  ],
+  EXTENT: [
+    { value: 'Definitely', labelKey: 'ext_def' },
+    { value: 'Mostly', labelKey: 'ext_mostly' },
+    { value: 'Neutral', labelKey: 'ext_neu' },
+    { value: 'Not really', labelKey: 'ext_not_really' },
+    { value: 'Not at all', labelKey: 'ext_not_at_all' },
   ],
   HEADSET_APP: [
     { value: 'Worked great', labelKey: 'hs_great' },
@@ -107,7 +115,7 @@ const QUESTIONS: Question[] = [
   { id: 'comfort_overall', titleKey: 'q_comfort_overall', scale: 'COMFORT', commentKey: 'comment_any' },
   { id: 'training_program', titleKey: 'q_training_program', scale: 'TRAINING', commentKey: 'comment_any' },
   { id: 'physical_demand', titleKey: 'q_physical_demand', scale: 'MANAGEABLE', commentKey: 'comment_improve' },
-  { id: 'growth_support', titleKey: 'q_growth_support', scale: 'WELL', commentKey: 'comment_anything_improve' },
+  { id: 'growth_support', titleKey: 'q_growth_support', scale: 'EXTENT', commentKey: 'comment_anything_improve' },
   { id: 'anything_else', titleKey: 'q_anything_else', textOnly: true, placeholderKey: 'q_anything_else_placeholder' },
 ]
 

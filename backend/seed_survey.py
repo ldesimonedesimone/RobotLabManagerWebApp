@@ -34,7 +34,7 @@ QUESTIONS: list[tuple[str, str, bool]] = [
     ("comfort_overall", "comfort", True),
     ("training_program", "training", True),
     ("physical_demand", "manageable", True),
-    ("growth_support", "well", True),
+    ("growth_support", "extent", True),
     ("anything_else", "text", True),
 ]
 
@@ -53,6 +53,7 @@ SCALES = {
     "satisfaction": ["Very satisfied", "Satisfied", "Neutral", "Unsatisfied", "Very unsatisfied"],
     "manageable": ["Very manageable", "Manageable", "Neutral", "Unmanageable", "Very unmanageable"],
     "well": ["Very well", "Well", "Neutral", "Poorly", "Very poorly"],
+    "extent": ["Definitely", "Mostly", "Neutral", "Not really", "Not at all"],
     "headset_app": ["Worked great", "Worked well", "Some issues", "Lots of issues", "Couldn't use it"],
     "latency_wow": ["Better than last week", "Same as last week", "Worse than last week"],
     "scheduling": ["Worked great", "Worked well", "Neutral", "Clunky", "Broken"],

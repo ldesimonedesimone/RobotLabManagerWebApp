@@ -5,6 +5,7 @@ import './SurveyResultsPage.css'
 const SATISFACTION = ['Very satisfied', 'Satisfied', 'Neutral', 'Unsatisfied', 'Very unsatisfied'] as const
 const MANAGEABLE = ['Very manageable', 'Manageable', 'Neutral', 'Unmanageable', 'Very unmanageable'] as const
 const WELL = ['Very well', 'Well', 'Neutral', 'Poorly', 'Very poorly'] as const
+const EXTENT = ['Definitely', 'Mostly', 'Neutral', 'Not really', 'Not at all'] as const
 const HEADSET_APP = ['Worked great', 'Worked well', 'Some issues', 'Lots of issues', "Couldn't use it"] as const
 const LATENCY_WOW = ['Better than last week', 'Same as last week', 'Worse than last week'] as const
 const SCHEDULING = ['Worked great', 'Worked well', 'Neutral', 'Clunky', 'Broken'] as const
@@ -30,16 +31,16 @@ type Question = RatedQuestion | TextQuestion
 
 const QUESTIONS: Question[] = [
   { id: 'pilot_role', title: 'Pilot role', options: PILOT_ROLE },
-  { id: 'job_satisfaction', title: 'Job as an Ultra Pilot, overall', options: SATISFACTION },
+  { id: 'job_satisfaction', title: 'Job as a robot pilot, overall', options: SATISFACTION },
   { id: 'teleop_experience', title: 'Teleoperation experience overall', options: SATISFACTION },
   { id: 'headset_app', title: 'Headset app this week', options: HEADSET_APP },
   { id: 'latency_wow', title: 'Latency vs. last week', options: LATENCY_WOW },
   { id: 'shift_schedule', title: 'Shift scheduling tool/process this week', options: SCHEDULING },
-  { id: 'leaderboard_badges', title: 'Leaderboard & badge functionality', options: SATISFACTION },
+  { id: 'leaderboard_badges', title: 'Pilot performance features (badges, data viewer, etc.)', options: SATISFACTION },
   { id: 'comfort_overall', title: 'Comfort piloting overall (equipment to UI)', options: COMFORT },
   { id: 'training_program', title: 'Training program preparation', options: TRAINING },
   { id: 'physical_demand', title: 'Physical demand during a typical shift', options: MANAGEABLE },
-  { id: 'growth_support', title: 'Ultra/Remotics support for growth & recognition', options: WELL },
+  { id: 'growth_support', title: 'Growth supported & performance recognized?', options: EXTENT },
   { id: 'anything_else', title: 'Anything else on your mind?', textOnly: true },
 ]
 
