@@ -142,6 +142,59 @@ function translateUrl(text: string): string {
   return `https://translate.google.com/?sl=es&tl=en&op=translate&text=${encodeURIComponent(text)}`
 }
 
+function csvEscape(v: string): string {
+  if (v === '') return ''
+  // RFC 4180: wrap in quotes if the value contains comma, quote, CR, or LF.
+  if (/[",\r\n]/.test(v)) return `"${v.replace(/"/g, '""')}"`
+  return v
+}
+
+function buildSurveyCsv(rows: SurveyRow[]): string {
+  const allQuestions = [...QUESTIONS, ...LEGACY_QUESTIONS]
+  const headers: string[] = ['submitted_at_iso', 'submitted_at_local', 'response_id']
+  for (const q of allQuestions) {
+    if (isRated(q)) {
+      headers.push(`${q.id}_rating`)
+      headers.push(`${q.id}_comment`)
+    } else {
+      headers.push(`${q.id}_comment`)
+    }
+  }
+
+  const lines: string[] = [headers.map(csvEscape).join(',')]
+  for (const row of rows) {
+    const cells: string[] = [
+      row.inserted_at,
+      new Date(row.inserted_at).toLocaleString(),
+      String(row.id),
+    ]
+    for (const q of allQuestions) {
+      const ans = row.answers[q.id]
+      if (isRated(q)) {
+        cells.push(ans?.rating ?? '')
+        cells.push(ans?.comment ?? '')
+      } else {
+        cells.push(ans?.comment ?? '')
+      }
+    }
+    lines.push(cells.map(csvEscape).join(','))
+  }
+  return lines.join('\r\n')
+}
+
+function downloadBlob(filename: string, content: string, mime: string) {
+  // Prepend UTF-8 BOM so Excel opens accents/ñ correctly.
+  const blob = new Blob(['\ufeff' + content], { type: `${mime};charset=utf-8` })
+  const url = URL.createObjectURL(blob)
+  const a = document.createElement('a')
+  a.href = url
+  a.download = filename
+  document.body.appendChild(a)
+  a.click()
+  document.body.removeChild(a)
+  setTimeout(() => URL.revokeObjectURL(url), 1000)
+}
+
 export default function SurveyResultsPage() {
   const [unlocked, setUnlocked] = useState<boolean>(() => {
     return sessionStorage.getItem(UNLOCK_SESSION_KEY) === '1'
@@ -237,6 +290,15 @@ export default function SurveyResultsPage() {
     } finally {
       setPwSubmitting(false)
     }
+  }
+
+  function exportCsv() {
+    if (filteredRows.length === 0) return
+    const today = new Date().toISOString().slice(0, 10)
+    const roleSlug = roleFilter === 'all' ? 'all-roles' : roleFilter.toLowerCase().replace(/\s+/g, '-')
+    const filename = `survey-responses_${windowKey}_${roleSlug}_${today}.csv`
+    const csv = buildSurveyCsv(filteredRows)
+    downloadBlob(filename, csv, 'text/csv')
   }
 
   function relock() {
@@ -414,6 +476,19 @@ export default function SurveyResultsPage() {
               </button>
             ))}
           </div>
+          <button
+            type="button"
+            className="survey-export-btn"
+            onClick={exportCsv}
+            disabled={filteredRows.length === 0}
+            title={
+              filteredRows.length === 0
+                ? 'No responses in the current window to export'
+                : `Download ${filteredRows.length} ${filteredRows.length === 1 ? 'response' : 'responses'} as CSV`
+            }
+          >
+            Export CSV
+          </button>
           <button type="button" className="survey-relock-btn" onClick={relock} title="Lock this view">
             Lock
           </button>
