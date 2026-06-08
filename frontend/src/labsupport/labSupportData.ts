@@ -3,6 +3,18 @@
 // then run `python3 lab_support_summary_mcp.py` and redeploy the WebApp.
 export const LAB_SUPPORT_DATA = {
   "titleRange": "Jun 1\u20135",
+  "defaultHosts": [
+    "gen2-005",
+    "gen2-109",
+    "gen2-007",
+    "gen2-110",
+    "gen2-108",
+    "gen2-105",
+    "gen2-104",
+    "gen2-103",
+    "gen2-018",
+    "gen2-102"
+  ],
   "subtitle": "6-week rolling window \u00b7 Mon\u2013Fri \u00b7 >90s hardware faults only (arm / gripper / head cam / neck / chest / other robot issue \u2014 wrist-cam & operational faults excluded)",
   "footer": "Source: Ultra Neon DB via MCP user-ultra \u00b7 station_faults (count + TTR) and station_states (running hours).",
   "generatedAt": "2026-06-08",
@@ -30,7 +42,8 @@ export const LAB_SUPPORT_DATA = {
         1,
         2,
         14
-      ]
+      ],
+      "default": true
     },
     {
       "lab": "Lab 2",
@@ -44,7 +57,8 @@ export const LAB_SUPPORT_DATA = {
         3,
         6,
         13
-      ]
+      ],
+      "default": true
     },
     {
       "lab": "Lab 5",
@@ -58,7 +72,8 @@ export const LAB_SUPPORT_DATA = {
         10,
         6,
         7
-      ]
+      ],
+      "default": true
     },
     {
       "lab": "Lab 6",
@@ -72,7 +87,8 @@ export const LAB_SUPPORT_DATA = {
         6,
         5,
         3
-      ]
+      ],
+      "default": true
     },
     {
       "lab": "Lab 7",
@@ -86,7 +102,8 @@ export const LAB_SUPPORT_DATA = {
         7,
         2,
         7
-      ]
+      ],
+      "default": true
     },
     {
       "lab": "Lab 8",
@@ -100,7 +117,8 @@ export const LAB_SUPPORT_DATA = {
         13,
         15,
         8
-      ]
+      ],
+      "default": true
     },
     {
       "lab": "Lab 9",
@@ -114,7 +132,8 @@ export const LAB_SUPPORT_DATA = {
         17,
         17,
         35
-      ]
+      ],
+      "default": true
     },
     {
       "lab": "Lab 11",
@@ -128,7 +147,8 @@ export const LAB_SUPPORT_DATA = {
         19,
         7,
         5
-      ]
+      ],
+      "default": true
     },
     {
       "lab": "Lab 12",
@@ -142,7 +162,8 @@ export const LAB_SUPPORT_DATA = {
         22,
         19,
         6
-      ]
+      ],
+      "default": true
     },
     {
       "lab": "Lab 13",
@@ -156,7 +177,383 @@ export const LAB_SUPPORT_DATA = {
         26,
         27,
         31
-      ]
+      ],
+      "default": true
+    },
+    {
+      "lab": "Lab 3",
+      "host": "gen2-008",
+      "color": "#5578cc",
+      "note": null,
+      "counts": [
+        2,
+        6,
+        6,
+        4,
+        2,
+        0
+      ],
+      "default": false
+    },
+    {
+      "lab": "Captain Pack Sparrow",
+      "host": "gen2-117",
+      "color": "#9acc55",
+      "note": null,
+      "counts": [
+        0,
+        0,
+        0,
+        2,
+        0,
+        0
+      ],
+      "default": false
+    },
+    {
+      "lab": "Fleetwood Pack",
+      "host": "gen2-004",
+      "color": "#cc55bd",
+      "note": null,
+      "counts": [
+        2,
+        4,
+        4,
+        5,
+        3,
+        3
+      ],
+      "default": false
+    },
+    {
+      "lab": "Future 2.0",
+      "host": "gen2-016",
+      "color": "#55ccb8",
+      "note": null,
+      "counts": [
+        11,
+        13,
+        3,
+        0,
+        11,
+        6
+      ],
+      "default": false
+    },
+    {
+      "lab": "Mabel",
+      "host": "gen2-020",
+      "color": "#cc9555",
+      "note": null,
+      "counts": [
+        1,
+        2,
+        6,
+        4,
+        1,
+        0
+      ],
+      "default": false
+    },
+    {
+      "lab": "Mahdi test bot",
+      "host": "gen2-006",
+      "color": "#7355cc",
+      "note": null,
+      "counts": [
+        0,
+        5,
+        7,
+        7,
+        5,
+        8
+      ],
+      "default": false
+    },
+    {
+      "lab": "Mercury",
+      "host": "gen2-107",
+      "color": "#5acc55",
+      "note": null,
+      "counts": [
+        9,
+        4,
+        1,
+        2,
+        0,
+        2
+      ],
+      "default": false
+    },
+    {
+      "lab": "Monty",
+      "host": "gen2-106",
+      "color": "#cc557d",
+      "note": null,
+      "counts": [
+        3,
+        2,
+        1,
+        2,
+        4,
+        2
+      ],
+      "default": false
+    },
+    {
+      "lab": "NYU Bot",
+      "host": "gen2-015",
+      "color": "#559fcc",
+      "note": null,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "default": false
+    },
+    {
+      "lab": "Old Lab 2",
+      "host": "gen2-003",
+      "color": "#c2cc55",
+      "note": null,
+      "counts": [
+        4,
+        6,
+        0,
+        0,
+        0,
+        0
+      ],
+      "default": false
+    },
+    {
+      "lab": "Packasaurus",
+      "host": "gen2-115",
+      "color": "#b355cc",
+      "note": null,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      "default": false
+    },
+    {
+      "lab": "Packie 2.0",
+      "host": "gen2-012",
+      "color": "#55cc90",
+      "note": null,
+      "counts": [
+        1,
+        2,
+        8,
+        12,
+        10,
+        7
+      ],
+      "default": false
+    },
+    {
+      "lab": "Packula",
+      "host": "gen2-112",
+      "color": "#cc6e55",
+      "note": null,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        2,
+        6
+      ],
+      "default": false
+    },
+    {
+      "lab": "Pack\u00e9mon",
+      "host": "gen2-113",
+      "color": "#555fcc",
+      "note": null,
+      "counts": [
+        0,
+        0,
+        0,
+        3,
+        5,
+        0
+      ],
+      "default": false
+    },
+    {
+      "lab": "Phil",
+      "host": "gen2-017",
+      "color": "#82cc55",
+      "note": null,
+      "counts": [
+        2,
+        1,
+        1,
+        0,
+        2,
+        0
+      ],
+      "default": false
+    },
+    {
+      "lab": "Venus",
+      "host": "gen2-013",
+      "color": "#cc55a4",
+      "note": null,
+      "counts": [
+        0,
+        1,
+        2,
+        5,
+        0,
+        9
+      ],
+      "default": false
+    },
+    {
+      "lab": "WIP gen2-021",
+      "host": "gen2-101",
+      "color": "#55c7cc",
+      "note": null,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "default": false
+    },
+    {
+      "lab": "gen2-111",
+      "host": "gen2-111",
+      "color": "#ccae55",
+      "note": null,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "default": false
+    },
+    {
+      "lab": "gen2-114",
+      "host": "gen2-114",
+      "color": "#8b55cc",
+      "note": null,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "default": false
+    },
+    {
+      "lab": "gen2-116",
+      "host": "gen2-116",
+      "color": "#55cc69",
+      "note": null,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "default": false
+    },
+    {
+      "lab": "gen2-118",
+      "host": "gen2-118",
+      "color": "#cc5564",
+      "note": null,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "default": false
+    },
+    {
+      "lab": "gen2-119",
+      "host": "gen2-119",
+      "color": "#5587cc",
+      "note": null,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "default": false
+    },
+    {
+      "lab": "gen2-120",
+      "host": "gen2-120",
+      "color": "#a9cc55",
+      "note": null,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "default": false
+    },
+    {
+      "lab": "gen2-121",
+      "host": "gen2-121",
+      "color": "#cb55cc",
+      "note": null,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "default": false
+    },
+    {
+      "lab": "gen2-122",
+      "host": "gen2-122",
+      "color": "#55cca9",
+      "note": null,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "default": false
     }
   ],
   "cards": [
@@ -165,6 +562,7 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-005",
       "color": "#4682b4",
       "note": null,
+      "default": true,
       "slowCount": 14,
       "runHours": 51.4,
       "topFault": {
@@ -178,6 +576,7 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-109",
       "color": "#e67e22",
       "note": null,
+      "default": true,
       "slowCount": 13,
       "runHours": 47.4,
       "topFault": {
@@ -191,6 +590,7 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-007",
       "color": "#3498db",
       "note": null,
+      "default": true,
       "slowCount": 7,
       "runHours": 40.6,
       "topFault": {
@@ -204,6 +604,7 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-110",
       "color": "#e74c3c",
       "note": null,
+      "default": true,
       "slowCount": 3,
       "runHours": 60.1,
       "topFault": {
@@ -217,6 +618,7 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-108",
       "color": "#f39c12",
       "note": null,
+      "default": true,
       "slowCount": 7,
       "runHours": 59.6,
       "topFault": {
@@ -230,6 +632,7 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-105",
       "color": "#1abc9c",
       "note": null,
+      "default": true,
       "slowCount": 8,
       "runHours": 45.7,
       "topFault": {
@@ -243,6 +646,7 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-104",
       "color": "#d81b60",
       "note": null,
+      "default": true,
       "slowCount": 35,
       "runHours": 54.1,
       "topFault": {
@@ -256,6 +660,7 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-103",
       "color": "#5d6d7e",
       "note": null,
+      "default": true,
       "slowCount": 5,
       "runHours": 48.4,
       "topFault": {
@@ -269,6 +674,7 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-018",
       "color": "#a4c639",
       "note": null,
+      "default": true,
       "slowCount": 6,
       "runHours": 27.6,
       "topFault": {
@@ -282,6 +688,7 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-102",
       "color": "#0d47a1",
       "note": null,
+      "default": true,
       "slowCount": 31,
       "runHours": 58.5,
       "topFault": {
@@ -289,6 +696,292 @@ export const LAB_SUPPORT_DATA = {
         "ttr": "2h 34m",
         "count": 21
       }
+    },
+    {
+      "lab": "Lab 3",
+      "host": "gen2-008",
+      "color": "#5578cc",
+      "note": null,
+      "default": false,
+      "slowCount": 0,
+      "runHours": 0.0,
+      "topFault": null
+    },
+    {
+      "lab": "Captain Pack Sparrow",
+      "host": "gen2-117",
+      "color": "#9acc55",
+      "note": null,
+      "default": false,
+      "slowCount": 0,
+      "runHours": 0.0,
+      "topFault": null
+    },
+    {
+      "lab": "Fleetwood Pack",
+      "host": "gen2-004",
+      "color": "#cc55bd",
+      "note": null,
+      "default": false,
+      "slowCount": 3,
+      "runHours": 18.1,
+      "topFault": {
+        "label": "Left arm frozen",
+        "ttr": "46m",
+        "count": 3
+      }
+    },
+    {
+      "lab": "Future 2.0",
+      "host": "gen2-016",
+      "color": "#55ccb8",
+      "note": null,
+      "default": false,
+      "slowCount": 6,
+      "runHours": 33.5,
+      "topFault": {
+        "label": "Right arm frozen",
+        "ttr": "1h 19m",
+        "count": 5
+      }
+    },
+    {
+      "lab": "Mabel",
+      "host": "gen2-020",
+      "color": "#cc9555",
+      "note": null,
+      "default": false,
+      "slowCount": 0,
+      "runHours": 0.0,
+      "topFault": null
+    },
+    {
+      "lab": "Mahdi test bot",
+      "host": "gen2-006",
+      "color": "#7355cc",
+      "note": null,
+      "default": false,
+      "slowCount": 8,
+      "runHours": 0.4,
+      "topFault": {
+        "label": "Left arm frozen",
+        "ttr": "10h",
+        "count": 3
+      }
+    },
+    {
+      "lab": "Mercury",
+      "host": "gen2-107",
+      "color": "#5acc55",
+      "note": null,
+      "default": false,
+      "slowCount": 2,
+      "runHours": 28.7,
+      "topFault": {
+        "label": "Other robot issue",
+        "ttr": "30m",
+        "count": 1
+      }
+    },
+    {
+      "lab": "Monty",
+      "host": "gen2-106",
+      "color": "#cc557d",
+      "note": null,
+      "default": false,
+      "slowCount": 2,
+      "runHours": 9.1,
+      "topFault": {
+        "label": "Right arm frozen",
+        "ttr": "6h",
+        "count": 2
+      }
+    },
+    {
+      "lab": "NYU Bot",
+      "host": "gen2-015",
+      "color": "#559fcc",
+      "note": null,
+      "default": false,
+      "slowCount": 0,
+      "runHours": 2.2,
+      "topFault": null
+    },
+    {
+      "lab": "Old Lab 2",
+      "host": "gen2-003",
+      "color": "#c2cc55",
+      "note": null,
+      "default": false,
+      "slowCount": 0,
+      "runHours": 0.0,
+      "topFault": null
+    },
+    {
+      "lab": "Packasaurus",
+      "host": "gen2-115",
+      "color": "#b355cc",
+      "note": null,
+      "default": false,
+      "slowCount": 0,
+      "runHours": 0.2,
+      "topFault": null
+    },
+    {
+      "lab": "Packie 2.0",
+      "host": "gen2-012",
+      "color": "#55cc90",
+      "note": null,
+      "default": false,
+      "slowCount": 7,
+      "runHours": 35.4,
+      "topFault": {
+        "label": "Left arm frozen",
+        "ttr": "1h",
+        "count": 7
+      }
+    },
+    {
+      "lab": "Packula",
+      "host": "gen2-112",
+      "color": "#cc6e55",
+      "note": null,
+      "default": false,
+      "slowCount": 6,
+      "runHours": 0.0,
+      "topFault": {
+        "label": "Right arm frozen",
+        "ttr": "13m",
+        "count": 3
+      }
+    },
+    {
+      "lab": "Pack\u00e9mon",
+      "host": "gen2-113",
+      "color": "#555fcc",
+      "note": null,
+      "default": false,
+      "slowCount": 0,
+      "runHours": 0.0,
+      "topFault": null
+    },
+    {
+      "lab": "Phil",
+      "host": "gen2-017",
+      "color": "#82cc55",
+      "note": null,
+      "default": false,
+      "slowCount": 0,
+      "runHours": 14.7,
+      "topFault": {
+        "label": "Head cam out",
+        "ttr": "58s",
+        "count": 1
+      }
+    },
+    {
+      "lab": "Venus",
+      "host": "gen2-013",
+      "color": "#cc55a4",
+      "note": null,
+      "default": false,
+      "slowCount": 9,
+      "runHours": 29.5,
+      "topFault": {
+        "label": "Other robot issue",
+        "ttr": "4h 34m",
+        "count": 3
+      }
+    },
+    {
+      "lab": "WIP gen2-021",
+      "host": "gen2-101",
+      "color": "#55c7cc",
+      "note": null,
+      "default": false,
+      "slowCount": 0,
+      "runHours": 0.0,
+      "topFault": null
+    },
+    {
+      "lab": "gen2-111",
+      "host": "gen2-111",
+      "color": "#ccae55",
+      "note": null,
+      "default": false,
+      "slowCount": 0,
+      "runHours": 0.0,
+      "topFault": null
+    },
+    {
+      "lab": "gen2-114",
+      "host": "gen2-114",
+      "color": "#8b55cc",
+      "note": null,
+      "default": false,
+      "slowCount": 0,
+      "runHours": 0.0,
+      "topFault": null
+    },
+    {
+      "lab": "gen2-116",
+      "host": "gen2-116",
+      "color": "#55cc69",
+      "note": null,
+      "default": false,
+      "slowCount": 0,
+      "runHours": 0.0,
+      "topFault": null
+    },
+    {
+      "lab": "gen2-118",
+      "host": "gen2-118",
+      "color": "#cc5564",
+      "note": null,
+      "default": false,
+      "slowCount": 0,
+      "runHours": 0.0,
+      "topFault": null
+    },
+    {
+      "lab": "gen2-119",
+      "host": "gen2-119",
+      "color": "#5587cc",
+      "note": null,
+      "default": false,
+      "slowCount": 0,
+      "runHours": 0.0,
+      "topFault": null
+    },
+    {
+      "lab": "gen2-120",
+      "host": "gen2-120",
+      "color": "#a9cc55",
+      "note": null,
+      "default": false,
+      "slowCount": 0,
+      "runHours": 0.0,
+      "topFault": null
+    },
+    {
+      "lab": "gen2-121",
+      "host": "gen2-121",
+      "color": "#cb55cc",
+      "note": null,
+      "default": false,
+      "slowCount": 0,
+      "runHours": 0.0,
+      "topFault": null
+    },
+    {
+      "lab": "gen2-122",
+      "host": "gen2-122",
+      "color": "#55cca9",
+      "note": null,
+      "default": false,
+      "slowCount": 0,
+      "runHours": 0.0,
+      "topFault": null
     }
   ]
 } as const

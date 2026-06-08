@@ -24,6 +24,134 @@
   max-width: 760px;
 }
 
+.ls-toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem 0.9rem;
+  margin-bottom: 0.9rem;
+}
+
+.ls-picker-toggle {
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.ls-picker-toggle.open,
+.ls-picker-toggle:hover {
+  border-color: rgba(56, 189, 248, 0.5);
+  color: #7dd3fc;
+}
+
+.ls-count {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.ls-toolbar-actions {
+  display: flex;
+  gap: 0.4rem;
+  margin-left: auto;
+}
+
+.ls-mini-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  border-radius: 6px;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.ls-mini-btn:hover {
+  color: var(--text);
+  border-color: rgba(148, 163, 184, 0.5);
+}
+
+.ls-picker {
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  margin-bottom: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.ls-picker-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.ls-chip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+  gap: 0.45rem;
+}
+
+.ls-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.4rem 0.6rem;
+  text-align: left;
+  color: var(--muted);
+  transition: border-color 0.12s, background 0.12s, color 0.12s;
+  overflow: hidden;
+}
+
+.ls-chip:hover {
+  border-color: rgba(148, 163, 184, 0.5);
+}
+
+.ls-chip.on {
+  background: rgba(56, 189, 248, 0.08);
+  border-color: rgba(56, 189, 248, 0.45);
+  color: var(--text);
+}
+
+.ls-chip-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: 2px solid;
+  flex-shrink: 0;
+}
+
+.ls-chip-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.ls-chip-host {
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-style: italic;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.ls-empty-chart {
+  color: var(--muted);
+  font-style: italic;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
 .ls-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 380px;
