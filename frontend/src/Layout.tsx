@@ -60,6 +60,13 @@ export default function Layout() {
       <div className="shell">
         <nav className="shell-topbar">
           <NavLink
+            to="/lab-support"
+            end
+            className={({ isActive }) => 'topbar-link' + (isActive ? ' active' : '')}
+          >
+            Lab support
+          </NavLink>
+          <NavLink
             to="/survey"
             end
             className={({ isActive }) => 'topbar-link' + (isActive ? ' active' : '')}
