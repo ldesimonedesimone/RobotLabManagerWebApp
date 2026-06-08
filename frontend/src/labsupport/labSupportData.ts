@@ -15,6 +15,40 @@ export const LAB_SUPPORT_DATA = {
     "gen2-018",
     "gen2-102"
   ],
+  "faultTypes": [
+    {
+      "key": "right_arm_frozen",
+      "label": "Right arm frozen"
+    },
+    {
+      "key": "left_arm_frozen",
+      "label": "Left arm frozen"
+    },
+    {
+      "key": "head_cam_out",
+      "label": "Head cam out"
+    },
+    {
+      "key": "chest_frozen",
+      "label": "Chest frozen"
+    },
+    {
+      "key": "neck_frozen",
+      "label": "Neck frozen"
+    },
+    {
+      "key": "right_gripper_not_working",
+      "label": "Right gripper not working"
+    },
+    {
+      "key": "left_gripper_not_working",
+      "label": "Left gripper not working"
+    },
+    {
+      "key": "other_robot_issue",
+      "label": "Other robot issue"
+    }
+  ],
   "subtitle": "6-week rolling window \u00b7 Mon\u2013Fri \u00b7 >90s hardware faults only (arm / gripper / head cam / neck / chest / other robot issue \u2014 wrist-cam & operational faults excluded)",
   "footer": "Source: Ultra Neon DB via MCP user-ultra \u00b7 station_faults (count + TTR) and station_states (running hours).",
   "generatedAt": "2026-06-08",
@@ -35,14 +69,40 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-005",
       "color": "#4682b4",
       "note": null,
-      "counts": [
-        0,
-        1,
-        3,
-        1,
-        2,
-        14
-      ],
+      "countsByType": {
+        "left_arm_frozen": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          5
+        ],
+        "other_robot_issue": [
+          0,
+          0,
+          2,
+          1,
+          0,
+          0
+        ],
+        "right_arm_frozen": [
+          0,
+          0,
+          1,
+          0,
+          2,
+          7
+        ],
+        "head_cam_out": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ]
+      },
       "default": true
     },
     {
@@ -50,14 +110,40 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-109",
       "color": "#e67e22",
       "note": null,
-      "counts": [
-        0,
-        0,
-        3,
-        3,
-        6,
-        13
-      ],
+      "countsByType": {
+        "left_arm_frozen": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        "right_arm_frozen": [
+          0,
+          0,
+          1,
+          0,
+          4,
+          11
+        ],
+        "other_robot_issue": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "head_cam_out": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ]
+      },
       "default": true
     },
     {
@@ -65,14 +151,40 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-007",
       "color": "#3498db",
       "note": null,
-      "counts": [
-        1,
-        4,
-        1,
-        10,
-        6,
-        7
-      ],
+      "countsByType": {
+        "other_robot_issue": [
+          1,
+          2,
+          1,
+          1,
+          2,
+          1
+        ],
+        "left_arm_frozen": [
+          0,
+          1,
+          0,
+          4,
+          2,
+          3
+        ],
+        "right_arm_frozen": [
+          0,
+          1,
+          0,
+          4,
+          2,
+          3
+        ],
+        "head_cam_out": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      },
       "default": true
     },
     {
@@ -80,14 +192,40 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-110",
       "color": "#e74c3c",
       "note": null,
-      "counts": [
-        0,
-        0,
-        1,
-        6,
-        5,
-        3
-      ],
+      "countsByType": {
+        "other_robot_issue": [
+          0,
+          0,
+          1,
+          3,
+          3,
+          1
+        ],
+        "right_arm_frozen": [
+          0,
+          0,
+          0,
+          2,
+          2,
+          1
+        ],
+        "right_gripper_not_working": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "left_arm_frozen": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
       "default": true
     },
     {
@@ -95,14 +233,48 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-108",
       "color": "#f39c12",
       "note": null,
-      "counts": [
-        0,
-        0,
-        22,
-        7,
-        2,
-        7
-      ],
+      "countsByType": {
+        "left_arm_frozen": [
+          0,
+          0,
+          9,
+          2,
+          0,
+          4
+        ],
+        "right_arm_frozen": [
+          0,
+          0,
+          8,
+          3,
+          0,
+          1
+        ],
+        "chest_frozen": [
+          0,
+          0,
+          4,
+          0,
+          0,
+          0
+        ],
+        "other_robot_issue": [
+          0,
+          0,
+          1,
+          2,
+          0,
+          1
+        ],
+        "head_cam_out": [
+          0,
+          0,
+          0,
+          0,
+          2,
+          1
+        ]
+      },
       "default": true
     },
     {
@@ -110,14 +282,40 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-105",
       "color": "#1abc9c",
       "note": null,
-      "counts": [
-        3,
-        2,
-        1,
-        13,
-        15,
-        8
-      ],
+      "countsByType": {
+        "other_robot_issue": [
+          2,
+          1,
+          0,
+          2,
+          5,
+          1
+        ],
+        "right_arm_frozen": [
+          1,
+          0,
+          1,
+          2,
+          4,
+          2
+        ],
+        "chest_frozen": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "left_arm_frozen": [
+          0,
+          0,
+          0,
+          9,
+          6,
+          5
+        ]
+      },
       "default": true
     },
     {
@@ -125,14 +323,72 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-104",
       "color": "#d81b60",
       "note": null,
-      "counts": [
-        17,
-        12,
-        15,
-        17,
-        17,
-        35
-      ],
+      "countsByType": {
+        "left_arm_frozen": [
+          3,
+          8,
+          1,
+          5,
+          2,
+          6
+        ],
+        "head_cam_out": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "other_robot_issue": [
+          6,
+          2,
+          1,
+          2,
+          4,
+          1
+        ],
+        "right_arm_frozen": [
+          5,
+          1,
+          9,
+          10,
+          8,
+          21
+        ],
+        "right_gripper_not_working": [
+          2,
+          0,
+          2,
+          0,
+          2,
+          3
+        ],
+        "neck_frozen": [
+          0,
+          1,
+          0,
+          0,
+          1,
+          0
+        ],
+        "chest_frozen": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          1
+        ],
+        "left_gripper_not_working": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          3
+        ]
+      },
       "default": true
     },
     {
@@ -140,14 +396,48 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-103",
       "color": "#5d6d7e",
       "note": null,
-      "counts": [
-        32,
-        15,
-        9,
-        19,
-        7,
-        5
-      ],
+      "countsByType": {
+        "right_gripper_not_working": [
+          8,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "right_arm_frozen": [
+          23,
+          12,
+          7,
+          12,
+          1,
+          2
+        ],
+        "other_robot_issue": [
+          1,
+          2,
+          1,
+          4,
+          1,
+          2
+        ],
+        "left_arm_frozen": [
+          0,
+          1,
+          0,
+          3,
+          4,
+          1
+        ],
+        "head_cam_out": [
+          0,
+          0,
+          1,
+          0,
+          1,
+          0
+        ]
+      },
       "default": true
     },
     {
@@ -155,14 +445,56 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-018",
       "color": "#a4c639",
       "note": null,
-      "counts": [
-        3,
-        19,
-        37,
-        22,
-        19,
-        6
-      ],
+      "countsByType": {
+        "right_arm_frozen": [
+          2,
+          6,
+          29,
+          12,
+          12,
+          1
+        ],
+        "left_gripper_not_working": [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "right_gripper_not_working": [
+          0,
+          1,
+          4,
+          3,
+          0,
+          0
+        ],
+        "other_robot_issue": [
+          0,
+          3,
+          2,
+          5,
+          1,
+          0
+        ],
+        "neck_frozen": [
+          0,
+          3,
+          0,
+          0,
+          1,
+          0
+        ],
+        "left_arm_frozen": [
+          0,
+          5,
+          2,
+          2,
+          5,
+          5
+        ]
+      },
       "default": true
     },
     {
@@ -170,14 +502,56 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-102",
       "color": "#0d47a1",
       "note": null,
-      "counts": [
-        7,
-        16,
-        17,
-        26,
-        27,
-        31
-      ],
+      "countsByType": {
+        "right_arm_frozen": [
+          5,
+          5,
+          15,
+          26,
+          20,
+          21
+        ],
+        "left_arm_frozen": [
+          1,
+          7,
+          1,
+          0,
+          1,
+          7
+        ],
+        "right_gripper_not_working": [
+          1,
+          1,
+          1,
+          0,
+          4,
+          0
+        ],
+        "other_robot_issue": [
+          0,
+          2,
+          0,
+          0,
+          2,
+          2
+        ],
+        "neck_frozen": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "head_cam_out": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
       "default": true
     },
     {
@@ -185,14 +559,56 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-008",
       "color": "#5578cc",
       "note": null,
-      "counts": [
-        2,
-        6,
-        6,
-        4,
-        2,
-        0
-      ],
+      "countsByType": {
+        "head_cam_out": [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "other_robot_issue": [
+          1,
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        "right_arm_frozen": [
+          0,
+          3,
+          2,
+          0,
+          1,
+          0
+        ],
+        "left_arm_frozen": [
+          0,
+          2,
+          3,
+          1,
+          1,
+          0
+        ],
+        "chest_frozen": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "neck_frozen": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      },
       "default": false
     },
     {
@@ -200,14 +616,24 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-117",
       "color": "#9acc55",
       "note": null,
-      "counts": [
-        0,
-        0,
-        0,
-        2,
-        0,
-        0
-      ],
+      "countsByType": {
+        "right_arm_frozen": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "left_arm_frozen": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      },
       "default": false
     },
     {
@@ -215,14 +641,48 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-004",
       "color": "#cc55bd",
       "note": null,
-      "counts": [
-        2,
-        4,
-        4,
-        5,
-        3,
-        3
-      ],
+      "countsByType": {
+        "right_arm_frozen": [
+          1,
+          0,
+          1,
+          2,
+          1,
+          1
+        ],
+        "other_robot_issue": [
+          1,
+          2,
+          0,
+          1,
+          0,
+          0
+        ],
+        "chest_frozen": [
+          0,
+          2,
+          1,
+          0,
+          0,
+          0
+        ],
+        "head_cam_out": [
+          0,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        "left_arm_frozen": [
+          0,
+          0,
+          0,
+          2,
+          2,
+          2
+        ]
+      },
       "default": false
     },
     {
@@ -230,14 +690,40 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-016",
       "color": "#55ccb8",
       "note": null,
-      "counts": [
-        11,
-        13,
-        3,
-        0,
-        11,
-        6
-      ],
+      "countsByType": {
+        "other_robot_issue": [
+          3,
+          1,
+          1,
+          0,
+          1,
+          0
+        ],
+        "right_arm_frozen": [
+          7,
+          10,
+          2,
+          0,
+          8,
+          5
+        ],
+        "left_arm_frozen": [
+          1,
+          0,
+          0,
+          0,
+          2,
+          1
+        ],
+        "neck_frozen": [
+          0,
+          2,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
       "default": false
     },
     {
@@ -245,14 +731,40 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-020",
       "color": "#cc9555",
       "note": null,
-      "counts": [
-        1,
-        2,
-        6,
-        4,
-        1,
-        0
-      ],
+      "countsByType": {
+        "other_robot_issue": [
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "head_cam_out": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "left_arm_frozen": [
+          0,
+          1,
+          2,
+          3,
+          0,
+          0
+        ],
+        "right_arm_frozen": [
+          0,
+          0,
+          2,
+          1,
+          1,
+          0
+        ]
+      },
       "default": false
     },
     {
@@ -260,14 +772,24 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-006",
       "color": "#7355cc",
       "note": null,
-      "counts": [
-        0,
-        5,
-        7,
-        7,
-        5,
-        8
-      ],
+      "countsByType": {
+        "left_arm_frozen": [
+          0,
+          3,
+          4,
+          5,
+          3,
+          4
+        ],
+        "right_arm_frozen": [
+          0,
+          2,
+          3,
+          2,
+          2,
+          4
+        ]
+      },
       "default": false
     },
     {
@@ -275,14 +797,48 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-107",
       "color": "#5acc55",
       "note": null,
-      "counts": [
-        9,
-        4,
-        1,
-        2,
-        0,
-        2
-      ],
+      "countsByType": {
+        "left_arm_frozen": [
+          6,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "right_arm_frozen": [
+          3,
+          2,
+          0,
+          1,
+          0,
+          0
+        ],
+        "neck_frozen": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "head_cam_out": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "other_robot_issue": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
       "default": false
     },
     {
@@ -290,14 +846,40 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-106",
       "color": "#cc557d",
       "note": null,
-      "counts": [
-        3,
-        2,
-        1,
-        2,
-        4,
-        2
-      ],
+      "countsByType": {
+        "head_cam_out": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "left_arm_frozen": [
+          2,
+          0,
+          1,
+          1,
+          2,
+          0
+        ],
+        "other_robot_issue": [
+          0,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        "right_arm_frozen": [
+          0,
+          0,
+          0,
+          1,
+          2,
+          2
+        ]
+      },
       "default": false
     },
     {
@@ -305,14 +887,7 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-015",
       "color": "#559fcc",
       "note": null,
-      "counts": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
+      "countsByType": {},
       "default": false
     },
     {
@@ -320,14 +895,40 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-003",
       "color": "#c2cc55",
       "note": null,
-      "counts": [
-        4,
-        6,
-        0,
-        0,
-        0,
-        0
-      ],
+      "countsByType": {
+        "other_robot_issue": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "right_arm_frozen": [
+          1,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        "left_arm_frozen": [
+          2,
+          3,
+          0,
+          0,
+          0,
+          0
+        ],
+        "head_cam_out": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
       "default": false
     },
     {
@@ -335,14 +936,24 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-115",
       "color": "#b355cc",
       "note": null,
-      "counts": [
-        0,
-        0,
-        0,
-        0,
-        2,
-        0
-      ],
+      "countsByType": {
+        "right_arm_frozen": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "left_arm_frozen": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ]
+      },
       "default": false
     },
     {
@@ -350,14 +961,48 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-012",
       "color": "#55cc90",
       "note": null,
-      "counts": [
-        1,
-        2,
-        8,
-        12,
-        10,
-        7
-      ],
+      "countsByType": {
+        "chest_frozen": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "right_arm_frozen": [
+          0,
+          2,
+          2,
+          10,
+          4,
+          0
+        ],
+        "left_arm_frozen": [
+          0,
+          0,
+          5,
+          2,
+          4,
+          6
+        ],
+        "other_robot_issue": [
+          0,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "head_cam_out": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1
+        ]
+      },
       "default": false
     },
     {
@@ -365,14 +1010,24 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-112",
       "color": "#cc6e55",
       "note": null,
-      "counts": [
-        0,
-        0,
-        0,
-        0,
-        2,
-        6
-      ],
+      "countsByType": {
+        "left_arm_frozen": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          3
+        ],
+        "right_arm_frozen": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      },
       "default": false
     },
     {
@@ -380,14 +1035,24 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-113",
       "color": "#555fcc",
       "note": null,
-      "counts": [
-        0,
-        0,
-        0,
-        3,
-        5,
-        0
-      ],
+      "countsByType": {
+        "left_arm_frozen": [
+          0,
+          0,
+          0,
+          1,
+          2,
+          0
+        ],
+        "right_arm_frozen": [
+          0,
+          0,
+          0,
+          2,
+          3,
+          0
+        ]
+      },
       "default": false
     },
     {
@@ -395,14 +1060,32 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-017",
       "color": "#82cc55",
       "note": null,
-      "counts": [
-        2,
-        1,
-        1,
-        0,
-        2,
-        0
-      ],
+      "countsByType": {
+        "left_arm_frozen": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "other_robot_issue": [
+          0,
+          1,
+          0,
+          0,
+          2,
+          0
+        ],
+        "neck_frozen": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ]
+      },
       "default": false
     },
     {
@@ -410,14 +1093,56 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-013",
       "color": "#cc55a4",
       "note": null,
-      "counts": [
-        0,
-        1,
-        2,
-        5,
-        0,
-        9
-      ],
+      "countsByType": {
+        "left_gripper_not_working": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "neck_frozen": [
+          0,
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        "head_cam_out": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "other_robot_issue": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          3
+        ],
+        "right_arm_frozen": [
+          0,
+          0,
+          0,
+          2,
+          0,
+          3
+        ],
+        "left_arm_frozen": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          3
+        ]
+      },
       "default": false
     },
     {
@@ -425,14 +1150,7 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-101",
       "color": "#55c7cc",
       "note": null,
-      "counts": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
+      "countsByType": {},
       "default": false
     },
     {
@@ -440,14 +1158,7 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-111",
       "color": "#ccae55",
       "note": null,
-      "counts": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
+      "countsByType": {},
       "default": false
     },
     {
@@ -455,14 +1166,7 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-114",
       "color": "#8b55cc",
       "note": null,
-      "counts": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
+      "countsByType": {},
       "default": false
     },
     {
@@ -470,14 +1174,7 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-116",
       "color": "#55cc69",
       "note": null,
-      "counts": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
+      "countsByType": {},
       "default": false
     },
     {
@@ -485,14 +1182,7 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-118",
       "color": "#cc5564",
       "note": null,
-      "counts": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
+      "countsByType": {},
       "default": false
     },
     {
@@ -500,14 +1190,7 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-119",
       "color": "#5587cc",
       "note": null,
-      "counts": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
+      "countsByType": {},
       "default": false
     },
     {
@@ -515,14 +1198,7 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-120",
       "color": "#a9cc55",
       "note": null,
-      "counts": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
+      "countsByType": {},
       "default": false
     },
     {
@@ -530,14 +1206,7 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-121",
       "color": "#cb55cc",
       "note": null,
-      "counts": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
+      "countsByType": {},
       "default": false
     },
     {
@@ -545,14 +1214,7 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-122",
       "color": "#55cca9",
       "note": null,
-      "counts": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
+      "countsByType": {},
       "default": false
     }
   ],
@@ -563,12 +1225,28 @@ export const LAB_SUPPORT_DATA = {
       "color": "#4682b4",
       "note": null,
       "default": true,
-      "slowCount": 14,
       "runHours": 51.4,
-      "topFault": {
-        "label": "Left arm frozen",
-        "ttr": "3h 20m",
-        "count": 5
+      "faultByType": {
+        "head_cam_out": [
+          4646,
+          4
+        ],
+        "right_arm_frozen": [
+          6755,
+          17
+        ],
+        "neck_frozen": [
+          218,
+          5
+        ],
+        "left_arm_frozen": [
+          11978,
+          5
+        ],
+        "chest_frozen": [
+          77,
+          2
+        ]
       }
     },
     {
@@ -577,12 +1255,32 @@ export const LAB_SUPPORT_DATA = {
       "color": "#e67e22",
       "note": null,
       "default": true,
-      "slowCount": 13,
       "runHours": 47.4,
-      "topFault": {
-        "label": "Right arm frozen",
-        "ttr": "5h 45m",
-        "count": 29
+      "faultByType": {
+        "left_gripper_not_working": [
+          79,
+          2
+        ],
+        "head_cam_out": [
+          435,
+          7
+        ],
+        "right_arm_frozen": [
+          20689,
+          29
+        ],
+        "chest_frozen": [
+          116,
+          2
+        ],
+        "left_arm_frozen": [
+          384,
+          9
+        ],
+        "other_robot_issue": [
+          3530,
+          1
+        ]
       }
     },
     {
@@ -591,12 +1289,24 @@ export const LAB_SUPPORT_DATA = {
       "color": "#3498db",
       "note": null,
       "default": true,
-      "slowCount": 7,
       "runHours": 40.6,
-      "topFault": {
-        "label": "Left arm frozen",
-        "ttr": "5h 3m",
-        "count": 3
+      "faultByType": {
+        "other_robot_issue": [
+          189,
+          1
+        ],
+        "left_arm_frozen": [
+          18203,
+          3
+        ],
+        "right_arm_frozen": [
+          1034,
+          5
+        ],
+        "head_cam_out": [
+          74,
+          2
+        ]
       }
     },
     {
@@ -605,12 +1315,40 @@ export const LAB_SUPPORT_DATA = {
       "color": "#e74c3c",
       "note": null,
       "default": true,
-      "slowCount": 3,
       "runHours": 60.1,
-      "topFault": {
-        "label": "Other robot issue",
-        "ttr": "15m",
-        "count": 3
+      "faultByType": {
+        "left_arm_frozen": [
+          239,
+          3
+        ],
+        "other_robot_issue": [
+          902,
+          3
+        ],
+        "head_cam_out": [
+          76,
+          2
+        ],
+        "chest_frozen": [
+          168,
+          4
+        ],
+        "right_arm_frozen": [
+          492,
+          9
+        ],
+        "left_gripper_not_working": [
+          72,
+          2
+        ],
+        "right_gripper_not_working": [
+          110,
+          3
+        ],
+        "neck_frozen": [
+          181,
+          4
+        ]
       }
     },
     {
@@ -619,12 +1357,32 @@ export const LAB_SUPPORT_DATA = {
       "color": "#f39c12",
       "note": null,
       "default": true,
-      "slowCount": 7,
       "runHours": 59.6,
-      "topFault": {
-        "label": "Right arm frozen",
-        "ttr": "1h 9m",
-        "count": 2
+      "faultByType": {
+        "head_cam_out": [
+          193,
+          3
+        ],
+        "chest_frozen": [
+          198,
+          4
+        ],
+        "left_arm_frozen": [
+          1118,
+          11
+        ],
+        "left_gripper_not_working": [
+          39,
+          1
+        ],
+        "other_robot_issue": [
+          1938,
+          3
+        ],
+        "right_arm_frozen": [
+          4130,
+          2
+        ]
       }
     },
     {
@@ -633,12 +1391,32 @@ export const LAB_SUPPORT_DATA = {
       "color": "#1abc9c",
       "note": null,
       "default": true,
-      "slowCount": 8,
       "runHours": 45.7,
-      "topFault": {
-        "label": "Left arm frozen",
-        "ttr": "51m",
-        "count": 52
+      "faultByType": {
+        "left_arm_frozen": [
+          3057,
+          52
+        ],
+        "other_robot_issue": [
+          184,
+          2
+        ],
+        "left_gripper_not_working": [
+          118,
+          3
+        ],
+        "chest_frozen": [
+          78,
+          2
+        ],
+        "right_arm_frozen": [
+          1299,
+          3
+        ],
+        "right_gripper_not_working": [
+          39,
+          1
+        ]
       }
     },
     {
@@ -647,12 +1425,36 @@ export const LAB_SUPPORT_DATA = {
       "color": "#d81b60",
       "note": null,
       "default": true,
-      "slowCount": 35,
       "runHours": 54.1,
-      "topFault": {
-        "label": "Right arm frozen",
-        "ttr": "5h 26m",
-        "count": 22
+      "faultByType": {
+        "left_gripper_not_working": [
+          634,
+          3
+        ],
+        "chest_frozen": [
+          350,
+          8
+        ],
+        "right_gripper_not_working": [
+          507,
+          3
+        ],
+        "right_arm_frozen": [
+          19565,
+          22
+        ],
+        "left_arm_frozen": [
+          10106,
+          6
+        ],
+        "head_cam_out": [
+          47,
+          1
+        ],
+        "other_robot_issue": [
+          657,
+          1
+        ]
       }
     },
     {
@@ -661,12 +1463,40 @@ export const LAB_SUPPORT_DATA = {
       "color": "#5d6d7e",
       "note": null,
       "default": true,
-      "slowCount": 5,
       "runHours": 48.4,
-      "topFault": {
-        "label": "Right arm frozen",
-        "ttr": "1h 58m",
-        "count": 23
+      "faultByType": {
+        "right_arm_frozen": [
+          7080,
+          23
+        ],
+        "neck_frozen": [
+          173,
+          4
+        ],
+        "left_gripper_not_working": [
+          36,
+          1
+        ],
+        "other_robot_issue": [
+          410,
+          2
+        ],
+        "left_arm_frozen": [
+          226,
+          3
+        ],
+        "chest_frozen": [
+          40,
+          1
+        ],
+        "head_cam_out": [
+          42,
+          1
+        ],
+        "right_gripper_not_working": [
+          37,
+          1
+        ]
       }
     },
     {
@@ -675,12 +1505,20 @@ export const LAB_SUPPORT_DATA = {
       "color": "#a4c639",
       "note": null,
       "default": true,
-      "slowCount": 6,
       "runHours": 27.6,
-      "topFault": {
-        "label": "Left arm frozen",
-        "ttr": "60m",
-        "count": 6
+      "faultByType": {
+        "left_arm_frozen": [
+          3589,
+          6
+        ],
+        "head_cam_out": [
+          36,
+          1
+        ],
+        "right_arm_frozen": [
+          1833,
+          1
+        ]
       }
     },
     {
@@ -689,12 +1527,28 @@ export const LAB_SUPPORT_DATA = {
       "color": "#0d47a1",
       "note": null,
       "default": true,
-      "slowCount": 31,
       "runHours": 58.5,
-      "topFault": {
-        "label": "Right arm frozen",
-        "ttr": "2h 34m",
-        "count": 21
+      "faultByType": {
+        "other_robot_issue": [
+          2624,
+          3
+        ],
+        "chest_frozen": [
+          36,
+          1
+        ],
+        "right_arm_frozen": [
+          9242,
+          21
+        ],
+        "head_cam_out": [
+          449,
+          5
+        ],
+        "left_arm_frozen": [
+          1240,
+          7
+        ]
       }
     },
     {
@@ -703,9 +1557,8 @@ export const LAB_SUPPORT_DATA = {
       "color": "#5578cc",
       "note": null,
       "default": false,
-      "slowCount": 0,
       "runHours": 0.0,
-      "topFault": null
+      "faultByType": {}
     },
     {
       "lab": "Captain Pack Sparrow",
@@ -713,9 +1566,8 @@ export const LAB_SUPPORT_DATA = {
       "color": "#9acc55",
       "note": null,
       "default": false,
-      "slowCount": 0,
       "runHours": 0.0,
-      "topFault": null
+      "faultByType": {}
     },
     {
       "lab": "Fleetwood Pack",
@@ -723,12 +1575,16 @@ export const LAB_SUPPORT_DATA = {
       "color": "#cc55bd",
       "note": null,
       "default": false,
-      "slowCount": 3,
       "runHours": 18.1,
-      "topFault": {
-        "label": "Left arm frozen",
-        "ttr": "46m",
-        "count": 3
+      "faultByType": {
+        "left_arm_frozen": [
+          2776,
+          3
+        ],
+        "right_arm_frozen": [
+          2159,
+          1
+        ]
       }
     },
     {
@@ -737,12 +1593,24 @@ export const LAB_SUPPORT_DATA = {
       "color": "#55ccb8",
       "note": null,
       "default": false,
-      "slowCount": 6,
       "runHours": 33.5,
-      "topFault": {
-        "label": "Right arm frozen",
-        "ttr": "1h 19m",
-        "count": 5
+      "faultByType": {
+        "head_cam_out": [
+          113,
+          3
+        ],
+        "left_gripper_not_working": [
+          38,
+          1
+        ],
+        "right_arm_frozen": [
+          4716,
+          5
+        ],
+        "left_arm_frozen": [
+          1912,
+          3
+        ]
       }
     },
     {
@@ -751,9 +1619,8 @@ export const LAB_SUPPORT_DATA = {
       "color": "#cc9555",
       "note": null,
       "default": false,
-      "slowCount": 0,
       "runHours": 0.0,
-      "topFault": null
+      "faultByType": {}
     },
     {
       "lab": "Mahdi test bot",
@@ -761,12 +1628,16 @@ export const LAB_SUPPORT_DATA = {
       "color": "#7355cc",
       "note": null,
       "default": false,
-      "slowCount": 8,
       "runHours": 0.4,
-      "topFault": {
-        "label": "Left arm frozen",
-        "ttr": "10h",
-        "count": 3
+      "faultByType": {
+        "left_arm_frozen": [
+          36009,
+          3
+        ],
+        "right_arm_frozen": [
+          29901,
+          3
+        ]
       }
     },
     {
@@ -775,12 +1646,24 @@ export const LAB_SUPPORT_DATA = {
       "color": "#5acc55",
       "note": null,
       "default": false,
-      "slowCount": 2,
       "runHours": 28.7,
-      "topFault": {
-        "label": "Other robot issue",
-        "ttr": "30m",
-        "count": 1
+      "faultByType": {
+        "left_arm_frozen": [
+          433,
+          1
+        ],
+        "neck_frozen": [
+          307,
+          7
+        ],
+        "head_cam_out": [
+          76,
+          2
+        ],
+        "other_robot_issue": [
+          1802,
+          1
+        ]
       }
     },
     {
@@ -789,12 +1672,12 @@ export const LAB_SUPPORT_DATA = {
       "color": "#cc557d",
       "note": null,
       "default": false,
-      "slowCount": 2,
       "runHours": 9.1,
-      "topFault": {
-        "label": "Right arm frozen",
-        "ttr": "6h",
-        "count": 2
+      "faultByType": {
+        "right_arm_frozen": [
+          21623,
+          2
+        ]
       }
     },
     {
@@ -803,9 +1686,8 @@ export const LAB_SUPPORT_DATA = {
       "color": "#559fcc",
       "note": null,
       "default": false,
-      "slowCount": 0,
       "runHours": 2.2,
-      "topFault": null
+      "faultByType": {}
     },
     {
       "lab": "Old Lab 2",
@@ -813,9 +1695,8 @@ export const LAB_SUPPORT_DATA = {
       "color": "#c2cc55",
       "note": null,
       "default": false,
-      "slowCount": 0,
       "runHours": 0.0,
-      "topFault": null
+      "faultByType": {}
     },
     {
       "lab": "Packasaurus",
@@ -823,9 +1704,8 @@ export const LAB_SUPPORT_DATA = {
       "color": "#b355cc",
       "note": null,
       "default": false,
-      "slowCount": 0,
       "runHours": 0.2,
-      "topFault": null
+      "faultByType": {}
     },
     {
       "lab": "Packie 2.0",
@@ -833,12 +1713,16 @@ export const LAB_SUPPORT_DATA = {
       "color": "#55cc90",
       "note": null,
       "default": false,
-      "slowCount": 7,
       "runHours": 35.4,
-      "topFault": {
-        "label": "Left arm frozen",
-        "ttr": "1h",
-        "count": 7
+      "faultByType": {
+        "head_cam_out": [
+          2317,
+          7
+        ],
+        "left_arm_frozen": [
+          3601,
+          7
+        ]
       }
     },
     {
@@ -847,12 +1731,16 @@ export const LAB_SUPPORT_DATA = {
       "color": "#cc6e55",
       "note": null,
       "default": false,
-      "slowCount": 6,
       "runHours": 0.0,
-      "topFault": {
-        "label": "Right arm frozen",
-        "ttr": "13m",
-        "count": 3
+      "faultByType": {
+        "left_arm_frozen": [
+          767,
+          3
+        ],
+        "right_arm_frozen": [
+          769,
+          3
+        ]
       }
     },
     {
@@ -861,9 +1749,8 @@ export const LAB_SUPPORT_DATA = {
       "color": "#555fcc",
       "note": null,
       "default": false,
-      "slowCount": 0,
       "runHours": 0.0,
-      "topFault": null
+      "faultByType": {}
     },
     {
       "lab": "Phil",
@@ -871,12 +1758,12 @@ export const LAB_SUPPORT_DATA = {
       "color": "#82cc55",
       "note": null,
       "default": false,
-      "slowCount": 0,
       "runHours": 14.7,
-      "topFault": {
-        "label": "Head cam out",
-        "ttr": "58s",
-        "count": 1
+      "faultByType": {
+        "head_cam_out": [
+          58,
+          1
+        ]
       }
     },
     {
@@ -885,12 +1772,32 @@ export const LAB_SUPPORT_DATA = {
       "color": "#cc55a4",
       "note": null,
       "default": false,
-      "slowCount": 9,
       "runHours": 29.5,
-      "topFault": {
-        "label": "Other robot issue",
-        "ttr": "4h 34m",
-        "count": 3
+      "faultByType": {
+        "neck_frozen": [
+          422,
+          9
+        ],
+        "right_arm_frozen": [
+          4836,
+          4
+        ],
+        "left_arm_frozen": [
+          6939,
+          4
+        ],
+        "other_robot_issue": [
+          16448,
+          3
+        ],
+        "head_cam_out": [
+          38,
+          1
+        ],
+        "right_gripper_not_working": [
+          35,
+          1
+        ]
       }
     },
     {
@@ -899,9 +1806,8 @@ export const LAB_SUPPORT_DATA = {
       "color": "#55c7cc",
       "note": null,
       "default": false,
-      "slowCount": 0,
       "runHours": 0.0,
-      "topFault": null
+      "faultByType": {}
     },
     {
       "lab": "gen2-111",
@@ -909,9 +1815,8 @@ export const LAB_SUPPORT_DATA = {
       "color": "#ccae55",
       "note": null,
       "default": false,
-      "slowCount": 0,
       "runHours": 0.0,
-      "topFault": null
+      "faultByType": {}
     },
     {
       "lab": "gen2-114",
@@ -919,9 +1824,8 @@ export const LAB_SUPPORT_DATA = {
       "color": "#8b55cc",
       "note": null,
       "default": false,
-      "slowCount": 0,
       "runHours": 0.0,
-      "topFault": null
+      "faultByType": {}
     },
     {
       "lab": "gen2-116",
@@ -929,9 +1833,8 @@ export const LAB_SUPPORT_DATA = {
       "color": "#55cc69",
       "note": null,
       "default": false,
-      "slowCount": 0,
       "runHours": 0.0,
-      "topFault": null
+      "faultByType": {}
     },
     {
       "lab": "gen2-118",
@@ -939,9 +1842,8 @@ export const LAB_SUPPORT_DATA = {
       "color": "#cc5564",
       "note": null,
       "default": false,
-      "slowCount": 0,
       "runHours": 0.0,
-      "topFault": null
+      "faultByType": {}
     },
     {
       "lab": "gen2-119",
@@ -949,9 +1851,8 @@ export const LAB_SUPPORT_DATA = {
       "color": "#5587cc",
       "note": null,
       "default": false,
-      "slowCount": 0,
       "runHours": 0.0,
-      "topFault": null
+      "faultByType": {}
     },
     {
       "lab": "gen2-120",
@@ -959,9 +1860,8 @@ export const LAB_SUPPORT_DATA = {
       "color": "#a9cc55",
       "note": null,
       "default": false,
-      "slowCount": 0,
       "runHours": 0.0,
-      "topFault": null
+      "faultByType": {}
     },
     {
       "lab": "gen2-121",
@@ -969,9 +1869,8 @@ export const LAB_SUPPORT_DATA = {
       "color": "#cb55cc",
       "note": null,
       "default": false,
-      "slowCount": 0,
       "runHours": 0.0,
-      "topFault": null
+      "faultByType": {}
     },
     {
       "lab": "gen2-122",
@@ -979,9 +1878,31142 @@ export const LAB_SUPPORT_DATA = {
       "color": "#55cca9",
       "note": null,
       "default": false,
-      "slowCount": 0,
       "runHours": 0.0,
-      "topFault": null
+      "faultByType": {}
     }
-  ]
+  ],
+  "utilization": {
+    "tzLabel": "EST",
+    "days": [
+      "2026-04-27",
+      "2026-04-28",
+      "2026-04-29",
+      "2026-04-30",
+      "2026-05-01",
+      "2026-05-02",
+      "2026-05-03",
+      "2026-05-04",
+      "2026-05-05",
+      "2026-05-06",
+      "2026-05-07",
+      "2026-05-08",
+      "2026-05-09",
+      "2026-05-10",
+      "2026-05-11",
+      "2026-05-12",
+      "2026-05-13",
+      "2026-05-14",
+      "2026-05-15",
+      "2026-05-16",
+      "2026-05-17",
+      "2026-05-18",
+      "2026-05-19",
+      "2026-05-20",
+      "2026-05-21",
+      "2026-05-22",
+      "2026-05-23",
+      "2026-05-24",
+      "2026-05-25",
+      "2026-05-26",
+      "2026-05-27",
+      "2026-05-28",
+      "2026-05-29",
+      "2026-05-30",
+      "2026-05-31",
+      "2026-06-01",
+      "2026-06-02",
+      "2026-06-03",
+      "2026-06-04",
+      "2026-06-05"
+    ],
+    "defaultStartHour": 9,
+    "defaultEndHour": 18,
+    "defaultSpanStart": "2026-06-01",
+    "defaultSpanEnd": "2026-06-05",
+    "buckets": {
+      "gen2-005": {
+        "2026-04-27": {
+          "13": [
+            0,
+            3289
+          ],
+          "17": [
+            0,
+            2897
+          ],
+          "12": [
+            0,
+            2536
+          ],
+          "16": [
+            0,
+            3363
+          ],
+          "11": [
+            1,
+            1562
+          ],
+          "15": [
+            0,
+            3558
+          ],
+          "19": [
+            0,
+            1781
+          ],
+          "14": [
+            0,
+            3339
+          ],
+          "9": [
+            0,
+            2
+          ],
+          "18": [
+            0,
+            2714
+          ]
+        },
+        "2026-04-28": {
+          "14": [
+            0,
+            3241
+          ],
+          "23": [
+            856,
+            1620
+          ],
+          "9": [
+            0,
+            1962
+          ],
+          "18": [
+            0,
+            6
+          ],
+          "13": [
+            0,
+            2991
+          ],
+          "17": [
+            0,
+            3411
+          ],
+          "12": [
+            0,
+            2325
+          ],
+          "16": [
+            0,
+            3037
+          ],
+          "11": [
+            0,
+            2019
+          ],
+          "15": [
+            0,
+            3057
+          ],
+          "10": [
+            0,
+            2916
+          ]
+        },
+        "2026-04-29": {
+          "10": [
+            0,
+            3359
+          ],
+          "14": [
+            0,
+            3338
+          ],
+          "0": [
+            0,
+            483
+          ],
+          "9": [
+            0,
+            2185
+          ],
+          "13": [
+            0,
+            2875
+          ],
+          "17": [
+            0,
+            2458
+          ],
+          "12": [
+            0,
+            3295
+          ],
+          "16": [
+            0,
+            3344
+          ],
+          "11": [
+            0,
+            3465
+          ],
+          "15": [
+            0,
+            3106
+          ]
+        },
+        "2026-04-30": {
+          "13": [
+            0,
+            3444
+          ],
+          "17": [
+            0,
+            3462
+          ],
+          "12": [
+            0,
+            3166
+          ],
+          "16": [
+            0,
+            3536
+          ],
+          "11": [
+            0,
+            3271
+          ],
+          "15": [
+            0,
+            2896
+          ],
+          "10": [
+            0,
+            3381
+          ],
+          "14": [
+            0,
+            3411
+          ],
+          "9": [
+            0,
+            2833
+          ],
+          "18": [
+            0,
+            103
+          ]
+        },
+        "2026-05-01": {
+          "10": [
+            0,
+            3490
+          ],
+          "14": [
+            0,
+            2938
+          ],
+          "9": [
+            0,
+            2840
+          ],
+          "18": [
+            0,
+            61
+          ],
+          "13": [
+            0,
+            3534
+          ],
+          "17": [
+            0,
+            3017
+          ],
+          "12": [
+            0,
+            3302
+          ],
+          "16": [
+            0,
+            2951
+          ],
+          "11": [
+            0,
+            3556
+          ],
+          "15": [
+            0,
+            3262
+          ]
+        },
+        "2026-05-02": {
+          "14": [
+            6,
+            19
+          ],
+          "16": [
+            0,
+            9
+          ]
+        },
+        "2026-05-04": {
+          "18": [
+            0,
+            38
+          ],
+          "13": [
+            27,
+            1018
+          ],
+          "17": [
+            0,
+            2670
+          ],
+          "16": [
+            0,
+            3030
+          ],
+          "11": [
+            0,
+            1518
+          ],
+          "15": [
+            0,
+            3225
+          ],
+          "10": [
+            0,
+            3353
+          ],
+          "14": [
+            0,
+            2862
+          ],
+          "9": [
+            0,
+            3219
+          ]
+        },
+        "2026-05-05": {
+          "16": [
+            0,
+            3362
+          ],
+          "11": [
+            0,
+            3373
+          ],
+          "15": [
+            0,
+            2966
+          ],
+          "10": [
+            0,
+            3372
+          ],
+          "14": [
+            0,
+            3384
+          ],
+          "9": [
+            0,
+            2885
+          ],
+          "13": [
+            0,
+            3263
+          ],
+          "17": [
+            0,
+            3102
+          ],
+          "12": [
+            0,
+            3159
+          ]
+        },
+        "2026-05-06": {
+          "10": [
+            0,
+            3492
+          ],
+          "14": [
+            0,
+            2514
+          ],
+          "9": [
+            0,
+            1937
+          ],
+          "13": [
+            0,
+            3042
+          ],
+          "17": [
+            0,
+            3180
+          ],
+          "12": [
+            0,
+            2273
+          ],
+          "16": [
+            0,
+            3350
+          ],
+          "11": [
+            341,
+            2518
+          ],
+          "15": [
+            0,
+            3289
+          ]
+        },
+        "2026-05-07": {
+          "15": [
+            2922,
+            2922
+          ],
+          "10": [
+            0,
+            3016
+          ],
+          "19": [
+            3253,
+            3253
+          ],
+          "14": [
+            2716,
+            2716
+          ],
+          "23": [
+            3523,
+            3523
+          ],
+          "9": [
+            0,
+            2140
+          ],
+          "18": [
+            2081,
+            2082
+          ],
+          "13": [
+            802,
+            2571
+          ],
+          "22": [
+            2950,
+            2950
+          ],
+          "17": [
+            3151,
+            3151
+          ],
+          "12": [
+            0,
+            3161
+          ],
+          "21": [
+            2348,
+            2348
+          ],
+          "16": [
+            2324,
+            2324
+          ],
+          "11": [
+            0,
+            2523
+          ],
+          "20": [
+            2889,
+            2889
+          ]
+        },
+        "2026-05-08": {
+          "15": [
+            2730,
+            2730
+          ],
+          "10": [
+            2629,
+            2629
+          ],
+          "19": [
+            3125,
+            3125
+          ],
+          "14": [
+            2741,
+            2741
+          ],
+          "23": [
+            363,
+            363
+          ],
+          "0": [
+            3359,
+            3359
+          ],
+          "9": [
+            764,
+            764
+          ],
+          "18": [
+            2283,
+            2283
+          ],
+          "13": [
+            2637,
+            2637
+          ],
+          "17": [
+            3009,
+            3009
+          ],
+          "12": [
+            2206,
+            2206
+          ],
+          "21": [
+            432,
+            432
+          ],
+          "16": [
+            2745,
+            2745
+          ],
+          "11": [
+            3208,
+            3208
+          ],
+          "20": [
+            2693,
+            2693
+          ]
+        },
+        "2026-05-09": {
+          "0": [
+            3473,
+            3473
+          ]
+        },
+        "2026-05-11": {
+          "17": [
+            3364,
+            3364
+          ],
+          "12": [
+            3103,
+            3103
+          ],
+          "16": [
+            3049,
+            3050
+          ],
+          "11": [
+            3205,
+            3205
+          ],
+          "15": [
+            3301,
+            3301
+          ],
+          "10": [
+            2049,
+            2049
+          ],
+          "14": [
+            2751,
+            2751
+          ],
+          "9": [
+            2037,
+            2037
+          ],
+          "13": [
+            3524,
+            3524
+          ]
+        },
+        "2026-05-12": {
+          "15": [
+            2505,
+            2505
+          ],
+          "10": [
+            3026,
+            3026
+          ],
+          "14": [
+            2162,
+            2162
+          ],
+          "9": [
+            162,
+            162
+          ],
+          "13": [
+            1620,
+            1620
+          ],
+          "17": [
+            3503,
+            3503
+          ],
+          "12": [
+            2878,
+            2878
+          ],
+          "16": [
+            2649,
+            2649
+          ],
+          "11": [
+            3269,
+            3269
+          ]
+        },
+        "2026-05-13": {
+          "9": [
+            3011,
+            3011
+          ],
+          "18": [
+            16,
+            16
+          ],
+          "13": [
+            647,
+            647
+          ],
+          "17": [
+            2967,
+            2967
+          ],
+          "12": [
+            3225,
+            3225
+          ],
+          "16": [
+            3411,
+            3411
+          ],
+          "11": [
+            2074,
+            2074
+          ],
+          "15": [
+            3347,
+            3347
+          ],
+          "10": [
+            3433,
+            3433
+          ],
+          "14": [
+            3462,
+            3462
+          ]
+        },
+        "2026-05-14": {
+          "11": [
+            1002,
+            1002
+          ],
+          "15": [
+            3095,
+            3095
+          ],
+          "10": [
+            3480,
+            3480
+          ],
+          "14": [
+            1398,
+            1398
+          ],
+          "9": [
+            2845,
+            2845
+          ],
+          "18": [
+            4,
+            4
+          ],
+          "13": [
+            2959,
+            2959
+          ],
+          "17": [
+            3368,
+            3368
+          ],
+          "12": [
+            2991,
+            2991
+          ],
+          "16": [
+            2258,
+            2258
+          ]
+        },
+        "2026-05-15": {
+          "15": [
+            3394,
+            3394
+          ],
+          "14": [
+            3391,
+            3391
+          ],
+          "13": [
+            3450,
+            3450
+          ],
+          "17": [
+            2270,
+            2270
+          ],
+          "12": [
+            638,
+            638
+          ],
+          "16": [
+            2775,
+            2775
+          ]
+        },
+        "2026-05-18": {
+          "14": [
+            3178,
+            3178
+          ],
+          "23": [
+            2374,
+            2374
+          ],
+          "9": [
+            2376,
+            2376
+          ],
+          "18": [
+            1372,
+            1372
+          ],
+          "13": [
+            3126,
+            3126
+          ],
+          "22": [
+            3027,
+            3027
+          ],
+          "17": [
+            2977,
+            2977
+          ],
+          "12": [
+            3345,
+            3345
+          ],
+          "21": [
+            3237,
+            3237
+          ],
+          "16": [
+            3548,
+            3548
+          ],
+          "11": [
+            3480,
+            3480
+          ],
+          "20": [
+            3100,
+            3124
+          ],
+          "15": [
+            2813,
+            2813
+          ],
+          "10": [
+            2768,
+            2768
+          ],
+          "19": [
+            3468,
+            3468
+          ]
+        },
+        "2026-05-19": {
+          "19": [
+            3541,
+            3541
+          ],
+          "14": [
+            3051,
+            3051
+          ],
+          "23": [
+            3048,
+            3048
+          ],
+          "0": [
+            3063,
+            3063
+          ],
+          "9": [
+            2713,
+            2713
+          ],
+          "18": [
+            3428,
+            3428
+          ],
+          "13": [
+            2909,
+            2909
+          ],
+          "22": [
+            3054,
+            3054
+          ],
+          "17": [
+            2294,
+            2294
+          ],
+          "12": [
+            2839,
+            2839
+          ],
+          "21": [
+            3326,
+            3326
+          ],
+          "16": [
+            1153,
+            1153
+          ],
+          "11": [
+            3031,
+            3031
+          ],
+          "20": [
+            3493,
+            3493
+          ],
+          "15": [
+            3386,
+            3386
+          ],
+          "1": [
+            24,
+            24
+          ],
+          "10": [
+            2875,
+            2875
+          ]
+        },
+        "2026-05-20": {
+          "22": [
+            3305,
+            3305
+          ],
+          "17": [
+            3328,
+            3328
+          ],
+          "12": [
+            3309,
+            3309
+          ],
+          "21": [
+            3367,
+            3367
+          ],
+          "16": [
+            3301,
+            3301
+          ],
+          "11": [
+            2767,
+            2767
+          ],
+          "20": [
+            3427,
+            3427
+          ],
+          "15": [
+            3409,
+            3409
+          ],
+          "10": [
+            3512,
+            3512
+          ],
+          "19": [
+            3331,
+            3331
+          ],
+          "14": [
+            2778,
+            2778
+          ],
+          "23": [
+            3241,
+            3241
+          ],
+          "0": [
+            2294,
+            2294
+          ],
+          "9": [
+            2316,
+            2316
+          ],
+          "18": [
+            3044,
+            3044
+          ],
+          "13": [
+            3430,
+            3430
+          ]
+        },
+        "2026-05-21": {
+          "0": [
+            1963,
+            1963
+          ],
+          "9": [
+            2407,
+            2407
+          ],
+          "18": [
+            3139,
+            3139
+          ],
+          "13": [
+            2772,
+            2772
+          ],
+          "22": [
+            2614,
+            2614
+          ],
+          "17": [
+            3146,
+            3146
+          ],
+          "12": [
+            2905,
+            2905
+          ],
+          "21": [
+            3340,
+            3340
+          ],
+          "16": [
+            3223,
+            3223
+          ],
+          "11": [
+            2594,
+            2594
+          ],
+          "20": [
+            3172,
+            3172
+          ],
+          "15": [
+            2815,
+            2815
+          ],
+          "10": [
+            3000,
+            3000
+          ],
+          "19": [
+            3207,
+            3207
+          ],
+          "14": [
+            3539,
+            3539
+          ],
+          "23": [
+            3237,
+            3237
+          ]
+        },
+        "2026-05-22": {
+          "13": [
+            2048,
+            2048
+          ],
+          "22": [
+            3519,
+            3519
+          ],
+          "17": [
+            2918,
+            2918
+          ],
+          "12": [
+            3031,
+            3031
+          ],
+          "21": [
+            3455,
+            3455
+          ],
+          "16": [
+            1144,
+            1144
+          ],
+          "11": [
+            3040,
+            3040
+          ],
+          "20": [
+            3361,
+            3361
+          ],
+          "15": [
+            1890,
+            1890
+          ],
+          "1": [
+            17,
+            17
+          ],
+          "10": [
+            3500,
+            3500
+          ],
+          "19": [
+            3309,
+            3309
+          ],
+          "14": [
+            3003,
+            3003
+          ],
+          "23": [
+            3258,
+            3258
+          ],
+          "0": [
+            3454,
+            3454
+          ],
+          "9": [
+            793,
+            793
+          ],
+          "18": [
+            2038,
+            2038
+          ]
+        },
+        "2026-05-23": {
+          "4": [
+            0,
+            0
+          ],
+          "3": [
+            0,
+            0
+          ],
+          "2": [
+            0,
+            0
+          ],
+          "1": [
+            0,
+            0
+          ],
+          "0": [
+            109,
+            109
+          ]
+        },
+        "2026-05-26": {
+          "10": [
+            0,
+            0
+          ],
+          "19": [
+            2134,
+            2134
+          ],
+          "23": [
+            3140,
+            3140
+          ],
+          "9": [
+            46,
+            46
+          ],
+          "13": [
+            0,
+            0
+          ],
+          "22": [
+            3541,
+            3541
+          ],
+          "12": [
+            0,
+            0
+          ],
+          "21": [
+            3290,
+            3290
+          ],
+          "11": [
+            0,
+            0
+          ],
+          "20": [
+            3446,
+            3446
+          ]
+        },
+        "2026-05-27": {
+          "20": [
+            2223,
+            2223
+          ],
+          "15": [
+            3301,
+            3301
+          ],
+          "1": [
+            36,
+            36
+          ],
+          "10": [
+            2017,
+            2017
+          ],
+          "19": [
+            3047,
+            3047
+          ],
+          "14": [
+            3560,
+            3560
+          ],
+          "0": [
+            1628,
+            1628
+          ],
+          "9": [
+            2768,
+            2768
+          ],
+          "18": [
+            3212,
+            3212
+          ],
+          "13": [
+            3418,
+            3418
+          ],
+          "22": [
+            25,
+            25
+          ],
+          "17": [
+            3487,
+            3487
+          ],
+          "12": [
+            2430,
+            2430
+          ],
+          "16": [
+            3073,
+            3073
+          ],
+          "11": [
+            2574,
+            2574
+          ]
+        },
+        "2026-05-28": {
+          "16": [
+            1765,
+            1765
+          ],
+          "11": [
+            2947,
+            2947
+          ],
+          "20": [
+            3082,
+            3082
+          ],
+          "15": [
+            1282,
+            1283
+          ],
+          "10": [
+            3265,
+            3265
+          ],
+          "19": [
+            3159,
+            3159
+          ],
+          "14": [
+            2726,
+            2726
+          ],
+          "23": [
+            2981,
+            2981
+          ],
+          "9": [
+            1474,
+            1474
+          ],
+          "18": [
+            3096,
+            3096
+          ],
+          "13": [
+            3288,
+            3288
+          ],
+          "22": [
+            2825,
+            2825
+          ],
+          "17": [
+            1845,
+            1845
+          ],
+          "12": [
+            1962,
+            1962
+          ],
+          "21": [
+            3006,
+            3006
+          ]
+        },
+        "2026-05-29": {
+          "23": [
+            2946,
+            2946
+          ],
+          "18": [
+            1839,
+            1839
+          ],
+          "13": [
+            3019,
+            3019
+          ],
+          "22": [
+            3339,
+            3339
+          ],
+          "17": [
+            0,
+            0
+          ],
+          "12": [
+            3266,
+            3266
+          ],
+          "21": [
+            3167,
+            3167
+          ],
+          "16": [
+            0,
+            0
+          ],
+          "11": [
+            3058,
+            3058
+          ],
+          "20": [
+            3496,
+            3496
+          ],
+          "15": [
+            934,
+            934
+          ],
+          "10": [
+            3545,
+            3545
+          ],
+          "19": [
+            3389,
+            3389
+          ],
+          "14": [
+            2094,
+            2094
+          ],
+          "0": [
+            3032,
+            3032
+          ],
+          "9": [
+            1593,
+            1593
+          ]
+        },
+        "2026-05-30": {
+          "15": [
+            1286,
+            1286
+          ],
+          "14": [
+            228,
+            228
+          ],
+          "0": [
+            2538,
+            2538
+          ],
+          "13": [
+            195,
+            195
+          ]
+        },
+        "2026-05-31": {
+          "13": [
+            237,
+            237
+          ]
+        },
+        "2026-06-01": {
+          "22": [
+            3204,
+            3204
+          ],
+          "17": [
+            3475,
+            3475
+          ],
+          "12": [
+            3107,
+            3107
+          ],
+          "21": [
+            3381,
+            3381
+          ],
+          "16": [
+            3330,
+            3330
+          ],
+          "11": [
+            1620,
+            1620
+          ],
+          "20": [
+            1148,
+            1148
+          ],
+          "15": [
+            1845,
+            1851
+          ],
+          "10": [
+            1301,
+            1301
+          ],
+          "19": [
+            3200,
+            3204
+          ],
+          "14": [
+            3221,
+            3221
+          ],
+          "23": [
+            3445,
+            3445
+          ],
+          "9": [
+            2244,
+            2244
+          ],
+          "18": [
+            3073,
+            3073
+          ],
+          "13": [
+            3001,
+            3001
+          ],
+          "8": [
+            0,
+            0
+          ]
+        },
+        "2026-06-02": {
+          "23": [
+            3196,
+            3196
+          ],
+          "9": [
+            1118,
+            1118
+          ],
+          "18": [
+            2324,
+            2324
+          ],
+          "13": [
+            3542,
+            3542
+          ],
+          "22": [
+            2871,
+            2871
+          ],
+          "17": [
+            3205,
+            3205
+          ],
+          "12": [
+            3387,
+            3387
+          ],
+          "21": [
+            2937,
+            2937
+          ],
+          "16": [
+            3352,
+            3352
+          ],
+          "11": [
+            3228,
+            3228
+          ],
+          "20": [
+            3244,
+            3244
+          ],
+          "15": [
+            2866,
+            2866
+          ],
+          "10": [
+            3200,
+            3200
+          ],
+          "19": [
+            3317,
+            3317
+          ],
+          "14": [
+            3157,
+            3157
+          ],
+          "0": [
+            3214,
+            3214
+          ]
+        },
+        "2026-06-03": {
+          "10": [
+            0,
+            0
+          ],
+          "23": [
+            352,
+            352
+          ],
+          "0": [
+            3305,
+            3305
+          ],
+          "9": [
+            0,
+            0
+          ],
+          "13": [
+            0,
+            0
+          ],
+          "22": [
+            3225,
+            3225
+          ],
+          "12": [
+            0,
+            0
+          ],
+          "21": [
+            2893,
+            2893
+          ],
+          "11": [
+            0,
+            0
+          ],
+          "20": [
+            5,
+            5
+          ]
+        },
+        "2026-06-04": {
+          "14": [
+            3185,
+            3185
+          ],
+          "23": [
+            3065,
+            3065
+          ],
+          "9": [
+            2648,
+            2648
+          ],
+          "18": [
+            2153,
+            2153
+          ],
+          "13": [
+            3231,
+            3231
+          ],
+          "22": [
+            3256,
+            3256
+          ],
+          "17": [
+            3114,
+            3114
+          ],
+          "12": [
+            3277,
+            3277
+          ],
+          "21": [
+            2936,
+            2936
+          ],
+          "16": [
+            2921,
+            2921
+          ],
+          "11": [
+            3498,
+            3498
+          ],
+          "20": [
+            3503,
+            3503
+          ],
+          "15": [
+            2478,
+            2478
+          ],
+          "10": [
+            3235,
+            3235
+          ],
+          "19": [
+            3379,
+            3379
+          ],
+          "0": [
+            1798,
+            1800
+          ]
+        },
+        "2026-06-05": {
+          "18": [
+            3276,
+            3276
+          ],
+          "13": [
+            2706,
+            2706
+          ],
+          "17": [
+            3468,
+            3468
+          ],
+          "12": [
+            3215,
+            3215
+          ],
+          "16": [
+            3311,
+            3311
+          ],
+          "11": [
+            3469,
+            3469
+          ],
+          "20": [
+            147,
+            147
+          ],
+          "15": [
+            3181,
+            3181
+          ],
+          "1": [
+            18,
+            18
+          ],
+          "10": [
+            3394,
+            3394
+          ],
+          "19": [
+            3047,
+            3047
+          ],
+          "14": [
+            3541,
+            3541
+          ],
+          "0": [
+            3159,
+            3159
+          ],
+          "9": [
+            2961,
+            2961
+          ]
+        }
+      },
+      "gen2-109": {
+        "2026-05-11": {
+          "15": [
+            0,
+            0
+          ],
+          "17": [
+            3284,
+            3284
+          ],
+          "21": [
+            1395,
+            1395
+          ],
+          "16": [
+            2770,
+            2770
+          ],
+          "22": [
+            471,
+            471
+          ]
+        },
+        "2026-05-12": {
+          "13": [
+            201,
+            201
+          ],
+          "15": [
+            2872,
+            2872
+          ],
+          "17": [
+            3033,
+            3033
+          ],
+          "10": [
+            3049,
+            3049
+          ],
+          "19": [
+            1860,
+            1860
+          ],
+          "12": [
+            3284,
+            3284
+          ],
+          "14": [
+            2892,
+            2892
+          ],
+          "16": [
+            2795,
+            2795
+          ],
+          "9": [
+            2784,
+            2784
+          ],
+          "11": [
+            3100,
+            3100
+          ]
+        },
+        "2026-05-13": {
+          "23": [
+            601,
+            601
+          ],
+          "16": [
+            3051,
+            3051
+          ],
+          "9": [
+            3137,
+            3137
+          ],
+          "18": [
+            2,
+            2
+          ],
+          "11": [
+            3008,
+            3008
+          ],
+          "13": [
+            1135,
+            1135
+          ],
+          "15": [
+            2789,
+            2789
+          ],
+          "17": [
+            3424,
+            3424
+          ],
+          "10": [
+            3213,
+            3213
+          ],
+          "12": [
+            2236,
+            2236
+          ],
+          "14": [
+            3414,
+            3414
+          ],
+          "7": [
+            0,
+            0
+          ]
+        },
+        "2026-05-14": {
+          "11": [
+            2133,
+            2133
+          ],
+          "20": [
+            17,
+            17
+          ],
+          "13": [
+            2045,
+            2045
+          ],
+          "15": [
+            2739,
+            2739
+          ],
+          "8": [
+            0,
+            0
+          ],
+          "17": [
+            3395,
+            3395
+          ],
+          "10": [
+            3236,
+            3236
+          ],
+          "12": [
+            3381,
+            3381
+          ],
+          "14": [
+            2889,
+            2889
+          ],
+          "16": [
+            2827,
+            2827
+          ],
+          "9": [
+            2120,
+            2120
+          ]
+        },
+        "2026-05-15": {
+          "15": [
+            3059,
+            3059
+          ],
+          "17": [
+            2892,
+            2892
+          ],
+          "10": [
+            3331,
+            3331
+          ],
+          "12": [
+            3200,
+            3200
+          ],
+          "14": [
+            2733,
+            2733
+          ],
+          "16": [
+            3132,
+            3132
+          ],
+          "9": [
+            1742,
+            1742
+          ],
+          "11": [
+            3159,
+            3159
+          ],
+          "13": [
+            3004,
+            3004
+          ]
+        },
+        "2026-05-18": {
+          "21": [
+            3365,
+            3365
+          ],
+          "14": [
+            3327,
+            3327
+          ],
+          "23": [
+            3516,
+            3516
+          ],
+          "16": [
+            3416,
+            3416
+          ],
+          "9": [
+            2043,
+            2043
+          ],
+          "18": [
+            2825,
+            2825
+          ],
+          "11": [
+            1878,
+            1878
+          ],
+          "20": [
+            3492,
+            3492
+          ],
+          "13": [
+            3405,
+            3405
+          ],
+          "22": [
+            2764,
+            2768
+          ],
+          "15": [
+            2750,
+            2750
+          ],
+          "17": [
+            2442,
+            2442
+          ],
+          "10": [
+            2880,
+            2880
+          ],
+          "19": [
+            3103,
+            3103
+          ],
+          "12": [
+            3240,
+            3240
+          ]
+        },
+        "2026-05-19": {
+          "19": [
+            3087,
+            3087
+          ],
+          "21": [
+            2776,
+            2776
+          ],
+          "14": [
+            3330,
+            3330
+          ],
+          "23": [
+            3190,
+            3190
+          ],
+          "16": [
+            2998,
+            2998
+          ],
+          "0": [
+            3376,
+            3376
+          ],
+          "9": [
+            2558,
+            2558
+          ],
+          "18": [
+            1952,
+            1952
+          ],
+          "11": [
+            2631,
+            2631
+          ],
+          "20": [
+            2835,
+            2837
+          ],
+          "13": [
+            3458,
+            3458
+          ],
+          "22": [
+            3102,
+            3102
+          ],
+          "15": [
+            3161,
+            3161
+          ],
+          "17": [
+            2556,
+            2556
+          ],
+          "1": [
+            67,
+            67
+          ],
+          "10": [
+            2985,
+            2985
+          ],
+          "12": [
+            3134,
+            3134
+          ]
+        },
+        "2026-05-20": {
+          "22": [
+            2988,
+            2988
+          ],
+          "15": [
+            2897,
+            2897
+          ],
+          "17": [
+            3506,
+            3506
+          ],
+          "1": [
+            93,
+            93
+          ],
+          "10": [
+            3216,
+            3216
+          ],
+          "19": [
+            3108,
+            3108
+          ],
+          "12": [
+            2675,
+            2675
+          ],
+          "21": [
+            2939,
+            2939
+          ],
+          "14": [
+            3286,
+            3286
+          ],
+          "23": [
+            3588,
+            3588
+          ],
+          "16": [
+            2723,
+            2723
+          ],
+          "0": [
+            2587,
+            2587
+          ],
+          "9": [
+            2886,
+            2886
+          ],
+          "18": [
+            2598,
+            2598
+          ],
+          "11": [
+            2837,
+            2837
+          ],
+          "20": [
+            3033,
+            3033
+          ],
+          "13": [
+            3203,
+            3203
+          ]
+        },
+        "2026-05-21": {
+          "0": [
+            3578,
+            3578
+          ],
+          "9": [
+            3034,
+            3034
+          ],
+          "11": [
+            2898,
+            2898
+          ],
+          "18": [
+            3031,
+            3031
+          ],
+          "20": [
+            2994,
+            2994
+          ],
+          "13": [
+            3057,
+            3057
+          ],
+          "22": [
+            2620,
+            2620
+          ],
+          "15": [
+            2816,
+            2816
+          ],
+          "17": [
+            1765,
+            1765
+          ],
+          "1": [
+            32,
+            32
+          ],
+          "10": [
+            3163,
+            3163
+          ],
+          "19": [
+            3426,
+            3426
+          ],
+          "12": [
+            3385,
+            3385
+          ],
+          "21": [
+            3569,
+            3569
+          ],
+          "14": [
+            1537,
+            1537
+          ],
+          "23": [
+            2571,
+            2571
+          ],
+          "16": [
+            3189,
+            3189
+          ]
+        },
+        "2026-05-22": {
+          "20": [
+            2341,
+            2341
+          ],
+          "13": [
+            3364,
+            3364
+          ],
+          "22": [
+            3185,
+            3185
+          ],
+          "15": [
+            2511,
+            2513
+          ],
+          "8": [
+            0,
+            0
+          ],
+          "17": [
+            3417,
+            3417
+          ],
+          "10": [
+            2479,
+            2479
+          ],
+          "19": [
+            3277,
+            3277
+          ],
+          "12": [
+            2847,
+            2847
+          ],
+          "21": [
+            3482,
+            3482
+          ],
+          "14": [
+            2553,
+            2553
+          ],
+          "23": [
+            3150,
+            3150
+          ],
+          "16": [
+            3207,
+            3207
+          ],
+          "0": [
+            3412,
+            3412
+          ],
+          "9": [
+            2000,
+            2000
+          ],
+          "18": [
+            2980,
+            2980
+          ],
+          "11": [
+            2538,
+            2538
+          ]
+        },
+        "2026-05-23": {
+          "1": [
+            94,
+            94
+          ],
+          "0": [
+            3555,
+            3555
+          ]
+        },
+        "2026-05-25": {
+          "9": [
+            197,
+            197
+          ]
+        },
+        "2026-05-26": {
+          "22": [
+            242,
+            242
+          ],
+          "15": [
+            0,
+            0
+          ],
+          "17": [
+            515,
+            529
+          ],
+          "21": [
+            35,
+            35
+          ],
+          "14": [
+            990,
+            991
+          ],
+          "16": [
+            1598,
+            1598
+          ],
+          "18": [
+            497,
+            497
+          ],
+          "20": [
+            2004,
+            2004
+          ]
+        },
+        "2026-05-27": {
+          "18": [
+            33,
+            33
+          ],
+          "20": [
+            3510,
+            3510
+          ],
+          "13": [
+            3160,
+            3160
+          ],
+          "22": [
+            1978,
+            1978
+          ],
+          "15": [
+            2948,
+            2948
+          ],
+          "17": [
+            2121,
+            2121
+          ],
+          "10": [
+            2855,
+            2855
+          ],
+          "19": [
+            2837,
+            2837
+          ],
+          "12": [
+            1707,
+            1707
+          ],
+          "21": [
+            2718,
+            2730
+          ],
+          "14": [
+            3057,
+            3057
+          ],
+          "16": [
+            2415,
+            2415
+          ],
+          "9": [
+            2916,
+            2916
+          ],
+          "11": [
+            3186,
+            3186
+          ]
+        },
+        "2026-05-28": {
+          "14": [
+            2453,
+            2454
+          ],
+          "23": [
+            2872,
+            2872
+          ],
+          "16": [
+            1050,
+            1050
+          ],
+          "0": [
+            2591,
+            2591
+          ],
+          "9": [
+            1241,
+            1241
+          ],
+          "18": [
+            2268,
+            2268
+          ],
+          "11": [
+            2243,
+            2243
+          ],
+          "20": [
+            1648,
+            1648
+          ],
+          "13": [
+            1375,
+            1375
+          ],
+          "22": [
+            2798,
+            2798
+          ],
+          "15": [
+            260,
+            260
+          ],
+          "17": [
+            1641,
+            1642
+          ],
+          "1": [
+            99,
+            99
+          ],
+          "10": [
+            2412,
+            2413
+          ],
+          "19": [
+            2931,
+            2931
+          ],
+          "12": [
+            2570,
+            2571
+          ],
+          "21": [
+            3354,
+            3354
+          ]
+        },
+        "2026-05-29": {
+          "23": [
+            3424,
+            3424
+          ],
+          "16": [
+            2727,
+            2727
+          ],
+          "18": [
+            1863,
+            1863
+          ],
+          "11": [
+            3474,
+            3474
+          ],
+          "20": [
+            3207,
+            3207
+          ],
+          "13": [
+            3044,
+            3044
+          ],
+          "22": [
+            3460,
+            3460
+          ],
+          "15": [
+            3176,
+            3176
+          ],
+          "17": [
+            3278,
+            3278
+          ],
+          "10": [
+            3113,
+            3113
+          ],
+          "19": [
+            3063,
+            3063
+          ],
+          "12": [
+            2748,
+            2748
+          ],
+          "21": [
+            3339,
+            3339
+          ],
+          "14": [
+            3463,
+            3463
+          ],
+          "0": [
+            2227,
+            2227
+          ],
+          "9": [
+            2183,
+            2187
+          ]
+        },
+        "2026-05-30": {
+          "1": [
+            11,
+            11
+          ],
+          "14": [
+            390,
+            390
+          ],
+          "0": [
+            2563,
+            2563
+          ],
+          "13": [
+            218,
+            218
+          ]
+        },
+        "2026-05-31": {
+          "14": [
+            146,
+            146
+          ]
+        },
+        "2026-06-01": {
+          "22": [
+            2400,
+            2402
+          ],
+          "15": [
+            2757,
+            2757
+          ],
+          "17": [
+            3256,
+            3256
+          ],
+          "10": [
+            773,
+            1060
+          ],
+          "19": [
+            3401,
+            3401
+          ],
+          "12": [
+            995,
+            995
+          ],
+          "21": [
+            3170,
+            3170
+          ],
+          "14": [
+            2575,
+            2575
+          ],
+          "23": [
+            3028,
+            3028
+          ],
+          "16": [
+            2705,
+            2705
+          ],
+          "9": [
+            1827,
+            1827
+          ],
+          "18": [
+            2343,
+            2343
+          ],
+          "11": [
+            2007,
+            2007
+          ],
+          "20": [
+            2881,
+            2881
+          ],
+          "13": [
+            2721,
+            2721
+          ]
+        },
+        "2026-06-02": {
+          "23": [
+            3045,
+            3051
+          ],
+          "16": [
+            2669,
+            2669
+          ],
+          "9": [
+            2881,
+            2881
+          ],
+          "18": [
+            2298,
+            2302
+          ],
+          "11": [
+            2921,
+            2921
+          ],
+          "20": [
+            3202,
+            3202
+          ],
+          "13": [
+            3534,
+            3534
+          ],
+          "22": [
+            2953,
+            2953
+          ],
+          "15": [
+            3162,
+            3162
+          ],
+          "17": [
+            2494,
+            2494
+          ],
+          "10": [
+            3531,
+            3531
+          ],
+          "19": [
+            3150,
+            3150
+          ],
+          "12": [
+            3048,
+            3048
+          ],
+          "21": [
+            3004,
+            3012
+          ],
+          "14": [
+            3277,
+            3277
+          ],
+          "0": [
+            3532,
+            3532
+          ]
+        },
+        "2026-06-03": {
+          "15": [
+            0,
+            0
+          ],
+          "17": [
+            0,
+            0
+          ],
+          "10": [
+            3023,
+            3023
+          ],
+          "19": [
+            2611,
+            2611
+          ],
+          "12": [
+            689,
+            689
+          ],
+          "14": [
+            0,
+            0
+          ],
+          "16": [
+            0,
+            0
+          ],
+          "0": [
+            2993,
+            2993
+          ],
+          "9": [
+            2925,
+            2925
+          ],
+          "18": [
+            111,
+            111
+          ],
+          "11": [
+            1008,
+            1008
+          ],
+          "20": [
+            60,
+            60
+          ],
+          "13": [
+            532,
+            532
+          ],
+          "1": [
+            22,
+            22
+          ]
+        },
+        "2026-06-04": {
+          "21": [
+            3248,
+            3248
+          ],
+          "14": [
+            3600,
+            3600
+          ],
+          "23": [
+            3504,
+            3504
+          ],
+          "16": [
+            2473,
+            2473
+          ],
+          "18": [
+            2619,
+            2619
+          ],
+          "11": [
+            649,
+            649
+          ],
+          "20": [
+            3476,
+            3476
+          ],
+          "13": [
+            3420,
+            3420
+          ],
+          "22": [
+            3307,
+            3307
+          ],
+          "15": [
+            3306,
+            3306
+          ],
+          "17": [
+            3459,
+            3459
+          ],
+          "19": [
+            2331,
+            2331
+          ],
+          "12": [
+            3408,
+            3408
+          ]
+        },
+        "2026-06-05": {
+          "16": [
+            1870,
+            1870
+          ],
+          "18": [
+            2333,
+            2333
+          ],
+          "11": [
+            3470,
+            3470
+          ],
+          "20": [
+            370,
+            370
+          ],
+          "13": [
+            1076,
+            1076
+          ],
+          "15": [
+            2905,
+            2905
+          ],
+          "17": [
+            2543,
+            2543
+          ],
+          "1": [
+            19,
+            19
+          ],
+          "10": [
+            3571,
+            3571
+          ],
+          "19": [
+            3388,
+            3388
+          ],
+          "12": [
+            3306,
+            3306
+          ],
+          "14": [
+            2600,
+            2600
+          ],
+          "0": [
+            2238,
+            2244
+          ],
+          "9": [
+            2146,
+            2146
+          ]
+        }
+      },
+      "gen2-007": {
+        "2026-04-27": {
+          "13": [
+            0,
+            3336
+          ],
+          "17": [
+            0,
+            3294
+          ],
+          "12": [
+            0,
+            3210
+          ],
+          "16": [
+            0,
+            2335
+          ],
+          "11": [
+            0,
+            2983
+          ],
+          "15": [
+            0,
+            3053
+          ],
+          "10": [
+            0,
+            3462
+          ],
+          "14": [
+            0,
+            3274
+          ],
+          "9": [
+            0,
+            2333
+          ]
+        },
+        "2026-04-28": {
+          "14": [
+            0,
+            3123
+          ],
+          "23": [
+            0,
+            3459
+          ],
+          "9": [
+            0,
+            3548
+          ],
+          "13": [
+            0,
+            2143
+          ],
+          "22": [
+            0,
+            2774
+          ],
+          "17": [
+            0,
+            1567
+          ],
+          "12": [
+            0,
+            2987
+          ],
+          "21": [
+            0,
+            2725
+          ],
+          "16": [
+            0,
+            3484
+          ],
+          "11": [
+            330,
+            3063
+          ],
+          "20": [
+            0,
+            3073
+          ],
+          "15": [
+            0,
+            3240
+          ],
+          "10": [
+            0,
+            2481
+          ],
+          "19": [
+            141,
+            1659
+          ]
+        },
+        "2026-04-29": {
+          "10": [
+            0,
+            3542
+          ],
+          "19": [
+            0,
+            3374
+          ],
+          "14": [
+            0,
+            2404
+          ],
+          "0": [
+            0,
+            1830
+          ],
+          "9": [
+            0,
+            2866
+          ],
+          "23": [
+            0,
+            3378
+          ],
+          "18": [
+            0,
+            2891
+          ],
+          "13": [
+            0,
+            2731
+          ],
+          "22": [
+            0,
+            3474
+          ],
+          "17": [
+            0,
+            3520
+          ],
+          "12": [
+            0,
+            3236
+          ],
+          "21": [
+            0,
+            2662
+          ],
+          "16": [
+            0,
+            3124
+          ],
+          "11": [
+            0,
+            3076
+          ],
+          "20": [
+            0,
+            2517
+          ],
+          "15": [
+            0,
+            3055
+          ]
+        },
+        "2026-04-30": {
+          "13": [
+            0,
+            3457
+          ],
+          "22": [
+            0,
+            3209
+          ],
+          "17": [
+            0,
+            3127
+          ],
+          "12": [
+            485,
+            2459
+          ],
+          "21": [
+            0,
+            3343
+          ],
+          "16": [
+            0,
+            3321
+          ],
+          "11": [
+            0,
+            2173
+          ],
+          "20": [
+            0,
+            3172
+          ],
+          "15": [
+            0,
+            3506
+          ],
+          "10": [
+            0,
+            3202
+          ],
+          "19": [
+            0,
+            3426
+          ],
+          "14": [
+            0,
+            2712
+          ],
+          "23": [
+            0,
+            3530
+          ],
+          "0": [
+            0,
+            3314
+          ],
+          "9": [
+            0,
+            2986
+          ],
+          "18": [
+            0,
+            2598
+          ]
+        },
+        "2026-05-01": {
+          "10": [
+            0,
+            3158
+          ],
+          "19": [
+            0,
+            3380
+          ],
+          "14": [
+            0,
+            3055
+          ],
+          "23": [
+            0,
+            3197
+          ],
+          "0": [
+            0,
+            3068
+          ],
+          "9": [
+            0,
+            3056
+          ],
+          "18": [
+            0,
+            2812
+          ],
+          "13": [
+            0,
+            3029
+          ],
+          "22": [
+            0,
+            3203
+          ],
+          "17": [
+            0,
+            3222
+          ],
+          "12": [
+            0,
+            3150
+          ],
+          "21": [
+            0,
+            3347
+          ],
+          "16": [
+            0,
+            3285
+          ],
+          "11": [
+            0,
+            2960
+          ],
+          "20": [
+            0,
+            3463
+          ],
+          "15": [
+            0,
+            3214
+          ]
+        },
+        "2026-05-02": {
+          "0": [
+            0,
+            3066
+          ]
+        },
+        "2026-05-04": {
+          "13": [
+            0,
+            3153
+          ],
+          "12": [
+            0,
+            3555
+          ],
+          "16": [
+            0,
+            13
+          ],
+          "11": [
+            0,
+            1199
+          ],
+          "15": [
+            0,
+            367
+          ],
+          "10": [
+            0,
+            3038
+          ],
+          "14": [
+            0,
+            3397
+          ],
+          "9": [
+            0,
+            3060
+          ]
+        },
+        "2026-05-05": {
+          "16": [
+            1396,
+            3275
+          ],
+          "11": [
+            0,
+            3207
+          ],
+          "15": [
+            785,
+            3377
+          ],
+          "10": [
+            0,
+            3131
+          ],
+          "14": [
+            0,
+            3228
+          ],
+          "9": [
+            0,
+            3271
+          ],
+          "13": [
+            0,
+            3545
+          ],
+          "17": [
+            0,
+            3032
+          ],
+          "12": [
+            0,
+            2932
+          ]
+        },
+        "2026-05-06": {
+          "10": [
+            0,
+            3368
+          ],
+          "14": [
+            0,
+            3367
+          ],
+          "9": [
+            0,
+            3214
+          ],
+          "18": [
+            0,
+            8
+          ],
+          "13": [
+            0,
+            3251
+          ],
+          "17": [
+            0,
+            3210
+          ],
+          "12": [
+            0,
+            3131
+          ],
+          "16": [
+            0,
+            3401
+          ],
+          "11": [
+            411,
+            2809
+          ],
+          "15": [
+            0,
+            3053
+          ]
+        },
+        "2026-05-07": {
+          "15": [
+            2371,
+            2371
+          ],
+          "10": [
+            0,
+            1979
+          ],
+          "19": [
+            3134,
+            3134
+          ],
+          "14": [
+            3221,
+            3221
+          ],
+          "23": [
+            3245,
+            3245
+          ],
+          "18": [
+            2767,
+            2767
+          ],
+          "13": [
+            952,
+            3306
+          ],
+          "22": [
+            2795,
+            2795
+          ],
+          "17": [
+            2884,
+            2884
+          ],
+          "12": [
+            0,
+            3079
+          ],
+          "21": [
+            1150,
+            1150
+          ],
+          "16": [
+            1039,
+            1039
+          ],
+          "11": [
+            0,
+            3419
+          ],
+          "20": [
+            3572,
+            3572
+          ]
+        },
+        "2026-05-08": {
+          "15": [
+            3438,
+            3438
+          ],
+          "10": [
+            2826,
+            2826
+          ],
+          "14": [
+            3084,
+            3084
+          ],
+          "23": [
+            1814,
+            1814
+          ],
+          "0": [
+            2612,
+            2612
+          ],
+          "9": [
+            3262,
+            3262
+          ],
+          "13": [
+            2739,
+            2739
+          ],
+          "22": [
+            3273,
+            3273
+          ],
+          "17": [
+            3124,
+            3124
+          ],
+          "12": [
+            3212,
+            3212
+          ],
+          "21": [
+            2926,
+            2926
+          ],
+          "16": [
+            3091,
+            3091
+          ],
+          "11": [
+            3429,
+            3429
+          ],
+          "20": [
+            803,
+            803
+          ]
+        },
+        "2026-05-11": {
+          "17": [
+            2912,
+            2912
+          ],
+          "12": [
+            2954,
+            2954
+          ],
+          "21": [
+            3473,
+            3473
+          ],
+          "16": [
+            3168,
+            3168
+          ],
+          "11": [
+            1858,
+            1858
+          ],
+          "20": [
+            3149,
+            3149
+          ],
+          "15": [
+            3482,
+            3482
+          ],
+          "10": [
+            2704,
+            2704
+          ],
+          "19": [
+            3520,
+            3520
+          ],
+          "14": [
+            3260,
+            3260
+          ],
+          "23": [
+            3351,
+            3351
+          ],
+          "9": [
+            2119,
+            2119
+          ],
+          "18": [
+            2814,
+            2814
+          ],
+          "13": [
+            3412,
+            3412
+          ],
+          "22": [
+            1286,
+            1286
+          ]
+        },
+        "2026-05-12": {
+          "15": [
+            3045,
+            3045
+          ],
+          "10": [
+            2718,
+            2718
+          ],
+          "19": [
+            3464,
+            3464
+          ],
+          "14": [
+            2473,
+            2473
+          ],
+          "23": [
+            3266,
+            3266
+          ],
+          "0": [
+            3382,
+            3382
+          ],
+          "9": [
+            2265,
+            2265
+          ],
+          "18": [
+            2468,
+            2468
+          ],
+          "13": [
+            3085,
+            3085
+          ],
+          "22": [
+            3314,
+            3314
+          ],
+          "17": [
+            3216,
+            3216
+          ],
+          "12": [
+            3506,
+            3506
+          ],
+          "21": [
+            3440,
+            3440
+          ],
+          "16": [
+            3269,
+            3269
+          ],
+          "11": [
+            3187,
+            3187
+          ],
+          "20": [
+            3531,
+            3531
+          ]
+        },
+        "2026-05-13": {
+          "23": [
+            3350,
+            3350
+          ],
+          "9": [
+            2722,
+            2722
+          ],
+          "18": [
+            2717,
+            2730
+          ],
+          "13": [
+            3021,
+            3021
+          ],
+          "22": [
+            3535,
+            3535
+          ],
+          "17": [
+            3226,
+            3226
+          ],
+          "12": [
+            3226,
+            3226
+          ],
+          "21": [
+            3389,
+            3389
+          ],
+          "16": [
+            2921,
+            3002
+          ],
+          "11": [
+            3504,
+            3504
+          ],
+          "20": [
+            3384,
+            3384
+          ],
+          "15": [
+            2650,
+            2650
+          ],
+          "10": [
+            3471,
+            3471
+          ],
+          "19": [
+            3339,
+            3339
+          ],
+          "14": [
+            2873,
+            2873
+          ],
+          "0": [
+            2984,
+            2984
+          ]
+        },
+        "2026-05-14": {
+          "11": [
+            3068,
+            3068
+          ],
+          "20": [
+            3432,
+            3432
+          ],
+          "15": [
+            2036,
+            2036
+          ],
+          "10": [
+            3423,
+            3423
+          ],
+          "19": [
+            3515,
+            3515
+          ],
+          "14": [
+            2819,
+            2819
+          ],
+          "23": [
+            3531,
+            3531
+          ],
+          "0": [
+            3352,
+            3352
+          ],
+          "9": [
+            2230,
+            2230
+          ],
+          "18": [
+            2888,
+            2888
+          ],
+          "13": [
+            2534,
+            2534
+          ],
+          "22": [
+            3468,
+            3468
+          ],
+          "17": [
+            3225,
+            3225
+          ],
+          "12": [
+            3232,
+            3232
+          ],
+          "21": [
+            3336,
+            3336
+          ],
+          "16": [
+            2901,
+            2901
+          ]
+        },
+        "2026-05-15": {
+          "15": [
+            2939,
+            2939
+          ],
+          "10": [
+            3038,
+            3038
+          ],
+          "19": [
+            3344,
+            3344
+          ],
+          "14": [
+            2832,
+            2832
+          ],
+          "23": [
+            3499,
+            3499
+          ],
+          "0": [
+            3200,
+            3200
+          ],
+          "9": [
+            3031,
+            3031
+          ],
+          "18": [
+            3233,
+            3233
+          ],
+          "13": [
+            2760,
+            2760
+          ],
+          "22": [
+            3254,
+            3254
+          ],
+          "17": [
+            3114,
+            3114
+          ],
+          "12": [
+            2208,
+            2208
+          ],
+          "21": [
+            3318,
+            3318
+          ],
+          "16": [
+            2494,
+            2494
+          ],
+          "11": [
+            3184,
+            3184
+          ],
+          "20": [
+            3472,
+            3472
+          ]
+        },
+        "2026-05-16": {
+          "0": [
+            3388,
+            3388
+          ]
+        },
+        "2026-05-18": {
+          "14": [
+            2071,
+            2071
+          ],
+          "23": [
+            3133,
+            3133
+          ],
+          "9": [
+            2473,
+            2473
+          ],
+          "18": [
+            2755,
+            2755
+          ],
+          "13": [
+            2455,
+            2455
+          ],
+          "22": [
+            3462,
+            3462
+          ],
+          "8": [
+            0,
+            0
+          ],
+          "17": [
+            2668,
+            2668
+          ],
+          "12": [
+            3150,
+            3150
+          ],
+          "21": [
+            3028,
+            3028
+          ],
+          "16": [
+            3115,
+            3115
+          ],
+          "11": [
+            3294,
+            3294
+          ],
+          "20": [
+            3247,
+            3247
+          ],
+          "15": [
+            2925,
+            2925
+          ],
+          "10": [
+            3471,
+            3471
+          ],
+          "19": [
+            2560,
+            2610
+          ]
+        },
+        "2026-05-19": {
+          "19": [
+            3410,
+            3410
+          ],
+          "14": [
+            2738,
+            2738
+          ],
+          "23": [
+            3401,
+            3401
+          ],
+          "0": [
+            3147,
+            3147
+          ],
+          "9": [
+            2642,
+            2642
+          ],
+          "18": [
+            2704,
+            2704
+          ],
+          "13": [
+            2519,
+            2519
+          ],
+          "22": [
+            3262,
+            3262
+          ],
+          "17": [
+            2401,
+            2401
+          ],
+          "12": [
+            3098,
+            3098
+          ],
+          "21": [
+            3396,
+            3396
+          ],
+          "16": [
+            0,
+            0
+          ],
+          "11": [
+            3383,
+            3383
+          ],
+          "20": [
+            3225,
+            3225
+          ],
+          "15": [
+            1683,
+            1683
+          ],
+          "10": [
+            2128,
+            2128
+          ]
+        },
+        "2026-05-20": {
+          "22": [
+            3258,
+            3258
+          ],
+          "17": [
+            2530,
+            2530
+          ],
+          "12": [
+            2962,
+            2962
+          ],
+          "21": [
+            3424,
+            3424
+          ],
+          "16": [
+            2936,
+            2936
+          ],
+          "11": [
+            1738,
+            1738
+          ],
+          "20": [
+            3545,
+            3545
+          ],
+          "15": [
+            2632,
+            2632
+          ],
+          "1": [
+            48,
+            48
+          ],
+          "10": [
+            2609,
+            2609
+          ],
+          "19": [
+            2966,
+            2966
+          ],
+          "14": [
+            3034,
+            3034
+          ],
+          "23": [
+            3018,
+            3018
+          ],
+          "0": [
+            3317,
+            3325
+          ],
+          "9": [
+            3051,
+            3051
+          ],
+          "18": [
+            2668,
+            2668
+          ],
+          "13": [
+            2147,
+            2149
+          ]
+        },
+        "2026-05-21": {
+          "0": [
+            3452,
+            3452
+          ],
+          "9": [
+            3175,
+            3175
+          ],
+          "18": [
+            2598,
+            2598
+          ],
+          "13": [
+            3426,
+            3426
+          ],
+          "22": [
+            2661,
+            2661
+          ],
+          "8": [
+            0,
+            0
+          ],
+          "17": [
+            1778,
+            1778
+          ],
+          "12": [
+            3306,
+            3306
+          ],
+          "21": [
+            1311,
+            1311
+          ],
+          "16": [
+            2047,
+            2047
+          ],
+          "11": [
+            2943,
+            2943
+          ],
+          "20": [
+            161,
+            161
+          ],
+          "15": [
+            3224,
+            3224
+          ],
+          "1": [
+            27,
+            27
+          ],
+          "10": [
+            2469,
+            2469
+          ],
+          "19": [
+            1735,
+            1735
+          ],
+          "14": [
+            3226,
+            3226
+          ],
+          "23": [
+            2634,
+            2634
+          ]
+        },
+        "2026-05-22": {
+          "13": [
+            2886,
+            2886
+          ],
+          "22": [
+            3264,
+            3264
+          ],
+          "17": [
+            2360,
+            2360
+          ],
+          "12": [
+            2523,
+            2523
+          ],
+          "21": [
+            3506,
+            3506
+          ],
+          "16": [
+            2738,
+            2738
+          ],
+          "11": [
+            3300,
+            3300
+          ],
+          "20": [
+            3268,
+            3268
+          ],
+          "15": [
+            1278,
+            1278
+          ],
+          "1": [
+            33,
+            33
+          ],
+          "10": [
+            1999,
+            1999
+          ],
+          "19": [
+            3305,
+            3305
+          ],
+          "14": [
+            3444,
+            3444
+          ],
+          "23": [
+            3527,
+            3527
+          ],
+          "0": [
+            3419,
+            3419
+          ],
+          "9": [
+            1550,
+            1550
+          ],
+          "18": [
+            1992,
+            1992
+          ]
+        },
+        "2026-05-23": {
+          "1": [
+            9,
+            9
+          ],
+          "0": [
+            3376,
+            3376
+          ]
+        },
+        "2026-05-25": {
+          "9": [
+            32,
+            32
+          ]
+        },
+        "2026-05-26": {
+          "15": [
+            2211,
+            2211
+          ],
+          "10": [
+            476,
+            478
+          ],
+          "19": [
+            2750,
+            2750
+          ],
+          "14": [
+            2406,
+            2406
+          ],
+          "23": [
+            3202,
+            3208
+          ],
+          "9": [
+            2024,
+            2024
+          ],
+          "18": [
+            2690,
+            2690
+          ],
+          "13": [
+            1171,
+            1173
+          ],
+          "22": [
+            3097,
+            3097
+          ],
+          "17": [
+            3490,
+            3490
+          ],
+          "12": [
+            2820,
+            2820
+          ],
+          "21": [
+            2971,
+            2971
+          ],
+          "16": [
+            2266,
+            2266
+          ],
+          "11": [
+            3212,
+            3212
+          ],
+          "20": [
+            2696,
+            2696
+          ]
+        },
+        "2026-05-27": {
+          "20": [
+            3362,
+            3362
+          ],
+          "15": [
+            3140,
+            3140
+          ],
+          "1": [
+            9,
+            9
+          ],
+          "10": [
+            1977,
+            1977
+          ],
+          "19": [
+            3178,
+            3178
+          ],
+          "14": [
+            2698,
+            2698
+          ],
+          "23": [
+            3298,
+            3298
+          ],
+          "0": [
+            3409,
+            3409
+          ],
+          "9": [
+            2942,
+            2942
+          ],
+          "18": [
+            2939,
+            2939
+          ],
+          "13": [
+            3472,
+            3472
+          ],
+          "22": [
+            3324,
+            3324
+          ],
+          "17": [
+            2590,
+            2590
+          ],
+          "12": [
+            2675,
+            2675
+          ],
+          "21": [
+            3094,
+            3094
+          ],
+          "16": [
+            2066,
+            2066
+          ],
+          "11": [
+            3336,
+            3336
+          ]
+        },
+        "2026-05-28": {
+          "16": [
+            1134,
+            1184
+          ],
+          "11": [
+            705,
+            705
+          ],
+          "20": [
+            2250,
+            2250
+          ],
+          "15": [
+            1128,
+            1128
+          ],
+          "1": [
+            37,
+            37
+          ],
+          "10": [
+            2359,
+            2359
+          ],
+          "19": [
+            200,
+            200
+          ],
+          "14": [
+            976,
+            976
+          ],
+          "23": [
+            2984,
+            2984
+          ],
+          "0": [
+            3344,
+            3344
+          ],
+          "9": [
+            2914,
+            2914
+          ],
+          "18": [
+            1509,
+            1509
+          ],
+          "13": [
+            2897,
+            2899
+          ],
+          "22": [
+            3069,
+            3071
+          ],
+          "17": [
+            1903,
+            1960
+          ],
+          "12": [
+            3206,
+            3214
+          ],
+          "21": [
+            3471,
+            3471
+          ]
+        },
+        "2026-05-29": {
+          "23": [
+            2882,
+            2882
+          ],
+          "18": [
+            1906,
+            1909
+          ],
+          "13": [
+            1613,
+            1737
+          ],
+          "22": [
+            2552,
+            2552
+          ],
+          "17": [
+            2853,
+            2882
+          ],
+          "12": [
+            1999,
+            2461
+          ],
+          "21": [
+            2984,
+            2984
+          ],
+          "16": [
+            1131,
+            1198
+          ],
+          "11": [
+            2801,
+            3346
+          ],
+          "20": [
+            3126,
+            3126
+          ],
+          "15": [
+            3201,
+            3427
+          ],
+          "10": [
+            3048,
+            3503
+          ],
+          "19": [
+            3527,
+            3527
+          ],
+          "14": [
+            2687,
+            2917
+          ],
+          "0": [
+            2867,
+            2867
+          ],
+          "9": [
+            387,
+            451
+          ]
+        },
+        "2026-05-30": {
+          "0": [
+            2723,
+            2723
+          ],
+          "13": [
+            55,
+            55
+          ]
+        },
+        "2026-05-31": {
+          "14": [
+            745,
+            745
+          ],
+          "17": [
+            1749,
+            1749
+          ],
+          "16": [
+            2131,
+            2131
+          ],
+          "15": [
+            1882,
+            1882
+          ]
+        },
+        "2026-06-01": {
+          "22": [
+            2352,
+            2534
+          ],
+          "17": [
+            3340,
+            3423
+          ],
+          "12": [
+            2534,
+            2696
+          ],
+          "21": [
+            2834,
+            2834
+          ],
+          "16": [
+            3248,
+            3340
+          ],
+          "11": [
+            2459,
+            2590
+          ],
+          "20": [
+            3190,
+            3190
+          ],
+          "15": [
+            2754,
+            2818
+          ],
+          "10": [
+            3271,
+            3330
+          ],
+          "19": [
+            3444,
+            3444
+          ],
+          "14": [
+            3242,
+            3331
+          ],
+          "23": [
+            1366,
+            1366
+          ],
+          "9": [
+            2278,
+            2368
+          ],
+          "18": [
+            3023,
+            3023
+          ],
+          "13": [
+            3330,
+            3419
+          ]
+        },
+        "2026-06-02": {
+          "23": [
+            2375,
+            2375
+          ],
+          "18": [
+            2639,
+            2639
+          ],
+          "22": [
+            3550,
+            3550
+          ],
+          "3": [
+            0,
+            0
+          ],
+          "12": [
+            2409,
+            2449
+          ],
+          "21": [
+            3032,
+            3032
+          ],
+          "2": [
+            0,
+            0
+          ],
+          "11": [
+            576,
+            599
+          ],
+          "20": [
+            3220,
+            3220
+          ],
+          "1": [
+            0,
+            0
+          ],
+          "10": [
+            0,
+            0
+          ],
+          "19": [
+            3359,
+            3359
+          ],
+          "0": [
+            0,
+            0
+          ]
+        },
+        "2026-06-03": {
+          "15": [
+            2176,
+            2230
+          ],
+          "10": [
+            1161,
+            1161
+          ],
+          "14": [
+            3262,
+            3421
+          ],
+          "0": [
+            3309,
+            3309
+          ],
+          "9": [
+            1727,
+            1748
+          ],
+          "13": [
+            2935,
+            3032
+          ],
+          "17": [
+            2979,
+            3169
+          ],
+          "12": [
+            2730,
+            2822
+          ],
+          "16": [
+            2226,
+            2306
+          ],
+          "11": [
+            119,
+            119
+          ]
+        },
+        "2026-06-04": {
+          "14": [
+            2908,
+            2989
+          ],
+          "23": [
+            3249,
+            3249
+          ],
+          "9": [
+            963,
+            963
+          ],
+          "18": [
+            2778,
+            2778
+          ],
+          "13": [
+            3359,
+            3444
+          ],
+          "22": [
+            2944,
+            2945
+          ],
+          "17": [
+            3276,
+            3410
+          ],
+          "12": [
+            3086,
+            3167
+          ],
+          "21": [
+            3436,
+            3436
+          ],
+          "16": [
+            2868,
+            2950
+          ],
+          "11": [
+            1782,
+            1784
+          ],
+          "20": [
+            2939,
+            2941
+          ],
+          "15": [
+            1598,
+            1622
+          ],
+          "10": [
+            142,
+            142
+          ],
+          "19": [
+            3435,
+            3435
+          ]
+        },
+        "2026-06-05": {
+          "18": [
+            2982,
+            2982
+          ],
+          "13": [
+            2030,
+            2030
+          ],
+          "16": [
+            838,
+            838
+          ],
+          "11": [
+            1468,
+            1468
+          ],
+          "20": [
+            673,
+            673
+          ],
+          "15": [
+            2359,
+            2359
+          ],
+          "10": [
+            2076,
+            2076
+          ],
+          "19": [
+            3277,
+            3277
+          ],
+          "14": [
+            614,
+            642
+          ],
+          "0": [
+            1505,
+            1505
+          ],
+          "9": [
+            907,
+            907
+          ]
+        }
+      },
+      "gen2-110": {
+        "2026-05-13": {
+          "19": [
+            544,
+            544
+          ]
+        },
+        "2026-05-14": {
+          "11": [
+            2092,
+            2093
+          ],
+          "20": [
+            220,
+            220
+          ],
+          "13": [
+            3126,
+            3126
+          ],
+          "15": [
+            2682,
+            2682
+          ],
+          "17": [
+            2759,
+            2759
+          ],
+          "10": [
+            2727,
+            2727
+          ],
+          "19": [
+            36,
+            36
+          ],
+          "12": [
+            2560,
+            2560
+          ],
+          "14": [
+            3223,
+            3223
+          ],
+          "16": [
+            2893,
+            2893
+          ],
+          "9": [
+            1569,
+            1569
+          ]
+        },
+        "2026-05-15": {
+          "15": [
+            0,
+            0
+          ],
+          "17": [
+            0,
+            0
+          ],
+          "10": [
+            25,
+            25
+          ],
+          "14": [
+            0,
+            0
+          ],
+          "16": [
+            0,
+            0
+          ],
+          "9": [
+            81,
+            81
+          ],
+          "11": [
+            17,
+            17
+          ],
+          "13": [
+            19,
+            19
+          ]
+        },
+        "2026-05-18": {
+          "21": [
+            2739,
+            2739
+          ],
+          "14": [
+            2933,
+            2933
+          ],
+          "23": [
+            323,
+            323
+          ],
+          "16": [
+            2885,
+            2885
+          ],
+          "9": [
+            2413,
+            2413
+          ],
+          "18": [
+            536,
+            536
+          ],
+          "11": [
+            1884,
+            1884
+          ],
+          "20": [
+            2985,
+            2985
+          ],
+          "13": [
+            3259,
+            3259
+          ],
+          "22": [
+            2242,
+            2242
+          ],
+          "15": [
+            2251,
+            2251
+          ],
+          "17": [
+            2095,
+            2095
+          ],
+          "10": [
+            3096,
+            3096
+          ],
+          "19": [
+            2207,
+            2207
+          ],
+          "12": [
+            3327,
+            3327
+          ]
+        },
+        "2026-05-19": {
+          "19": [
+            3233,
+            3233
+          ],
+          "21": [
+            3022,
+            3022
+          ],
+          "14": [
+            3013,
+            3013
+          ],
+          "23": [
+            2927,
+            2927
+          ],
+          "16": [
+            282,
+            282
+          ],
+          "0": [
+            2208,
+            2208
+          ],
+          "9": [
+            1925,
+            1925
+          ],
+          "18": [
+            642,
+            642
+          ],
+          "11": [
+            2901,
+            2901
+          ],
+          "20": [
+            3290,
+            3290
+          ],
+          "13": [
+            2736,
+            2736
+          ],
+          "22": [
+            2731,
+            2731
+          ],
+          "15": [
+            2400,
+            2400
+          ],
+          "17": [
+            2193,
+            2193
+          ],
+          "10": [
+            1007,
+            1009
+          ],
+          "12": [
+            2788,
+            2788
+          ]
+        },
+        "2026-05-20": {
+          "22": [
+            3261,
+            3261
+          ],
+          "15": [
+            2913,
+            2913
+          ],
+          "17": [
+            3049,
+            3049
+          ],
+          "1": [
+            57,
+            57
+          ],
+          "10": [
+            3083,
+            3083
+          ],
+          "19": [
+            2500,
+            2500
+          ],
+          "12": [
+            2566,
+            2566
+          ],
+          "21": [
+            3427,
+            3427
+          ],
+          "14": [
+            2984,
+            2984
+          ],
+          "23": [
+            3117,
+            3117
+          ],
+          "16": [
+            2738,
+            2738
+          ],
+          "0": [
+            3152,
+            3152
+          ],
+          "9": [
+            1663,
+            1663
+          ],
+          "18": [
+            2601,
+            2601
+          ],
+          "11": [
+            3135,
+            3135
+          ],
+          "20": [
+            2654,
+            2654
+          ],
+          "13": [
+            3088,
+            3088
+          ]
+        },
+        "2026-05-21": {
+          "0": [
+            2995,
+            2995
+          ],
+          "9": [
+            3123,
+            3123
+          ],
+          "11": [
+            2867,
+            2867
+          ],
+          "18": [
+            2621,
+            2621
+          ],
+          "20": [
+            2914,
+            2914
+          ],
+          "13": [
+            2094,
+            2094
+          ],
+          "22": [
+            2654,
+            2654
+          ],
+          "15": [
+            1404,
+            1404
+          ],
+          "17": [
+            2472,
+            2472
+          ],
+          "10": [
+            3381,
+            3381
+          ],
+          "19": [
+            1703,
+            1703
+          ],
+          "12": [
+            2580,
+            2580
+          ],
+          "21": [
+            3277,
+            3277
+          ],
+          "14": [
+            2659,
+            2659
+          ],
+          "23": [
+            2800,
+            2800
+          ],
+          "16": [
+            2085,
+            2086
+          ]
+        },
+        "2026-05-22": {
+          "13": [
+            2318,
+            2620
+          ],
+          "10": [
+            1310,
+            1310
+          ],
+          "12": [
+            2759,
+            2759
+          ],
+          "14": [
+            859,
+            859
+          ],
+          "0": [
+            3027,
+            3026
+          ],
+          "9": [
+            308,
+            308
+          ],
+          "11": [
+            3072,
+            3072
+          ]
+        },
+        "2026-05-26": {
+          "15": [
+            2854,
+            2854
+          ],
+          "17": [
+            3122,
+            3122
+          ],
+          "12": [
+            96,
+            96
+          ],
+          "14": [
+            2022,
+            2022
+          ],
+          "16": [
+            3356,
+            3356
+          ],
+          "13": [
+            95,
+            95
+          ]
+        },
+        "2026-05-27": {
+          "18": [
+            347,
+            347
+          ],
+          "20": [
+            322,
+            322
+          ],
+          "13": [
+            1551,
+            1551
+          ],
+          "22": [
+            3154,
+            3154
+          ],
+          "15": [
+            2663,
+            2994
+          ],
+          "8": [
+            170,
+            170
+          ],
+          "17": [
+            698,
+            825
+          ],
+          "19": [
+            1020,
+            1020
+          ],
+          "12": [
+            1156,
+            1160
+          ],
+          "21": [
+            2592,
+            2592
+          ],
+          "14": [
+            357,
+            357
+          ],
+          "23": [
+            3453,
+            3453
+          ],
+          "16": [
+            2847,
+            3533
+          ],
+          "9": [
+            862,
+            904
+          ],
+          "11": [
+            2181,
+            2181
+          ]
+        },
+        "2026-05-28": {
+          "14": [
+            2953,
+            2953
+          ],
+          "16": [
+            2241,
+            2241
+          ],
+          "0": [
+            288,
+            288
+          ],
+          "18": [
+            91,
+            91
+          ],
+          "11": [
+            2348,
+            2348
+          ],
+          "13": [
+            3070,
+            3071
+          ],
+          "15": [
+            2637,
+            2637
+          ],
+          "17": [
+            1991,
+            1991
+          ],
+          "10": [
+            1070,
+            1070
+          ],
+          "12": [
+            1171,
+            1171
+          ]
+        },
+        "2026-05-29": {
+          "16": [
+            57,
+            69
+          ],
+          "18": [
+            911,
+            911
+          ],
+          "17": [
+            620,
+            620
+          ]
+        },
+        "2026-05-30": {
+          "14": [
+            465,
+            465
+          ],
+          "13": [
+            79,
+            79
+          ]
+        },
+        "2026-05-31": {
+          "14": [
+            120,
+            120
+          ]
+        },
+        "2026-06-01": {
+          "22": [
+            3430,
+            3430
+          ],
+          "15": [
+            293,
+            293
+          ],
+          "17": [
+            3370,
+            3370
+          ],
+          "10": [
+            3551,
+            3551
+          ],
+          "19": [
+            3160,
+            3160
+          ],
+          "12": [
+            2363,
+            2363
+          ],
+          "21": [
+            3345,
+            3345
+          ],
+          "14": [
+            3190,
+            3190
+          ],
+          "23": [
+            3296,
+            3296
+          ],
+          "16": [
+            2318,
+            2318
+          ],
+          "9": [
+            2250,
+            2250
+          ],
+          "18": [
+            2654,
+            2654
+          ],
+          "11": [
+            3251,
+            3251
+          ],
+          "20": [
+            3478,
+            3478
+          ],
+          "13": [
+            2785,
+            2785
+          ]
+        },
+        "2026-06-02": {
+          "23": [
+            3194,
+            3194
+          ],
+          "16": [
+            3246,
+            3246
+          ],
+          "9": [
+            2362,
+            2362
+          ],
+          "18": [
+            2496,
+            2496
+          ],
+          "11": [
+            3204,
+            3204
+          ],
+          "20": [
+            2491,
+            2491
+          ],
+          "13": [
+            3273,
+            3273
+          ],
+          "22": [
+            2728,
+            2728
+          ],
+          "15": [
+            3228,
+            3228
+          ],
+          "17": [
+            2865,
+            2882
+          ],
+          "1": [
+            3,
+            3
+          ],
+          "10": [
+            3419,
+            3419
+          ],
+          "19": [
+            3434,
+            3434
+          ],
+          "12": [
+            2855,
+            2857
+          ],
+          "21": [
+            3004,
+            3004
+          ],
+          "14": [
+            2829,
+            2829
+          ],
+          "0": [
+            2844,
+            2844
+          ]
+        },
+        "2026-06-03": {
+          "15": [
+            3465,
+            3465
+          ],
+          "17": [
+            3046,
+            3046
+          ],
+          "10": [
+            3497,
+            3497
+          ],
+          "19": [
+            3190,
+            3190
+          ],
+          "12": [
+            3418,
+            3418
+          ],
+          "21": [
+            3236,
+            3236
+          ],
+          "14": [
+            2949,
+            2949
+          ],
+          "23": [
+            1065,
+            1065
+          ],
+          "16": [
+            2986,
+            2986
+          ],
+          "0": [
+            3567,
+            3567
+          ],
+          "9": [
+            3333,
+            3333
+          ],
+          "18": [
+            2755,
+            2755
+          ],
+          "11": [
+            2631,
+            2631
+          ],
+          "20": [
+            3472,
+            3472
+          ],
+          "13": [
+            3525,
+            3525
+          ],
+          "1": [
+            35,
+            35
+          ],
+          "22": [
+            3416,
+            3416
+          ]
+        },
+        "2026-06-04": {
+          "21": [
+            1899,
+            1899
+          ],
+          "14": [
+            2753,
+            2753
+          ],
+          "23": [
+            1687,
+            1687
+          ],
+          "16": [
+            3567,
+            3567
+          ],
+          "9": [
+            3451,
+            3451
+          ],
+          "18": [
+            2880,
+            2880
+          ],
+          "11": [
+            2741,
+            2741
+          ],
+          "20": [
+            2268,
+            2268
+          ],
+          "13": [
+            3422,
+            3422
+          ],
+          "22": [
+            1102,
+            1104
+          ],
+          "15": [
+            3216,
+            3216
+          ],
+          "17": [
+            3347,
+            3347
+          ],
+          "10": [
+            3060,
+            3257
+          ],
+          "19": [
+            3096,
+            3106
+          ],
+          "12": [
+            2828,
+            2830
+          ],
+          "0": [
+            2749,
+            2751
+          ]
+        },
+        "2026-06-05": {
+          "16": [
+            3097,
+            3097
+          ],
+          "18": [
+            2238,
+            2238
+          ],
+          "11": [
+            497,
+            497
+          ],
+          "20": [
+            270,
+            270
+          ],
+          "13": [
+            3537,
+            3537
+          ],
+          "15": [
+            3508,
+            3508
+          ],
+          "17": [
+            2262,
+            2262
+          ],
+          "10": [
+            3215,
+            3215
+          ],
+          "19": [
+            3144,
+            3144
+          ],
+          "12": [
+            2224,
+            2224
+          ],
+          "14": [
+            3295,
+            3295
+          ],
+          "0": [
+            1818,
+            1818
+          ],
+          "9": [
+            3019,
+            3019
+          ]
+        }
+      },
+      "gen2-108": {
+        "2026-05-11": {
+          "17": [
+            0,
+            0
+          ],
+          "16": [
+            0,
+            0
+          ]
+        },
+        "2026-05-12": {
+          "13": [
+            0,
+            0
+          ],
+          "17": [
+            0,
+            0
+          ],
+          "10": [
+            0,
+            0
+          ],
+          "19": [
+            0,
+            0
+          ],
+          "12": [
+            0,
+            0
+          ],
+          "21": [
+            0,
+            0
+          ],
+          "14": [
+            0,
+            0
+          ],
+          "18": [
+            0,
+            0
+          ],
+          "11": [
+            0,
+            0
+          ],
+          "20": [
+            0,
+            0
+          ]
+        },
+        "2026-05-13": {
+          "16": [
+            2436,
+            2436
+          ],
+          "11": [
+            430,
+            430
+          ],
+          "13": [
+            1423,
+            1423
+          ],
+          "15": [
+            168,
+            168
+          ],
+          "8": [
+            0,
+            0
+          ],
+          "17": [
+            3115,
+            3115
+          ],
+          "10": [
+            227,
+            227
+          ],
+          "19": [
+            918,
+            918
+          ],
+          "12": [
+            1440,
+            1440
+          ],
+          "14": [
+            2471,
+            2471
+          ]
+        },
+        "2026-05-14": {
+          "11": [
+            2435,
+            2435
+          ],
+          "13": [
+            555,
+            555
+          ],
+          "15": [
+            2501,
+            2501
+          ],
+          "17": [
+            2404,
+            2404
+          ],
+          "10": [
+            2970,
+            2970
+          ],
+          "12": [
+            2455,
+            2455
+          ],
+          "14": [
+            22,
+            22
+          ],
+          "16": [
+            356,
+            356
+          ],
+          "9": [
+            2608,
+            2608
+          ]
+        },
+        "2026-05-15": {
+          "22": [
+            1982,
+            1982
+          ],
+          "15": [
+            1897,
+            1899
+          ],
+          "17": [
+            3479,
+            3479
+          ],
+          "10": [
+            2742,
+            2742
+          ],
+          "12": [
+            3212,
+            3212
+          ],
+          "21": [
+            312,
+            312
+          ],
+          "14": [
+            3524,
+            3524
+          ],
+          "23": [
+            3401,
+            3401
+          ],
+          "16": [
+            3267,
+            3267
+          ],
+          "9": [
+            3024,
+            3024
+          ],
+          "11": [
+            1100,
+            1100
+          ],
+          "13": [
+            3312,
+            3312
+          ]
+        },
+        "2026-05-16": {
+          "0": [
+            3231,
+            3231
+          ]
+        },
+        "2026-05-18": {
+          "21": [
+            3338,
+            3338
+          ],
+          "14": [
+            2959,
+            2959
+          ],
+          "23": [
+            2305,
+            2307
+          ],
+          "16": [
+            0,
+            0
+          ],
+          "9": [
+            487,
+            487
+          ],
+          "18": [
+            2422,
+            2422
+          ],
+          "11": [
+            3459,
+            3459
+          ],
+          "20": [
+            2709,
+            2709
+          ],
+          "13": [
+            3276,
+            3276
+          ],
+          "22": [
+            2509,
+            2509
+          ],
+          "15": [
+            2016,
+            2016
+          ],
+          "17": [
+            1709,
+            1709
+          ],
+          "10": [
+            3528,
+            3528
+          ],
+          "19": [
+            2614,
+            2614
+          ],
+          "12": [
+            1690,
+            1690
+          ]
+        },
+        "2026-05-19": {
+          "19": [
+            1882,
+            1882
+          ],
+          "21": [
+            2985,
+            2985
+          ],
+          "14": [
+            3077,
+            3077
+          ],
+          "23": [
+            3081,
+            3081
+          ],
+          "16": [
+            3120,
+            3120
+          ],
+          "0": [
+            2853,
+            2853
+          ],
+          "9": [
+            2822,
+            2822
+          ],
+          "18": [
+            2803,
+            2803
+          ],
+          "11": [
+            3443,
+            3443
+          ],
+          "20": [
+            3113,
+            3113
+          ],
+          "13": [
+            2578,
+            2578
+          ],
+          "22": [
+            2714,
+            2714
+          ],
+          "15": [
+            2056,
+            2056
+          ],
+          "17": [
+            3115,
+            3115
+          ],
+          "10": [
+            2969,
+            2969
+          ],
+          "12": [
+            3117,
+            3117
+          ]
+        },
+        "2026-05-20": {
+          "22": [
+            3065,
+            3065
+          ],
+          "15": [
+            2624,
+            2624
+          ],
+          "17": [
+            3410,
+            3410
+          ],
+          "1": [
+            118,
+            118
+          ],
+          "19": [
+            3182,
+            3182
+          ],
+          "12": [
+            1671,
+            1671
+          ],
+          "21": [
+            1862,
+            1862
+          ],
+          "14": [
+            3329,
+            3329
+          ],
+          "23": [
+            2421,
+            2421
+          ],
+          "16": [
+            3142,
+            3142
+          ],
+          "0": [
+            2596,
+            2596
+          ],
+          "9": [
+            796,
+            796
+          ],
+          "18": [
+            3085,
+            3085
+          ],
+          "11": [
+            2857,
+            2857
+          ],
+          "20": [
+            2797,
+            2797
+          ],
+          "13": [
+            2922,
+            2922
+          ]
+        },
+        "2026-05-21": {
+          "0": [
+            2403,
+            2403
+          ],
+          "9": [
+            2980,
+            2980
+          ],
+          "11": [
+            2876,
+            2876
+          ],
+          "18": [
+            2379,
+            2379
+          ],
+          "20": [
+            1618,
+            1618
+          ],
+          "13": [
+            1179,
+            1179
+          ],
+          "22": [
+            2364,
+            2364
+          ],
+          "15": [
+            1332,
+            1332
+          ],
+          "17": [
+            2905,
+            2905
+          ],
+          "1": [
+            17,
+            17
+          ],
+          "10": [
+            3220,
+            3220
+          ],
+          "19": [
+            1760,
+            1760
+          ],
+          "12": [
+            2648,
+            2648
+          ],
+          "21": [
+            2969,
+            2969
+          ],
+          "14": [
+            390,
+            390
+          ],
+          "23": [
+            2961,
+            2961
+          ],
+          "16": [
+            2788,
+            2788
+          ]
+        },
+        "2026-05-22": {
+          "20": [
+            3247,
+            3247
+          ],
+          "13": [
+            3296,
+            3296
+          ],
+          "22": [
+            3124,
+            3124
+          ],
+          "15": [
+            3029,
+            3029
+          ],
+          "17": [
+            2096,
+            2096
+          ],
+          "1": [
+            27,
+            27
+          ],
+          "10": [
+            3211,
+            3211
+          ],
+          "19": [
+            3201,
+            3201
+          ],
+          "12": [
+            3073,
+            3073
+          ],
+          "21": [
+            3066,
+            3066
+          ],
+          "14": [
+            749,
+            749
+          ],
+          "23": [
+            3122,
+            3122
+          ],
+          "16": [
+            1295,
+            1296
+          ],
+          "0": [
+            3446,
+            3446
+          ],
+          "9": [
+            1130,
+            1130
+          ],
+          "18": [
+            1577,
+            1577
+          ],
+          "11": [
+            3016,
+            3016
+          ]
+        },
+        "2026-05-23": {
+          "0": [
+            3091,
+            3091
+          ]
+        },
+        "2026-05-25": {
+          "9": [
+            26,
+            26
+          ]
+        },
+        "2026-05-26": {
+          "22": [
+            3284,
+            3284
+          ],
+          "15": [
+            3027,
+            3027
+          ],
+          "17": [
+            3224,
+            3228
+          ],
+          "10": [
+            3117,
+            3117
+          ],
+          "19": [
+            3045,
+            3045
+          ],
+          "12": [
+            256,
+            256
+          ],
+          "21": [
+            3500,
+            3500
+          ],
+          "14": [
+            872,
+            879
+          ],
+          "23": [
+            2891,
+            2891
+          ],
+          "16": [
+            3201,
+            3201
+          ],
+          "9": [
+            3019,
+            3019
+          ],
+          "18": [
+            1204,
+            1204
+          ],
+          "11": [
+            1851,
+            1851
+          ],
+          "20": [
+            2689,
+            2689
+          ],
+          "13": [
+            2922,
+            2922
+          ]
+        },
+        "2026-05-27": {
+          "18": [
+            2580,
+            2580
+          ],
+          "20": [
+            3240,
+            3248
+          ],
+          "13": [
+            2405,
+            2405
+          ],
+          "22": [
+            3098,
+            3098
+          ],
+          "15": [
+            2413,
+            2414
+          ],
+          "17": [
+            2230,
+            2230
+          ],
+          "1": [
+            33,
+            33
+          ],
+          "10": [
+            2936,
+            2936
+          ],
+          "19": [
+            1454,
+            1454
+          ],
+          "12": [
+            2739,
+            2739
+          ],
+          "21": [
+            2653,
+            2653
+          ],
+          "14": [
+            2560,
+            2560
+          ],
+          "23": [
+            3121,
+            3121
+          ],
+          "16": [
+            1766,
+            1766
+          ],
+          "0": [
+            3113,
+            3113
+          ],
+          "9": [
+            2855,
+            2855
+          ],
+          "11": [
+            3403,
+            3403
+          ]
+        },
+        "2026-05-28": {
+          "14": [
+            1518,
+            1519
+          ],
+          "23": [
+            3249,
+            3249
+          ],
+          "16": [
+            706,
+            706
+          ],
+          "0": [
+            2987,
+            2987
+          ],
+          "9": [
+            1214,
+            1214
+          ],
+          "18": [
+            2279,
+            2279
+          ],
+          "11": [
+            1423,
+            1423
+          ],
+          "20": [
+            1509,
+            1509
+          ],
+          "13": [
+            3266,
+            3266
+          ],
+          "22": [
+            3585,
+            3585
+          ],
+          "15": [
+            1707,
+            1708
+          ],
+          "17": [
+            2541,
+            2541
+          ],
+          "10": [
+            2044,
+            2044
+          ],
+          "19": [
+            3275,
+            3275
+          ],
+          "12": [
+            2940,
+            2940
+          ],
+          "21": [
+            3492,
+            3492
+          ]
+        },
+        "2026-05-29": {
+          "23": [
+            3554,
+            3554
+          ],
+          "16": [
+            2919,
+            2919
+          ],
+          "18": [
+            2173,
+            2173
+          ],
+          "11": [
+            3257,
+            3257
+          ],
+          "20": [
+            3108,
+            3108
+          ],
+          "13": [
+            3276,
+            3276
+          ],
+          "22": [
+            2659,
+            2659
+          ],
+          "15": [
+            2832,
+            2832
+          ],
+          "17": [
+            934,
+            934
+          ],
+          "1": [
+            23,
+            23
+          ],
+          "10": [
+            3144,
+            3144
+          ],
+          "19": [
+            3022,
+            3026
+          ],
+          "12": [
+            3441,
+            3441
+          ],
+          "21": [
+            3127,
+            3127
+          ],
+          "14": [
+            3550,
+            3550
+          ],
+          "0": [
+            2834,
+            2834
+          ],
+          "9": [
+            2362,
+            2362
+          ]
+        },
+        "2026-05-30": {
+          "1": [
+            55,
+            55
+          ],
+          "14": [
+            327,
+            327
+          ],
+          "0": [
+            3434,
+            3434
+          ]
+        },
+        "2026-06-01": {
+          "22": [
+            3472,
+            3472
+          ],
+          "15": [
+            1366,
+            1366
+          ],
+          "17": [
+            2990,
+            2990
+          ],
+          "10": [
+            3074,
+            3074
+          ],
+          "19": [
+            2345,
+            2345
+          ],
+          "12": [
+            3334,
+            3334
+          ],
+          "21": [
+            3098,
+            3098
+          ],
+          "14": [
+            3410,
+            3410
+          ],
+          "23": [
+            3090,
+            3091
+          ],
+          "16": [
+            3259,
+            3259
+          ],
+          "9": [
+            2754,
+            2754
+          ],
+          "18": [
+            1746,
+            1746
+          ],
+          "11": [
+            3131,
+            3131
+          ],
+          "20": [
+            3264,
+            3264
+          ],
+          "13": [
+            3556,
+            3556
+          ],
+          "8": [
+            0,
+            0
+          ]
+        },
+        "2026-06-02": {
+          "23": [
+            3221,
+            3221
+          ],
+          "16": [
+            3250,
+            3250
+          ],
+          "9": [
+            2602,
+            2602
+          ],
+          "18": [
+            1785,
+            1785
+          ],
+          "11": [
+            3330,
+            3330
+          ],
+          "20": [
+            3119,
+            3119
+          ],
+          "13": [
+            3100,
+            3100
+          ],
+          "22": [
+            2852,
+            2852
+          ],
+          "15": [
+            3114,
+            3114
+          ],
+          "17": [
+            3379,
+            3379
+          ],
+          "10": [
+            3206,
+            3208
+          ],
+          "19": [
+            3262,
+            3264
+          ],
+          "12": [
+            3150,
+            3150
+          ],
+          "21": [
+            3156,
+            3156
+          ],
+          "14": [
+            3107,
+            3107
+          ],
+          "0": [
+            3433,
+            3433
+          ]
+        },
+        "2026-06-03": {
+          "15": [
+            3112,
+            3112
+          ],
+          "17": [
+            2731,
+            2731
+          ],
+          "10": [
+            2905,
+            2905
+          ],
+          "19": [
+            3149,
+            3149
+          ],
+          "12": [
+            2786,
+            2786
+          ],
+          "21": [
+            3507,
+            3507
+          ],
+          "14": [
+            3539,
+            3539
+          ],
+          "23": [
+            968,
+            968
+          ],
+          "16": [
+            1181,
+            1181
+          ],
+          "0": [
+            3240,
+            3240
+          ],
+          "9": [
+            1458,
+            1458
+          ],
+          "18": [
+            2782,
+            2782
+          ],
+          "11": [
+            1763,
+            1763
+          ],
+          "20": [
+            3509,
+            3509
+          ],
+          "13": [
+            3248,
+            3250
+          ],
+          "22": [
+            3304,
+            3304
+          ]
+        },
+        "2026-06-04": {
+          "21": [
+            3433,
+            3433
+          ],
+          "14": [
+            2835,
+            2835
+          ],
+          "23": [
+            3471,
+            3471
+          ],
+          "16": [
+            449,
+            449
+          ],
+          "9": [
+            1415,
+            1415
+          ],
+          "18": [
+            2078,
+            2078
+          ],
+          "11": [
+            2763,
+            2765
+          ],
+          "20": [
+            3139,
+            3139
+          ],
+          "13": [
+            3277,
+            3277
+          ],
+          "22": [
+            3569,
+            3569
+          ],
+          "15": [
+            2342,
+            2342
+          ],
+          "17": [
+            3149,
+            3149
+          ],
+          "10": [
+            3295,
+            3295
+          ],
+          "19": [
+            3088,
+            3088
+          ],
+          "12": [
+            2581,
+            2581
+          ],
+          "0": [
+            2025,
+            2025
+          ]
+        },
+        "2026-06-05": {
+          "16": [
+            2285,
+            2285
+          ],
+          "18": [
+            1483,
+            1483
+          ],
+          "11": [
+            2999,
+            2999
+          ],
+          "20": [
+            1685,
+            1685
+          ],
+          "13": [
+            2225,
+            2225
+          ],
+          "15": [
+            3250,
+            3250
+          ],
+          "17": [
+            3268,
+            3268
+          ],
+          "1": [
+            1,
+            1
+          ],
+          "10": [
+            2667,
+            2667
+          ],
+          "19": [
+            3118,
+            3118
+          ],
+          "12": [
+            3336,
+            3336
+          ],
+          "14": [
+            3305,
+            3305
+          ],
+          "0": [
+            3198,
+            3198
+          ],
+          "9": [
+            2866,
+            2866
+          ]
+        }
+      },
+      "gen2-105": {
+        "2026-04-27": {
+          "13": [
+            182,
+            2319
+          ],
+          "17": [
+            1213,
+            2615
+          ],
+          "12": [
+            0,
+            1905
+          ],
+          "16": [
+            2457,
+            3131
+          ],
+          "11": [
+            49,
+            2635
+          ],
+          "15": [
+            538,
+            3128
+          ],
+          "10": [
+            0,
+            2860
+          ],
+          "14": [
+            1162,
+            2116
+          ],
+          "9": [
+            269,
+            2312
+          ]
+        },
+        "2026-04-28": {
+          "9": [
+            32,
+            459
+          ],
+          "8": [
+            264,
+            264
+          ],
+          "12": [
+            399,
+            399
+          ],
+          "16": [
+            611,
+            611
+          ],
+          "20": [
+            1032,
+            1032
+          ],
+          "15": [
+            1608,
+            1608
+          ],
+          "10": [
+            15,
+            179
+          ],
+          "19": [
+            1880,
+            1880
+          ]
+        },
+        "2026-04-29": {
+          "10": [
+            138,
+            138
+          ],
+          "9": [
+            319,
+            319
+          ],
+          "18": [
+            1063,
+            1063
+          ],
+          "8": [
+            107,
+            107
+          ],
+          "17": [
+            900,
+            900
+          ],
+          "12": [
+            64,
+            64
+          ],
+          "16": [
+            226,
+            226
+          ],
+          "11": [
+            956,
+            956
+          ]
+        },
+        "2026-04-30": {
+          "8": [
+            170,
+            170
+          ],
+          "17": [
+            115,
+            115
+          ],
+          "11": [
+            320,
+            320
+          ],
+          "10": [
+            720,
+            720
+          ],
+          "9": [
+            352,
+            352
+          ]
+        },
+        "2026-05-01": {
+          "10": [
+            224,
+            224
+          ],
+          "14": [
+            366,
+            942
+          ],
+          "13": [
+            27,
+            158
+          ],
+          "11": [
+            188,
+            188
+          ],
+          "15": [
+            2,
+            195
+          ]
+        },
+        "2026-05-02": {
+          "16": [
+            104,
+            506
+          ]
+        },
+        "2026-05-04": {
+          "13": [
+            4,
+            201
+          ],
+          "22": [
+            109,
+            109
+          ],
+          "8": [
+            171,
+            342
+          ],
+          "17": [
+            0,
+            286
+          ],
+          "12": [
+            16,
+            367
+          ],
+          "21": [
+            105,
+            105
+          ],
+          "7": [
+            190,
+            292
+          ],
+          "16": [
+            0,
+            206
+          ],
+          "11": [
+            259,
+            553
+          ],
+          "10": [
+            45,
+            259
+          ],
+          "9": [
+            295,
+            295
+          ]
+        },
+        "2026-05-05": {
+          "16": [
+            691,
+            774
+          ],
+          "11": [
+            88,
+            88
+          ],
+          "15": [
+            583,
+            583
+          ],
+          "19": [
+            7,
+            2069
+          ],
+          "14": [
+            506,
+            1048
+          ],
+          "18": [
+            0,
+            886
+          ],
+          "17": [
+            1988,
+            2015
+          ]
+        },
+        "2026-05-06": {
+          "10": [
+            0,
+            3028
+          ],
+          "19": [
+            0,
+            3002
+          ],
+          "23": [
+            0,
+            2848
+          ],
+          "18": [
+            0,
+            2550
+          ],
+          "22": [
+            0,
+            3424
+          ],
+          "17": [
+            473,
+            1312
+          ],
+          "12": [
+            1118,
+            1409
+          ],
+          "21": [
+            0,
+            3052
+          ],
+          "16": [
+            708,
+            708
+          ],
+          "11": [
+            639,
+            2306
+          ],
+          "20": [
+            0,
+            2386
+          ],
+          "15": [
+            495,
+            495
+          ]
+        },
+        "2026-05-07": {
+          "15": [
+            309,
+            320
+          ],
+          "10": [
+            0,
+            2926
+          ],
+          "19": [
+            2326,
+            2326
+          ],
+          "14": [
+            2630,
+            2906
+          ],
+          "23": [
+            1995,
+            1995
+          ],
+          "0": [
+            1,
+            3276
+          ],
+          "9": [
+            0,
+            1595
+          ],
+          "18": [
+            2119,
+            2119
+          ],
+          "13": [
+            231,
+            1361
+          ],
+          "22": [
+            2520,
+            2520
+          ],
+          "17": [
+            274,
+            309
+          ],
+          "12": [
+            0,
+            2560
+          ],
+          "21": [
+            2602,
+            2602
+          ],
+          "16": [
+            1413,
+            1659
+          ],
+          "11": [
+            0,
+            3206
+          ],
+          "20": [
+            3333,
+            3333
+          ]
+        },
+        "2026-05-08": {
+          "15": [
+            599,
+            804
+          ],
+          "10": [
+            2788,
+            3305
+          ],
+          "19": [
+            1600,
+            1600
+          ],
+          "14": [
+            1936,
+            2324
+          ],
+          "23": [
+            2212,
+            2212
+          ],
+          "0": [
+            3339,
+            3339
+          ],
+          "9": [
+            1827,
+            2276
+          ],
+          "18": [
+            3,
+            3
+          ],
+          "13": [
+            2337,
+            2841
+          ],
+          "8": [
+            823,
+            823
+          ],
+          "22": [
+            3230,
+            3230
+          ],
+          "17": [
+            2801,
+            3256
+          ],
+          "12": [
+            2780,
+            3335
+          ],
+          "21": [
+            3246,
+            3246
+          ],
+          "16": [
+            2548,
+            3158
+          ],
+          "11": [
+            2347,
+            2973
+          ],
+          "20": [
+            3214,
+            3214
+          ]
+        },
+        "2026-05-09": {
+          "0": [
+            3230,
+            3230
+          ]
+        },
+        "2026-05-11": {
+          "8": [
+            4,
+            4
+          ],
+          "17": [
+            637,
+            780
+          ],
+          "21": [
+            3238,
+            3238
+          ],
+          "20": [
+            3331,
+            3331
+          ],
+          "10": [
+            325,
+            325
+          ],
+          "19": [
+            3450,
+            3450
+          ],
+          "14": [
+            150,
+            150
+          ],
+          "23": [
+            2425,
+            2425
+          ],
+          "9": [
+            70,
+            70
+          ],
+          "18": [
+            2675,
+            2688
+          ],
+          "22": [
+            2048,
+            2048
+          ]
+        },
+        "2026-05-12": {
+          "15": [
+            1736,
+            1736
+          ],
+          "1": [
+            42,
+            42
+          ],
+          "10": [
+            2233,
+            2233
+          ],
+          "19": [
+            2065,
+            2883
+          ],
+          "23": [
+            3228,
+            3465
+          ],
+          "0": [
+            3037,
+            3037
+          ],
+          "9": [
+            2182,
+            2182
+          ],
+          "18": [
+            1911,
+            2496
+          ],
+          "22": [
+            2578,
+            2986
+          ],
+          "17": [
+            2784,
+            2784
+          ],
+          "12": [
+            657,
+            684
+          ],
+          "21": [
+            2480,
+            3248
+          ],
+          "16": [
+            945,
+            945
+          ],
+          "11": [
+            3030,
+            3030
+          ],
+          "20": [
+            1681,
+            2786
+          ]
+        },
+        "2026-05-13": {
+          "23": [
+            3478,
+            3478
+          ],
+          "9": [
+            898,
+            898
+          ],
+          "18": [
+            3113,
+            3113
+          ],
+          "13": [
+            2112,
+            2112
+          ],
+          "22": [
+            3510,
+            3510
+          ],
+          "17": [
+            2864,
+            2864
+          ],
+          "12": [
+            3015,
+            3015
+          ],
+          "21": [
+            2003,
+            2003
+          ],
+          "16": [
+            3507,
+            3507
+          ],
+          "11": [
+            3255,
+            3255
+          ],
+          "20": [
+            3334,
+            3334
+          ],
+          "15": [
+            2700,
+            2700
+          ],
+          "10": [
+            2568,
+            2568
+          ],
+          "19": [
+            3342,
+            3342
+          ],
+          "14": [
+            2951,
+            2952
+          ],
+          "0": [
+            3417,
+            3417
+          ]
+        },
+        "2026-05-14": {
+          "11": [
+            1779,
+            1779
+          ],
+          "20": [
+            2643,
+            2643
+          ],
+          "15": [
+            2321,
+            2807
+          ],
+          "10": [
+            2681,
+            2681
+          ],
+          "19": [
+            3270,
+            3270
+          ],
+          "14": [
+            2325,
+            2325
+          ],
+          "23": [
+            3218,
+            3218
+          ],
+          "0": [
+            3110,
+            3110
+          ],
+          "9": [
+            1430,
+            1430
+          ],
+          "18": [
+            2222,
+            2222
+          ],
+          "13": [
+            3542,
+            3542
+          ],
+          "22": [
+            2828,
+            2828
+          ],
+          "17": [
+            1933,
+            2203
+          ],
+          "12": [
+            2538,
+            2538
+          ],
+          "21": [
+            888,
+            1038
+          ],
+          "16": [
+            2193,
+            2992
+          ]
+        },
+        "2026-05-15": {
+          "10": [
+            766,
+            836
+          ],
+          "19": [
+            2845,
+            2845
+          ],
+          "0": [
+            3412,
+            3412
+          ],
+          "9": [
+            1171,
+            1171
+          ],
+          "18": [
+            2888,
+            3016
+          ],
+          "13": [
+            1525,
+            1525
+          ],
+          "22": [
+            227,
+            227
+          ],
+          "8": [
+            245,
+            245
+          ],
+          "17": [
+            694,
+            702
+          ],
+          "12": [
+            1354,
+            1560
+          ],
+          "21": [
+            1766,
+            1766
+          ],
+          "16": [
+            265,
+            265
+          ],
+          "11": [
+            1296,
+            1404
+          ],
+          "20": [
+            3463,
+            3463
+          ]
+        },
+        "2026-05-18": {
+          "14": [
+            2414,
+            2414
+          ],
+          "23": [
+            2095,
+            2105
+          ],
+          "9": [
+            944,
+            946
+          ],
+          "18": [
+            913,
+            913
+          ],
+          "13": [
+            2702,
+            2702
+          ],
+          "22": [
+            2231,
+            2231
+          ],
+          "17": [
+            1998,
+            2005
+          ],
+          "12": [
+            1754,
+            1754
+          ],
+          "21": [
+            2476,
+            2476
+          ],
+          "16": [
+            3030,
+            3109
+          ],
+          "11": [
+            0,
+            0
+          ],
+          "20": [
+            2796,
+            2796
+          ],
+          "15": [
+            2464,
+            2531
+          ],
+          "10": [
+            596,
+            1231
+          ],
+          "19": [
+            2561,
+            2566
+          ]
+        },
+        "2026-05-19": {
+          "14": [
+            2527,
+            2691
+          ],
+          "0": [
+            3209,
+            3209
+          ],
+          "9": [
+            3276,
+            3276
+          ],
+          "13": [
+            2631,
+            2631
+          ],
+          "17": [
+            2206,
+            3001
+          ],
+          "12": [
+            2003,
+            2003
+          ],
+          "16": [
+            1109,
+            1349
+          ],
+          "11": [
+            3045,
+            3269
+          ],
+          "15": [
+            1883,
+            2205
+          ],
+          "10": [
+            1655,
+            2293
+          ]
+        },
+        "2026-05-20": {
+          "17": [
+            2168,
+            2168
+          ],
+          "12": [
+            2801,
+            2802
+          ],
+          "16": [
+            1208,
+            1208
+          ],
+          "11": [
+            2272,
+            2272
+          ],
+          "15": [
+            195,
+            319
+          ],
+          "10": [
+            3368,
+            3368
+          ],
+          "14": [
+            723,
+            723
+          ],
+          "9": [
+            1389,
+            1389
+          ],
+          "13": [
+            2277,
+            2277
+          ]
+        },
+        "2026-05-21": {
+          "9": [
+            1422,
+            1422
+          ],
+          "13": [
+            2860,
+            2860
+          ],
+          "12": [
+            2701,
+            2701
+          ],
+          "11": [
+            520,
+            520
+          ],
+          "15": [
+            556,
+            556
+          ],
+          "10": [
+            2085,
+            2085
+          ],
+          "14": [
+            1517,
+            1517
+          ]
+        },
+        "2026-05-22": {
+          "13": [
+            2762,
+            2762
+          ],
+          "22": [
+            3089,
+            3089
+          ],
+          "17": [
+            2235,
+            2602
+          ],
+          "12": [
+            275,
+            275
+          ],
+          "16": [
+            2124,
+            2124
+          ],
+          "11": [
+            667,
+            667
+          ],
+          "15": [
+            2602,
+            2631
+          ],
+          "10": [
+            1865,
+            1865
+          ],
+          "14": [
+            2109,
+            2383
+          ],
+          "23": [
+            3050,
+            3050
+          ],
+          "9": [
+            1545,
+            1844
+          ],
+          "18": [
+            25,
+            25
+          ]
+        },
+        "2026-05-23": {
+          "1": [
+            1,
+            1
+          ],
+          "0": [
+            2905,
+            2905
+          ]
+        },
+        "2026-05-26": {
+          "15": [
+            1097,
+            1504
+          ],
+          "10": [
+            2695,
+            2695
+          ],
+          "19": [
+            1929,
+            2036
+          ],
+          "14": [
+            2093,
+            2094
+          ],
+          "23": [
+            117,
+            117
+          ],
+          "9": [
+            1250,
+            1250
+          ],
+          "18": [
+            919,
+            919
+          ],
+          "13": [
+            2374,
+            2917
+          ],
+          "17": [
+            609,
+            609
+          ],
+          "12": [
+            1892,
+            2000
+          ],
+          "21": [
+            283,
+            347
+          ],
+          "16": [
+            1027,
+            1291
+          ],
+          "11": [
+            588,
+            634
+          ],
+          "20": [
+            198,
+            198
+          ]
+        },
+        "2026-05-27": {
+          "20": [
+            540,
+            540
+          ],
+          "15": [
+            0,
+            0
+          ],
+          "1": [
+            0,
+            0
+          ],
+          "19": [
+            2085,
+            2085
+          ],
+          "14": [
+            0,
+            0
+          ],
+          "23": [
+            2723,
+            2723
+          ],
+          "0": [
+            0,
+            0
+          ],
+          "4": [
+            0,
+            0
+          ],
+          "18": [
+            2087,
+            2087
+          ],
+          "13": [
+            0,
+            0
+          ],
+          "22": [
+            1213,
+            1213
+          ],
+          "17": [
+            2183,
+            2193
+          ],
+          "3": [
+            0,
+            0
+          ],
+          "12": [
+            0,
+            0
+          ],
+          "21": [
+            54,
+            54
+          ],
+          "16": [
+            0,
+            0
+          ],
+          "2": [
+            0,
+            0
+          ],
+          "11": [
+            0,
+            0
+          ]
+        },
+        "2026-05-28": {
+          "11": [
+            439,
+            439
+          ],
+          "15": [
+            0,
+            0
+          ],
+          "10": [
+            1271,
+            1291
+          ],
+          "19": [
+            1106,
+            1106
+          ],
+          "14": [
+            657,
+            657
+          ],
+          "23": [
+            2906,
+            2913
+          ],
+          "0": [
+            1593,
+            1593
+          ],
+          "9": [
+            1946,
+            1981
+          ],
+          "18": [
+            2136,
+            2136
+          ],
+          "13": [
+            440,
+            502
+          ],
+          "22": [
+            3089,
+            3089
+          ],
+          "17": [
+            436,
+            436
+          ],
+          "12": [
+            1403,
+            1780
+          ],
+          "21": [
+            575,
+            575
+          ]
+        },
+        "2026-05-29": {
+          "23": [
+            3034,
+            3034
+          ],
+          "18": [
+            337,
+            337
+          ],
+          "13": [
+            734,
+            734
+          ],
+          "22": [
+            1168,
+            1168
+          ],
+          "17": [
+            784,
+            784
+          ],
+          "12": [
+            175,
+            175
+          ],
+          "16": [
+            70,
+            103
+          ],
+          "11": [
+            1262,
+            1262
+          ],
+          "1": [
+            17,
+            17
+          ],
+          "10": [
+            1763,
+            1763
+          ],
+          "14": [
+            225,
+            254
+          ],
+          "0": [
+            2811,
+            2811
+          ],
+          "9": [
+            2086,
+            2154
+          ]
+        },
+        "2026-05-30": {
+          "1": [
+            20,
+            20
+          ],
+          "0": [
+            2059,
+            2059
+          ]
+        },
+        "2026-05-31": {
+          "14": [
+            3,
+            3
+          ],
+          "15": [
+            531,
+            531
+          ]
+        },
+        "2026-06-01": {
+          "22": [
+            1860,
+            1860
+          ],
+          "21": [
+            2054,
+            2054
+          ],
+          "16": [
+            562,
+            562
+          ],
+          "20": [
+            1956,
+            1956
+          ],
+          "15": [
+            91,
+            91
+          ],
+          "10": [
+            953,
+            953
+          ],
+          "19": [
+            1734,
+            1742
+          ],
+          "14": [
+            1163,
+            1163
+          ],
+          "23": [
+            2868,
+            2868
+          ],
+          "9": [
+            1538,
+            1538
+          ],
+          "18": [
+            7,
+            7
+          ],
+          "13": [
+            1084,
+            1084
+          ]
+        },
+        "2026-06-02": {
+          "23": [
+            2662,
+            2662
+          ],
+          "9": [
+            793,
+            798
+          ],
+          "18": [
+            1465,
+            1470
+          ],
+          "13": [
+            3107,
+            3134
+          ],
+          "22": [
+            3071,
+            3071
+          ],
+          "17": [
+            3095,
+            3199
+          ],
+          "12": [
+            3326,
+            3326
+          ],
+          "21": [
+            3021,
+            3021
+          ],
+          "16": [
+            3143,
+            3216
+          ],
+          "11": [
+            2286,
+            2410
+          ],
+          "20": [
+            2704,
+            2704
+          ],
+          "15": [
+            2576,
+            2622
+          ],
+          "10": [
+            2670,
+            2736
+          ],
+          "19": [
+            3350,
+            3350
+          ],
+          "14": [
+            3384,
+            3412
+          ],
+          "0": [
+            1839,
+            1847
+          ]
+        },
+        "2026-06-03": {
+          "15": [
+            2834,
+            2927
+          ],
+          "10": [
+            2705,
+            2799
+          ],
+          "14": [
+            3209,
+            3277
+          ],
+          "0": [
+            3253,
+            3253
+          ],
+          "9": [
+            2881,
+            2924
+          ],
+          "13": [
+            3404,
+            3487
+          ],
+          "17": [
+            3280,
+            3281
+          ],
+          "12": [
+            3264,
+            3299
+          ],
+          "16": [
+            2104,
+            2128
+          ],
+          "11": [
+            2334,
+            2379
+          ]
+        },
+        "2026-06-04": {
+          "14": [
+            2898,
+            2910
+          ],
+          "23": [
+            3195,
+            3195
+          ],
+          "9": [
+            3339,
+            3339
+          ],
+          "18": [
+            2424,
+            2424
+          ],
+          "13": [
+            2568,
+            2615
+          ],
+          "22": [
+            3513,
+            3513
+          ],
+          "17": [
+            3478,
+            3501
+          ],
+          "12": [
+            2500,
+            2517
+          ],
+          "21": [
+            3320,
+            3320
+          ],
+          "16": [
+            3038,
+            3048
+          ],
+          "11": [
+            2433,
+            2433
+          ],
+          "20": [
+            2908,
+            2908
+          ],
+          "15": [
+            3111,
+            3112
+          ],
+          "10": [
+            1058,
+            1058
+          ],
+          "19": [
+            3340,
+            3340
+          ]
+        },
+        "2026-06-05": {
+          "18": [
+            2602,
+            2602
+          ],
+          "13": [
+            3352,
+            3380
+          ],
+          "17": [
+            2415,
+            2472
+          ],
+          "12": [
+            3201,
+            3219
+          ],
+          "16": [
+            2316,
+            2321
+          ],
+          "11": [
+            1045,
+            1106
+          ],
+          "15": [
+            2934,
+            2957
+          ],
+          "1": [
+            5,
+            5
+          ],
+          "10": [
+            2513,
+            2515
+          ],
+          "19": [
+            3356,
+            3356
+          ],
+          "14": [
+            3390,
+            3428
+          ],
+          "0": [
+            2659,
+            2659
+          ],
+          "9": [
+            2617,
+            2643
+          ]
+        }
+      },
+      "gen2-104": {
+        "2026-04-27": {
+          "13": [
+            0,
+            2879
+          ],
+          "17": [
+            0,
+            1656
+          ],
+          "12": [
+            0,
+            3018
+          ],
+          "16": [
+            0,
+            2933
+          ],
+          "11": [
+            1,
+            3106
+          ],
+          "15": [
+            0,
+            2763
+          ],
+          "10": [
+            0,
+            2724
+          ],
+          "14": [
+            0,
+            3208
+          ],
+          "23": [
+            5,
+            1192
+          ],
+          "9": [
+            0,
+            2142
+          ]
+        },
+        "2026-04-28": {
+          "14": [
+            0,
+            2732
+          ],
+          "9": [
+            0,
+            2070
+          ],
+          "13": [
+            0,
+            1689
+          ],
+          "22": [
+            0,
+            68
+          ],
+          "17": [
+            0,
+            2903
+          ],
+          "12": [
+            0,
+            2892
+          ],
+          "21": [
+            0,
+            592
+          ],
+          "16": [
+            0,
+            1750
+          ],
+          "11": [
+            0,
+            2439
+          ],
+          "20": [
+            0,
+            1353
+          ],
+          "15": [
+            0,
+            3085
+          ],
+          "10": [
+            0,
+            2882
+          ]
+        },
+        "2026-04-29": {
+          "10": [
+            0,
+            1468
+          ],
+          "19": [
+            0,
+            3347
+          ],
+          "14": [
+            0,
+            2745
+          ],
+          "23": [
+            0,
+            2899
+          ],
+          "18": [
+            0,
+            2254
+          ],
+          "13": [
+            0,
+            1308
+          ],
+          "22": [
+            1375,
+            3179
+          ],
+          "17": [
+            0,
+            1889
+          ],
+          "12": [
+            0,
+            3521
+          ],
+          "21": [
+            0,
+            2776
+          ],
+          "16": [
+            28,
+            974
+          ],
+          "11": [
+            0,
+            3492
+          ],
+          "20": [
+            0,
+            3443
+          ],
+          "15": [
+            0,
+            2492
+          ]
+        },
+        "2026-04-30": {
+          "13": [
+            0,
+            2666
+          ],
+          "22": [
+            0,
+            2802
+          ],
+          "17": [
+            0,
+            2829
+          ],
+          "12": [
+            0,
+            3421
+          ],
+          "21": [
+            0,
+            3080
+          ],
+          "16": [
+            39,
+            792
+          ],
+          "11": [
+            0,
+            3389
+          ],
+          "20": [
+            226,
+            3226
+          ],
+          "15": [
+            0,
+            2114
+          ],
+          "10": [
+            0,
+            3318
+          ],
+          "19": [
+            0,
+            3517
+          ],
+          "14": [
+            0,
+            2591
+          ],
+          "23": [
+            0,
+            1835
+          ],
+          "0": [
+            0,
+            1546
+          ],
+          "9": [
+            0,
+            1783
+          ],
+          "18": [
+            0,
+            2298
+          ]
+        },
+        "2026-05-01": {
+          "14": [
+            1,
+            1149
+          ],
+          "0": [
+            0,
+            2936
+          ],
+          "18": [
+            0,
+            0
+          ],
+          "13": [
+            0,
+            3129
+          ],
+          "17": [
+            0,
+            533
+          ],
+          "12": [
+            0,
+            1692
+          ],
+          "16": [
+            0,
+            1783
+          ],
+          "15": [
+            0,
+            1616
+          ]
+        },
+        "2026-05-04": {
+          "18": [
+            0,
+            1312
+          ],
+          "13": [
+            0,
+            3122
+          ],
+          "22": [
+            0,
+            3064
+          ],
+          "17": [
+            6,
+            1802
+          ],
+          "12": [
+            0,
+            3513
+          ],
+          "21": [
+            0,
+            3091
+          ],
+          "16": [
+            0,
+            2132
+          ],
+          "11": [
+            0,
+            1267
+          ],
+          "20": [
+            0,
+            3010
+          ],
+          "15": [
+            0,
+            3289
+          ],
+          "10": [
+            7,
+            280
+          ],
+          "19": [
+            0,
+            3352
+          ],
+          "14": [
+            0,
+            2050
+          ],
+          "23": [
+            0,
+            2986
+          ],
+          "9": [
+            0,
+            211
+          ]
+        },
+        "2026-05-05": {
+          "21": [
+            56,
+            2259
+          ],
+          "2": [
+            0,
+            0
+          ],
+          "11": [
+            0,
+            319
+          ],
+          "20": [
+            0,
+            2470
+          ],
+          "15": [
+            0,
+            5
+          ],
+          "1": [
+            0,
+            0
+          ],
+          "10": [
+            0,
+            1823
+          ],
+          "14": [
+            0,
+            0
+          ],
+          "23": [
+            0,
+            3376
+          ],
+          "0": [
+            0,
+            1791
+          ],
+          "9": [
+            0,
+            12
+          ],
+          "18": [
+            0,
+            1150
+          ],
+          "4": [
+            0,
+            0
+          ],
+          "13": [
+            0,
+            2276
+          ],
+          "22": [
+            0,
+            2925
+          ],
+          "17": [
+            0,
+            2200
+          ],
+          "3": [
+            0,
+            0
+          ],
+          "12": [
+            0,
+            1325
+          ]
+        },
+        "2026-05-06": {
+          "10": [
+            45,
+            2189
+          ],
+          "19": [
+            0,
+            3476
+          ],
+          "14": [
+            0,
+            3040
+          ],
+          "23": [
+            0,
+            1685
+          ],
+          "0": [
+            0,
+            2154
+          ],
+          "9": [
+            0,
+            2925
+          ],
+          "18": [
+            0,
+            1476
+          ],
+          "13": [
+            0,
+            3123
+          ],
+          "22": [
+            0,
+            3291
+          ],
+          "17": [
+            1092,
+            3460
+          ],
+          "12": [
+            0,
+            2421
+          ],
+          "21": [
+            0,
+            3098
+          ],
+          "16": [
+            171,
+            3441
+          ],
+          "11": [
+            549,
+            2556
+          ],
+          "20": [
+            0,
+            3214
+          ],
+          "15": [
+            244,
+            2759
+          ]
+        },
+        "2026-05-07": {
+          "15": [
+            2727,
+            2727
+          ],
+          "10": [
+            0,
+            3338
+          ],
+          "19": [
+            3486,
+            3486
+          ],
+          "14": [
+            3150,
+            3150
+          ],
+          "23": [
+            2057,
+            2057
+          ],
+          "0": [
+            0,
+            3317
+          ],
+          "9": [
+            0,
+            3203
+          ],
+          "18": [
+            1943,
+            1943
+          ],
+          "13": [
+            484,
+            2233
+          ],
+          "22": [
+            2134,
+            2152
+          ],
+          "17": [
+            2671,
+            2671
+          ],
+          "12": [
+            0,
+            3365
+          ],
+          "21": [
+            2261,
+            2261
+          ],
+          "16": [
+            2074,
+            2074
+          ],
+          "11": [
+            0,
+            3252
+          ],
+          "20": [
+            2699,
+            2701
+          ]
+        },
+        "2026-05-08": {
+          "15": [
+            2854,
+            2854
+          ],
+          "10": [
+            2795,
+            2795
+          ],
+          "19": [
+            3397,
+            3397
+          ],
+          "14": [
+            1701,
+            1701
+          ],
+          "23": [
+            3135,
+            3135
+          ],
+          "0": [
+            3393,
+            3393
+          ],
+          "9": [
+            3448,
+            3448
+          ],
+          "18": [
+            2483,
+            2483
+          ],
+          "13": [
+            2754,
+            2764
+          ],
+          "8": [
+            9,
+            9
+          ],
+          "22": [
+            2754,
+            2760
+          ],
+          "17": [
+            3069,
+            3069
+          ],
+          "12": [
+            2919,
+            2919
+          ],
+          "21": [
+            2721,
+            2721
+          ],
+          "16": [
+            1122,
+            1122
+          ],
+          "11": [
+            3150,
+            3150
+          ],
+          "20": [
+            2610,
+            2610
+          ]
+        },
+        "2026-05-09": {
+          "0": [
+            2787,
+            2787
+          ]
+        },
+        "2026-05-11": {
+          "17": [
+            3476,
+            3476
+          ],
+          "12": [
+            1607,
+            1607
+          ],
+          "21": [
+            3288,
+            3288
+          ],
+          "16": [
+            3326,
+            3326
+          ],
+          "11": [
+            895,
+            895
+          ],
+          "20": [
+            3377,
+            3377
+          ],
+          "15": [
+            3297,
+            3297
+          ],
+          "10": [
+            3044,
+            3044
+          ],
+          "19": [
+            2779,
+            2779
+          ],
+          "14": [
+            2817,
+            2817
+          ],
+          "23": [
+            2922,
+            2922
+          ],
+          "9": [
+            2499,
+            2499
+          ],
+          "18": [
+            2624,
+            2624
+          ],
+          "13": [
+            3126,
+            3126
+          ],
+          "22": [
+            2458,
+            2655
+          ]
+        },
+        "2026-05-12": {
+          "15": [
+            362,
+            362
+          ],
+          "1": [
+            32,
+            32
+          ],
+          "10": [
+            3482,
+            3482
+          ],
+          "14": [
+            1259,
+            1259
+          ],
+          "0": [
+            3412,
+            3418
+          ],
+          "9": [
+            1981,
+            1981
+          ],
+          "13": [
+            1315,
+            1315
+          ],
+          "17": [
+            0,
+            0
+          ],
+          "12": [
+            3291,
+            3291
+          ],
+          "16": [
+            0,
+            0
+          ],
+          "11": [
+            2051,
+            2052
+          ]
+        },
+        "2026-05-13": {
+          "23": [
+            2967,
+            2967
+          ],
+          "18": [
+            3326,
+            3326
+          ],
+          "22": [
+            2806,
+            2806
+          ],
+          "17": [
+            3223,
+            3228
+          ],
+          "21": [
+            2991,
+            2991
+          ],
+          "16": [
+            3000,
+            3000
+          ],
+          "11": [
+            0,
+            0
+          ],
+          "20": [
+            3210,
+            3210
+          ],
+          "15": [
+            635,
+            635
+          ],
+          "19": [
+            3433,
+            3433
+          ]
+        },
+        "2026-05-14": {
+          "11": [
+            3363,
+            3363
+          ],
+          "20": [
+            2930,
+            2930
+          ],
+          "15": [
+            2414,
+            2414
+          ],
+          "10": [
+            2781,
+            2781
+          ],
+          "19": [
+            1821,
+            1821
+          ],
+          "14": [
+            1513,
+            1513
+          ],
+          "23": [
+            3453,
+            3453
+          ],
+          "0": [
+            3191,
+            3196
+          ],
+          "9": [
+            1773,
+            1773
+          ],
+          "18": [
+            2631,
+            2631
+          ],
+          "13": [
+            3471,
+            3471
+          ],
+          "22": [
+            3285,
+            3285
+          ],
+          "17": [
+            1745,
+            1745
+          ],
+          "12": [
+            3421,
+            3421
+          ],
+          "21": [
+            3128,
+            3128
+          ],
+          "16": [
+            2846,
+            2846
+          ]
+        },
+        "2026-05-15": {
+          "15": [
+            2731,
+            2731
+          ],
+          "10": [
+            1913,
+            1913
+          ],
+          "19": [
+            3077,
+            3077
+          ],
+          "14": [
+            2422,
+            2422
+          ],
+          "23": [
+            3466,
+            3466
+          ],
+          "0": [
+            3341,
+            3341
+          ],
+          "9": [
+            2914,
+            2914
+          ],
+          "18": [
+            3331,
+            3331
+          ],
+          "13": [
+            2705,
+            2705
+          ],
+          "22": [
+            3310,
+            3310
+          ],
+          "17": [
+            3284,
+            3284
+          ],
+          "12": [
+            2353,
+            2353
+          ],
+          "21": [
+            3141,
+            3159
+          ],
+          "16": [
+            3266,
+            3266
+          ],
+          "11": [
+            2546,
+            2546
+          ],
+          "20": [
+            3074,
+            3075
+          ]
+        },
+        "2026-05-16": {
+          "0": [
+            3156,
+            3156
+          ]
+        },
+        "2026-05-18": {
+          "14": [
+            2647,
+            2647
+          ],
+          "23": [
+            3270,
+            3270
+          ],
+          "9": [
+            1089,
+            1089
+          ],
+          "18": [
+            2591,
+            2591
+          ],
+          "13": [
+            3120,
+            3120
+          ],
+          "22": [
+            3279,
+            3279
+          ],
+          "17": [
+            2399,
+            2399
+          ],
+          "12": [
+            3215,
+            3215
+          ],
+          "21": [
+            2950,
+            2950
+          ],
+          "16": [
+            1694,
+            1694
+          ],
+          "11": [
+            3160,
+            3160
+          ],
+          "20": [
+            3290,
+            3290
+          ],
+          "15": [
+            2727,
+            2727
+          ],
+          "10": [
+            2399,
+            2399
+          ],
+          "19": [
+            3323,
+            3323
+          ]
+        },
+        "2026-05-19": {
+          "19": [
+            2938,
+            2938
+          ],
+          "14": [
+            2665,
+            2665
+          ],
+          "23": [
+            2764,
+            2764
+          ],
+          "0": [
+            2658,
+            2658
+          ],
+          "9": [
+            2599,
+            2599
+          ],
+          "18": [
+            2783,
+            2783
+          ],
+          "13": [
+            2340,
+            2340
+          ],
+          "22": [
+            3281,
+            3281
+          ],
+          "17": [
+            2732,
+            2732
+          ],
+          "12": [
+            2783,
+            2783
+          ],
+          "21": [
+            2760,
+            2760
+          ],
+          "16": [
+            2613,
+            2613
+          ],
+          "11": [
+            2817,
+            2817
+          ],
+          "20": [
+            2585,
+            2585
+          ],
+          "15": [
+            3178,
+            3178
+          ],
+          "10": [
+            3093,
+            3093
+          ]
+        },
+        "2026-05-20": {
+          "22": [
+            3543,
+            3543
+          ],
+          "17": [
+            2897,
+            2897
+          ],
+          "12": [
+            3357,
+            3357
+          ],
+          "21": [
+            3340,
+            3340
+          ],
+          "16": [
+            3144,
+            3144
+          ],
+          "11": [
+            2853,
+            2853
+          ],
+          "20": [
+            2970,
+            2970
+          ],
+          "15": [
+            3391,
+            3391
+          ],
+          "1": [
+            13,
+            13
+          ],
+          "10": [
+            3387,
+            3387
+          ],
+          "19": [
+            3475,
+            3475
+          ],
+          "14": [
+            2888,
+            2888
+          ],
+          "23": [
+            3488,
+            3488
+          ],
+          "0": [
+            3420,
+            3420
+          ],
+          "9": [
+            2818,
+            2818
+          ],
+          "18": [
+            3052,
+            3052
+          ],
+          "13": [
+            2532,
+            2532
+          ]
+        },
+        "2026-05-21": {
+          "0": [
+            2810,
+            2810
+          ],
+          "9": [
+            3037,
+            3037
+          ],
+          "18": [
+            2751,
+            2751
+          ],
+          "13": [
+            3257,
+            3257
+          ],
+          "22": [
+            2059,
+            2059
+          ],
+          "17": [
+            2998,
+            2998
+          ],
+          "12": [
+            3294,
+            3294
+          ],
+          "21": [
+            3226,
+            3226
+          ],
+          "16": [
+            2287,
+            2287
+          ],
+          "11": [
+            1507,
+            1507
+          ],
+          "20": [
+            2444,
+            2444
+          ],
+          "15": [
+            1218,
+            1218
+          ],
+          "10": [
+            3285,
+            3285
+          ],
+          "19": [
+            1605,
+            1605
+          ],
+          "14": [
+            2674,
+            2674
+          ],
+          "23": [
+            2330,
+            2330
+          ]
+        },
+        "2026-05-22": {
+          "13": [
+            3168,
+            3168
+          ],
+          "22": [
+            3219,
+            3219
+          ],
+          "17": [
+            3532,
+            3532
+          ],
+          "12": [
+            2259,
+            2259
+          ],
+          "21": [
+            3452,
+            3452
+          ],
+          "16": [
+            2428,
+            2428
+          ],
+          "11": [
+            2593,
+            2593
+          ],
+          "20": [
+            3462,
+            3462
+          ],
+          "15": [
+            3250,
+            3250
+          ],
+          "10": [
+            2795,
+            2796
+          ],
+          "19": [
+            3263,
+            3263
+          ],
+          "14": [
+            1969,
+            1969
+          ],
+          "23": [
+            3262,
+            3262
+          ],
+          "0": [
+            3252,
+            3252
+          ],
+          "9": [
+            1289,
+            1289
+          ],
+          "18": [
+            2894,
+            2894
+          ]
+        },
+        "2026-05-23": {
+          "1": [
+            22,
+            22
+          ],
+          "0": [
+            3094,
+            3094
+          ]
+        },
+        "2026-05-26": {
+          "15": [
+            2395,
+            2395
+          ],
+          "10": [
+            1305,
+            1305
+          ],
+          "19": [
+            2977,
+            2989
+          ],
+          "14": [
+            2843,
+            2843
+          ],
+          "23": [
+            3014,
+            3014
+          ],
+          "9": [
+            2260,
+            2260
+          ],
+          "18": [
+            2734,
+            2734
+          ],
+          "13": [
+            2979,
+            2979
+          ],
+          "22": [
+            2908,
+            2908
+          ],
+          "17": [
+            2911,
+            2911
+          ],
+          "12": [
+            2063,
+            2065
+          ],
+          "21": [
+            3004,
+            3004
+          ],
+          "16": [
+            3067,
+            3067
+          ],
+          "11": [
+            2042,
+            2042
+          ],
+          "20": [
+            3264,
+            3264
+          ]
+        },
+        "2026-05-27": {
+          "20": [
+            3440,
+            3440
+          ],
+          "15": [
+            2944,
+            2944
+          ],
+          "10": [
+            2657,
+            2657
+          ],
+          "19": [
+            2789,
+            2806
+          ],
+          "14": [
+            2839,
+            2839
+          ],
+          "23": [
+            2656,
+            2656
+          ],
+          "0": [
+            3352,
+            3352
+          ],
+          "9": [
+            997,
+            997
+          ],
+          "18": [
+            1899,
+            1899
+          ],
+          "13": [
+            3210,
+            3210
+          ],
+          "22": [
+            3505,
+            3505
+          ],
+          "17": [
+            3314,
+            3314
+          ],
+          "12": [
+            2041,
+            2041
+          ],
+          "21": [
+            3314,
+            3314
+          ],
+          "16": [
+            3421,
+            3421
+          ],
+          "11": [
+            2289,
+            2289
+          ]
+        },
+        "2026-05-28": {
+          "16": [
+            813,
+            813
+          ],
+          "11": [
+            1874,
+            1874
+          ],
+          "20": [
+            1389,
+            1391
+          ],
+          "15": [
+            2705,
+            2705
+          ],
+          "10": [
+            2383,
+            2384
+          ],
+          "19": [
+            62,
+            62
+          ],
+          "14": [
+            1964,
+            1972
+          ],
+          "23": [
+            0,
+            0
+          ],
+          "0": [
+            3454,
+            3454
+          ],
+          "9": [
+            2097,
+            2097
+          ],
+          "18": [
+            0,
+            0
+          ],
+          "13": [
+            1303,
+            1303
+          ],
+          "22": [
+            31,
+            31
+          ],
+          "17": [
+            897,
+            897
+          ],
+          "12": [
+            165,
+            165
+          ],
+          "21": [
+            2046,
+            2046
+          ]
+        },
+        "2026-05-29": {
+          "23": [
+            2882,
+            2890
+          ],
+          "18": [
+            2810,
+            2810
+          ],
+          "13": [
+            3494,
+            3495
+          ],
+          "22": [
+            3458,
+            3458
+          ],
+          "17": [
+            1204,
+            1204
+          ],
+          "3": [
+            0,
+            0
+          ],
+          "12": [
+            220,
+            220
+          ],
+          "21": [
+            3219,
+            3219
+          ],
+          "2": [
+            0,
+            0
+          ],
+          "16": [
+            2232,
+            2234
+          ],
+          "11": [
+            0,
+            0
+          ],
+          "20": [
+            3026,
+            3028
+          ],
+          "15": [
+            2723,
+            2723
+          ],
+          "1": [
+            0,
+            0
+          ],
+          "10": [
+            0,
+            0
+          ],
+          "19": [
+            3434,
+            3436
+          ],
+          "14": [
+            3399,
+            3399
+          ],
+          "0": [
+            0,
+            0
+          ]
+        },
+        "2026-05-30": {
+          "1": [
+            16,
+            16
+          ],
+          "0": [
+            2267,
+            2267
+          ],
+          "13": [
+            108,
+            108
+          ]
+        },
+        "2026-06-01": {
+          "22": [
+            3071,
+            3073
+          ],
+          "17": [
+            3233,
+            3233
+          ],
+          "12": [
+            1406,
+            1406
+          ],
+          "21": [
+            2324,
+            2324
+          ],
+          "16": [
+            3235,
+            3235
+          ],
+          "11": [
+            3304,
+            3304
+          ],
+          "20": [
+            2895,
+            2895
+          ],
+          "15": [
+            3086,
+            3086
+          ],
+          "10": [
+            2702,
+            2702
+          ],
+          "19": [
+            1624,
+            1624
+          ],
+          "14": [
+            3227,
+            3227
+          ],
+          "23": [
+            2962,
+            2962
+          ],
+          "9": [
+            3310,
+            3310
+          ],
+          "18": [
+            1795,
+            1795
+          ],
+          "13": [
+            3366,
+            3373
+          ]
+        },
+        "2026-06-02": {
+          "23": [
+            3127,
+            3131
+          ],
+          "9": [
+            2715,
+            2715
+          ],
+          "18": [
+            2179,
+            2179
+          ],
+          "13": [
+            1470,
+            1502
+          ],
+          "22": [
+            3239,
+            3239
+          ],
+          "17": [
+            1522,
+            1618
+          ],
+          "12": [
+            2706,
+            2793
+          ],
+          "21": [
+            3112,
+            3112
+          ],
+          "16": [
+            3395,
+            3395
+          ],
+          "11": [
+            3207,
+            3207
+          ],
+          "20": [
+            3501,
+            3501
+          ],
+          "15": [
+            2655,
+            2655
+          ],
+          "10": [
+            3419,
+            3419
+          ],
+          "19": [
+            2540,
+            2540
+          ],
+          "14": [
+            2448,
+            2448
+          ],
+          "0": [
+            3382,
+            3382
+          ]
+        },
+        "2026-06-03": {
+          "15": [
+            2682,
+            2682
+          ],
+          "10": [
+            3583,
+            3583
+          ],
+          "19": [
+            2410,
+            2410
+          ],
+          "14": [
+            3257,
+            3257
+          ],
+          "23": [
+            455,
+            455
+          ],
+          "0": [
+            3470,
+            3470
+          ],
+          "9": [
+            1880,
+            1880
+          ],
+          "18": [
+            3064,
+            3064
+          ],
+          "13": [
+            1822,
+            1822
+          ],
+          "22": [
+            3353,
+            3353
+          ],
+          "17": [
+            3359,
+            3359
+          ],
+          "12": [
+            2551,
+            2551
+          ],
+          "21": [
+            3245,
+            3245
+          ],
+          "16": [
+            1815,
+            1815
+          ],
+          "11": [
+            3589,
+            3589
+          ],
+          "20": [
+            3154,
+            3154
+          ]
+        },
+        "2026-06-04": {
+          "14": [
+            1382,
+            1382
+          ],
+          "23": [
+            0,
+            0
+          ],
+          "9": [
+            2548,
+            2548
+          ],
+          "18": [
+            2460,
+            2460
+          ],
+          "13": [
+            2001,
+            2001
+          ],
+          "22": [
+            471,
+            471
+          ],
+          "17": [
+            1481,
+            1481
+          ],
+          "12": [
+            1553,
+            1553
+          ],
+          "21": [
+            2417,
+            2417
+          ],
+          "16": [
+            8,
+            8
+          ],
+          "11": [
+            3021,
+            3021
+          ],
+          "20": [
+            3066,
+            3066
+          ],
+          "15": [
+            333,
+            333
+          ],
+          "10": [
+            2495,
+            2495
+          ],
+          "19": [
+            2828,
+            2828
+          ],
+          "0": [
+            2728,
+            2728
+          ]
+        },
+        "2026-06-05": {
+          "18": [
+            3404,
+            3404
+          ],
+          "13": [
+            3532,
+            3532
+          ],
+          "17": [
+            3499,
+            3499
+          ],
+          "12": [
+            2899,
+            2899
+          ],
+          "2": [
+            0,
+            0
+          ],
+          "16": [
+            3414,
+            3414
+          ],
+          "11": [
+            3588,
+            3588
+          ],
+          "20": [
+            2375,
+            2375
+          ],
+          "15": [
+            3399,
+            3399
+          ],
+          "1": [
+            0,
+            0
+          ],
+          "10": [
+            2931,
+            2931
+          ],
+          "19": [
+            3449,
+            3449
+          ],
+          "14": [
+            3567,
+            3567
+          ],
+          "0": [
+            0,
+            0
+          ]
+        }
+      },
+      "gen2-103": {
+        "2026-04-27": {
+          "13": [
+            0,
+            3512
+          ],
+          "15": [
+            0,
+            6
+          ],
+          "17": [
+            0,
+            1766
+          ],
+          "10": [
+            0,
+            1742
+          ],
+          "12": [
+            0,
+            3326
+          ],
+          "14": [
+            0,
+            154
+          ],
+          "16": [
+            0,
+            1520
+          ],
+          "9": [
+            0,
+            2145
+          ],
+          "11": [
+            0,
+            2582
+          ]
+        },
+        "2026-04-28": {
+          "14": [
+            0,
+            2770
+          ],
+          "16": [
+            0,
+            2799
+          ],
+          "9": [
+            0,
+            1915
+          ],
+          "11": [
+            0,
+            2950
+          ],
+          "13": [
+            0,
+            3215
+          ],
+          "15": [
+            0,
+            3284
+          ],
+          "17": [
+            0,
+            2138
+          ],
+          "10": [
+            14,
+            3113
+          ],
+          "12": [
+            0,
+            3555
+          ]
+        },
+        "2026-04-29": {
+          "10": [
+            0,
+            3286
+          ],
+          "12": [
+            0,
+            3565
+          ],
+          "14": [
+            0,
+            1089
+          ],
+          "16": [
+            0,
+            6
+          ],
+          "9": [
+            0,
+            463
+          ],
+          "11": [
+            0,
+            2543
+          ],
+          "13": [
+            1,
+            679
+          ],
+          "15": [
+            0,
+            2965
+          ]
+        },
+        "2026-04-30": {
+          "13": [
+            0,
+            328
+          ],
+          "15": [
+            0,
+            2999
+          ],
+          "17": [
+            0,
+            2366
+          ],
+          "10": [
+            0,
+            1634
+          ],
+          "12": [
+            0,
+            2597
+          ],
+          "14": [
+            0,
+            715
+          ],
+          "16": [
+            0,
+            1946
+          ],
+          "9": [
+            0,
+            45
+          ],
+          "11": [
+            0,
+            2998
+          ]
+        },
+        "2026-05-01": {
+          "17": [
+            36,
+            962
+          ],
+          "10": [
+            0,
+            3360
+          ],
+          "12": [
+            0,
+            3003
+          ],
+          "14": [
+            0,
+            3093
+          ],
+          "16": [
+            0,
+            1727
+          ],
+          "9": [
+            0,
+            2092
+          ],
+          "11": [
+            0,
+            3424
+          ],
+          "13": [
+            0,
+            3395
+          ],
+          "15": [
+            0,
+            2177
+          ]
+        },
+        "2026-05-04": {
+          "18": [
+            0,
+            0
+          ],
+          "20": [
+            0,
+            0
+          ],
+          "15": [
+            0,
+            646
+          ],
+          "17": [
+            0,
+            0
+          ],
+          "10": [
+            0,
+            1185
+          ],
+          "19": [
+            0,
+            0
+          ],
+          "14": [
+            0,
+            481
+          ],
+          "16": [
+            0,
+            67
+          ],
+          "9": [
+            0,
+            880
+          ]
+        },
+        "2026-05-05": {
+          "14": [
+            0,
+            2720
+          ],
+          "16": [
+            0,
+            2806
+          ],
+          "9": [
+            0,
+            34
+          ],
+          "18": [
+            0,
+            23
+          ],
+          "11": [
+            286,
+            1235
+          ],
+          "13": [
+            0,
+            3428
+          ],
+          "15": [
+            0,
+            2505
+          ],
+          "17": [
+            0,
+            3340
+          ],
+          "10": [
+            0,
+            87
+          ],
+          "12": [
+            0,
+            3274
+          ]
+        },
+        "2026-05-06": {
+          "17": [
+            0,
+            3008
+          ],
+          "10": [
+            0,
+            3002
+          ],
+          "12": [
+            0,
+            3189
+          ],
+          "14": [
+            0,
+            2370
+          ],
+          "16": [
+            598,
+            2104
+          ],
+          "9": [
+            0,
+            1433
+          ],
+          "11": [
+            62,
+            1911
+          ],
+          "13": [
+            0,
+            3226
+          ],
+          "15": [
+            0,
+            3333
+          ]
+        },
+        "2026-05-07": {
+          "15": [
+            3070,
+            3070
+          ],
+          "17": [
+            3196,
+            3196
+          ],
+          "10": [
+            0,
+            3395
+          ],
+          "12": [
+            41,
+            1560
+          ],
+          "14": [
+            3453,
+            3453
+          ],
+          "16": [
+            3491,
+            3491
+          ],
+          "9": [
+            0,
+            3292
+          ],
+          "18": [
+            69,
+            69
+          ],
+          "11": [
+            0,
+            931
+          ],
+          "13": [
+            424,
+            1298
+          ]
+        },
+        "2026-05-08": {
+          "15": [
+            3345,
+            3345
+          ],
+          "17": [
+            3126,
+            3126
+          ],
+          "10": [
+            2897,
+            2897
+          ],
+          "12": [
+            2917,
+            2917
+          ],
+          "14": [
+            1669,
+            1669
+          ],
+          "16": [
+            3066,
+            3066
+          ],
+          "9": [
+            1483,
+            1483
+          ],
+          "11": [
+            3440,
+            3440
+          ],
+          "13": [
+            3516,
+            3516
+          ]
+        },
+        "2026-05-11": {
+          "15": [
+            2883,
+            2883
+          ],
+          "8": [
+            0,
+            0
+          ],
+          "17": [
+            2905,
+            2905
+          ],
+          "10": [
+            2502,
+            2502
+          ],
+          "12": [
+            3035,
+            3035
+          ],
+          "14": [
+            2791,
+            2791
+          ],
+          "7": [
+            0,
+            0
+          ],
+          "16": [
+            2608,
+            2608
+          ],
+          "9": [
+            1578,
+            1578
+          ],
+          "11": [
+            3302,
+            3302
+          ],
+          "13": [
+            3285,
+            3285
+          ]
+        },
+        "2026-05-12": {
+          "13": [
+            2715,
+            2715
+          ],
+          "15": [
+            3440,
+            3440
+          ],
+          "17": [
+            2586,
+            2586
+          ],
+          "10": [
+            2505,
+            2505
+          ],
+          "12": [
+            3500,
+            3500
+          ],
+          "14": [
+            3386,
+            3386
+          ],
+          "16": [
+            2328,
+            2328
+          ],
+          "9": [
+            2231,
+            2231
+          ],
+          "11": [
+            3415,
+            3415
+          ]
+        },
+        "2026-05-13": {
+          "23": [
+            2336,
+            2336
+          ],
+          "16": [
+            3080,
+            3080
+          ],
+          "9": [
+            941,
+            941
+          ],
+          "11": [
+            3412,
+            3414
+          ],
+          "13": [
+            3110,
+            3110
+          ],
+          "15": [
+            2937,
+            2937
+          ],
+          "17": [
+            2420,
+            2420
+          ],
+          "10": [
+            2332,
+            2332
+          ],
+          "12": [
+            2961,
+            2961
+          ],
+          "14": [
+            3414,
+            3414
+          ]
+        },
+        "2026-05-14": {
+          "11": [
+            3294,
+            3294
+          ],
+          "13": [
+            2624,
+            2624
+          ],
+          "15": [
+            3131,
+            3131
+          ],
+          "17": [
+            1531,
+            1531
+          ],
+          "10": [
+            2411,
+            2411
+          ],
+          "12": [
+            2270,
+            2270
+          ],
+          "14": [
+            3173,
+            3173
+          ],
+          "16": [
+            3182,
+            3182
+          ],
+          "9": [
+            2244,
+            2244
+          ]
+        },
+        "2026-05-15": {
+          "15": [
+            3250,
+            3250
+          ],
+          "17": [
+            2869,
+            2869
+          ],
+          "10": [
+            2672,
+            2672
+          ],
+          "12": [
+            3051,
+            3051
+          ],
+          "14": [
+            3403,
+            3403
+          ],
+          "16": [
+            3238,
+            3238
+          ],
+          "9": [
+            2341,
+            2341
+          ],
+          "11": [
+            3349,
+            3349
+          ],
+          "13": [
+            3234,
+            3234
+          ]
+        },
+        "2026-05-18": {
+          "14": [
+            165,
+            165
+          ],
+          "23": [
+            26,
+            26
+          ],
+          "16": [
+            0,
+            0
+          ],
+          "9": [
+            1896,
+            1896
+          ],
+          "11": [
+            1989,
+            1989
+          ],
+          "13": [
+            1236,
+            1236
+          ],
+          "15": [
+            0,
+            0
+          ],
+          "10": [
+            1300,
+            1300
+          ],
+          "12": [
+            871,
+            871
+          ]
+        },
+        "2026-05-19": {
+          "14": [
+            3424,
+            3424
+          ],
+          "16": [
+            1811,
+            1811
+          ],
+          "18": [
+            64,
+            64
+          ],
+          "11": [
+            972,
+            972
+          ],
+          "13": [
+            1068,
+            1068
+          ],
+          "15": [
+            1637,
+            1637
+          ],
+          "17": [
+            3059,
+            3059
+          ],
+          "10": [
+            160,
+            160
+          ],
+          "12": [
+            2199,
+            2199
+          ]
+        },
+        "2026-05-20": {
+          "22": [
+            3001,
+            3001
+          ],
+          "15": [
+            3288,
+            3288
+          ],
+          "17": [
+            3113,
+            3113
+          ],
+          "10": [
+            3491,
+            3491
+          ],
+          "19": [
+            1333,
+            1333
+          ],
+          "12": [
+            2042,
+            2042
+          ],
+          "21": [
+            3426,
+            3426
+          ],
+          "14": [
+            3029,
+            3029
+          ],
+          "23": [
+            2877,
+            2877
+          ],
+          "16": [
+            3176,
+            3176
+          ],
+          "9": [
+            2474,
+            2474
+          ],
+          "18": [
+            2382,
+            2382
+          ],
+          "11": [
+            3475,
+            3475
+          ],
+          "20": [
+            3413,
+            3413
+          ],
+          "13": [
+            2332,
+            2332
+          ]
+        },
+        "2026-05-21": {
+          "0": [
+            3554,
+            3554
+          ],
+          "9": [
+            3062,
+            3062
+          ],
+          "11": [
+            2347,
+            2347
+          ],
+          "18": [
+            3120,
+            3120
+          ],
+          "20": [
+            2740,
+            2740
+          ],
+          "13": [
+            2146,
+            2146
+          ],
+          "15": [
+            2731,
+            2731
+          ],
+          "17": [
+            2870,
+            2870
+          ],
+          "1": [
+            17,
+            17
+          ],
+          "19": [
+            2361,
+            2361
+          ],
+          "12": [
+            3470,
+            3470
+          ],
+          "21": [
+            1243,
+            1243
+          ],
+          "14": [
+            3126,
+            3126
+          ],
+          "16": [
+            3417,
+            3417
+          ]
+        },
+        "2026-05-22": {
+          "20": [
+            171,
+            171
+          ],
+          "13": [
+            3553,
+            3552
+          ],
+          "22": [
+            3027,
+            3027
+          ],
+          "15": [
+            3196,
+            3196
+          ],
+          "17": [
+            2359,
+            2359
+          ],
+          "10": [
+            708,
+            708
+          ],
+          "12": [
+            3025,
+            3025
+          ],
+          "21": [
+            3088,
+            3088
+          ],
+          "14": [
+            3540,
+            3540
+          ],
+          "23": [
+            2344,
+            2344
+          ],
+          "16": [
+            3433,
+            3433
+          ],
+          "9": [
+            717,
+            717
+          ],
+          "11": [
+            2714,
+            2714
+          ]
+        },
+        "2026-05-23": {
+          "1": [
+            18,
+            27
+          ],
+          "0": [
+            3450,
+            3450
+          ]
+        },
+        "2026-05-26": {
+          "22": [
+            3376,
+            3376
+          ],
+          "15": [
+            341,
+            341
+          ],
+          "17": [
+            2896,
+            2896
+          ],
+          "10": [
+            340,
+            340
+          ],
+          "19": [
+            3199,
+            3204
+          ],
+          "12": [
+            2183,
+            2183
+          ],
+          "21": [
+            3120,
+            3120
+          ],
+          "14": [
+            686,
+            686
+          ],
+          "23": [
+            3509,
+            3509
+          ],
+          "16": [
+            2745,
+            2745
+          ],
+          "9": [
+            2416,
+            2416
+          ],
+          "18": [
+            2847,
+            2847
+          ],
+          "11": [
+            1920,
+            1920
+          ],
+          "20": [
+            3462,
+            3462
+          ],
+          "13": [
+            1350,
+            1350
+          ]
+        },
+        "2026-05-27": {
+          "18": [
+            1848,
+            1848
+          ],
+          "20": [
+            3352,
+            3352
+          ],
+          "13": [
+            937,
+            937
+          ],
+          "22": [
+            3458,
+            3460
+          ],
+          "15": [
+            387,
+            387
+          ],
+          "17": [
+            2272,
+            2272
+          ],
+          "1": [
+            20,
+            20
+          ],
+          "10": [
+            1804,
+            1804
+          ],
+          "19": [
+            3378,
+            3378
+          ],
+          "12": [
+            1098,
+            1098
+          ],
+          "21": [
+            3003,
+            3003
+          ],
+          "14": [
+            1234,
+            1234
+          ],
+          "23": [
+            3035,
+            3035
+          ],
+          "16": [
+            1587,
+            1587
+          ],
+          "0": [
+            3455,
+            3455
+          ],
+          "9": [
+            151,
+            152
+          ],
+          "11": [
+            2676,
+            2676
+          ]
+        },
+        "2026-05-28": {
+          "14": [
+            422,
+            424
+          ],
+          "23": [
+            3331,
+            3333
+          ],
+          "16": [
+            149,
+            149
+          ],
+          "0": [
+            2760,
+            2760
+          ],
+          "9": [
+            878,
+            880
+          ],
+          "18": [
+            2766,
+            2766
+          ],
+          "11": [
+            1595,
+            1595
+          ],
+          "20": [
+            2567,
+            2579
+          ],
+          "13": [
+            601,
+            601
+          ],
+          "22": [
+            3494,
+            3494
+          ],
+          "15": [
+            1836,
+            1842
+          ],
+          "17": [
+            2514,
+            2514
+          ],
+          "1": [
+            13,
+            13
+          ],
+          "10": [
+            2520,
+            2520
+          ],
+          "19": [
+            2775,
+            2775
+          ],
+          "12": [
+            1611,
+            1611
+          ],
+          "21": [
+            2655,
+            2666
+          ]
+        },
+        "2026-05-29": {
+          "23": [
+            3343,
+            3343
+          ],
+          "16": [
+            524,
+            524
+          ],
+          "18": [
+            192,
+            192
+          ],
+          "11": [
+            3154,
+            3154
+          ],
+          "20": [
+            2888,
+            2888
+          ],
+          "22": [
+            3346,
+            3346
+          ],
+          "15": [
+            0,
+            0
+          ],
+          "17": [
+            1038,
+            1038
+          ],
+          "1": [
+            34,
+            34
+          ],
+          "10": [
+            1778,
+            1778
+          ],
+          "19": [
+            3544,
+            3544
+          ],
+          "12": [
+            2472,
+            2472
+          ],
+          "21": [
+            3271,
+            3271
+          ],
+          "0": [
+            2955,
+            2955
+          ],
+          "9": [
+            2113,
+            2114
+          ]
+        },
+        "2026-05-30": {
+          "0": [
+            2240,
+            2240
+          ],
+          "13": [
+            457,
+            457
+          ]
+        },
+        "2026-06-01": {
+          "22": [
+            3114,
+            3114
+          ],
+          "15": [
+            3312,
+            3312
+          ],
+          "17": [
+            2637,
+            2637
+          ],
+          "10": [
+            2741,
+            2741
+          ],
+          "19": [
+            3472,
+            3495
+          ],
+          "12": [
+            3163,
+            3163
+          ],
+          "21": [
+            3118,
+            3118
+          ],
+          "14": [
+            3397,
+            3397
+          ],
+          "23": [
+            2827,
+            2827
+          ],
+          "16": [
+            2907,
+            2907
+          ],
+          "9": [
+            2757,
+            2757
+          ],
+          "18": [
+            1510,
+            1534
+          ],
+          "11": [
+            2859,
+            2859
+          ],
+          "20": [
+            3422,
+            3422
+          ],
+          "13": [
+            2051,
+            2051
+          ]
+        },
+        "2026-06-02": {
+          "23": [
+            3348,
+            3348
+          ],
+          "16": [
+            2964,
+            2965
+          ],
+          "9": [
+            2420,
+            2420
+          ],
+          "18": [
+            2416,
+            2416
+          ],
+          "11": [
+            0,
+            0
+          ],
+          "20": [
+            3442,
+            3442
+          ],
+          "13": [
+            3161,
+            3161
+          ],
+          "22": [
+            3126,
+            3126
+          ],
+          "15": [
+            2796,
+            2796
+          ],
+          "17": [
+            3313,
+            3313
+          ],
+          "10": [
+            901,
+            901
+          ],
+          "19": [
+            3188,
+            3188
+          ],
+          "12": [
+            2957,
+            2957
+          ],
+          "21": [
+            3119,
+            3119
+          ],
+          "14": [
+            3306,
+            3306
+          ],
+          "0": [
+            2955,
+            2955
+          ]
+        },
+        "2026-06-03": {
+          "15": [
+            3360,
+            3360
+          ],
+          "17": [
+            746,
+            746
+          ],
+          "10": [
+            3259,
+            3259
+          ],
+          "12": [
+            1798,
+            1798
+          ],
+          "14": [
+            3287,
+            3287
+          ],
+          "16": [
+            2348,
+            2348
+          ],
+          "0": [
+            3295,
+            3295
+          ],
+          "9": [
+            2656,
+            2656
+          ],
+          "20": [
+            1371,
+            1371
+          ],
+          "11": [
+            3158,
+            3158
+          ],
+          "13": [
+            3123,
+            3123
+          ]
+        },
+        "2026-06-04": {
+          "14": [
+            2440,
+            2440
+          ],
+          "23": [
+            2525,
+            2525
+          ],
+          "9": [
+            1111,
+            1111
+          ],
+          "18": [
+            367,
+            367
+          ],
+          "11": [
+            3298,
+            3298
+          ],
+          "13": [
+            3014,
+            3014
+          ],
+          "22": [
+            1478,
+            1478
+          ],
+          "15": [
+            1685,
+            1685
+          ],
+          "17": [
+            184,
+            196
+          ],
+          "10": [
+            3374,
+            3376
+          ],
+          "12": [
+            3152,
+            3152
+          ],
+          "0": [
+            877,
+            877
+          ]
+        },
+        "2026-06-05": {
+          "16": [
+            3063,
+            3063
+          ],
+          "18": [
+            2965,
+            2965
+          ],
+          "11": [
+            1783,
+            1783
+          ],
+          "13": [
+            3268,
+            3268
+          ],
+          "15": [
+            2882,
+            2882
+          ],
+          "17": [
+            2431,
+            2431
+          ],
+          "10": [
+            3346,
+            3364
+          ],
+          "19": [
+            3556,
+            3556
+          ],
+          "12": [
+            3192,
+            3192
+          ],
+          "14": [
+            3413,
+            3413
+          ],
+          "0": [
+            2771,
+            2771
+          ],
+          "9": [
+            3032,
+            3032
+          ]
+        }
+      },
+      "gen2-018": {
+        "2026-05-01": {
+          "10": [
+            0,
+            2642
+          ],
+          "19": [
+            0,
+            3261
+          ],
+          "14": [
+            0,
+            3415
+          ],
+          "23": [
+            0,
+            3333
+          ],
+          "9": [
+            0,
+            2066
+          ],
+          "18": [
+            0,
+            1937
+          ],
+          "13": [
+            0,
+            1933
+          ],
+          "22": [
+            0,
+            3391
+          ],
+          "17": [
+            0,
+            2173
+          ],
+          "12": [
+            0,
+            3421
+          ],
+          "21": [
+            0,
+            2618
+          ],
+          "16": [
+            0,
+            1976
+          ],
+          "11": [
+            0,
+            3338
+          ],
+          "20": [
+            0,
+            3030
+          ],
+          "15": [
+            0,
+            2195
+          ]
+        },
+        "2026-05-02": {
+          "0": [
+            0,
+            2335
+          ]
+        },
+        "2026-05-04": {
+          "18": [
+            0,
+            1745
+          ],
+          "13": [
+            0,
+            3190
+          ],
+          "22": [
+            0,
+            3390
+          ],
+          "17": [
+            0,
+            3473
+          ],
+          "12": [
+            0,
+            3437
+          ],
+          "21": [
+            0,
+            2464
+          ],
+          "16": [
+            0,
+            2428
+          ],
+          "11": [
+            0,
+            519
+          ],
+          "20": [
+            0,
+            3428
+          ],
+          "15": [
+            0,
+            3450
+          ],
+          "10": [
+            0,
+            1237
+          ],
+          "19": [
+            0,
+            3082
+          ],
+          "14": [
+            1229,
+            1644
+          ],
+          "23": [
+            24,
+            3232
+          ],
+          "9": [
+            0,
+            806
+          ]
+        },
+        "2026-05-05": {
+          "21": [
+            0,
+            2573
+          ],
+          "16": [
+            0,
+            3306
+          ],
+          "11": [
+            0,
+            2175
+          ],
+          "20": [
+            0,
+            1953
+          ],
+          "15": [
+            0,
+            2758
+          ],
+          "1": [
+            0,
+            48
+          ],
+          "10": [
+            0,
+            2943
+          ],
+          "19": [
+            0,
+            439
+          ],
+          "14": [
+            0,
+            3269
+          ],
+          "23": [
+            0,
+            3407
+          ],
+          "0": [
+            0,
+            2605
+          ],
+          "9": [
+            0,
+            3329
+          ],
+          "18": [
+            0,
+            1539
+          ],
+          "13": [
+            9,
+            3004
+          ],
+          "22": [
+            0,
+            3070
+          ],
+          "8": [
+            0,
+            67
+          ],
+          "17": [
+            0,
+            2154
+          ],
+          "12": [
+            0,
+            3042
+          ]
+        },
+        "2026-05-06": {
+          "10": [
+            0,
+            1516
+          ],
+          "19": [
+            0,
+            3395
+          ],
+          "14": [
+            0,
+            2291
+          ],
+          "23": [
+            494,
+            3113
+          ],
+          "0": [
+            539,
+            3196
+          ],
+          "9": [
+            0,
+            2615
+          ],
+          "18": [
+            0,
+            3222
+          ],
+          "13": [
+            0,
+            1018
+          ],
+          "22": [
+            0,
+            3587
+          ],
+          "17": [
+            0,
+            3243
+          ],
+          "12": [
+            0,
+            3564
+          ],
+          "21": [
+            0,
+            2403
+          ],
+          "16": [
+            0,
+            3390
+          ],
+          "11": [
+            0,
+            997
+          ],
+          "20": [
+            0,
+            3057
+          ],
+          "15": [
+            0,
+            3320
+          ]
+        },
+        "2026-05-07": {
+          "15": [
+            663,
+            663
+          ],
+          "10": [
+            0,
+            3503
+          ],
+          "19": [
+            35,
+            35
+          ],
+          "14": [
+            1315,
+            1315
+          ],
+          "0": [
+            0,
+            3082
+          ],
+          "9": [
+            0,
+            2969
+          ],
+          "13": [
+            948,
+            2756
+          ],
+          "17": [
+            1398,
+            1398
+          ],
+          "12": [
+            0,
+            2489
+          ],
+          "16": [
+            29,
+            29
+          ],
+          "11": [
+            0,
+            3334
+          ]
+        },
+        "2026-05-08": {
+          "15": [
+            3008,
+            3008
+          ],
+          "10": [
+            0,
+            0
+          ],
+          "19": [
+            3102,
+            3102
+          ],
+          "14": [
+            3409,
+            3409
+          ],
+          "23": [
+            3365,
+            3365
+          ],
+          "9": [
+            318,
+            318
+          ],
+          "18": [
+            1782,
+            1782
+          ],
+          "13": [
+            3271,
+            3271
+          ],
+          "22": [
+            3456,
+            3456
+          ],
+          "17": [
+            3212,
+            3212
+          ],
+          "12": [
+            3383,
+            3383
+          ],
+          "21": [
+            3400,
+            3400
+          ],
+          "16": [
+            3285,
+            3285
+          ],
+          "11": [
+            2612,
+            2612
+          ],
+          "20": [
+            3181,
+            3181
+          ]
+        },
+        "2026-05-09": {
+          "0": [
+            3326,
+            3326
+          ]
+        },
+        "2026-05-11": {
+          "17": [
+            3364,
+            3364
+          ],
+          "12": [
+            3274,
+            3274
+          ],
+          "16": [
+            2559,
+            2559
+          ],
+          "11": [
+            3288,
+            3288
+          ],
+          "15": [
+            3180,
+            3180
+          ],
+          "10": [
+            3403,
+            3403
+          ],
+          "14": [
+            3255,
+            3255
+          ],
+          "9": [
+            2284,
+            2284
+          ],
+          "13": [
+            3028,
+            3028
+          ]
+        },
+        "2026-05-12": {
+          "15": [
+            3180,
+            3180
+          ],
+          "10": [
+            3158,
+            3158
+          ],
+          "19": [
+            2404,
+            2404
+          ],
+          "14": [
+            2391,
+            2391
+          ],
+          "23": [
+            3051,
+            3051
+          ],
+          "9": [
+            1917,
+            1917
+          ],
+          "18": [
+            2087,
+            2087
+          ],
+          "13": [
+            180,
+            180
+          ],
+          "22": [
+            3121,
+            3121
+          ],
+          "17": [
+            2576,
+            2576
+          ],
+          "12": [
+            2340,
+            2340
+          ],
+          "21": [
+            3062,
+            3062
+          ],
+          "16": [
+            2900,
+            2900
+          ],
+          "11": [
+            2530,
+            2530
+          ],
+          "20": [
+            3291,
+            3291
+          ]
+        },
+        "2026-05-13": {
+          "23": [
+            3168,
+            3168
+          ],
+          "9": [
+            3034,
+            3034
+          ],
+          "18": [
+            3261,
+            3261
+          ],
+          "13": [
+            1985,
+            1985
+          ],
+          "22": [
+            3312,
+            3312
+          ],
+          "17": [
+            3129,
+            3129
+          ],
+          "12": [
+            3232,
+            3232
+          ],
+          "21": [
+            1598,
+            1598
+          ],
+          "16": [
+            3401,
+            3401
+          ],
+          "11": [
+            2028,
+            2028
+          ],
+          "20": [
+            3293,
+            3293
+          ],
+          "15": [
+            3173,
+            3173
+          ],
+          "10": [
+            2355,
+            2355
+          ],
+          "19": [
+            3329,
+            3329
+          ],
+          "14": [
+            2010,
+            2010
+          ],
+          "0": [
+            3450,
+            3450
+          ]
+        },
+        "2026-05-14": {
+          "11": [
+            2064,
+            2064
+          ],
+          "20": [
+            2601,
+            2601
+          ],
+          "15": [
+            2946,
+            2946
+          ],
+          "10": [
+            1151,
+            1151
+          ],
+          "19": [
+            3080,
+            3080
+          ],
+          "14": [
+            2643,
+            2643
+          ],
+          "23": [
+            3069,
+            3069
+          ],
+          "0": [
+            3397,
+            3397
+          ],
+          "9": [
+            2979,
+            2979
+          ],
+          "18": [
+            2595,
+            2602
+          ],
+          "13": [
+            3286,
+            3286
+          ],
+          "22": [
+            2296,
+            2296
+          ],
+          "17": [
+            2303,
+            2303
+          ],
+          "12": [
+            3400,
+            3400
+          ],
+          "21": [
+            2419,
+            2419
+          ],
+          "16": [
+            2726,
+            2726
+          ]
+        },
+        "2026-05-15": {
+          "15": [
+            2648,
+            2648
+          ],
+          "10": [
+            1982,
+            1982
+          ],
+          "19": [
+            2694,
+            2694
+          ],
+          "14": [
+            3112,
+            3112
+          ],
+          "23": [
+            3353,
+            3353
+          ],
+          "0": [
+            3416,
+            3416
+          ],
+          "9": [
+            2082,
+            2082
+          ],
+          "18": [
+            3393,
+            3393
+          ],
+          "13": [
+            2597,
+            2597
+          ],
+          "22": [
+            3481,
+            3481
+          ],
+          "17": [
+            896,
+            896
+          ],
+          "12": [
+            1213,
+            1213
+          ],
+          "21": [
+            3463,
+            3463
+          ],
+          "16": [
+            2328,
+            2328
+          ],
+          "11": [
+            2880,
+            2880
+          ],
+          "20": [
+            3487,
+            3487
+          ]
+        },
+        "2026-05-16": {
+          "0": [
+            3444,
+            3444
+          ]
+        },
+        "2026-05-18": {
+          "14": [
+            3163,
+            3163
+          ],
+          "23": [
+            3466,
+            3466
+          ],
+          "9": [
+            2281,
+            2281
+          ],
+          "18": [
+            2958,
+            2958
+          ],
+          "13": [
+            2984,
+            2984
+          ],
+          "22": [
+            3192,
+            3192
+          ],
+          "17": [
+            2917,
+            2917
+          ],
+          "12": [
+            3292,
+            3292
+          ],
+          "21": [
+            3443,
+            3443
+          ],
+          "16": [
+            3301,
+            3301
+          ],
+          "11": [
+            3511,
+            3511
+          ],
+          "20": [
+            2995,
+            2995
+          ],
+          "15": [
+            3270,
+            3270
+          ],
+          "10": [
+            1857,
+            1857
+          ],
+          "19": [
+            2508,
+            2508
+          ]
+        },
+        "2026-05-19": {
+          "19": [
+            2673,
+            2673
+          ],
+          "14": [
+            2659,
+            2659
+          ],
+          "23": [
+            1665,
+            1665
+          ],
+          "0": [
+            3525,
+            3525
+          ],
+          "9": [
+            827,
+            827
+          ],
+          "18": [
+            792,
+            792
+          ],
+          "13": [
+            2689,
+            2689
+          ],
+          "22": [
+            3131,
+            3131
+          ],
+          "17": [
+            3034,
+            3034
+          ],
+          "12": [
+            2701,
+            2701
+          ],
+          "21": [
+            965,
+            965
+          ],
+          "16": [
+            3327,
+            3327
+          ],
+          "11": [
+            3236,
+            3236
+          ],
+          "20": [
+            3441,
+            3441
+          ],
+          "15": [
+            2618,
+            2618
+          ],
+          "10": [
+            2499,
+            2499
+          ]
+        },
+        "2026-05-20": {
+          "22": [
+            2100,
+            2100
+          ],
+          "17": [
+            3351,
+            3351
+          ],
+          "12": [
+            3046,
+            3046
+          ],
+          "21": [
+            3406,
+            3406
+          ],
+          "16": [
+            2712,
+            2712
+          ],
+          "11": [
+            1959,
+            1959
+          ],
+          "20": [
+            3292,
+            3292
+          ],
+          "15": [
+            3282,
+            3282
+          ],
+          "10": [
+            32,
+            32
+          ],
+          "19": [
+            3039,
+            3038
+          ],
+          "14": [
+            2719,
+            2719
+          ],
+          "23": [
+            2487,
+            2487
+          ],
+          "0": [
+            3029,
+            3029
+          ],
+          "9": [
+            1943,
+            1943
+          ],
+          "18": [
+            2212,
+            2212
+          ],
+          "13": [
+            1572,
+            1572
+          ]
+        },
+        "2026-05-21": {
+          "0": [
+            3346,
+            3346
+          ],
+          "9": [
+            2128,
+            2128
+          ],
+          "18": [
+            1856,
+            1856
+          ],
+          "13": [
+            3273,
+            3273
+          ],
+          "22": [
+            2321,
+            2321
+          ],
+          "17": [
+            1811,
+            1811
+          ],
+          "12": [
+            3257,
+            3257
+          ],
+          "21": [
+            2636,
+            2636
+          ],
+          "16": [
+            2063,
+            2063
+          ],
+          "11": [
+            2697,
+            2697
+          ],
+          "20": [
+            1868,
+            1868
+          ],
+          "15": [
+            1646,
+            1646
+          ],
+          "1": [
+            25,
+            25
+          ],
+          "10": [
+            3015,
+            3015
+          ],
+          "19": [
+            924,
+            924
+          ],
+          "14": [
+            1730,
+            1730
+          ],
+          "23": [
+            3024,
+            3024
+          ]
+        },
+        "2026-05-22": {
+          "13": [
+            1070,
+            1070
+          ],
+          "17": [
+            2276,
+            2276
+          ],
+          "12": [
+            3068,
+            3068
+          ],
+          "21": [
+            1338,
+            1338
+          ],
+          "16": [
+            871,
+            871
+          ],
+          "11": [
+            2079,
+            2079
+          ],
+          "20": [
+            2920,
+            2920
+          ],
+          "15": [
+            1600,
+            1601
+          ],
+          "1": [
+            5,
+            5
+          ],
+          "10": [
+            1562,
+            1562
+          ],
+          "19": [
+            3222,
+            3222
+          ],
+          "14": [
+            393,
+            393
+          ],
+          "0": [
+            2303,
+            2303
+          ],
+          "9": [
+            335,
+            335
+          ],
+          "18": [
+            2376,
+            2376
+          ]
+        },
+        "2026-05-23": {
+          "0": [
+            2158,
+            2158
+          ]
+        },
+        "2026-05-26": {
+          "15": [
+            2461,
+            2461
+          ],
+          "10": [
+            1571,
+            1571
+          ],
+          "19": [
+            1972,
+            1972
+          ],
+          "14": [
+            2643,
+            2643
+          ],
+          "23": [
+            3018,
+            3018
+          ],
+          "9": [
+            618,
+            618
+          ],
+          "18": [
+            1975,
+            1975
+          ],
+          "13": [
+            1763,
+            1763
+          ],
+          "22": [
+            2511,
+            2511
+          ],
+          "17": [
+            2543,
+            2543
+          ],
+          "12": [
+            1056,
+            1058
+          ],
+          "21": [
+            2761,
+            2761
+          ],
+          "16": [
+            2281,
+            2281
+          ],
+          "11": [
+            2570,
+            2570
+          ],
+          "20": [
+            2574,
+            2574
+          ]
+        },
+        "2026-05-27": {
+          "20": [
+            2128,
+            2128
+          ],
+          "15": [
+            2882,
+            2882
+          ],
+          "10": [
+            796,
+            796
+          ],
+          "19": [
+            3011,
+            3011
+          ],
+          "14": [
+            2890,
+            2890
+          ],
+          "23": [
+            3142,
+            3142
+          ],
+          "0": [
+            1753,
+            1753
+          ],
+          "9": [
+            1105,
+            1105
+          ],
+          "18": [
+            2653,
+            2653
+          ],
+          "13": [
+            2329,
+            2329
+          ],
+          "22": [
+            2952,
+            2952
+          ],
+          "17": [
+            2207,
+            2207
+          ],
+          "12": [
+            1838,
+            1838
+          ],
+          "21": [
+            2846,
+            2846
+          ],
+          "16": [
+            3369,
+            3369
+          ],
+          "11": [
+            3199,
+            3199
+          ]
+        },
+        "2026-05-28": {
+          "16": [
+            1566,
+            1566
+          ],
+          "11": [
+            2498,
+            2498
+          ],
+          "20": [
+            2605,
+            2605
+          ],
+          "15": [
+            1788,
+            1788
+          ],
+          "10": [
+            1659,
+            1660
+          ],
+          "19": [
+            2786,
+            2786
+          ],
+          "14": [
+            2684,
+            2684
+          ],
+          "23": [
+            3546,
+            3546
+          ],
+          "0": [
+            3236,
+            3236
+          ],
+          "9": [
+            924,
+            924
+          ],
+          "18": [
+            2721,
+            2721
+          ],
+          "13": [
+            1639,
+            1639
+          ],
+          "22": [
+            2898,
+            2898
+          ],
+          "17": [
+            2968,
+            2968
+          ],
+          "12": [
+            1051,
+            1059
+          ],
+          "21": [
+            3067,
+            3073
+          ]
+        },
+        "2026-05-29": {
+          "23": [
+            2,
+            2
+          ],
+          "18": [
+            2381,
+            2381
+          ],
+          "13": [
+            3198,
+            3198
+          ],
+          "22": [
+            61,
+            61
+          ],
+          "17": [
+            2792,
+            2792
+          ],
+          "12": [
+            3572,
+            3572
+          ],
+          "21": [
+            2588,
+            2588
+          ],
+          "16": [
+            2891,
+            2891
+          ],
+          "11": [
+            3266,
+            3266
+          ],
+          "20": [
+            3122,
+            3122
+          ],
+          "15": [
+            1652,
+            1700
+          ],
+          "1": [
+            4,
+            4
+          ],
+          "10": [
+            2376,
+            2376
+          ],
+          "19": [
+            3289,
+            3289
+          ],
+          "14": [
+            3213,
+            3213
+          ],
+          "0": [
+            3507,
+            3507
+          ],
+          "9": [
+            996,
+            996
+          ]
+        },
+        "2026-05-30": {
+          "23": [
+            0,
+            0
+          ]
+        },
+        "2026-05-31": {
+          "0": [
+            0,
+            0
+          ],
+          "3": [
+            0,
+            0
+          ],
+          "2": [
+            0,
+            0
+          ],
+          "1": [
+            0,
+            0
+          ]
+        },
+        "2026-06-02": {
+          "17": [
+            307,
+            307
+          ],
+          "12": [
+            168,
+            168
+          ],
+          "16": [
+            379,
+            379
+          ],
+          "15": [
+            2035,
+            2035
+          ],
+          "14": [
+            314,
+            314
+          ]
+        },
+        "2026-06-03": {
+          "15": [
+            3201,
+            3201
+          ],
+          "10": [
+            1270,
+            1270
+          ],
+          "19": [
+            3056,
+            3056
+          ],
+          "14": [
+            770,
+            770
+          ],
+          "23": [
+            609,
+            609
+          ],
+          "9": [
+            936,
+            936
+          ],
+          "18": [
+            2272,
+            2272
+          ],
+          "13": [
+            188,
+            189
+          ],
+          "22": [
+            3072,
+            3072
+          ],
+          "17": [
+            2311,
+            2311
+          ],
+          "12": [
+            550,
+            550
+          ],
+          "21": [
+            3306,
+            3306
+          ],
+          "16": [
+            2733,
+            2733
+          ],
+          "11": [
+            3264,
+            3264
+          ],
+          "20": [
+            2928,
+            2928
+          ]
+        },
+        "2026-06-04": {
+          "14": [
+            1195,
+            1195
+          ],
+          "23": [
+            3497,
+            3497
+          ],
+          "9": [
+            1680,
+            1680
+          ],
+          "18": [
+            1644,
+            1644
+          ],
+          "13": [
+            775,
+            775
+          ],
+          "22": [
+            3321,
+            3321
+          ],
+          "17": [
+            2773,
+            2773
+          ],
+          "12": [
+            1763,
+            1763
+          ],
+          "21": [
+            3317,
+            3317
+          ],
+          "16": [
+            3140,
+            3140
+          ],
+          "11": [
+            2530,
+            2530
+          ],
+          "20": [
+            2244,
+            2244
+          ],
+          "15": [
+            1344,
+            1344
+          ],
+          "10": [
+            2346,
+            2350
+          ],
+          "19": [
+            3210,
+            3210
+          ],
+          "0": [
+            1838,
+            1838
+          ]
+        },
+        "2026-06-05": {
+          "18": [
+            3250,
+            3250
+          ],
+          "13": [
+            3078,
+            3078
+          ],
+          "17": [
+            2670,
+            2670
+          ],
+          "12": [
+            3056,
+            3062
+          ],
+          "16": [
+            3343,
+            3343
+          ],
+          "11": [
+            2835,
+            2835
+          ],
+          "15": [
+            2105,
+            2105
+          ],
+          "1": [
+            11,
+            11
+          ],
+          "10": [
+            2011,
+            2011
+          ],
+          "19": [
+            3240,
+            3240
+          ],
+          "14": [
+            871,
+            871
+          ],
+          "0": [
+            2504,
+            2504
+          ],
+          "9": [
+            63,
+            63
+          ]
+        }
+      },
+      "gen2-102": {
+        "2026-04-27": {
+          "13": [
+            0,
+            1325
+          ],
+          "17": [
+            0,
+            1967
+          ],
+          "12": [
+            0,
+            5
+          ],
+          "16": [
+            0,
+            2217
+          ],
+          "11": [
+            1,
+            163
+          ],
+          "15": [
+            0,
+            3207
+          ],
+          "14": [
+            0,
+            2599
+          ]
+        },
+        "2026-04-28": {
+          "14": [
+            0,
+            1831
+          ],
+          "9": [
+            0,
+            2963
+          ],
+          "13": [
+            0,
+            3333
+          ],
+          "17": [
+            0,
+            3367
+          ],
+          "12": [
+            0,
+            3383
+          ],
+          "16": [
+            0,
+            2966
+          ],
+          "11": [
+            0,
+            1857
+          ],
+          "15": [
+            0,
+            3019
+          ],
+          "10": [
+            0,
+            2482
+          ]
+        },
+        "2026-04-29": {
+          "10": [
+            0,
+            3438
+          ],
+          "14": [
+            0,
+            2906
+          ],
+          "9": [
+            0,
+            2985
+          ],
+          "13": [
+            0,
+            3077
+          ],
+          "17": [
+            0,
+            2151
+          ],
+          "12": [
+            0,
+            3138
+          ],
+          "16": [
+            0,
+            3045
+          ],
+          "11": [
+            0,
+            2305
+          ],
+          "15": [
+            0,
+            3069
+          ]
+        },
+        "2026-04-30": {
+          "13": [
+            0,
+            3061
+          ],
+          "17": [
+            0,
+            3023
+          ],
+          "12": [
+            0,
+            1443
+          ],
+          "16": [
+            0,
+            3296
+          ],
+          "11": [
+            0,
+            2349
+          ],
+          "15": [
+            0,
+            3295
+          ],
+          "10": [
+            0,
+            3177
+          ],
+          "14": [
+            0,
+            2219
+          ],
+          "9": [
+            0,
+            2121
+          ]
+        },
+        "2026-05-01": {
+          "10": [
+            0,
+            188
+          ],
+          "14": [
+            0,
+            2412
+          ],
+          "9": [
+            0,
+            2674
+          ],
+          "13": [
+            0,
+            2517
+          ],
+          "16": [
+            0,
+            429
+          ],
+          "15": [
+            0,
+            2789
+          ]
+        },
+        "2026-05-04": {
+          "18": [
+            0,
+            697
+          ],
+          "13": [
+            0,
+            31
+          ],
+          "17": [
+            0,
+            3361
+          ],
+          "16": [
+            0,
+            2799
+          ],
+          "15": [
+            0,
+            1996
+          ],
+          "14": [
+            0,
+            3053
+          ]
+        },
+        "2026-05-05": {
+          "16": [
+            0,
+            3226
+          ],
+          "11": [
+            0,
+            1649
+          ],
+          "15": [
+            0,
+            231
+          ],
+          "10": [
+            4,
+            3352
+          ],
+          "19": [
+            0,
+            246
+          ],
+          "23": [
+            0,
+            1988
+          ],
+          "9": [
+            0,
+            3398
+          ],
+          "18": [
+            0,
+            1603
+          ],
+          "22": [
+            0,
+            2489
+          ],
+          "17": [
+            0,
+            3457
+          ],
+          "12": [
+            0,
+            86
+          ]
+        },
+        "2026-05-06": {
+          "10": [
+            0,
+            3232
+          ],
+          "19": [
+            0,
+            199
+          ],
+          "14": [
+            0,
+            1227
+          ],
+          "23": [
+            15,
+            1489
+          ],
+          "0": [
+            180,
+            2897
+          ],
+          "9": [
+            0,
+            2542
+          ],
+          "18": [
+            0,
+            2494
+          ],
+          "13": [
+            0,
+            3124
+          ],
+          "22": [
+            0,
+            2705
+          ],
+          "17": [
+            0,
+            2916
+          ],
+          "12": [
+            0,
+            1444
+          ],
+          "21": [
+            0,
+            3290
+          ],
+          "16": [
+            0,
+            3322
+          ],
+          "11": [
+            0,
+            1866
+          ],
+          "20": [
+            0,
+            2754
+          ],
+          "15": [
+            0,
+            1376
+          ]
+        },
+        "2026-05-07": {
+          "15": [
+            2995,
+            2995
+          ],
+          "10": [
+            0,
+            2761
+          ],
+          "14": [
+            705,
+            705
+          ],
+          "0": [
+            0,
+            2
+          ],
+          "9": [
+            0,
+            1302
+          ],
+          "13": [
+            961,
+            2058
+          ],
+          "17": [
+            3372,
+            3372
+          ],
+          "12": [
+            0,
+            2053
+          ],
+          "21": [
+            483,
+            483
+          ],
+          "16": [
+            3034,
+            3034
+          ],
+          "11": [
+            0,
+            367
+          ]
+        },
+        "2026-05-08": {
+          "15": [
+            797,
+            797
+          ],
+          "10": [
+            1328,
+            1328
+          ],
+          "14": [
+            851,
+            851
+          ],
+          "9": [
+            2783,
+            2783
+          ],
+          "13": [
+            2729,
+            2729
+          ],
+          "17": [
+            3044,
+            3044
+          ],
+          "12": [
+            3473,
+            3473
+          ],
+          "16": [
+            3233,
+            3233
+          ],
+          "11": [
+            2826,
+            2826
+          ]
+        },
+        "2026-05-11": {
+          "17": [
+            2305,
+            2305
+          ],
+          "12": [
+            3289,
+            3289
+          ],
+          "16": [
+            3344,
+            3344
+          ],
+          "11": [
+            2416,
+            2416
+          ],
+          "15": [
+            3303,
+            3303
+          ],
+          "10": [
+            3191,
+            3191
+          ],
+          "14": [
+            3299,
+            3299
+          ],
+          "9": [
+            2831,
+            2831
+          ],
+          "13": [
+            3093,
+            3093
+          ]
+        },
+        "2026-05-12": {
+          "15": [
+            2584,
+            2584
+          ],
+          "10": [
+            2200,
+            2204
+          ],
+          "19": [
+            46,
+            46
+          ],
+          "14": [
+            3545,
+            3545
+          ],
+          "23": [
+            1653,
+            1653
+          ],
+          "9": [
+            2674,
+            2674
+          ],
+          "18": [
+            1734,
+            1734
+          ],
+          "13": [
+            3401,
+            3401
+          ],
+          "17": [
+            3249,
+            3249
+          ],
+          "12": [
+            2509,
+            2509
+          ],
+          "16": [
+            1739,
+            1752
+          ],
+          "11": [
+            2587,
+            2587
+          ]
+        },
+        "2026-05-13": {
+          "9": [
+            2977,
+            2977
+          ],
+          "18": [
+            1183,
+            1183
+          ],
+          "13": [
+            973,
+            973
+          ],
+          "17": [
+            1915,
+            1915
+          ],
+          "12": [
+            2062,
+            2062
+          ],
+          "16": [
+            2570,
+            2570
+          ],
+          "11": [
+            3203,
+            3203
+          ],
+          "15": [
+            2472,
+            2472
+          ],
+          "10": [
+            3328,
+            3328
+          ],
+          "19": [
+            705,
+            705
+          ],
+          "14": [
+            2047,
+            2047
+          ],
+          "0": [
+            0,
+            0
+          ]
+        },
+        "2026-05-14": {
+          "11": [
+            2855,
+            2855
+          ],
+          "15": [
+            3222,
+            3222
+          ],
+          "10": [
+            2502,
+            2504
+          ],
+          "19": [
+            207,
+            207
+          ],
+          "14": [
+            1663,
+            1663
+          ],
+          "9": [
+            2512,
+            2512
+          ],
+          "13": [
+            776,
+            776
+          ],
+          "17": [
+            3361,
+            3361
+          ],
+          "12": [
+            2915,
+            2915
+          ],
+          "16": [
+            1777,
+            1777
+          ]
+        },
+        "2026-05-15": {
+          "15": [
+            1531,
+            1531
+          ],
+          "10": [
+            2246,
+            2246
+          ],
+          "14": [
+            3303,
+            3303
+          ],
+          "9": [
+            2495,
+            2495
+          ],
+          "13": [
+            3025,
+            3025
+          ],
+          "12": [
+            3087,
+            3087
+          ],
+          "11": [
+            2936,
+            2936
+          ]
+        },
+        "2026-05-18": {
+          "14": [
+            2258,
+            2258
+          ],
+          "9": [
+            950,
+            950
+          ],
+          "18": [
+            408,
+            408
+          ],
+          "13": [
+            2547,
+            2547
+          ],
+          "22": [
+            201,
+            201
+          ],
+          "17": [
+            2908,
+            2908
+          ],
+          "12": [
+            0,
+            0
+          ],
+          "21": [
+            7,
+            7
+          ],
+          "16": [
+            1313,
+            1313
+          ],
+          "11": [
+            445,
+            445
+          ],
+          "20": [
+            193,
+            193
+          ],
+          "15": [
+            2326,
+            2326
+          ],
+          "10": [
+            1789,
+            1789
+          ]
+        },
+        "2026-05-19": {
+          "19": [
+            3433,
+            3433
+          ],
+          "14": [
+            1996,
+            1996
+          ],
+          "23": [
+            3249,
+            3249
+          ],
+          "9": [
+            2219,
+            2219
+          ],
+          "18": [
+            3404,
+            3404
+          ],
+          "13": [
+            2628,
+            2628
+          ],
+          "22": [
+            3401,
+            3401
+          ],
+          "17": [
+            2988,
+            2988
+          ],
+          "12": [
+            184,
+            184
+          ],
+          "21": [
+            3488,
+            3488
+          ],
+          "16": [
+            2974,
+            2974
+          ],
+          "11": [
+            2466,
+            2466
+          ],
+          "20": [
+            3468,
+            3468
+          ],
+          "15": [
+            2846,
+            2846
+          ],
+          "10": [
+            1522,
+            1522
+          ]
+        },
+        "2026-05-20": {
+          "12": [
+            1576,
+            1576
+          ],
+          "11": [
+            3345,
+            3345
+          ],
+          "15": [
+            81,
+            81
+          ],
+          "1": [
+            10,
+            23
+          ],
+          "10": [
+            3336,
+            3336
+          ],
+          "14": [
+            0,
+            0
+          ],
+          "23": [
+            1737,
+            1737
+          ],
+          "0": [
+            3229,
+            3229
+          ],
+          "9": [
+            3018,
+            3018
+          ],
+          "18": [
+            770,
+            770
+          ],
+          "13": [
+            291,
+            291
+          ]
+        },
+        "2026-05-21": {
+          "0": [
+            2342,
+            2342
+          ],
+          "9": [
+            2468,
+            2468
+          ],
+          "13": [
+            3354,
+            3354
+          ],
+          "22": [
+            2534,
+            2534
+          ],
+          "17": [
+            2748,
+            2748
+          ],
+          "12": [
+            1983,
+            1983
+          ],
+          "21": [
+            3413,
+            3413
+          ],
+          "16": [
+            2906,
+            2906
+          ],
+          "11": [
+            791,
+            791
+          ],
+          "20": [
+            1936,
+            1936
+          ],
+          "15": [
+            830,
+            830
+          ],
+          "1": [
+            30,
+            30
+          ],
+          "10": [
+            840,
+            840
+          ],
+          "19": [
+            105,
+            105
+          ],
+          "14": [
+            1806,
+            1806
+          ],
+          "23": [
+            2677,
+            2677
+          ]
+        },
+        "2026-05-22": {
+          "13": [
+            1508,
+            1508
+          ],
+          "17": [
+            2933,
+            2933
+          ],
+          "12": [
+            1961,
+            1961
+          ],
+          "11": [
+            0,
+            0
+          ],
+          "20": [
+            1660,
+            1660
+          ],
+          "15": [
+            1047,
+            1047
+          ],
+          "10": [
+            150,
+            150
+          ],
+          "19": [
+            3348,
+            3348
+          ],
+          "14": [
+            1575,
+            1575
+          ],
+          "0": [
+            2959,
+            2959
+          ],
+          "9": [
+            2277,
+            2277
+          ],
+          "18": [
+            2990,
+            2990
+          ]
+        },
+        "2026-05-26": {
+          "15": [
+            0,
+            0
+          ],
+          "23": [
+            2665,
+            2665
+          ],
+          "22": [
+            3158,
+            3158
+          ],
+          "17": [
+            3228,
+            3229
+          ],
+          "16": [
+            159,
+            159
+          ]
+        },
+        "2026-05-27": {
+          "20": [
+            0,
+            0
+          ],
+          "15": [
+            3439,
+            3439
+          ],
+          "10": [
+            2453,
+            2453
+          ],
+          "19": [
+            0,
+            0
+          ],
+          "14": [
+            3042,
+            3042
+          ],
+          "0": [
+            3146,
+            3146
+          ],
+          "9": [
+            502,
+            502
+          ],
+          "18": [
+            0,
+            0
+          ],
+          "13": [
+            3233,
+            3233
+          ],
+          "17": [
+            161,
+            161
+          ],
+          "12": [
+            3456,
+            3456
+          ],
+          "16": [
+            1573,
+            1573
+          ],
+          "11": [
+            89,
+            89
+          ]
+        },
+        "2026-05-28": {
+          "16": [
+            375,
+            375
+          ],
+          "11": [
+            0,
+            0
+          ],
+          "20": [
+            1729,
+            1729
+          ],
+          "15": [
+            271,
+            271
+          ],
+          "10": [
+            0,
+            0
+          ],
+          "19": [
+            3107,
+            3107
+          ],
+          "23": [
+            3253,
+            3253
+          ],
+          "9": [
+            13,
+            13
+          ],
+          "18": [
+            2296,
+            2296
+          ],
+          "13": [
+            0,
+            0
+          ],
+          "22": [
+            2786,
+            2786
+          ],
+          "17": [
+            2930,
+            2930
+          ],
+          "12": [
+            0,
+            0
+          ],
+          "21": [
+            1712,
+            1712
+          ]
+        },
+        "2026-05-29": {
+          "23": [
+            3413,
+            3413
+          ],
+          "18": [
+            2801,
+            2801
+          ],
+          "13": [
+            33,
+            33
+          ],
+          "22": [
+            3204,
+            3204
+          ],
+          "17": [
+            2268,
+            2270
+          ],
+          "12": [
+            77,
+            77
+          ],
+          "21": [
+            3212,
+            3212
+          ],
+          "16": [
+            3536,
+            3536
+          ],
+          "11": [
+            0,
+            0
+          ],
+          "20": [
+            3395,
+            3397
+          ],
+          "15": [
+            3163,
+            3163
+          ],
+          "10": [
+            1206,
+            1206
+          ],
+          "19": [
+            3312,
+            3312
+          ],
+          "14": [
+            0,
+            0
+          ],
+          "0": [
+            2438,
+            2438
+          ],
+          "9": [
+            2559,
+            2560
+          ]
+        },
+        "2026-05-30": {
+          "14": [
+            16,
+            16
+          ],
+          "0": [
+            2474,
+            2474
+          ],
+          "13": [
+            70,
+            70
+          ]
+        },
+        "2026-06-01": {
+          "22": [
+            1534,
+            1534
+          ],
+          "17": [
+            2644,
+            2644
+          ],
+          "12": [
+            3429,
+            3429
+          ],
+          "21": [
+            2558,
+            2558
+          ],
+          "16": [
+            3550,
+            3550
+          ],
+          "11": [
+            3531,
+            3531
+          ],
+          "20": [
+            3242,
+            3250
+          ],
+          "15": [
+            3556,
+            3556
+          ],
+          "10": [
+            2775,
+            2775
+          ],
+          "19": [
+            3228,
+            3228
+          ],
+          "14": [
+            2047,
+            2047
+          ],
+          "23": [
+            2938,
+            2938
+          ],
+          "9": [
+            2142,
+            2142
+          ],
+          "18": [
+            2758,
+            2758
+          ],
+          "13": [
+            2246,
+            2246
+          ]
+        },
+        "2026-06-02": {
+          "23": [
+            2583,
+            2585
+          ],
+          "9": [
+            2639,
+            2639
+          ],
+          "18": [
+            2629,
+            2629
+          ],
+          "13": [
+            1788,
+            1788
+          ],
+          "22": [
+            3295,
+            3295
+          ],
+          "17": [
+            2774,
+            2774
+          ],
+          "12": [
+            3198,
+            3198
+          ],
+          "21": [
+            3264,
+            3264
+          ],
+          "16": [
+            2329,
+            2329
+          ],
+          "11": [
+            3576,
+            3576
+          ],
+          "20": [
+            2950,
+            2950
+          ],
+          "15": [
+            2221,
+            2225
+          ],
+          "10": [
+            3231,
+            3231
+          ],
+          "19": [
+            2925,
+            2925
+          ],
+          "14": [
+            2653,
+            2696
+          ],
+          "0": [
+            3411,
+            3411
+          ]
+        },
+        "2026-06-03": {
+          "15": [
+            3202,
+            3202
+          ],
+          "10": [
+            2878,
+            2878
+          ],
+          "19": [
+            3100,
+            3100
+          ],
+          "14": [
+            3119,
+            3119
+          ],
+          "23": [
+            1020,
+            1020
+          ],
+          "0": [
+            3056,
+            3056
+          ],
+          "9": [
+            1650,
+            1650
+          ],
+          "18": [
+            3128,
+            3128
+          ],
+          "13": [
+            2671,
+            2671
+          ],
+          "22": [
+            3345,
+            3345
+          ],
+          "17": [
+            3422,
+            3422
+          ],
+          "12": [
+            3344,
+            3344
+          ],
+          "21": [
+            3294,
+            3294
+          ],
+          "16": [
+            2225,
+            2225
+          ],
+          "11": [
+            3268,
+            3268
+          ],
+          "20": [
+            3267,
+            3267
+          ]
+        },
+        "2026-06-04": {
+          "14": [
+            2848,
+            2849
+          ],
+          "23": [
+            2991,
+            2991
+          ],
+          "9": [
+            1468,
+            1468
+          ],
+          "18": [
+            1760,
+            1760
+          ],
+          "13": [
+            1280,
+            1280
+          ],
+          "22": [
+            3226,
+            3226
+          ],
+          "17": [
+            3222,
+            3222
+          ],
+          "12": [
+            1998,
+            1998
+          ],
+          "21": [
+            2933,
+            2933
+          ],
+          "16": [
+            3304,
+            3304
+          ],
+          "11": [
+            3551,
+            3551
+          ],
+          "20": [
+            2196,
+            2196
+          ],
+          "15": [
+            3061,
+            3061
+          ],
+          "10": [
+            3466,
+            3466
+          ],
+          "19": [
+            3174,
+            3174
+          ],
+          "0": [
+            1903,
+            1903
+          ]
+        },
+        "2026-06-05": {
+          "18": [
+            2141,
+            2141
+          ],
+          "13": [
+            2945,
+            2945
+          ],
+          "17": [
+            2128,
+            2128
+          ],
+          "12": [
+            3506,
+            3506
+          ],
+          "16": [
+            2922,
+            2922
+          ],
+          "11": [
+            3546,
+            3546
+          ],
+          "20": [
+            91,
+            91
+          ],
+          "15": [
+            2323,
+            2327
+          ],
+          "1": [
+            2,
+            2
+          ],
+          "10": [
+            3311,
+            3311
+          ],
+          "19": [
+            3306,
+            3306
+          ],
+          "14": [
+            3003,
+            3003
+          ],
+          "0": [
+            3341,
+            3341
+          ],
+          "9": [
+            2095,
+            2095
+          ]
+        }
+      },
+      "gen2-008": {
+        "2026-04-27": {
+          "13": [
+            0,
+            2809
+          ],
+          "15": [
+            0,
+            1851
+          ],
+          "17": [
+            0,
+            3263
+          ],
+          "10": [
+            0,
+            2706
+          ],
+          "12": [
+            0,
+            3316
+          ],
+          "14": [
+            0,
+            2704
+          ],
+          "16": [
+            0,
+            390
+          ],
+          "9": [
+            0,
+            2703
+          ],
+          "11": [
+            0,
+            2812
+          ]
+        },
+        "2026-04-28": {
+          "14": [
+            0,
+            3399
+          ],
+          "23": [
+            8,
+            2904
+          ],
+          "16": [
+            272,
+            3235
+          ],
+          "9": [
+            0,
+            3318
+          ],
+          "18": [
+            0,
+            2584
+          ],
+          "11": [
+            0,
+            2129
+          ],
+          "20": [
+            0,
+            3084
+          ],
+          "13": [
+            0,
+            3333
+          ],
+          "22": [
+            0,
+            984
+          ],
+          "15": [
+            0,
+            3297
+          ],
+          "17": [
+            0,
+            3080
+          ],
+          "10": [
+            0,
+            3419
+          ],
+          "19": [
+            0,
+            2492
+          ],
+          "12": [
+            0,
+            2937
+          ],
+          "21": [
+            0,
+            1576
+          ]
+        },
+        "2026-04-29": {
+          "10": [
+            10,
+            3396
+          ],
+          "19": [
+            16,
+            2453
+          ],
+          "12": [
+            0,
+            1907
+          ],
+          "21": [
+            0,
+            2675
+          ],
+          "14": [
+            0,
+            46
+          ],
+          "16": [
+            0,
+            1933
+          ],
+          "0": [
+            0,
+            3219
+          ],
+          "9": [
+            0,
+            2714
+          ],
+          "23": [
+            0,
+            3461
+          ],
+          "18": [
+            0,
+            2550
+          ],
+          "11": [
+            0,
+            2985
+          ],
+          "20": [
+            0,
+            3289
+          ],
+          "22": [
+            0,
+            3201
+          ],
+          "15": [
+            0,
+            299
+          ],
+          "17": [
+            0,
+            2964
+          ]
+        },
+        "2026-04-30": {
+          "15": [
+            0,
+            28
+          ],
+          "17": [
+            0,
+            727
+          ],
+          "10": [
+            0,
+            3519
+          ],
+          "16": [
+            0,
+            711
+          ],
+          "0": [
+            0,
+            2632
+          ],
+          "9": [
+            0,
+            2977
+          ],
+          "18": [
+            0,
+            34
+          ],
+          "11": [
+            0,
+            406
+          ]
+        },
+        "2026-05-01": {
+          "17": [
+            4,
+            2664
+          ],
+          "10": [
+            0,
+            3209
+          ],
+          "19": [
+            0,
+            3135
+          ],
+          "12": [
+            0,
+            586
+          ],
+          "21": [
+            0,
+            3090
+          ],
+          "14": [
+            0,
+            337
+          ],
+          "23": [
+            0,
+            3324
+          ],
+          "16": [
+            0,
+            3180
+          ],
+          "9": [
+            0,
+            2031
+          ],
+          "18": [
+            0,
+            1697
+          ],
+          "11": [
+            2,
+            1820
+          ],
+          "13": [
+            0,
+            950
+          ],
+          "20": [
+            0,
+            3474
+          ],
+          "22": [
+            0,
+            3008
+          ],
+          "15": [
+            0,
+            2461
+          ]
+        },
+        "2026-05-02": {
+          "0": [
+            0,
+            869
+          ]
+        },
+        "2026-05-04": {
+          "18": [
+            0,
+            1024
+          ],
+          "11": [
+            0,
+            2453
+          ],
+          "20": [
+            0,
+            2740
+          ],
+          "13": [
+            14,
+            307
+          ],
+          "22": [
+            0,
+            2893
+          ],
+          "15": [
+            0,
+            1110
+          ],
+          "10": [
+            0,
+            2966
+          ],
+          "19": [
+            0,
+            3337
+          ],
+          "12": [
+            0,
+            617
+          ],
+          "21": [
+            0,
+            3061
+          ],
+          "14": [
+            0,
+            1259
+          ],
+          "23": [
+            0,
+            3526
+          ]
+        },
+        "2026-05-05": {
+          "14": [
+            16,
+            31
+          ],
+          "0": [
+            0,
+            3430
+          ],
+          "9": [
+            0,
+            2960
+          ],
+          "18": [
+            106,
+            106
+          ],
+          "11": [
+            0,
+            1733
+          ],
+          "13": [
+            0,
+            1361
+          ],
+          "17": [
+            483,
+            568
+          ],
+          "10": [
+            0,
+            1632
+          ],
+          "12": [
+            0,
+            2934
+          ]
+        },
+        "2026-05-06": {
+          "17": [
+            0,
+            1263
+          ],
+          "10": [
+            0,
+            19
+          ],
+          "19": [
+            0,
+            3219
+          ],
+          "21": [
+            5,
+            3133
+          ],
+          "14": [
+            0,
+            189
+          ],
+          "23": [
+            0,
+            3392
+          ],
+          "16": [
+            0,
+            1441
+          ],
+          "9": [
+            0,
+            1414
+          ],
+          "18": [
+            511,
+            3387
+          ],
+          "11": [
+            0,
+            0
+          ],
+          "20": [
+            0,
+            3355
+          ],
+          "13": [
+            0,
+            211
+          ],
+          "22": [
+            0,
+            3070
+          ],
+          "15": [
+            0,
+            2196
+          ]
+        },
+        "2026-05-07": {
+          "22": [
+            2427,
+            2427
+          ],
+          "15": [
+            3188,
+            3188
+          ],
+          "17": [
+            3382,
+            3382
+          ],
+          "10": [
+            0,
+            3465
+          ],
+          "19": [
+            3244,
+            3244
+          ],
+          "12": [
+            0,
+            2897
+          ],
+          "21": [
+            3013,
+            3013
+          ],
+          "14": [
+            3249,
+            3249
+          ],
+          "23": [
+            2952,
+            2952
+          ],
+          "16": [
+            3284,
+            3284
+          ],
+          "0": [
+            0,
+            2684
+          ],
+          "9": [
+            0,
+            2077
+          ],
+          "18": [
+            2769,
+            2769
+          ],
+          "11": [
+            0,
+            3339
+          ],
+          "20": [
+            1543,
+            1543
+          ],
+          "13": [
+            934,
+            2997
+          ]
+        },
+        "2026-05-08": {
+          "22": [
+            2947,
+            2947
+          ],
+          "15": [
+            3220,
+            3220
+          ],
+          "17": [
+            3190,
+            3190
+          ],
+          "10": [
+            2692,
+            2692
+          ],
+          "19": [
+            3120,
+            3120
+          ],
+          "12": [
+            2860,
+            2860
+          ],
+          "21": [
+            3363,
+            3363
+          ],
+          "14": [
+            3442,
+            3444
+          ],
+          "23": [
+            3342,
+            3342
+          ],
+          "16": [
+            3442,
+            3442
+          ],
+          "0": [
+            3298,
+            3299
+          ],
+          "9": [
+            2523,
+            2523
+          ],
+          "18": [
+            2003,
+            2003
+          ],
+          "11": [
+            3417,
+            3417
+          ],
+          "20": [
+            3405,
+            3405
+          ],
+          "13": [
+            2784,
+            2784
+          ]
+        },
+        "2026-05-09": {
+          "0": [
+            3435,
+            3435
+          ]
+        },
+        "2026-05-11": {
+          "15": [
+            2103,
+            2103
+          ],
+          "17": [
+            3206,
+            3206
+          ],
+          "10": [
+            3175,
+            3175
+          ],
+          "19": [
+            3195,
+            3195
+          ],
+          "12": [
+            2210,
+            2210
+          ],
+          "21": [
+            3279,
+            3279
+          ],
+          "14": [
+            2594,
+            2594
+          ],
+          "23": [
+            3484,
+            3484
+          ],
+          "7": [
+            0,
+            0
+          ],
+          "16": [
+            3201,
+            3201
+          ],
+          "9": [
+            3221,
+            3221
+          ],
+          "18": [
+            3003,
+            3003
+          ],
+          "11": [
+            3383,
+            3383
+          ],
+          "20": [
+            2796,
+            2796
+          ],
+          "13": [
+            3425,
+            3425
+          ],
+          "22": [
+            2785,
+            2785
+          ]
+        },
+        "2026-05-12": {
+          "13": [
+            0,
+            0
+          ],
+          "22": [
+            3126,
+            3126
+          ],
+          "15": [
+            2984,
+            2984
+          ],
+          "17": [
+            3329,
+            3329
+          ],
+          "10": [
+            3453,
+            3453
+          ],
+          "19": [
+            3468,
+            3468
+          ],
+          "12": [
+            2647,
+            2647
+          ],
+          "21": [
+            2850,
+            2850
+          ],
+          "14": [
+            2237,
+            2237
+          ],
+          "23": [
+            3484,
+            3484
+          ],
+          "16": [
+            3317,
+            3317
+          ],
+          "0": [
+            3251,
+            3251
+          ],
+          "9": [
+            2174,
+            2174
+          ],
+          "18": [
+            1406,
+            1406
+          ],
+          "11": [
+            3567,
+            3567
+          ],
+          "20": [
+            3168,
+            3168
+          ]
+        },
+        "2026-05-13": {
+          "23": [
+            3330,
+            3330
+          ],
+          "16": [
+            3220,
+            3220
+          ],
+          "9": [
+            3278,
+            3278
+          ],
+          "18": [
+            3075,
+            3075
+          ],
+          "11": [
+            2093,
+            2093
+          ],
+          "20": [
+            3000,
+            3000
+          ],
+          "13": [
+            2733,
+            2733
+          ],
+          "22": [
+            3481,
+            3481
+          ],
+          "15": [
+            2319,
+            2319
+          ],
+          "17": [
+            3495,
+            3495
+          ],
+          "10": [
+            3270,
+            3270
+          ],
+          "19": [
+            3556,
+            3556
+          ],
+          "12": [
+            2760,
+            2760
+          ],
+          "21": [
+            1778,
+            1778
+          ],
+          "14": [
+            2543,
+            2543
+          ],
+          "0": [
+            3462,
+            3462
+          ]
+        },
+        "2026-05-14": {
+          "18": [
+            3289,
+            3289
+          ],
+          "11": [
+            3480,
+            3480
+          ],
+          "20": [
+            2656,
+            2656
+          ],
+          "13": [
+            1631,
+            1631
+          ],
+          "22": [
+            2997,
+            2997
+          ],
+          "15": [
+            1951,
+            1951
+          ],
+          "17": [
+            3379,
+            3379
+          ],
+          "10": [
+            2824,
+            2845
+          ],
+          "19": [
+            3428,
+            3428
+          ],
+          "12": [
+            3280,
+            3280
+          ],
+          "21": [
+            2865,
+            2865
+          ],
+          "14": [
+            19,
+            19
+          ],
+          "23": [
+            3294,
+            3294
+          ],
+          "16": [
+            3489,
+            3489
+          ],
+          "0": [
+            3181,
+            3181
+          ],
+          "9": [
+            694,
+            694
+          ]
+        },
+        "2026-05-15": {
+          "22": [
+            2382,
+            2382
+          ],
+          "15": [
+            1651,
+            1651
+          ],
+          "17": [
+            1897,
+            1897
+          ],
+          "10": [
+            2136,
+            2136
+          ],
+          "19": [
+            3388,
+            3388
+          ],
+          "12": [
+            3094,
+            3094
+          ],
+          "21": [
+            3232,
+            3232
+          ],
+          "14": [
+            1030,
+            1030
+          ],
+          "23": [
+            3141,
+            3141
+          ],
+          "16": [
+            3336,
+            3336
+          ],
+          "0": [
+            2662,
+            2735
+          ],
+          "9": [
+            2168,
+            2168
+          ],
+          "18": [
+            2823,
+            2823
+          ],
+          "11": [
+            1761,
+            1761
+          ],
+          "20": [
+            2723,
+            2723
+          ],
+          "13": [
+            3072,
+            3072
+          ]
+        },
+        "2026-05-16": {
+          "0": [
+            3166,
+            3166
+          ]
+        },
+        "2026-05-18": {
+          "21": [
+            2347,
+            2347
+          ],
+          "14": [
+            2922,
+            2922
+          ],
+          "23": [
+            3307,
+            3307
+          ],
+          "16": [
+            3563,
+            3563
+          ],
+          "9": [
+            162,
+            162
+          ],
+          "18": [
+            3071,
+            3071
+          ],
+          "11": [
+            2349,
+            2349
+          ],
+          "20": [
+            2593,
+            2593
+          ],
+          "13": [
+            3383,
+            3383
+          ],
+          "22": [
+            3100,
+            3100
+          ],
+          "15": [
+            2882,
+            2882
+          ],
+          "17": [
+            3519,
+            3519
+          ],
+          "10": [
+            2678,
+            2678
+          ],
+          "19": [
+            3418,
+            3418
+          ],
+          "12": [
+            3388,
+            3388
+          ]
+        },
+        "2026-05-19": {
+          "19": [
+            3231,
+            3231
+          ],
+          "21": [
+            2511,
+            2511
+          ],
+          "14": [
+            3436,
+            3438
+          ],
+          "23": [
+            3155,
+            3155
+          ],
+          "16": [
+            909,
+            909
+          ],
+          "0": [
+            2621,
+            2621
+          ],
+          "9": [
+            2294,
+            2294
+          ],
+          "18": [
+            2315,
+            2315
+          ],
+          "11": [
+            2306,
+            2306
+          ],
+          "20": [
+            3122,
+            3122
+          ],
+          "13": [
+            3271,
+            3271
+          ],
+          "22": [
+            3226,
+            3226
+          ],
+          "15": [
+            2242,
+            2248
+          ],
+          "17": [
+            2667,
+            2667
+          ],
+          "10": [
+            1865,
+            1865
+          ],
+          "12": [
+            2783,
+            2783
+          ]
+        },
+        "2026-05-20": {
+          "22": [
+            2545,
+            2545
+          ],
+          "15": [
+            2536,
+            2536
+          ],
+          "8": [
+            63,
+            63
+          ],
+          "17": [
+            2883,
+            2883
+          ],
+          "1": [
+            19,
+            19
+          ],
+          "10": [
+            2817,
+            2817
+          ],
+          "19": [
+            3128,
+            3128
+          ],
+          "12": [
+            2664,
+            2664
+          ],
+          "21": [
+            3180,
+            3180
+          ],
+          "14": [
+            3125,
+            3125
+          ],
+          "23": [
+            104,
+            104
+          ],
+          "16": [
+            1460,
+            1460
+          ],
+          "0": [
+            2728,
+            2728
+          ],
+          "9": [
+            3465,
+            3465
+          ],
+          "18": [
+            2498,
+            2498
+          ],
+          "11": [
+            457,
+            457
+          ],
+          "20": [
+            3263,
+            3263
+          ],
+          "13": [
+            3542,
+            3542
+          ]
+        },
+        "2026-05-21": {
+          "0": [
+            4,
+            4
+          ],
+          "9": [
+            2785,
+            2785
+          ],
+          "11": [
+            1019,
+            1019
+          ],
+          "18": [
+            3124,
+            3124
+          ],
+          "20": [
+            3055,
+            3055
+          ],
+          "13": [
+            2004,
+            2004
+          ],
+          "22": [
+            2684,
+            2684
+          ],
+          "15": [
+            951,
+            951
+          ],
+          "17": [
+            2514,
+            2514
+          ],
+          "10": [
+            2812,
+            2813
+          ],
+          "19": [
+            2370,
+            2370
+          ],
+          "12": [
+            1024,
+            1024
+          ],
+          "21": [
+            3103,
+            3103
+          ],
+          "14": [
+            3089,
+            3089
+          ],
+          "23": [
+            2880,
+            2922
+          ],
+          "16": [
+            269,
+            270
+          ]
+        },
+        "2026-05-22": {
+          "20": [
+            3047,
+            3047
+          ],
+          "13": [
+            2538,
+            2538
+          ],
+          "22": [
+            2680,
+            2680
+          ],
+          "15": [
+            1006,
+            1006
+          ],
+          "17": [
+            3054,
+            3054
+          ],
+          "1": [
+            88,
+            88
+          ],
+          "10": [
+            2820,
+            2820
+          ],
+          "19": [
+            3568,
+            3568
+          ],
+          "12": [
+            1480,
+            1480
+          ],
+          "21": [
+            3227,
+            3227
+          ],
+          "14": [
+            2518,
+            2518
+          ],
+          "23": [
+            2863,
+            2863
+          ],
+          "16": [
+            2682,
+            2684
+          ],
+          "0": [
+            3098,
+            3098
+          ],
+          "9": [
+            1007,
+            1007
+          ],
+          "18": [
+            1470,
+            1470
+          ],
+          "11": [
+            2390,
+            2390
+          ]
+        },
+        "2026-05-23": {
+          "1": [
+            9,
+            9
+          ],
+          "0": [
+            3532,
+            3532
+          ]
+        },
+        "2026-05-26": {
+          "10": [
+            1905,
+            1905
+          ],
+          "12": [
+            261,
+            261
+          ],
+          "9": [
+            1893,
+            1893
+          ],
+          "11": [
+            2687,
+            2687
+          ]
+        }
+      },
+      "gen2-117": {
+        "2026-05-22": {
+          "18": [
+            0,
+            0
+          ],
+          "17": [
+            0,
+            0
+          ],
+          "20": [
+            0,
+            0
+          ],
+          "16": [
+            0,
+            0
+          ],
+          "19": [
+            0,
+            0
+          ]
+        },
+        "2026-05-27": {
+          "19": [
+            475,
+            475
+          ],
+          "21": [
+            332,
+            332
+          ],
+          "18": [
+            74,
+            74
+          ]
+        },
+        "2026-05-28": {
+          "14": [
+            302,
+            302
+          ],
+          "13": [
+            108,
+            108
+          ]
+        }
+      },
+      "gen2-004": {
+        "2026-04-27": {
+          "13": [
+            371,
+            3341
+          ],
+          "15": [
+            0,
+            2293
+          ],
+          "8": [
+            0,
+            1457
+          ],
+          "17": [
+            0,
+            2848
+          ],
+          "10": [
+            0,
+            1676
+          ],
+          "12": [
+            575,
+            1284
+          ],
+          "14": [
+            0,
+            3046
+          ],
+          "16": [
+            0,
+            2732
+          ],
+          "9": [
+            0,
+            2295
+          ],
+          "18": [
+            0,
+            1782
+          ],
+          "11": [
+            0,
+            2131
+          ]
+        },
+        "2026-04-28": {
+          "14": [
+            0,
+            386
+          ],
+          "9": [
+            0,
+            2814
+          ],
+          "11": [
+            0,
+            3469
+          ],
+          "13": [
+            129,
+            3510
+          ],
+          "15": [
+            0,
+            1225
+          ],
+          "8": [
+            0,
+            1689
+          ],
+          "17": [
+            0,
+            1029
+          ],
+          "10": [
+            0,
+            2584
+          ],
+          "12": [
+            10,
+            2943
+          ]
+        },
+        "2026-04-29": {
+          "10": [
+            0,
+            2676
+          ],
+          "12": [
+            0,
+            1568
+          ],
+          "9": [
+            0,
+            1072
+          ],
+          "11": [
+            0,
+            3410
+          ],
+          "8": [
+            0,
+            2988
+          ]
+        },
+        "2026-04-30": {
+          "13": [
+            631,
+            631
+          ],
+          "8": [
+            0,
+            1423
+          ],
+          "10": [
+            0,
+            3234
+          ],
+          "12": [
+            0,
+            216
+          ],
+          "14": [
+            488,
+            488
+          ],
+          "9": [
+            0,
+            2941
+          ],
+          "11": [
+            0,
+            3262
+          ]
+        },
+        "2026-05-01": {
+          "8": [
+            0,
+            846
+          ],
+          "17": [
+            0,
+            96
+          ],
+          "10": [
+            0,
+            1283
+          ],
+          "14": [
+            0,
+            3099
+          ],
+          "16": [
+            0,
+            3458
+          ],
+          "9": [
+            0,
+            2591
+          ],
+          "13": [
+            7,
+            3327
+          ],
+          "15": [
+            0,
+            3336
+          ]
+        },
+        "2026-05-04": {
+          "18": [
+            0,
+            3501
+          ],
+          "11": [
+            0,
+            407
+          ],
+          "20": [
+            0,
+            1297
+          ],
+          "13": [
+            0,
+            3483
+          ],
+          "15": [
+            0,
+            3481
+          ],
+          "8": [
+            0,
+            311
+          ],
+          "17": [
+            0,
+            3044
+          ],
+          "10": [
+            0,
+            2449
+          ],
+          "19": [
+            0,
+            3048
+          ],
+          "12": [
+            0,
+            3207
+          ],
+          "14": [
+            0,
+            1738
+          ],
+          "16": [
+            0,
+            2968
+          ],
+          "9": [
+            0,
+            2158
+          ]
+        },
+        "2026-05-05": {
+          "16": [
+            0,
+            2571
+          ],
+          "9": [
+            474,
+            1165
+          ],
+          "11": [
+            0,
+            2807
+          ],
+          "13": [
+            0,
+            2716
+          ],
+          "8": [
+            1512,
+            1745
+          ],
+          "17": [
+            0,
+            455
+          ],
+          "10": [
+            0,
+            93
+          ],
+          "12": [
+            0,
+            1847
+          ]
+        },
+        "2026-05-06": {
+          "10": [
+            0,
+            3288
+          ],
+          "12": [
+            0,
+            1191
+          ],
+          "9": [
+            0,
+            2898
+          ],
+          "11": [
+            535,
+            2652
+          ],
+          "8": [
+            0,
+            994
+          ]
+        },
+        "2026-05-07": {
+          "15": [
+            285,
+            285
+          ],
+          "10": [
+            0,
+            94
+          ],
+          "12": [
+            0,
+            3079
+          ],
+          "9": [
+            0,
+            691
+          ],
+          "11": [
+            5,
+            588
+          ],
+          "8": [
+            0,
+            2506
+          ]
+        },
+        "2026-05-08": {
+          "10": [
+            90,
+            90
+          ],
+          "12": [
+            1641,
+            1641
+          ],
+          "14": [
+            1528,
+            1528
+          ],
+          "9": [
+            2720,
+            2720
+          ],
+          "11": [
+            695,
+            695
+          ],
+          "13": [
+            2745,
+            2745
+          ],
+          "8": [
+            1279,
+            1279
+          ]
+        },
+        "2026-05-11": {
+          "8": [
+            1734,
+            1734
+          ],
+          "14": [
+            14,
+            14
+          ],
+          "9": [
+            1983,
+            1983
+          ],
+          "13": [
+            1454,
+            1454
+          ]
+        },
+        "2026-05-12": {
+          "13": [
+            2654,
+            2654
+          ],
+          "8": [
+            291,
+            291
+          ],
+          "10": [
+            2353,
+            2353
+          ],
+          "12": [
+            3508,
+            3508
+          ],
+          "14": [
+            9,
+            9
+          ],
+          "9": [
+            2227,
+            2227
+          ],
+          "11": [
+            2034,
+            2034
+          ]
+        },
+        "2026-05-13": {
+          "9": [
+            2848,
+            2848
+          ],
+          "11": [
+            3546,
+            3546
+          ],
+          "13": [
+            2201,
+            2201
+          ],
+          "15": [
+            14,
+            14
+          ],
+          "8": [
+            1389,
+            1389
+          ],
+          "10": [
+            3452,
+            3452
+          ],
+          "12": [
+            621,
+            621
+          ],
+          "14": [
+            3227,
+            3227
+          ]
+        },
+        "2026-05-14": {
+          "11": [
+            1939,
+            1939
+          ],
+          "13": [
+            2488,
+            2488
+          ],
+          "15": [
+            76,
+            76
+          ],
+          "8": [
+            462,
+            462
+          ],
+          "10": [
+            1011,
+            1011
+          ],
+          "12": [
+            3248,
+            3248
+          ],
+          "14": [
+            14,
+            14
+          ],
+          "9": [
+            2313,
+            2313
+          ]
+        },
+        "2026-05-15": {
+          "15": [
+            2162,
+            2162
+          ],
+          "8": [
+            1781,
+            1781
+          ],
+          "12": [
+            3282,
+            3282
+          ],
+          "14": [
+            3073,
+            3073
+          ],
+          "9": [
+            1966,
+            1966
+          ],
+          "11": [
+            742,
+            742
+          ],
+          "13": [
+            3309,
+            3309
+          ]
+        },
+        "2026-05-18": {
+          "14": [
+            2627,
+            2627
+          ],
+          "16": [
+            1370,
+            1370
+          ],
+          "9": [
+            2422,
+            2422
+          ],
+          "11": [
+            2536,
+            2536
+          ],
+          "13": [
+            3415,
+            3415
+          ],
+          "15": [
+            2379,
+            2379
+          ],
+          "8": [
+            118,
+            118
+          ],
+          "10": [
+            2297,
+            2297
+          ],
+          "12": [
+            1630,
+            1630
+          ]
+        },
+        "2026-05-19": {
+          "14": [
+            2708,
+            2708
+          ],
+          "16": [
+            3256,
+            3256
+          ],
+          "9": [
+            2451,
+            2451
+          ],
+          "11": [
+            3513,
+            3513
+          ],
+          "13": [
+            1491,
+            1491
+          ],
+          "15": [
+            1588,
+            1588
+          ],
+          "8": [
+            2122,
+            2122
+          ],
+          "17": [
+            1213,
+            1213
+          ],
+          "10": [
+            1595,
+            1599
+          ],
+          "12": [
+            3247,
+            3247
+          ]
+        },
+        "2026-05-20": {
+          "10": [
+            2148,
+            2148
+          ],
+          "12": [
+            3313,
+            3313
+          ],
+          "9": [
+            2148,
+            2148
+          ],
+          "11": [
+            1745,
+            1745
+          ],
+          "13": [
+            3420,
+            3420
+          ]
+        },
+        "2026-05-21": {
+          "9": [
+            1718,
+            1718
+          ],
+          "11": [
+            3330,
+            3330
+          ],
+          "13": [
+            1872,
+            1872
+          ],
+          "15": [
+            904,
+            995
+          ],
+          "8": [
+            667,
+            667
+          ],
+          "10": [
+            3231,
+            3231
+          ],
+          "12": [
+            700,
+            700
+          ],
+          "14": [
+            455,
+            559
+          ],
+          "16": [
+            365,
+            527
+          ]
+        },
+        "2026-05-22": {
+          "13": [
+            3469,
+            3469
+          ],
+          "8": [
+            117,
+            117
+          ],
+          "10": [
+            1933,
+            1933
+          ],
+          "12": [
+            2286,
+            2286
+          ],
+          "14": [
+            650,
+            650
+          ],
+          "9": [
+            2462,
+            2462
+          ],
+          "11": [
+            1704,
+            1704
+          ]
+        },
+        "2026-05-24": {
+          "14": [
+            3133,
+            3133
+          ],
+          "16": [
+            2904,
+            2904
+          ],
+          "11": [
+            2790,
+            2790
+          ],
+          "13": [
+            2050,
+            2050
+          ],
+          "15": [
+            1730,
+            1730
+          ],
+          "12": [
+            2609,
+            2609
+          ]
+        },
+        "2026-05-26": {
+          "15": [
+            991,
+            991
+          ],
+          "8": [
+            1303,
+            1303
+          ],
+          "10": [
+            2560,
+            2560
+          ],
+          "12": [
+            818,
+            819
+          ],
+          "14": [
+            2396,
+            2396
+          ],
+          "16": [
+            43,
+            43
+          ],
+          "9": [
+            2175,
+            2175
+          ],
+          "11": [
+            2195,
+            2195
+          ],
+          "13": [
+            2075,
+            2075
+          ]
+        },
+        "2026-05-27": {
+          "18": [
+            1710,
+            1794
+          ],
+          "13": [
+            655,
+            655
+          ],
+          "15": [
+            3467,
+            3467
+          ],
+          "8": [
+            768,
+            768
+          ],
+          "17": [
+            1092,
+            1108
+          ],
+          "19": [
+            597,
+            597
+          ],
+          "12": [
+            2391,
+            2391
+          ],
+          "14": [
+            2637,
+            2637
+          ],
+          "16": [
+            2889,
+            2889
+          ],
+          "11": [
+            2393,
+            2393
+          ]
+        },
+        "2026-05-28": {
+          "9": [
+            1853,
+            1853
+          ],
+          "18": [
+            1045,
+            1228
+          ],
+          "11": [
+            655,
+            716
+          ],
+          "8": [
+            1921,
+            1921
+          ],
+          "10": [
+            2093,
+            2093
+          ],
+          "19": [
+            662,
+            662
+          ]
+        },
+        "2026-05-29": {
+          "11": [
+            1931,
+            1931
+          ],
+          "13": [
+            0,
+            0
+          ],
+          "15": [
+            1181,
+            1181
+          ],
+          "8": [
+            244,
+            244
+          ],
+          "10": [
+            1470,
+            1470
+          ],
+          "12": [
+            2418,
+            2418
+          ],
+          "14": [
+            0,
+            0
+          ],
+          "9": [
+            770,
+            770
+          ]
+        },
+        "2026-05-31": {
+          "14": [
+            167,
+            167
+          ],
+          "16": [
+            1153,
+            1214
+          ],
+          "15": [
+            1409,
+            1477
+          ]
+        },
+        "2026-06-01": {
+          "10": [
+            1793,
+            2031
+          ],
+          "12": [
+            2206,
+            2206
+          ],
+          "14": [
+            632,
+            1216
+          ],
+          "9": [
+            1729,
+            1937
+          ],
+          "11": [
+            996,
+            996
+          ],
+          "13": [
+            86,
+            86
+          ],
+          "8": [
+            849,
+            1087
+          ]
+        },
+        "2026-06-02": {
+          "16": [
+            3461,
+            3461
+          ],
+          "9": [
+            1089,
+            1089
+          ],
+          "11": [
+            1795,
+            1884
+          ],
+          "13": [
+            538,
+            538
+          ],
+          "8": [
+            2268,
+            2268
+          ],
+          "17": [
+            2260,
+            2260
+          ],
+          "10": [
+            441,
+            441
+          ],
+          "12": [
+            626,
+            967
+          ],
+          "14": [
+            1264,
+            1264
+          ]
+        },
+        "2026-06-03": {
+          "15": [
+            2119,
+            2119
+          ],
+          "17": [
+            881,
+            881
+          ],
+          "10": [
+            2461,
+            2461
+          ],
+          "19": [
+            130,
+            130
+          ],
+          "12": [
+            3395,
+            3395
+          ],
+          "14": [
+            1579,
+            1966
+          ],
+          "16": [
+            3363,
+            3363
+          ],
+          "9": [
+            2390,
+            2390
+          ],
+          "18": [
+            0,
+            0
+          ],
+          "11": [
+            3204,
+            3204
+          ],
+          "13": [
+            3165,
+            3166
+          ],
+          "8": [
+            1176,
+            1176
+          ]
+        },
+        "2026-06-04": {
+          "14": [
+            2051,
+            2051
+          ],
+          "16": [
+            99,
+            99
+          ],
+          "9": [
+            836,
+            1271
+          ],
+          "18": [
+            2309,
+            2309
+          ],
+          "11": [
+            690,
+            690
+          ],
+          "13": [
+            26,
+            26
+          ],
+          "15": [
+            71,
+            82
+          ],
+          "8": [
+            516,
+            591
+          ],
+          "17": [
+            1872,
+            1872
+          ],
+          "10": [
+            460,
+            959
+          ],
+          "12": [
+            2004,
+            2004
+          ]
+        },
+        "2026-06-05": {
+          "11": [
+            1979,
+            2184
+          ],
+          "13": [
+            518,
+            518
+          ],
+          "15": [
+            730,
+            730
+          ],
+          "8": [
+            201,
+            201
+          ],
+          "10": [
+            171,
+            178
+          ],
+          "12": [
+            677,
+            677
+          ],
+          "9": [
+            668,
+            668
+          ]
+        }
+      },
+      "gen2-016": {
+        "2026-04-27": {
+          "13": [
+            0,
+            196
+          ],
+          "8": [
+            0,
+            673
+          ],
+          "17": [
+            0,
+            2151
+          ],
+          "12": [
+            84,
+            2625
+          ],
+          "16": [
+            0,
+            2937
+          ],
+          "11": [
+            0,
+            3252
+          ],
+          "15": [
+            0,
+            837
+          ],
+          "10": [
+            0,
+            3160
+          ],
+          "19": [
+            0,
+            861
+          ],
+          "14": [
+            118,
+            407
+          ],
+          "9": [
+            0,
+            1939
+          ],
+          "18": [
+            0,
+            2365
+          ]
+        },
+        "2026-04-28": {
+          "14": [
+            0,
+            2577
+          ],
+          "9": [
+            0,
+            256
+          ],
+          "18": [
+            0,
+            1468
+          ],
+          "13": [
+            0,
+            971
+          ],
+          "17": [
+            0,
+            2972
+          ],
+          "12": [
+            0,
+            2898
+          ],
+          "16": [
+            0,
+            2551
+          ],
+          "11": [
+            0,
+            2776
+          ],
+          "15": [
+            0,
+            3066
+          ],
+          "10": [
+            0,
+            3498
+          ]
+        },
+        "2026-04-29": {
+          "10": [
+            0,
+            3066
+          ],
+          "14": [
+            0,
+            3179
+          ],
+          "9": [
+            0,
+            789
+          ],
+          "13": [
+            0,
+            2118
+          ],
+          "8": [
+            0,
+            639
+          ],
+          "12": [
+            0,
+            133
+          ],
+          "16": [
+            0,
+            3250
+          ],
+          "11": [
+            0,
+            2889
+          ],
+          "15": [
+            0,
+            2430
+          ]
+        },
+        "2026-04-30": {
+          "13": [
+            0,
+            3443
+          ],
+          "17": [
+            0,
+            408
+          ],
+          "12": [
+            0,
+            3130
+          ],
+          "16": [
+            0,
+            3139
+          ],
+          "11": [
+            0,
+            1969
+          ],
+          "15": [
+            0,
+            2134
+          ],
+          "10": [
+            6,
+            2697
+          ],
+          "14": [
+            0,
+            2768
+          ],
+          "9": [
+            0,
+            243
+          ]
+        },
+        "2026-05-01": {
+          "10": [
+            0,
+            2807
+          ],
+          "19": [
+            0,
+            199
+          ],
+          "14": [
+            0,
+            1756
+          ],
+          "23": [
+            0,
+            0
+          ],
+          "9": [
+            0,
+            1836
+          ],
+          "18": [
+            0,
+            889
+          ],
+          "13": [
+            0,
+            2035
+          ],
+          "22": [
+            0,
+            0
+          ],
+          "17": [
+            0,
+            1277
+          ],
+          "12": [
+            0,
+            1102
+          ],
+          "21": [
+            0,
+            0
+          ],
+          "16": [
+            0,
+            3423
+          ],
+          "11": [
+            0,
+            1409
+          ],
+          "20": [
+            0,
+            0
+          ],
+          "15": [
+            0,
+            2063
+          ]
+        },
+        "2026-05-03": {
+          "10": [
+            0,
+            3575
+          ],
+          "14": [
+            0,
+            813
+          ],
+          "9": [
+            0,
+            2041
+          ],
+          "13": [
+            0,
+            2237
+          ],
+          "8": [
+            0,
+            172
+          ],
+          "12": [
+            0,
+            1547
+          ],
+          "11": [
+            0,
+            2645
+          ],
+          "15": [
+            0,
+            1014
+          ]
+        },
+        "2026-05-04": {
+          "18": [
+            0,
+            370
+          ],
+          "13": [
+            2,
+            1920
+          ],
+          "12": [
+            0,
+            2379
+          ],
+          "11": [
+            0,
+            2126
+          ],
+          "15": [
+            0,
+            2242
+          ],
+          "10": [
+            0,
+            3035
+          ],
+          "14": [
+            0,
+            3303
+          ]
+        },
+        "2026-05-05": {
+          "16": [
+            0,
+            2281
+          ],
+          "11": [
+            0,
+            1884
+          ],
+          "15": [
+            0,
+            2382
+          ],
+          "10": [
+            0,
+            687
+          ],
+          "19": [
+            0,
+            0
+          ],
+          "14": [
+            0,
+            573
+          ],
+          "9": [
+            0,
+            187
+          ],
+          "18": [
+            0,
+            2391
+          ],
+          "13": [
+            0,
+            0
+          ],
+          "17": [
+            0,
+            2137
+          ],
+          "12": [
+            0,
+            3351
+          ]
+        },
+        "2026-05-06": {
+          "10": [
+            0,
+            556
+          ],
+          "19": [
+            0,
+            0
+          ],
+          "14": [
+            0,
+            2367
+          ],
+          "9": [
+            0,
+            1713
+          ],
+          "18": [
+            0,
+            2
+          ],
+          "13": [
+            0,
+            1211
+          ],
+          "22": [
+            0,
+            0
+          ],
+          "8": [
+            0,
+            1290
+          ],
+          "17": [
+            229,
+            2888
+          ],
+          "12": [
+            0,
+            87
+          ],
+          "21": [
+            0,
+            0
+          ],
+          "16": [
+            0,
+            1979
+          ],
+          "11": [
+            70,
+            656
+          ],
+          "20": [
+            0,
+            0
+          ],
+          "15": [
+            0,
+            3256
+          ]
+        },
+        "2026-05-07": {
+          "15": [
+            3112,
+            3112
+          ],
+          "14": [
+            1777,
+            1777
+          ],
+          "17": [
+            2934,
+            2934
+          ],
+          "16": [
+            2775,
+            2775
+          ]
+        },
+        "2026-05-08": {
+          "15": [
+            2245,
+            2245
+          ],
+          "10": [
+            3084,
+            3084
+          ],
+          "14": [
+            2031,
+            2031
+          ],
+          "9": [
+            1436,
+            1436
+          ],
+          "13": [
+            1605,
+            1605
+          ],
+          "12": [
+            2277,
+            2277
+          ],
+          "16": [
+            2668,
+            2669
+          ],
+          "11": [
+            1942,
+            1942
+          ]
+        },
+        "2026-05-10": {
+          "12": [
+            2052,
+            2052
+          ],
+          "16": [
+            2563,
+            2563
+          ],
+          "11": [
+            2426,
+            2426
+          ],
+          "15": [
+            2360,
+            2360
+          ],
+          "10": [
+            2915,
+            2915
+          ],
+          "14": [
+            2084,
+            2084
+          ],
+          "9": [
+            1170,
+            1170
+          ],
+          "13": [
+            467,
+            467
+          ],
+          "17": [
+            3305,
+            3305
+          ]
+        },
+        "2026-05-11": {
+          "8": [
+            934,
+            934
+          ],
+          "17": [
+            3321,
+            3321
+          ],
+          "12": [
+            3437,
+            3437
+          ],
+          "16": [
+            1937,
+            1937
+          ],
+          "11": [
+            3221,
+            3221
+          ],
+          "15": [
+            2438,
+            2438
+          ],
+          "10": [
+            3326,
+            3326
+          ],
+          "19": [
+            2472,
+            2472
+          ],
+          "14": [
+            3150,
+            3150
+          ],
+          "9": [
+            1402,
+            1402
+          ],
+          "18": [
+            1990,
+            1990
+          ],
+          "13": [
+            3214,
+            3214
+          ]
+        },
+        "2026-05-12": {
+          "15": [
+            3172,
+            3172
+          ],
+          "10": [
+            2697,
+            2697
+          ],
+          "14": [
+            3084,
+            3084
+          ],
+          "9": [
+            2577,
+            2581
+          ],
+          "18": [
+            1502,
+            1502
+          ],
+          "13": [
+            3250,
+            3250
+          ],
+          "8": [
+            562,
+            562
+          ],
+          "17": [
+            2337,
+            2337
+          ],
+          "12": [
+            2995,
+            2995
+          ],
+          "16": [
+            960,
+            960
+          ],
+          "11": [
+            2941,
+            2941
+          ]
+        },
+        "2026-05-13": {
+          "9": [
+            1180,
+            1180
+          ],
+          "13": [
+            1889,
+            1893
+          ],
+          "17": [
+            994,
+            994
+          ],
+          "12": [
+            3303,
+            3303
+          ],
+          "16": [
+            3135,
+            3135
+          ],
+          "11": [
+            3449,
+            3449
+          ],
+          "15": [
+            2966,
+            2966
+          ],
+          "10": [
+            3095,
+            3095
+          ],
+          "14": [
+            2485,
+            2485
+          ]
+        },
+        "2026-05-14": {
+          "11": [
+            2178,
+            2179
+          ],
+          "20": [
+            0,
+            0
+          ],
+          "15": [
+            2512,
+            2512
+          ],
+          "10": [
+            2137,
+            2137
+          ],
+          "19": [
+            0,
+            0
+          ],
+          "14": [
+            1893,
+            1893
+          ],
+          "9": [
+            3045,
+            3045
+          ],
+          "18": [
+            0,
+            0
+          ],
+          "13": [
+            2928,
+            2928
+          ],
+          "22": [
+            0,
+            0
+          ],
+          "12": [
+            2560,
+            2560
+          ],
+          "21": [
+            0,
+            0
+          ],
+          "16": [
+            162,
+            162
+          ]
+        },
+        "2026-05-15": {
+          "15": [
+            1996,
+            1996
+          ],
+          "10": [
+            3111,
+            3111
+          ],
+          "14": [
+            1384,
+            1384
+          ],
+          "9": [
+            849,
+            849
+          ],
+          "18": [
+            20,
+            20
+          ],
+          "13": [
+            379,
+            379
+          ],
+          "17": [
+            2158,
+            2158
+          ],
+          "12": [
+            2736,
+            2736
+          ],
+          "16": [
+            2119,
+            2119
+          ],
+          "11": [
+            3298,
+            3298
+          ]
+        },
+        "2026-05-17": {
+          "14": [
+            2825,
+            3055
+          ],
+          "9": [
+            1764,
+            1764
+          ],
+          "13": [
+            1538,
+            1538
+          ],
+          "8": [
+            71,
+            71
+          ],
+          "17": [
+            1190,
+            1190
+          ],
+          "12": [
+            3491,
+            3491
+          ],
+          "16": [
+            3038,
+            3038
+          ],
+          "11": [
+            2672,
+            2672
+          ],
+          "15": [
+            3239,
+            3262
+          ],
+          "10": [
+            1034,
+            1034
+          ]
+        },
+        "2026-05-18": {
+          "14": [
+            2096,
+            2096
+          ],
+          "9": [
+            2130,
+            2130
+          ],
+          "18": [
+            3323,
+            3323
+          ],
+          "13": [
+            2539,
+            2539
+          ],
+          "8": [
+            2593,
+            2593
+          ],
+          "17": [
+            2993,
+            2993
+          ],
+          "12": [
+            3001,
+            3001
+          ],
+          "16": [
+            1323,
+            1323
+          ],
+          "11": [
+            3455,
+            3455
+          ],
+          "15": [
+            2490,
+            2490
+          ],
+          "10": [
+            2953,
+            2953
+          ],
+          "19": [
+            2506,
+            2506
+          ]
+        },
+        "2026-05-19": {
+          "14": [
+            2366,
+            2366
+          ],
+          "9": [
+            1835,
+            1835
+          ],
+          "13": [
+            2781,
+            2781
+          ],
+          "12": [
+            2297,
+            2297
+          ],
+          "16": [
+            1684,
+            1684
+          ],
+          "11": [
+            3258,
+            3258
+          ],
+          "15": [
+            3292,
+            3292
+          ],
+          "10": [
+            1905,
+            1905
+          ]
+        },
+        "2026-05-20": {
+          "12": [
+            1645,
+            1645
+          ],
+          "11": [
+            2021,
+            2021
+          ],
+          "10": [
+            757,
+            757
+          ],
+          "9": [
+            6,
+            6
+          ],
+          "13": [
+            1910,
+            1910
+          ]
+        },
+        "2026-05-21": {
+          "9": [
+            714,
+            714
+          ],
+          "13": [
+            2979,
+            2979
+          ],
+          "17": [
+            216,
+            216
+          ],
+          "12": [
+            1094,
+            1094
+          ],
+          "16": [
+            3075,
+            3076
+          ],
+          "11": [
+            1657,
+            1657
+          ],
+          "15": [
+            1289,
+            1290
+          ],
+          "10": [
+            2953,
+            2955
+          ],
+          "14": [
+            2927,
+            2927
+          ]
+        },
+        "2026-05-22": {
+          "13": [
+            2602,
+            2602
+          ],
+          "17": [
+            3529,
+            3529
+          ],
+          "12": [
+            2397,
+            2397
+          ],
+          "16": [
+            2441,
+            2441
+          ],
+          "11": [
+            3151,
+            3151
+          ],
+          "15": [
+            3329,
+            3329
+          ],
+          "10": [
+            3303,
+            3303
+          ],
+          "14": [
+            3124,
+            3124
+          ],
+          "9": [
+            2363,
+            2363
+          ],
+          "18": [
+            46,
+            46
+          ]
+        },
+        "2026-05-24": {
+          "14": [
+            2447,
+            2448
+          ],
+          "9": [
+            854,
+            854
+          ],
+          "13": [
+            1228,
+            1228
+          ],
+          "12": [
+            3371,
+            3371
+          ],
+          "16": [
+            2231,
+            2231
+          ],
+          "11": [
+            3459,
+            3459
+          ],
+          "15": [
+            3132,
+            3132
+          ],
+          "10": [
+            3346,
+            3346
+          ]
+        },
+        "2026-05-25": {
+          "16": [
+            2058,
+            2058
+          ],
+          "11": [
+            2398,
+            2398
+          ],
+          "15": [
+            2397,
+            2397
+          ],
+          "10": [
+            2789,
+            2789
+          ],
+          "14": [
+            3073,
+            3073
+          ],
+          "9": [
+            2619,
+            2622
+          ],
+          "13": [
+            2870,
+            2870
+          ],
+          "8": [
+            1499,
+            1499
+          ],
+          "12": [
+            1681,
+            1681
+          ]
+        },
+        "2026-05-26": {
+          "15": [
+            1645,
+            1645
+          ],
+          "10": [
+            3411,
+            3411
+          ],
+          "19": [
+            0,
+            0
+          ],
+          "14": [
+            3173,
+            3173
+          ],
+          "9": [
+            1851,
+            1851
+          ],
+          "18": [
+            958,
+            958
+          ],
+          "13": [
+            3210,
+            3210
+          ],
+          "17": [
+            1593,
+            1593
+          ],
+          "12": [
+            1680,
+            1680
+          ],
+          "16": [
+            1719,
+            1719
+          ],
+          "11": [
+            3057,
+            3059
+          ]
+        },
+        "2026-05-27": {
+          "15": [
+            3050,
+            3050
+          ],
+          "10": [
+            575,
+            575
+          ],
+          "14": [
+            3380,
+            3380
+          ],
+          "13": [
+            2129,
+            2129
+          ],
+          "17": [
+            1713,
+            1713
+          ],
+          "12": [
+            1731,
+            1731
+          ],
+          "16": [
+            1891,
+            1891
+          ],
+          "11": [
+            1459,
+            1459
+          ]
+        },
+        "2026-05-28": {
+          "16": [
+            927,
+            927
+          ],
+          "11": [
+            1665,
+            1665
+          ],
+          "15": [
+            3561,
+            3561
+          ],
+          "10": [
+            442,
+            442
+          ],
+          "14": [
+            197,
+            197
+          ],
+          "9": [
+            2237,
+            2237
+          ],
+          "13": [
+            17,
+            17
+          ],
+          "12": [
+            3286,
+            3286
+          ]
+        },
+        "2026-05-29": {
+          "18": [
+            0,
+            0
+          ],
+          "13": [
+            1201,
+            1201
+          ],
+          "17": [
+            989,
+            989
+          ],
+          "21": [
+            0,
+            0
+          ],
+          "16": [
+            2685,
+            2685
+          ],
+          "20": [
+            0,
+            0
+          ],
+          "15": [
+            2900,
+            2900
+          ],
+          "10": [
+            1051,
+            1051
+          ],
+          "19": [
+            0,
+            0
+          ],
+          "14": [
+            3220,
+            3220
+          ],
+          "9": [
+            275,
+            275
+          ]
+        },
+        "2026-05-31": {
+          "10": [
+            2991,
+            2991
+          ],
+          "14": [
+            2720,
+            2720
+          ],
+          "9": [
+            3098,
+            3098
+          ],
+          "13": [
+            3443,
+            3443
+          ],
+          "17": [
+            2517,
+            2517
+          ],
+          "12": [
+            3007,
+            3007
+          ],
+          "16": [
+            3501,
+            3500
+          ],
+          "11": [
+            3084,
+            3084
+          ],
+          "15": [
+            2559,
+            2559
+          ]
+        },
+        "2026-06-01": {
+          "17": [
+            2421,
+            2421
+          ],
+          "12": [
+            2862,
+            2862
+          ],
+          "16": [
+            3391,
+            3391
+          ],
+          "11": [
+            2649,
+            2649
+          ],
+          "20": [
+            65,
+            65
+          ],
+          "15": [
+            2738,
+            2738
+          ],
+          "10": [
+            1063,
+            1063
+          ],
+          "14": [
+            3240,
+            3240
+          ],
+          "9": [
+            3077,
+            3077
+          ],
+          "13": [
+            2844,
+            3032
+          ],
+          "8": [
+            456,
+            456
+          ]
+        },
+        "2026-06-02": {
+          "9": [
+            2160,
+            2160
+          ],
+          "18": [
+            1248,
+            1248
+          ],
+          "13": [
+            1834,
+            1834
+          ],
+          "8": [
+            103,
+            103
+          ],
+          "17": [
+            2726,
+            2726
+          ],
+          "12": [
+            898,
+            898
+          ],
+          "16": [
+            3298,
+            3298
+          ],
+          "11": [
+            3003,
+            3003
+          ],
+          "15": [
+            2620,
+            2620
+          ],
+          "10": [
+            3107,
+            3107
+          ],
+          "14": [
+            0,
+            0
+          ]
+        },
+        "2026-06-03": {
+          "15": [
+            3218,
+            3218
+          ],
+          "10": [
+            2591,
+            2591
+          ],
+          "14": [
+            3066,
+            3066
+          ],
+          "9": [
+            1983,
+            1983
+          ],
+          "18": [
+            20,
+            20
+          ],
+          "13": [
+            3087,
+            3087
+          ],
+          "17": [
+            1847,
+            1847
+          ],
+          "12": [
+            3457,
+            3457
+          ],
+          "16": [
+            3291,
+            3291
+          ],
+          "11": [
+            3147,
+            3147
+          ]
+        },
+        "2026-06-04": {
+          "14": [
+            2281,
+            2281
+          ],
+          "9": [
+            3383,
+            3383
+          ],
+          "18": [
+            15,
+            15
+          ],
+          "13": [
+            3576,
+            3576
+          ],
+          "17": [
+            3491,
+            3491
+          ],
+          "12": [
+            2988,
+            2988
+          ],
+          "16": [
+            3193,
+            3193
+          ],
+          "11": [
+            2286,
+            2286
+          ],
+          "15": [
+            1578,
+            1578
+          ],
+          "10": [
+            3307,
+            3307
+          ]
+        },
+        "2026-06-05": {
+          "18": [
+            1535,
+            1535
+          ],
+          "13": [
+            1980,
+            1980
+          ],
+          "8": [
+            9,
+            9
+          ],
+          "17": [
+            2445,
+            2445
+          ],
+          "12": [
+            3126,
+            3126
+          ],
+          "16": [
+            2582,
+            2582
+          ],
+          "11": [
+            2478,
+            2478
+          ],
+          "15": [
+            2714,
+            2714
+          ],
+          "10": [
+            2607,
+            2607
+          ],
+          "14": [
+            1212,
+            1212
+          ],
+          "9": [
+            2028,
+            2028
+          ]
+        }
+      },
+      "gen2-020": {
+        "2026-04-27": {
+          "20": [
+            0,
+            2254
+          ],
+          "13": [
+            1572,
+            3438
+          ],
+          "22": [
+            0,
+            3517
+          ],
+          "15": [
+            0,
+            3178
+          ],
+          "17": [
+            0,
+            3332
+          ],
+          "10": [
+            0,
+            2749
+          ],
+          "12": [
+            2,
+            3013
+          ],
+          "21": [
+            0,
+            2989
+          ],
+          "14": [
+            0,
+            3558
+          ],
+          "23": [
+            0,
+            2848
+          ],
+          "16": [
+            0,
+            2910
+          ],
+          "9": [
+            0,
+            2374
+          ],
+          "11": [
+            0,
+            2718
+          ]
+        },
+        "2026-04-28": {
+          "14": [
+            0,
+            3315
+          ],
+          "23": [
+            0,
+            883
+          ],
+          "16": [
+            173,
+            3180
+          ],
+          "0": [
+            0,
+            3029
+          ],
+          "9": [
+            0,
+            2396
+          ],
+          "18": [
+            12,
+            1916
+          ],
+          "11": [
+            0,
+            3006
+          ],
+          "20": [
+            0,
+            3335
+          ],
+          "13": [
+            0,
+            3374
+          ],
+          "22": [
+            0,
+            3328
+          ],
+          "15": [
+            0,
+            3004
+          ],
+          "17": [
+            0,
+            3057
+          ],
+          "10": [
+            0,
+            3223
+          ],
+          "19": [
+            0,
+            3286
+          ],
+          "12": [
+            0,
+            3262
+          ],
+          "21": [
+            21,
+            2814
+          ]
+        },
+        "2026-04-29": {
+          "10": [
+            0,
+            3056
+          ],
+          "12": [
+            0,
+            3093
+          ],
+          "14": [
+            0,
+            3239
+          ],
+          "16": [
+            0,
+            3206
+          ],
+          "0": [
+            0,
+            2984
+          ],
+          "9": [
+            0,
+            3147
+          ],
+          "11": [
+            0,
+            3224
+          ],
+          "13": [
+            0,
+            2965
+          ],
+          "15": [
+            0,
+            3391
+          ],
+          "17": [
+            0,
+            2202
+          ]
+        },
+        "2026-04-30": {
+          "13": [
+            0,
+            3165
+          ],
+          "15": [
+            0,
+            2830
+          ],
+          "17": [
+            0,
+            2716
+          ],
+          "10": [
+            0,
+            3361
+          ],
+          "12": [
+            0,
+            2666
+          ],
+          "14": [
+            0,
+            3181
+          ],
+          "16": [
+            0,
+            3252
+          ],
+          "0": [
+            0,
+            523
+          ],
+          "9": [
+            0,
+            2979
+          ],
+          "11": [
+            0,
+            3373
+          ]
+        },
+        "2026-05-01": {
+          "17": [
+            0,
+            3204
+          ],
+          "10": [
+            0,
+            3397
+          ],
+          "12": [
+            4,
+            3447
+          ],
+          "21": [
+            0,
+            3144
+          ],
+          "14": [
+            0,
+            3282
+          ],
+          "23": [
+            0,
+            3395
+          ],
+          "16": [
+            0,
+            2370
+          ],
+          "9": [
+            0,
+            3301
+          ],
+          "11": [
+            0,
+            3455
+          ],
+          "13": [
+            0,
+            3388
+          ],
+          "20": [
+            0,
+            2898
+          ],
+          "22": [
+            0,
+            3075
+          ],
+          "15": [
+            0,
+            2137
+          ]
+        },
+        "2026-05-02": {
+          "0": [
+            0,
+            2712
+          ]
+        },
+        "2026-05-04": {
+          "11": [
+            0,
+            2431
+          ],
+          "13": [
+            0,
+            2946
+          ],
+          "10": [
+            0,
+            3065
+          ],
+          "12": [
+            0,
+            2457
+          ],
+          "7": [
+            0,
+            0
+          ],
+          "9": [
+            0,
+            2948
+          ]
+        },
+        "2026-05-05": {
+          "16": [
+            0,
+            2455
+          ],
+          "18": [
+            0,
+            1106
+          ],
+          "15": [
+            0,
+            3024
+          ],
+          "17": [
+            0,
+            2024
+          ]
+        },
+        "2026-05-06": {
+          "17": [
+            0,
+            3012
+          ],
+          "10": [
+            0,
+            471
+          ],
+          "19": [
+            194,
+            2139
+          ],
+          "12": [
+            0,
+            3007
+          ],
+          "14": [
+            0,
+            2786
+          ],
+          "23": [
+            0,
+            1522
+          ],
+          "16": [
+            0,
+            3023
+          ],
+          "11": [
+            2382,
+            3168
+          ],
+          "20": [
+            0,
+            27
+          ],
+          "13": [
+            0,
+            3133
+          ],
+          "15": [
+            0,
+            3282
+          ]
+        },
+        "2026-05-07": {
+          "22": [
+            1814,
+            1814
+          ],
+          "15": [
+            2514,
+            2514
+          ],
+          "17": [
+            3257,
+            3257
+          ],
+          "10": [
+            0,
+            3356
+          ],
+          "12": [
+            0,
+            3237
+          ],
+          "21": [
+            2035,
+            2035
+          ],
+          "14": [
+            2944,
+            2944
+          ],
+          "16": [
+            3225,
+            3226
+          ],
+          "0": [
+            0,
+            3014
+          ],
+          "9": [
+            0,
+            2211
+          ],
+          "11": [
+            0,
+            1943
+          ],
+          "13": [
+            940,
+            3085
+          ]
+        },
+        "2026-05-08": {
+          "22": [
+            3277,
+            3277
+          ],
+          "15": [
+            3311,
+            3311
+          ],
+          "17": [
+            3348,
+            3348
+          ],
+          "10": [
+            3347,
+            3347
+          ],
+          "19": [
+            1576,
+            1576
+          ],
+          "12": [
+            2461,
+            2461
+          ],
+          "21": [
+            3441,
+            3441
+          ],
+          "14": [
+            963,
+            963
+          ],
+          "23": [
+            2983,
+            2983
+          ],
+          "16": [
+            3274,
+            3274
+          ],
+          "9": [
+            3125,
+            3125
+          ],
+          "11": [
+            2535,
+            2535
+          ],
+          "20": [
+            3415,
+            3415
+          ],
+          "13": [
+            1834,
+            1834
+          ]
+        },
+        "2026-05-09": {
+          "0": [
+            3240,
+            3240
+          ]
+        },
+        "2026-05-11": {
+          "15": [
+            2800,
+            2800
+          ],
+          "17": [
+            1442,
+            1442
+          ],
+          "10": [
+            3091,
+            3091
+          ],
+          "19": [
+            3472,
+            3472
+          ],
+          "12": [
+            2054,
+            2054
+          ],
+          "21": [
+            1550,
+            1550
+          ],
+          "14": [
+            3565,
+            3565
+          ],
+          "23": [
+            3543,
+            3543
+          ],
+          "16": [
+            3398,
+            3398
+          ],
+          "9": [
+            2777,
+            2777
+          ],
+          "18": [
+            3429,
+            3429
+          ],
+          "11": [
+            2672,
+            2672
+          ],
+          "20": [
+            3208,
+            3208
+          ],
+          "13": [
+            2646,
+            2646
+          ],
+          "22": [
+            1499,
+            1499
+          ]
+        },
+        "2026-05-12": {
+          "13": [
+            2554,
+            2554
+          ],
+          "22": [
+            3493,
+            3493
+          ],
+          "15": [
+            2921,
+            2921
+          ],
+          "17": [
+            3453,
+            3453
+          ],
+          "1": [
+            1,
+            1
+          ],
+          "10": [
+            687,
+            687
+          ],
+          "19": [
+            3497,
+            3497
+          ],
+          "12": [
+            1880,
+            1880
+          ],
+          "21": [
+            3299,
+            3299
+          ],
+          "14": [
+            1920,
+            1920
+          ],
+          "23": [
+            3462,
+            3462
+          ],
+          "16": [
+            3582,
+            3582
+          ],
+          "0": [
+            3543,
+            3543
+          ],
+          "9": [
+            2596,
+            2596
+          ],
+          "18": [
+            2926,
+            2926
+          ],
+          "11": [
+            3381,
+            3381
+          ],
+          "20": [
+            3451,
+            3451
+          ]
+        },
+        "2026-05-13": {
+          "23": [
+            680,
+            680
+          ],
+          "16": [
+            3573,
+            3573
+          ],
+          "9": [
+            2872,
+            2872
+          ],
+          "18": [
+            2567,
+            2567
+          ],
+          "11": [
+            2481,
+            2481
+          ],
+          "20": [
+            3450,
+            3450
+          ],
+          "13": [
+            986,
+            986
+          ],
+          "22": [
+            3219,
+            3219
+          ],
+          "15": [
+            1663,
+            1663
+          ],
+          "17": [
+            2956,
+            2956
+          ],
+          "10": [
+            3549,
+            3549
+          ],
+          "19": [
+            3316,
+            3316
+          ],
+          "12": [
+            3338,
+            3338
+          ],
+          "21": [
+            2629,
+            2631
+          ],
+          "14": [
+            3041,
+            3041
+          ],
+          "0": [
+            3246,
+            3246
+          ]
+        },
+        "2026-05-14": {
+          "18": [
+            2683,
+            2683
+          ],
+          "11": [
+            1580,
+            1581
+          ],
+          "20": [
+            2617,
+            2617
+          ],
+          "13": [
+            3227,
+            3227
+          ],
+          "22": [
+            3508,
+            3508
+          ],
+          "15": [
+            2458,
+            2458
+          ],
+          "17": [
+            2785,
+            2785
+          ],
+          "10": [
+            3304,
+            3304
+          ],
+          "19": [
+            3426,
+            3426
+          ],
+          "12": [
+            2951,
+            2951
+          ],
+          "21": [
+            3376,
+            3376
+          ],
+          "14": [
+            3497,
+            3497
+          ],
+          "23": [
+            3199,
+            3199
+          ],
+          "0": [
+            3500,
+            3500
+          ],
+          "9": [
+            1035,
+            1035
+          ]
+        },
+        "2026-05-15": {
+          "22": [
+            3211,
+            3211
+          ],
+          "15": [
+            3536,
+            3536
+          ],
+          "17": [
+            3313,
+            3313
+          ],
+          "10": [
+            1981,
+            1981
+          ],
+          "19": [
+            3347,
+            3347
+          ],
+          "12": [
+            3126,
+            3126
+          ],
+          "21": [
+            3256,
+            3256
+          ],
+          "14": [
+            2893,
+            2893
+          ],
+          "23": [
+            3414,
+            3414
+          ],
+          "16": [
+            3389,
+            3389
+          ],
+          "0": [
+            3393,
+            3393
+          ],
+          "9": [
+            2673,
+            2673
+          ],
+          "18": [
+            1908,
+            1924
+          ],
+          "11": [
+            3136,
+            3136
+          ],
+          "20": [
+            3444,
+            3444
+          ],
+          "13": [
+            2908,
+            2908
+          ]
+        },
+        "2026-05-16": {
+          "0": [
+            3452,
+            3452
+          ]
+        },
+        "2026-05-18": {
+          "21": [
+            0,
+            0
+          ],
+          "14": [
+            0,
+            0
+          ],
+          "23": [
+            0,
+            0
+          ],
+          "16": [
+            0,
+            0
+          ],
+          "9": [
+            3015,
+            3015
+          ],
+          "11": [
+            3191,
+            3193
+          ],
+          "13": [
+            0,
+            0
+          ],
+          "22": [
+            0,
+            0
+          ],
+          "15": [
+            0,
+            0
+          ],
+          "10": [
+            3343,
+            3343
+          ],
+          "12": [
+            471,
+            471
+          ]
+        },
+        "2026-05-19": {
+          "19": [
+            351,
+            351
+          ],
+          "0": [
+            0,
+            0
+          ],
+          "18": [
+            99,
+            99
+          ],
+          "15": [
+            0,
+            0
+          ],
+          "1": [
+            0,
+            0
+          ]
+        },
+        "2026-05-26": {
+          "15": [
+            386,
+            386
+          ],
+          "17": [
+            0,
+            0
+          ],
+          "19": [
+            0,
+            0
+          ],
+          "16": [
+            0,
+            0
+          ],
+          "18": [
+            0,
+            0
+          ],
+          "20": [
+            0,
+            0
+          ],
+          "13": [
+            536,
+            536
+          ]
+        },
+        "2026-05-27": {
+          "19": [
+            19,
+            19
+          ],
+          "12": [
+            951,
+            951
+          ]
+        },
+        "2026-05-28": {
+          "14": [
+            939,
+            939
+          ],
+          "16": [
+            29,
+            29
+          ],
+          "11": [
+            3290,
+            3290
+          ],
+          "13": [
+            3109,
+            3109
+          ],
+          "15": [
+            38,
+            38
+          ],
+          "17": [
+            50,
+            50
+          ],
+          "10": [
+            2556,
+            2556
+          ],
+          "12": [
+            1660,
+            1668
+          ]
+        },
+        "2026-05-29": {
+          "11": [
+            2596,
+            2596
+          ],
+          "10": [
+            3312,
+            3312
+          ],
+          "12": [
+            2,
+            2
+          ],
+          "9": [
+            1076,
+            1076
+          ]
+        }
+      },
+      "gen2-006": {
+        "2026-05-01": {
+          "17": [
+            0,
+            16
+          ]
+        },
+        "2026-05-06": {
+          "18": [
+            0,
+            0
+          ],
+          "20": [
+            0,
+            0
+          ],
+          "17": [
+            0,
+            0
+          ],
+          "13": [
+            0,
+            0
+          ],
+          "22": [
+            0,
+            0
+          ],
+          "19": [
+            0,
+            0
+          ],
+          "15": [
+            0,
+            0
+          ],
+          "21": [
+            0,
+            0
+          ],
+          "14": [
+            0,
+            0
+          ],
+          "16": [
+            0,
+            0
+          ]
+        },
+        "2026-05-07": {
+          "15": [
+            0,
+            0
+          ],
+          "11": [
+            0,
+            0
+          ],
+          "13": [
+            0,
+            0
+          ],
+          "12": [
+            0,
+            0
+          ],
+          "14": [
+            0,
+            0
+          ]
+        },
+        "2026-05-11": {
+          "17": [
+            0,
+            0
+          ]
+        },
+        "2026-05-12": {
+          "13": [
+            0,
+            0
+          ],
+          "15": [
+            0,
+            0
+          ],
+          "17": [
+            0,
+            0
+          ],
+          "14": [
+            0,
+            0
+          ],
+          "16": [
+            0,
+            0
+          ]
+        },
+        "2026-05-14": {
+          "19": [
+            0,
+            0
+          ],
+          "21": [
+            0,
+            0
+          ],
+          "18": [
+            0,
+            0
+          ],
+          "20": [
+            0,
+            0
+          ],
+          "17": [
+            0,
+            0
+          ]
+        },
+        "2026-05-15": {
+          "13": [
+            0,
+            0
+          ],
+          "10": [
+            0,
+            0
+          ],
+          "12": [
+            0,
+            0
+          ],
+          "14": [
+            0,
+            0
+          ],
+          "15": [
+            0,
+            0
+          ],
+          "11": [
+            0,
+            0
+          ]
+        },
+        "2026-05-18": {
+          "17": [
+            3,
+            3
+          ],
+          "12": [
+            0,
+            0
+          ],
+          "11": [
+            0,
+            0
+          ]
+        },
+        "2026-05-19": {
+          "20": [
+            0,
+            0
+          ],
+          "19": [
+            0,
+            0
+          ],
+          "17": [
+            0,
+            0
+          ],
+          "16": [
+            0,
+            0
+          ],
+          "18": [
+            0,
+            0
+          ]
+        },
+        "2026-05-20": {
+          "19": [
+            0,
+            0
+          ],
+          "21": [
+            0,
+            0
+          ],
+          "22": [
+            0,
+            0
+          ],
+          "18": [
+            0,
+            0
+          ],
+          "20": [
+            0,
+            0
+          ]
+        },
+        "2026-05-21": {
+          "17": [
+            0,
+            0
+          ],
+          "19": [
+            0,
+            0
+          ],
+          "18": [
+            0,
+            0
+          ],
+          "20": [
+            0,
+            0
+          ],
+          "16": [
+            0,
+            0
+          ]
+        },
+        "2026-05-22": {
+          "19": [
+            0,
+            0
+          ],
+          "12": [
+            0,
+            0
+          ],
+          "21": [
+            0,
+            0
+          ],
+          "14": [
+            0,
+            0
+          ],
+          "20": [
+            0,
+            0
+          ],
+          "13": [
+            0,
+            0
+          ],
+          "18": [
+            0,
+            0
+          ],
+          "15": [
+            0,
+            0
+          ],
+          "11": [
+            0,
+            0
+          ]
+        },
+        "2026-05-28": {
+          "17": [
+            0,
+            0
+          ],
+          "14": [
+            0,
+            0
+          ],
+          "10": [
+            0,
+            0
+          ],
+          "16": [
+            0,
+            0
+          ],
+          "18": [
+            0,
+            0
+          ],
+          "11": [
+            0,
+            0
+          ],
+          "20": [
+            0,
+            0
+          ],
+          "13": [
+            0,
+            0
+          ],
+          "19": [
+            0,
+            0
+          ],
+          "15": [
+            0,
+            0
+          ],
+          "12": [
+            0,
+            0
+          ],
+          "21": [
+            0,
+            0
+          ]
+        },
+        "2026-06-01": {
+          "11": [
+            0,
+            0
+          ],
+          "20": [
+            0,
+            0
+          ],
+          "17": [
+            0,
+            0
+          ],
+          "13": [
+            0,
+            0
+          ],
+          "10": [
+            217,
+            217
+          ],
+          "19": [
+            0,
+            0
+          ],
+          "12": [
+            0,
+            0
+          ],
+          "14": [
+            636,
+            636
+          ],
+          "16": [
+            0,
+            0
+          ],
+          "18": [
+            0,
+            0
+          ]
+        },
+        "2026-06-02": {
+          "12": [
+            1,
+            1
+          ],
+          "13": [
+            442,
+            442
+          ]
+        },
+        "2026-06-05": {
+          "12": [
+            0,
+            0
+          ],
+          "14": [
+            0,
+            0
+          ],
+          "11": [
+            0,
+            0
+          ],
+          "13": [
+            0,
+            0
+          ],
+          "15": [
+            0,
+            0
+          ],
+          "17": [
+            0,
+            0
+          ],
+          "10": [
+            0,
+            0
+          ],
+          "16": [
+            0,
+            0
+          ]
+        }
+      },
+      "gen2-107": {
+        "2026-04-27": {
+          "13": [
+            1122,
+            3205
+          ],
+          "15": [
+            0,
+            2901
+          ],
+          "17": [
+            0,
+            2399
+          ],
+          "10": [
+            0,
+            2493
+          ],
+          "12": [
+            0,
+            2616
+          ],
+          "14": [
+            0,
+            3277
+          ],
+          "16": [
+            0,
+            2476
+          ],
+          "9": [
+            0,
+            2630
+          ],
+          "11": [
+            0,
+            361
+          ]
+        },
+        "2026-04-28": {
+          "14": [
+            0,
+            3412
+          ],
+          "16": [
+            0,
+            2905
+          ],
+          "9": [
+            0,
+            1612
+          ],
+          "11": [
+            0,
+            2046
+          ],
+          "13": [
+            0,
+            3080
+          ],
+          "15": [
+            0,
+            3398
+          ],
+          "17": [
+            0,
+            1141
+          ],
+          "10": [
+            0,
+            2752
+          ],
+          "12": [
+            0,
+            3272
+          ]
+        },
+        "2026-04-29": {
+          "10": [
+            0,
+            2856
+          ],
+          "12": [
+            0,
+            3166
+          ],
+          "14": [
+            0,
+            2022
+          ],
+          "16": [
+            0,
+            3031
+          ],
+          "9": [
+            0,
+            2064
+          ],
+          "11": [
+            0,
+            1792
+          ],
+          "13": [
+            0,
+            2687
+          ],
+          "15": [
+            0,
+            3121
+          ],
+          "17": [
+            0,
+            669
+          ]
+        },
+        "2026-04-30": {
+          "13": [
+            0,
+            3351
+          ],
+          "15": [
+            0,
+            2678
+          ],
+          "17": [
+            0,
+            1644
+          ],
+          "10": [
+            0,
+            3227
+          ],
+          "12": [
+            0,
+            3232
+          ],
+          "14": [
+            0,
+            3341
+          ],
+          "16": [
+            0,
+            2574
+          ],
+          "9": [
+            0,
+            2604
+          ],
+          "11": [
+            0,
+            3531
+          ]
+        },
+        "2026-05-01": {
+          "17": [
+            0,
+            2984
+          ],
+          "10": [
+            0,
+            2087
+          ],
+          "19": [
+            0,
+            2608
+          ],
+          "12": [
+            0,
+            3161
+          ],
+          "16": [
+            0,
+            2830
+          ],
+          "9": [
+            0,
+            38
+          ],
+          "18": [
+            0,
+            1674
+          ],
+          "11": [
+            0,
+            2850
+          ],
+          "13": [
+            0,
+            2817
+          ],
+          "20": [
+            0,
+            122
+          ],
+          "15": [
+            0,
+            1945
+          ]
+        },
+        "2026-05-04": {
+          "18": [
+            0,
+            11
+          ],
+          "11": [
+            0,
+            2466
+          ],
+          "13": [
+            0,
+            2740
+          ],
+          "15": [
+            0,
+            3460
+          ],
+          "17": [
+            0,
+            2743
+          ],
+          "10": [
+            0,
+            1951
+          ],
+          "12": [
+            0,
+            3280
+          ],
+          "14": [
+            0,
+            3058
+          ],
+          "16": [
+            0,
+            3106
+          ],
+          "9": [
+            0,
+            237
+          ]
+        },
+        "2026-05-05": {
+          "21": [
+            0,
+            2381
+          ],
+          "14": [
+            0,
+            3394
+          ],
+          "23": [
+            0,
+            3434
+          ],
+          "16": [
+            0,
+            3457
+          ],
+          "9": [
+            0,
+            2168
+          ],
+          "18": [
+            0,
+            2928
+          ],
+          "11": [
+            0,
+            3193
+          ],
+          "20": [
+            0,
+            1333
+          ],
+          "13": [
+            0,
+            3467
+          ],
+          "22": [
+            0,
+            3569
+          ],
+          "15": [
+            0,
+            3226
+          ],
+          "17": [
+            865,
+            2697
+          ],
+          "10": [
+            0,
+            2747
+          ],
+          "19": [
+            0,
+            2706
+          ],
+          "12": [
+            0,
+            3135
+          ]
+        },
+        "2026-05-06": {
+          "10": [
+            0,
+            3263
+          ],
+          "12": [
+            0,
+            3257
+          ],
+          "0": [
+            0,
+            2123
+          ],
+          "9": [
+            417,
+            2540
+          ],
+          "11": [
+            409,
+            1261
+          ],
+          "13": [
+            0,
+            1651
+          ]
+        },
+        "2026-05-07": {
+          "15": [
+            1094,
+            1094
+          ],
+          "17": [
+            2925,
+            2925
+          ],
+          "14": [
+            223,
+            223
+          ],
+          "16": [
+            1504,
+            1504
+          ],
+          "18": [
+            560,
+            560
+          ]
+        },
+        "2026-05-08": {
+          "10": [
+            2023,
+            2023
+          ],
+          "12": [
+            3037,
+            3037
+          ],
+          "14": [
+            1832,
+            1832
+          ],
+          "11": [
+            3462,
+            3462
+          ],
+          "13": [
+            392,
+            392
+          ]
+        },
+        "2026-05-11": {
+          "15": [
+            2269,
+            2269
+          ],
+          "10": [
+            3461,
+            3461
+          ],
+          "12": [
+            1185,
+            1185
+          ],
+          "14": [
+            3322,
+            3322
+          ],
+          "9": [
+            412,
+            412
+          ],
+          "11": [
+            3190,
+            3190
+          ],
+          "13": [
+            2347,
+            2347
+          ]
+        },
+        "2026-05-12": {
+          "13": [
+            1974,
+            1974
+          ],
+          "15": [
+            3360,
+            3360
+          ],
+          "10": [
+            1716,
+            1716
+          ],
+          "12": [
+            3260,
+            3260
+          ],
+          "14": [
+            2597,
+            2597
+          ],
+          "16": [
+            442,
+            442
+          ],
+          "9": [
+            12,
+            12
+          ],
+          "11": [
+            3408,
+            3408
+          ]
+        },
+        "2026-05-13": {
+          "9": [
+            0,
+            0
+          ],
+          "11": [
+            3389,
+            3389
+          ],
+          "13": [
+            2032,
+            2032
+          ],
+          "15": [
+            3413,
+            3413
+          ],
+          "10": [
+            2412,
+            2412
+          ],
+          "12": [
+            3491,
+            3491
+          ],
+          "14": [
+            3207,
+            3207
+          ]
+        },
+        "2026-05-14": {
+          "11": [
+            2741,
+            2741
+          ],
+          "13": [
+            1211,
+            1211
+          ],
+          "15": [
+            2617,
+            2617
+          ],
+          "10": [
+            543,
+            543
+          ],
+          "12": [
+            2634,
+            2634
+          ],
+          "14": [
+            2988,
+            2988
+          ],
+          "16": [
+            852,
+            852
+          ]
+        },
+        "2026-05-15": {
+          "10": [
+            3417,
+            3417
+          ],
+          "12": [
+            2872,
+            2872
+          ],
+          "14": [
+            1453,
+            1453
+          ],
+          "9": [
+            170,
+            170
+          ],
+          "11": [
+            3144,
+            3144
+          ],
+          "13": [
+            3008,
+            3008
+          ]
+        },
+        "2026-05-18": {
+          "14": [
+            2480,
+            2480
+          ],
+          "16": [
+            585,
+            585
+          ],
+          "9": [
+            498,
+            498
+          ],
+          "11": [
+            2813,
+            2813
+          ],
+          "13": [
+            2765,
+            2765
+          ],
+          "15": [
+            2860,
+            2860
+          ],
+          "10": [
+            3568,
+            3568
+          ],
+          "12": [
+            3279,
+            3279
+          ]
+        },
+        "2026-05-19": {
+          "14": [
+            1306,
+            1306
+          ],
+          "11": [
+            3228,
+            3228
+          ],
+          "13": [
+            3358,
+            3358
+          ],
+          "10": [
+            2164,
+            2164
+          ],
+          "12": [
+            3448,
+            3448
+          ]
+        },
+        "2026-05-20": {
+          "15": [
+            1428,
+            1428
+          ],
+          "10": [
+            3334,
+            3334
+          ],
+          "12": [
+            2596,
+            2596
+          ],
+          "14": [
+            3422,
+            3422
+          ],
+          "9": [
+            846,
+            846
+          ],
+          "11": [
+            3562,
+            3562
+          ],
+          "13": [
+            3400,
+            3400
+          ]
+        },
+        "2026-05-21": {
+          "9": [
+            2506,
+            2506
+          ],
+          "11": [
+            3242,
+            3242
+          ],
+          "13": [
+            3124,
+            3124
+          ],
+          "15": [
+            2623,
+            2623
+          ],
+          "17": [
+            2483,
+            2483
+          ],
+          "10": [
+            3426,
+            3426
+          ],
+          "12": [
+            3413,
+            3413
+          ],
+          "14": [
+            3322,
+            3322
+          ],
+          "16": [
+            2647,
+            2648
+          ]
+        },
+        "2026-05-22": {
+          "13": [
+            0,
+            0
+          ],
+          "8": [
+            492,
+            492
+          ],
+          "10": [
+            2816,
+            2816
+          ],
+          "12": [
+            0,
+            0
+          ],
+          "14": [
+            0,
+            0
+          ],
+          "9": [
+            2143,
+            2143
+          ],
+          "11": [
+            0,
+            0
+          ]
+        },
+        "2026-05-25": {
+          "11": [
+            12,
+            12
+          ]
+        },
+        "2026-05-26": {
+          "11": [
+            51,
+            51
+          ]
+        },
+        "2026-05-27": {
+          "10": [
+            24,
+            24
+          ]
+        },
+        "2026-06-01": {
+          "15": [
+            534,
+            534
+          ],
+          "17": [
+            2938,
+            2938
+          ],
+          "16": [
+            2229,
+            2229
+          ],
+          "18": [
+            1747,
+            1747
+          ]
+        },
+        "2026-06-02": {
+          "16": [
+            3015,
+            3015
+          ],
+          "9": [
+            2093,
+            2093
+          ],
+          "18": [
+            639,
+            639
+          ],
+          "11": [
+            2125,
+            2125
+          ],
+          "13": [
+            2021,
+            2025
+          ],
+          "15": [
+            3348,
+            3348
+          ],
+          "17": [
+            2917,
+            2919
+          ],
+          "10": [
+            3243,
+            3243
+          ],
+          "12": [
+            2009,
+            2009
+          ],
+          "14": [
+            3187,
+            3187
+          ]
+        },
+        "2026-06-03": {
+          "15": [
+            3463,
+            3463
+          ],
+          "17": [
+            3328,
+            3328
+          ],
+          "10": [
+            2364,
+            2364
+          ],
+          "12": [
+            3371,
+            3371
+          ],
+          "14": [
+            1344,
+            1344
+          ],
+          "16": [
+            2352,
+            2352
+          ],
+          "9": [
+            1387,
+            1387
+          ],
+          "11": [
+            2540,
+            2540
+          ],
+          "13": [
+            1671,
+            1671
+          ]
+        },
+        "2026-06-04": {
+          "14": [
+            802,
+            802
+          ],
+          "16": [
+            2342,
+            2342
+          ],
+          "9": [
+            614,
+            614
+          ],
+          "11": [
+            3516,
+            3516
+          ],
+          "13": [
+            2162,
+            2162
+          ],
+          "15": [
+            279,
+            279
+          ],
+          "8": [
+            1895,
+            1895
+          ],
+          "17": [
+            725,
+            725
+          ],
+          "10": [
+            3371,
+            3371
+          ],
+          "12": [
+            3482,
+            3482
+          ]
+        },
+        "2026-06-05": {
+          "16": [
+            2706,
+            2706
+          ],
+          "18": [
+            2027,
+            2027
+          ],
+          "11": [
+            3494,
+            3494
+          ],
+          "13": [
+            2857,
+            2857
+          ],
+          "15": [
+            2916,
+            2916
+          ],
+          "8": [
+            2405,
+            2405
+          ],
+          "17": [
+            2650,
+            2650
+          ],
+          "10": [
+            3064,
+            3064
+          ],
+          "12": [
+            3110,
+            3110
+          ],
+          "14": [
+            2986,
+            2986
+          ],
+          "9": [
+            1932,
+            1932
+          ]
+        }
+      },
+      "gen2-106": {
+        "2026-04-27": {
+          "13": [
+            0,
+            3290
+          ],
+          "15": [
+            0,
+            2586
+          ],
+          "17": [
+            0,
+            2864
+          ],
+          "12": [
+            0,
+            2206
+          ],
+          "14": [
+            0,
+            3372
+          ],
+          "16": [
+            0,
+            3290
+          ]
+        },
+        "2026-04-28": {
+          "14": [
+            0,
+            2905
+          ],
+          "23": [
+            0,
+            135
+          ],
+          "16": [
+            0,
+            3194
+          ],
+          "9": [
+            0,
+            7
+          ],
+          "18": [
+            0,
+            1334
+          ],
+          "11": [
+            0,
+            1912
+          ],
+          "20": [
+            0,
+            33
+          ],
+          "13": [
+            0,
+            2720
+          ],
+          "22": [
+            0,
+            534
+          ],
+          "15": [
+            0,
+            2868
+          ],
+          "17": [
+            0,
+            2776
+          ],
+          "10": [
+            0,
+            1506
+          ],
+          "19": [
+            0,
+            535
+          ],
+          "12": [
+            0,
+            2515
+          ]
+        },
+        "2026-04-29": {
+          "10": [
+            0,
+            2818
+          ],
+          "12": [
+            0,
+            3044
+          ],
+          "14": [
+            0,
+            2669
+          ],
+          "16": [
+            0,
+            2508
+          ],
+          "9": [
+            0,
+            2626
+          ],
+          "11": [
+            0,
+            2968
+          ],
+          "13": [
+            13,
+            2928
+          ],
+          "15": [
+            0,
+            2831
+          ],
+          "17": [
+            0,
+            1814
+          ]
+        },
+        "2026-04-30": {
+          "13": [
+            0,
+            3037
+          ],
+          "15": [
+            0,
+            3225
+          ],
+          "17": [
+            0,
+            3259
+          ],
+          "10": [
+            0,
+            2391
+          ],
+          "12": [
+            0,
+            2994
+          ],
+          "14": [
+            0,
+            3422
+          ],
+          "16": [
+            0,
+            3164
+          ],
+          "9": [
+            0,
+            1455
+          ],
+          "11": [
+            0,
+            2760
+          ]
+        },
+        "2026-05-01": {
+          "8": [
+            0,
+            0
+          ],
+          "17": [
+            0,
+            3404
+          ],
+          "10": [
+            0,
+            2535
+          ],
+          "12": [
+            0,
+            1914
+          ],
+          "21": [
+            0,
+            30
+          ],
+          "14": [
+            0,
+            3274
+          ],
+          "16": [
+            0,
+            2666
+          ],
+          "0": [
+            0,
+            538
+          ],
+          "9": [
+            0,
+            2520
+          ],
+          "11": [
+            0,
+            3148
+          ],
+          "13": [
+            0,
+            2964
+          ],
+          "15": [
+            0,
+            2990
+          ]
+        },
+        "2026-05-04": {
+          "18": [
+            0,
+            495
+          ],
+          "11": [
+            0,
+            2210
+          ],
+          "13": [
+            0,
+            2975
+          ],
+          "15": [
+            0,
+            763
+          ],
+          "17": [
+            0,
+            1660
+          ],
+          "10": [
+            0,
+            3383
+          ],
+          "12": [
+            0,
+            3405
+          ],
+          "14": [
+            0,
+            2607
+          ],
+          "23": [
+            0,
+            83
+          ],
+          "16": [
+            0,
+            1073
+          ],
+          "9": [
+            14,
+            2287
+          ]
+        },
+        "2026-05-05": {
+          "14": [
+            0,
+            1241
+          ],
+          "16": [
+            0,
+            3179
+          ],
+          "0": [
+            0,
+            19
+          ],
+          "9": [
+            0,
+            1622
+          ],
+          "18": [
+            0,
+            185
+          ],
+          "11": [
+            0,
+            706
+          ],
+          "13": [
+            0,
+            2499
+          ],
+          "15": [
+            0,
+            3137
+          ],
+          "17": [
+            0,
+            3428
+          ],
+          "12": [
+            0,
+            2663
+          ]
+        },
+        "2026-05-06": {
+          "17": [
+            0,
+            1217
+          ],
+          "10": [
+            0,
+            3303
+          ],
+          "12": [
+            0,
+            3430
+          ],
+          "14": [
+            0,
+            2235
+          ],
+          "16": [
+            0,
+            2464
+          ],
+          "9": [
+            0,
+            2414
+          ],
+          "18": [
+            0,
+            59
+          ],
+          "11": [
+            610,
+            2721
+          ],
+          "20": [
+            0,
+            36
+          ],
+          "13": [
+            0,
+            2274
+          ],
+          "15": [
+            0,
+            3066
+          ]
+        },
+        "2026-05-07": {
+          "15": [
+            3168,
+            3168
+          ],
+          "17": [
+            3135,
+            3135
+          ],
+          "10": [
+            0,
+            2251
+          ],
+          "19": [
+            959,
+            959
+          ],
+          "12": [
+            0,
+            1348
+          ],
+          "14": [
+            2862,
+            2862
+          ],
+          "16": [
+            2242,
+            2242
+          ],
+          "9": [
+            0,
+            1967
+          ],
+          "18": [
+            604,
+            604
+          ],
+          "11": [
+            6,
+            2724
+          ],
+          "13": [
+            729,
+            2493
+          ]
+        },
+        "2026-05-08": {
+          "15": [
+            1906,
+            1907
+          ],
+          "17": [
+            3246,
+            3246
+          ],
+          "10": [
+            2890,
+            2890
+          ],
+          "19": [
+            1519,
+            1519
+          ],
+          "16": [
+            2806,
+            2806
+          ],
+          "9": [
+            2193,
+            2193
+          ],
+          "18": [
+            258,
+            258
+          ],
+          "11": [
+            2027,
+            2027
+          ],
+          "8": [
+            17,
+            17
+          ]
+        },
+        "2026-05-11": {
+          "15": [
+            2779,
+            2779
+          ],
+          "17": [
+            3107,
+            3107
+          ],
+          "10": [
+            0,
+            20
+          ],
+          "12": [
+            3159,
+            3159
+          ],
+          "14": [
+            3226,
+            3226
+          ],
+          "7": [
+            0,
+            0
+          ],
+          "16": [
+            3374,
+            3374
+          ],
+          "9": [
+            1813,
+            1823
+          ],
+          "11": [
+            2438,
+            2438
+          ],
+          "13": [
+            3130,
+            3130
+          ]
+        },
+        "2026-05-12": {
+          "13": [
+            2606,
+            2606
+          ],
+          "22": [
+            3295,
+            3295
+          ],
+          "15": [
+            1644,
+            1649
+          ],
+          "17": [
+            3030,
+            3030
+          ],
+          "10": [
+            2439,
+            2439
+          ],
+          "19": [
+            3234,
+            3236
+          ],
+          "12": [
+            1975,
+            1975
+          ],
+          "21": [
+            3286,
+            3286
+          ],
+          "14": [
+            2719,
+            2719
+          ],
+          "23": [
+            2693,
+            2693
+          ],
+          "16": [
+            3125,
+            3126
+          ],
+          "9": [
+            2083,
+            2083
+          ],
+          "18": [
+            1823,
+            1823
+          ],
+          "11": [
+            2938,
+            2938
+          ],
+          "20": [
+            3476,
+            3476
+          ]
+        },
+        "2026-05-13": {
+          "23": [
+            3332,
+            3332
+          ],
+          "16": [
+            347,
+            347
+          ],
+          "9": [
+            2128,
+            2128
+          ],
+          "18": [
+            0,
+            0
+          ],
+          "11": [
+            2983,
+            2985
+          ],
+          "20": [
+            3543,
+            3543
+          ],
+          "13": [
+            1206,
+            1206
+          ],
+          "22": [
+            3322,
+            3322
+          ],
+          "15": [
+            3146,
+            3146
+          ],
+          "17": [
+            1406,
+            1406
+          ],
+          "10": [
+            3162,
+            3162
+          ],
+          "19": [
+            429,
+            429
+          ],
+          "12": [
+            555,
+            555
+          ],
+          "21": [
+            3305,
+            3305
+          ],
+          "14": [
+            3123,
+            3123
+          ],
+          "0": [
+            3333,
+            3333
+          ]
+        },
+        "2026-05-14": {
+          "18": [
+            3569,
+            3569
+          ],
+          "11": [
+            3071,
+            3071
+          ],
+          "20": [
+            3301,
+            3301
+          ],
+          "13": [
+            3195,
+            3195
+          ],
+          "22": [
+            3366,
+            3366
+          ],
+          "15": [
+            3326,
+            3326
+          ],
+          "8": [
+            114,
+            114
+          ],
+          "17": [
+            2321,
+            2321
+          ],
+          "10": [
+            3389,
+            3389
+          ],
+          "19": [
+            3414,
+            3414
+          ],
+          "12": [
+            802,
+            802
+          ],
+          "21": [
+            3481,
+            3481
+          ],
+          "14": [
+            2475,
+            2475
+          ],
+          "23": [
+            3493,
+            3493
+          ],
+          "16": [
+            2462,
+            2462
+          ],
+          "0": [
+            3036,
+            3036
+          ],
+          "9": [
+            2972,
+            2972
+          ]
+        },
+        "2026-05-15": {
+          "22": [
+            3251,
+            3251
+          ],
+          "15": [
+            440,
+            440
+          ],
+          "17": [
+            1449,
+            1449
+          ],
+          "10": [
+            1325,
+            1325
+          ],
+          "19": [
+            2848,
+            2848
+          ],
+          "12": [
+            1661,
+            1661
+          ],
+          "21": [
+            2598,
+            2598
+          ],
+          "14": [
+            3081,
+            3081
+          ],
+          "23": [
+            3348,
+            3348
+          ],
+          "16": [
+            1781,
+            1781
+          ],
+          "0": [
+            3368,
+            3368
+          ],
+          "9": [
+            2023,
+            2023
+          ],
+          "18": [
+            2859,
+            2859
+          ],
+          "11": [
+            1882,
+            1882
+          ],
+          "20": [
+            3452,
+            3452
+          ],
+          "13": [
+            3437,
+            3437
+          ]
+        },
+        "2026-05-16": {
+          "0": [
+            2796,
+            2796
+          ]
+        },
+        "2026-05-18": {
+          "21": [
+            0,
+            0
+          ],
+          "14": [
+            2867,
+            2869
+          ],
+          "16": [
+            1059,
+            1059
+          ],
+          "9": [
+            610,
+            610
+          ],
+          "18": [
+            0,
+            0
+          ],
+          "11": [
+            2018,
+            2018
+          ],
+          "20": [
+            0,
+            0
+          ],
+          "13": [
+            1883,
+            1883
+          ],
+          "15": [
+            1515,
+            1515
+          ],
+          "17": [
+            0,
+            0
+          ],
+          "10": [
+            2227,
+            2227
+          ],
+          "19": [
+            0,
+            0
+          ],
+          "12": [
+            1967,
+            1967
+          ]
+        },
+        "2026-05-19": {
+          "19": [
+            134,
+            134
+          ],
+          "18": [
+            597,
+            597
+          ],
+          "12": [
+            0,
+            0
+          ]
+        },
+        "2026-05-26": {
+          "13": [
+            690,
+            690
+          ]
+        },
+        "2026-05-27": {
+          "18": [
+            24,
+            24
+          ],
+          "13": [
+            3514,
+            3514
+          ],
+          "15": [
+            828,
+            828
+          ],
+          "17": [
+            56,
+            56
+          ],
+          "10": [
+            602,
+            602
+          ],
+          "12": [
+            1816,
+            1816
+          ],
+          "14": [
+            2983,
+            2985
+          ],
+          "16": [
+            3546,
+            3546
+          ],
+          "11": [
+            369,
+            369
+          ]
+        },
+        "2026-05-28": {
+          "14": [
+            2126,
+            2130
+          ],
+          "16": [
+            2845,
+            2845
+          ],
+          "11": [
+            2568,
+            2568
+          ],
+          "13": [
+            0,
+            0
+          ],
+          "15": [
+            2798,
+            2798
+          ],
+          "17": [
+            432,
+            432
+          ],
+          "12": [
+            1603,
+            1603
+          ]
+        },
+        "2026-05-29": {
+          "16": [
+            15,
+            15
+          ],
+          "11": [
+            2574,
+            2574
+          ],
+          "10": [
+            1632,
+            1632
+          ],
+          "12": [
+            2106,
+            2106
+          ],
+          "14": [
+            1508,
+            1508
+          ],
+          "9": [
+            2114,
+            2114
+          ]
+        },
+        "2026-06-01": {
+          "15": [
+            23,
+            23
+          ],
+          "10": [
+            1216,
+            1216
+          ],
+          "12": [
+            1732,
+            1732
+          ],
+          "14": [
+            2816,
+            2816
+          ],
+          "11": [
+            1505,
+            1505
+          ]
+        },
+        "2026-06-02": {
+          "16": [
+            0,
+            0
+          ],
+          "18": [
+            0,
+            0
+          ],
+          "20": [
+            0,
+            0
+          ],
+          "15": [
+            0,
+            0
+          ],
+          "17": [
+            0,
+            0
+          ],
+          "19": [
+            0,
+            0
+          ],
+          "21": [
+            0,
+            0
+          ]
+        },
+        "2026-06-03": {
+          "15": [
+            2636,
+            2636
+          ],
+          "17": [
+            732,
+            732
+          ],
+          "14": [
+            2262,
+            2262
+          ],
+          "16": [
+            3223,
+            3223
+          ]
+        },
+        "2026-06-04": {
+          "9": [
+            2346,
+            2346
+          ],
+          "10": [
+            2833,
+            2833
+          ]
+        },
+        "2026-06-05": {
+          "11": [
+            2547,
+            2547
+          ],
+          "13": [
+            1740,
+            1740
+          ],
+          "10": [
+            2650,
+            2650
+          ],
+          "12": [
+            3139,
+            3139
+          ],
+          "14": [
+            834,
+            834
+          ],
+          "9": [
+            690,
+            690
+          ]
+        }
+      },
+      "gen2-015": {
+        "2026-04-27": {
+          "11": [
+            0,
+            317
+          ],
+          "10": [
+            0,
+            513
+          ],
+          "12": [
+            0,
+            562
+          ],
+          "13": [
+            0,
+            24
+          ]
+        },
+        "2026-04-28": {
+          "17": [
+            46,
+            46
+          ],
+          "14": [
+            8,
+            8
+          ],
+          "10": [
+            248,
+            248
+          ],
+          "15": [
+            48,
+            48
+          ]
+        },
+        "2026-04-29": {
+          "11": [
+            0,
+            978
+          ],
+          "16": [
+            198,
+            198
+          ],
+          "15": [
+            25,
+            25
+          ]
+        },
+        "2026-04-30": {
+          "17": [
+            0,
+            176
+          ],
+          "16": [
+            0,
+            195
+          ]
+        },
+        "2026-05-02": {
+          "12": [
+            0,
+            324
+          ]
+        },
+        "2026-05-03": {
+          "17": [
+            0,
+            1435
+          ],
+          "18": [
+            0,
+            1285
+          ]
+        },
+        "2026-05-05": {
+          "17": [
+            84,
+            358
+          ]
+        },
+        "2026-05-07": {
+          "14": [
+            743,
+            743
+          ]
+        },
+        "2026-05-08": {
+          "13": [
+            42,
+            42
+          ],
+          "12": [
+            183,
+            183
+          ]
+        },
+        "2026-05-12": {
+          "13": [
+            521,
+            521
+          ]
+        },
+        "2026-05-13": {
+          "12": [
+            1099,
+            1099
+          ],
+          "11": [
+            2048,
+            2048
+          ]
+        },
+        "2026-05-20": {
+          "15": [
+            174,
+            174
+          ]
+        },
+        "2026-05-21": {
+          "15": [
+            198,
+            198
+          ],
+          "16": [
+            694,
+            694
+          ]
+        },
+        "2026-05-22": {
+          "16": [
+            2433,
+            2433
+          ],
+          "15": [
+            831,
+            831
+          ]
+        },
+        "2026-05-26": {
+          "16": [
+            152,
+            152
+          ],
+          "14": [
+            33,
+            33
+          ]
+        },
+        "2026-05-27": {
+          "13": [
+            41,
+            41
+          ],
+          "19": [
+            139,
+            140
+          ]
+        },
+        "2026-05-28": {
+          "18": [
+            96,
+            96
+          ],
+          "19": [
+            329,
+            335
+          ]
+        },
+        "2026-05-29": {
+          "19": [
+            781,
+            789
+          ],
+          "21": [
+            1911,
+            1911
+          ],
+          "18": [
+            133,
+            133
+          ],
+          "20": [
+            1207,
+            1209
+          ]
+        },
+        "2026-06-02": {
+          "16": [
+            143,
+            143
+          ],
+          "14": [
+            1777,
+            1777
+          ],
+          "13": [
+            311,
+            311
+          ],
+          "17": [
+            890,
+            890
+          ]
+        },
+        "2026-06-05": {
+          "14": [
+            1727,
+            1727
+          ],
+          "15": [
+            2094,
+            2094
+          ],
+          "16": [
+            855,
+            855
+          ]
+        }
+      },
+      "gen2-003": {
+        "2026-04-27": {
+          "11": [
+            0,
+            3012
+          ],
+          "20": [
+            0,
+            283
+          ],
+          "13": [
+            1707,
+            3509
+          ],
+          "15": [
+            0,
+            3150
+          ],
+          "17": [
+            0,
+            3256
+          ],
+          "10": [
+            0,
+            3324
+          ],
+          "19": [
+            0,
+            2766
+          ],
+          "12": [
+            0,
+            2777
+          ],
+          "14": [
+            0,
+            3251
+          ],
+          "16": [
+            0,
+            2170
+          ],
+          "9": [
+            0,
+            2813
+          ],
+          "18": [
+            0,
+            2985
+          ]
+        },
+        "2026-04-28": {
+          "14": [
+            8,
+            42
+          ],
+          "9": [
+            109,
+            1263
+          ],
+          "11": [
+            0,
+            1411
+          ],
+          "13": [
+            59,
+            510
+          ],
+          "10": [
+            135,
+            1959
+          ],
+          "12": [
+            0,
+            2534
+          ]
+        },
+        "2026-04-29": {
+          "19": [
+            1,
+            3009
+          ],
+          "21": [
+            0,
+            3115
+          ],
+          "14": [
+            0,
+            2119
+          ],
+          "16": [
+            0,
+            1562
+          ],
+          "23": [
+            0,
+            2564
+          ],
+          "18": [
+            2,
+            2227
+          ],
+          "20": [
+            0,
+            3541
+          ],
+          "22": [
+            0,
+            2655
+          ],
+          "15": [
+            14,
+            2627
+          ],
+          "17": [
+            0,
+            2436
+          ]
+        },
+        "2026-04-30": {
+          "13": [
+            0,
+            3280
+          ],
+          "22": [
+            0,
+            3274
+          ],
+          "15": [
+            0,
+            3325
+          ],
+          "17": [
+            0,
+            3066
+          ],
+          "10": [
+            0,
+            3072
+          ],
+          "19": [
+            0,
+            2644
+          ],
+          "12": [
+            0,
+            2954
+          ],
+          "21": [
+            0,
+            2193
+          ],
+          "14": [
+            0,
+            1482
+          ],
+          "23": [
+            0,
+            3384
+          ],
+          "16": [
+            0,
+            3334
+          ],
+          "0": [
+            6,
+            1346
+          ],
+          "9": [
+            0,
+            1508
+          ],
+          "18": [
+            0,
+            2052
+          ],
+          "11": [
+            0,
+            2798
+          ],
+          "20": [
+            0,
+            3516
+          ]
+        },
+        "2026-05-01": {
+          "17": [
+            0,
+            3171
+          ],
+          "10": [
+            0,
+            3091
+          ],
+          "12": [
+            1,
+            2727
+          ],
+          "14": [
+            0,
+            3519
+          ],
+          "16": [
+            0,
+            1702
+          ],
+          "0": [
+            0,
+            3030
+          ],
+          "9": [
+            0,
+            1086
+          ],
+          "11": [
+            0,
+            3234
+          ],
+          "13": [
+            0,
+            3097
+          ],
+          "15": [
+            0,
+            2970
+          ]
+        },
+        "2026-05-04": {
+          "18": [
+            0,
+            93
+          ],
+          "11": [
+            0,
+            1609
+          ],
+          "13": [
+            0,
+            2876
+          ],
+          "15": [
+            0,
+            546
+          ],
+          "17": [
+            0,
+            736
+          ],
+          "10": [
+            0,
+            3047
+          ],
+          "12": [
+            0,
+            3485
+          ],
+          "14": [
+            0,
+            2725
+          ],
+          "16": [
+            0,
+            1235
+          ],
+          "9": [
+            0,
+            642
+          ]
+        },
+        "2026-05-05": {
+          "16": [
+            0,
+            3010
+          ],
+          "9": [
+            0,
+            1570
+          ],
+          "18": [
+            0,
+            2677
+          ],
+          "11": [
+            0,
+            1223
+          ],
+          "20": [
+            0,
+            2515
+          ],
+          "13": [
+            0,
+            2063
+          ],
+          "15": [
+            227,
+            3018
+          ],
+          "17": [
+            0,
+            2829
+          ],
+          "10": [
+            0,
+            0
+          ],
+          "19": [
+            0,
+            896
+          ],
+          "12": [
+            143,
+            2756
+          ],
+          "21": [
+            0,
+            2581
+          ],
+          "14": [
+            0,
+            3222
+          ],
+          "23": [
+            39,
+            671
+          ]
+        },
+        "2026-05-06": {
+          "17": [
+            0,
+            2977
+          ],
+          "10": [
+            0,
+            3169
+          ],
+          "19": [
+            0,
+            2227
+          ],
+          "21": [
+            537,
+            3564
+          ],
+          "14": [
+            0,
+            3293
+          ],
+          "23": [
+            0,
+            3313
+          ],
+          "16": [
+            0,
+            3328
+          ],
+          "0": [
+            598,
+            636
+          ],
+          "9": [
+            0,
+            3345
+          ],
+          "18": [
+            17,
+            2881
+          ],
+          "11": [
+            0,
+            594
+          ],
+          "20": [
+            0,
+            3399
+          ],
+          "13": [
+            0,
+            1114
+          ],
+          "22": [
+            1056,
+            3382
+          ],
+          "15": [
+            0,
+            3427
+          ]
+        },
+        "2026-05-07": {
+          "15": [
+            3157,
+            3157
+          ],
+          "17": [
+            3368,
+            3368
+          ],
+          "10": [
+            0,
+            2765
+          ],
+          "19": [
+            3393,
+            3393
+          ],
+          "12": [
+            0,
+            2712
+          ],
+          "21": [
+            513,
+            513
+          ],
+          "14": [
+            1780,
+            1780
+          ],
+          "23": [
+            2710,
+            2710
+          ],
+          "16": [
+            3242,
+            3244
+          ],
+          "0": [
+            0,
+            2915
+          ],
+          "9": [
+            0,
+            2921
+          ],
+          "18": [
+            2738,
+            2738
+          ],
+          "11": [
+            0,
+            3030
+          ],
+          "20": [
+            3398,
+            3398
+          ],
+          "13": [
+            0,
+            1941
+          ],
+          "22": [
+            1151,
+            1151
+          ]
+        },
+        "2026-05-08": {
+          "15": [
+            3102,
+            3102
+          ],
+          "17": [
+            3090,
+            3090
+          ],
+          "10": [
+            2369,
+            2369
+          ],
+          "12": [
+            2370,
+            2370
+          ],
+          "14": [
+            2497,
+            2497
+          ],
+          "16": [
+            3113,
+            3113
+          ],
+          "0": [
+            3453,
+            3453
+          ],
+          "9": [
+            2420,
+            2420
+          ],
+          "11": [
+            1183,
+            1183
+          ],
+          "13": [
+            1334,
+            1334
+          ]
+        },
+        "2026-05-11": {
+          "10": [
+            2908,
+            2908
+          ],
+          "12": [
+            3331,
+            3331
+          ],
+          "14": [
+            1634,
+            1634
+          ],
+          "9": [
+            2537,
+            2537
+          ],
+          "11": [
+            3424,
+            3424
+          ],
+          "13": [
+            3105,
+            3105
+          ]
+        }
+      },
+      "gen2-115": {
+        "2026-05-27": {
+          "19": [
+            47,
+            47
+          ],
+          "21": [
+            54,
+            54
+          ],
+          "20": [
+            105,
+            105
+          ]
+        },
+        "2026-05-28": {
+          "16": [
+            904,
+            904
+          ],
+          "14": [
+            282,
+            282
+          ],
+          "13": [
+            611,
+            611
+          ]
+        },
+        "2026-06-05": {
+          "17": [
+            817,
+            817
+          ]
+        }
+      },
+      "gen2-012": {
+        "2026-04-27": {
+          "13": [
+            80,
+            1226
+          ],
+          "8": [
+            0,
+            421
+          ],
+          "17": [
+            53,
+            2352
+          ],
+          "12": [
+            0,
+            3494
+          ],
+          "16": [
+            0,
+            2190
+          ],
+          "11": [
+            6,
+            3157
+          ],
+          "15": [
+            0,
+            3269
+          ],
+          "10": [
+            0,
+            2445
+          ],
+          "19": [
+            0,
+            1244
+          ],
+          "14": [
+            0,
+            2347
+          ],
+          "9": [
+            0,
+            2333
+          ],
+          "18": [
+            1736,
+            3518
+          ]
+        },
+        "2026-04-28": {
+          "14": [
+            0,
+            2471
+          ],
+          "9": [
+            0,
+            294
+          ],
+          "18": [
+            0,
+            200
+          ],
+          "13": [
+            0,
+            1419
+          ],
+          "8": [
+            0,
+            75
+          ],
+          "17": [
+            0,
+            3112
+          ],
+          "12": [
+            0,
+            2865
+          ],
+          "16": [
+            0,
+            2760
+          ],
+          "11": [
+            0,
+            2622
+          ],
+          "15": [
+            0,
+            2903
+          ],
+          "10": [
+            0,
+            2925
+          ]
+        },
+        "2026-04-29": {
+          "10": [
+            0,
+            2401
+          ],
+          "14": [
+            0,
+            1141
+          ],
+          "9": [
+            0,
+            1320
+          ],
+          "13": [
+            0,
+            1032
+          ],
+          "17": [
+            0,
+            1275
+          ],
+          "12": [
+            0,
+            3118
+          ],
+          "16": [
+            0,
+            3458
+          ],
+          "11": [
+            0,
+            2840
+          ],
+          "15": [
+            0,
+            2605
+          ]
+        },
+        "2026-04-30": {
+          "13": [
+            23,
+            3266
+          ],
+          "12": [
+            570,
+            3319
+          ],
+          "16": [
+            0,
+            2079
+          ],
+          "11": [
+            0,
+            3224
+          ],
+          "15": [
+            0,
+            2742
+          ],
+          "10": [
+            0,
+            3143
+          ],
+          "14": [
+            0,
+            2862
+          ],
+          "9": [
+            0,
+            173
+          ]
+        },
+        "2026-05-01": {
+          "10": [
+            608,
+            2589
+          ],
+          "19": [
+            0,
+            3569
+          ],
+          "14": [
+            169,
+            2364
+          ],
+          "9": [
+            0,
+            255
+          ],
+          "18": [
+            0,
+            2269
+          ],
+          "13": [
+            0,
+            483
+          ],
+          "17": [
+            0,
+            1159
+          ],
+          "12": [
+            0,
+            3046
+          ],
+          "16": [
+            0,
+            2917
+          ],
+          "11": [
+            0,
+            2761
+          ],
+          "20": [
+            0,
+            513
+          ],
+          "15": [
+            0,
+            3200
+          ]
+        },
+        "2026-05-03": {
+          "10": [
+            0,
+            2828
+          ],
+          "14": [
+            0,
+            2357
+          ],
+          "9": [
+            0,
+            2708
+          ],
+          "13": [
+            0,
+            2064
+          ],
+          "8": [
+            0,
+            341
+          ],
+          "17": [
+            0,
+            978
+          ],
+          "12": [
+            0,
+            1432
+          ],
+          "16": [
+            0,
+            2538
+          ],
+          "11": [
+            0,
+            1969
+          ],
+          "15": [
+            0,
+            2872
+          ]
+        },
+        "2026-05-04": {
+          "18": [
+            0,
+            107
+          ],
+          "13": [
+            0,
+            1224
+          ],
+          "17": [
+            0,
+            2212
+          ],
+          "12": [
+            0,
+            2650
+          ],
+          "16": [
+            0,
+            1855
+          ],
+          "11": [
+            0,
+            2567
+          ],
+          "15": [
+            0,
+            2248
+          ],
+          "10": [
+            0,
+            2509
+          ],
+          "14": [
+            0,
+            2235
+          ],
+          "9": [
+            0,
+            577
+          ]
+        },
+        "2026-05-05": {
+          "16": [
+            0,
+            964
+          ],
+          "11": [
+            0,
+            3119
+          ],
+          "15": [
+            0,
+            45
+          ],
+          "10": [
+            93,
+            1792
+          ],
+          "19": [
+            0,
+            134
+          ],
+          "14": [
+            0,
+            375
+          ],
+          "9": [
+            11,
+            1981
+          ],
+          "18": [
+            0,
+            1855
+          ],
+          "13": [
+            0,
+            1024
+          ],
+          "17": [
+            0,
+            3157
+          ],
+          "12": [
+            0,
+            3328
+          ]
+        },
+        "2026-05-06": {
+          "10": [
+            0,
+            2319
+          ],
+          "19": [
+            0,
+            1592
+          ],
+          "14": [
+            0,
+            3034
+          ],
+          "9": [
+            0,
+            3037
+          ],
+          "18": [
+            0,
+            3238
+          ],
+          "13": [
+            0,
+            2815
+          ],
+          "8": [
+            0,
+            367
+          ],
+          "17": [
+            0,
+            2036
+          ],
+          "12": [
+            0,
+            3451
+          ],
+          "16": [
+            0,
+            3226
+          ],
+          "11": [
+            0,
+            1414
+          ],
+          "15": [
+            0,
+            3217
+          ]
+        },
+        "2026-05-07": {
+          "10": [
+            0,
+            2682
+          ],
+          "19": [
+            12,
+            12
+          ],
+          "14": [
+            2352,
+            2352
+          ],
+          "9": [
+            0,
+            1260
+          ],
+          "18": [
+            2636,
+            2636
+          ],
+          "13": [
+            375,
+            964
+          ],
+          "8": [
+            0,
+            1819
+          ],
+          "17": [
+            3443,
+            3443
+          ],
+          "12": [
+            0,
+            2812
+          ],
+          "16": [
+            1254,
+            1254
+          ],
+          "11": [
+            0,
+            2554
+          ]
+        },
+        "2026-05-08": {
+          "15": [
+            1130,
+            1130
+          ],
+          "10": [
+            3009,
+            3009
+          ],
+          "19": [
+            354,
+            354
+          ],
+          "14": [
+            1642,
+            1642
+          ],
+          "9": [
+            1060,
+            1060
+          ],
+          "18": [
+            3357,
+            3357
+          ],
+          "13": [
+            2243,
+            2243
+          ],
+          "17": [
+            3495,
+            3495
+          ],
+          "12": [
+            2801,
+            2801
+          ],
+          "16": [
+            2468,
+            2468
+          ],
+          "11": [
+            2732,
+            2732
+          ]
+        },
+        "2026-05-10": {
+          "12": [
+            3235,
+            3235
+          ],
+          "16": [
+            1972,
+            1972
+          ],
+          "11": [
+            3107,
+            3107
+          ],
+          "15": [
+            2014,
+            2014
+          ],
+          "10": [
+            3179,
+            3179
+          ],
+          "14": [
+            3020,
+            3020
+          ],
+          "9": [
+            1278,
+            1278
+          ],
+          "13": [
+            1057,
+            1057
+          ],
+          "17": [
+            3000,
+            3000
+          ]
+        },
+        "2026-05-11": {
+          "8": [
+            742,
+            742
+          ],
+          "17": [
+            2212,
+            2212
+          ],
+          "12": [
+            1180,
+            1180
+          ],
+          "16": [
+            2929,
+            2929
+          ],
+          "11": [
+            2922,
+            2922
+          ],
+          "15": [
+            948,
+            948
+          ],
+          "10": [
+            3419,
+            3419
+          ],
+          "19": [
+            138,
+            138
+          ],
+          "14": [
+            2243,
+            2243
+          ],
+          "9": [
+            2972,
+            2972
+          ],
+          "18": [
+            984,
+            984
+          ],
+          "13": [
+            2779,
+            2779
+          ]
+        },
+        "2026-05-12": {
+          "15": [
+            2861,
+            2861
+          ],
+          "10": [
+            2942,
+            2942
+          ],
+          "14": [
+            3467,
+            3467
+          ],
+          "9": [
+            3540,
+            3540
+          ],
+          "18": [
+            406,
+            406
+          ],
+          "13": [
+            2592,
+            2592
+          ],
+          "17": [
+            2645,
+            2645
+          ],
+          "12": [
+            2124,
+            2124
+          ],
+          "16": [
+            2650,
+            2650
+          ],
+          "11": [
+            1998,
+            1998
+          ]
+        },
+        "2026-05-13": {
+          "13": [
+            2964,
+            2964
+          ],
+          "12": [
+            3147,
+            3147
+          ],
+          "16": [
+            98,
+            98
+          ],
+          "11": [
+            3115,
+            3115
+          ],
+          "15": [
+            2735,
+            2735
+          ],
+          "10": [
+            3376,
+            3376
+          ],
+          "14": [
+            2693,
+            2693
+          ]
+        },
+        "2026-05-14": {
+          "11": [
+            2995,
+            2997
+          ],
+          "20": [
+            0,
+            0
+          ],
+          "15": [
+            2318,
+            2318
+          ],
+          "10": [
+            1222,
+            1222
+          ],
+          "19": [
+            0,
+            0
+          ],
+          "14": [
+            3015,
+            3015
+          ],
+          "9": [
+            0,
+            0
+          ],
+          "18": [
+            0,
+            0
+          ],
+          "13": [
+            3030,
+            3030
+          ],
+          "22": [
+            0,
+            0
+          ],
+          "12": [
+            2538,
+            2538
+          ],
+          "21": [
+            0,
+            0
+          ],
+          "16": [
+            330,
+            330
+          ]
+        },
+        "2026-05-15": {
+          "15": [
+            836,
+            836
+          ],
+          "10": [
+            3417,
+            3417
+          ],
+          "14": [
+            844,
+            844
+          ],
+          "9": [
+            838,
+            838
+          ],
+          "13": [
+            344,
+            344
+          ],
+          "17": [
+            2665,
+            2665
+          ],
+          "12": [
+            3015,
+            3015
+          ],
+          "16": [
+            2407,
+            2407
+          ],
+          "11": [
+            2792,
+            2792
+          ]
+        },
+        "2026-05-17": {
+          "14": [
+            1934,
+            1934
+          ],
+          "9": [
+            0,
+            0
+          ],
+          "18": [
+            41,
+            41
+          ],
+          "13": [
+            1216,
+            1216
+          ],
+          "8": [
+            0,
+            0
+          ],
+          "17": [
+            3061,
+            3061
+          ],
+          "12": [
+            3228,
+            3228
+          ],
+          "16": [
+            2203,
+            2203
+          ],
+          "11": [
+            1509,
+            1509
+          ],
+          "15": [
+            2248,
+            2248
+          ],
+          "10": [
+            1470,
+            1470
+          ]
+        },
+        "2026-05-18": {
+          "14": [
+            1120,
+            1120
+          ],
+          "23": [
+            0,
+            0
+          ],
+          "9": [
+            2708,
+            2708
+          ],
+          "18": [
+            385,
+            385
+          ],
+          "13": [
+            224,
+            224
+          ],
+          "22": [
+            0,
+            0
+          ],
+          "8": [
+            890,
+            890
+          ],
+          "17": [
+            1216,
+            1216
+          ],
+          "12": [
+            2191,
+            2191
+          ],
+          "21": [
+            0,
+            0
+          ],
+          "16": [
+            2013,
+            2013
+          ],
+          "11": [
+            2435,
+            2435
+          ],
+          "20": [
+            0,
+            0
+          ],
+          "15": [
+            2947,
+            2947
+          ],
+          "10": [
+            1629,
+            1629
+          ],
+          "19": [
+            1541,
+            1541
+          ]
+        },
+        "2026-05-19": {
+          "10": [
+            94,
+            94
+          ]
+        },
+        "2026-05-20": {
+          "12": [
+            0,
+            0
+          ],
+          "11": [
+            1972,
+            1972
+          ],
+          "10": [
+            272,
+            272
+          ]
+        },
+        "2026-05-21": {
+          "9": [
+            913,
+            913
+          ],
+          "13": [
+            1737,
+            1738
+          ],
+          "17": [
+            710,
+            710
+          ],
+          "12": [
+            3093,
+            3093
+          ],
+          "16": [
+            1174,
+            1174
+          ],
+          "11": [
+            1791,
+            1791
+          ],
+          "15": [
+            1114,
+            1114
+          ],
+          "10": [
+            2202,
+            2202
+          ],
+          "14": [
+            24,
+            24
+          ]
+        },
+        "2026-05-22": {
+          "13": [
+            1729,
+            1729
+          ],
+          "17": [
+            1857,
+            1857
+          ],
+          "12": [
+            1189,
+            1189
+          ],
+          "16": [
+            2112,
+            2112
+          ],
+          "11": [
+            1935,
+            1939
+          ],
+          "15": [
+            1663,
+            1663
+          ],
+          "10": [
+            1526,
+            1526
+          ],
+          "14": [
+            1738,
+            1738
+          ]
+        },
+        "2026-05-24": {
+          "14": [
+            1001,
+            1001
+          ],
+          "9": [
+            67,
+            67
+          ],
+          "13": [
+            1801,
+            1801
+          ],
+          "17": [
+            386,
+            386
+          ],
+          "12": [
+            814,
+            814
+          ],
+          "16": [
+            2230,
+            2230
+          ],
+          "11": [
+            1754,
+            1754
+          ],
+          "15": [
+            3165,
+            3165
+          ],
+          "10": [
+            3297,
+            3297
+          ]
+        },
+        "2026-05-25": {
+          "16": [
+            3140,
+            3140
+          ],
+          "11": [
+            3001,
+            3001
+          ],
+          "15": [
+            2853,
+            2853
+          ],
+          "10": [
+            1430,
+            1430
+          ],
+          "14": [
+            2954,
+            2954
+          ],
+          "9": [
+            198,
+            198
+          ],
+          "18": [
+            2448,
+            2448
+          ],
+          "13": [
+            1780,
+            1780
+          ],
+          "8": [
+            1421,
+            1421
+          ],
+          "17": [
+            2707,
+            2707
+          ],
+          "12": [
+            3159,
+            3159
+          ]
+        },
+        "2026-05-26": {
+          "10": [
+            0,
+            0
+          ],
+          "19": [
+            0,
+            0
+          ],
+          "9": [
+            946,
+            946
+          ],
+          "18": [
+            0,
+            0
+          ],
+          "13": [
+            0,
+            0
+          ],
+          "17": [
+            0,
+            0
+          ],
+          "12": [
+            0,
+            0
+          ],
+          "16": [
+            0,
+            0
+          ],
+          "11": [
+            0,
+            0
+          ],
+          "20": [
+            0,
+            0
+          ]
+        },
+        "2026-05-27": {
+          "15": [
+            2703,
+            2703
+          ],
+          "10": [
+            215,
+            215
+          ],
+          "14": [
+            1271,
+            1484
+          ],
+          "13": [
+            2056,
+            2056
+          ],
+          "17": [
+            2623,
+            2623
+          ],
+          "12": [
+            3093,
+            3093
+          ],
+          "16": [
+            3188,
+            3189
+          ],
+          "11": [
+            2566,
+            2566
+          ]
+        },
+        "2026-05-28": {
+          "16": [
+            801,
+            801
+          ],
+          "11": [
+            3178,
+            3178
+          ],
+          "15": [
+            2079,
+            2079
+          ],
+          "10": [
+            2481,
+            2481
+          ],
+          "14": [
+            161,
+            163
+          ],
+          "9": [
+            1126,
+            1126
+          ],
+          "13": [
+            1489,
+            1489
+          ],
+          "12": [
+            805,
+            805
+          ]
+        },
+        "2026-05-29": {
+          "18": [
+            24,
+            24
+          ],
+          "13": [
+            1470,
+            1470
+          ],
+          "17": [
+            2456,
+            2456
+          ],
+          "12": [
+            3463,
+            3463
+          ],
+          "16": [
+            3213,
+            3213
+          ],
+          "11": [
+            3537,
+            3537
+          ],
+          "15": [
+            2654,
+            2654
+          ],
+          "10": [
+            2961,
+            2961
+          ],
+          "14": [
+            353,
+            353
+          ],
+          "9": [
+            1554,
+            1554
+          ]
+        },
+        "2026-05-31": {
+          "10": [
+            1977,
+            1977
+          ],
+          "14": [
+            3316,
+            3316
+          ],
+          "9": [
+            2307,
+            2307
+          ],
+          "13": [
+            3024,
+            3024
+          ],
+          "17": [
+            1297,
+            1297
+          ],
+          "12": [
+            309,
+            309
+          ],
+          "16": [
+            2935,
+            2935
+          ],
+          "11": [
+            2478,
+            2478
+          ],
+          "15": [
+            2734,
+            2734
+          ]
+        },
+        "2026-06-01": {
+          "17": [
+            2815,
+            2815
+          ],
+          "12": [
+            3048,
+            3048
+          ],
+          "16": [
+            3486,
+            3486
+          ],
+          "11": [
+            78,
+            78
+          ],
+          "15": [
+            3324,
+            3324
+          ],
+          "10": [
+            1111,
+            1111
+          ],
+          "14": [
+            3446,
+            3446
+          ],
+          "9": [
+            2817,
+            2817
+          ],
+          "18": [
+            2643,
+            2643
+          ],
+          "13": [
+            3530,
+            3530
+          ],
+          "8": [
+            1661,
+            1661
+          ]
+        },
+        "2026-06-02": {
+          "9": [
+            2678,
+            2678
+          ],
+          "13": [
+            3490,
+            3490
+          ],
+          "8": [
+            53,
+            53
+          ],
+          "17": [
+            3521,
+            3521
+          ],
+          "12": [
+            2849,
+            2849
+          ],
+          "16": [
+            3307,
+            3307
+          ],
+          "11": [
+            2955,
+            2955
+          ],
+          "15": [
+            2147,
+            2355
+          ],
+          "10": [
+            3119,
+            3119
+          ],
+          "19": [
+            0,
+            0
+          ],
+          "14": [
+            1699,
+            1809
+          ]
+        },
+        "2026-06-03": {
+          "15": [
+            3545,
+            3545
+          ],
+          "10": [
+            3101,
+            3101
+          ],
+          "14": [
+            2838,
+            2838
+          ],
+          "9": [
+            943,
+            943
+          ],
+          "13": [
+            1821,
+            1821
+          ],
+          "17": [
+            3061,
+            3061
+          ],
+          "12": [
+            3100,
+            3100
+          ],
+          "16": [
+            2835,
+            2836
+          ],
+          "11": [
+            2504,
+            2504
+          ]
+        },
+        "2026-06-04": {
+          "14": [
+            1206,
+            1206
+          ],
+          "9": [
+            2476,
+            2476
+          ],
+          "18": [
+            3358,
+            3358
+          ],
+          "13": [
+            2821,
+            2821
+          ],
+          "17": [
+            2414,
+            2414
+          ],
+          "12": [
+            2409,
+            2409
+          ],
+          "16": [
+            3436,
+            3436
+          ],
+          "11": [
+            2937,
+            2937
+          ],
+          "15": [
+            1940,
+            1940
+          ],
+          "10": [
+            2097,
+            2097
+          ],
+          "19": [
+            932,
+            932
+          ]
+        },
+        "2026-06-05": {
+          "18": [
+            7,
+            7
+          ],
+          "13": [
+            339,
+            339
+          ],
+          "8": [
+            68,
+            68
+          ],
+          "17": [
+            3282,
+            3282
+          ],
+          "12": [
+            3401,
+            3401
+          ],
+          "16": [
+            2881,
+            2881
+          ],
+          "11": [
+            3359,
+            3359
+          ],
+          "15": [
+            3141,
+            3141
+          ],
+          "10": [
+            1978,
+            1978
+          ],
+          "14": [
+            2555,
+            2555
+          ],
+          "9": [
+            2567,
+            2567
+          ]
+        }
+      },
+      "gen2-112": {
+        "2026-05-28": {
+          "16": [
+            0,
+            0
+          ],
+          "15": [
+            0,
+            0
+          ],
+          "12": [
+            0,
+            0
+          ],
+          "14": [
+            0,
+            0
+          ],
+          "13": [
+            0,
+            0
+          ]
+        },
+        "2026-06-02": {
+          "18": [
+            0,
+            0
+          ],
+          "20": [
+            0,
+            0
+          ]
+        },
+        "2026-06-03": {
+          "14": [
+            0,
+            0
+          ],
+          "13": [
+            0,
+            0
+          ]
+        }
+      },
+      "gen2-113": {
+        "2026-05-22": {
+          "3": [
+            0,
+            0
+          ],
+          "4": [
+            0,
+            0
+          ],
+          "1": [
+            0,
+            0
+          ],
+          "10": [
+            0,
+            0
+          ],
+          "2": [
+            0,
+            0
+          ],
+          "5": [
+            0,
+            0
+          ]
+        },
+        "2026-05-26": {
+          "16": [
+            408,
+            408
+          ],
+          "19": [
+            0,
+            0
+          ],
+          "14": [
+            0,
+            0
+          ],
+          "20": [
+            0,
+            0
+          ],
+          "17": [
+            0,
+            0
+          ],
+          "23": [
+            0,
+            0
+          ],
+          "18": [
+            0,
+            0
+          ],
+          "15": [
+            53,
+            53
+          ],
+          "21": [
+            0,
+            0
+          ]
+        },
+        "2026-05-27": {
+          "2": [
+            0,
+            0
+          ],
+          "0": [
+            0,
+            0
+          ],
+          "3": [
+            0,
+            0
+          ],
+          "1": [
+            0,
+            0
+          ]
+        },
+        "2026-05-28": {
+          "17": [
+            842,
+            842
+          ],
+          "18": [
+            997,
+            997
+          ]
+        }
+      },
+      "gen2-017": {
+        "2026-04-27": {
+          "13": [
+            0,
+            3511
+          ],
+          "15": [
+            0,
+            2231
+          ],
+          "10": [
+            0,
+            2991
+          ],
+          "12": [
+            25,
+            3577
+          ],
+          "14": [
+            0,
+            3366
+          ],
+          "16": [
+            0,
+            1877
+          ],
+          "9": [
+            7,
+            1621
+          ],
+          "11": [
+            2762,
+            3473
+          ]
+        },
+        "2026-04-28": {
+          "14": [
+            0,
+            2372
+          ],
+          "16": [
+            0,
+            2802
+          ],
+          "9": [
+            0,
+            958
+          ],
+          "11": [
+            0,
+            3492
+          ],
+          "13": [
+            2,
+            3005
+          ],
+          "15": [
+            0,
+            2922
+          ],
+          "17": [
+            0,
+            1471
+          ],
+          "10": [
+            0,
+            2718
+          ],
+          "12": [
+            0,
+            2971
+          ]
+        },
+        "2026-04-29": {
+          "10": [
+            0,
+            2036
+          ],
+          "12": [
+            0,
+            2585
+          ],
+          "14": [
+            0,
+            2002
+          ],
+          "16": [
+            0,
+            3348
+          ],
+          "9": [
+            0,
+            2168
+          ],
+          "11": [
+            0,
+            2193
+          ],
+          "13": [
+            0,
+            3396
+          ],
+          "15": [
+            0,
+            3070
+          ],
+          "17": [
+            0,
+            1838
+          ]
+        },
+        "2026-04-30": {
+          "13": [
+            0,
+            340
+          ],
+          "10": [
+            0,
+            1921
+          ],
+          "12": [
+            0,
+            406
+          ],
+          "9": [
+            0,
+            1891
+          ],
+          "11": [
+            0,
+            1111
+          ]
+        },
+        "2026-05-01": {
+          "10": [
+            0,
+            3409
+          ],
+          "9": [
+            0,
+            1073
+          ],
+          "11": [
+            0,
+            951
+          ]
+        },
+        "2026-05-04": {
+          "11": [
+            0,
+            2248
+          ],
+          "13": [
+            0,
+            2065
+          ],
+          "15": [
+            0,
+            1395
+          ],
+          "10": [
+            0,
+            3171
+          ],
+          "12": [
+            0,
+            3001
+          ],
+          "14": [
+            0,
+            2662
+          ],
+          "9": [
+            0,
+            2482
+          ]
+        },
+        "2026-05-05": {
+          "9": [
+            0,
+            3040
+          ],
+          "10": [
+            0,
+            973
+          ]
+        },
+        "2026-05-06": {
+          "10": [
+            0,
+            1622
+          ],
+          "14": [
+            0,
+            189
+          ],
+          "9": [
+            37,
+            1115
+          ],
+          "11": [
+            0,
+            10
+          ],
+          "13": [
+            0,
+            1643
+          ]
+        },
+        "2026-05-07": {
+          "17": [
+            13,
+            13
+          ],
+          "12": [
+            0,
+            157
+          ],
+          "16": [
+            2429,
+            2429
+          ],
+          "9": [
+            0,
+            2953
+          ],
+          "11": [
+            0,
+            300
+          ]
+        },
+        "2026-05-08": {
+          "9": [
+            124,
+            124
+          ],
+          "8": [
+            1393,
+            1393
+          ]
+        },
+        "2026-05-11": {
+          "8": [
+            1659,
+            1659
+          ],
+          "10": [
+            3553,
+            3553
+          ],
+          "12": [
+            3002,
+            3002
+          ],
+          "16": [
+            17,
+            17
+          ],
+          "9": [
+            2026,
+            2026
+          ],
+          "11": [
+            1816,
+            1816
+          ],
+          "13": [
+            1075,
+            1075
+          ]
+        },
+        "2026-05-12": {
+          "8": [
+            4,
+            4
+          ],
+          "10": [
+            2762,
+            2762
+          ],
+          "12": [
+            1301,
+            1301
+          ],
+          "9": [
+            1874,
+            1874
+          ],
+          "11": [
+            1611,
+            1611
+          ]
+        },
+        "2026-05-13": {
+          "16": [
+            1261,
+            1261
+          ],
+          "9": [
+            2935,
+            2935
+          ],
+          "15": [
+            1128,
+            1128
+          ],
+          "10": [
+            1392,
+            1392
+          ]
+        },
+        "2026-05-14": {
+          "10": [
+            2338,
+            2338
+          ],
+          "9": [
+            2395,
+            2395
+          ]
+        },
+        "2026-05-15": {
+          "8": [
+            521,
+            521
+          ],
+          "9": [
+            73,
+            73
+          ],
+          "11": [
+            3084,
+            3084
+          ]
+        },
+        "2026-05-18": {
+          "14": [
+            3522,
+            3522
+          ],
+          "16": [
+            904,
+            904
+          ],
+          "13": [
+            2494,
+            2494
+          ],
+          "15": [
+            3535,
+            3535
+          ]
+        },
+        "2026-05-19": {
+          "11": [
+            297,
+            297
+          ],
+          "8": [
+            1218,
+            1218
+          ],
+          "12": [
+            698,
+            698
+          ]
+        },
+        "2026-05-20": {
+          "8": [
+            1142,
+            1142
+          ],
+          "9": [
+            902,
+            902
+          ]
+        },
+        "2026-05-21": {
+          "8": [
+            1220,
+            1220
+          ],
+          "14": [
+            76,
+            76
+          ]
+        },
+        "2026-05-22": {
+          "13": [
+            3173,
+            3173
+          ],
+          "15": [
+            127,
+            127
+          ],
+          "17": [
+            2614,
+            2614
+          ],
+          "10": [
+            3344,
+            3344
+          ],
+          "12": [
+            3389,
+            3389
+          ],
+          "14": [
+            3013,
+            3014
+          ],
+          "16": [
+            1920,
+            1920
+          ],
+          "9": [
+            1749,
+            1751
+          ],
+          "11": [
+            2791,
+            2791
+          ]
+        },
+        "2026-05-26": {
+          "15": [
+            759,
+            759
+          ],
+          "17": [
+            3451,
+            3451
+          ],
+          "12": [
+            345,
+            347
+          ],
+          "14": [
+            2493,
+            2493
+          ],
+          "16": [
+            3219,
+            3221
+          ],
+          "11": [
+            1549,
+            1552
+          ],
+          "13": [
+            1573,
+            1579
+          ]
+        },
+        "2026-05-27": {
+          "13": [
+            3309,
+            3311
+          ],
+          "15": [
+            1702,
+            1702
+          ],
+          "8": [
+            336,
+            336
+          ],
+          "17": [
+            659,
+            659
+          ],
+          "10": [
+            3287,
+            3287
+          ],
+          "12": [
+            1947,
+            1947
+          ],
+          "14": [
+            2914,
+            2914
+          ],
+          "16": [
+            3500,
+            3500
+          ],
+          "9": [
+            2363,
+            2363
+          ],
+          "11": [
+            2945,
+            2945
+          ]
+        },
+        "2026-05-28": {
+          "14": [
+            1394,
+            1394
+          ],
+          "16": [
+            812,
+            812
+          ],
+          "9": [
+            602,
+            602
+          ],
+          "11": [
+            3117,
+            3117
+          ],
+          "13": [
+            3347,
+            3347
+          ],
+          "15": [
+            1017,
+            1017
+          ],
+          "8": [
+            2059,
+            2059
+          ],
+          "17": [
+            581,
+            581
+          ],
+          "10": [
+            2519,
+            2519
+          ],
+          "12": [
+            3034,
+            3034
+          ]
+        },
+        "2026-05-29": {
+          "16": [
+            2867,
+            2867
+          ],
+          "13": [
+            1946,
+            1946
+          ],
+          "15": [
+            2926,
+            2926
+          ],
+          "8": [
+            824,
+            824
+          ],
+          "17": [
+            1506,
+            1508
+          ],
+          "10": [
+            2064,
+            2064
+          ],
+          "14": [
+            3402,
+            3402
+          ],
+          "9": [
+            1632,
+            1632
+          ]
+        },
+        "2026-06-01": {
+          "15": [
+            2494,
+            2494
+          ],
+          "10": [
+            3081,
+            3081
+          ],
+          "12": [
+            3126,
+            3126
+          ],
+          "14": [
+            171,
+            171
+          ],
+          "11": [
+            3409,
+            3409
+          ],
+          "13": [
+            3153,
+            3153
+          ]
+        },
+        "2026-06-02": {
+          "9": [
+            1917,
+            1917
+          ],
+          "11": [
+            1998,
+            1998
+          ],
+          "13": [
+            1880,
+            1880
+          ],
+          "15": [
+            3265,
+            3265
+          ],
+          "10": [
+            3244,
+            3244
+          ],
+          "12": [
+            683,
+            683
+          ],
+          "14": [
+            3160,
+            3160
+          ]
+        },
+        "2026-06-03": {
+          "15": [
+            794,
+            794
+          ],
+          "10": [
+            3020,
+            3020
+          ],
+          "12": [
+            196,
+            196
+          ],
+          "9": [
+            2275,
+            2275
+          ],
+          "11": [
+            2647,
+            2647
+          ],
+          "13": [
+            543,
+            543
+          ]
+        },
+        "2026-06-04": {
+          "9": [
+            1367,
+            1367
+          ],
+          "11": [
+            1620,
+            1620
+          ],
+          "10": [
+            3377,
+            3377
+          ]
+        },
+        "2026-06-05": {
+          "13": [
+            17,
+            17
+          ],
+          "8": [
+            1075,
+            1075
+          ],
+          "10": [
+            978,
+            978
+          ],
+          "9": [
+            3261,
+            3261
+          ]
+        }
+      },
+      "gen2-013": {
+        "2026-04-27": {
+          "20": [
+            0,
+            3066
+          ],
+          "13": [
+            0,
+            3325
+          ],
+          "22": [
+            0,
+            3147
+          ],
+          "15": [
+            0,
+            3005
+          ],
+          "17": [
+            0,
+            3236
+          ],
+          "10": [
+            0,
+            3258
+          ],
+          "19": [
+            0,
+            1380
+          ],
+          "12": [
+            246,
+            2742
+          ],
+          "21": [
+            0,
+            3216
+          ],
+          "14": [
+            0,
+            3266
+          ],
+          "23": [
+            0,
+            3533
+          ],
+          "16": [
+            0,
+            3183
+          ],
+          "9": [
+            0,
+            2517
+          ],
+          "11": [
+            0,
+            2948
+          ]
+        },
+        "2026-04-28": {
+          "14": [
+            0,
+            2656
+          ],
+          "23": [
+            0,
+            3452
+          ],
+          "16": [
+            0,
+            2924
+          ],
+          "0": [
+            0,
+            3285
+          ],
+          "9": [
+            0,
+            2301
+          ],
+          "18": [
+            0,
+            1906
+          ],
+          "11": [
+            0,
+            3476
+          ],
+          "20": [
+            0,
+            671
+          ],
+          "13": [
+            0,
+            3095
+          ],
+          "22": [
+            0,
+            2962
+          ],
+          "15": [
+            0,
+            2905
+          ],
+          "17": [
+            0,
+            2739
+          ],
+          "10": [
+            0,
+            2674
+          ],
+          "19": [
+            0,
+            2758
+          ],
+          "12": [
+            0,
+            3266
+          ],
+          "21": [
+            0,
+            2999
+          ]
+        },
+        "2026-04-29": {
+          "10": [
+            0,
+            2785
+          ],
+          "12": [
+            0,
+            3181
+          ],
+          "14": [
+            0,
+            3318
+          ],
+          "16": [
+            0,
+            2871
+          ],
+          "0": [
+            0,
+            3042
+          ],
+          "9": [
+            0,
+            1945
+          ],
+          "11": [
+            0,
+            3513
+          ],
+          "13": [
+            0,
+            1279
+          ],
+          "15": [
+            0,
+            3082
+          ],
+          "8": [
+            0,
+            0
+          ],
+          "17": [
+            0,
+            2253
+          ]
+        },
+        "2026-04-30": {
+          "13": [
+            0,
+            1656
+          ],
+          "22": [
+            660,
+            3191
+          ],
+          "15": [
+            0,
+            3245
+          ],
+          "17": [
+            0,
+            3348
+          ],
+          "10": [
+            14,
+            1898
+          ],
+          "19": [
+            0,
+            2884
+          ],
+          "12": [
+            17,
+            2780
+          ],
+          "21": [
+            1,
+            2567
+          ],
+          "14": [
+            0,
+            1623
+          ],
+          "23": [
+            0,
+            2907
+          ],
+          "16": [
+            0,
+            3096
+          ],
+          "9": [
+            0,
+            2437
+          ],
+          "18": [
+            0,
+            2296
+          ],
+          "11": [
+            0,
+            3163
+          ],
+          "20": [
+            0,
+            3378
+          ]
+        },
+        "2026-05-01": {
+          "17": [
+            0,
+            1713
+          ],
+          "10": [
+            0,
+            3474
+          ],
+          "12": [
+            0,
+            3514
+          ],
+          "14": [
+            0,
+            3350
+          ],
+          "16": [
+            0,
+            3307
+          ],
+          "0": [
+            0,
+            1311
+          ],
+          "9": [
+            0,
+            764
+          ],
+          "18": [
+            0,
+            456
+          ],
+          "11": [
+            0,
+            3560
+          ],
+          "13": [
+            0,
+            3030
+          ],
+          "15": [
+            0,
+            3026
+          ]
+        },
+        "2026-05-02": {
+          "0": [
+            0,
+            13
+          ]
+        },
+        "2026-05-04": {
+          "18": [
+            0,
+            1837
+          ],
+          "11": [
+            0,
+            2516
+          ],
+          "20": [
+            0,
+            2819
+          ],
+          "13": [
+            0,
+            2918
+          ],
+          "22": [
+            0,
+            3129
+          ],
+          "15": [
+            0,
+            249
+          ],
+          "17": [
+            0,
+            3510
+          ],
+          "10": [
+            0,
+            3376
+          ],
+          "19": [
+            0,
+            3544
+          ],
+          "12": [
+            0,
+            3587
+          ],
+          "21": [
+            0,
+            2464
+          ],
+          "14": [
+            0,
+            2313
+          ],
+          "23": [
+            0,
+            2899
+          ],
+          "16": [
+            0,
+            2229
+          ],
+          "9": [
+            0,
+            2389
+          ]
+        },
+        "2026-05-05": {
+          "21": [
+            384,
+            1419
+          ],
+          "14": [
+            0,
+            3423
+          ],
+          "23": [
+            0,
+            3419
+          ],
+          "16": [
+            731,
+            2551
+          ],
+          "0": [
+            0,
+            1697
+          ],
+          "9": [
+            0,
+            2313
+          ],
+          "18": [
+            0,
+            2840
+          ],
+          "11": [
+            0,
+            1757
+          ],
+          "20": [
+            0,
+            2939
+          ],
+          "13": [
+            0,
+            3128
+          ],
+          "22": [
+            0,
+            3418
+          ],
+          "15": [
+            0,
+            3301
+          ],
+          "17": [
+            0,
+            3327
+          ],
+          "10": [
+            0,
+            1771
+          ],
+          "19": [
+            11,
+            2986
+          ],
+          "12": [
+            0,
+            3364
+          ]
+        },
+        "2026-05-06": {
+          "10": [
+            0,
+            3485
+          ],
+          "12": [
+            0,
+            2917
+          ],
+          "14": [
+            0,
+            3301
+          ],
+          "16": [
+            0,
+            1623
+          ],
+          "0": [
+            0,
+            2807
+          ],
+          "9": [
+            0,
+            2945
+          ],
+          "11": [
+            180,
+            2520
+          ],
+          "13": [
+            0,
+            3403
+          ],
+          "15": [
+            0,
+            3333
+          ]
+        },
+        "2026-05-07": {
+          "13": [
+            133,
+            178
+          ]
+        },
+        "2026-05-08": {
+          "15": [
+            1757,
+            1757
+          ],
+          "14": [
+            548,
+            548
+          ],
+          "16": [
+            2548,
+            2548
+          ]
+        },
+        "2026-05-11": {
+          "15": [
+            2747,
+            2747
+          ],
+          "10": [
+            1749,
+            1749
+          ],
+          "12": [
+            955,
+            955
+          ],
+          "14": [
+            3344,
+            3344
+          ],
+          "9": [
+            358,
+            358
+          ],
+          "11": [
+            2810,
+            2810
+          ],
+          "13": [
+            941,
+            941
+          ]
+        },
+        "2026-05-12": {
+          "13": [
+            1567,
+            1567
+          ],
+          "15": [
+            0,
+            0
+          ],
+          "17": [
+            0,
+            0
+          ],
+          "10": [
+            97,
+            97
+          ],
+          "12": [
+            1001,
+            1001
+          ],
+          "14": [
+            0,
+            0
+          ],
+          "16": [
+            0,
+            0
+          ],
+          "11": [
+            3283,
+            3283
+          ]
+        },
+        "2026-05-13": {
+          "11": [
+            2638,
+            2638
+          ],
+          "13": [
+            1580,
+            1580
+          ],
+          "15": [
+            3025,
+            3025
+          ],
+          "10": [
+            952,
+            952
+          ],
+          "12": [
+            2257,
+            2257
+          ],
+          "14": [
+            3449,
+            3449
+          ]
+        },
+        "2026-05-14": {
+          "11": [
+            3570,
+            3570
+          ],
+          "13": [
+            3435,
+            3435
+          ],
+          "15": [
+            1778,
+            1778
+          ],
+          "10": [
+            1515,
+            1515
+          ],
+          "12": [
+            3364,
+            3364
+          ],
+          "14": [
+            3387,
+            3387
+          ]
+        },
+        "2026-05-15": {
+          "10": [
+            2942,
+            2942
+          ],
+          "12": [
+            3366,
+            3366
+          ],
+          "14": [
+            2709,
+            2709
+          ],
+          "16": [
+            11,
+            11
+          ],
+          "9": [
+            708,
+            708
+          ],
+          "11": [
+            2535,
+            2535
+          ],
+          "13": [
+            3072,
+            3072
+          ]
+        },
+        "2026-05-18": {
+          "14": [
+            2632,
+            2632
+          ],
+          "16": [
+            1077,
+            1077
+          ],
+          "9": [
+            427,
+            427
+          ],
+          "11": [
+            3368,
+            3368
+          ],
+          "13": [
+            2977,
+            2977
+          ],
+          "15": [
+            3367,
+            3367
+          ],
+          "10": [
+            2807,
+            2807
+          ],
+          "12": [
+            3556,
+            3556
+          ]
+        },
+        "2026-05-19": {
+          "14": [
+            1576,
+            1576
+          ],
+          "11": [
+            3395,
+            3395
+          ],
+          "13": [
+            3399,
+            3399
+          ],
+          "10": [
+            2234,
+            2234
+          ],
+          "12": [
+            3372,
+            3372
+          ]
+        },
+        "2026-05-20": {
+          "10": [
+            3503,
+            3503
+          ],
+          "12": [
+            3285,
+            3285
+          ],
+          "14": [
+            3009,
+            3009
+          ],
+          "9": [
+            842,
+            842
+          ],
+          "11": [
+            3355,
+            3355
+          ],
+          "13": [
+            3558,
+            3558
+          ]
+        },
+        "2026-05-21": {
+          "9": [
+            2834,
+            2834
+          ],
+          "11": [
+            3516,
+            3516
+          ],
+          "18": [
+            0,
+            0
+          ],
+          "20": [
+            0,
+            0
+          ],
+          "13": [
+            2441,
+            2441
+          ],
+          "15": [
+            2127,
+            2127
+          ],
+          "17": [
+            1,
+            1
+          ],
+          "10": [
+            3551,
+            3551
+          ],
+          "19": [
+            0,
+            0
+          ],
+          "12": [
+            2430,
+            2430
+          ],
+          "21": [
+            0,
+            0
+          ],
+          "14": [
+            2777,
+            2777
+          ],
+          "16": [
+            1360,
+            1360
+          ]
+        },
+        "2026-05-22": {
+          "13": [
+            0,
+            0
+          ],
+          "10": [
+            0,
+            0
+          ],
+          "12": [
+            0,
+            0
+          ],
+          "14": [
+            0,
+            0
+          ],
+          "16": [
+            37,
+            37
+          ],
+          "11": [
+            0,
+            0
+          ]
+        },
+        "2026-05-27": {
+          "10": [
+            180,
+            180
+          ],
+          "9": [
+            4,
+            4
+          ],
+          "11": [
+            23,
+            23
+          ]
+        },
+        "2026-05-28": {
+          "16": [
+            33,
+            33
+          ],
+          "17": [
+            36,
+            36
+          ]
+        },
+        "2026-06-01": {
+          "15": [
+            1495,
+            1495
+          ],
+          "17": [
+            0,
+            0
+          ],
+          "10": [
+            3054,
+            3054
+          ],
+          "19": [
+            0,
+            0
+          ],
+          "12": [
+            22,
+            22
+          ],
+          "14": [
+            3276,
+            3276
+          ],
+          "16": [
+            1274,
+            1274
+          ],
+          "9": [
+            1057,
+            1057
+          ],
+          "18": [
+            0,
+            0
+          ],
+          "11": [
+            1230,
+            1230
+          ],
+          "20": [
+            0,
+            0
+          ],
+          "13": [
+            2997,
+            2997
+          ]
+        },
+        "2026-06-02": {
+          "16": [
+            3586,
+            3586
+          ],
+          "18": [
+            660,
+            660
+          ],
+          "11": [
+            0,
+            0
+          ],
+          "13": [
+            3531,
+            3531
+          ],
+          "15": [
+            2963,
+            2963
+          ],
+          "17": [
+            2858,
+            2858
+          ],
+          "10": [
+            0,
+            0
+          ],
+          "12": [
+            3333,
+            3333
+          ],
+          "14": [
+            3215,
+            3215
+          ]
+        },
+        "2026-06-03": {
+          "15": [
+            3356,
+            3356
+          ],
+          "17": [
+            3159,
+            3159
+          ],
+          "10": [
+            2132,
+            2132
+          ],
+          "12": [
+            2679,
+            2679
+          ],
+          "14": [
+            2778,
+            2778
+          ],
+          "16": [
+            2450,
+            2450
+          ],
+          "9": [
+            2066,
+            2066
+          ],
+          "11": [
+            2845,
+            2845
+          ],
+          "13": [
+            2678,
+            2678
+          ]
+        },
+        "2026-06-04": {
+          "14": [
+            802,
+            802
+          ],
+          "16": [
+            3388,
+            3388
+          ],
+          "9": [
+            3352,
+            3352
+          ],
+          "11": [
+            3591,
+            3591
+          ],
+          "13": [
+            1998,
+            1998
+          ],
+          "15": [
+            3133,
+            3133
+          ],
+          "8": [
+            2448,
+            2448
+          ],
+          "17": [
+            2476,
+            2476
+          ],
+          "10": [
+            3556,
+            3556
+          ],
+          "12": [
+            3271,
+            3271
+          ]
+        },
+        "2026-06-05": {
+          "16": [
+            2816,
+            2816
+          ],
+          "11": [
+            3541,
+            3541
+          ],
+          "13": [
+            3456,
+            3456
+          ],
+          "15": [
+            1495,
+            1495
+          ],
+          "8": [
+            112,
+            112
+          ],
+          "10": [
+            2915,
+            2915
+          ],
+          "12": [
+            3271,
+            3271
+          ],
+          "14": [
+            1779,
+            1779
+          ],
+          "9": [
+            10,
+            10
+          ]
+        }
+      }
+    },
+    "faultBuckets": {
+      "gen2-005": {
+        "2026-04-27": {
+          "17": {
+            "right_gripper_not_working": 38
+          }
+        },
+        "2026-05-08": {
+          "12": {
+            "head_cam_out": 36
+          },
+          "16": {
+            "left_arm_frozen": 628
+          }
+        },
+        "2026-05-11": {
+          "11": {
+            "head_cam_out": 38
+          }
+        },
+        "2026-05-12": {
+          "14": {
+            "left_gripper_not_working": 35
+          },
+          "13": {
+            "left_gripper_not_working": 100,
+            "other_robot_issue": 93
+          }
+        },
+        "2026-05-13": {
+          "17": {
+            "other_robot_issue": 263
+          }
+        },
+        "2026-05-14": {
+          "16": {
+            "right_arm_frozen": 1039
+          }
+        },
+        "2026-05-15": {
+          "17": {
+            "head_cam_out": 40
+          }
+        },
+        "2026-05-18": {
+          "23": {
+            "right_arm_frozen": 86
+          },
+          "22": {
+            "chest_frozen": 113
+          },
+          "17": {
+            "head_cam_out": 34
+          },
+          "20": {
+            "left_arm_frozen": 36
+          },
+          "15": {
+            "right_arm_frozen": 35,
+            "head_cam_out": 40
+          }
+        },
+        "2026-05-19": {
+          "0": {
+            "right_arm_frozen": 177
+          },
+          "22": {
+            "other_robot_issue": 20
+          }
+        },
+        "2026-05-20": {
+          "0": {
+            "other_robot_issue": 174
+          }
+        },
+        "2026-05-21": {
+          "18": {
+            "left_arm_frozen": 38,
+            "left_gripper_not_working": 36
+          },
+          "13": {
+            "left_arm_frozen": 26,
+            "head_cam_out": 36,
+            "left_gripper_not_working": 37
+          },
+          "22": {
+            "head_cam_out": 69
+          },
+          "21": {
+            "right_arm_frozen": 40
+          },
+          "23": {
+            "right_arm_frozen": 38
+          }
+        },
+        "2026-05-22": {
+          "13": {
+            "right_arm_frozen": 35,
+            "head_cam_out": 73,
+            "left_gripper_not_working": 35
+          },
+          "19": {
+            "right_arm_frozen": 40
+          },
+          "23": {
+            "right_arm_frozen": 161
+          },
+          "9": {
+            "head_cam_out": 35
+          }
+        },
+        "2026-05-23": {
+          "4": {
+            "right_arm_frozen": 521
+          },
+          "3": {
+            "right_arm_frozen": 3600
+          },
+          "2": {
+            "right_arm_frozen": 3600
+          },
+          "1": {
+            "right_arm_frozen": 3600
+          },
+          "0": {
+            "right_arm_frozen": 3292
+          }
+        },
+        "2026-05-26": {
+          "10": {
+            "right_arm_frozen": 3600
+          },
+          "9": {
+            "right_arm_frozen": 2436
+          },
+          "13": {
+            "right_arm_frozen": 1164
+          },
+          "12": {
+            "right_arm_frozen": 3600
+          },
+          "11": {
+            "right_arm_frozen": 3600
+          }
+        },
+        "2026-05-27": {
+          "19": {
+            "right_arm_frozen": 37,
+            "left_gripper_not_working": 38
+          }
+        },
+        "2026-05-28": {
+          "19": {
+            "left_arm_frozen": 38
+          }
+        },
+        "2026-05-29": {
+          "23": {
+            "right_arm_frozen": 352
+          },
+          "18": {
+            "right_arm_frozen": 725
+          },
+          "13": {
+            "neck_frozen": 42
+          },
+          "17": {
+            "right_arm_frozen": 3600
+          },
+          "16": {
+            "right_arm_frozen": 3600
+          },
+          "11": {
+            "neck_frozen": 88
+          },
+          "15": {
+            "right_arm_frozen": 2170
+          },
+          "0": {
+            "right_arm_frozen": 35,
+            "chest_frozen": 77
+          }
+        },
+        "2026-05-30": {
+          "0": {
+            "right_arm_frozen": 628
+          }
+        },
+        "2026-06-01": {
+          "22": {
+            "chest_frozen": 40
+          },
+          "12": {
+            "right_arm_frozen": 75
+          },
+          "11": {
+            "right_arm_frozen": 188,
+            "left_arm_frozen": 1133,
+            "neck_frozen": 88
+          },
+          "10": {
+            "right_arm_frozen": 45
+          },
+          "9": {
+            "right_arm_frozen": 82
+          },
+          "8": {
+            "head_cam_out": 39
+          }
+        },
+        "2026-06-02": {
+          "22": {
+            "right_arm_frozen": 32
+          },
+          "21": {
+            "chest_frozen": 37
+          },
+          "20": {
+            "right_arm_frozen": 42
+          },
+          "0": {
+            "right_arm_frozen": 46
+          }
+        },
+        "2026-06-03": {
+          "10": {
+            "right_arm_frozen": 1121,
+            "left_arm_frozen": 2317,
+            "head_cam_out": 24
+          },
+          "9": {
+            "right_arm_frozen": 559,
+            "left_arm_frozen": 218,
+            "head_cam_out": 927
+          },
+          "13": {
+            "right_arm_frozen": 1281,
+            "left_arm_frozen": 5
+          },
+          "12": {
+            "right_arm_frozen": 2128,
+            "left_arm_frozen": 1472
+          },
+          "11": {
+            "left_arm_frozen": 1557
+          }
+        },
+        "2026-06-04": {
+          "16": {
+            "right_arm_frozen": 41
+          },
+          "19": {
+            "right_arm_frozen": 82
+          },
+          "0": {
+            "right_arm_frozen": 39
+          }
+        },
+        "2026-06-05": {
+          "13": {
+            "right_arm_frozen": 641,
+            "neck_frozen": 44
+          },
+          "12": {
+            "right_arm_frozen": 98,
+            "neck_frozen": 43
+          },
+          "10": {
+            "neck_frozen": 43
+          },
+          "19": {
+            "right_arm_frozen": 180
+          },
+          "0": {
+            "right_arm_frozen": 75
+          }
+        }
+      },
+      "gen2-109": {
+        "2026-05-11": {
+          "15": {
+            "right_arm_frozen": 348
+          }
+        },
+        "2026-05-12": {
+          "13": {
+            "head_cam_out": 114,
+            "other_robot_issue": 2823
+          },
+          "14": {
+            "other_robot_issue": 14
+          }
+        },
+        "2026-05-13": {
+          "7": {
+            "head_cam_out": 36
+          }
+        },
+        "2026-05-14": {
+          "8": {
+            "head_cam_out": 70
+          }
+        },
+        "2026-05-15": {
+          "10": {
+            "left_arm_frozen": 37
+          }
+        },
+        "2026-05-19": {
+          "23": {
+            "other_robot_issue": 165
+          },
+          "16": {
+            "right_arm_frozen": 39,
+            "left_gripper_not_working": 36
+          },
+          "18": {
+            "head_cam_out": 45
+          },
+          "17": {
+            "left_arm_frozen": 42
+          }
+        },
+        "2026-05-20": {
+          "14": {
+            "left_arm_frozen": 87
+          },
+          "0": {
+            "head_cam_out": 37
+          }
+        },
+        "2026-05-21": {
+          "20": {
+            "chest_frozen": 35
+          },
+          "13": {
+            "head_cam_out": 36
+          },
+          "22": {
+            "head_cam_out": 72
+          },
+          "14": {
+            "head_cam_out": 39
+          }
+        },
+        "2026-05-22": {
+          "20": {
+            "left_arm_frozen": 74
+          },
+          "8": {
+            "head_cam_out": 118
+          },
+          "19": {
+            "left_arm_frozen": 126
+          },
+          "23": {
+            "other_robot_issue": 269
+          },
+          "9": {
+            "head_cam_out": 40
+          },
+          "18": {
+            "left_arm_frozen": 37
+          }
+        },
+        "2026-05-26": {
+          "15": {
+            "right_arm_frozen": 3600
+          },
+          "17": {
+            "right_arm_frozen": 81,
+            "other_robot_issue": 278
+          },
+          "21": {
+            "right_arm_frozen": 275
+          },
+          "14": {
+            "right_arm_frozen": 1327
+          },
+          "16": {
+            "right_arm_frozen": 1311
+          }
+        },
+        "2026-05-27": {
+          "17": {
+            "left_arm_frozen": 1356
+          },
+          "16": {
+            "right_arm_frozen": 73
+          }
+        },
+        "2026-05-28": {
+          "20": {
+            "chest_frozen": 36
+          },
+          "19": {
+            "left_arm_frozen": 86
+          }
+        },
+        "2026-05-29": {
+          "18": {
+            "right_arm_frozen": 113,
+            "left_arm_frozen": 37
+          },
+          "0": {
+            "right_arm_frozen": 157
+          },
+          "9": {
+            "right_arm_frozen": 219
+          }
+        },
+        "2026-06-01": {
+          "22": {
+            "right_arm_frozen": 187
+          },
+          "10": {
+            "right_arm_frozen": 478,
+            "head_cam_out": 285
+          },
+          "12": {
+            "right_arm_frozen": 2293
+          },
+          "14": {
+            "right_arm_frozen": 570
+          },
+          "16": {
+            "head_cam_out": 37
+          },
+          "9": {
+            "left_gripper_not_working": 40
+          },
+          "11": {
+            "right_arm_frozen": 326
+          }
+        },
+        "2026-06-02": {
+          "16": {
+            "right_arm_frozen": 294
+          },
+          "18": {
+            "right_arm_frozen": 59
+          },
+          "11": {
+            "head_cam_out": 39
+          },
+          "22": {
+            "right_arm_frozen": 35,
+            "left_arm_frozen": 181
+          },
+          "17": {
+            "right_arm_frozen": 124,
+            "chest_frozen": 78
+          },
+          "19": {
+            "head_cam_out": 34
+          },
+          "21": {
+            "left_gripper_not_working": 39
+          }
+        },
+        "2026-06-03": {
+          "15": {
+            "right_arm_frozen": 3600
+          },
+          "17": {
+            "right_arm_frozen": 3580
+          },
+          "10": {
+            "left_arm_frozen": 40
+          },
+          "12": {
+            "right_arm_frozen": 724,
+            "other_robot_issue": 1701
+          },
+          "14": {
+            "right_arm_frozen": 3600
+          },
+          "16": {
+            "right_arm_frozen": 3600
+          },
+          "11": {
+            "right_arm_frozen": 76,
+            "left_arm_frozen": 77,
+            "other_robot_issue": 1829
+          },
+          "20": {
+            "right_arm_frozen": 38,
+            "chest_frozen": 38
+          },
+          "13": {
+            "right_arm_frozen": 574
+          }
+        },
+        "2026-06-05": {
+          "16": {
+            "right_arm_frozen": 348,
+            "head_cam_out": 40
+          },
+          "15": {
+            "right_arm_frozen": 103
+          },
+          "14": {
+            "right_arm_frozen": 40
+          },
+          "0": {
+            "left_arm_frozen": 86
+          },
+          "9": {
+            "right_arm_frozen": 37
+          }
+        }
+      },
+      "gen2-007": {
+        "2026-04-28": {
+          "17": {
+            "other_robot_issue": 264
+          }
+        },
+        "2026-05-04": {
+          "16": {
+            "right_gripper_not_working": 39
+          },
+          "15": {
+            "right_gripper_not_working": 219
+          }
+        },
+        "2026-05-05": {
+          "10": {
+            "left_arm_frozen": 38
+          }
+        },
+        "2026-05-06": {
+          "11": {
+            "left_arm_frozen": 66
+          }
+        },
+        "2026-05-07": {
+          "15": {
+            "left_gripper_not_working": 37
+          },
+          "10": {
+            "right_arm_frozen": 624
+          },
+          "18": {
+            "left_gripper_not_working": 36
+          },
+          "16": {
+            "other_robot_issue": 1654
+          }
+        },
+        "2026-05-08": {
+          "14": {
+            "head_cam_out": 48
+          },
+          "0": {
+            "other_robot_issue": 304
+          }
+        },
+        "2026-05-11": {
+          "11": {
+            "left_gripper_not_working": 38,
+            "other_robot_issue": 230
+          },
+          "9": {
+            "head_cam_out": 106
+          }
+        },
+        "2026-05-12": {
+          "14": {
+            "left_gripper_not_working": 38
+          },
+          "13": {
+            "left_gripper_not_working": 32
+          }
+        },
+        "2026-05-14": {
+          "20": {
+            "right_arm_frozen": 37
+          },
+          "0": {
+            "left_arm_frozen": 87
+          }
+        },
+        "2026-05-15": {
+          "16": {
+            "left_gripper_not_working": 37
+          }
+        },
+        "2026-05-18": {
+          "18": {
+            "head_cam_out": 36
+          },
+          "13": {
+            "head_cam_out": 40
+          },
+          "8": {
+            "head_cam_out": 729
+          },
+          "12": {
+            "head_cam_out": 37
+          },
+          "21": {
+            "right_arm_frozen": 89
+          },
+          "19": {
+            "chest_frozen": 40
+          }
+        },
+        "2026-05-19": {
+          "14": {
+            "right_arm_frozen": 72,
+            "left_arm_frozen": 15
+          },
+          "13": {
+            "head_cam_out": 43
+          },
+          "12": {
+            "left_arm_frozen": 36,
+            "left_gripper_not_working": 33
+          },
+          "16": {
+            "right_arm_frozen": 188
+          }
+        },
+        "2026-05-20": {
+          "19": {
+            "other_robot_issue": 186
+          },
+          "18": {
+            "head_cam_out": 34,
+            "neck_frozen": 43
+          },
+          "13": {
+            "head_cam_out": 65
+          }
+        },
+        "2026-05-21": {
+          "0": {
+            "head_cam_out": 36
+          },
+          "22": {
+            "head_cam_out": 36
+          },
+          "8": {
+            "head_cam_out": 37
+          },
+          "21": {
+            "chest_frozen": 38
+          },
+          "16": {
+            "right_gripper_not_working": 38
+          },
+          "20": {
+            "right_arm_frozen": 388,
+            "head_cam_out": 58
+          },
+          "15": {
+            "left_arm_frozen": 43
+          },
+          "19": {
+            "right_arm_frozen": 135,
+            "left_arm_frozen": 5,
+            "chest_frozen": 175
+          },
+          "23": {
+            "chest_frozen": 37
+          }
+        },
+        "2026-05-22": {
+          "22": {
+            "other_robot_issue": 90
+          },
+          "9": {
+            "head_cam_out": 111
+          }
+        },
+        "2026-05-26": {
+          "10": {
+            "right_arm_frozen": 2047,
+            "other_robot_issue": 149
+          },
+          "14": {
+            "left_gripper_not_working": 70
+          },
+          "13": {
+            "head_cam_out": 37
+          },
+          "21": {
+            "right_arm_frozen": 48,
+            "left_arm_frozen": 35
+          },
+          "20": {
+            "left_gripper_not_working": 38
+          }
+        },
+        "2026-05-27": {
+          "18": {
+            "head_cam_out": 40
+          }
+        },
+        "2026-05-28": {
+          "16": {
+            "right_arm_frozen": 38
+          },
+          "11": {
+            "head_cam_out": 34
+          },
+          "19": {
+            "right_gripper_not_working": 34
+          }
+        },
+        "2026-05-29": {
+          "23": {
+            "left_arm_frozen": 38
+          },
+          "22": {
+            "left_arm_frozen": 808
+          },
+          "16": {
+            "right_arm_frozen": 1575,
+            "left_arm_frozen": 1
+          },
+          "20": {
+            "chest_frozen": 39
+          },
+          "0": {
+            "other_robot_issue": 175
+          }
+        },
+        "2026-05-30": {
+          "0": {
+            "right_gripper_not_working": 37
+          }
+        },
+        "2026-05-31": {
+          "16": {
+            "chest_frozen": 38
+          }
+        },
+        "2026-06-01": {
+          "22": {
+            "right_arm_frozen": 229
+          },
+          "23": {
+            "left_arm_frozen": 2006
+          },
+          "18": {
+            "other_robot_issue": 161
+          }
+        },
+        "2026-06-02": {
+          "18": {
+            "head_cam_out": 40
+          },
+          "3": {
+            "left_arm_frozen": 1594
+          },
+          "2": {
+            "left_arm_frozen": 3600
+          },
+          "11": {
+            "left_arm_frozen": 1745
+          },
+          "1": {
+            "left_arm_frozen": 3600
+          },
+          "10": {
+            "left_arm_frozen": 1830
+          },
+          "0": {
+            "left_arm_frozen": 3600
+          }
+        },
+        "2026-06-04": {
+          "19": {
+            "head_cam_out": 34
+          }
+        },
+        "2026-06-05": {
+          "0": {
+            "right_arm_frozen": 799
+          }
+        }
+      },
+      "gen2-110": {
+        "2026-05-14": {
+          "20": {
+            "chest_frozen": 39
+          },
+          "16": {
+            "neck_frozen": 47
+          },
+          "9": {
+            "chest_frozen": 54
+          }
+        },
+        "2026-05-15": {
+          "15": {
+            "other_robot_issue": 3600
+          },
+          "17": {
+            "other_robot_issue": 907
+          },
+          "10": {
+            "chest_frozen": 39
+          },
+          "14": {
+            "other_robot_issue": 3600
+          },
+          "16": {
+            "other_robot_issue": 3600
+          },
+          "9": {
+            "chest_frozen": 113,
+            "neck_frozen": 46
+          },
+          "11": {
+            "chest_frozen": 36
+          },
+          "13": {
+            "other_robot_issue": 2693
+          }
+        },
+        "2026-05-18": {
+          "23": {
+            "chest_frozen": 164,
+            "other_robot_issue": 821
+          },
+          "9": {
+            "head_cam_out": 71
+          },
+          "22": {
+            "right_arm_frozen": 39,
+            "other_robot_issue": 302
+          },
+          "15": {
+            "chest_frozen": 40
+          },
+          "19": {
+            "other_robot_issue": 88
+          }
+        },
+        "2026-05-19": {
+          "23": {
+            "right_arm_frozen": 327
+          },
+          "16": {
+            "other_robot_issue": 589
+          },
+          "22": {
+            "right_arm_frozen": 453,
+            "other_robot_issue": 43
+          },
+          "15": {
+            "chest_frozen": 38,
+            "other_robot_issue": 99
+          }
+        },
+        "2026-05-20": {
+          "19": {
+            "other_robot_issue": 889
+          },
+          "21": {
+            "right_arm_frozen": 34
+          },
+          "23": {
+            "right_gripper_not_working": 34
+          },
+          "0": {
+            "left_arm_frozen": 36
+          },
+          "13": {
+            "right_gripper_not_working": 37
+          }
+        },
+        "2026-05-21": {
+          "11": {
+            "head_cam_out": 83
+          },
+          "18": {
+            "right_arm_frozen": 46
+          },
+          "20": {
+            "right_gripper_not_working": 169
+          },
+          "22": {
+            "head_cam_out": 76
+          },
+          "19": {
+            "right_arm_frozen": 271
+          },
+          "12": {
+            "left_arm_frozen": 37
+          },
+          "14": {
+            "head_cam_out": 108
+          }
+        },
+        "2026-05-22": {
+          "14": {
+            "right_arm_frozen": 149
+          },
+          "0": {
+            "right_arm_frozen": 84,
+            "right_gripper_not_working": 38
+          }
+        },
+        "2026-05-26": {
+          "12": {
+            "head_cam_out": 72
+          },
+          "13": {
+            "head_cam_out": 37
+          }
+        },
+        "2026-05-28": {
+          "16": {
+            "head_cam_out": 38
+          },
+          "0": {
+            "right_arm_frozen": 293
+          },
+          "11": {
+            "head_cam_out": 38,
+            "other_robot_issue": 600
+          },
+          "13": {
+            "head_cam_out": 45
+          },
+          "15": {
+            "head_cam_out": 34,
+            "neck_frozen": 44
+          },
+          "17": {
+            "head_cam_out": 39,
+            "other_robot_issue": 622
+          },
+          "10": {
+            "head_cam_out": 77,
+            "neck_frozen": 42
+          },
+          "12": {
+            "head_cam_out": 75,
+            "other_robot_issue": 680
+          }
+        },
+        "2026-06-01": {
+          "15": {
+            "left_arm_frozen": 37,
+            "other_robot_issue": 154
+          },
+          "16": {
+            "other_robot_issue": 642
+          }
+        },
+        "2026-06-02": {
+          "23": {
+            "chest_frozen": 36
+          },
+          "20": {
+            "other_robot_issue": 58
+          },
+          "0": {
+            "head_cam_out": 35
+          }
+        },
+        "2026-06-03": {
+          "23": {
+            "left_arm_frozen": 35
+          },
+          "16": {
+            "chest_frozen": 37
+          },
+          "18": {
+            "head_cam_out": 38
+          }
+        },
+        "2026-06-04": {
+          "21": {
+            "left_arm_frozen": 167
+          },
+          "14": {
+            "left_gripper_not_working": 37
+          },
+          "23": {
+            "right_arm_frozen": 115,
+            "right_gripper_not_working": 35
+          },
+          "13": {
+            "chest_frozen": 61
+          },
+          "22": {
+            "right_gripper_not_working": 36
+          },
+          "15": {
+            "chest_frozen": 34
+          },
+          "10": {
+            "right_arm_frozen": 46
+          },
+          "12": {
+            "left_gripper_not_working": 35
+          }
+        },
+        "2026-06-05": {
+          "18": {
+            "right_arm_frozen": 170,
+            "other_robot_issue": 34
+          },
+          "0": {
+            "right_arm_frozen": 123,
+            "neck_frozen": 181
+          },
+          "9": {
+            "right_gripper_not_working": 39
+          }
+        }
+      },
+      "gen2-108": {
+        "2026-05-11": {
+          "17": {
+            "right_arm_frozen": 191
+          },
+          "16": {
+            "right_arm_frozen": 987
+          }
+        },
+        "2026-05-12": {
+          "13": {
+            "left_arm_frozen": 3600
+          },
+          "17": {
+            "right_arm_frozen": 115,
+            "left_arm_frozen": 647
+          },
+          "10": {
+            "left_arm_frozen": 393
+          },
+          "19": {
+            "right_arm_frozen": 3600
+          },
+          "12": {
+            "left_arm_frozen": 3600
+          },
+          "21": {
+            "right_arm_frozen": 3485
+          },
+          "14": {
+            "left_arm_frozen": 3207
+          },
+          "18": {
+            "right_arm_frozen": 3600
+          },
+          "11": {
+            "left_arm_frozen": 3600
+          },
+          "20": {
+            "right_arm_frozen": 3600
+          }
+        },
+        "2026-05-13": {
+          "11": {
+            "left_arm_frozen": 2574
+          },
+          "13": {
+            "chest_frozen": 876
+          },
+          "15": {
+            "right_arm_frozen": 2483
+          },
+          "8": {
+            "right_arm_frozen": 875,
+            "left_arm_frozen": 1
+          },
+          "10": {
+            "chest_frozen": 981
+          },
+          "12": {
+            "left_arm_frozen": 1590
+          },
+          "14": {
+            "right_arm_frozen": 168,
+            "other_robot_issue": 455
+          }
+        },
+        "2026-05-14": {
+          "13": {
+            "left_arm_frozen": 121,
+            "chest_frozen": 41
+          },
+          "14": {
+            "left_arm_frozen": 171,
+            "chest_frozen": 884
+          }
+        },
+        "2026-05-15": {
+          "22": {
+            "other_robot_issue": 296
+          }
+        },
+        "2026-05-18": {
+          "14": {
+            "chest_frozen": 40
+          },
+          "23": {
+            "chest_frozen": 39
+          },
+          "16": {
+            "right_arm_frozen": 1453,
+            "left_arm_frozen": 1337
+          },
+          "11": {
+            "chest_frozen": 37
+          },
+          "15": {
+            "right_arm_frozen": 689
+          },
+          "17": {
+            "left_arm_frozen": 266
+          }
+        },
+        "2026-05-19": {
+          "19": {
+            "right_arm_frozen": 110,
+            "other_robot_issue": 102
+          },
+          "23": {
+            "chest_frozen": 37
+          },
+          "22": {
+            "chest_frozen": 21
+          },
+          "15": {
+            "chest_frozen": 40
+          },
+          "12": {
+            "chest_frozen": 40
+          }
+        },
+        "2026-05-20": {
+          "22": {
+            "right_arm_frozen": 33
+          },
+          "9": {
+            "left_arm_frozen": 35,
+            "chest_frozen": 37
+          }
+        },
+        "2026-05-21": {
+          "0": {
+            "chest_frozen": 40
+          },
+          "13": {
+            "head_cam_out": 76
+          },
+          "16": {
+            "head_cam_out": 38
+          }
+        },
+        "2026-05-22": {
+          "22": {
+            "right_arm_frozen": 36
+          },
+          "14": {
+            "other_robot_issue": 252
+          },
+          "16": {
+            "chest_frozen": 41
+          },
+          "18": {
+            "right_arm_frozen": 407
+          }
+        },
+        "2026-05-27": {
+          "20": {
+            "neck_frozen": 45
+          },
+          "22": {
+            "chest_frozen": 38
+          },
+          "19": {
+            "right_arm_frozen": 33
+          },
+          "21": {
+            "right_arm_frozen": 71
+          }
+        },
+        "2026-05-28": {
+          "10": {
+            "head_cam_out": 229
+          }
+        },
+        "2026-05-29": {
+          "9": {
+            "head_cam_out": 34
+          }
+        },
+        "2026-06-01": {
+          "17": {
+            "chest_frozen": 72
+          },
+          "9": {
+            "chest_frozen": 39
+          },
+          "18": {
+            "head_cam_out": 28,
+            "chest_frozen": 87
+          },
+          "20": {
+            "left_arm_frozen": 35
+          },
+          "8": {
+            "head_cam_out": 39
+          }
+        },
+        "2026-06-02": {
+          "18": {
+            "other_robot_issue": 38
+          },
+          "20": {
+            "left_arm_frozen": 35
+          },
+          "22": {
+            "left_arm_frozen": 105
+          },
+          "17": {
+            "left_gripper_not_working": 39
+          },
+          "21": {
+            "other_robot_issue": 74
+          }
+        },
+        "2026-06-03": {
+          "12": {
+            "other_robot_issue": 541
+          },
+          "23": {
+            "head_cam_out": 115
+          },
+          "11": {
+            "other_robot_issue": 1284
+          }
+        },
+        "2026-06-04": {
+          "16": {
+            "right_arm_frozen": 2956
+          },
+          "18": {
+            "right_arm_frozen": 62
+          },
+          "11": {
+            "left_arm_frozen": 401
+          },
+          "20": {
+            "left_arm_frozen": 117
+          },
+          "15": {
+            "right_arm_frozen": 1112
+          }
+        },
+        "2026-06-05": {
+          "18": {
+            "left_arm_frozen": 388
+          },
+          "12": {
+            "left_arm_frozen": 29
+          }
+        }
+      },
+      "gen2-105": {
+        "2026-04-27": {
+          "13": {
+            "head_cam_out": 48
+          },
+          "17": {
+            "left_arm_frozen": 42
+          },
+          "12": {
+            "other_robot_issue": 498
+          }
+        },
+        "2026-04-28": {
+          "9": {
+            "other_robot_issue": 312
+          },
+          "10": {
+            "right_arm_frozen": 157
+          }
+        },
+        "2026-05-06": {
+          "23": {
+            "chest_frozen": 128
+          },
+          "18": {
+            "right_arm_frozen": 39
+          }
+        },
+        "2026-05-07": {
+          "10": {
+            "head_cam_out": 49
+          },
+          "9": {
+            "head_cam_out": 98
+          },
+          "18": {
+            "left_arm_frozen": 39
+          }
+        },
+        "2026-05-08": {
+          "15": {
+            "other_robot_issue": 1766
+          }
+        },
+        "2026-05-11": {
+          "10": {
+            "right_arm_frozen": 111
+          }
+        },
+        "2026-05-12": {
+          "0": {
+            "chest_frozen": 13
+          }
+        },
+        "2026-05-13": {
+          "14": {
+            "head_cam_out": 47
+          }
+        },
+        "2026-05-14": {
+          "20": {
+            "left_gripper_not_working": 39
+          },
+          "18": {
+            "right_arm_frozen": 39,
+            "head_cam_out": 45,
+            "chest_frozen": 37
+          },
+          "17": {
+            "chest_frozen": 40
+          }
+        },
+        "2026-05-15": {
+          "21": {
+            "left_arm_frozen": 36
+          }
+        },
+        "2026-05-18": {
+          "9": {
+            "left_arm_frozen": 116,
+            "head_cam_out": 49
+          },
+          "18": {
+            "left_arm_frozen": 172,
+            "head_cam_out": 45
+          },
+          "22": {
+            "left_arm_frozen": 283
+          },
+          "12": {
+            "left_arm_frozen": 274
+          },
+          "21": {
+            "right_arm_frozen": 103
+          },
+          "16": {
+            "left_arm_frozen": 85
+          },
+          "11": {
+            "left_arm_frozen": 3600
+          },
+          "20": {
+            "left_arm_frozen": 161
+          },
+          "15": {
+            "left_arm_frozen": 774
+          },
+          "10": {
+            "left_arm_frozen": 1367,
+            "left_gripper_not_working": 36
+          }
+        },
+        "2026-05-19": {
+          "13": {
+            "right_arm_frozen": 45,
+            "left_arm_frozen": 38
+          },
+          "16": {
+            "left_arm_frozen": 1602
+          },
+          "15": {
+            "left_arm_frozen": 782
+          }
+        },
+        "2026-05-20": {
+          "17": {
+            "right_arm_frozen": 117
+          },
+          "12": {
+            "right_gripper_not_working": 38
+          },
+          "16": {
+            "right_arm_frozen": 73
+          },
+          "11": {
+            "right_arm_frozen": 38
+          },
+          "15": {
+            "head_cam_out": 99
+          },
+          "14": {
+            "right_arm_frozen": 38,
+            "head_cam_out": 131
+          },
+          "13": {
+            "right_arm_frozen": 124
+          }
+        },
+        "2026-05-21": {
+          "9": {
+            "right_arm_frozen": 278
+          },
+          "15": {
+            "right_arm_frozen": 83,
+            "head_cam_out": 48
+          },
+          "14": {
+            "right_arm_frozen": 80
+          }
+        },
+        "2026-05-22": {
+          "17": {
+            "right_arm_frozen": 43
+          },
+          "12": {
+            "left_arm_frozen": 65,
+            "other_robot_issue": 363
+          },
+          "16": {
+            "left_arm_frozen": 874
+          },
+          "11": {
+            "right_arm_frozen": 36,
+            "other_robot_issue": 2406
+          },
+          "15": {
+            "right_arm_frozen": 411,
+            "left_arm_frozen": 100
+          },
+          "23": {
+            "right_arm_frozen": 40
+          },
+          "9": {
+            "right_arm_frozen": 36
+          }
+        },
+        "2026-05-23": {
+          "0": {
+            "right_arm_frozen": 39,
+            "head_cam_out": 48
+          }
+        },
+        "2026-05-26": {
+          "15": {
+            "right_arm_frozen": 119,
+            "other_robot_issue": 1032
+          },
+          "19": {
+            "right_arm_frozen": 258
+          },
+          "14": {
+            "right_arm_frozen": 41,
+            "head_cam_out": 37,
+            "right_gripper_not_working": 38
+          },
+          "9": {
+            "right_arm_frozen": 37
+          },
+          "18": {
+            "right_arm_frozen": 242,
+            "left_arm_frozen": 77,
+            "right_gripper_not_working": 37,
+            "other_robot_issue": 40
+          },
+          "12": {
+            "left_arm_frozen": 433
+          },
+          "21": {
+            "right_arm_frozen": 35
+          },
+          "16": {
+            "other_robot_issue": 1504
+          },
+          "20": {
+            "right_arm_frozen": 38,
+            "left_arm_frozen": 465,
+            "right_gripper_not_working": 36
+          }
+        },
+        "2026-05-27": {
+          "15": {
+            "right_arm_frozen": 3600
+          },
+          "1": {
+            "left_arm_frozen": 3600
+          },
+          "14": {
+            "right_arm_frozen": 1669
+          },
+          "23": {
+            "right_arm_frozen": 89,
+            "right_gripper_not_working": 42
+          },
+          "0": {
+            "left_arm_frozen": 3523
+          },
+          "4": {
+            "left_arm_frozen": 77
+          },
+          "18": {
+            "right_arm_frozen": 161
+          },
+          "13": {
+            "right_arm_frozen": 2928
+          },
+          "22": {
+            "right_arm_frozen": 43,
+            "right_gripper_not_working": 50
+          },
+          "17": {
+            "right_arm_frozen": 421
+          },
+          "3": {
+            "left_arm_frozen": 3600
+          },
+          "12": {
+            "right_arm_frozen": 3600
+          },
+          "16": {
+            "right_arm_frozen": 3600
+          },
+          "2": {
+            "left_arm_frozen": 3600
+          },
+          "11": {
+            "right_arm_frozen": 1169
+          }
+        },
+        "2026-05-28": {
+          "11": {
+            "other_robot_issue": 1054
+          },
+          "15": {
+            "right_arm_frozen": 1187
+          },
+          "10": {
+            "right_arm_frozen": 78,
+            "other_robot_issue": 1490
+          },
+          "14": {
+            "right_arm_frozen": 74
+          },
+          "23": {
+            "other_robot_issue": 219
+          },
+          "0": {
+            "right_arm_frozen": 39
+          },
+          "13": {
+            "right_gripper_not_working": 100
+          },
+          "12": {
+            "right_arm_frozen": 38,
+            "right_gripper_not_working": 41,
+            "other_robot_issue": 111
+          }
+        },
+        "2026-05-29": {
+          "13": {
+            "left_arm_frozen": 532
+          },
+          "12": {
+            "left_arm_frozen": 90
+          },
+          "0": {
+            "left_arm_frozen": 139,
+            "left_gripper_not_working": 40,
+            "other_robot_issue": 164
+          }
+        },
+        "2026-05-30": {
+          "0": {
+            "left_arm_frozen": 41
+          }
+        },
+        "2026-06-01": {
+          "22": {
+            "left_arm_frozen": 118
+          },
+          "21": {
+            "left_arm_frozen": 328
+          },
+          "20": {
+            "left_arm_frozen": 159
+          },
+          "19": {
+            "left_arm_frozen": 693,
+            "other_robot_issue": 162
+          },
+          "23": {
+            "left_arm_frozen": 251
+          },
+          "18": {
+            "left_arm_frozen": 51
+          }
+        },
+        "2026-06-02": {
+          "23": {
+            "left_arm_frozen": 50
+          },
+          "18": {
+            "left_arm_frozen": 320
+          },
+          "22": {
+            "left_arm_frozen": 51
+          },
+          "17": {
+            "left_arm_frozen": 38
+          },
+          "16": {
+            "left_gripper_not_working": 42
+          },
+          "11": {
+            "left_gripper_not_working": 38
+          },
+          "20": {
+            "left_arm_frozen": 41
+          },
+          "19": {
+            "left_arm_frozen": 35
+          },
+          "0": {
+            "left_arm_frozen": 434
+          }
+        },
+        "2026-06-03": {
+          "14": {
+            "left_arm_frozen": 38,
+            "left_gripper_not_working": 38
+          },
+          "0": {
+            "other_robot_issue": 22
+          }
+        },
+        "2026-06-04": {
+          "12": {
+            "chest_frozen": 39
+          },
+          "11": {
+            "chest_frozen": 39
+          }
+        },
+        "2026-06-05": {
+          "17": {
+            "left_arm_frozen": 82
+          },
+          "16": {
+            "right_arm_frozen": 1089
+          },
+          "0": {
+            "right_arm_frozen": 210,
+            "left_arm_frozen": 179,
+            "right_gripper_not_working": 39
+          },
+          "9": {
+            "left_arm_frozen": 160
+          }
+        }
+      },
+      "gen2-104": {
+        "2026-04-27": {
+          "17": {
+            "left_arm_frozen": 316
+          },
+          "10": {
+            "head_cam_out": 49
+          },
+          "23": {
+            "head_cam_out": 97
+          }
+        },
+        "2026-04-28": {
+          "14": {
+            "right_arm_frozen": 171,
+            "right_gripper_not_working": 119
+          },
+          "13": {
+            "head_cam_out": 34,
+            "other_robot_issue": 1331
+          },
+          "22": {
+            "head_cam_out": 46
+          },
+          "17": {
+            "other_robot_issue": 210
+          },
+          "12": {
+            "head_cam_out": 8
+          },
+          "11": {
+            "head_cam_out": 41
+          }
+        },
+        "2026-04-29": {
+          "23": {
+            "right_arm_frozen": 92
+          },
+          "21": {
+            "other_robot_issue": 122
+          },
+          "16": {
+            "head_cam_out": 78
+          }
+        },
+        "2026-04-30": {
+          "22": {
+            "right_gripper_not_working": 176
+          },
+          "17": {
+            "head_cam_out": 36,
+            "other_robot_issue": 181
+          },
+          "16": {
+            "other_robot_issue": 1076
+          },
+          "14": {
+            "right_arm_frozen": 175
+          },
+          "23": {
+            "right_gripper_not_working": 1080
+          }
+        },
+        "2026-05-01": {
+          "14": {
+            "right_arm_frozen": 173,
+            "left_arm_frozen": 1170
+          },
+          "18": {
+            "right_arm_frozen": 392
+          },
+          "17": {
+            "right_arm_frozen": 97
+          },
+          "16": {
+            "other_robot_issue": 64
+          },
+          "15": {
+            "left_arm_frozen": 1125,
+            "other_robot_issue": 164
+          }
+        },
+        "2026-05-04": {
+          "22": {
+            "right_arm_frozen": 56
+          },
+          "16": {
+            "other_robot_issue": 762
+          },
+          "11": {
+            "neck_frozen": 953
+          },
+          "10": {
+            "right_arm_frozen": 35,
+            "left_arm_frozen": 199,
+            "neck_frozen": 1676
+          },
+          "9": {
+            "left_arm_frozen": 166
+          }
+        },
+        "2026-05-05": {
+          "2": {
+            "left_arm_frozen": 3600
+          },
+          "11": {
+            "left_arm_frozen": 785,
+            "other_robot_issue": 778
+          },
+          "15": {
+            "left_arm_frozen": 1152
+          },
+          "1": {
+            "left_arm_frozen": 3600
+          },
+          "10": {
+            "left_arm_frozen": 866
+          },
+          "14": {
+            "left_arm_frozen": 3600
+          },
+          "0": {
+            "left_arm_frozen": 1467
+          },
+          "9": {
+            "left_arm_frozen": 1313
+          },
+          "4": {
+            "left_arm_frozen": 2133
+          },
+          "13": {
+            "left_arm_frozen": 659
+          },
+          "3": {
+            "left_arm_frozen": 3600
+          },
+          "12": {
+            "right_arm_frozen": 170,
+            "left_arm_frozen": 331
+          }
+        },
+        "2026-05-06": {
+          "10": {
+            "left_arm_frozen": 169,
+            "head_cam_out": 49
+          }
+        },
+        "2026-05-08": {
+          "20": {
+            "right_arm_frozen": 172
+          }
+        },
+        "2026-05-11": {
+          "21": {
+            "right_gripper_not_working": 164
+          },
+          "19": {
+            "chest_frozen": 138
+          },
+          "23": {
+            "left_arm_frozen": 170,
+            "left_gripper_not_working": 116
+          },
+          "22": {
+            "left_gripper_not_working": 7
+          }
+        },
+        "2026-05-12": {
+          "15": {
+            "right_arm_frozen": 1571
+          },
+          "14": {
+            "right_arm_frozen": 207
+          },
+          "13": {
+            "right_arm_frozen": 2177
+          },
+          "17": {
+            "right_arm_frozen": 244
+          },
+          "16": {
+            "right_arm_frozen": 2660
+          }
+        },
+        "2026-05-13": {
+          "11": {
+            "right_arm_frozen": 170
+          }
+        },
+        "2026-05-14": {
+          "19": {
+            "right_arm_frozen": 440
+          },
+          "18": {
+            "right_arm_frozen": 163
+          }
+        },
+        "2026-05-15": {
+          "15": {
+            "head_cam_out": 46,
+            "neck_frozen": 46
+          },
+          "13": {
+            "head_cam_out": 46
+          },
+          "11": {
+            "other_robot_issue": 336
+          }
+        },
+        "2026-05-18": {
+          "23": {
+            "right_arm_frozen": 104,
+            "chest_frozen": 38
+          },
+          "18": {
+            "chest_frozen": 77
+          },
+          "22": {
+            "right_arm_frozen": 117
+          },
+          "17": {
+            "right_arm_frozen": 285,
+            "left_arm_frozen": 187
+          },
+          "21": {
+            "right_arm_frozen": 302
+          },
+          "16": {
+            "right_arm_frozen": 1484
+          },
+          "19": {
+            "chest_frozen": 39
+          }
+        },
+        "2026-05-19": {
+          "23": {
+            "right_arm_frozen": 380
+          },
+          "0": {
+            "right_arm_frozen": 190
+          },
+          "22": {
+            "chest_frozen": 35
+          },
+          "21": {
+            "left_arm_frozen": 228,
+            "chest_frozen": 114
+          }
+        },
+        "2026-05-20": {
+          "20": {
+            "left_arm_frozen": 360
+          }
+        },
+        "2026-05-21": {
+          "22": {
+            "right_arm_frozen": 166,
+            "chest_frozen": 37
+          },
+          "16": {
+            "head_cam_out": 94,
+            "other_robot_issue": 376
+          },
+          "20": {
+            "other_robot_issue": 587
+          },
+          "19": {
+            "head_cam_out": 73,
+            "other_robot_issue": 1747
+          },
+          "23": {
+            "right_arm_frozen": 35,
+            "neck_frozen": 45
+          }
+        },
+        "2026-05-22": {
+          "12": {
+            "head_cam_out": 91
+          }
+        },
+        "2026-05-26": {
+          "15": {
+            "other_robot_issue": 194
+          },
+          "10": {
+            "head_cam_out": 47
+          },
+          "19": {
+            "other_robot_issue": 336
+          },
+          "23": {
+            "chest_frozen": 39
+          },
+          "22": {
+            "right_arm_frozen": 308,
+            "chest_frozen": 40
+          },
+          "12": {
+            "head_cam_out": 48
+          },
+          "21": {
+            "chest_frozen": 36
+          }
+        },
+        "2026-05-27": {
+          "19": {
+            "right_arm_frozen": 170,
+            "right_gripper_not_working": 168
+          },
+          "0": {
+            "head_cam_out": 49
+          }
+        },
+        "2026-05-28": {
+          "16": {
+            "other_robot_issue": 237
+          },
+          "20": {
+            "right_arm_frozen": 278,
+            "left_arm_frozen": 172,
+            "right_gripper_not_working": 216
+          },
+          "19": {
+            "right_arm_frozen": 322,
+            "neck_frozen": 611,
+            "right_gripper_not_working": 1318
+          },
+          "23": {
+            "right_arm_frozen": 2363
+          },
+          "18": {
+            "neck_frozen": 3600
+          },
+          "22": {
+            "other_robot_issue": 372
+          },
+          "17": {
+            "head_cam_out": 39,
+            "neck_frozen": 1831
+          },
+          "21": {
+            "left_arm_frozen": 173
+          }
+        },
+        "2026-05-29": {
+          "17": {
+            "neck_frozen": 43
+          },
+          "3": {
+            "right_arm_frozen": 1237
+          },
+          "12": {
+            "right_arm_frozen": 2154
+          },
+          "2": {
+            "right_arm_frozen": 3600
+          },
+          "16": {
+            "head_cam_out": 45
+          },
+          "11": {
+            "right_arm_frozen": 3600
+          },
+          "1": {
+            "right_arm_frozen": 3600
+          },
+          "10": {
+            "right_arm_frozen": 1526
+          },
+          "0": {
+            "right_arm_frozen": 3600
+          }
+        },
+        "2026-06-01": {
+          "22": {
+            "right_arm_frozen": 170
+          },
+          "12": {
+            "left_gripper_not_working": 168
+          },
+          "21": {
+            "right_arm_frozen": 231
+          },
+          "16": {
+            "left_gripper_not_working": 172
+          },
+          "20": {
+            "right_arm_frozen": 342
+          },
+          "15": {
+            "right_gripper_not_working": 168
+          },
+          "23": {
+            "left_arm_frozen": 296
+          },
+          "18": {
+            "chest_frozen": 128
+          },
+          "13": {
+            "chest_frozen": 38
+          }
+        },
+        "2026-06-02": {
+          "18": {
+            "right_arm_frozen": 550
+          },
+          "13": {
+            "right_arm_frozen": 796
+          },
+          "12": {
+            "head_cam_out": 47,
+            "chest_frozen": 37
+          },
+          "16": {
+            "chest_frozen": 35
+          }
+        },
+        "2026-06-03": {
+          "15": {
+            "right_gripper_not_working": 167
+          },
+          "18": {
+            "chest_frozen": 37
+          },
+          "17": {
+            "chest_frozen": 38
+          }
+        },
+        "2026-06-04": {
+          "14": {
+            "right_arm_frozen": 503,
+            "left_gripper_not_working": 294
+          },
+          "23": {
+            "right_arm_frozen": 3600
+          },
+          "9": {
+            "right_gripper_not_working": 171
+          },
+          "13": {
+            "right_arm_frozen": 166,
+            "left_arm_frozen": 697
+          },
+          "22": {
+            "right_arm_frozen": 2343,
+            "chest_frozen": 37
+          },
+          "17": {
+            "right_arm_frozen": 445,
+            "left_arm_frozen": 1106
+          },
+          "12": {
+            "right_arm_frozen": 872,
+            "left_arm_frozen": 1024
+          },
+          "21": {
+            "right_arm_frozen": 169,
+            "other_robot_issue": 655
+          },
+          "16": {
+            "left_arm_frozen": 3592
+          },
+          "11": {
+            "right_arm_frozen": 157
+          },
+          "20": {
+            "right_arm_frozen": 173,
+            "left_arm_frozen": 173
+          },
+          "15": {
+            "left_arm_frozen": 3161
+          },
+          "10": {
+            "right_gripper_not_working": 1
+          },
+          "19": {
+            "right_arm_frozen": 168
+          }
+        },
+        "2026-06-05": {
+          "2": {
+            "right_arm_frozen": 1496
+          },
+          "1": {
+            "right_arm_frozen": 3600
+          },
+          "0": {
+            "right_arm_frozen": 3600
+          }
+        }
+      },
+      "gen2-103": {
+        "2026-04-27": {
+          "15": {
+            "right_arm_frozen": 359
+          },
+          "17": {
+            "right_arm_frozen": 344
+          },
+          "12": {
+            "right_gripper_not_working": 32
+          },
+          "14": {
+            "right_arm_frozen": 341
+          },
+          "16": {
+            "right_arm_frozen": 1541
+          },
+          "11": {
+            "right_gripper_not_working": 481
+          }
+        },
+        "2026-04-28": {
+          "9": {
+            "right_arm_frozen": 170
+          },
+          "17": {
+            "right_arm_frozen": 236
+          },
+          "10": {
+            "head_cam_out": 54
+          }
+        },
+        "2026-04-29": {
+          "16": {
+            "right_gripper_not_working": 229
+          },
+          "15": {
+            "right_gripper_not_working": 279
+          }
+        },
+        "2026-04-30": {
+          "13": {
+            "right_arm_frozen": 342
+          },
+          "15": {
+            "other_robot_issue": 191
+          },
+          "17": {
+            "right_arm_frozen": 558
+          },
+          "12": {
+            "right_arm_frozen": 173
+          },
+          "16": {
+            "right_arm_frozen": 329,
+            "other_robot_issue": 886
+          }
+        },
+        "2026-05-01": {
+          "17": {
+            "right_gripper_not_working": 166
+          },
+          "16": {
+            "right_arm_frozen": 274
+          },
+          "15": {
+            "right_arm_frozen": 546,
+            "right_gripper_not_working": 64
+          }
+        },
+        "2026-05-04": {
+          "18": {
+            "other_robot_issue": 3600
+          },
+          "20": {
+            "other_robot_issue": 1826
+          },
+          "15": {
+            "other_robot_issue": 1923
+          },
+          "17": {
+            "other_robot_issue": 3600
+          },
+          "10": {
+            "right_arm_frozen": 208
+          },
+          "19": {
+            "other_robot_issue": 3600
+          },
+          "14": {
+            "right_arm_frozen": 1408
+          },
+          "16": {
+            "other_robot_issue": 3387
+          }
+        },
+        "2026-05-05": {
+          "14": {
+            "left_arm_frozen": 171
+          },
+          "11": {
+            "right_arm_frozen": 127
+          },
+          "10": {
+            "right_arm_frozen": 3271
+          }
+        },
+        "2026-05-06": {
+          "14": {
+            "right_arm_frozen": 55
+          },
+          "13": {
+            "right_arm_frozen": 118
+          }
+        },
+        "2026-05-07": {
+          "12": {
+            "right_arm_frozen": 1899
+          },
+          "11": {
+            "right_arm_frozen": 641
+          }
+        },
+        "2026-05-11": {
+          "8": {
+            "head_cam_out": 288
+          },
+          "17": {
+            "right_arm_frozen": 338
+          },
+          "10": {
+            "right_arm_frozen": 308
+          },
+          "7": {
+            "head_cam_out": 495
+          },
+          "16": {
+            "head_cam_out": 37
+          },
+          "9": {
+            "right_arm_frozen": 169,
+            "head_cam_out": 37
+          }
+        },
+        "2026-05-14": {
+          "15": {
+            "other_robot_issue": 130
+          },
+          "10": {
+            "right_arm_frozen": 172
+          }
+        },
+        "2026-05-15": {
+          "10": {
+            "right_arm_frozen": 171
+          },
+          "12": {
+            "right_arm_frozen": 172
+          }
+        },
+        "2026-05-18": {
+          "14": {
+            "right_arm_frozen": 3229
+          },
+          "23": {
+            "right_arm_frozen": 667
+          },
+          "16": {
+            "right_arm_frozen": 1158,
+            "left_arm_frozen": 1327
+          },
+          "9": {
+            "right_arm_frozen": 169
+          },
+          "11": {
+            "right_arm_frozen": 1407
+          },
+          "13": {
+            "right_arm_frozen": 903
+          },
+          "15": {
+            "right_arm_frozen": 1960,
+            "left_arm_frozen": 1534
+          },
+          "10": {
+            "right_arm_frozen": 2026
+          },
+          "12": {
+            "right_arm_frozen": 188
+          }
+        },
+        "2026-05-19": {
+          "16": {
+            "left_arm_frozen": 775
+          },
+          "13": {
+            "other_robot_issue": 1948
+          },
+          "15": {
+            "left_arm_frozen": 704
+          },
+          "17": {
+            "right_arm_frozen": 63
+          },
+          "12": {
+            "left_arm_frozen": 413
+          }
+        },
+        "2026-05-20": {
+          "19": {
+            "other_robot_issue": 843
+          },
+          "12": {
+            "other_robot_issue": 664
+          },
+          "18": {
+            "other_robot_issue": 741
+          },
+          "13": {
+            "other_robot_issue": 506
+          }
+        },
+        "2026-05-21": {
+          "13": {
+            "head_cam_out": 75,
+            "other_robot_issue": 366
+          },
+          "21": {
+            "chest_frozen": 36,
+            "right_gripper_not_working": 35
+          },
+          "14": {
+            "head_cam_out": 72
+          }
+        },
+        "2026-05-22": {
+          "20": {
+            "left_gripper_not_working": 37
+          },
+          "15": {
+            "head_cam_out": 34
+          },
+          "9": {
+            "right_gripper_not_working": 70
+          }
+        },
+        "2026-05-26": {
+          "15": {
+            "neck_frozen": 42
+          },
+          "10": {
+            "left_arm_frozen": 2917
+          },
+          "19": {
+            "other_robot_issue": 49
+          },
+          "9": {
+            "left_arm_frozen": 91
+          }
+        },
+        "2026-05-27": {
+          "18": {
+            "right_arm_frozen": 32
+          },
+          "21": {
+            "left_arm_frozen": 293
+          },
+          "23": {
+            "right_arm_frozen": 37
+          },
+          "9": {
+            "left_arm_frozen": 72
+          }
+        },
+        "2026-05-28": {
+          "14": {
+            "left_arm_frozen": 905
+          },
+          "0": {
+            "right_arm_frozen": 35
+          },
+          "11": {
+            "head_cam_out": 72
+          },
+          "10": {
+            "head_cam_out": 141
+          },
+          "19": {
+            "right_arm_frozen": 198
+          },
+          "21": {
+            "other_robot_issue": 475
+          }
+        },
+        "2026-05-29": {
+          "23": {
+            "chest_frozen": 40
+          },
+          "16": {
+            "head_cam_out": 1204
+          },
+          "20": {
+            "chest_frozen": 43
+          },
+          "15": {
+            "head_cam_out": 944
+          },
+          "0": {
+            "left_arm_frozen": 231,
+            "chest_frozen": 42
+          }
+        },
+        "2026-06-01": {
+          "22": {
+            "right_arm_frozen": 69
+          },
+          "15": {
+            "left_gripper_not_working": 36
+          },
+          "21": {
+            "right_arm_frozen": 128
+          },
+          "14": {
+            "neck_frozen": 41
+          },
+          "23": {
+            "right_arm_frozen": 69
+          },
+          "16": {
+            "right_arm_frozen": 33
+          },
+          "9": {
+            "right_arm_frozen": 79
+          },
+          "18": {
+            "right_arm_frozen": 69,
+            "other_robot_issue": 410
+          },
+          "11": {
+            "right_arm_frozen": 158
+          },
+          "20": {
+            "right_arm_frozen": 39
+          }
+        },
+        "2026-06-02": {
+          "23": {
+            "right_arm_frozen": 36
+          },
+          "11": {
+            "right_arm_frozen": 3600
+          },
+          "22": {
+            "right_arm_frozen": 74
+          },
+          "17": {
+            "head_cam_out": 42
+          },
+          "10": {
+            "right_arm_frozen": 2177
+          },
+          "19": {
+            "right_arm_frozen": 33,
+            "right_gripper_not_working": 37
+          },
+          "12": {
+            "right_arm_frozen": 352
+          },
+          "0": {
+            "left_arm_frozen": 35,
+            "chest_frozen": 40
+          }
+        },
+        "2026-06-03": {
+          "9": {
+            "right_arm_frozen": 45
+          },
+          "13": {
+            "right_arm_frozen": 14
+          }
+        },
+        "2026-06-04": {
+          "14": {
+            "right_arm_frozen": 40,
+            "neck_frozen": 44
+          }
+        },
+        "2026-06-05": {
+          "16": {
+            "right_arm_frozen": 43
+          },
+          "18": {
+            "left_arm_frozen": 36
+          },
+          "11": {
+            "neck_frozen": 88
+          },
+          "0": {
+            "left_arm_frozen": 155
+          }
+        }
+      },
+      "gen2-018": {
+        "2026-05-01": {
+          "9": {
+            "head_cam_out": 45
+          },
+          "18": {
+            "left_gripper_not_working": 168
+          },
+          "13": {
+            "head_cam_out": 49
+          },
+          "21": {
+            "right_arm_frozen": 95,
+            "head_cam_out": 147
+          },
+          "15": {
+            "right_arm_frozen": 341
+          }
+        },
+        "2026-05-02": {
+          "0": {
+            "right_arm_frozen": 74
+          }
+        },
+        "2026-05-04": {
+          "18": {
+            "neck_frozen": 820
+          },
+          "21": {
+            "head_cam_out": 103
+          },
+          "16": {
+            "head_cam_out": 94
+          },
+          "10": {
+            "head_cam_out": 91,
+            "right_gripper_not_working": 128
+          },
+          "19": {
+            "right_arm_frozen": 171
+          },
+          "14": {
+            "head_cam_out": 121,
+            "other_robot_issue": 1265
+          },
+          "9": {
+            "right_arm_frozen": 1063
+          }
+        },
+        "2026-05-05": {
+          "16": {
+            "head_cam_out": 49
+          },
+          "11": {
+            "head_cam_out": 52
+          },
+          "15": {
+            "head_cam_out": 46,
+            "neck_frozen": 79
+          },
+          "14": {
+            "right_arm_frozen": 170
+          },
+          "18": {
+            "head_cam_out": 51
+          },
+          "22": {
+            "neck_frozen": 221
+          }
+        },
+        "2026-05-06": {
+          "13": {
+            "right_arm_frozen": 1456
+          },
+          "11": {
+            "left_gripper_not_working": 170
+          },
+          "20": {
+            "right_arm_frozen": 180,
+            "left_arm_frozen": 43
+          }
+        },
+        "2026-05-07": {
+          "15": {
+            "left_arm_frozen": 1635
+          },
+          "14": {
+            "head_cam_out": 51
+          },
+          "17": {
+            "left_arm_frozen": 997,
+            "head_cam_out": 42,
+            "other_robot_issue": 266
+          },
+          "12": {
+            "neck_frozen": 554
+          },
+          "16": {
+            "left_arm_frozen": 3462
+          }
+        },
+        "2026-05-08": {
+          "10": {
+            "left_arm_frozen": 3474
+          },
+          "9": {
+            "left_arm_frozen": 3126
+          }
+        },
+        "2026-05-12": {
+          "19": {
+            "right_arm_frozen": 122
+          },
+          "14": {
+            "right_arm_frozen": 274
+          },
+          "13": {
+            "right_arm_frozen": 3296
+          },
+          "22": {
+            "right_arm_frozen": 39
+          },
+          "12": {
+            "right_gripper_not_working": 167
+          }
+        },
+        "2026-05-13": {
+          "23": {
+            "right_arm_frozen": 190
+          },
+          "13": {
+            "head_cam_out": 49
+          },
+          "21": {
+            "right_arm_frozen": 701,
+            "left_arm_frozen": 2
+          },
+          "11": {
+            "right_arm_frozen": 752,
+            "right_gripper_not_working": 169
+          },
+          "20": {
+            "right_arm_frozen": 170
+          },
+          "10": {
+            "right_gripper_not_working": 170
+          },
+          "14": {
+            "right_arm_frozen": 171
+          }
+        },
+        "2026-05-14": {
+          "11": {
+            "other_robot_issue": 833
+          },
+          "20": {
+            "right_arm_frozen": 164
+          },
+          "10": {
+            "other_robot_issue": 1091
+          },
+          "19": {
+            "right_arm_frozen": 51
+          },
+          "23": {
+            "right_arm_frozen": 129
+          },
+          "18": {
+            "right_arm_frozen": 84,
+            "right_gripper_not_working": 178
+          },
+          "22": {
+            "right_arm_frozen": 268
+          },
+          "17": {
+            "right_arm_frozen": 289
+          },
+          "21": {
+            "right_arm_frozen": 457
+          }
+        },
+        "2026-05-15": {
+          "10": {
+            "right_arm_frozen": 358
+          },
+          "19": {
+            "right_arm_frozen": 43
+          },
+          "14": {
+            "right_arm_frozen": 100
+          },
+          "9": {
+            "right_arm_frozen": 88
+          }
+        },
+        "2026-05-18": {
+          "20": {
+            "left_arm_frozen": 170
+          },
+          "19": {
+            "chest_frozen": 33
+          }
+        },
+        "2026-05-19": {
+          "19": {
+            "right_arm_frozen": 171,
+            "left_arm_frozen": 138,
+            "chest_frozen": 78
+          },
+          "14": {
+            "right_arm_frozen": 428
+          },
+          "23": {
+            "right_arm_frozen": 3,
+            "right_gripper_not_working": 1383
+          },
+          "18": {
+            "right_arm_frozen": 170
+          },
+          "13": {
+            "head_cam_out": 49
+          },
+          "22": {
+            "right_arm_frozen": 129
+          },
+          "17": {
+            "right_arm_frozen": 95
+          },
+          "21": {
+            "right_arm_frozen": 204,
+            "other_robot_issue": 798
+          },
+          "16": {
+            "right_arm_frozen": 69
+          }
+        },
+        "2026-05-20": {
+          "16": {
+            "other_robot_issue": 19
+          },
+          "11": {
+            "right_arm_frozen": 1518
+          },
+          "10": {
+            "right_arm_frozen": 3568
+          },
+          "19": {
+            "other_robot_issue": 328
+          },
+          "0": {
+            "right_arm_frozen": 363,
+            "right_gripper_not_working": 54
+          },
+          "9": {
+            "right_arm_frozen": 151
+          }
+        },
+        "2026-05-21": {
+          "14": {
+            "right_arm_frozen": 172
+          }
+        },
+        "2026-05-22": {
+          "20": {
+            "left_gripper_not_working": 107
+          },
+          "14": {
+            "head_cam_out": 48,
+            "other_robot_issue": 5
+          },
+          "18": {
+            "right_gripper_not_working": 140
+          }
+        },
+        "2026-05-26": {
+          "15": {
+            "right_arm_frozen": 168
+          },
+          "19": {
+            "left_arm_frozen": 161
+          },
+          "22": {
+            "right_arm_frozen": 173,
+            "chest_frozen": 39
+          },
+          "17": {
+            "right_arm_frozen": 244
+          }
+        },
+        "2026-05-27": {
+          "20": {
+            "right_arm_frozen": 139
+          },
+          "15": {
+            "right_arm_frozen": 226
+          },
+          "14": {
+            "right_arm_frozen": 70,
+            "other_robot_issue": 237
+          },
+          "0": {
+            "right_arm_frozen": 393
+          },
+          "22": {
+            "right_arm_frozen": 167
+          },
+          "17": {
+            "neck_frozen": 44
+          },
+          "12": {
+            "neck_frozen": 45
+          },
+          "11": {
+            "left_arm_frozen": 134
+          }
+        },
+        "2026-05-28": {
+          "15": {
+            "left_arm_frozen": 166
+          },
+          "10": {
+            "head_cam_out": 47,
+            "neck_frozen": 174
+          },
+          "0": {
+            "left_arm_frozen": 171
+          },
+          "17": {
+            "head_cam_out": 38
+          },
+          "12": {
+            "head_cam_out": 37
+          }
+        },
+        "2026-05-29": {
+          "22": {
+            "right_arm_frozen": 1411
+          },
+          "17": {
+            "left_arm_frozen": 164
+          },
+          "21": {
+            "right_arm_frozen": 620
+          },
+          "11": {
+            "right_arm_frozen": 186
+          },
+          "14": {
+            "neck_frozen": 44
+          }
+        },
+        "2026-05-30": {
+          "23": {
+            "right_arm_frozen": 2776
+          }
+        },
+        "2026-05-31": {
+          "0": {
+            "right_arm_frozen": 3600
+          },
+          "3": {
+            "right_arm_frozen": 824
+          },
+          "2": {
+            "right_arm_frozen": 3600
+          },
+          "1": {
+            "right_arm_frozen": 3600
+          }
+        },
+        "2026-06-03": {
+          "10": {
+            "left_arm_frozen": 591
+          },
+          "23": {
+            "head_cam_out": 36
+          },
+          "9": {
+            "left_arm_frozen": 8
+          },
+          "13": {
+            "left_arm_frozen": 891
+          },
+          "12": {
+            "left_arm_frozen": 1630
+          }
+        },
+        "2026-06-05": {
+          "10": {
+            "right_arm_frozen": 521
+          },
+          "9": {
+            "right_arm_frozen": 1309
+          }
+        }
+      },
+      "gen2-102": {
+        "2026-04-27": {
+          "12": {
+            "right_arm_frozen": 1619
+          },
+          "11": {
+            "right_arm_frozen": 963
+          }
+        },
+        "2026-04-30": {
+          "11": {
+            "left_arm_frozen": 151
+          },
+          "10": {
+            "left_arm_frozen": 242
+          }
+        },
+        "2026-05-01": {
+          "10": {
+            "right_arm_frozen": 207,
+            "right_gripper_not_working": 197
+          },
+          "16": {
+            "right_arm_frozen": 167
+          }
+        },
+        "2026-05-04": {
+          "13": {
+            "head_cam_out": 47
+          }
+        },
+        "2026-05-05": {
+          "11": {
+            "left_arm_frozen": 529
+          }
+        },
+        "2026-05-06": {
+          "19": {
+            "left_arm_frozen": 2677
+          },
+          "23": {
+            "right_arm_frozen": 1154,
+            "left_arm_frozen": 125
+          },
+          "20": {
+            "left_arm_frozen": 327
+          }
+        },
+        "2026-05-07": {
+          "10": {
+            "right_arm_frozen": 454
+          },
+          "12": {
+            "other_robot_issue": 1216
+          },
+          "11": {
+            "right_arm_frozen": 1062,
+            "left_arm_frozen": 207,
+            "other_robot_issue": 467
+          }
+        },
+        "2026-05-08": {
+          "15": {
+            "right_arm_frozen": 2632
+          },
+          "10": {
+            "right_gripper_not_working": 168
+          },
+          "14": {
+            "right_arm_frozen": 557,
+            "left_arm_frozen": 491,
+            "neck_frozen": 842,
+            "right_gripper_not_working": 72
+          }
+        },
+        "2026-05-12": {
+          "23": {
+            "right_arm_frozen": 35
+          },
+          "18": {
+            "right_arm_frozen": 199
+          },
+          "17": {
+            "right_arm_frozen": 108
+          }
+        },
+        "2026-05-13": {
+          "13": {
+            "right_arm_frozen": 2310
+          },
+          "12": {
+            "right_arm_frozen": 1406
+          },
+          "11": {
+            "right_arm_frozen": 167
+          },
+          "19": {
+            "right_arm_frozen": 168
+          },
+          "14": {
+            "right_arm_frozen": 106,
+            "head_cam_out": 37
+          },
+          "0": {
+            "right_arm_frozen": 1
+          }
+        },
+        "2026-05-14": {
+          "11": {
+            "right_gripper_not_working": 170
+          },
+          "10": {
+            "right_arm_frozen": 172
+          },
+          "19": {
+            "right_arm_frozen": 258
+          },
+          "17": {
+            "right_arm_frozen": 26
+          },
+          "16": {
+            "right_arm_frozen": 11
+          }
+        },
+        "2026-05-15": {
+          "15": {
+            "right_arm_frozen": 142,
+            "left_arm_frozen": 171,
+            "head_cam_out": 36
+          },
+          "10": {
+            "right_arm_frozen": 334
+          },
+          "13": {
+            "right_arm_frozen": 172
+          }
+        },
+        "2026-05-18": {
+          "9": {
+            "right_arm_frozen": 201
+          },
+          "18": {
+            "right_arm_frozen": 364
+          },
+          "13": {
+            "right_arm_frozen": 462
+          },
+          "22": {
+            "right_arm_frozen": 51
+          },
+          "17": {
+            "right_arm_frozen": 170
+          },
+          "12": {
+            "right_arm_frozen": 3600
+          },
+          "16": {
+            "right_arm_frozen": 174
+          },
+          "11": {
+            "right_arm_frozen": 1276
+          },
+          "20": {
+            "right_arm_frozen": 271
+          },
+          "15": {
+            "right_arm_frozen": 169
+          },
+          "10": {
+            "right_arm_frozen": 655
+          }
+        },
+        "2026-05-19": {
+          "19": {
+            "other_robot_issue": 57
+          },
+          "11": {
+            "right_arm_frozen": 338
+          },
+          "10": {
+            "right_arm_frozen": 904
+          }
+        },
+        "2026-05-20": {
+          "12": {
+            "right_arm_frozen": 26
+          },
+          "15": {
+            "right_arm_frozen": 379
+          },
+          "14": {
+            "right_arm_frozen": 910
+          },
+          "23": {
+            "other_robot_issue": 7
+          },
+          "0": {
+            "head_cam_out": 35
+          },
+          "18": {
+            "right_arm_frozen": 170
+          },
+          "13": {
+            "right_arm_frozen": 442
+          }
+        },
+        "2026-05-21": {
+          "0": {
+            "head_cam_out": 34
+          },
+          "23": {
+            "head_cam_out": 38
+          }
+        },
+        "2026-05-22": {
+          "12": {
+            "right_arm_frozen": 699
+          },
+          "11": {
+            "right_arm_frozen": 3600
+          },
+          "20": {
+            "right_arm_frozen": 1180
+          },
+          "10": {
+            "right_arm_frozen": 2924
+          },
+          "19": {
+            "chest_frozen": 75
+          }
+        },
+        "2026-05-26": {
+          "15": {
+            "right_arm_frozen": 1820
+          }
+        },
+        "2026-05-27": {
+          "20": {
+            "right_arm_frozen": 819
+          },
+          "15": {
+            "head_cam_out": 36,
+            "chest_frozen": 38
+          },
+          "19": {
+            "right_arm_frozen": 3600
+          },
+          "14": {
+            "chest_frozen": 64
+          },
+          "18": {
+            "right_arm_frozen": 3600
+          },
+          "17": {
+            "right_arm_frozen": 2398
+          },
+          "16": {
+            "right_arm_frozen": 847
+          }
+        },
+        "2026-05-28": {
+          "11": {
+            "right_arm_frozen": 3600
+          },
+          "20": {
+            "right_arm_frozen": 554
+          },
+          "10": {
+            "right_arm_frozen": 3600
+          },
+          "23": {
+            "right_gripper_not_working": 168
+          },
+          "9": {
+            "right_arm_frozen": 2368
+          },
+          "18": {
+            "left_arm_frozen": 173
+          },
+          "13": {
+            "right_arm_frozen": 1223
+          },
+          "22": {
+            "right_gripper_not_working": 419
+          },
+          "17": {
+            "right_arm_frozen": 201,
+            "chest_frozen": 38
+          },
+          "12": {
+            "right_arm_frozen": 3600
+          },
+          "21": {
+            "right_arm_frozen": 1041
+          }
+        },
+        "2026-05-29": {
+          "13": {
+            "right_arm_frozen": 2968
+          },
+          "17": {
+            "other_robot_issue": 348
+          },
+          "12": {
+            "right_arm_frozen": 2137
+          },
+          "11": {
+            "right_arm_frozen": 3600
+          },
+          "10": {
+            "right_arm_frozen": 1926
+          },
+          "14": {
+            "right_arm_frozen": 2074
+          },
+          "0": {
+            "right_arm_frozen": 274,
+            "right_gripper_not_working": 180
+          }
+        },
+        "2026-06-01": {
+          "22": {
+            "right_arm_frozen": 532,
+            "head_cam_out": 38,
+            "other_robot_issue": 59
+          },
+          "21": {
+            "right_arm_frozen": 375
+          },
+          "20": {
+            "right_arm_frozen": 172
+          },
+          "10": {
+            "other_robot_issue": 531
+          },
+          "19": {
+            "right_arm_frozen": 168
+          },
+          "14": {
+            "other_robot_issue": 1226
+          },
+          "23": {
+            "right_arm_frozen": 328
+          },
+          "18": {
+            "chest_frozen": 36
+          },
+          "13": {
+            "other_robot_issue": 808
+          }
+        },
+        "2026-06-02": {
+          "13": {
+            "right_arm_frozen": 1591
+          },
+          "16": {
+            "right_arm_frozen": 311
+          },
+          "20": {
+            "right_arm_frozen": 27
+          },
+          "15": {
+            "right_arm_frozen": 845
+          },
+          "19": {
+            "right_arm_frozen": 244
+          },
+          "0": {
+            "right_arm_frozen": 89
+          }
+        },
+        "2026-06-03": {
+          "0": {
+            "right_arm_frozen": 27
+          },
+          "9": {
+            "right_arm_frozen": 323,
+            "head_cam_out": 110
+          }
+        },
+        "2026-06-04": {
+          "23": {
+            "left_arm_frozen": 264
+          },
+          "9": {
+            "head_cam_out": 301
+          },
+          "18": {
+            "right_arm_frozen": 183
+          },
+          "13": {
+            "right_arm_frozen": 1737
+          },
+          "12": {
+            "right_arm_frozen": 1154
+          },
+          "20": {
+            "right_arm_frozen": 785
+          }
+        },
+        "2026-06-05": {
+          "16": {
+            "left_arm_frozen": 257
+          },
+          "15": {
+            "left_arm_frozen": 78
+          },
+          "19": {
+            "left_arm_frozen": 165
+          }
+        }
+      },
+      "gen2-008": {
+        "2026-04-27": {
+          "13": {
+            "head_cam_out": 267,
+            "neck_frozen": 42
+          },
+          "15": {
+            "right_arm_frozen": 131,
+            "other_robot_issue": 935
+          },
+          "10": {
+            "right_arm_frozen": 59,
+            "head_cam_out": 67
+          },
+          "14": {
+            "head_cam_out": 215
+          },
+          "16": {
+            "other_robot_issue": 2766
+          },
+          "11": {
+            "head_cam_out": 112
+          }
+        },
+        "2026-05-04": {
+          "13": {
+            "head_cam_out": 99
+          },
+          "15": {
+            "right_arm_frozen": 44,
+            "neck_frozen": 89
+          },
+          "14": {
+            "neck_frozen": 45
+          }
+        },
+        "2026-05-05": {
+          "11": {
+            "right_arm_frozen": 294
+          },
+          "13": {
+            "right_arm_frozen": 334,
+            "left_arm_frozen": 376
+          },
+          "17": {
+            "left_arm_frozen": 66
+          },
+          "10": {
+            "right_arm_frozen": 7
+          }
+        },
+        "2026-05-06": {
+          "10": {
+            "right_arm_frozen": 187
+          },
+          "11": {
+            "right_arm_frozen": 188
+          }
+        },
+        "2026-05-11": {
+          "7": {
+            "head_cam_out": 57
+          }
+        },
+        "2026-05-12": {
+          "13": {
+            "left_arm_frozen": 3240
+          },
+          "12": {
+            "left_arm_frozen": 682
+          },
+          "14": {
+            "right_arm_frozen": 622,
+            "left_arm_frozen": 35
+          },
+          "20": {
+            "head_cam_out": 56,
+            "neck_frozen": 46
+          }
+        },
+        "2026-05-13": {
+          "15": {
+            "right_gripper_not_working": 35
+          },
+          "12": {
+            "head_cam_out": 57
+          }
+        },
+        "2026-05-14": {
+          "13": {
+            "left_arm_frozen": 107
+          },
+          "15": {
+            "left_arm_frozen": 1410
+          },
+          "10": {
+            "head_cam_out": 89
+          },
+          "21": {
+            "other_robot_issue": 127
+          },
+          "14": {
+            "left_arm_frozen": 3393
+          }
+        },
+        "2026-05-15": {
+          "15": {
+            "head_cam_out": 117
+          },
+          "14": {
+            "head_cam_out": 55
+          },
+          "0": {
+            "right_arm_frozen": 156
+          }
+        },
+        "2026-05-18": {
+          "21": {
+            "chest_frozen": 36,
+            "right_gripper_not_working": 66
+          },
+          "23": {
+            "left_arm_frozen": 35
+          },
+          "9": {
+            "chest_frozen": 116
+          },
+          "20": {
+            "right_arm_frozen": 37
+          }
+        },
+        "2026-05-19": {
+          "19": {
+            "left_arm_frozen": 35
+          },
+          "21": {
+            "right_arm_frozen": 32
+          },
+          "23": {
+            "right_arm_frozen": 35
+          },
+          "0": {
+            "left_arm_frozen": 35
+          },
+          "9": {
+            "neck_frozen": 46
+          },
+          "18": {
+            "head_cam_out": 56,
+            "neck_frozen": 46
+          },
+          "20": {
+            "left_arm_frozen": 38
+          },
+          "22": {
+            "left_arm_frozen": 40
+          },
+          "15": {
+            "left_arm_frozen": 72
+          }
+        },
+        "2026-05-20": {
+          "22": {
+            "right_arm_frozen": 93,
+            "left_arm_frozen": 34,
+            "chest_frozen": 71
+          },
+          "10": {
+            "left_arm_frozen": 76
+          },
+          "14": {
+            "left_arm_frozen": 106
+          },
+          "23": {
+            "left_arm_frozen": 436,
+            "chest_frozen": 395,
+            "other_robot_issue": 14
+          },
+          "0": {
+            "right_arm_frozen": 34,
+            "left_arm_frozen": 74
+          },
+          "18": {
+            "left_arm_frozen": 34
+          },
+          "11": {
+            "left_arm_frozen": 69
+          }
+        },
+        "2026-05-21": {
+          "0": {
+            "head_cam_out": 54
+          },
+          "9": {
+            "right_arm_frozen": 35,
+            "left_arm_frozen": 35
+          },
+          "20": {
+            "left_arm_frozen": 76
+          },
+          "22": {
+            "left_arm_frozen": 70
+          },
+          "17": {
+            "right_arm_frozen": 69
+          },
+          "10": {
+            "left_arm_frozen": 79
+          },
+          "19": {
+            "left_arm_frozen": 35
+          },
+          "12": {
+            "left_arm_frozen": 22
+          },
+          "21": {
+            "chest_frozen": 38
+          },
+          "23": {
+            "left_arm_frozen": 39,
+            "chest_frozen": 38
+          },
+          "16": {
+            "other_robot_issue": 690
+          }
+        },
+        "2026-05-22": {
+          "13": {
+            "left_arm_frozen": 34,
+            "head_cam_out": 55,
+            "neck_frozen": 15
+          },
+          "10": {
+            "left_arm_frozen": 36
+          },
+          "21": {
+            "left_arm_frozen": 37
+          },
+          "14": {
+            "left_arm_frozen": 38,
+            "neck_frozen": 170
+          },
+          "23": {
+            "chest_frozen": 74
+          },
+          "16": {
+            "left_arm_frozen": 43,
+            "neck_frozen": 44
+          },
+          "0": {
+            "other_robot_issue": 87
+          },
+          "18": {
+            "chest_frozen": 36,
+            "left_gripper_not_working": 36
+          },
+          "11": {
+            "head_cam_out": 57,
+            "neck_frozen": 50,
+            "other_robot_issue": 14
+          }
+        },
+        "2026-05-26": {
+          "10": {
+            "left_arm_frozen": 68
+          },
+          "9": {
+            "left_arm_frozen": 34
+          }
+        }
+      },
+      "gen2-117": {
+        "2026-05-22": {
+          "18": {
+            "right_arm_frozen": 3600
+          },
+          "17": {
+            "right_arm_frozen": 3600
+          },
+          "20": {
+            "right_arm_frozen": 1149
+          },
+          "16": {
+            "right_arm_frozen": 2451
+          },
+          "19": {
+            "right_arm_frozen": 3600
+          }
+        }
+      },
+      "gen2-004": {
+        "2026-04-27": {
+          "10": {
+            "right_arm_frozen": 269
+          },
+          "14": {
+            "right_arm_frozen": 38
+          }
+        },
+        "2026-04-28": {
+          "8": {
+            "other_robot_issue": 434
+          }
+        },
+        "2026-04-29": {
+          "8": {
+            "head_cam_out": 57
+          }
+        },
+        "2026-05-04": {
+          "18": {
+            "neck_frozen": 44
+          },
+          "11": {
+            "chest_frozen": 51
+          },
+          "20": {
+            "neck_frozen": 86
+          },
+          "8": {
+            "chest_frozen": 1299
+          },
+          "19": {
+            "neck_frozen": 43
+          },
+          "9": {
+            "chest_frozen": 41
+          }
+        },
+        "2026-05-05": {
+          "9": {
+            "other_robot_issue": 1692
+          }
+        },
+        "2026-05-07": {
+          "8": {
+            "other_robot_issue": 257
+          }
+        },
+        "2026-05-13": {
+          "14": {
+            "head_cam_out": 37
+          }
+        },
+        "2026-05-14": {
+          "11": {
+            "right_arm_frozen": 103
+          },
+          "8": {
+            "chest_frozen": 315
+          },
+          "10": {
+            "head_cam_out": 1108
+          }
+        },
+        "2026-05-15": {
+          "9": {
+            "head_cam_out": 39
+          },
+          "11": {
+            "right_arm_frozen": 68
+          }
+        },
+        "2026-05-19": {
+          "13": {
+            "other_robot_issue": 1976
+          },
+          "12": {
+            "other_robot_issue": 91
+          }
+        },
+        "2026-05-20": {
+          "10": {
+            "left_arm_frozen": 670
+          },
+          "11": {
+            "left_arm_frozen": 1436
+          }
+        },
+        "2026-05-21": {
+          "16": {
+            "right_arm_frozen": 1012
+          }
+        },
+        "2026-05-22": {
+          "10": {
+            "right_arm_frozen": 1299
+          },
+          "12": {
+            "neck_frozen": 43
+          },
+          "9": {
+            "right_arm_frozen": 542
+          }
+        },
+        "2026-05-24": {
+          "14": {
+            "neck_frozen": 43
+          },
+          "11": {
+            "left_arm_frozen": 158
+          },
+          "13": {
+            "left_arm_frozen": 45
+          },
+          "12": {
+            "left_arm_frozen": 43
+          }
+        },
+        "2026-05-26": {
+          "10": {
+            "head_cam_out": 114
+          },
+          "11": {
+            "chest_frozen": 62
+          }
+        },
+        "2026-05-27": {
+          "13": {
+            "left_arm_frozen": 2821
+          }
+        },
+        "2026-05-28": {
+          "10": {
+            "head_cam_out": 76
+          }
+        },
+        "2026-05-29": {
+          "13": {
+            "right_arm_frozen": 895
+          },
+          "14": {
+            "right_arm_frozen": 2109
+          }
+        },
+        "2026-06-01": {
+          "10": {
+            "left_arm_frozen": 206
+          }
+        },
+        "2026-06-03": {
+          "19": {
+            "right_arm_frozen": 923
+          },
+          "18": {
+            "right_arm_frozen": 1236,
+            "left_arm_frozen": 380
+          }
+        },
+        "2026-06-04": {
+          "18": {
+            "left_arm_frozen": 36
+          }
+        }
+      },
+      "gen2-016": {
+        "2026-04-27": {
+          "13": {
+            "right_arm_frozen": 1496,
+            "other_robot_issue": 684
+          },
+          "12": {
+            "left_arm_frozen": 174,
+            "other_robot_issue": 141
+          },
+          "11": {
+            "left_arm_frozen": 39
+          },
+          "10": {
+            "left_arm_frozen": 38
+          },
+          "14": {
+            "right_arm_frozen": 931,
+            "left_arm_frozen": 307
+          }
+        },
+        "2026-04-30": {
+          "10": {
+            "neck_frozen": 46
+          }
+        },
+        "2026-05-01": {
+          "19": {
+            "right_arm_frozen": 3378
+          },
+          "14": {
+            "right_arm_frozen": 656
+          },
+          "23": {
+            "right_arm_frozen": 222
+          },
+          "18": {
+            "right_arm_frozen": 1530
+          },
+          "22": {
+            "right_arm_frozen": 3600
+          },
+          "17": {
+            "right_arm_frozen": 1980
+          },
+          "12": {
+            "right_arm_frozen": 1321
+          },
+          "21": {
+            "right_arm_frozen": 3600
+          },
+          "11": {
+            "right_arm_frozen": 2092
+          },
+          "20": {
+            "right_arm_frozen": 3600
+          },
+          "15": {
+            "right_arm_frozen": 39
+          }
+        },
+        "2026-05-03": {
+          "9": {
+            "left_arm_frozen": 43
+          }
+        },
+        "2026-05-05": {
+          "11": {
+            "neck_frozen": 418
+          },
+          "15": {
+            "right_arm_frozen": 34
+          },
+          "10": {
+            "neck_frozen": 1623
+          },
+          "19": {
+            "neck_frozen": 45,
+            "other_robot_issue": 76
+          },
+          "14": {
+            "neck_frozen": 1852
+          },
+          "18": {
+            "neck_frozen": 45,
+            "other_robot_issue": 1003
+          },
+          "13": {
+            "neck_frozen": 3600
+          },
+          "12": {
+            "neck_frozen": 13
+          }
+        },
+        "2026-05-06": {
+          "10": {
+            "right_arm_frozen": 2627
+          },
+          "19": {
+            "right_arm_frozen": 3600
+          },
+          "9": {
+            "right_arm_frozen": 734
+          },
+          "18": {
+            "right_arm_frozen": 1812
+          },
+          "13": {
+            "right_arm_frozen": 862
+          },
+          "22": {
+            "right_arm_frozen": 1788
+          },
+          "12": {
+            "right_arm_frozen": 2128
+          },
+          "21": {
+            "right_arm_frozen": 3600
+          },
+          "11": {
+            "right_arm_frozen": 549
+          },
+          "20": {
+            "right_arm_frozen": 3600
+          }
+        },
+        "2026-05-11": {
+          "18": {
+            "other_robot_issue": 415
+          }
+        },
+        "2026-05-12": {
+          "16": {
+            "head_cam_out": 54
+          }
+        },
+        "2026-05-13": {
+          "13": {
+            "right_arm_frozen": 465
+          }
+        },
+        "2026-05-14": {
+          "11": {
+            "neck_frozen": 88
+          },
+          "20": {
+            "right_arm_frozen": 3600
+          },
+          "19": {
+            "right_arm_frozen": 3600
+          },
+          "18": {
+            "right_arm_frozen": 1236
+          },
+          "22": {
+            "right_arm_frozen": 2364
+          },
+          "21": {
+            "right_arm_frozen": 3600
+          }
+        },
+        "2026-05-19": {
+          "10": {
+            "head_cam_out": 55
+          }
+        },
+        "2026-05-21": {
+          "9": {
+            "head_cam_out": 118
+          },
+          "13": {
+            "chest_frozen": 39
+          }
+        },
+        "2026-05-26": {
+          "15": {
+            "right_arm_frozen": 1154
+          },
+          "19": {
+            "left_arm_frozen": 2665
+          },
+          "18": {
+            "left_arm_frozen": 694
+          },
+          "17": {
+            "right_arm_frozen": 1233,
+            "chest_frozen": 74
+          },
+          "16": {
+            "right_arm_frozen": 1577
+          }
+        },
+        "2026-05-27": {
+          "15": {
+            "right_arm_frozen": 329
+          },
+          "10": {
+            "right_arm_frozen": 75
+          },
+          "12": {
+            "right_arm_frozen": 73
+          },
+          "16": {
+            "right_arm_frozen": 1187
+          },
+          "11": {
+            "right_arm_frozen": 319
+          }
+        },
+        "2026-05-28": {
+          "11": {
+            "right_arm_frozen": 1786
+          },
+          "10": {
+            "right_arm_frozen": 2521
+          },
+          "14": {
+            "left_arm_frozen": 2243
+          },
+          "9": {
+            "right_arm_frozen": 428
+          },
+          "13": {
+            "left_arm_frozen": 3583
+          },
+          "12": {
+            "left_arm_frozen": 25
+          }
+        },
+        "2026-05-29": {
+          "18": {
+            "other_robot_issue": 3600
+          },
+          "17": {
+            "head_cam_out": 37,
+            "other_robot_issue": 1479
+          },
+          "21": {
+            "other_robot_issue": 2107
+          },
+          "20": {
+            "other_robot_issue": 3600
+          },
+          "10": {
+            "head_cam_out": 56
+          },
+          "19": {
+            "other_robot_issue": 3600
+          },
+          "9": {
+            "head_cam_out": 58
+          }
+        },
+        "2026-06-01": {
+          "17": {
+            "right_arm_frozen": 874
+          },
+          "11": {
+            "left_gripper_not_working": 38
+          },
+          "10": {
+            "head_cam_out": 38
+          }
+        },
+        "2026-06-02": {
+          "13": {
+            "right_arm_frozen": 1200
+          },
+          "12": {
+            "right_arm_frozen": 1256
+          },
+          "14": {
+            "right_arm_frozen": 1365,
+            "left_arm_frozen": 1842
+          }
+        },
+        "2026-06-03": {
+          "10": {
+            "left_arm_frozen": 35
+          }
+        },
+        "2026-06-05": {
+          "14": {
+            "head_cam_out": 75
+          }
+        }
+      },
+      "gen2-020": {
+        "2026-04-27": {
+          "23": {
+            "head_cam_out": 46
+          }
+        },
+        "2026-04-28": {
+          "0": {
+            "neck_frozen": 65
+          },
+          "9": {
+            "head_cam_out": 49
+          }
+        },
+        "2026-04-29": {
+          "0": {
+            "head_cam_out": 87
+          }
+        },
+        "2026-04-30": {
+          "12": {
+            "other_robot_issue": 721
+          }
+        },
+        "2026-05-04": {
+          "12": {
+            "left_arm_frozen": 396
+          },
+          "7": {
+            "head_cam_out": 1844
+          }
+        },
+        "2026-05-08": {
+          "11": {
+            "right_arm_frozen": 40
+          }
+        },
+        "2026-05-13": {
+          "23": {
+            "right_arm_frozen": 1247
+          },
+          "22": {
+            "right_arm_frozen": 173
+          },
+          "21": {
+            "other_robot_issue": 63
+          }
+        },
+        "2026-05-14": {
+          "11": {
+            "head_cam_out": 36
+          },
+          "22": {
+            "left_arm_frozen": 41
+          },
+          "9": {
+            "head_cam_out": 521
+          }
+        },
+        "2026-05-15": {
+          "18": {
+            "right_arm_frozen": 793,
+            "left_arm_frozen": 18,
+            "other_robot_issue": 138
+          },
+          "20": {
+            "chest_frozen": 38
+          }
+        },
+        "2026-05-18": {
+          "21": {
+            "left_arm_frozen": 2040
+          },
+          "14": {
+            "right_arm_frozen": 3600
+          },
+          "23": {
+            "left_arm_frozen": 3600
+          },
+          "16": {
+            "right_arm_frozen": 936
+          },
+          "13": {
+            "right_arm_frozen": 3600
+          },
+          "22": {
+            "left_arm_frozen": 3600
+          },
+          "15": {
+            "right_arm_frozen": 3600
+          },
+          "12": {
+            "right_arm_frozen": 2664
+          }
+        },
+        "2026-05-19": {
+          "0": {
+            "left_arm_frozen": 3600
+          },
+          "15": {
+            "left_arm_frozen": 578
+          },
+          "1": {
+            "left_arm_frozen": 1560
+          }
+        },
+        "2026-05-26": {
+          "17": {
+            "right_arm_frozen": 3600
+          },
+          "19": {
+            "right_arm_frozen": 3600
+          },
+          "16": {
+            "right_arm_frozen": 612
+          },
+          "18": {
+            "right_arm_frozen": 3600
+          },
+          "20": {
+            "right_arm_frozen": 2988
+          }
+        },
+        "2026-05-28": {
+          "12": {
+            "head_cam_out": 38
+          }
+        },
+        "2026-05-29": {
+          "9": {
+            "head_cam_out": 34
+          }
+        }
+      },
+      "gen2-006": {
+        "2026-05-06": {
+          "18": {
+            "right_arm_frozen": 921,
+            "left_arm_frozen": 2629
+          },
+          "20": {
+            "left_arm_frozen": 3600
+          },
+          "17": {
+            "right_arm_frozen": 3600
+          },
+          "13": {
+            "left_arm_frozen": 107
+          },
+          "22": {
+            "left_arm_frozen": 971
+          },
+          "19": {
+            "left_arm_frozen": 3600
+          },
+          "15": {
+            "right_arm_frozen": 1153,
+            "left_arm_frozen": 2447
+          },
+          "21": {
+            "left_arm_frozen": 3600
+          },
+          "14": {
+            "left_arm_frozen": 3600
+          },
+          "16": {
+            "right_arm_frozen": 3183,
+            "left_arm_frozen": 417
+          }
+        },
+        "2026-05-07": {
+          "15": {
+            "left_arm_frozen": 1694
+          },
+          "11": {
+            "left_arm_frozen": 1906
+          },
+          "13": {
+            "left_arm_frozen": 3600
+          },
+          "12": {
+            "left_arm_frozen": 3600
+          },
+          "14": {
+            "left_arm_frozen": 3600
+          }
+        },
+        "2026-05-11": {
+          "17": {
+            "left_arm_frozen": 168
+          }
+        },
+        "2026-05-12": {
+          "13": {
+            "right_arm_frozen": 2778
+          },
+          "15": {
+            "right_arm_frozen": 3600
+          },
+          "17": {
+            "right_arm_frozen": 822,
+            "left_arm_frozen": 2656
+          },
+          "14": {
+            "right_arm_frozen": 3600
+          },
+          "16": {
+            "right_arm_frozen": 3600
+          }
+        },
+        "2026-05-14": {
+          "19": {
+            "left_arm_frozen": 3600
+          },
+          "21": {
+            "left_arm_frozen": 3569
+          },
+          "18": {
+            "left_arm_frozen": 3600
+          },
+          "20": {
+            "left_arm_frozen": 3600
+          },
+          "17": {
+            "left_arm_frozen": 31
+          }
+        },
+        "2026-05-15": {
+          "13": {
+            "right_arm_frozen": 3600
+          },
+          "10": {
+            "right_arm_frozen": 1224
+          },
+          "12": {
+            "right_arm_frozen": 3600
+          },
+          "14": {
+            "right_arm_frozen": 3600
+          },
+          "15": {
+            "right_arm_frozen": 2054
+          },
+          "11": {
+            "right_arm_frozen": 1546
+          }
+        },
+        "2026-05-18": {
+          "12": {
+            "right_arm_frozen": 277
+          },
+          "11": {
+            "right_arm_frozen": 1104
+          }
+        },
+        "2026-05-19": {
+          "20": {
+            "right_arm_frozen": 1950,
+            "left_arm_frozen": 70
+          },
+          "19": {
+            "right_arm_frozen": 3600
+          },
+          "17": {
+            "right_arm_frozen": 3600
+          },
+          "16": {
+            "right_arm_frozen": 1650
+          },
+          "18": {
+            "right_arm_frozen": 3600
+          }
+        },
+        "2026-05-20": {
+          "19": {
+            "left_arm_frozen": 3600
+          },
+          "21": {
+            "left_arm_frozen": 3600
+          },
+          "22": {
+            "left_arm_frozen": 2168
+          },
+          "18": {
+            "left_arm_frozen": 1432
+          },
+          "20": {
+            "left_arm_frozen": 3600
+          }
+        },
+        "2026-05-21": {
+          "17": {
+            "left_arm_frozen": 3600
+          },
+          "19": {
+            "left_arm_frozen": 3600
+          },
+          "18": {
+            "left_arm_frozen": 3600
+          },
+          "20": {
+            "left_arm_frozen": 1417
+          },
+          "16": {
+            "left_arm_frozen": 2183
+          }
+        },
+        "2026-05-22": {
+          "19": {
+            "left_arm_frozen": 3600
+          },
+          "12": {
+            "left_arm_frozen": 3600
+          },
+          "21": {
+            "left_arm_frozen": 2345
+          },
+          "14": {
+            "left_arm_frozen": 3600
+          },
+          "20": {
+            "left_arm_frozen": 2770
+          },
+          "13": {
+            "left_arm_frozen": 3600
+          },
+          "18": {
+            "left_arm_frozen": 2715
+          },
+          "15": {
+            "left_arm_frozen": 2486
+          },
+          "11": {
+            "left_arm_frozen": 1114
+          }
+        },
+        "2026-05-28": {
+          "17": {
+            "right_arm_frozen": 1599
+          },
+          "14": {
+            "left_arm_frozen": 3600
+          },
+          "10": {
+            "right_arm_frozen": 1969
+          },
+          "16": {
+            "left_arm_frozen": 3077
+          },
+          "18": {
+            "right_arm_frozen": 3600
+          },
+          "11": {
+            "right_arm_frozen": 1993
+          },
+          "20": {
+            "right_arm_frozen": 3600
+          },
+          "13": {
+            "left_arm_frozen": 3600
+          },
+          "19": {
+            "right_arm_frozen": 3600
+          },
+          "15": {
+            "left_arm_frozen": 3600
+          },
+          "12": {
+            "left_arm_frozen": 1297
+          },
+          "21": {
+            "right_arm_frozen": 2001
+          }
+        },
+        "2026-06-01": {
+          "11": {
+            "left_arm_frozen": 2205
+          },
+          "20": {
+            "right_arm_frozen": 2294
+          },
+          "17": {
+            "right_arm_frozen": 3600
+          },
+          "13": {
+            "left_arm_frozen": 3600
+          },
+          "19": {
+            "right_arm_frozen": 3600
+          },
+          "12": {
+            "left_arm_frozen": 3600
+          },
+          "14": {
+            "left_arm_frozen": 746
+          },
+          "16": {
+            "right_arm_frozen": 1306,
+            "left_arm_frozen": 1044
+          },
+          "18": {
+            "right_arm_frozen": 3600
+          }
+        },
+        "2026-06-05": {
+          "12": {
+            "right_arm_frozen": 1082,
+            "left_arm_frozen": 2518
+          },
+          "14": {
+            "right_arm_frozen": 3600
+          },
+          "11": {
+            "left_arm_frozen": 3600
+          },
+          "13": {
+            "right_arm_frozen": 3335,
+            "left_arm_frozen": 5
+          },
+          "15": {
+            "right_arm_frozen": 3600
+          },
+          "17": {
+            "right_arm_frozen": 284
+          },
+          "10": {
+            "left_arm_frozen": 1068
+          },
+          "16": {
+            "right_arm_frozen": 3600
+          }
+        }
+      },
+      "gen2-107": {
+        "2026-04-27": {
+          "17": {
+            "left_arm_frozen": 35
+          },
+          "12": {
+            "right_gripper_not_working": 41
+          },
+          "11": {
+            "left_arm_frozen": 2030
+          }
+        },
+        "2026-04-28": {
+          "11": {
+            "left_arm_frozen": 40
+          },
+          "17": {
+            "right_arm_frozen": 422,
+            "left_arm_frozen": 100
+          }
+        },
+        "2026-04-29": {
+          "16": {
+            "left_arm_frozen": 27
+          },
+          "11": {
+            "right_arm_frozen": 1477
+          },
+          "17": {
+            "left_arm_frozen": 1871
+          }
+        },
+        "2026-04-30": {
+          "15": {
+            "right_arm_frozen": 38
+          }
+        },
+        "2026-05-01": {
+          "10": {
+            "right_arm_frozen": 743
+          },
+          "19": {
+            "left_arm_frozen": 206
+          },
+          "9": {
+            "right_arm_frozen": 2341
+          },
+          "20": {
+            "left_arm_frozen": 210
+          }
+        },
+        "2026-05-04": {
+          "13": {
+            "right_arm_frozen": 40
+          },
+          "12": {
+            "right_arm_frozen": 3
+          },
+          "9": {
+            "left_arm_frozen": 2261
+          }
+        },
+        "2026-05-06": {
+          "11": {
+            "right_arm_frozen": 1587
+          }
+        },
+        "2026-05-07": {
+          "18": {
+            "neck_frozen": 238
+          }
+        },
+        "2026-05-08": {
+          "10": {
+            "right_arm_frozen": 33
+          },
+          "12": {
+            "right_arm_frozen": 33
+          }
+        },
+        "2026-05-11": {
+          "11": {
+            "left_arm_frozen": 37
+          }
+        },
+        "2026-05-12": {
+          "15": {
+            "left_arm_frozen": 36
+          }
+        },
+        "2026-05-13": {
+          "9": {
+            "head_cam_out": 132
+          }
+        },
+        "2026-05-15": {
+          "10": {
+            "left_arm_frozen": 33
+          },
+          "14": {
+            "neck_frozen": 45,
+            "right_gripper_not_working": 37
+          }
+        },
+        "2026-05-18": {
+          "11": {
+            "right_arm_frozen": 36
+          }
+        },
+        "2026-05-19": {
+          "11": {
+            "right_arm_frozen": 36,
+            "left_gripper_not_working": 39
+          }
+        },
+        "2026-05-21": {
+          "14": {
+            "right_arm_frozen": 35
+          },
+          "16": {
+            "head_cam_out": 75
+          }
+        },
+        "2026-05-22": {
+          "13": {
+            "right_arm_frozen": 3600
+          },
+          "10": {
+            "right_arm_frozen": 509,
+            "neck_frozen": 133
+          },
+          "12": {
+            "right_arm_frozen": 3600
+          },
+          "14": {
+            "right_arm_frozen": 3085,
+            "left_arm_frozen": 165
+          },
+          "11": {
+            "right_arm_frozen": 3600
+          }
+        },
+        "2026-06-01": {
+          "17": {
+            "left_arm_frozen": 398,
+            "neck_frozen": 46
+          },
+          "18": {
+            "neck_frozen": 176
+          }
+        },
+        "2026-06-03": {
+          "10": {
+            "head_cam_out": 38
+          }
+        },
+        "2026-06-04": {
+          "14": {
+            "head_cam_out": 38,
+            "other_robot_issue": 1637
+          },
+          "16": {
+            "neck_frozen": 42
+          },
+          "15": {
+            "other_robot_issue": 165
+          }
+        },
+        "2026-06-05": {
+          "10": {
+            "neck_frozen": 43
+          }
+        }
+      },
+      "gen2-106": {
+        "2026-04-27": {
+          "15": {
+            "left_gripper_not_working": 37
+          },
+          "17": {
+            "head_cam_out": 56
+          },
+          "12": {
+            "left_gripper_not_working": 163
+          },
+          "14": {
+            "left_gripper_not_working": 39
+          }
+        },
+        "2026-04-28": {
+          "18": {
+            "left_gripper_not_working": 36
+          },
+          "11": {
+            "left_gripper_not_working": 157
+          },
+          "22": {
+            "left_gripper_not_working": 37
+          },
+          "10": {
+            "right_gripper_not_working": 38,
+            "left_gripper_not_working": 42
+          },
+          "19": {
+            "right_gripper_not_working": 35
+          }
+        },
+        "2026-04-29": {
+          "10": {
+            "left_arm_frozen": 35,
+            "head_cam_out": 59
+          }
+        },
+        "2026-04-30": {
+          "11": {
+            "left_gripper_not_working": 6
+          }
+        },
+        "2026-05-01": {
+          "8": {
+            "head_cam_out": 223
+          },
+          "12": {
+            "left_arm_frozen": 1232
+          },
+          "0": {
+            "left_gripper_not_working": 40
+          },
+          "15": {
+            "left_arm_frozen": 114,
+            "head_cam_out": 61
+          }
+        },
+        "2026-05-04": {
+          "18": {
+            "left_gripper_not_working": 78
+          },
+          "15": {
+            "head_cam_out": 58
+          },
+          "10": {
+            "head_cam_out": 46
+          },
+          "23": {
+            "left_gripper_not_working": 68
+          }
+        },
+        "2026-05-05": {
+          "9": {
+            "head_cam_out": 58
+          },
+          "18": {
+            "left_gripper_not_working": 36
+          },
+          "13": {
+            "right_gripper_not_working": 23
+          },
+          "12": {
+            "left_gripper_not_working": 77
+          }
+        },
+        "2026-05-06": {
+          "18": {
+            "left_gripper_not_working": 77
+          },
+          "13": {
+            "left_arm_frozen": 41,
+            "left_gripper_not_working": 36
+          }
+        },
+        "2026-05-07": {
+          "12": {
+            "right_gripper_not_working": 37
+          },
+          "9": {
+            "other_robot_issue": 663
+          },
+          "18": {
+            "left_arm_frozen": 40,
+            "left_gripper_not_working": 40
+          }
+        },
+        "2026-05-08": {
+          "15": {
+            "left_arm_frozen": 40
+          },
+          "16": {
+            "other_robot_issue": 182
+          },
+          "11": {
+            "left_gripper_not_working": 46
+          },
+          "8": {
+            "left_gripper_not_working": 39
+          }
+        },
+        "2026-05-11": {
+          "15": {
+            "right_arm_frozen": 39
+          },
+          "7": {
+            "head_cam_out": 48
+          }
+        },
+        "2026-05-12": {
+          "19": {
+            "left_arm_frozen": 27
+          },
+          "23": {
+            "other_robot_issue": 20
+          }
+        },
+        "2026-05-13": {
+          "23": {
+            "left_arm_frozen": 38,
+            "left_gripper_not_working": 36
+          },
+          "18": {
+            "head_cam_out": 115
+          },
+          "11": {
+            "neck_frozen": 92
+          }
+        },
+        "2026-05-14": {
+          "19": {
+            "chest_frozen": 33
+          }
+        },
+        "2026-05-15": {
+          "15": {
+            "head_cam_out": 46
+          },
+          "19": {
+            "left_arm_frozen": 254
+          },
+          "21": {
+            "other_robot_issue": 45
+          },
+          "18": {
+            "chest_frozen": 35
+          }
+        },
+        "2026-05-16": {
+          "0": {
+            "chest_frozen": 37
+          }
+        },
+        "2026-05-18": {
+          "21": {
+            "right_arm_frozen": 2028
+          },
+          "9": {
+            "head_cam_out": 98
+          },
+          "18": {
+            "right_arm_frozen": 3600
+          },
+          "20": {
+            "right_arm_frozen": 3600
+          },
+          "17": {
+            "right_arm_frozen": 1572
+          },
+          "19": {
+            "right_arm_frozen": 3600
+          }
+        },
+        "2026-05-19": {
+          "12": {
+            "left_arm_frozen": 727
+          }
+        },
+        "2026-05-28": {
+          "14": {
+            "right_arm_frozen": 56,
+            "left_arm_frozen": 18,
+            "head_cam_out": 33
+          },
+          "11": {
+            "head_cam_out": 156
+          },
+          "13": {
+            "right_arm_frozen": 3600
+          },
+          "12": {
+            "right_arm_frozen": 578,
+            "left_arm_frozen": 373
+          }
+        },
+        "2026-05-29": {
+          "12": {
+            "right_arm_frozen": 244
+          }
+        },
+        "2026-06-02": {
+          "16": {
+            "right_arm_frozen": 3600
+          },
+          "18": {
+            "right_arm_frozen": 3600
+          },
+          "20": {
+            "right_arm_frozen": 3600
+          },
+          "15": {
+            "right_arm_frozen": 2877
+          },
+          "17": {
+            "right_arm_frozen": 3307
+          },
+          "19": {
+            "right_arm_frozen": 3600
+          },
+          "21": {
+            "right_arm_frozen": 1039
+          }
+        }
+      },
+      "gen2-003": {
+        "2026-04-27": {
+          "20": {
+            "left_arm_frozen": 74
+          },
+          "10": {
+            "head_cam_out": 51
+          }
+        },
+        "2026-04-28": {
+          "9": {
+            "left_arm_frozen": 38
+          },
+          "11": {
+            "left_arm_frozen": 78
+          },
+          "13": {
+            "other_robot_issue": 1460
+          },
+          "10": {
+            "left_arm_frozen": 245
+          }
+        },
+        "2026-04-29": {
+          "14": {
+            "right_arm_frozen": 299,
+            "left_gripper_not_working": 38
+          },
+          "16": {
+            "head_cam_out": 48
+          },
+          "22": {
+            "right_arm_frozen": 65
+          }
+        },
+        "2026-04-30": {
+          "22": {
+            "left_arm_frozen": 48
+          },
+          "10": {
+            "left_arm_frozen": 36
+          },
+          "19": {
+            "left_arm_frozen": 39
+          },
+          "0": {
+            "left_arm_frozen": 326,
+            "left_gripper_not_working": 37
+          },
+          "11": {
+            "left_arm_frozen": 42
+          }
+        },
+        "2026-05-04": {
+          "13": {
+            "right_arm_frozen": 76
+          },
+          "15": {
+            "right_arm_frozen": 234
+          },
+          "14": {
+            "right_arm_frozen": 182
+          },
+          "16": {
+            "right_arm_frozen": 80
+          }
+        },
+        "2026-05-05": {
+          "9": {
+            "right_arm_frozen": 577
+          },
+          "11": {
+            "right_arm_frozen": 76
+          },
+          "13": {
+            "right_arm_frozen": 39
+          },
+          "10": {
+            "right_arm_frozen": 795
+          },
+          "12": {
+            "right_arm_frozen": 114,
+            "head_cam_out": 50
+          },
+          "23": {
+            "left_arm_frozen": 491
+          }
+        },
+        "2026-05-06": {
+          "17": {
+            "right_arm_frozen": 37
+          },
+          "10": {
+            "head_cam_out": 109
+          },
+          "19": {
+            "left_arm_frozen": 1042
+          },
+          "11": {
+            "head_cam_out": 746
+          },
+          "13": {
+            "right_arm_frozen": 243,
+            "left_arm_frozen": 2
+          }
+        },
+        "2026-05-08": {
+          "10": {
+            "head_cam_out": 34
+          },
+          "11": {
+            "head_cam_out": 38
+          }
+        },
+        "2026-05-11": {
+          "13": {
+            "left_arm_frozen": 48
+          }
+        }
+      },
+      "gen2-115": {
+        "2026-05-27": {
+          "19": {
+            "right_arm_frozen": 329
+          }
+        }
+      },
+      "gen2-012": {
+        "2026-04-28": {
+          "14": {
+            "right_arm_frozen": 37
+          },
+          "17": {
+            "left_arm_frozen": 18
+          },
+          "16": {
+            "left_arm_frozen": 28
+          }
+        },
+        "2026-04-29": {
+          "11": {
+            "right_arm_frozen": 37
+          }
+        },
+        "2026-05-01": {
+          "17": {
+            "chest_frozen": 2247
+          }
+        },
+        "2026-05-05": {
+          "10": {
+            "right_arm_frozen": 713
+          }
+        },
+        "2026-05-06": {
+          "10": {
+            "right_arm_frozen": 1250
+          },
+          "12": {
+            "left_arm_frozen": 39
+          },
+          "11": {
+            "right_arm_frozen": 498
+          }
+        },
+        "2026-05-08": {
+          "9": {
+            "head_cam_out": 44
+          },
+          "12": {
+            "left_gripper_not_working": 39
+          },
+          "16": {
+            "head_cam_out": 114
+          }
+        },
+        "2026-05-10": {
+          "12": {
+            "left_arm_frozen": 159
+          },
+          "16": {
+            "chest_frozen": 244
+          },
+          "10": {
+            "left_gripper_not_working": 35
+          },
+          "9": {
+            "left_arm_frozen": 49
+          }
+        },
+        "2026-05-11": {
+          "17": {
+            "right_arm_frozen": 708
+          },
+          "16": {
+            "right_arm_frozen": 323
+          }
+        },
+        "2026-05-12": {
+          "10": {
+            "left_arm_frozen": 45,
+            "left_gripper_not_working": 36
+          },
+          "17": {
+            "left_arm_frozen": 213
+          },
+          "12": {
+            "left_arm_frozen": 1326
+          },
+          "11": {
+            "left_arm_frozen": 1254
+          }
+        },
+        "2026-05-13": {
+          "14": {
+            "left_arm_frozen": 218
+          }
+        },
+        "2026-05-14": {
+          "11": {
+            "left_arm_frozen": 37
+          },
+          "20": {
+            "right_arm_frozen": 3600
+          },
+          "10": {
+            "left_arm_frozen": 266
+          },
+          "19": {
+            "right_arm_frozen": 3600
+          },
+          "9": {
+            "head_cam_out": 102
+          },
+          "18": {
+            "right_arm_frozen": 1242
+          },
+          "22": {
+            "right_arm_frozen": 2358
+          },
+          "21": {
+            "right_arm_frozen": 3600
+          }
+        },
+        "2026-05-15": {
+          "14": {
+            "right_gripper_not_working": 40,
+            "other_robot_issue": 726
+          },
+          "17": {
+            "left_arm_frozen": 47
+          },
+          "12": {
+            "right_arm_frozen": 37
+          },
+          "16": {
+            "left_arm_frozen": 468
+          }
+        },
+        "2026-05-17": {
+          "14": {
+            "right_arm_frozen": 1116,
+            "left_arm_frozen": 303
+          },
+          "9": {
+            "right_arm_frozen": 2411
+          },
+          "13": {
+            "right_arm_frozen": 23,
+            "left_arm_frozen": 45
+          },
+          "8": {
+            "right_arm_frozen": 317
+          },
+          "12": {
+            "left_arm_frozen": 47
+          },
+          "15": {
+            "left_arm_frozen": 84
+          },
+          "10": {
+            "right_arm_frozen": 491
+          }
+        },
+        "2026-05-18": {
+          "14": {
+            "left_arm_frozen": 35,
+            "other_robot_issue": 70
+          },
+          "23": {
+            "right_arm_frozen": 2602
+          },
+          "18": {
+            "right_arm_frozen": 524,
+            "left_arm_frozen": 22
+          },
+          "13": {
+            "left_arm_frozen": 35
+          },
+          "22": {
+            "right_arm_frozen": 3600
+          },
+          "17": {
+            "right_arm_frozen": 645,
+            "left_arm_frozen": 51
+          },
+          "12": {
+            "left_gripper_not_working": 35
+          },
+          "21": {
+            "right_arm_frozen": 3600
+          },
+          "16": {
+            "right_arm_frozen": 33,
+            "left_arm_frozen": 36
+          },
+          "11": {
+            "right_arm_frozen": 445
+          },
+          "20": {
+            "right_arm_frozen": 3600
+          },
+          "10": {
+            "right_arm_frozen": 161
+          },
+          "19": {
+            "right_arm_frozen": 1194,
+            "left_arm_frozen": 39,
+            "chest_frozen": 37
+          }
+        },
+        "2026-05-19": {
+          "10": {
+            "right_arm_frozen": 223
+          }
+        },
+        "2026-05-20": {
+          "12": {
+            "right_arm_frozen": 2613
+          },
+          "11": {
+            "left_arm_frozen": 80
+          },
+          "10": {
+            "right_arm_frozen": 33,
+            "left_arm_frozen": 70,
+            "chest_frozen": 167
+          }
+        },
+        "2026-05-21": {
+          "13": {
+            "right_arm_frozen": 1322,
+            "left_gripper_not_working": 37
+          },
+          "12": {
+            "right_arm_frozen": 35
+          },
+          "16": {
+            "left_arm_frozen": 36
+          },
+          "11": {
+            "right_arm_frozen": 14
+          },
+          "15": {
+            "right_arm_frozen": 1744
+          },
+          "10": {
+            "right_arm_frozen": 136,
+            "left_arm_frozen": 72,
+            "head_cam_out": 55,
+            "chest_frozen": 36
+          },
+          "14": {
+            "right_arm_frozen": 2516,
+            "left_arm_frozen": 34
+          }
+        },
+        "2026-05-22": {
+          "16": {
+            "left_arm_frozen": 144
+          },
+          "11": {
+            "right_arm_frozen": 70,
+            "left_arm_frozen": 510
+          },
+          "15": {
+            "left_arm_frozen": 96
+          },
+          "10": {
+            "right_arm_frozen": 39,
+            "left_arm_frozen": 36,
+            "chest_frozen": 89
+          }
+        },
+        "2026-05-24": {
+          "14": {
+            "right_arm_frozen": 10
+          },
+          "13": {
+            "right_arm_frozen": 478,
+            "left_arm_frozen": 106
+          },
+          "12": {
+            "right_arm_frozen": 1125,
+            "other_robot_issue": 51
+          },
+          "11": {
+            "right_arm_frozen": 411,
+            "other_robot_issue": 1252
+          }
+        },
+        "2026-05-25": {
+          "10": {
+            "right_arm_frozen": 164,
+            "left_arm_frozen": 36,
+            "head_cam_out": 57
+          },
+          "13": {
+            "left_arm_frozen": 36
+          },
+          "17": {
+            "left_gripper_not_working": 36
+          }
+        },
+        "2026-05-26": {
+          "10": {
+            "left_arm_frozen": 3600
+          },
+          "19": {
+            "right_arm_frozen": 3600
+          },
+          "9": {
+            "left_arm_frozen": 1526
+          },
+          "18": {
+            "right_arm_frozen": 3600
+          },
+          "13": {
+            "left_arm_frozen": 2047
+          },
+          "17": {
+            "right_arm_frozen": 3600
+          },
+          "12": {
+            "left_arm_frozen": 3600
+          },
+          "16": {
+            "right_arm_frozen": 3377
+          },
+          "11": {
+            "left_arm_frozen": 3600
+          },
+          "20": {
+            "right_arm_frozen": 223
+          }
+        },
+        "2026-05-27": {
+          "10": {
+            "right_arm_frozen": 183,
+            "left_arm_frozen": 432
+          },
+          "11": {
+            "chest_frozen": 37
+          }
+        },
+        "2026-05-28": {
+          "16": {
+            "right_gripper_not_working": 36
+          },
+          "13": {
+            "head_cam_out": 38
+          },
+          "12": {
+            "right_arm_frozen": 268,
+            "head_cam_out": 36,
+            "other_robot_issue": 779
+          }
+        },
+        "2026-05-29": {
+          "14": {
+            "head_cam_out": 158
+          }
+        },
+        "2026-05-31": {
+          "10": {
+            "right_arm_frozen": 630,
+            "left_arm_frozen": 681
+          },
+          "14": {
+            "head_cam_out": 35
+          },
+          "11": {
+            "left_arm_frozen": 58
+          }
+        },
+        "2026-06-02": {
+          "12": {
+            "head_cam_out": 40
+          },
+          "15": {
+            "left_arm_frozen": 268
+          },
+          "19": {
+            "left_arm_frozen": 271
+          },
+          "14": {
+            "left_arm_frozen": 43
+          }
+        },
+        "2026-06-03": {
+          "9": {
+            "head_cam_out": 2083
+          },
+          "17": {
+            "head_cam_out": 78
+          },
+          "16": {
+            "head_cam_out": 39
+          }
+        },
+        "2026-06-04": {
+          "14": {
+            "left_arm_frozen": 739,
+            "head_cam_out": 38
+          },
+          "13": {
+            "head_cam_out": 39
+          },
+          "12": {
+            "left_arm_frozen": 977
+          },
+          "11": {
+            "left_arm_frozen": 117
+          },
+          "10": {
+            "left_arm_frozen": 1186
+          }
+        }
+      },
+      "gen2-112": {
+        "2026-05-28": {
+          "16": {
+            "right_arm_frozen": 2240
+          },
+          "15": {
+            "right_arm_frozen": 3600
+          },
+          "12": {
+            "right_arm_frozen": 1360
+          },
+          "14": {
+            "right_arm_frozen": 3600
+          },
+          "13": {
+            "right_arm_frozen": 3600
+          }
+        },
+        "2026-06-02": {
+          "18": {
+            "right_arm_frozen": 204
+          },
+          "20": {
+            "right_arm_frozen": 205,
+            "left_arm_frozen": 2
+          }
+        },
+        "2026-06-03": {
+          "14": {
+            "right_arm_frozen": 193
+          },
+          "13": {
+            "right_arm_frozen": 167
+          }
+        }
+      },
+      "gen2-113": {
+        "2026-05-22": {
+          "3": {
+            "right_arm_frozen": 3600
+          },
+          "4": {
+            "right_arm_frozen": 3600
+          },
+          "1": {
+            "right_arm_frozen": 3215
+          },
+          "10": {
+            "right_arm_frozen": 573
+          },
+          "2": {
+            "right_arm_frozen": 3600
+          },
+          "5": {
+            "right_arm_frozen": 385
+          }
+        },
+        "2026-05-26": {
+          "19": {
+            "right_arm_frozen": 3600
+          },
+          "14": {
+            "right_arm_frozen": 1693
+          },
+          "20": {
+            "right_arm_frozen": 3600
+          },
+          "17": {
+            "right_arm_frozen": 1397
+          },
+          "23": {
+            "left_arm_frozen": 1354
+          },
+          "18": {
+            "right_arm_frozen": 3600
+          },
+          "15": {
+            "right_arm_frozen": 570,
+            "left_arm_frozen": 1029
+          },
+          "21": {
+            "right_arm_frozen": 2203
+          }
+        },
+        "2026-05-27": {
+          "2": {
+            "left_arm_frozen": 3600
+          },
+          "0": {
+            "left_arm_frozen": 3600
+          },
+          "3": {
+            "left_arm_frozen": 2246
+          },
+          "1": {
+            "left_arm_frozen": 3600
+          }
+        }
+      },
+      "gen2-017": {
+        "2026-04-28": {
+          "9": {
+            "head_cam_out": 67
+          }
+        },
+        "2026-04-29": {
+          "14": {
+            "neck_frozen": 175
+          },
+          "9": {
+            "left_arm_frozen": 539
+          },
+          "15": {
+            "neck_frozen": 37
+          }
+        },
+        "2026-04-30": {
+          "10": {
+            "neck_frozen": 42
+          }
+        },
+        "2026-05-04": {
+          "11": {
+            "right_arm_frozen": 37
+          },
+          "9": {
+            "other_robot_issue": 147
+          }
+        },
+        "2026-05-12": {
+          "8": {
+            "neck_frozen": 1232
+          },
+          "9": {
+            "neck_frozen": 333
+          }
+        },
+        "2026-05-20": {
+          "8": {
+            "head_cam_out": 57
+          }
+        },
+        "2026-05-22": {
+          "10": {
+            "head_cam_out": 60
+          }
+        },
+        "2026-05-26": {
+          "17": {
+            "right_arm_frozen": 39
+          }
+        },
+        "2026-05-27": {
+          "15": {
+            "other_robot_issue": 585
+          },
+          "8": {
+            "head_cam_out": 55
+          }
+        },
+        "2026-05-28": {
+          "14": {
+            "other_robot_issue": 693
+          }
+        },
+        "2026-05-29": {
+          "8": {
+            "head_cam_out": 64
+          },
+          "10": {
+            "right_arm_frozen": 34
+          }
+        },
+        "2026-06-02": {
+          "9": {
+            "head_cam_out": 58
+          }
+        }
+      },
+      "gen2-013": {
+        "2026-04-29": {
+          "8": {
+            "head_cam_out": 46
+          }
+        },
+        "2026-04-30": {
+          "10": {
+            "right_gripper_not_working": 36
+          },
+          "12": {
+            "left_arm_frozen": 49
+          },
+          "9": {
+            "right_arm_frozen": 24
+          }
+        },
+        "2026-05-04": {
+          "18": {
+            "left_gripper_not_working": 650
+          }
+        },
+        "2026-05-06": {
+          "16": {
+            "right_gripper_not_working": 39
+          }
+        },
+        "2026-05-11": {
+          "15": {
+            "neck_frozen": 90
+          },
+          "14": {
+            "neck_frozen": 65
+          }
+        },
+        "2026-05-12": {
+          "13": {
+            "neck_frozen": 44
+          },
+          "15": {
+            "neck_frozen": 3600
+          },
+          "17": {
+            "neck_frozen": 3556
+          },
+          "10": {
+            "head_cam_out": 75
+          },
+          "12": {
+            "left_arm_frozen": 38
+          },
+          "14": {
+            "neck_frozen": 3600
+          },
+          "16": {
+            "neck_frozen": 3600
+          },
+          "11": {
+            "right_arm_frozen": 33
+          }
+        },
+        "2026-05-15": {
+          "9": {
+            "head_cam_out": 234
+          }
+        },
+        "2026-05-20": {
+          "9": {
+            "head_cam_out": 37
+          }
+        },
+        "2026-05-21": {
+          "11": {
+            "neck_frozen": 28
+          },
+          "18": {
+            "neck_frozen": 3600
+          },
+          "20": {
+            "neck_frozen": 3600
+          },
+          "15": {
+            "head_cam_out": 39
+          },
+          "17": {
+            "right_arm_frozen": 1058,
+            "neck_frozen": 2386
+          },
+          "19": {
+            "neck_frozen": 3600
+          },
+          "12": {
+            "neck_frozen": 15
+          },
+          "21": {
+            "neck_frozen": 1214
+          },
+          "16": {
+            "right_arm_frozen": 8,
+            "other_robot_issue": 1252
+          }
+        },
+        "2026-05-22": {
+          "13": {
+            "right_arm_frozen": 3600
+          },
+          "10": {
+            "right_arm_frozen": 1389,
+            "left_arm_frozen": 566
+          },
+          "12": {
+            "right_arm_frozen": 3600
+          },
+          "14": {
+            "right_arm_frozen": 2211
+          },
+          "11": {
+            "right_arm_frozen": 3600
+          }
+        },
+        "2026-06-01": {
+          "15": {
+            "right_arm_frozen": 93
+          },
+          "17": {
+            "other_robot_issue": 3600
+          },
+          "19": {
+            "other_robot_issue": 3600
+          },
+          "16": {
+            "right_arm_frozen": 1129,
+            "left_arm_frozen": 193,
+            "other_robot_issue": 338
+          },
+          "18": {
+            "other_robot_issue": 3600
+          },
+          "11": {
+            "neck_frozen": 44
+          },
+          "20": {
+            "other_robot_issue": 3262
+          }
+        },
+        "2026-06-02": {
+          "18": {
+            "neck_frozen": 44
+          },
+          "11": {
+            "right_arm_frozen": 1313,
+            "left_arm_frozen": 1
+          },
+          "17": {
+            "head_cam_out": 38,
+            "neck_frozen": 225
+          },
+          "10": {
+            "right_arm_frozen": 2301
+          }
+        },
+        "2026-06-03": {
+          "10": {
+            "neck_frozen": 64
+          }
+        },
+        "2026-06-04": {
+          "14": {
+            "neck_frozen": 45,
+            "other_robot_issue": 1654
+          },
+          "15": {
+            "other_robot_issue": 384
+          },
+          "8": {
+            "right_gripper_not_working": 35
+          }
+        },
+        "2026-06-05": {
+          "15": {
+            "left_arm_frozen": 1257
+          },
+          "14": {
+            "left_arm_frozen": 1786
+          }
+        }
+      }
+    }
+  }
 } as const

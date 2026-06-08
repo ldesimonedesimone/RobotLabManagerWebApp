@@ -2,12 +2,14 @@ import { useMemo, useState } from 'react'
 import { LAB_SUPPORT_DATA } from './labSupportData'
 import './labsupport.css'
 
+type FaultType = { key: string; label: string }
+
 type Series = {
   lab: string
   host: string
   color: string
   note: string | null
-  counts: number[]
+  countsByType: Record<string, number[]>
   default: boolean
 }
 
@@ -17,14 +19,25 @@ type Card = {
   color: string
   note: string | null
   default: boolean
-  slowCount: number
   runHours: number
-  topFault: { label: string; ttr: string; count: number } | null
+  faultByType: Record<string, [number, number]>
+}
+
+type Utilization = {
+  tzLabel: string
+  days: string[]
+  defaultStartHour: number
+  defaultEndHour: number
+  defaultSpanStart: string
+  defaultSpanEnd: string
+  buckets: Record<string, Record<string, Record<string, number[]>>>
+  faultBuckets: Record<string, Record<string, Record<string, Record<string, number>>>>
 }
 
 type LabSupportData = {
   titleRange: string
   defaultHosts: string[]
+  faultTypes: FaultType[]
   subtitle: string
   footer: string
   generatedAt: string
@@ -34,6 +47,7 @@ type LabSupportData = {
   tickStep: number
   series: Series[]
   cards: Card[]
+  utilization: Utilization
 }
 
 const DATA = LAB_SUPPORT_DATA as unknown as LabSupportData
@@ -60,9 +74,43 @@ function axisScale(vals: number[]): { maxY: number; tickStep: number } {
   return { maxY, tickStep }
 }
 
-function loadSelection(): Set<string> {
+const HOUR_LABELS = Array.from({ length: 25 }, (_, h) => `${String(h).padStart(2, '0')}:00`)
+
+function dayOfWeek(iso: string): number {
+  const [y, m, d] = iso.split('-').map(Number)
+  return new Date(y, m - 1, d).getDay()
+}
+
+function fmtDayShort(iso: string): string {
+  const [y, m, d] = iso.split('-').map(Number)
+  return new Date(y, m - 1, d).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+}
+
+function fmtHrs(seconds: number): string {
+  return `${(seconds / 3600).toFixed(1)}h`
+}
+
+function fmtTTR(seconds: number): string {
+  const s = Math.max(0, Math.round(seconds))
+  if (s < 60) return `${s}s`
+  if (s < 3600) return `${Math.round(s / 60)}m`
+  const h = Math.floor(s / 3600)
+  const m = Math.round((s - h * 3600) / 60)
+  return m ? `${h}h ${m}m` : `${h}h`
+}
+
+function sumCounts(countsByType: Record<string, number[]>, faults: Set<string>, n: number): number[] {
+  const out = new Array(n).fill(0)
+  for (const t of faults) {
+    const arr = countsByType[t]
+    if (arr) for (let i = 0; i < n; i += 1) out[i] += arr[i] ?? 0
+  }
+  return out
+}
+
+function loadSet(key: string, fallback: string[]): Set<string> {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY)
+    const raw = localStorage.getItem(key)
     if (raw) {
       const arr = JSON.parse(raw) as string[]
       if (Array.isArray(arr)) return new Set(arr)
@@ -70,8 +118,12 @@ function loadSelection(): Set<string> {
   } catch {
     /* fall through to default */
   }
-  return new Set(DATA.defaultHosts)
+  return new Set(fallback)
 }
+
+const FAULT_STORAGE_KEY = 'labSupport.selectedFaults'
+
+type ChartSeries = { host: string; color: string; counts: number[] }
 
 function FaultChart({
   series,
@@ -80,7 +132,7 @@ function FaultChart({
   tickStep,
   yAxisLabel,
 }: {
-  series: Series[]
+  series: ChartSeries[]
   weeks: string[]
   maxY: number
   tickStep: number
@@ -162,13 +214,32 @@ function FaultChart({
 
 export default function LabSupportDashboard() {
   const data = DATA
-  const [selected, setSelected] = useState<Set<string>>(loadSelection)
+  const nWeeks = data.weeks.length
+  const allFaultKeys = useMemo(() => data.faultTypes.map((f) => f.key), [data.faultTypes])
+  const faultLabel = useMemo(
+    () => new Map(data.faultTypes.map((f) => [f.key, f.label])),
+    [data.faultTypes],
+  )
+
+  const [selected, setSelected] = useState<Set<string>>(() => loadSet(STORAGE_KEY, DATA.defaultHosts))
+  const [selectedFaults, setSelectedFaults] = useState<Set<string>>(() =>
+    loadSet(FAULT_STORAGE_KEY, DATA.faultTypes.map((f) => f.key)),
+  )
   const [pickerOpen, setPickerOpen] = useState(false)
 
   const persist = (next: Set<string>) => {
     setSelected(next)
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify([...next]))
+    } catch {
+      /* ignore quota/availability errors */
+    }
+  }
+
+  const persistFaults = (next: Set<string>) => {
+    setSelectedFaults(next)
+    try {
+      localStorage.setItem(FAULT_STORAGE_KEY, JSON.stringify([...next]))
     } catch {
       /* ignore quota/availability errors */
     }
@@ -181,17 +252,45 @@ export default function LabSupportDashboard() {
     persist(next)
   }
 
+  const toggleFault = (key: string) => {
+    const next = new Set(selectedFaults)
+    if (next.has(key)) next.delete(key)
+    else next.add(key)
+    persistFaults(next)
+  }
+
   const selectAll = () => persist(new Set(data.series.map((s) => s.host)))
   const clearAll = () => persist(new Set())
   const resetLabs = () => persist(new Set(data.defaultHosts))
 
   const shownSeries = useMemo(
-    () => data.series.filter((s) => selected.has(s.host)),
-    [data.series, selected],
+    () =>
+      data.series
+        .filter((s) => selected.has(s.host))
+        .map((s) => ({ ...s, counts: sumCounts(s.countsByType, selectedFaults, nWeeks) })),
+    [data.series, selected, selectedFaults, nWeeks],
+  )
+  const countsByHost = useMemo(
+    () => new Map(data.series.map((s) => [s.host, s.countsByType])),
+    [data.series],
   )
   const shownCards = useMemo(
-    () => data.cards.filter((c) => selected.has(c.host)),
-    [data.cards, selected],
+    () =>
+      data.cards
+        .filter((c) => selected.has(c.host))
+        .map((c) => {
+          const counts = sumCounts(countsByHost.get(c.host) ?? {}, selectedFaults, nWeeks)
+          const slowCount = counts[nWeeks - 1] ?? 0
+          let top: { label: string; ttr: number; count: number } | null = null
+          for (const t of selectedFaults) {
+            const e = c.faultByType[t]
+            if (e && (top === null || e[0] > top.ttr)) {
+              top = { label: faultLabel.get(t) ?? t, ttr: e[0], count: e[1] }
+            }
+          }
+          return { ...c, slowCount, top }
+        }),
+    [data.cards, countsByHost, selected, selectedFaults, nWeeks, faultLabel],
   )
   const { maxY, tickStep } = useMemo(
     () => axisScale(shownSeries.flatMap((s) => s.counts)),
@@ -255,6 +354,30 @@ export default function LabSupportDashboard() {
         </div>
       ) : null}
 
+      <div className="ls-fault-bar">
+        <span className="ls-fault-bar-label">Fault types</span>
+        <div className="ls-fault-chips">
+          {data.faultTypes.map((f) => (
+            <button
+              type="button"
+              key={f.key}
+              className={`ls-fault-chip${selectedFaults.has(f.key) ? ' on' : ''}`}
+              onClick={() => toggleFault(f.key)}
+            >
+              {f.label}
+            </button>
+          ))}
+        </div>
+        <div className="ls-toolbar-actions">
+          <button type="button" className="ls-mini-btn" onClick={() => persistFaults(new Set(allFaultKeys))}>
+            All
+          </button>
+          <button type="button" className="ls-mini-btn" onClick={() => persistFaults(new Set())}>
+            None
+          </button>
+        </div>
+      </div>
+
       <div className="ls-layout">
         <section className="ls-panel ls-chart-panel">
           {shownSeries.length === 0 ? (
@@ -306,12 +429,12 @@ export default function LabSupportDashboard() {
                   </div>
                 </div>
                 <div className="ls-card-body">
-                  {c.topFault ? (
+                  {c.top ? (
                     <div className="ls-top-fault">
                       <span className="ls-top-dot" style={{ background: c.color }} />
-                      <span className="ls-top-type">{c.topFault.label}</span>
+                      <span className="ls-top-type">{c.top.label}</span>
                       <span className="ls-top-ttr">
-                        {c.topFault.ttr} TTR · ×{c.topFault.count}
+                        {fmtTTR(c.top.ttr)} TTR · ×{c.top.count}
                       </span>
                     </div>
                   ) : (
@@ -324,10 +447,227 @@ export default function LabSupportDashboard() {
         </section>
       </div>
 
+      <UtilizationPanel
+        util={data.utilization}
+        series={data.series}
+        selected={selected}
+        selectedFaults={selectedFaults}
+      />
+
       <footer className="ls-footer">
         {data.footer} · Snapshot generated {data.generatedAt}
       </footer>
     </div>
+  )
+}
+
+type Breakdown = {
+  host: string
+  lab: string
+  color: string
+  active: number
+  runningOther: number
+  faultDown: number
+  idleDown: number
+  windowSecs: number
+  util: number
+}
+
+function UtilizationPanel({
+  util,
+  series,
+  selected,
+  selectedFaults,
+}: {
+  util: Utilization
+  series: Series[]
+  selected: Set<string>
+  selectedFaults: Set<string>
+}) {
+  const days = util.days
+  const [startHour, setStartHour] = useState(util.defaultStartHour)
+  const [endHour, setEndHour] = useState(util.defaultEndHour)
+  const [spanStart, setSpanStart] = useState(
+    days.includes(util.defaultSpanStart) ? util.defaultSpanStart : days[0],
+  )
+  const [spanEnd, setSpanEnd] = useState(
+    days.includes(util.defaultSpanEnd) ? util.defaultSpanEnd : days[days.length - 1],
+  )
+  const [weekdaysOnly, setWeekdaysOnly] = useState(true)
+
+  const lo = spanStart <= spanEnd ? spanStart : spanEnd
+  const hi = spanStart <= spanEnd ? spanEnd : spanStart
+
+  const activeDays = useMemo(
+    () =>
+      days.filter((d) => d >= lo && d <= hi && (!weekdaysOnly || (dayOfWeek(d) >= 1 && dayOfWeek(d) <= 5))),
+    [days, lo, hi, weekdaysOnly],
+  )
+
+  const hoursPerDay = Math.max(0, endHour - startHour)
+  const windowSecs = activeDays.length * hoursPerDay * 3600
+
+  const lookup = useMemo(() => new Map(series.map((s) => [s.host, s])), [series])
+
+  const rows = useMemo<Breakdown[]>(() => {
+    const out: Breakdown[] = []
+    for (const host of selected) {
+      const meta = lookup.get(host)
+      if (!meta) continue
+      const byDay = util.buckets[host] ?? {}
+      const faultByDay = util.faultBuckets[host] ?? {}
+      let active = 0
+      let running = 0
+      let fd = 0
+      for (const d of activeDays) {
+        const byHour = byDay[d]
+        const faultHour = faultByDay[d]
+        for (let h = startHour; h < endHour; h += 1) {
+          const cell = byHour?.[String(h)]
+          if (cell) {
+            active += cell[0]
+            running += cell[1]
+          }
+          const fcell = faultHour?.[String(h)]
+          if (fcell) {
+            for (const t of selectedFaults) fd += fcell[t] ?? 0
+          }
+        }
+      }
+      const notRunning = Math.max(0, windowSecs - running)
+      const faultDown = Math.min(fd, notRunning)
+      const idleDown = Math.max(0, notRunning - faultDown)
+      const runningOther = Math.max(0, running - active)
+      out.push({
+        host,
+        lab: meta.lab,
+        color: meta.color,
+        active,
+        runningOther,
+        faultDown,
+        idleDown,
+        windowSecs,
+        util: windowSecs > 0 ? (active / windowSecs) * 100 : 0,
+      })
+    }
+    out.sort((a, b) => b.util - a.util)
+    return out
+  }, [selected, selectedFaults, lookup, util.buckets, util.faultBuckets, activeDays, startHour, endHour, windowSecs])
+
+  const fleetUtil =
+    rows.length > 0 && windowSecs > 0
+      ? (rows.reduce((s, r) => s + r.active, 0) / (rows.length * windowSecs)) * 100
+      : 0
+
+  return (
+    <section className="ls-util">
+      <div className="ls-util-head">
+        <h2>Robot utilization</h2>
+        <p className="ls-util-sub">
+          Active control time (teleop + autonomous policy) ÷ daily window. Interventions and
+          idle-on time are excluded from the numerator. “Down — hardware fault” reflects the
+          fault types selected above.
+        </p>
+      </div>
+
+      <div className="ls-util-controls">
+        <label className="ls-ctl">
+          <span>Daily window ({util.tzLabel})</span>
+          <span className="ls-ctl-row">
+            <select value={startHour} onChange={(e) => setStartHour(Number(e.target.value))}>
+              {HOUR_LABELS.slice(0, 24).map((l, h) => (
+                <option key={h} value={h}>
+                  {l}
+                </option>
+              ))}
+            </select>
+            <span className="ls-ctl-sep">→</span>
+            <select value={endHour} onChange={(e) => setEndHour(Number(e.target.value))}>
+              {HOUR_LABELS.map((l, h) => (
+                <option key={h} value={h} disabled={h <= startHour}>
+                  {l}
+                </option>
+              ))}
+            </select>
+          </span>
+        </label>
+
+        <label className="ls-ctl">
+          <span>Date span</span>
+          <span className="ls-ctl-row">
+            <select value={spanStart} onChange={(e) => setSpanStart(e.target.value)}>
+              {days.map((d) => (
+                <option key={d} value={d}>
+                  {fmtDayShort(d)}
+                </option>
+              ))}
+            </select>
+            <span className="ls-ctl-sep">→</span>
+            <select value={spanEnd} onChange={(e) => setSpanEnd(e.target.value)}>
+              {days.map((d) => (
+                <option key={d} value={d}>
+                  {fmtDayShort(d)}
+                </option>
+              ))}
+            </select>
+          </span>
+        </label>
+
+        <label className="ls-ctl ls-ctl-check">
+          <input
+            type="checkbox"
+            checked={weekdaysOnly}
+            onChange={(e) => setWeekdaysOnly(e.target.checked)}
+          />
+          <span>Weekdays only</span>
+        </label>
+
+        <div className="ls-util-summary">
+          <div className="ls-util-big">{fleetUtil.toFixed(0)}%</div>
+          <div className="ls-util-small">
+            avg over {rows.length} robot{rows.length === 1 ? '' : 's'} · {activeDays.length} day
+            {activeDays.length === 1 ? '' : 's'} · {hoursPerDay}h/day
+          </div>
+        </div>
+      </div>
+
+      <div className="ls-util-legend">
+        <span><i style={{ background: '#22c55e' }} />Active control (teleop + autonomous)</span>
+        <span><i style={{ background: '#64748b' }} />Intervention / idle-on</span>
+        <span><i style={{ background: '#ef4444' }} />Down — hardware fault</span>
+        <span><i style={{ background: '#f59e0b' }} />Down — idle, no fault (pilot)</span>
+      </div>
+
+      {rows.length === 0 || windowSecs === 0 ? (
+        <div className="ls-empty">
+          {windowSecs === 0 ? 'Empty window — widen the hours or date span.' : 'No robots selected.'}
+        </div>
+      ) : (
+        <div className="ls-util-bars">
+          {rows.map((r) => {
+            const pct = (v: number) => (r.windowSecs > 0 ? (v / r.windowSecs) * 100 : 0)
+            return (
+              <div className="ls-util-row" key={r.host}>
+                <div className="ls-util-label">
+                  <span className="ls-legend-dot" style={{ background: r.color }} />
+                  {r.lab} <span className="ls-legend-host">({r.host})</span>
+                </div>
+                <div className="ls-util-bar" title={
+                  `Active ${fmtHrs(r.active)} · other-running ${fmtHrs(r.runningOther)} · ` +
+                  `fault-down ${fmtHrs(r.faultDown)} · idle-down ${fmtHrs(r.idleDown)}`
+                }>
+                  <div className="ls-seg" style={{ width: `${pct(r.active)}%`, background: '#22c55e' }} />
+                  <div className="ls-seg" style={{ width: `${pct(r.runningOther)}%`, background: '#64748b' }} />
+                  <div className="ls-seg" style={{ width: `${pct(r.faultDown)}%`, background: '#ef4444' }} />
+                  <div className="ls-seg" style={{ width: `${pct(r.idleDown)}%`, background: '#f59e0b' }} />
+                </div>
+                <div className="ls-util-pct">{r.util.toFixed(0)}%</div>
+              </div>
+            )
+          })}
+        </div>
+      )}
+    </section>
   )
 }
 
