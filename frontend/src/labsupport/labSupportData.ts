@@ -2,7 +2,7 @@
 // Refresh: re-pull the two neon_query calls, overwrite the mcp_*.json files,
 // then run `python3 lab_support_summary_mcp.py` and redeploy the WebApp.
 export const LAB_SUPPORT_DATA = {
-  "titleRange": "Jun 1\u20135",
+  "titleRange": "Jun 8\u201312",
   "defaultHosts": [
     "gen2-005",
     "gen2-109",
@@ -51,15 +51,15 @@ export const LAB_SUPPORT_DATA = {
   ],
   "subtitle": "6-week rolling window \u00b7 Mon\u2013Fri \u00b7 >90s hardware faults only (arm / gripper / head cam / neck / chest / other robot issue \u2014 wrist-cam & operational faults excluded)",
   "footer": "Source: Ultra Neon DB via MCP user-ultra \u00b7 station_faults (count + TTR) and station_states (running hours).",
-  "generatedAt": "2026-06-08",
+  "generatedAt": "2026-06-15",
   "yAxisLabel": "> 90s faults",
   "weeks": [
-    "Apr 27\u2013May 1",
     "May 4\u20138",
     "May 11\u201315",
     "May 18\u201322",
     "May 25\u201329",
-    "Jun 1\u20135"
+    "Jun 1\u20135",
+    "Jun 8\u201312"
   ],
   "maxY": 40,
   "tickStep": 10,
@@ -71,36 +71,36 @@ export const LAB_SUPPORT_DATA = {
       "note": null,
       "countsByType": {
         "left_arm_frozen": [
-          0,
           1,
           0,
           0,
           0,
-          5
-        ],
-        "other_robot_issue": [
-          0,
-          0,
-          2,
-          1,
-          0,
+          5,
           0
         ],
         "right_arm_frozen": [
           0,
-          0,
           1,
           0,
           2,
-          7
+          7,
+          0
+        ],
+        "other_robot_issue": [
+          0,
+          2,
+          1,
+          0,
+          0,
+          0
         ],
         "head_cam_out": [
           0,
           0,
           0,
           0,
-          0,
-          2
+          2,
+          1
         ]
       },
       "default": true
@@ -111,35 +111,43 @@ export const LAB_SUPPORT_DATA = {
       "color": "#e67e22",
       "note": null,
       "countsByType": {
-        "left_arm_frozen": [
+        "right_arm_frozen": [
           0,
+          1,
           0,
+          4,
+          11,
+          4
+        ],
+        "other_robot_issue": [
+          0,
+          1,
           1,
           1,
           1,
           0
         ],
-        "right_arm_frozen": [
-          0,
-          0,
-          1,
-          0,
-          4,
-          11
-        ],
-        "other_robot_issue": [
-          0,
-          0,
-          1,
-          1,
-          1,
-          1
-        ],
         "head_cam_out": [
           0,
           0,
+          1,
           0,
           1,
+          0
+        ],
+        "left_arm_frozen": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          2
+        ],
+        "neck_frozen": [
+          0,
+          0,
+          0,
+          0,
           0,
           1
         ]
@@ -152,35 +160,35 @@ export const LAB_SUPPORT_DATA = {
       "color": "#3498db",
       "note": null,
       "countsByType": {
-        "other_robot_issue": [
+        "right_arm_frozen": [
           1,
+          0,
+          4,
           2,
-          1,
-          1,
-          2,
-          1
+          3,
+          4
         ],
         "left_arm_frozen": [
-          0,
           1,
           0,
           4,
           2,
-          3
+          3,
+          4
         ],
-        "right_arm_frozen": [
-          0,
-          1,
-          0,
-          4,
+        "other_robot_issue": [
           2,
-          3
+          1,
+          1,
+          2,
+          1,
+          0
         ],
         "head_cam_out": [
           0,
           0,
-          0,
           1,
+          0,
           0,
           0
         ]
@@ -193,27 +201,27 @@ export const LAB_SUPPORT_DATA = {
       "color": "#e74c3c",
       "note": null,
       "countsByType": {
-        "other_robot_issue": [
+        "right_arm_frozen": [
           0,
+          0,
+          2,
+          2,
+          1,
+          2
+        ],
+        "other_robot_issue": [
           0,
           1,
           3,
           3,
-          1
-        ],
-        "right_arm_frozen": [
-          0,
-          0,
-          0,
-          2,
-          2,
-          1
+          1,
+          2
         ],
         "right_gripper_not_working": [
           0,
           0,
-          0,
           1,
+          0,
           0,
           0
         ],
@@ -222,8 +230,8 @@ export const LAB_SUPPORT_DATA = {
           0,
           0,
           0,
-          0,
-          1
+          1,
+          0
         ]
       },
       "default": true
@@ -234,45 +242,45 @@ export const LAB_SUPPORT_DATA = {
       "color": "#f39c12",
       "note": null,
       "countsByType": {
-        "left_arm_frozen": [
-          0,
-          0,
-          9,
-          2,
-          0,
-          4
-        ],
-        "right_arm_frozen": [
-          0,
-          0,
-          8,
-          3,
-          0,
-          1
-        ],
-        "chest_frozen": [
-          0,
-          0,
-          4,
-          0,
-          0,
-          0
-        ],
-        "other_robot_issue": [
-          0,
-          0,
-          1,
-          2,
-          0,
-          1
-        ],
         "head_cam_out": [
           0,
           0,
           0,
-          0,
           2,
-          1
+          1,
+          0
+        ],
+        "left_arm_frozen": [
+          0,
+          9,
+          2,
+          0,
+          4,
+          9
+        ],
+        "chest_frozen": [
+          0,
+          4,
+          0,
+          0,
+          0,
+          0
+        ],
+        "right_arm_frozen": [
+          0,
+          8,
+          3,
+          0,
+          1,
+          3
+        ],
+        "other_robot_issue": [
+          0,
+          1,
+          2,
+          0,
+          1,
+          2
         ]
       },
       "default": true
@@ -283,37 +291,37 @@ export const LAB_SUPPORT_DATA = {
       "color": "#1abc9c",
       "note": null,
       "countsByType": {
-        "other_robot_issue": [
-          2,
-          1,
-          0,
-          2,
-          5,
-          1
-        ],
-        "right_arm_frozen": [
-          1,
-          0,
-          1,
-          2,
-          4,
-          2
-        ],
-        "chest_frozen": [
-          0,
-          1,
-          0,
-          0,
-          0,
-          0
-        ],
         "left_arm_frozen": [
-          0,
           0,
           0,
           9,
           6,
-          5
+          5,
+          0
+        ],
+        "other_robot_issue": [
+          1,
+          0,
+          2,
+          5,
+          1,
+          0
+        ],
+        "right_arm_frozen": [
+          0,
+          1,
+          2,
+          4,
+          2,
+          0
+        ],
+        "chest_frozen": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
         ]
       },
       "default": true
@@ -324,47 +332,47 @@ export const LAB_SUPPORT_DATA = {
       "color": "#d81b60",
       "note": null,
       "countsByType": {
-        "left_arm_frozen": [
-          3,
-          8,
-          1,
-          5,
-          2,
-          6
-        ],
-        "head_cam_out": [
-          1,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
         "other_robot_issue": [
-          6,
           2,
           1,
           2,
           4,
+          1,
+          0
+        ],
+        "right_gripper_not_working": [
+          0,
+          2,
+          0,
+          2,
+          3,
           1
         ],
         "right_arm_frozen": [
-          5,
           1,
           9,
           10,
           8,
-          21
+          21,
+          6
         ],
-        "right_gripper_not_working": [
-          2,
+        "left_gripper_not_working": [
           0,
-          2,
+          1,
           0,
-          2,
-          3
+          0,
+          3,
+          0
         ],
-        "neck_frozen": [
+        "left_arm_frozen": [
+          8,
+          1,
+          5,
+          2,
+          6,
+          1
+        ],
+        "chest_frozen": [
           0,
           1,
           0,
@@ -372,21 +380,13 @@ export const LAB_SUPPORT_DATA = {
           1,
           0
         ],
-        "chest_frozen": [
+        "neck_frozen": [
+          1,
           0,
           0,
           1,
           0,
-          0,
-          1
-        ],
-        "left_gripper_not_working": [
-          0,
-          0,
-          1,
-          0,
-          0,
-          3
+          0
         ]
       },
       "default": true
@@ -397,44 +397,36 @@ export const LAB_SUPPORT_DATA = {
       "color": "#5d6d7e",
       "note": null,
       "countsByType": {
-        "right_gripper_not_working": [
-          8,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
         "right_arm_frozen": [
-          23,
           12,
           7,
           12,
           1,
-          2
+          2,
+          3
         ],
         "other_robot_issue": [
-          1,
           2,
           1,
           4,
           1,
+          2,
           2
         ],
         "left_arm_frozen": [
-          0,
           1,
           0,
           3,
           4,
-          1
+          1,
+          0
         ],
         "head_cam_out": [
           0,
-          0,
           1,
           0,
           1,
+          0,
           0
         ]
       },
@@ -447,52 +439,52 @@ export const LAB_SUPPORT_DATA = {
       "note": null,
       "countsByType": {
         "right_arm_frozen": [
-          2,
           6,
           29,
           12,
           12,
+          1,
+          3
+        ],
+        "left_arm_frozen": [
+          5,
+          2,
+          2,
+          5,
+          5,
+          8
+        ],
+        "other_robot_issue": [
+          3,
+          2,
+          5,
+          1,
+          0,
           1
         ],
-        "left_gripper_not_working": [
-          1,
-          1,
+        "neck_frozen": [
+          3,
           0,
           0,
+          1,
           0,
           0
         ],
         "right_gripper_not_working": [
-          0,
           1,
           4,
           3,
           0,
+          0,
           0
         ],
-        "other_robot_issue": [
-          0,
-          3,
-          2,
-          5,
+        "left_gripper_not_working": [
           1,
-          0
-        ],
-        "neck_frozen": [
-          0,
-          3,
           0,
           0,
-          1,
-          0
-        ],
-        "left_arm_frozen": [
           0,
-          5,
-          2,
-          2,
-          5,
-          5
+          0,
+          1
         ]
       },
       "default": true
@@ -505,51 +497,51 @@ export const LAB_SUPPORT_DATA = {
       "countsByType": {
         "right_arm_frozen": [
           5,
-          5,
           15,
           26,
           20,
-          21
-        ],
-        "left_arm_frozen": [
-          1,
-          7,
-          1,
-          0,
-          1,
+          21,
           7
         ],
         "right_gripper_not_working": [
           1,
           1,
-          1,
           0,
           4,
+          0,
           0
         ],
-        "other_robot_issue": [
-          0,
-          2,
-          0,
-          0,
-          2,
-          2
-        ],
-        "neck_frozen": [
-          0,
+        "left_arm_frozen": [
+          7,
           1,
           0,
+          1,
+          7,
+          20
+        ],
+        "other_robot_issue": [
+          2,
           0,
           0,
-          0
+          2,
+          2,
+          3
         ],
         "head_cam_out": [
           0,
           0,
           0,
           0,
+          1,
+          0
+        ],
+        "neck_frozen": [
+          1,
           0,
-          1
+          0,
+          0,
+          0,
+          0
         ]
       },
       "default": true
@@ -560,51 +552,51 @@ export const LAB_SUPPORT_DATA = {
       "color": "#5578cc",
       "note": null,
       "countsByType": {
-        "head_cam_out": [
-          1,
-          1,
-          0,
-          0,
-          0,
-          0
-        ],
         "other_robot_issue": [
-          1,
           0,
           1,
           1,
           0,
-          0
-        ],
-        "right_arm_frozen": [
           0,
-          3,
-          2,
-          0,
-          1,
           0
         ],
         "left_arm_frozen": [
-          0,
           2,
           3,
           1,
           1,
+          0,
+          1
+        ],
+        "right_arm_frozen": [
+          3,
+          2,
+          0,
+          1,
+          0,
+          1
+        ],
+        "neck_frozen": [
+          0,
+          0,
+          1,
+          0,
+          0,
           0
         ],
         "chest_frozen": [
           0,
           0,
-          0,
           1,
+          0,
           0,
           0
         ],
-        "neck_frozen": [
-          0,
-          0,
-          0,
+        "head_cam_out": [
           1,
+          0,
+          0,
+          0,
           0,
           0
         ]
@@ -617,19 +609,19 @@ export const LAB_SUPPORT_DATA = {
       "color": "#9acc55",
       "note": null,
       "countsByType": {
-        "right_arm_frozen": [
-          0,
-          0,
-          0,
-          1,
-          0,
-          0
-        ],
         "left_arm_frozen": [
           0,
           0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "right_arm_frozen": [
+          0,
           0,
           1,
+          0,
           0,
           0
         ]
@@ -642,34 +634,34 @@ export const LAB_SUPPORT_DATA = {
       "color": "#cc55bd",
       "note": null,
       "countsByType": {
-        "right_arm_frozen": [
-          1,
-          0,
-          1,
-          2,
-          1,
-          1
-        ],
-        "other_robot_issue": [
-          1,
-          2,
-          0,
-          1,
-          0,
-          0
-        ],
         "chest_frozen": [
-          0,
           2,
           1,
+          0,
           0,
           0,
           0
         ],
         "head_cam_out": [
           0,
-          0,
           2,
+          0,
+          0,
+          0,
+          0
+        ],
+        "right_arm_frozen": [
+          0,
+          1,
+          2,
+          1,
+          1,
+          0
+        ],
+        "other_robot_issue": [
+          2,
+          0,
+          1,
           0,
           0,
           0
@@ -677,10 +669,10 @@ export const LAB_SUPPORT_DATA = {
         "left_arm_frozen": [
           0,
           0,
-          0,
           2,
           2,
-          2
+          2,
+          1
         ]
       },
       "default": false
@@ -691,35 +683,35 @@ export const LAB_SUPPORT_DATA = {
       "color": "#55ccb8",
       "note": null,
       "countsByType": {
-        "other_robot_issue": [
-          3,
-          1,
-          1,
-          0,
-          1,
-          0
-        ],
         "right_arm_frozen": [
-          7,
           10,
           2,
           0,
           8,
-          5
+          5,
+          0
         ],
         "left_arm_frozen": [
-          1,
           0,
           0,
           0,
           2,
-          1
+          1,
+          0
         ],
         "neck_frozen": [
-          0,
           2,
           0,
           0,
+          0,
+          0,
+          0
+        ],
+        "other_robot_issue": [
+          1,
+          1,
+          0,
+          1,
           0,
           0
         ]
@@ -732,36 +724,36 @@ export const LAB_SUPPORT_DATA = {
       "color": "#cc9555",
       "note": null,
       "countsByType": {
-        "other_robot_issue": [
-          1,
-          0,
-          1,
-          0,
-          0,
-          0
-        ],
-        "head_cam_out": [
-          0,
-          1,
-          1,
-          0,
-          0,
-          0
-        ],
         "left_arm_frozen": [
-          0,
           1,
           2,
           3,
+          0,
           0,
           0
         ],
         "right_arm_frozen": [
           0,
-          0,
           2,
           1,
           1,
+          0,
+          0
+        ],
+        "head_cam_out": [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "other_robot_issue": [
+          0,
+          1,
+          0,
+          0,
+          0,
           0
         ]
       },
@@ -774,20 +766,20 @@ export const LAB_SUPPORT_DATA = {
       "note": null,
       "countsByType": {
         "left_arm_frozen": [
-          0,
           3,
           4,
           5,
           3,
+          4,
           4
         ],
         "right_arm_frozen": [
-          0,
           2,
           3,
           2,
           2,
-          4
+          4,
+          7
         ]
       },
       "default": false
@@ -799,24 +791,24 @@ export const LAB_SUPPORT_DATA = {
       "note": null,
       "countsByType": {
         "left_arm_frozen": [
-          6,
           1,
           0,
           1,
           0,
+          1,
           1
         ],
         "right_arm_frozen": [
-          3,
           2,
           0,
           1,
           0,
+          0,
           0
         ],
         "neck_frozen": [
-          0,
           1,
+          0,
           0,
           0,
           0,
@@ -824,8 +816,8 @@ export const LAB_SUPPORT_DATA = {
         ],
         "head_cam_out": [
           0,
-          0,
           1,
+          0,
           0,
           0,
           0
@@ -835,8 +827,8 @@ export const LAB_SUPPORT_DATA = {
           0,
           0,
           0,
-          0,
-          1
+          1,
+          0
         ]
       },
       "default": false
@@ -847,37 +839,37 @@ export const LAB_SUPPORT_DATA = {
       "color": "#cc557d",
       "note": null,
       "countsByType": {
-        "head_cam_out": [
-          1,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "left_arm_frozen": [
-          2,
-          0,
-          1,
-          1,
-          2,
-          0
-        ],
-        "other_robot_issue": [
-          0,
-          2,
-          0,
-          0,
-          0,
-          0
-        ],
         "right_arm_frozen": [
           0,
           0,
-          0,
           1,
           2,
-          2
+          2,
+          0
+        ],
+        "left_arm_frozen": [
+          0,
+          1,
+          1,
+          2,
+          0,
+          0
+        ],
+        "other_robot_issue": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "head_cam_out": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
         ]
       },
       "default": false
@@ -896,33 +888,25 @@ export const LAB_SUPPORT_DATA = {
       "color": "#c2cc55",
       "note": null,
       "countsByType": {
-        "other_robot_issue": [
-          1,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
         "right_arm_frozen": [
-          1,
           2,
+          0,
           0,
           0,
           0,
           0
         ],
         "left_arm_frozen": [
-          2,
           3,
+          0,
           0,
           0,
           0,
           0
         ],
         "head_cam_out": [
-          0,
           1,
+          0,
           0,
           0,
           0,
@@ -937,20 +921,20 @@ export const LAB_SUPPORT_DATA = {
       "color": "#b355cc",
       "note": null,
       "countsByType": {
-        "right_arm_frozen": [
-          0,
-          0,
-          0,
-          0,
-          1,
-          0
-        ],
         "left_arm_frozen": [
           0,
           0,
           0,
+          1,
+          0,
+          0
+        ],
+        "right_arm_frozen": [
+          0,
+          0,
           0,
           1,
+          0,
           0
         ]
       },
@@ -962,45 +946,37 @@ export const LAB_SUPPORT_DATA = {
       "color": "#55cc90",
       "note": null,
       "countsByType": {
-        "chest_frozen": [
-          1,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
         "right_arm_frozen": [
-          0,
           2,
           2,
           10,
           4,
-          0
+          0,
+          3
         ],
         "left_arm_frozen": [
-          0,
           0,
           5,
           2,
           4,
-          6
+          6,
+          2
         ],
         "other_robot_issue": [
           0,
-          0,
           1,
           0,
           1,
-          0
+          0,
+          2
         ],
         "head_cam_out": [
           0,
           0,
           0,
-          0,
           1,
-          1
+          1,
+          0
         ]
       },
       "default": false
@@ -1011,21 +987,21 @@ export const LAB_SUPPORT_DATA = {
       "color": "#cc6e55",
       "note": null,
       "countsByType": {
-        "left_arm_frozen": [
-          0,
-          0,
-          0,
-          0,
-          1,
-          3
-        ],
         "right_arm_frozen": [
           0,
           0,
           0,
+          1,
+          3,
+          1
+        ],
+        "left_arm_frozen": [
+          0,
+          0,
           0,
           1,
-          3
+          3,
+          0
         ]
       },
       "default": false
@@ -1036,20 +1012,20 @@ export const LAB_SUPPORT_DATA = {
       "color": "#555fcc",
       "note": null,
       "countsByType": {
-        "left_arm_frozen": [
-          0,
-          0,
-          0,
-          1,
-          2,
-          0
-        ],
         "right_arm_frozen": [
-          0,
           0,
           0,
           2,
           3,
+          0,
+          0
+        ],
+        "left_arm_frozen": [
+          0,
+          0,
+          1,
+          2,
+          0,
           0
         ]
       },
@@ -1061,26 +1037,18 @@ export const LAB_SUPPORT_DATA = {
       "color": "#82cc55",
       "note": null,
       "countsByType": {
-        "left_arm_frozen": [
-          2,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
         "other_robot_issue": [
-          0,
           1,
           0,
           0,
           2,
-          0
+          0,
+          2
         ],
         "neck_frozen": [
           0,
-          0,
           1,
+          0,
           0,
           0,
           0
@@ -1094,53 +1062,53 @@ export const LAB_SUPPORT_DATA = {
       "color": "#cc55a4",
       "note": null,
       "countsByType": {
-        "left_gripper_not_working": [
-          0,
-          1,
+        "right_arm_frozen": [
           0,
           0,
+          2,
           0,
+          3,
           0
         ],
-        "neck_frozen": [
-          0,
-          0,
-          1,
-          1,
-          0,
-          0
-        ],
-        "head_cam_out": [
+        "left_arm_frozen": [
           0,
           0,
           1,
           0,
-          0,
+          3,
           0
         ],
         "other_robot_issue": [
           0,
           0,
+          1,
+          0,
+          3,
+          0
+        ],
+        "neck_frozen": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "head_cam_out": [
           0,
           1,
           0,
-          3
+          0,
+          0,
+          0
         ],
-        "right_arm_frozen": [
-          0,
-          0,
-          0,
-          2,
-          0,
-          3
-        ],
-        "left_arm_frozen": [
-          0,
-          0,
-          0,
+        "left_gripper_not_working": [
           1,
           0,
-          3
+          0,
+          0,
+          0,
+          0
         ]
       },
       "default": false
@@ -1166,7 +1134,24 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-114",
       "color": "#8b55cc",
       "note": null,
-      "countsByType": {},
+      "countsByType": {
+        "left_arm_frozen": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "right_arm_frozen": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
       "default": false
     },
     {
@@ -1190,7 +1175,24 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-119",
       "color": "#5587cc",
       "note": null,
-      "countsByType": {},
+      "countsByType": {
+        "right_arm_frozen": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        "left_arm_frozen": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
       "default": false
     },
     {
@@ -1206,7 +1208,24 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-121",
       "color": "#cb55cc",
       "note": null,
-      "countsByType": {},
+      "countsByType": {
+        "right_arm_frozen": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        "left_arm_frozen": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
       "default": false
     },
     {
@@ -1214,7 +1233,16 @@ export const LAB_SUPPORT_DATA = {
       "host": "gen2-122",
       "color": "#55cca9",
       "note": null,
-      "countsByType": {},
+      "countsByType": {
+        "left_arm_frozen": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
       "default": false
     }
   ],
@@ -1225,27 +1253,27 @@ export const LAB_SUPPORT_DATA = {
       "color": "#4682b4",
       "note": null,
       "default": true,
-      "runHours": 51.4,
+      "runHours": 62.7,
       "faultByType": {
-        "head_cam_out": [
-          4646,
-          4
-        ],
         "right_arm_frozen": [
-          6755,
-          17
-        ],
-        "neck_frozen": [
-          218,
-          5
-        ],
-        "left_arm_frozen": [
-          11978,
-          5
+          294,
+          8
         ],
         "chest_frozen": [
-          77,
-          2
+          116,
+          3
+        ],
+        "head_cam_out": [
+          1451,
+          9
+        ],
+        "neck_frozen": [
+          446,
+          10
+        ],
+        "left_gripper_not_working": [
+          34,
+          1
         ]
       }
     },
@@ -1255,30 +1283,34 @@ export const LAB_SUPPORT_DATA = {
       "color": "#e67e22",
       "note": null,
       "default": true,
-      "runHours": 47.4,
+      "runHours": 39.3,
       "faultByType": {
-        "left_gripper_not_working": [
-          79,
-          2
+        "right_arm_frozen": [
+          11728,
+          19
+        ],
+        "right_gripper_not_working": [
+          42,
+          1
         ],
         "head_cam_out": [
-          435,
-          7
+          151,
+          4
         ],
-        "right_arm_frozen": [
-          20689,
-          29
-        ],
-        "chest_frozen": [
-          116,
-          2
+        "neck_frozen": [
+          7985,
+          1
         ],
         "left_arm_frozen": [
-          384,
-          9
+          3108,
+          5
         ],
-        "other_robot_issue": [
-          3530,
+        "left_gripper_not_working": [
+          37,
+          1
+        ],
+        "chest_frozen": [
+          40,
           1
         ]
       }
@@ -1289,23 +1321,27 @@ export const LAB_SUPPORT_DATA = {
       "color": "#3498db",
       "note": null,
       "default": true,
-      "runHours": 40.6,
+      "runHours": 55.0,
       "faultByType": {
-        "other_robot_issue": [
-          189,
+        "left_arm_frozen": [
+          16142,
+          8
+        ],
+        "left_gripper_not_working": [
+          35,
           1
         ],
-        "left_arm_frozen": [
-          18203,
-          3
-        ],
         "right_arm_frozen": [
-          1034,
+          4824,
           5
         ],
         "head_cam_out": [
           74,
           2
+        ],
+        "right_gripper_not_working": [
+          35,
+          1
         ]
       }
     },
@@ -1315,39 +1351,27 @@ export const LAB_SUPPORT_DATA = {
       "color": "#e74c3c",
       "note": null,
       "default": true,
-      "runHours": 60.1,
+      "runHours": 44.0,
       "faultByType": {
-        "left_arm_frozen": [
-          239,
-          3
-        ],
         "other_robot_issue": [
-          902,
-          3
-        ],
-        "head_cam_out": [
-          76,
+          1870,
           2
-        ],
-        "chest_frozen": [
-          168,
-          4
-        ],
-        "right_arm_frozen": [
-          492,
-          9
         ],
         "left_gripper_not_working": [
-          72,
+          35,
+          1
+        ],
+        "left_arm_frozen": [
+          34,
+          1
+        ],
+        "right_arm_frozen": [
+          339,
           2
         ],
-        "right_gripper_not_working": [
-          110,
-          3
-        ],
-        "neck_frozen": [
-          181,
-          4
+        "head_cam_out": [
+          36,
+          1
         ]
       }
     },
@@ -1357,30 +1381,30 @@ export const LAB_SUPPORT_DATA = {
       "color": "#f39c12",
       "note": null,
       "default": true,
-      "runHours": 59.6,
+      "runHours": 55.2,
       "faultByType": {
-        "head_cam_out": [
-          193,
-          3
-        ],
-        "chest_frozen": [
-          198,
-          4
-        ],
         "left_arm_frozen": [
-          1118,
-          11
-        ],
-        "left_gripper_not_working": [
-          39,
-          1
-        ],
-        "other_robot_issue": [
-          1938,
-          3
+          7171,
+          18
         ],
         "right_arm_frozen": [
-          4130,
+          2492,
+          14
+        ],
+        "other_robot_issue": [
+          1601,
+          2
+        ],
+        "chest_frozen": [
+          40,
+          1
+        ],
+        "right_gripper_not_working": [
+          38,
+          1
+        ],
+        "head_cam_out": [
+          73,
           2
         ]
       }
@@ -1391,31 +1415,19 @@ export const LAB_SUPPORT_DATA = {
       "color": "#1abc9c",
       "note": null,
       "default": true,
-      "runHours": 45.7,
+      "runHours": 64.2,
       "faultByType": {
+        "head_cam_out": [
+          228,
+          6
+        ],
         "left_arm_frozen": [
-          3057,
-          52
-        ],
-        "other_robot_issue": [
-          184,
-          2
-        ],
-        "left_gripper_not_working": [
-          118,
-          3
-        ],
-        "chest_frozen": [
-          78,
-          2
+          278,
+          5
         ],
         "right_arm_frozen": [
-          1299,
-          3
-        ],
-        "right_gripper_not_working": [
-          39,
-          1
+          78,
+          2
         ]
       }
     },
@@ -1425,34 +1437,26 @@ export const LAB_SUPPORT_DATA = {
       "color": "#d81b60",
       "note": null,
       "default": true,
-      "runHours": 54.1,
+      "runHours": 36.5,
       "faultByType": {
-        "left_gripper_not_working": [
-          634,
-          3
-        ],
-        "chest_frozen": [
-          350,
-          8
+        "head_cam_out": [
+          100,
+          2
         ],
         "right_gripper_not_working": [
-          507,
-          3
-        ],
-        "right_arm_frozen": [
-          19565,
-          22
-        ],
-        "left_arm_frozen": [
-          10106,
-          6
-        ],
-        "head_cam_out": [
-          47,
+          169,
           1
         ],
-        "other_robot_issue": [
-          657,
+        "chest_frozen": [
+          37,
+          1
+        ],
+        "right_arm_frozen": [
+          15143,
+          6
+        ],
+        "left_arm_frozen": [
+          2976,
           1
         ]
       }
@@ -1463,38 +1467,30 @@ export const LAB_SUPPORT_DATA = {
       "color": "#5d6d7e",
       "note": null,
       "default": true,
-      "runHours": 48.4,
+      "runHours": 60.5,
       "faultByType": {
-        "right_arm_frozen": [
-          7080,
-          23
-        ],
         "neck_frozen": [
-          173,
-          4
-        ],
-        "left_gripper_not_working": [
-          36,
-          1
-        ],
-        "other_robot_issue": [
-          410,
+          90,
           2
         ],
-        "left_arm_frozen": [
-          226,
-          3
+        "left_gripper_not_working": [
+          71,
+          2
+        ],
+        "right_arm_frozen": [
+          2317,
+          7
+        ],
+        "other_robot_issue": [
+          687,
+          2
         ],
         "chest_frozen": [
-          40,
-          1
-        ],
-        "head_cam_out": [
-          42,
+          34,
           1
         ],
         "right_gripper_not_working": [
-          37,
+          36,
           1
         ]
       }
@@ -1505,18 +1501,30 @@ export const LAB_SUPPORT_DATA = {
       "color": "#a4c639",
       "note": null,
       "default": true,
-      "runHours": 27.6,
+      "runHours": 49.6,
       "faultByType": {
+        "right_arm_frozen": [
+          509,
+          3
+        ],
         "left_arm_frozen": [
-          3589,
-          6
+          8456,
+          8
         ],
         "head_cam_out": [
-          36,
+          137,
+          3
+        ],
+        "chest_frozen": [
+          37,
           1
         ],
-        "right_arm_frozen": [
-          1833,
+        "left_gripper_not_working": [
+          171,
+          1
+        ],
+        "other_robot_issue": [
+          115,
           1
         ]
       }
@@ -1527,27 +1535,27 @@ export const LAB_SUPPORT_DATA = {
       "color": "#0d47a1",
       "note": null,
       "default": true,
-      "runHours": 58.5,
+      "runHours": 60.8,
       "faultByType": {
-        "other_robot_issue": [
-          2624,
-          3
+        "left_arm_frozen": [
+          5882,
+          20
         ],
         "chest_frozen": [
-          36,
-          1
+          70,
+          2
         ],
         "right_arm_frozen": [
-          9242,
-          21
+          4066,
+          7
+        ],
+        "other_robot_issue": [
+          1090,
+          3
         ],
         "head_cam_out": [
-          449,
-          5
-        ],
-        "left_arm_frozen": [
-          1240,
-          7
+          112,
+          2
         ]
       }
     },
@@ -1558,7 +1566,12 @@ export const LAB_SUPPORT_DATA = {
       "note": null,
       "default": false,
       "runHours": 0.0,
-      "faultByType": {}
+      "faultByType": {
+        "right_arm_frozen": [
+          9304,
+          1
+        ]
+      }
     },
     {
       "lab": "Captain Pack Sparrow",
@@ -1566,8 +1579,13 @@ export const LAB_SUPPORT_DATA = {
       "color": "#9acc55",
       "note": null,
       "default": false,
-      "runHours": 0.0,
-      "faultByType": {}
+      "runHours": 0.9,
+      "faultByType": {
+        "head_cam_out": [
+          35,
+          1
+        ]
+      }
     },
     {
       "lab": "Fleetwood Pack",
@@ -1575,15 +1593,15 @@ export const LAB_SUPPORT_DATA = {
       "color": "#cc55bd",
       "note": null,
       "default": false,
-      "runHours": 18.1,
+      "runHours": 19.6,
       "faultByType": {
-        "left_arm_frozen": [
-          2776,
-          3
-        ],
-        "right_arm_frozen": [
-          2159,
+        "head_cam_out": [
+          36,
           1
+        ],
+        "left_arm_frozen": [
+          8481,
+          3
         ]
       }
     },
@@ -1593,23 +1611,15 @@ export const LAB_SUPPORT_DATA = {
       "color": "#55ccb8",
       "note": null,
       "default": false,
-      "runHours": 33.5,
+      "runHours": 31.7,
       "faultByType": {
         "head_cam_out": [
-          113,
-          3
-        ],
-        "left_gripper_not_working": [
-          38,
-          1
+          153,
+          4
         ],
         "right_arm_frozen": [
-          4716,
-          5
-        ],
-        "left_arm_frozen": [
-          1912,
-          3
+          34,
+          1
         ]
       }
     },
@@ -1619,8 +1629,13 @@ export const LAB_SUPPORT_DATA = {
       "color": "#cc9555",
       "note": null,
       "default": false,
-      "runHours": 0.0,
-      "faultByType": {}
+      "runHours": 10.8,
+      "faultByType": {
+        "head_cam_out": [
+          38,
+          1
+        ]
+      }
     },
     {
       "lab": "Mahdi test bot",
@@ -1628,14 +1643,14 @@ export const LAB_SUPPORT_DATA = {
       "color": "#7355cc",
       "note": null,
       "default": false,
-      "runHours": 0.4,
+      "runHours": 0.1,
       "faultByType": {
-        "left_arm_frozen": [
-          36009,
-          3
-        ],
         "right_arm_frozen": [
-          29901,
+          56995,
+          6
+        ],
+        "left_arm_frozen": [
+          33523,
           3
         ]
       }
@@ -1646,23 +1661,15 @@ export const LAB_SUPPORT_DATA = {
       "color": "#5acc55",
       "note": null,
       "default": false,
-      "runHours": 28.7,
+      "runHours": 22.5,
       "faultByType": {
         "left_arm_frozen": [
-          433,
+          2684,
           1
         ],
         "neck_frozen": [
-          307,
-          7
-        ],
-        "head_cam_out": [
-          76,
-          2
-        ],
-        "other_robot_issue": [
-          1802,
-          1
+          136,
+          3
         ]
       }
     },
@@ -1672,11 +1679,15 @@ export const LAB_SUPPORT_DATA = {
       "color": "#cc557d",
       "note": null,
       "default": false,
-      "runHours": 9.1,
+      "runHours": 11.1,
       "faultByType": {
-        "right_arm_frozen": [
-          21623,
+        "head_cam_out": [
+          268,
           2
+        ],
+        "right_gripper_not_working": [
+          33,
+          1
         ]
       }
     },
@@ -1686,7 +1697,7 @@ export const LAB_SUPPORT_DATA = {
       "color": "#559fcc",
       "note": null,
       "default": false,
-      "runHours": 2.2,
+      "runHours": 0.0,
       "faultByType": {}
     },
     {
@@ -1704,7 +1715,7 @@ export const LAB_SUPPORT_DATA = {
       "color": "#b355cc",
       "note": null,
       "default": false,
-      "runHours": 0.2,
+      "runHours": 1.8,
       "faultByType": {}
     },
     {
@@ -1713,15 +1724,23 @@ export const LAB_SUPPORT_DATA = {
       "color": "#55cc90",
       "note": null,
       "default": false,
-      "runHours": 35.4,
+      "runHours": 26.2,
       "faultByType": {
-        "head_cam_out": [
-          2317,
-          7
-        ],
         "left_arm_frozen": [
-          3601,
-          7
+          3383,
+          2
+        ],
+        "right_arm_frozen": [
+          3675,
+          3
+        ],
+        "head_cam_out": [
+          149,
+          4
+        ],
+        "other_robot_issue": [
+          1053,
+          2
         ]
       }
     },
@@ -1731,15 +1750,15 @@ export const LAB_SUPPORT_DATA = {
       "color": "#cc6e55",
       "note": null,
       "default": false,
-      "runHours": 0.0,
+      "runHours": 0.2,
       "faultByType": {
-        "left_arm_frozen": [
-          767,
-          3
-        ],
         "right_arm_frozen": [
-          769,
-          3
+          203,
+          1
+        ],
+        "head_cam_out": [
+          74,
+          2
         ]
       }
     },
@@ -1749,8 +1768,17 @@ export const LAB_SUPPORT_DATA = {
       "color": "#555fcc",
       "note": null,
       "default": false,
-      "runHours": 0.0,
-      "faultByType": {}
+      "runHours": 0.7,
+      "faultByType": {
+        "chest_frozen": [
+          74,
+          2
+        ],
+        "head_cam_out": [
+          35,
+          1
+        ]
+      }
     },
     {
       "lab": "Phil",
@@ -1758,11 +1786,11 @@ export const LAB_SUPPORT_DATA = {
       "color": "#82cc55",
       "note": null,
       "default": false,
-      "runHours": 14.7,
+      "runHours": 12.4,
       "faultByType": {
-        "head_cam_out": [
-          58,
-          1
+        "other_robot_issue": [
+          3684,
+          2
         ]
       }
     },
@@ -1772,31 +1800,15 @@ export const LAB_SUPPORT_DATA = {
       "color": "#cc55a4",
       "note": null,
       "default": false,
-      "runHours": 29.5,
+      "runHours": 33.1,
       "faultByType": {
         "neck_frozen": [
-          422,
-          9
+          228,
+          5
         ],
         "right_arm_frozen": [
-          4836,
-          4
-        ],
-        "left_arm_frozen": [
-          6939,
-          4
-        ],
-        "other_robot_issue": [
-          16448,
-          3
-        ],
-        "head_cam_out": [
-          38,
-          1
-        ],
-        "right_gripper_not_working": [
-          35,
-          1
+          78,
+          2
         ]
       }
     },
@@ -1824,8 +1836,17 @@ export const LAB_SUPPORT_DATA = {
       "color": "#8b55cc",
       "note": null,
       "default": false,
-      "runHours": 0.0,
-      "faultByType": {}
+      "runHours": 0.3,
+      "faultByType": {
+        "left_arm_frozen": [
+          1269,
+          1
+        ],
+        "right_arm_frozen": [
+          1308,
+          2
+        ]
+      }
     },
     {
       "lab": "gen2-116",
@@ -1851,8 +1872,21 @@ export const LAB_SUPPORT_DATA = {
       "color": "#5587cc",
       "note": null,
       "default": false,
-      "runHours": 0.0,
-      "faultByType": {}
+      "runHours": 1.7,
+      "faultByType": {
+        "right_arm_frozen": [
+          28800,
+          2
+        ],
+        "left_arm_frozen": [
+          14400,
+          1
+        ],
+        "head_cam_out": [
+          36,
+          1
+        ]
+      }
     },
     {
       "lab": "gen2-120",
@@ -1869,8 +1903,17 @@ export const LAB_SUPPORT_DATA = {
       "color": "#cb55cc",
       "note": null,
       "default": false,
-      "runHours": 0.0,
-      "faultByType": {}
+      "runHours": 15.4,
+      "faultByType": {
+        "right_arm_frozen": [
+          4051,
+          3
+        ],
+        "left_arm_frozen": [
+          774,
+          1
+        ]
+      }
     },
     {
       "lab": "gen2-122",
@@ -1878,20 +1921,18 @@ export const LAB_SUPPORT_DATA = {
       "color": "#55cca9",
       "note": null,
       "default": false,
-      "runHours": 0.0,
-      "faultByType": {}
+      "runHours": 0.6,
+      "faultByType": {
+        "left_arm_frozen": [
+          370,
+          1
+        ]
+      }
     }
   ],
   "utilization": {
     "tzLabel": "EST",
     "days": [
-      "2026-04-27",
-      "2026-04-28",
-      "2026-04-29",
-      "2026-04-30",
-      "2026-05-01",
-      "2026-05-02",
-      "2026-05-03",
       "2026-05-04",
       "2026-05-05",
       "2026-05-06",
@@ -1924,239 +1965,38 @@ export const LAB_SUPPORT_DATA = {
       "2026-06-02",
       "2026-06-03",
       "2026-06-04",
-      "2026-06-05"
+      "2026-06-05",
+      "2026-06-06",
+      "2026-06-07",
+      "2026-06-08",
+      "2026-06-09",
+      "2026-06-10",
+      "2026-06-11",
+      "2026-06-12"
     ],
     "defaultStartHour": 9,
     "defaultEndHour": 18,
-    "defaultSpanStart": "2026-06-01",
-    "defaultSpanEnd": "2026-06-05",
+    "defaultSpanStart": "2026-06-08",
+    "defaultSpanEnd": "2026-06-12",
     "buckets": {
       "gen2-005": {
-        "2026-04-27": {
-          "13": [
-            0,
-            3289
-          ],
-          "17": [
-            0,
-            2897
-          ],
-          "12": [
-            0,
-            2536
-          ],
-          "16": [
-            0,
-            3363
-          ],
-          "11": [
-            1,
-            1562
-          ],
-          "15": [
-            0,
-            3558
-          ],
-          "19": [
-            0,
-            1781
-          ],
-          "14": [
-            0,
-            3339
-          ],
-          "9": [
-            0,
-            2
-          ],
-          "18": [
-            0,
-            2714
-          ]
-        },
-        "2026-04-28": {
-          "14": [
-            0,
-            3241
-          ],
-          "23": [
-            856,
-            1620
-          ],
-          "9": [
-            0,
-            1962
-          ],
-          "18": [
-            0,
-            6
-          ],
-          "13": [
-            0,
-            2991
-          ],
-          "17": [
-            0,
-            3411
-          ],
-          "12": [
-            0,
-            2325
-          ],
-          "16": [
-            0,
-            3037
-          ],
-          "11": [
-            0,
-            2019
-          ],
-          "15": [
-            0,
-            3057
-          ],
-          "10": [
-            0,
-            2916
-          ]
-        },
-        "2026-04-29": {
-          "10": [
-            0,
-            3359
-          ],
-          "14": [
-            0,
-            3338
-          ],
-          "0": [
-            0,
-            483
-          ],
-          "9": [
-            0,
-            2185
-          ],
-          "13": [
-            0,
-            2875
-          ],
-          "17": [
-            0,
-            2458
-          ],
-          "12": [
-            0,
-            3295
-          ],
-          "16": [
-            0,
-            3344
-          ],
-          "11": [
-            0,
-            3465
-          ],
-          "15": [
-            0,
-            3106
-          ]
-        },
-        "2026-04-30": {
-          "13": [
-            0,
-            3444
-          ],
-          "17": [
-            0,
-            3462
-          ],
-          "12": [
-            0,
-            3166
-          ],
-          "16": [
-            0,
-            3536
-          ],
-          "11": [
-            0,
-            3271
-          ],
-          "15": [
-            0,
-            2896
-          ],
-          "10": [
-            0,
-            3381
-          ],
-          "14": [
-            0,
-            3411
-          ],
-          "9": [
-            0,
-            2833
-          ],
-          "18": [
-            0,
-            103
-          ]
-        },
-        "2026-05-01": {
-          "10": [
-            0,
-            3490
-          ],
-          "14": [
-            0,
-            2938
-          ],
-          "9": [
-            0,
-            2840
-          ],
-          "18": [
-            0,
-            61
-          ],
-          "13": [
-            0,
-            3534
-          ],
-          "17": [
-            0,
-            3017
-          ],
-          "12": [
-            0,
-            3302
-          ],
-          "16": [
-            0,
-            2951
-          ],
-          "11": [
-            0,
-            3556
-          ],
-          "15": [
-            0,
-            3262
-          ]
-        },
-        "2026-05-02": {
-          "14": [
-            6,
-            19
-          ],
-          "16": [
-            0,
-            9
-          ]
-        },
         "2026-05-04": {
+          "15": [
+            0,
+            3225
+          ],
+          "10": [
+            0,
+            3353
+          ],
+          "14": [
+            0,
+            2862
+          ],
+          "9": [
+            0,
+            3219
+          ],
           "18": [
             0,
             38
@@ -2176,22 +2016,6 @@ export const LAB_SUPPORT_DATA = {
           "11": [
             0,
             1518
-          ],
-          "15": [
-            0,
-            3225
-          ],
-          "10": [
-            0,
-            3353
-          ],
-          "14": [
-            0,
-            2862
-          ],
-          "9": [
-            0,
-            3219
           ]
         },
         "2026-05-05": {
@@ -2233,22 +2057,6 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-06": {
-          "10": [
-            0,
-            3492
-          ],
-          "14": [
-            0,
-            2514
-          ],
-          "9": [
-            0,
-            1937
-          ],
-          "13": [
-            0,
-            3042
-          ],
           "17": [
             0,
             3180
@@ -2268,9 +2076,53 @@ export const LAB_SUPPORT_DATA = {
           "15": [
             0,
             3289
+          ],
+          "10": [
+            0,
+            3492
+          ],
+          "14": [
+            0,
+            2514
+          ],
+          "9": [
+            0,
+            1937
+          ],
+          "13": [
+            0,
+            3042
           ]
         },
         "2026-05-07": {
+          "22": [
+            2950,
+            2950
+          ],
+          "17": [
+            3151,
+            3151
+          ],
+          "12": [
+            0,
+            3161
+          ],
+          "21": [
+            2348,
+            2348
+          ],
+          "16": [
+            2324,
+            2324
+          ],
+          "11": [
+            0,
+            2523
+          ],
+          "20": [
+            2889,
+            2889
+          ],
           "15": [
             2922,
             2922
@@ -2302,64 +2154,12 @@ export const LAB_SUPPORT_DATA = {
           "13": [
             802,
             2571
-          ],
-          "22": [
-            2950,
-            2950
-          ],
-          "17": [
-            3151,
-            3151
-          ],
-          "12": [
-            0,
-            3161
-          ],
-          "21": [
-            2348,
-            2348
-          ],
-          "16": [
-            2324,
-            2324
-          ],
-          "11": [
-            0,
-            2523
-          ],
-          "20": [
-            2889,
-            2889
           ]
         },
         "2026-05-08": {
-          "15": [
-            2730,
-            2730
-          ],
-          "10": [
-            2629,
-            2629
-          ],
-          "19": [
-            3125,
-            3125
-          ],
-          "14": [
-            2741,
-            2741
-          ],
           "23": [
             363,
             363
-          ],
-          "0": [
-            3359,
-            3359
-          ],
-          "9": [
-            764,
-            764
           ],
           "18": [
             2283,
@@ -2392,6 +2192,30 @@ export const LAB_SUPPORT_DATA = {
           "20": [
             2693,
             2693
+          ],
+          "15": [
+            2730,
+            2730
+          ],
+          "10": [
+            2629,
+            2629
+          ],
+          "19": [
+            3125,
+            3125
+          ],
+          "14": [
+            2741,
+            2741
+          ],
+          "0": [
+            3359,
+            3359
+          ],
+          "9": [
+            764,
+            764
           ]
         },
         "2026-05-09": {
@@ -2401,6 +2225,18 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-11": {
+          "14": [
+            2751,
+            2751
+          ],
+          "9": [
+            2037,
+            2037
+          ],
+          "13": [
+            3524,
+            3524
+          ],
           "17": [
             3364,
             3364
@@ -2424,21 +2260,17 @@ export const LAB_SUPPORT_DATA = {
           "10": [
             2049,
             2049
-          ],
-          "14": [
-            2751,
-            2751
-          ],
-          "9": [
-            2037,
-            2037
-          ],
-          "13": [
-            3524,
-            3524
           ]
         },
         "2026-05-12": {
+          "16": [
+            2649,
+            2649
+          ],
+          "11": [
+            3269,
+            3269
+          ],
           "15": [
             2505,
             2505
@@ -2466,17 +2298,21 @@ export const LAB_SUPPORT_DATA = {
           "12": [
             2878,
             2878
-          ],
-          "16": [
-            2649,
-            2649
-          ],
-          "11": [
-            3269,
-            3269
           ]
         },
         "2026-05-13": {
+          "15": [
+            3347,
+            3347
+          ],
+          "10": [
+            3433,
+            3433
+          ],
+          "14": [
+            3462,
+            3462
+          ],
           "9": [
             3011,
             3011
@@ -2504,18 +2340,6 @@ export const LAB_SUPPORT_DATA = {
           "11": [
             2074,
             2074
-          ],
-          "15": [
-            3347,
-            3347
-          ],
-          "10": [
-            3433,
-            3433
-          ],
-          "14": [
-            3462,
-            3462
           ]
         },
         "2026-05-14": {
@@ -2561,14 +2385,6 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-15": {
-          "15": [
-            3394,
-            3394
-          ],
-          "14": [
-            3391,
-            3391
-          ],
           "13": [
             3450,
             3450
@@ -2584,9 +2400,37 @@ export const LAB_SUPPORT_DATA = {
           "16": [
             2775,
             2775
+          ],
+          "15": [
+            3394,
+            3394
+          ],
+          "14": [
+            3391,
+            3391
           ]
         },
         "2026-05-18": {
+          "11": [
+            3480,
+            3480
+          ],
+          "20": [
+            3100,
+            3124
+          ],
+          "15": [
+            2813,
+            2813
+          ],
+          "10": [
+            2768,
+            2768
+          ],
+          "19": [
+            3468,
+            3468
+          ],
           "14": [
             3178,
             3178
@@ -2626,69 +2470,9 @@ export const LAB_SUPPORT_DATA = {
           "16": [
             3548,
             3548
-          ],
-          "11": [
-            3480,
-            3480
-          ],
-          "20": [
-            3100,
-            3124
-          ],
-          "15": [
-            2813,
-            2813
-          ],
-          "10": [
-            2768,
-            2768
-          ],
-          "19": [
-            3468,
-            3468
           ]
         },
         "2026-05-19": {
-          "19": [
-            3541,
-            3541
-          ],
-          "14": [
-            3051,
-            3051
-          ],
-          "23": [
-            3048,
-            3048
-          ],
-          "0": [
-            3063,
-            3063
-          ],
-          "9": [
-            2713,
-            2713
-          ],
-          "18": [
-            3428,
-            3428
-          ],
-          "13": [
-            2909,
-            2909
-          ],
-          "22": [
-            3054,
-            3054
-          ],
-          "17": [
-            2294,
-            2294
-          ],
-          "12": [
-            2839,
-            2839
-          ],
           "21": [
             3326,
             3326
@@ -2716,25 +2500,49 @@ export const LAB_SUPPORT_DATA = {
           "10": [
             2875,
             2875
+          ],
+          "19": [
+            3541,
+            3541
+          ],
+          "14": [
+            3051,
+            3051
+          ],
+          "0": [
+            3063,
+            3063
+          ],
+          "23": [
+            3048,
+            3048
+          ],
+          "9": [
+            2713,
+            2713
+          ],
+          "18": [
+            3428,
+            3428
+          ],
+          "13": [
+            2909,
+            2909
+          ],
+          "22": [
+            3054,
+            3054
+          ],
+          "17": [
+            2294,
+            2294
+          ],
+          "12": [
+            2839,
+            2839
           ]
         },
         "2026-05-20": {
-          "22": [
-            3305,
-            3305
-          ],
-          "17": [
-            3328,
-            3328
-          ],
-          "12": [
-            3309,
-            3309
-          ],
-          "21": [
-            3367,
-            3367
-          ],
           "16": [
             3301,
             3301
@@ -2782,37 +2590,25 @@ export const LAB_SUPPORT_DATA = {
           "13": [
             3430,
             3430
+          ],
+          "22": [
+            3305,
+            3305
+          ],
+          "17": [
+            3328,
+            3328
+          ],
+          "12": [
+            3309,
+            3309
+          ],
+          "21": [
+            3367,
+            3367
           ]
         },
         "2026-05-21": {
-          "0": [
-            1963,
-            1963
-          ],
-          "9": [
-            2407,
-            2407
-          ],
-          "18": [
-            3139,
-            3139
-          ],
-          "13": [
-            2772,
-            2772
-          ],
-          "22": [
-            2614,
-            2614
-          ],
-          "17": [
-            3146,
-            3146
-          ],
-          "12": [
-            2905,
-            2905
-          ],
           "21": [
             3340,
             3340
@@ -2848,13 +2644,37 @@ export const LAB_SUPPORT_DATA = {
           "23": [
             3237,
             3237
+          ],
+          "0": [
+            1963,
+            1963
+          ],
+          "9": [
+            2407,
+            2407
+          ],
+          "18": [
+            3139,
+            3139
+          ],
+          "13": [
+            2772,
+            2772
+          ],
+          "22": [
+            2614,
+            2614
+          ],
+          "17": [
+            3146,
+            3146
+          ],
+          "12": [
+            2905,
+            2905
           ]
         },
         "2026-05-22": {
-          "13": [
-            2048,
-            2048
-          ],
           "22": [
             3519,
             3519
@@ -2918,9 +2738,17 @@ export const LAB_SUPPORT_DATA = {
           "18": [
             2038,
             2038
+          ],
+          "13": [
+            2048,
+            2048
           ]
         },
         "2026-05-23": {
+          "0": [
+            109,
+            109
+          ],
           "4": [
             0,
             0
@@ -2936,33 +2764,9 @@ export const LAB_SUPPORT_DATA = {
           "1": [
             0,
             0
-          ],
-          "0": [
-            109,
-            109
           ]
         },
         "2026-05-26": {
-          "10": [
-            0,
-            0
-          ],
-          "19": [
-            2134,
-            2134
-          ],
-          "23": [
-            3140,
-            3140
-          ],
-          "9": [
-            46,
-            46
-          ],
-          "13": [
-            0,
-            0
-          ],
           "22": [
             3541,
             3541
@@ -2982,9 +2786,57 @@ export const LAB_SUPPORT_DATA = {
           "20": [
             3446,
             3446
+          ],
+          "10": [
+            0,
+            0
+          ],
+          "19": [
+            2134,
+            2134
+          ],
+          "23": [
+            3140,
+            3140
+          ],
+          "9": [
+            46,
+            46
+          ],
+          "13": [
+            0,
+            0
           ]
         },
         "2026-05-27": {
+          "18": [
+            3212,
+            3212
+          ],
+          "13": [
+            3418,
+            3418
+          ],
+          "22": [
+            25,
+            25
+          ],
+          "17": [
+            3487,
+            3487
+          ],
+          "12": [
+            2430,
+            2430
+          ],
+          "16": [
+            3073,
+            3073
+          ],
+          "11": [
+            2574,
+            2574
+          ],
           "20": [
             2223,
             2223
@@ -3016,34 +2868,6 @@ export const LAB_SUPPORT_DATA = {
           "9": [
             2768,
             2768
-          ],
-          "18": [
-            3212,
-            3212
-          ],
-          "13": [
-            3418,
-            3418
-          ],
-          "22": [
-            25,
-            25
-          ],
-          "17": [
-            3487,
-            3487
-          ],
-          "12": [
-            2430,
-            2430
-          ],
-          "16": [
-            3073,
-            3073
-          ],
-          "11": [
-            2574,
-            2574
           ]
         },
         "2026-05-28": {
@@ -3109,9 +2933,21 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-29": {
+          "14": [
+            2094,
+            2094
+          ],
+          "0": [
+            3032,
+            3032
+          ],
           "23": [
             2946,
             2946
+          ],
+          "9": [
+            1593,
+            1593
           ],
           "18": [
             1839,
@@ -3160,18 +2996,6 @@ export const LAB_SUPPORT_DATA = {
           "19": [
             3389,
             3389
-          ],
-          "14": [
-            2094,
-            2094
-          ],
-          "0": [
-            3032,
-            3032
-          ],
-          "9": [
-            1593,
-            1593
           ]
         },
         "2026-05-30": {
@@ -3199,14 +3023,6 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-06-01": {
-          "22": [
-            3204,
-            3204
-          ],
-          "17": [
-            3475,
-            3475
-          ],
           "12": [
             3107,
             3107
@@ -3262,21 +3078,17 @@ export const LAB_SUPPORT_DATA = {
           "8": [
             0,
             0
+          ],
+          "22": [
+            3204,
+            3204
+          ],
+          "17": [
+            3475,
+            3475
           ]
         },
         "2026-06-02": {
-          "23": [
-            3196,
-            3196
-          ],
-          "9": [
-            1118,
-            1118
-          ],
-          "18": [
-            2324,
-            2324
-          ],
           "13": [
             3542,
             3542
@@ -3325,28 +3137,24 @@ export const LAB_SUPPORT_DATA = {
             3157,
             3157
           ],
+          "23": [
+            3196,
+            3196
+          ],
           "0": [
             3214,
             3214
+          ],
+          "9": [
+            1118,
+            1118
+          ],
+          "18": [
+            2324,
+            2324
           ]
         },
         "2026-06-03": {
-          "10": [
-            0,
-            0
-          ],
-          "23": [
-            352,
-            352
-          ],
-          "0": [
-            3305,
-            3305
-          ],
-          "9": [
-            0,
-            0
-          ],
           "13": [
             0,
             0
@@ -3370,9 +3178,45 @@ export const LAB_SUPPORT_DATA = {
           "20": [
             5,
             5
+          ],
+          "10": [
+            0,
+            0
+          ],
+          "23": [
+            352,
+            352
+          ],
+          "0": [
+            3305,
+            3305
+          ],
+          "9": [
+            0,
+            0
           ]
         },
         "2026-06-04": {
+          "11": [
+            3498,
+            3498
+          ],
+          "20": [
+            3503,
+            3503
+          ],
+          "15": [
+            2478,
+            2478
+          ],
+          "10": [
+            3235,
+            3235
+          ],
+          "19": [
+            3379,
+            3379
+          ],
           "14": [
             3185,
             3185
@@ -3380,6 +3224,10 @@ export const LAB_SUPPORT_DATA = {
           "23": [
             3065,
             3065
+          ],
+          "0": [
+            1798,
+            1800
           ],
           "9": [
             2648,
@@ -3412,33 +3260,29 @@ export const LAB_SUPPORT_DATA = {
           "16": [
             2921,
             2921
-          ],
-          "11": [
-            3498,
-            3498
-          ],
-          "20": [
-            3503,
-            3503
-          ],
-          "15": [
-            2478,
-            2478
-          ],
-          "10": [
-            3235,
-            3235
-          ],
-          "19": [
-            3379,
-            3379
-          ],
-          "0": [
-            1798,
-            1800
           ]
         },
         "2026-06-05": {
+          "19": [
+            3047,
+            3047
+          ],
+          "14": [
+            3541,
+            3541
+          ],
+          "23": [
+            2996,
+            2996
+          ],
+          "0": [
+            3159,
+            3159
+          ],
+          "9": [
+            2961,
+            2961
+          ],
           "18": [
             3276,
             3276
@@ -3447,6 +3291,10 @@ export const LAB_SUPPORT_DATA = {
             2706,
             2706
           ],
+          "22": [
+            3230,
+            3230
+          ],
           "17": [
             3468,
             3468
@@ -3454,6 +3302,10 @@ export const LAB_SUPPORT_DATA = {
           "12": [
             3215,
             3215
+          ],
+          "21": [
+            3354,
+            3354
           ],
           "16": [
             3311,
@@ -3464,8 +3316,8 @@ export const LAB_SUPPORT_DATA = {
             3469
           ],
           "20": [
-            147,
-            147
+            3446,
+            3446
           ],
           "15": [
             3181,
@@ -3478,30 +3330,342 @@ export const LAB_SUPPORT_DATA = {
           "10": [
             3394,
             3394
-          ],
-          "19": [
-            3047,
-            3047
-          ],
+          ]
+        },
+        "2026-06-06": {
           "14": [
-            3541,
-            3541
+            217,
+            217
           ],
           "0": [
-            3159,
-            3159
+            3325,
+            3325
+          ],
+          "13": [
+            38,
+            38
+          ]
+        },
+        "2026-06-08": {
+          "11": [
+            2166,
+            2166
+          ],
+          "20": [
+            3213,
+            3213
+          ],
+          "15": [
+            3335,
+            3335
+          ],
+          "10": [
+            3499,
+            3499
+          ],
+          "19": [
+            2738,
+            2738
+          ],
+          "14": [
+            1803,
+            1803
           ],
           "9": [
-            2961,
-            2961
+            2400,
+            2400
+          ],
+          "23": [
+            3364,
+            3364
+          ],
+          "18": [
+            2777,
+            2777
+          ],
+          "13": [
+            3211,
+            3211
+          ],
+          "22": [
+            3022,
+            3022
+          ],
+          "17": [
+            3336,
+            3336
+          ],
+          "12": [
+            3515,
+            3536
+          ],
+          "21": [
+            3133,
+            3133
+          ],
+          "16": [
+            3268,
+            3268
+          ]
+        },
+        "2026-06-09": {
+          "23": [
+            3325,
+            3325
+          ],
+          "9": [
+            3139,
+            3139
+          ],
+          "18": [
+            2676,
+            2676
+          ],
+          "13": [
+            3503,
+            3503
+          ],
+          "22": [
+            3388,
+            3388
+          ],
+          "17": [
+            3473,
+            3473
+          ],
+          "12": [
+            3100,
+            3100
+          ],
+          "21": [
+            2859,
+            2859
+          ],
+          "16": [
+            3483,
+            3483
+          ],
+          "11": [
+            3092,
+            3092
+          ],
+          "20": [
+            3253,
+            3253
+          ],
+          "15": [
+            3460,
+            3460
+          ],
+          "10": [
+            2013,
+            2013
+          ],
+          "19": [
+            3290,
+            3290
+          ],
+          "14": [
+            3397,
+            3397
+          ],
+          "0": [
+            3102,
+            3105
+          ]
+        },
+        "2026-06-10": {
+          "19": [
+            3129,
+            3129
+          ],
+          "14": [
+            2797,
+            2797
+          ],
+          "23": [
+            3296,
+            3296
+          ],
+          "0": [
+            3232,
+            3232
+          ],
+          "9": [
+            1372,
+            1372
+          ],
+          "18": [
+            1659,
+            1659
+          ],
+          "13": [
+            3520,
+            3520
+          ],
+          "22": [
+            3386,
+            3386
+          ],
+          "17": [
+            3454,
+            3454
+          ],
+          "12": [
+            3502,
+            3502
+          ],
+          "21": [
+            2411,
+            2411
+          ],
+          "16": [
+            3586,
+            3586
+          ],
+          "11": [
+            3107,
+            3107
+          ],
+          "20": [
+            3130,
+            3130
+          ],
+          "15": [
+            3506,
+            3506
+          ],
+          "10": [
+            3470,
+            3470
+          ]
+        },
+        "2026-06-11": {
+          "19": [
+            3260,
+            3260
+          ],
+          "14": [
+            2867,
+            2867
+          ],
+          "23": [
+            2795,
+            2795
+          ],
+          "0": [
+            3311,
+            3311
+          ],
+          "9": [
+            2983,
+            2983
+          ],
+          "18": [
+            3066,
+            3066
+          ],
+          "13": [
+            3531,
+            3531
+          ],
+          "22": [
+            3460,
+            3460
+          ],
+          "17": [
+            3556,
+            3556
+          ],
+          "12": [
+            3446,
+            3446
+          ],
+          "21": [
+            1255,
+            1255
+          ],
+          "16": [
+            1354,
+            1354
+          ],
+          "11": [
+            3450,
+            3450
+          ],
+          "20": [
+            3175,
+            3175
+          ],
+          "15": [
+            1726,
+            1729
+          ],
+          "10": [
+            1841,
+            1841
+          ]
+        },
+        "2026-06-12": {
+          "20": [
+            104,
+            104
+          ],
+          "15": [
+            3499,
+            3499
+          ],
+          "10": [
+            2621,
+            2621
+          ],
+          "19": [
+            3474,
+            3474
+          ],
+          "14": [
+            3548,
+            3548
+          ],
+          "0": [
+            3313,
+            3313
+          ],
+          "9": [
+            3264,
+            3264
+          ],
+          "18": [
+            2274,
+            2274
+          ],
+          "13": [
+            3400,
+            3400
+          ],
+          "17": [
+            2729,
+            2729
+          ],
+          "12": [
+            3277,
+            3277
+          ],
+          "16": [
+            2044,
+            2044
+          ],
+          "11": [
+            3315,
+            3315
           ]
         }
       },
       "gen2-109": {
         "2026-05-11": {
-          "15": [
-            0,
-            0
+          "22": [
+            471,
+            471
           ],
           "17": [
             3284,
@@ -3515,23 +3679,23 @@ export const LAB_SUPPORT_DATA = {
             2770,
             2770
           ],
-          "22": [
-            471,
-            471
+          "15": [
+            0,
+            0
           ]
         },
         "2026-05-12": {
-          "13": [
-            201,
-            201
+          "16": [
+            2795,
+            2795
+          ],
+          "11": [
+            3100,
+            3100
           ],
           "15": [
             2872,
             2872
-          ],
-          "17": [
-            3033,
-            3033
           ],
           "10": [
             3049,
@@ -3541,35 +3705,43 @@ export const LAB_SUPPORT_DATA = {
             1860,
             1860
           ],
-          "12": [
-            3284,
-            3284
-          ],
           "14": [
             2892,
             2892
-          ],
-          "16": [
-            2795,
-            2795
           ],
           "9": [
             2784,
             2784
           ],
-          "11": [
-            3100,
-            3100
+          "13": [
+            201,
+            201
+          ],
+          "17": [
+            3033,
+            3033
+          ],
+          "12": [
+            3284,
+            3284
           ]
         },
         "2026-05-13": {
+          "15": [
+            2789,
+            2789
+          ],
+          "10": [
+            3213,
+            3213
+          ],
+          "14": [
+            3414,
+            3414
+          ],
           "23": [
             601,
             601
-          ],
-          "16": [
-            3051,
-            3051
           ],
           "9": [
             3137,
@@ -3579,37 +3751,29 @@ export const LAB_SUPPORT_DATA = {
             2,
             2
           ],
-          "11": [
-            3008,
-            3008
-          ],
           "13": [
             1135,
             1135
-          ],
-          "15": [
-            2789,
-            2789
           ],
           "17": [
             3424,
             3424
           ],
-          "10": [
-            3213,
-            3213
-          ],
           "12": [
             2236,
             2236
           ],
-          "14": [
-            3414,
-            3414
-          ],
           "7": [
             0,
             0
+          ],
+          "16": [
+            3051,
+            3051
+          ],
+          "11": [
+            3008,
+            3008
           ]
         },
         "2026-05-14": {
@@ -3621,13 +3785,25 @@ export const LAB_SUPPORT_DATA = {
             17,
             17
           ],
-          "13": [
-            2045,
-            2045
-          ],
           "15": [
             2739,
             2739
+          ],
+          "10": [
+            3236,
+            3236
+          ],
+          "14": [
+            2889,
+            2889
+          ],
+          "9": [
+            2120,
+            2120
+          ],
+          "13": [
+            2045,
+            2045
           ],
           "8": [
             0,
@@ -3637,90 +3813,54 @@ export const LAB_SUPPORT_DATA = {
             3395,
             3395
           ],
-          "10": [
-            3236,
-            3236
-          ],
           "12": [
             3381,
             3381
           ],
-          "14": [
-            2889,
-            2889
-          ],
           "16": [
             2827,
             2827
-          ],
-          "9": [
-            2120,
-            2120
           ]
         },
         "2026-05-15": {
-          "15": [
-            3059,
-            3059
+          "13": [
+            3004,
+            3004
           ],
           "17": [
             2892,
             2892
           ],
-          "10": [
-            3331,
-            3331
-          ],
           "12": [
             3200,
             3200
-          ],
-          "14": [
-            2733,
-            2733
           ],
           "16": [
             3132,
             3132
           ],
-          "9": [
-            1742,
-            1742
-          ],
           "11": [
             3159,
             3159
           ],
-          "13": [
-            3004,
-            3004
+          "15": [
+            3059,
+            3059
+          ],
+          "10": [
+            3331,
+            3331
+          ],
+          "14": [
+            2733,
+            2733
+          ],
+          "9": [
+            1742,
+            1742
           ]
         },
         "2026-05-18": {
-          "21": [
-            3365,
-            3365
-          ],
-          "14": [
-            3327,
-            3327
-          ],
-          "23": [
-            3516,
-            3516
-          ],
-          "16": [
-            3416,
-            3416
-          ],
-          "9": [
-            2043,
-            2043
-          ],
-          "18": [
-            2825,
-            2825
-          ],
           "11": [
             1878,
             1878
@@ -3729,21 +3869,9 @@ export const LAB_SUPPORT_DATA = {
             3492,
             3492
           ],
-          "13": [
-            3405,
-            3405
-          ],
-          "22": [
-            2764,
-            2768
-          ],
           "15": [
             2750,
             2750
-          ],
-          "17": [
-            2442,
-            2442
           ],
           "10": [
             2880,
@@ -3753,43 +3881,55 @@ export const LAB_SUPPORT_DATA = {
             3103,
             3103
           ],
+          "14": [
+            3327,
+            3327
+          ],
+          "23": [
+            3516,
+            3516
+          ],
+          "9": [
+            2043,
+            2043
+          ],
+          "18": [
+            2825,
+            2825
+          ],
+          "13": [
+            3405,
+            3405
+          ],
+          "22": [
+            2764,
+            2768
+          ],
+          "17": [
+            2442,
+            2442
+          ],
           "12": [
             3240,
             3240
+          ],
+          "21": [
+            3365,
+            3365
+          ],
+          "16": [
+            3416,
+            3416
           ]
         },
         "2026-05-19": {
-          "19": [
-            3087,
-            3087
-          ],
           "21": [
             2776,
             2776
           ],
-          "14": [
-            3330,
-            3330
-          ],
-          "23": [
-            3190,
-            3190
-          ],
           "16": [
             2998,
             2998
-          ],
-          "0": [
-            3376,
-            3376
-          ],
-          "9": [
-            2558,
-            2558
-          ],
-          "18": [
-            1952,
-            1952
           ],
           "11": [
             2631,
@@ -3799,21 +3939,9 @@ export const LAB_SUPPORT_DATA = {
             2835,
             2837
           ],
-          "13": [
-            3458,
-            3458
-          ],
-          "22": [
-            3102,
-            3102
-          ],
           "15": [
             3161,
             3161
-          ],
-          "17": [
-            2556,
-            2556
           ],
           "1": [
             67,
@@ -3823,23 +3951,63 @@ export const LAB_SUPPORT_DATA = {
             2985,
             2985
           ],
+          "19": [
+            3087,
+            3087
+          ],
+          "14": [
+            3330,
+            3330
+          ],
+          "0": [
+            3376,
+            3376
+          ],
+          "23": [
+            3190,
+            3190
+          ],
+          "9": [
+            2558,
+            2558
+          ],
+          "18": [
+            1952,
+            1952
+          ],
+          "13": [
+            3458,
+            3458
+          ],
+          "22": [
+            3102,
+            3102
+          ],
+          "17": [
+            2556,
+            2556
+          ],
           "12": [
             3134,
             3134
           ]
         },
         "2026-05-20": {
-          "22": [
-            2988,
-            2988
+          "16": [
+            2723,
+            2723
+          ],
+          "11": [
+            2837,
+            2837
+          ],
+          "20": [
+            3033,
+            3033
           ],
           "15": [
             2897,
             2897
-          ],
-          "17": [
-            3506,
-            3506
           ],
           "1": [
             93,
@@ -3853,14 +4021,6 @@ export const LAB_SUPPORT_DATA = {
             3108,
             3108
           ],
-          "12": [
-            2675,
-            2675
-          ],
-          "21": [
-            2939,
-            2939
-          ],
           "14": [
             3286,
             3286
@@ -3868,10 +4028,6 @@ export const LAB_SUPPORT_DATA = {
           "23": [
             3588,
             3588
-          ],
-          "16": [
-            2723,
-            2723
           ],
           "0": [
             2587,
@@ -3885,55 +4041,47 @@ export const LAB_SUPPORT_DATA = {
             2598,
             2598
           ],
-          "11": [
-            2837,
-            2837
-          ],
-          "20": [
-            3033,
-            3033
-          ],
           "13": [
             3203,
             3203
+          ],
+          "22": [
+            2988,
+            2988
+          ],
+          "17": [
+            3506,
+            3506
+          ],
+          "12": [
+            2675,
+            2675
+          ],
+          "21": [
+            2939,
+            2939
           ]
         },
         "2026-05-21": {
-          "0": [
-            3578,
-            3578
+          "21": [
+            3569,
+            3569
           ],
-          "9": [
-            3034,
-            3034
+          "16": [
+            3189,
+            3189
           ],
           "11": [
             2898,
             2898
           ],
-          "18": [
-            3031,
-            3031
-          ],
           "20": [
             2994,
             2994
           ],
-          "13": [
-            3057,
-            3057
-          ],
-          "22": [
-            2620,
-            2620
-          ],
           "15": [
             2816,
             2816
-          ],
-          "17": [
-            1765,
-            1765
           ],
           "1": [
             32,
@@ -3947,14 +4095,6 @@ export const LAB_SUPPORT_DATA = {
             3426,
             3426
           ],
-          "12": [
-            3385,
-            3385
-          ],
-          "21": [
-            3569,
-            3569
-          ],
           "14": [
             1537,
             1537
@@ -3963,43 +4103,47 @@ export const LAB_SUPPORT_DATA = {
             2571,
             2571
           ],
-          "16": [
-            3189,
-            3189
+          "0": [
+            3578,
+            3578
+          ],
+          "9": [
+            3034,
+            3034
+          ],
+          "18": [
+            3031,
+            3031
+          ],
+          "13": [
+            3057,
+            3057
+          ],
+          "22": [
+            2620,
+            2620
+          ],
+          "17": [
+            1765,
+            1765
+          ],
+          "12": [
+            3385,
+            3385
           ]
         },
         "2026-05-22": {
-          "20": [
-            2341,
-            2341
-          ],
-          "13": [
-            3364,
-            3364
+          "8": [
+            0,
+            0
           ],
           "22": [
             3185,
             3185
           ],
-          "15": [
-            2511,
-            2513
-          ],
-          "8": [
-            0,
-            0
-          ],
           "17": [
             3417,
             3417
-          ],
-          "10": [
-            2479,
-            2479
-          ],
-          "19": [
-            3277,
-            3277
           ],
           "12": [
             2847,
@@ -4009,6 +4153,30 @@ export const LAB_SUPPORT_DATA = {
             3482,
             3482
           ],
+          "16": [
+            3207,
+            3207
+          ],
+          "11": [
+            2538,
+            2538
+          ],
+          "20": [
+            2341,
+            2341
+          ],
+          "15": [
+            2511,
+            2513
+          ],
+          "10": [
+            2479,
+            2479
+          ],
+          "19": [
+            3277,
+            3277
+          ],
           "14": [
             2553,
             2553
@@ -4016,10 +4184,6 @@ export const LAB_SUPPORT_DATA = {
           "23": [
             3150,
             3150
-          ],
-          "16": [
-            3207,
-            3207
           ],
           "0": [
             3412,
@@ -4033,19 +4197,19 @@ export const LAB_SUPPORT_DATA = {
             2980,
             2980
           ],
-          "11": [
-            2538,
-            2538
+          "13": [
+            3364,
+            3364
           ]
         },
         "2026-05-23": {
-          "1": [
-            94,
-            94
-          ],
           "0": [
             3555,
             3555
+          ],
+          "1": [
+            94,
+            94
           ]
         },
         "2026-05-25": {
@@ -4059,10 +4223,6 @@ export const LAB_SUPPORT_DATA = {
             242,
             242
           ],
-          "15": [
-            0,
-            0
-          ],
           "17": [
             515,
             529
@@ -4071,31 +4231,31 @@ export const LAB_SUPPORT_DATA = {
             35,
             35
           ],
-          "14": [
-            990,
-            991
-          ],
           "16": [
             1598,
             1598
           ],
-          "18": [
-            497,
-            497
-          ],
           "20": [
             2004,
             2004
+          ],
+          "15": [
+            0,
+            0
+          ],
+          "14": [
+            990,
+            991
+          ],
+          "18": [
+            497,
+            497
           ]
         },
         "2026-05-27": {
           "18": [
             33,
             33
-          ],
-          "20": [
-            3510,
-            3510
           ],
           "13": [
             3160,
@@ -4105,21 +4265,9 @@ export const LAB_SUPPORT_DATA = {
             1978,
             1978
           ],
-          "15": [
-            2948,
-            2948
-          ],
           "17": [
             2121,
             2121
-          ],
-          "10": [
-            2855,
-            2855
-          ],
-          "19": [
-            2837,
-            2837
           ],
           "12": [
             1707,
@@ -4129,47 +4277,43 @@ export const LAB_SUPPORT_DATA = {
             2718,
             2730
           ],
-          "14": [
-            3057,
-            3057
-          ],
           "16": [
             2415,
             2415
           ],
-          "9": [
-            2916,
-            2916
-          ],
           "11": [
             3186,
             3186
+          ],
+          "20": [
+            3510,
+            3510
+          ],
+          "15": [
+            2948,
+            2948
+          ],
+          "10": [
+            2855,
+            2855
+          ],
+          "19": [
+            2837,
+            2837
+          ],
+          "14": [
+            3057,
+            3057
+          ],
+          "9": [
+            2916,
+            2916
           ]
         },
         "2026-05-28": {
-          "14": [
-            2453,
-            2454
-          ],
-          "23": [
-            2872,
-            2872
-          ],
           "16": [
             1050,
             1050
-          ],
-          "0": [
-            2591,
-            2591
-          ],
-          "9": [
-            1241,
-            1241
-          ],
-          "18": [
-            2268,
-            2268
           ],
           "11": [
             2243,
@@ -4179,21 +4323,9 @@ export const LAB_SUPPORT_DATA = {
             1648,
             1648
           ],
-          "13": [
-            1375,
-            1375
-          ],
-          "22": [
-            2798,
-            2798
-          ],
           "15": [
             260,
             260
-          ],
-          "17": [
-            1641,
-            1642
           ],
           "1": [
             99,
@@ -4207,6 +4339,38 @@ export const LAB_SUPPORT_DATA = {
             2931,
             2931
           ],
+          "14": [
+            2453,
+            2454
+          ],
+          "23": [
+            2872,
+            2872
+          ],
+          "0": [
+            2591,
+            2591
+          ],
+          "9": [
+            1241,
+            1241
+          ],
+          "18": [
+            2268,
+            2268
+          ],
+          "13": [
+            1375,
+            1375
+          ],
+          "22": [
+            2798,
+            2798
+          ],
+          "17": [
+            1641,
+            1642
+          ],
           "12": [
             2570,
             2571
@@ -4217,25 +4381,25 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-29": {
+          "14": [
+            3463,
+            3463
+          ],
+          "0": [
+            2227,
+            2227
+          ],
           "23": [
             3424,
             3424
           ],
-          "16": [
-            2727,
-            2727
+          "9": [
+            2183,
+            2187
           ],
           "18": [
             1863,
             1863
-          ],
-          "11": [
-            3474,
-            3474
-          ],
-          "20": [
-            3207,
-            3207
           ],
           "13": [
             3044,
@@ -4245,21 +4409,9 @@ export const LAB_SUPPORT_DATA = {
             3460,
             3460
           ],
-          "15": [
-            3176,
-            3176
-          ],
           "17": [
             3278,
             3278
-          ],
-          "10": [
-            3113,
-            3113
-          ],
-          "19": [
-            3063,
-            3063
           ],
           "12": [
             2748,
@@ -4269,17 +4421,29 @@ export const LAB_SUPPORT_DATA = {
             3339,
             3339
           ],
-          "14": [
-            3463,
-            3463
+          "16": [
+            2727,
+            2727
           ],
-          "0": [
-            2227,
-            2227
+          "11": [
+            3474,
+            3474
           ],
-          "9": [
-            2183,
-            2187
+          "20": [
+            3207,
+            3207
+          ],
+          "15": [
+            3176,
+            3176
+          ],
+          "10": [
+            3113,
+            3113
+          ],
+          "19": [
+            3063,
+            3063
           ]
         },
         "2026-05-30": {
@@ -4307,26 +4471,6 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-06-01": {
-          "22": [
-            2400,
-            2402
-          ],
-          "15": [
-            2757,
-            2757
-          ],
-          "17": [
-            3256,
-            3256
-          ],
-          "10": [
-            773,
-            1060
-          ],
-          "19": [
-            3401,
-            3401
-          ],
           "12": [
             995,
             995
@@ -4335,25 +4479,9 @@ export const LAB_SUPPORT_DATA = {
             3170,
             3170
           ],
-          "14": [
-            2575,
-            2575
-          ],
-          "23": [
-            3028,
-            3028
-          ],
           "16": [
             2705,
             2705
-          ],
-          "9": [
-            1827,
-            1827
-          ],
-          "18": [
-            2343,
-            2343
           ],
           "11": [
             2007,
@@ -4363,36 +4491,48 @@ export const LAB_SUPPORT_DATA = {
             2881,
             2881
           ],
+          "15": [
+            2757,
+            2757
+          ],
+          "10": [
+            773,
+            1060
+          ],
+          "19": [
+            3401,
+            3401
+          ],
+          "14": [
+            2575,
+            2575
+          ],
+          "23": [
+            3028,
+            3028
+          ],
+          "9": [
+            1827,
+            1827
+          ],
+          "18": [
+            2343,
+            2343
+          ],
           "13": [
             2721,
             2721
+          ],
+          "22": [
+            2400,
+            2402
+          ],
+          "17": [
+            3256,
+            3256
           ]
         },
         "2026-06-02": {
-          "23": [
-            3045,
-            3051
-          ],
-          "16": [
-            2669,
-            2669
-          ],
-          "9": [
-            2881,
-            2881
-          ],
-          "18": [
-            2298,
-            2302
-          ],
-          "11": [
-            2921,
-            2921
-          ],
-          "20": [
-            3202,
-            3202
-          ],
           "13": [
             3534,
             3534
@@ -4401,21 +4541,9 @@ export const LAB_SUPPORT_DATA = {
             2953,
             2953
           ],
-          "15": [
-            3162,
-            3162
-          ],
           "17": [
             2494,
             2494
-          ],
-          "10": [
-            3531,
-            3531
-          ],
-          "19": [
-            3150,
-            3150
           ],
           "12": [
             3048,
@@ -4425,23 +4553,87 @@ export const LAB_SUPPORT_DATA = {
             3004,
             3012
           ],
+          "16": [
+            2669,
+            2669
+          ],
+          "11": [
+            2921,
+            2921
+          ],
+          "20": [
+            3202,
+            3202
+          ],
+          "15": [
+            3162,
+            3162
+          ],
+          "10": [
+            3531,
+            3531
+          ],
+          "19": [
+            3150,
+            3150
+          ],
           "14": [
             3277,
             3277
           ],
+          "23": [
+            3045,
+            3051
+          ],
           "0": [
             3532,
             3532
+          ],
+          "9": [
+            2881,
+            2881
+          ],
+          "18": [
+            2298,
+            2302
           ]
         },
         "2026-06-03": {
-          "15": [
-            0,
-            0
+          "18": [
+            111,
+            111
+          ],
+          "13": [
+            532,
+            532
           ],
           "17": [
             0,
             0
+          ],
+          "12": [
+            689,
+            689
+          ],
+          "16": [
+            0,
+            0
+          ],
+          "11": [
+            1008,
+            1008
+          ],
+          "20": [
+            60,
+            60
+          ],
+          "15": [
+            0,
+            0
+          ],
+          "1": [
+            22,
+            22
           ],
           "10": [
             3023,
@@ -4451,15 +4643,7 @@ export const LAB_SUPPORT_DATA = {
             2611,
             2611
           ],
-          "12": [
-            689,
-            689
-          ],
           "14": [
-            0,
-            0
-          ],
-          "16": [
             0,
             0
           ],
@@ -4470,32 +4654,24 @@ export const LAB_SUPPORT_DATA = {
           "9": [
             2925,
             2925
-          ],
-          "18": [
-            111,
-            111
-          ],
-          "11": [
-            1008,
-            1008
-          ],
-          "20": [
-            60,
-            60
-          ],
-          "13": [
-            532,
-            532
-          ],
-          "1": [
-            22,
-            22
           ]
         },
         "2026-06-04": {
-          "21": [
-            3248,
-            3248
+          "11": [
+            649,
+            649
+          ],
+          "20": [
+            3476,
+            3476
+          ],
+          "15": [
+            3306,
+            3306
+          ],
+          "19": [
+            2331,
+            2331
           ],
           "14": [
             3600,
@@ -4505,21 +4681,9 @@ export const LAB_SUPPORT_DATA = {
             3504,
             3504
           ],
-          "16": [
-            2473,
-            2473
-          ],
           "18": [
             2619,
             2619
-          ],
-          "11": [
-            649,
-            649
-          ],
-          "20": [
-            3476,
-            3476
           ],
           "13": [
             3420,
@@ -4529,71 +4693,35 @@ export const LAB_SUPPORT_DATA = {
             3307,
             3307
           ],
-          "15": [
-            3306,
-            3306
-          ],
           "17": [
             3459,
             3459
           ],
-          "19": [
-            2331,
-            2331
-          ],
           "12": [
             3408,
             3408
+          ],
+          "21": [
+            3248,
+            3248
+          ],
+          "16": [
+            2473,
+            2473
           ]
         },
         "2026-06-05": {
-          "16": [
-            1870,
-            1870
-          ],
-          "18": [
-            2333,
-            2333
-          ],
-          "11": [
-            3470,
-            3470
-          ],
-          "20": [
-            370,
-            370
-          ],
-          "13": [
-            1076,
-            1076
-          ],
-          "15": [
-            2905,
-            2905
-          ],
-          "17": [
-            2543,
-            2543
-          ],
-          "1": [
-            19,
-            19
-          ],
-          "10": [
-            3571,
-            3571
-          ],
           "19": [
             3388,
             3388
           ],
-          "12": [
-            3306,
-            3306
-          ],
           "14": [
             2600,
             2600
+          ],
+          "23": [
+            3439,
+            3439
           ],
           "0": [
             2238,
@@ -4602,327 +4730,339 @@ export const LAB_SUPPORT_DATA = {
           "9": [
             2146,
             2146
+          ],
+          "18": [
+            2333,
+            2333
+          ],
+          "13": [
+            1076,
+            1076
+          ],
+          "22": [
+            3255,
+            3255
+          ],
+          "17": [
+            2543,
+            2543
+          ],
+          "12": [
+            3306,
+            3306
+          ],
+          "21": [
+            3293,
+            3293
+          ],
+          "16": [
+            1870,
+            1870
+          ],
+          "11": [
+            3470,
+            3470
+          ],
+          "20": [
+            3389,
+            3389
+          ],
+          "15": [
+            2905,
+            2905
+          ],
+          "1": [
+            19,
+            19
+          ],
+          "10": [
+            3571,
+            3571
+          ]
+        },
+        "2026-06-06": {
+          "15": [
+            403,
+            403
+          ],
+          "14": [
+            591,
+            591
+          ],
+          "0": [
+            3337,
+            3337
+          ],
+          "13": [
+            127,
+            127
+          ]
+        },
+        "2026-06-08": {
+          "11": [
+            944,
+            944
+          ],
+          "20": [
+            1535,
+            1535
+          ],
+          "15": [
+            934,
+            934
+          ],
+          "10": [
+            1442,
+            1442
+          ],
+          "19": [
+            2432,
+            2432
+          ],
+          "14": [
+            886,
+            886
+          ],
+          "9": [
+            2260,
+            2260
+          ],
+          "23": [
+            3170,
+            3170
+          ],
+          "18": [
+            3002,
+            3002
+          ],
+          "13": [
+            2058,
+            2058
+          ],
+          "22": [
+            2294,
+            2294
+          ],
+          "17": [
+            850,
+            850
+          ],
+          "12": [
+            3273,
+            3273
+          ],
+          "21": [
+            1884,
+            1884
+          ],
+          "16": [
+            0,
+            0
+          ]
+        },
+        "2026-06-09": {
+          "9": [
+            1318,
+            1318
+          ],
+          "18": [
+            1371,
+            1371
+          ],
+          "13": [
+            3043,
+            3043
+          ],
+          "17": [
+            2320,
+            2320
+          ],
+          "12": [
+            3550,
+            3550
+          ],
+          "16": [
+            3385,
+            3385
+          ],
+          "11": [
+            3436,
+            3436
+          ],
+          "20": [
+            728,
+            728
+          ],
+          "15": [
+            3503,
+            3503
+          ],
+          "10": [
+            2436,
+            2436
+          ],
+          "19": [
+            417,
+            417
+          ],
+          "14": [
+            3472,
+            3472
+          ],
+          "0": [
+            3208,
+            3208
+          ]
+        },
+        "2026-06-10": {
+          "14": [
+            0,
+            0
+          ],
+          "23": [
+            1285,
+            1285
+          ],
+          "18": [
+            639,
+            639
+          ],
+          "13": [
+            0,
+            0
+          ],
+          "22": [
+            2636,
+            2636
+          ],
+          "17": [
+            3571,
+            3571
+          ],
+          "12": [
+            199,
+            199
+          ],
+          "21": [
+            1671,
+            1671
+          ],
+          "16": [
+            3351,
+            3351
+          ],
+          "11": [
+            1159,
+            1159
+          ],
+          "20": [
+            583,
+            583
+          ],
+          "15": [
+            626,
+            626
+          ],
+          "10": [
+            2027,
+            2027
+          ]
+        },
+        "2026-06-11": {
+          "14": [
+            3427,
+            3430
+          ],
+          "23": [
+            3512,
+            3512
+          ],
+          "13": [
+            3548,
+            3548
+          ],
+          "22": [
+            3328,
+            3328
+          ],
+          "17": [
+            3175,
+            3175
+          ],
+          "12": [
+            3254,
+            3254
+          ],
+          "21": [
+            3210,
+            3210
+          ],
+          "16": [
+            2671,
+            2671
+          ],
+          "11": [
+            3255,
+            3255
+          ],
+          "20": [
+            1286,
+            1286
+          ],
+          "15": [
+            2812,
+            2812
+          ],
+          "10": [
+            1825,
+            1825
+          ]
+        },
+        "2026-06-12": {
+          "15": [
+            2313,
+            2313
+          ],
+          "10": [
+            3380,
+            3380
+          ],
+          "14": [
+            2930,
+            2930
+          ],
+          "0": [
+            3050,
+            3050
+          ],
+          "9": [
+            1910,
+            1910
+          ],
+          "13": [
+            2245,
+            2245
+          ],
+          "17": [
+            3323,
+            3323
+          ],
+          "12": [
+            3191,
+            3191
+          ],
+          "16": [
+            3487,
+            3487
+          ],
+          "11": [
+            3508,
+            3508
           ]
         }
       },
       "gen2-007": {
-        "2026-04-27": {
-          "13": [
-            0,
-            3336
-          ],
-          "17": [
-            0,
-            3294
-          ],
-          "12": [
-            0,
-            3210
-          ],
-          "16": [
-            0,
-            2335
-          ],
-          "11": [
-            0,
-            2983
-          ],
-          "15": [
-            0,
-            3053
-          ],
-          "10": [
-            0,
-            3462
-          ],
-          "14": [
-            0,
-            3274
-          ],
-          "9": [
-            0,
-            2333
-          ]
-        },
-        "2026-04-28": {
-          "14": [
-            0,
-            3123
-          ],
-          "23": [
-            0,
-            3459
-          ],
-          "9": [
-            0,
-            3548
-          ],
-          "13": [
-            0,
-            2143
-          ],
-          "22": [
-            0,
-            2774
-          ],
-          "17": [
-            0,
-            1567
-          ],
-          "12": [
-            0,
-            2987
-          ],
-          "21": [
-            0,
-            2725
-          ],
-          "16": [
-            0,
-            3484
-          ],
-          "11": [
-            330,
-            3063
-          ],
-          "20": [
-            0,
-            3073
-          ],
-          "15": [
-            0,
-            3240
-          ],
-          "10": [
-            0,
-            2481
-          ],
-          "19": [
-            141,
-            1659
-          ]
-        },
-        "2026-04-29": {
-          "10": [
-            0,
-            3542
-          ],
-          "19": [
-            0,
-            3374
-          ],
-          "14": [
-            0,
-            2404
-          ],
-          "0": [
-            0,
-            1830
-          ],
-          "9": [
-            0,
-            2866
-          ],
-          "23": [
-            0,
-            3378
-          ],
-          "18": [
-            0,
-            2891
-          ],
-          "13": [
-            0,
-            2731
-          ],
-          "22": [
-            0,
-            3474
-          ],
-          "17": [
-            0,
-            3520
-          ],
-          "12": [
-            0,
-            3236
-          ],
-          "21": [
-            0,
-            2662
-          ],
-          "16": [
-            0,
-            3124
-          ],
-          "11": [
-            0,
-            3076
-          ],
-          "20": [
-            0,
-            2517
-          ],
-          "15": [
-            0,
-            3055
-          ]
-        },
-        "2026-04-30": {
-          "13": [
-            0,
-            3457
-          ],
-          "22": [
-            0,
-            3209
-          ],
-          "17": [
-            0,
-            3127
-          ],
-          "12": [
-            485,
-            2459
-          ],
-          "21": [
-            0,
-            3343
-          ],
-          "16": [
-            0,
-            3321
-          ],
-          "11": [
-            0,
-            2173
-          ],
-          "20": [
-            0,
-            3172
-          ],
-          "15": [
-            0,
-            3506
-          ],
-          "10": [
-            0,
-            3202
-          ],
-          "19": [
-            0,
-            3426
-          ],
-          "14": [
-            0,
-            2712
-          ],
-          "23": [
-            0,
-            3530
-          ],
-          "0": [
-            0,
-            3314
-          ],
-          "9": [
-            0,
-            2986
-          ],
-          "18": [
-            0,
-            2598
-          ]
-        },
-        "2026-05-01": {
-          "10": [
-            0,
-            3158
-          ],
-          "19": [
-            0,
-            3380
-          ],
-          "14": [
-            0,
-            3055
-          ],
-          "23": [
-            0,
-            3197
-          ],
-          "0": [
-            0,
-            3068
-          ],
-          "9": [
-            0,
-            3056
-          ],
-          "18": [
-            0,
-            2812
-          ],
-          "13": [
-            0,
-            3029
-          ],
-          "22": [
-            0,
-            3203
-          ],
-          "17": [
-            0,
-            3222
-          ],
-          "12": [
-            0,
-            3150
-          ],
-          "21": [
-            0,
-            3347
-          ],
-          "16": [
-            0,
-            3285
-          ],
-          "11": [
-            0,
-            2960
-          ],
-          "20": [
-            0,
-            3463
-          ],
-          "15": [
-            0,
-            3214
-          ]
-        },
-        "2026-05-02": {
-          "0": [
-            0,
-            3066
-          ]
-        },
         "2026-05-04": {
-          "13": [
-            0,
-            3153
-          ],
-          "12": [
-            0,
-            3555
-          ],
-          "16": [
-            0,
-            13
-          ],
-          "11": [
-            0,
-            1199
-          ],
           "15": [
             0,
             367
@@ -4938,6 +5078,22 @@ export const LAB_SUPPORT_DATA = {
           "9": [
             0,
             3060
+          ],
+          "13": [
+            0,
+            3153
+          ],
+          "12": [
+            0,
+            3555
+          ],
+          "16": [
+            0,
+            13
+          ],
+          "11": [
+            0,
+            1199
           ]
         },
         "2026-05-05": {
@@ -4979,26 +5135,6 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-06": {
-          "10": [
-            0,
-            3368
-          ],
-          "14": [
-            0,
-            3367
-          ],
-          "9": [
-            0,
-            3214
-          ],
-          "18": [
-            0,
-            8
-          ],
-          "13": [
-            0,
-            3251
-          ],
           "17": [
             0,
             3210
@@ -5018,37 +5154,29 @@ export const LAB_SUPPORT_DATA = {
           "15": [
             0,
             3053
-          ]
-        },
-        "2026-05-07": {
-          "15": [
-            2371,
-            2371
           ],
           "10": [
             0,
-            1979
-          ],
-          "19": [
-            3134,
-            3134
+            3368
           ],
           "14": [
-            3221,
-            3221
+            0,
+            3367
           ],
-          "23": [
-            3245,
-            3245
+          "9": [
+            0,
+            3214
           ],
           "18": [
-            2767,
-            2767
+            0,
+            8
           ],
           "13": [
-            952,
-            3306
-          ],
+            0,
+            3251
+          ]
+        },
+        "2026-05-07": {
           "22": [
             2795,
             2795
@@ -5076,32 +5204,40 @@ export const LAB_SUPPORT_DATA = {
           "20": [
             3572,
             3572
+          ],
+          "15": [
+            2371,
+            2371
+          ],
+          "10": [
+            0,
+            1979
+          ],
+          "19": [
+            3134,
+            3134
+          ],
+          "14": [
+            3221,
+            3221
+          ],
+          "23": [
+            3245,
+            3245
+          ],
+          "18": [
+            2767,
+            2767
+          ],
+          "13": [
+            952,
+            3306
           ]
         },
         "2026-05-08": {
-          "15": [
-            3438,
-            3438
-          ],
-          "10": [
-            2826,
-            2826
-          ],
-          "14": [
-            3084,
-            3084
-          ],
           "23": [
             1814,
             1814
-          ],
-          "0": [
-            2612,
-            2612
-          ],
-          "9": [
-            3262,
-            3262
           ],
           "13": [
             2739,
@@ -5134,9 +5270,53 @@ export const LAB_SUPPORT_DATA = {
           "20": [
             803,
             803
+          ],
+          "15": [
+            3438,
+            3438
+          ],
+          "10": [
+            2826,
+            2826
+          ],
+          "14": [
+            3084,
+            3084
+          ],
+          "0": [
+            2612,
+            2612
+          ],
+          "9": [
+            3262,
+            3262
           ]
         },
         "2026-05-11": {
+          "14": [
+            3260,
+            3260
+          ],
+          "23": [
+            3351,
+            3351
+          ],
+          "9": [
+            2119,
+            2119
+          ],
+          "18": [
+            2814,
+            2814
+          ],
+          "13": [
+            3412,
+            3412
+          ],
+          "22": [
+            1286,
+            1286
+          ],
           "17": [
             2912,
             2912
@@ -5172,33 +5352,21 @@ export const LAB_SUPPORT_DATA = {
           "19": [
             3520,
             3520
-          ],
-          "14": [
-            3260,
-            3260
-          ],
-          "23": [
-            3351,
-            3351
-          ],
-          "9": [
-            2119,
-            2119
-          ],
-          "18": [
-            2814,
-            2814
-          ],
-          "13": [
-            3412,
-            3412
-          ],
-          "22": [
-            1286,
-            1286
           ]
         },
         "2026-05-12": {
+          "16": [
+            3269,
+            3269
+          ],
+          "11": [
+            3187,
+            3187
+          ],
+          "20": [
+            3531,
+            3531
+          ],
           "15": [
             3045,
             3045
@@ -5215,13 +5383,13 @@ export const LAB_SUPPORT_DATA = {
             2473,
             2473
           ],
-          "23": [
-            3266,
-            3266
-          ],
           "0": [
             3382,
             3382
+          ],
+          "23": [
+            3266,
+            3266
           ],
           "9": [
             2265,
@@ -5250,24 +5418,36 @@ export const LAB_SUPPORT_DATA = {
           "21": [
             3440,
             3440
-          ],
-          "16": [
-            3269,
-            3269
-          ],
-          "11": [
-            3187,
-            3187
-          ],
-          "20": [
-            3531,
-            3531
           ]
         },
         "2026-05-13": {
+          "20": [
+            3384,
+            3384
+          ],
+          "15": [
+            2650,
+            2650
+          ],
+          "10": [
+            3471,
+            3471
+          ],
+          "19": [
+            3339,
+            3339
+          ],
+          "14": [
+            2873,
+            2873
+          ],
           "23": [
             3350,
             3350
+          ],
+          "0": [
+            2984,
+            2984
           ],
           "9": [
             2722,
@@ -5304,30 +5484,6 @@ export const LAB_SUPPORT_DATA = {
           "11": [
             3504,
             3504
-          ],
-          "20": [
-            3384,
-            3384
-          ],
-          "15": [
-            2650,
-            2650
-          ],
-          "10": [
-            3471,
-            3471
-          ],
-          "19": [
-            3339,
-            3339
-          ],
-          "14": [
-            2873,
-            2873
-          ],
-          "0": [
-            2984,
-            2984
           ]
         },
         "2026-05-14": {
@@ -5397,34 +5553,6 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-15": {
-          "15": [
-            2939,
-            2939
-          ],
-          "10": [
-            3038,
-            3038
-          ],
-          "19": [
-            3344,
-            3344
-          ],
-          "14": [
-            2832,
-            2832
-          ],
-          "23": [
-            3499,
-            3499
-          ],
-          "0": [
-            3200,
-            3200
-          ],
-          "9": [
-            3031,
-            3031
-          ],
           "18": [
             3233,
             3233
@@ -5460,6 +5588,34 @@ export const LAB_SUPPORT_DATA = {
           "20": [
             3472,
             3472
+          ],
+          "15": [
+            2939,
+            2939
+          ],
+          "10": [
+            3038,
+            3038
+          ],
+          "19": [
+            3344,
+            3344
+          ],
+          "14": [
+            2832,
+            2832
+          ],
+          "23": [
+            3499,
+            3499
+          ],
+          "0": [
+            3200,
+            3200
+          ],
+          "9": [
+            3031,
+            3031
           ]
         },
         "2026-05-16": {
@@ -5469,6 +5625,30 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-18": {
+          "11": [
+            3294,
+            3294
+          ],
+          "20": [
+            3247,
+            3247
+          ],
+          "15": [
+            2925,
+            2925
+          ],
+          "10": [
+            3471,
+            3471
+          ],
+          "19": [
+            2560,
+            2610
+          ],
+          "16": [
+            3115,
+            3115
+          ],
           "14": [
             2071,
             2071
@@ -5508,33 +5688,33 @@ export const LAB_SUPPORT_DATA = {
           "21": [
             3028,
             3028
-          ],
-          "16": [
-            3115,
-            3115
-          ],
-          "11": [
-            3294,
-            3294
-          ],
-          "20": [
-            3247,
-            3247
-          ],
-          "15": [
-            2925,
-            2925
-          ],
-          "10": [
-            3471,
-            3471
-          ],
-          "19": [
-            2560,
-            2610
           ]
         },
         "2026-05-19": {
+          "21": [
+            3396,
+            3396
+          ],
+          "16": [
+            0,
+            0
+          ],
+          "11": [
+            3383,
+            3383
+          ],
+          "20": [
+            3225,
+            3225
+          ],
+          "15": [
+            1683,
+            1683
+          ],
+          "10": [
+            2128,
+            2128
+          ],
           "19": [
             3410,
             3410
@@ -5543,13 +5723,13 @@ export const LAB_SUPPORT_DATA = {
             2738,
             2738
           ],
-          "23": [
-            3401,
-            3401
-          ],
           "0": [
             3147,
             3147
+          ],
+          "23": [
+            3401,
+            3401
           ],
           "9": [
             2642,
@@ -5574,49 +5754,9 @@ export const LAB_SUPPORT_DATA = {
           "12": [
             3098,
             3098
-          ],
-          "21": [
-            3396,
-            3396
-          ],
-          "16": [
-            0,
-            0
-          ],
-          "11": [
-            3383,
-            3383
-          ],
-          "20": [
-            3225,
-            3225
-          ],
-          "15": [
-            1683,
-            1683
-          ],
-          "10": [
-            2128,
-            2128
           ]
         },
         "2026-05-20": {
-          "22": [
-            3258,
-            3258
-          ],
-          "17": [
-            2530,
-            2530
-          ],
-          "12": [
-            2962,
-            2962
-          ],
-          "21": [
-            3424,
-            3424
-          ],
           "16": [
             2936,
             2936
@@ -5668,41 +5808,25 @@ export const LAB_SUPPORT_DATA = {
           "13": [
             2147,
             2149
+          ],
+          "22": [
+            3258,
+            3258
+          ],
+          "17": [
+            2530,
+            2530
+          ],
+          "12": [
+            2962,
+            2962
+          ],
+          "21": [
+            3424,
+            3424
           ]
         },
         "2026-05-21": {
-          "0": [
-            3452,
-            3452
-          ],
-          "9": [
-            3175,
-            3175
-          ],
-          "18": [
-            2598,
-            2598
-          ],
-          "13": [
-            3426,
-            3426
-          ],
-          "22": [
-            2661,
-            2661
-          ],
-          "8": [
-            0,
-            0
-          ],
-          "17": [
-            1778,
-            1778
-          ],
-          "12": [
-            3306,
-            3306
-          ],
           "21": [
             1311,
             1311
@@ -5742,13 +5866,41 @@ export const LAB_SUPPORT_DATA = {
           "23": [
             2634,
             2634
+          ],
+          "0": [
+            3452,
+            3452
+          ],
+          "9": [
+            3175,
+            3175
+          ],
+          "18": [
+            2598,
+            2598
+          ],
+          "13": [
+            3426,
+            3426
+          ],
+          "22": [
+            2661,
+            2661
+          ],
+          "8": [
+            0,
+            0
+          ],
+          "17": [
+            1778,
+            1778
+          ],
+          "12": [
+            3306,
+            3306
           ]
         },
         "2026-05-22": {
-          "13": [
-            2886,
-            2886
-          ],
           "22": [
             3264,
             3264
@@ -5812,16 +5964,20 @@ export const LAB_SUPPORT_DATA = {
           "18": [
             1992,
             1992
+          ],
+          "13": [
+            2886,
+            2886
           ]
         },
         "2026-05-23": {
-          "1": [
-            9,
-            9
-          ],
           "0": [
             3376,
             3376
+          ],
+          "1": [
+            9,
+            9
           ]
         },
         "2026-05-25": {
@@ -5831,6 +5987,34 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-26": {
+          "22": [
+            3097,
+            3097
+          ],
+          "17": [
+            3490,
+            3490
+          ],
+          "12": [
+            2820,
+            2820
+          ],
+          "21": [
+            2971,
+            2971
+          ],
+          "16": [
+            2266,
+            2266
+          ],
+          "11": [
+            3212,
+            3212
+          ],
+          "20": [
+            2696,
+            2696
+          ],
           "15": [
             2211,
             2211
@@ -5862,37 +6046,41 @@ export const LAB_SUPPORT_DATA = {
           "13": [
             1171,
             1173
-          ],
-          "22": [
-            3097,
-            3097
-          ],
-          "17": [
-            3490,
-            3490
-          ],
-          "12": [
-            2820,
-            2820
-          ],
-          "21": [
-            2971,
-            2971
-          ],
-          "16": [
-            2266,
-            2266
-          ],
-          "11": [
-            3212,
-            3212
-          ],
-          "20": [
-            2696,
-            2696
           ]
         },
         "2026-05-27": {
+          "18": [
+            2939,
+            2939
+          ],
+          "13": [
+            3472,
+            3472
+          ],
+          "22": [
+            3324,
+            3324
+          ],
+          "17": [
+            2590,
+            2590
+          ],
+          "12": [
+            2675,
+            2675
+          ],
+          "21": [
+            3094,
+            3094
+          ],
+          "16": [
+            2066,
+            2066
+          ],
+          "11": [
+            3336,
+            3336
+          ],
           "20": [
             3362,
             3362
@@ -5928,38 +6116,6 @@ export const LAB_SUPPORT_DATA = {
           "9": [
             2942,
             2942
-          ],
-          "18": [
-            2939,
-            2939
-          ],
-          "13": [
-            3472,
-            3472
-          ],
-          "22": [
-            3324,
-            3324
-          ],
-          "17": [
-            2590,
-            2590
-          ],
-          "12": [
-            2675,
-            2675
-          ],
-          "21": [
-            3094,
-            3094
-          ],
-          "16": [
-            2066,
-            2066
-          ],
-          "11": [
-            3336,
-            3336
           ]
         },
         "2026-05-28": {
@@ -6033,9 +6189,21 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-29": {
+          "14": [
+            2687,
+            2917
+          ],
+          "0": [
+            2867,
+            2867
+          ],
           "23": [
             2882,
             2882
+          ],
+          "9": [
+            387,
+            451
           ],
           "18": [
             1906,
@@ -6084,18 +6252,6 @@ export const LAB_SUPPORT_DATA = {
           "19": [
             3527,
             3527
-          ],
-          "14": [
-            2687,
-            2917
-          ],
-          "0": [
-            2867,
-            2867
-          ],
-          "9": [
-            387,
-            451
           ]
         },
         "2026-05-30": {
@@ -6109,14 +6265,6 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-31": {
-          "14": [
-            745,
-            745
-          ],
-          "17": [
-            1749,
-            1749
-          ],
           "16": [
             2131,
             2131
@@ -6124,17 +6272,17 @@ export const LAB_SUPPORT_DATA = {
           "15": [
             1882,
             1882
+          ],
+          "14": [
+            745,
+            745
+          ],
+          "17": [
+            1749,
+            1749
           ]
         },
         "2026-06-01": {
-          "22": [
-            2352,
-            2534
-          ],
-          "17": [
-            3340,
-            3423
-          ],
           "12": [
             2534,
             2696
@@ -6186,17 +6334,17 @@ export const LAB_SUPPORT_DATA = {
           "13": [
             3330,
             3419
+          ],
+          "22": [
+            2352,
+            2534
+          ],
+          "17": [
+            3340,
+            3423
           ]
         },
         "2026-06-02": {
-          "23": [
-            2375,
-            2375
-          ],
-          "18": [
-            2639,
-            2639
-          ],
           "22": [
             3550,
             3550
@@ -6237,32 +6385,20 @@ export const LAB_SUPPORT_DATA = {
             3359,
             3359
           ],
+          "23": [
+            2375,
+            2375
+          ],
           "0": [
             0,
             0
+          ],
+          "18": [
+            2639,
+            2639
           ]
         },
         "2026-06-03": {
-          "15": [
-            2176,
-            2230
-          ],
-          "10": [
-            1161,
-            1161
-          ],
-          "14": [
-            3262,
-            3421
-          ],
-          "0": [
-            3309,
-            3309
-          ],
-          "9": [
-            1727,
-            1748
-          ],
           "13": [
             2935,
             3032
@@ -6282,9 +6418,49 @@ export const LAB_SUPPORT_DATA = {
           "11": [
             119,
             119
+          ],
+          "15": [
+            2176,
+            2230
+          ],
+          "10": [
+            1161,
+            1161
+          ],
+          "14": [
+            3262,
+            3421
+          ],
+          "0": [
+            3309,
+            3309
+          ],
+          "9": [
+            1727,
+            1748
           ]
         },
         "2026-06-04": {
+          "11": [
+            1782,
+            1784
+          ],
+          "20": [
+            2939,
+            2941
+          ],
+          "15": [
+            1598,
+            1622
+          ],
+          "10": [
+            142,
+            142
+          ],
+          "19": [
+            3435,
+            3435
+          ],
           "14": [
             2908,
             2989
@@ -6324,29 +6500,29 @@ export const LAB_SUPPORT_DATA = {
           "16": [
             2868,
             2950
-          ],
-          "11": [
-            1782,
-            1784
-          ],
-          "20": [
-            2939,
-            2941
-          ],
-          "15": [
-            1598,
-            1622
-          ],
-          "10": [
-            142,
-            142
-          ],
-          "19": [
-            3435,
-            3435
           ]
         },
         "2026-06-05": {
+          "19": [
+            3277,
+            3277
+          ],
+          "14": [
+            614,
+            642
+          ],
+          "23": [
+            3514,
+            3514
+          ],
+          "0": [
+            1505,
+            1505
+          ],
+          "9": [
+            907,
+            907
+          ],
           "18": [
             2982,
             2982
@@ -6354,6 +6530,14 @@ export const LAB_SUPPORT_DATA = {
           "13": [
             2030,
             2030
+          ],
+          "22": [
+            3547,
+            3547
+          ],
+          "21": [
+            3179,
+            3179
           ],
           "16": [
             838,
@@ -6364,8 +6548,8 @@ export const LAB_SUPPORT_DATA = {
             1468
           ],
           "20": [
-            673,
-            673
+            3214,
+            3214
           ],
           "15": [
             2359,
@@ -6374,22 +6558,328 @@ export const LAB_SUPPORT_DATA = {
           "10": [
             2076,
             2076
-          ],
-          "19": [
-            3277,
-            3277
-          ],
-          "14": [
-            614,
-            642
+          ]
+        },
+        "2026-06-06": {
+          "1": [
+            61,
+            61
           ],
           "0": [
-            1505,
-            1505
+            3464,
+            3464
+          ]
+        },
+        "2026-06-07": {
+          "12": [
+            24,
+            24
+          ]
+        },
+        "2026-06-08": {
+          "11": [
+            2835,
+            2883
+          ],
+          "15": [
+            3201,
+            3229
+          ],
+          "10": [
+            3262,
+            3355
+          ],
+          "19": [
+            610,
+            610
+          ],
+          "14": [
+            2928,
+            3039
           ],
           "9": [
-            907,
-            907
+            2223,
+            2274
+          ],
+          "23": [
+            0,
+            0
+          ],
+          "18": [
+            2527,
+            2527
+          ],
+          "13": [
+            3078,
+            3214
+          ],
+          "22": [
+            0,
+            0
+          ],
+          "17": [
+            2752,
+            2811
+          ],
+          "12": [
+            3423,
+            3480
+          ],
+          "21": [
+            251,
+            251
+          ],
+          "16": [
+            3320,
+            3407
+          ]
+        },
+        "2026-06-09": {
+          "23": [
+            3254,
+            3254
+          ],
+          "9": [
+            876,
+            876
+          ],
+          "13": [
+            2158,
+            2286
+          ],
+          "22": [
+            2774,
+            2774
+          ],
+          "8": [
+            0,
+            0
+          ],
+          "17": [
+            2946,
+            3285
+          ],
+          "12": [
+            3110,
+            3461
+          ],
+          "21": [
+            3272,
+            3272
+          ],
+          "16": [
+            2510,
+            3111
+          ],
+          "11": [
+            1859,
+            2028
+          ],
+          "20": [
+            2406,
+            2406
+          ],
+          "15": [
+            2646,
+            3336
+          ],
+          "10": [
+            829,
+            876
+          ],
+          "19": [
+            2679,
+            2679
+          ],
+          "14": [
+            3169,
+            3275
+          ],
+          "0": [
+            167,
+            167
+          ]
+        },
+        "2026-06-10": {
+          "19": [
+            3316,
+            3316
+          ],
+          "14": [
+            2374,
+            2878
+          ],
+          "23": [
+            1596,
+            1596
+          ],
+          "0": [
+            3212,
+            3212
+          ],
+          "9": [
+            2540,
+            2665
+          ],
+          "18": [
+            2350,
+            2350
+          ],
+          "13": [
+            2192,
+            2273
+          ],
+          "22": [
+            2639,
+            2639
+          ],
+          "17": [
+            2782,
+            3030
+          ],
+          "12": [
+            2985,
+            3049
+          ],
+          "21": [
+            3156,
+            3156
+          ],
+          "16": [
+            3010,
+            3450
+          ],
+          "11": [
+            3145,
+            3446
+          ],
+          "20": [
+            3213,
+            3213
+          ],
+          "15": [
+            1900,
+            2211
+          ],
+          "10": [
+            2033,
+            2102
+          ]
+        },
+        "2026-06-11": {
+          "19": [
+            3199,
+            3199
+          ],
+          "14": [
+            2708,
+            2860
+          ],
+          "23": [
+            3174,
+            3174
+          ],
+          "0": [
+            3342,
+            3342
+          ],
+          "9": [
+            1707,
+            1726
+          ],
+          "18": [
+            3102,
+            3102
+          ],
+          "13": [
+            3157,
+            3434
+          ],
+          "22": [
+            3039,
+            3039
+          ],
+          "17": [
+            1886,
+            2052
+          ],
+          "12": [
+            3090,
+            3278
+          ],
+          "21": [
+            3305,
+            3305
+          ],
+          "16": [
+            2490,
+            2490
+          ],
+          "11": [
+            2175,
+            2612
+          ],
+          "20": [
+            2540,
+            2540
+          ],
+          "15": [
+            2597,
+            3113
+          ],
+          "10": [
+            3218,
+            3533
+          ]
+        },
+        "2026-06-12": {
+          "15": [
+            2777,
+            3034
+          ],
+          "10": [
+            2732,
+            3549
+          ],
+          "19": [
+            3482,
+            3482
+          ],
+          "14": [
+            2417,
+            3299
+          ],
+          "0": [
+            3433,
+            3433
+          ],
+          "9": [
+            3031,
+            3457
+          ],
+          "18": [
+            1770,
+            1770
+          ],
+          "13": [
+            2142,
+            2810
+          ],
+          "17": [
+            3069,
+            3364
+          ],
+          "12": [
+            3094,
+            3219
+          ],
+          "16": [
+            3057,
+            3539
+          ],
+          "11": [
+            3200,
+            3465
           ]
         }
       },
@@ -6401,6 +6891,10 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-14": {
+          "9": [
+            1569,
+            1569
+          ],
           "11": [
             2092,
             2093
@@ -6440,13 +6934,17 @@ export const LAB_SUPPORT_DATA = {
           "16": [
             2893,
             2893
-          ],
-          "9": [
-            1569,
-            1569
           ]
         },
         "2026-05-15": {
+          "11": [
+            17,
+            17
+          ],
+          "13": [
+            19,
+            19
+          ],
           "15": [
             0,
             0
@@ -6470,33 +6968,9 @@ export const LAB_SUPPORT_DATA = {
           "9": [
             81,
             81
-          ],
-          "11": [
-            17,
-            17
-          ],
-          "13": [
-            19,
-            19
           ]
         },
         "2026-05-18": {
-          "21": [
-            2739,
-            2739
-          ],
-          "14": [
-            2933,
-            2933
-          ],
-          "23": [
-            323,
-            323
-          ],
-          "16": [
-            2885,
-            2885
-          ],
           "9": [
             2413,
             2413
@@ -6540,20 +7014,28 @@ export const LAB_SUPPORT_DATA = {
           "12": [
             3327,
             3327
+          ],
+          "21": [
+            2739,
+            2739
+          ],
+          "14": [
+            2933,
+            2933
+          ],
+          "23": [
+            323,
+            323
+          ],
+          "16": [
+            2885,
+            2885
           ]
         },
         "2026-05-19": {
-          "19": [
-            3233,
-            3233
-          ],
           "21": [
             3022,
             3022
-          ],
-          "14": [
-            3013,
-            3013
           ],
           "23": [
             2927,
@@ -6562,10 +7044,6 @@ export const LAB_SUPPORT_DATA = {
           "16": [
             282,
             282
-          ],
-          "0": [
-            2208,
-            2208
           ],
           "9": [
             1925,
@@ -6603,44 +7081,24 @@ export const LAB_SUPPORT_DATA = {
             1007,
             1009
           ],
+          "19": [
+            3233,
+            3233
+          ],
           "12": [
             2788,
             2788
+          ],
+          "14": [
+            3013,
+            3013
+          ],
+          "0": [
+            2208,
+            2208
           ]
         },
         "2026-05-20": {
-          "22": [
-            3261,
-            3261
-          ],
-          "15": [
-            2913,
-            2913
-          ],
-          "17": [
-            3049,
-            3049
-          ],
-          "1": [
-            57,
-            57
-          ],
-          "10": [
-            3083,
-            3083
-          ],
-          "19": [
-            2500,
-            2500
-          ],
-          "12": [
-            2566,
-            2566
-          ],
-          "21": [
-            3427,
-            3427
-          ],
           "14": [
             2984,
             2984
@@ -6676,9 +7134,61 @@ export const LAB_SUPPORT_DATA = {
           "13": [
             3088,
             3088
+          ],
+          "22": [
+            3261,
+            3261
+          ],
+          "15": [
+            2913,
+            2913
+          ],
+          "17": [
+            3049,
+            3049
+          ],
+          "1": [
+            57,
+            57
+          ],
+          "10": [
+            3083,
+            3083
+          ],
+          "19": [
+            2500,
+            2500
+          ],
+          "12": [
+            2566,
+            2566
+          ],
+          "21": [
+            3427,
+            3427
           ]
         },
         "2026-05-21": {
+          "19": [
+            1703,
+            1703
+          ],
+          "21": [
+            3277,
+            3277
+          ],
+          "14": [
+            2659,
+            2659
+          ],
+          "23": [
+            2800,
+            2800
+          ],
+          "16": [
+            2085,
+            2086
+          ],
           "0": [
             2995,
             2995
@@ -6687,13 +7197,13 @@ export const LAB_SUPPORT_DATA = {
             3123,
             3123
           ],
-          "11": [
-            2867,
-            2867
-          ],
           "18": [
             2621,
             2621
+          ],
+          "11": [
+            2867,
+            2867
           ],
           "20": [
             2914,
@@ -6719,36 +7229,12 @@ export const LAB_SUPPORT_DATA = {
             3381,
             3381
           ],
-          "19": [
-            1703,
-            1703
-          ],
           "12": [
             2580,
             2580
-          ],
-          "21": [
-            3277,
-            3277
-          ],
-          "14": [
-            2659,
-            2659
-          ],
-          "23": [
-            2800,
-            2800
-          ],
-          "16": [
-            2085,
-            2086
           ]
         },
         "2026-05-22": {
-          "13": [
-            2318,
-            2620
-          ],
           "10": [
             1310,
             1310
@@ -6772,6 +7258,10 @@ export const LAB_SUPPORT_DATA = {
           "11": [
             3072,
             3072
+          ],
+          "13": [
+            2318,
+            2620
           ]
         },
         "2026-05-26": {
@@ -6863,10 +7353,6 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-28": {
-          "14": [
-            2953,
-            2953
-          ],
           "16": [
             2241,
             2241
@@ -6891,17 +7377,21 @@ export const LAB_SUPPORT_DATA = {
             2637,
             2637
           ],
-          "17": [
-            1991,
-            1991
-          ],
           "10": [
             1070,
             1070
           ],
+          "17": [
+            1991,
+            1991
+          ],
           "12": [
             1171,
             1171
+          ],
+          "14": [
+            2953,
+            2953
           ]
         },
         "2026-05-29": {
@@ -6935,26 +7425,6 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-06-01": {
-          "22": [
-            3430,
-            3430
-          ],
-          "15": [
-            293,
-            293
-          ],
-          "17": [
-            3370,
-            3370
-          ],
-          "10": [
-            3551,
-            3551
-          ],
-          "19": [
-            3160,
-            3160
-          ],
           "12": [
             2363,
             2363
@@ -6994,29 +7464,29 @@ export const LAB_SUPPORT_DATA = {
           "13": [
             2785,
             2785
+          ],
+          "22": [
+            3430,
+            3430
+          ],
+          "15": [
+            293,
+            293
+          ],
+          "17": [
+            3370,
+            3370
+          ],
+          "10": [
+            3551,
+            3551
+          ],
+          "19": [
+            3160,
+            3160
           ]
         },
         "2026-06-02": {
-          "23": [
-            3194,
-            3194
-          ],
-          "16": [
-            3246,
-            3246
-          ],
-          "9": [
-            2362,
-            2362
-          ],
-          "18": [
-            2496,
-            2496
-          ],
-          "11": [
-            3204,
-            3204
-          ],
           "20": [
             2491,
             2491
@@ -7061,12 +7531,52 @@ export const LAB_SUPPORT_DATA = {
             2829,
             2829
           ],
+          "23": [
+            3194,
+            3194
+          ],
+          "16": [
+            3246,
+            3246
+          ],
           "0": [
             2844,
             2844
+          ],
+          "9": [
+            2362,
+            2362
+          ],
+          "18": [
+            2496,
+            2496
+          ],
+          "11": [
+            3204,
+            3204
           ]
         },
         "2026-06-03": {
+          "18": [
+            2755,
+            2755
+          ],
+          "11": [
+            2631,
+            2631
+          ],
+          "20": [
+            3472,
+            3472
+          ],
+          "13": [
+            3525,
+            3525
+          ],
+          "22": [
+            3416,
+            3416
+          ],
           "15": [
             3465,
             3465
@@ -7074,6 +7584,10 @@ export const LAB_SUPPORT_DATA = {
           "17": [
             3046,
             3046
+          ],
+          "1": [
+            35,
+            35
           ],
           "10": [
             3497,
@@ -7110,53 +7624,9 @@ export const LAB_SUPPORT_DATA = {
           "9": [
             3333,
             3333
-          ],
-          "18": [
-            2755,
-            2755
-          ],
-          "11": [
-            2631,
-            2631
-          ],
-          "20": [
-            3472,
-            3472
-          ],
-          "13": [
-            3525,
-            3525
-          ],
-          "1": [
-            35,
-            35
-          ],
-          "22": [
-            3416,
-            3416
           ]
         },
         "2026-06-04": {
-          "21": [
-            1899,
-            1899
-          ],
-          "14": [
-            2753,
-            2753
-          ],
-          "23": [
-            1687,
-            1687
-          ],
-          "16": [
-            3567,
-            3567
-          ],
-          "9": [
-            3451,
-            3451
-          ],
           "18": [
             2880,
             2880
@@ -7197,15 +7667,67 @@ export const LAB_SUPPORT_DATA = {
             2828,
             2830
           ],
+          "21": [
+            1899,
+            1899
+          ],
+          "14": [
+            2753,
+            2753
+          ],
+          "23": [
+            1687,
+            1687
+          ],
+          "16": [
+            3567,
+            3567
+          ],
           "0": [
             2749,
             2751
+          ],
+          "9": [
+            3451,
+            3451
           ]
         },
         "2026-06-05": {
+          "17": [
+            2262,
+            2262
+          ],
+          "19": [
+            3144,
+            3144
+          ],
+          "12": [
+            2224,
+            2224
+          ],
+          "21": [
+            3294,
+            3294
+          ],
+          "14": [
+            3295,
+            3295
+          ],
+          "23": [
+            2976,
+            2976
+          ],
           "16": [
             3097,
             3097
+          ],
+          "0": [
+            1818,
+            1818
+          ],
+          "9": [
+            3019,
+            3019
           ],
           "18": [
             2238,
@@ -7216,44 +7738,322 @@ export const LAB_SUPPORT_DATA = {
             497
           ],
           "20": [
-            270,
-            270
+            3325,
+            3325
           ],
           "13": [
             3537,
             3537
           ],
+          "22": [
+            2890,
+            2890
+          ],
           "15": [
             3508,
             3508
           ],
-          "17": [
-            2262,
-            2262
-          ],
           "10": [
             3215,
             3215
+          ]
+        },
+        "2026-06-06": {
+          "0": [
+            3281,
+            3281
+          ]
+        },
+        "2026-06-07": {
+          "15": [
+            3600,
+            3600
           ],
-          "19": [
-            3144,
-            3144
+          "17": [
+            3154,
+            3156
           ],
           "12": [
-            2224,
-            2224
+            1210,
+            1210
           ],
           "14": [
-            3295,
-            3295
+            3600,
+            3600
           ],
-          "0": [
-            1818,
-            1818
+          "16": [
+            3600,
+            3600
+          ],
+          "13": [
+            3600,
+            3600
+          ]
+        },
+        "2026-06-08": {
+          "9": [
+            3169,
+            3169
+          ],
+          "23": [
+            3377,
+            3377
+          ],
+          "18": [
+            2350,
+            2350
+          ],
+          "11": [
+            3572,
+            3572
+          ],
+          "20": [
+            3266,
+            3266
+          ],
+          "13": [
+            3403,
+            3403
+          ],
+          "22": [
+            3163,
+            3163
+          ],
+          "15": [
+            3134,
+            3134
+          ],
+          "17": [
+            3492,
+            3492
+          ],
+          "10": [
+            2701,
+            2701
+          ],
+          "19": [
+            3364,
+            3364
+          ],
+          "12": [
+            3257,
+            3257
+          ],
+          "21": [
+            3329,
+            3329
+          ],
+          "14": [
+            1743,
+            1743
+          ],
+          "16": [
+            2581,
+            2581
+          ]
+        },
+        "2026-06-09": {
+          "16": [
+            221,
+            221
           ],
           "9": [
-            3019,
-            3019
+            441,
+            441
+          ],
+          "15": [
+            23,
+            23
+          ],
+          "0": [
+            3422,
+            3422
+          ]
+        },
+        "2026-06-10": {
+          "19": [
+            1266,
+            1266
+          ],
+          "12": [
+            826,
+            826
+          ],
+          "21": [
+            2976,
+            2976
+          ],
+          "14": [
+            3291,
+            3291
+          ],
+          "23": [
+            2718,
+            2718
+          ],
+          "16": [
+            2908,
+            2908
+          ],
+          "18": [
+            1721,
+            1721
+          ],
+          "11": [
+            382,
+            382
+          ],
+          "20": [
+            2062,
+            2062
+          ],
+          "13": [
+            2838,
+            2842
+          ],
+          "22": [
+            1472,
+            1472
+          ],
+          "15": [
+            2099,
+            2099
+          ],
+          "10": [
+            986,
+            986
+          ],
+          "17": [
+            2642,
+            2642
+          ]
+        },
+        "2026-06-11": {
+          "19": [
+            3327,
+            3327
+          ],
+          "21": [
+            2583,
+            2583
+          ],
+          "14": [
+            1147,
+            1147
+          ],
+          "23": [
+            3184,
+            3184
+          ],
+          "16": [
+            3568,
+            3568
+          ],
+          "0": [
+            3507,
+            3507
+          ],
+          "9": [
+            2111,
+            2111
+          ],
+          "18": [
+            3180,
+            3180
+          ],
+          "11": [
+            2121,
+            2121
+          ],
+          "20": [
+            3311,
+            3311
+          ],
+          "13": [
+            2756,
+            2756
+          ],
+          "22": [
+            3494,
+            3494
+          ],
+          "15": [
+            2581,
+            2581
+          ],
+          "17": [
+            2932,
+            2932
+          ],
+          "1": [
+            58,
+            58
+          ],
+          "10": [
+            2237,
+            2237
+          ],
+          "12": [
+            3025,
+            3027
+          ]
+        },
+        "2026-06-12": {
+          "18": [
+            2361,
+            2361
+          ],
+          "20": [
+            46,
+            46
+          ],
+          "13": [
+            3183,
+            3183
+          ],
+          "15": [
+            2245,
+            2245
+          ],
+          "17": [
+            3078,
+            3078
+          ],
+          "1": [
+            129,
+            129
+          ],
+          "10": [
+            2329,
+            2329
+          ],
+          "19": [
+            3405,
+            3405
+          ],
+          "12": [
+            3391,
+            3391
+          ],
+          "14": [
+            2438,
+            2438
+          ],
+          "16": [
+            3180,
+            3180
+          ],
+          "0": [
+            3521,
+            3521
+          ],
+          "9": [
+            2618,
+            2618
+          ],
+          "11": [
+            3030,
+            3030
           ]
         }
       },
@@ -7269,11 +8069,11 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-12": {
-          "13": [
+          "11": [
             0,
             0
           ],
-          "17": [
+          "20": [
             0,
             0
           ],
@@ -7285,14 +8085,6 @@ export const LAB_SUPPORT_DATA = {
             0,
             0
           ],
-          "12": [
-            0,
-            0
-          ],
-          "21": [
-            0,
-            0
-          ],
           "14": [
             0,
             0
@@ -7301,39 +8093,27 @@ export const LAB_SUPPORT_DATA = {
             0,
             0
           ],
-          "11": [
+          "13": [
             0,
             0
           ],
-          "20": [
+          "17": [
+            0,
+            0
+          ],
+          "12": [
+            0,
+            0
+          ],
+          "21": [
             0,
             0
           ]
         },
         "2026-05-13": {
-          "16": [
-            2436,
-            2436
-          ],
-          "11": [
-            430,
-            430
-          ],
-          "13": [
-            1423,
-            1423
-          ],
           "15": [
             168,
             168
-          ],
-          "8": [
-            0,
-            0
-          ],
-          "17": [
-            3115,
-            3115
           ],
           "10": [
             227,
@@ -7343,13 +8123,33 @@ export const LAB_SUPPORT_DATA = {
             918,
             918
           ],
+          "14": [
+            2471,
+            2471
+          ],
+          "13": [
+            1423,
+            1423
+          ],
+          "8": [
+            0,
+            0
+          ],
+          "17": [
+            3115,
+            3115
+          ],
           "12": [
             1440,
             1440
           ],
-          "14": [
-            2471,
-            2471
+          "16": [
+            2436,
+            2436
+          ],
+          "11": [
+            430,
+            430
           ]
         },
         "2026-05-14": {
@@ -7357,55 +8157,51 @@ export const LAB_SUPPORT_DATA = {
             2435,
             2435
           ],
-          "13": [
-            555,
-            555
-          ],
           "15": [
             2501,
             2501
-          ],
-          "17": [
-            2404,
-            2404
           ],
           "10": [
             2970,
             2970
           ],
-          "12": [
-            2455,
-            2455
-          ],
           "14": [
             22,
             22
           ],
-          "16": [
-            356,
-            356
-          ],
           "9": [
             2608,
             2608
+          ],
+          "13": [
+            555,
+            555
+          ],
+          "17": [
+            2404,
+            2404
+          ],
+          "12": [
+            2455,
+            2455
+          ],
+          "16": [
+            356,
+            356
           ]
         },
         "2026-05-15": {
+          "13": [
+            3312,
+            3312
+          ],
           "22": [
             1982,
             1982
           ],
-          "15": [
-            1897,
-            1899
-          ],
           "17": [
             3479,
             3479
-          ],
-          "10": [
-            2742,
-            2742
           ],
           "12": [
             3212,
@@ -7415,6 +8211,22 @@ export const LAB_SUPPORT_DATA = {
             312,
             312
           ],
+          "16": [
+            3267,
+            3267
+          ],
+          "11": [
+            1100,
+            1100
+          ],
+          "15": [
+            1897,
+            1899
+          ],
+          "10": [
+            2742,
+            2742
+          ],
           "14": [
             3524,
             3524
@@ -7423,21 +8235,9 @@ export const LAB_SUPPORT_DATA = {
             3401,
             3401
           ],
-          "16": [
-            3267,
-            3267
-          ],
           "9": [
             3024,
             3024
-          ],
-          "11": [
-            1100,
-            1100
-          ],
-          "13": [
-            3312,
-            3312
           ]
         },
         "2026-05-16": {
@@ -7447,30 +8247,6 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-18": {
-          "21": [
-            3338,
-            3338
-          ],
-          "14": [
-            2959,
-            2959
-          ],
-          "23": [
-            2305,
-            2307
-          ],
-          "16": [
-            0,
-            0
-          ],
-          "9": [
-            487,
-            487
-          ],
-          "18": [
-            2422,
-            2422
-          ],
           "11": [
             3459,
             3459
@@ -7479,21 +8255,9 @@ export const LAB_SUPPORT_DATA = {
             2709,
             2709
           ],
-          "13": [
-            3276,
-            3276
-          ],
-          "22": [
-            2509,
-            2509
-          ],
           "15": [
             2016,
             2016
-          ],
-          "17": [
-            1709,
-            1709
           ],
           "10": [
             3528,
@@ -7503,43 +8267,55 @@ export const LAB_SUPPORT_DATA = {
             2614,
             2614
           ],
+          "14": [
+            2959,
+            2959
+          ],
+          "23": [
+            2305,
+            2307
+          ],
+          "9": [
+            487,
+            487
+          ],
+          "18": [
+            2422,
+            2422
+          ],
+          "13": [
+            3276,
+            3276
+          ],
+          "22": [
+            2509,
+            2509
+          ],
+          "17": [
+            1709,
+            1709
+          ],
           "12": [
             1690,
             1690
+          ],
+          "21": [
+            3338,
+            3338
+          ],
+          "16": [
+            0,
+            0
           ]
         },
         "2026-05-19": {
-          "19": [
-            1882,
-            1882
-          ],
           "21": [
             2985,
             2985
           ],
-          "14": [
-            3077,
-            3077
-          ],
-          "23": [
-            3081,
-            3081
-          ],
           "16": [
             3120,
             3120
-          ],
-          "0": [
-            2853,
-            2853
-          ],
-          "9": [
-            2822,
-            2822
-          ],
-          "18": [
-            2803,
-            2803
           ],
           "11": [
             3443,
@@ -7549,6 +8325,38 @@ export const LAB_SUPPORT_DATA = {
             3113,
             3113
           ],
+          "15": [
+            2056,
+            2056
+          ],
+          "10": [
+            2969,
+            2969
+          ],
+          "19": [
+            1882,
+            1882
+          ],
+          "14": [
+            3077,
+            3077
+          ],
+          "0": [
+            2853,
+            2853
+          ],
+          "23": [
+            3081,
+            3081
+          ],
+          "9": [
+            2822,
+            2822
+          ],
+          "18": [
+            2803,
+            2803
+          ],
           "13": [
             2578,
             2578
@@ -7557,17 +8365,9 @@ export const LAB_SUPPORT_DATA = {
             2714,
             2714
           ],
-          "15": [
-            2056,
-            2056
-          ],
           "17": [
             3115,
             3115
-          ],
-          "10": [
-            2969,
-            2969
           ],
           "12": [
             3117,
@@ -7575,17 +8375,21 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-20": {
-          "22": [
-            3065,
-            3065
+          "16": [
+            3142,
+            3142
+          ],
+          "11": [
+            2857,
+            2857
+          ],
+          "20": [
+            2797,
+            2797
           ],
           "15": [
             2624,
             2624
-          ],
-          "17": [
-            3410,
-            3410
           ],
           "1": [
             118,
@@ -7595,14 +8399,6 @@ export const LAB_SUPPORT_DATA = {
             3182,
             3182
           ],
-          "12": [
-            1671,
-            1671
-          ],
-          "21": [
-            1862,
-            1862
-          ],
           "14": [
             3329,
             3329
@@ -7610,10 +8406,6 @@ export const LAB_SUPPORT_DATA = {
           "23": [
             2421,
             2421
-          ],
-          "16": [
-            3142,
-            3142
           ],
           "0": [
             2596,
@@ -7627,55 +8419,47 @@ export const LAB_SUPPORT_DATA = {
             3085,
             3085
           ],
-          "11": [
-            2857,
-            2857
-          ],
-          "20": [
-            2797,
-            2797
-          ],
           "13": [
             2922,
             2922
+          ],
+          "22": [
+            3065,
+            3065
+          ],
+          "17": [
+            3410,
+            3410
+          ],
+          "12": [
+            1671,
+            1671
+          ],
+          "21": [
+            1862,
+            1862
           ]
         },
         "2026-05-21": {
-          "0": [
-            2403,
-            2403
+          "21": [
+            2969,
+            2969
           ],
-          "9": [
-            2980,
-            2980
+          "16": [
+            2788,
+            2788
           ],
           "11": [
             2876,
             2876
           ],
-          "18": [
-            2379,
-            2379
-          ],
           "20": [
             1618,
             1618
           ],
-          "13": [
-            1179,
-            1179
-          ],
-          "22": [
-            2364,
-            2364
-          ],
           "15": [
             1332,
             1332
-          ],
-          "17": [
-            2905,
-            2905
           ],
           "1": [
             17,
@@ -7689,14 +8473,6 @@ export const LAB_SUPPORT_DATA = {
             1760,
             1760
           ],
-          "12": [
-            2648,
-            2648
-          ],
-          "21": [
-            2969,
-            2969
-          ],
           "14": [
             390,
             390
@@ -7705,31 +8481,67 @@ export const LAB_SUPPORT_DATA = {
             2961,
             2961
           ],
-          "16": [
-            2788,
-            2788
+          "0": [
+            2403,
+            2403
+          ],
+          "9": [
+            2980,
+            2980
+          ],
+          "18": [
+            2379,
+            2379
+          ],
+          "13": [
+            1179,
+            1179
+          ],
+          "22": [
+            2364,
+            2364
+          ],
+          "17": [
+            2905,
+            2905
+          ],
+          "12": [
+            2648,
+            2648
           ]
         },
         "2026-05-22": {
-          "20": [
-            3247,
-            3247
-          ],
-          "13": [
-            3296,
-            3296
-          ],
           "22": [
             3124,
             3124
           ],
-          "15": [
-            3029,
-            3029
-          ],
           "17": [
             2096,
             2096
+          ],
+          "12": [
+            3073,
+            3073
+          ],
+          "21": [
+            3066,
+            3066
+          ],
+          "16": [
+            1295,
+            1296
+          ],
+          "11": [
+            3016,
+            3016
+          ],
+          "20": [
+            3247,
+            3247
+          ],
+          "15": [
+            3029,
+            3029
           ],
           "1": [
             27,
@@ -7743,14 +8555,6 @@ export const LAB_SUPPORT_DATA = {
             3201,
             3201
           ],
-          "12": [
-            3073,
-            3073
-          ],
-          "21": [
-            3066,
-            3066
-          ],
           "14": [
             749,
             749
@@ -7758,10 +8562,6 @@ export const LAB_SUPPORT_DATA = {
           "23": [
             3122,
             3122
-          ],
-          "16": [
-            1295,
-            1296
           ],
           "0": [
             3446,
@@ -7775,9 +8575,9 @@ export const LAB_SUPPORT_DATA = {
             1577,
             1577
           ],
-          "11": [
-            3016,
-            3016
+          "13": [
+            3296,
+            3296
           ]
         },
         "2026-05-23": {
@@ -7797,21 +8597,9 @@ export const LAB_SUPPORT_DATA = {
             3284,
             3284
           ],
-          "15": [
-            3027,
-            3027
-          ],
           "17": [
             3224,
             3228
-          ],
-          "10": [
-            3117,
-            3117
-          ],
-          "19": [
-            3045,
-            3045
           ],
           "12": [
             256,
@@ -7821,25 +8609,9 @@ export const LAB_SUPPORT_DATA = {
             3500,
             3500
           ],
-          "14": [
-            872,
-            879
-          ],
-          "23": [
-            2891,
-            2891
-          ],
           "16": [
             3201,
             3201
-          ],
-          "9": [
-            3019,
-            3019
-          ],
-          "18": [
-            1204,
-            1204
           ],
           "11": [
             1851,
@@ -7848,6 +8620,34 @@ export const LAB_SUPPORT_DATA = {
           "20": [
             2689,
             2689
+          ],
+          "15": [
+            3027,
+            3027
+          ],
+          "10": [
+            3117,
+            3117
+          ],
+          "19": [
+            3045,
+            3045
+          ],
+          "14": [
+            872,
+            879
+          ],
+          "23": [
+            2891,
+            2891
+          ],
+          "9": [
+            3019,
+            3019
+          ],
+          "18": [
+            1204,
+            1204
           ],
           "13": [
             2922,
@@ -7859,10 +8659,6 @@ export const LAB_SUPPORT_DATA = {
             2580,
             2580
           ],
-          "20": [
-            3240,
-            3248
-          ],
           "13": [
             2405,
             2405
@@ -7871,13 +8667,33 @@ export const LAB_SUPPORT_DATA = {
             3098,
             3098
           ],
-          "15": [
-            2413,
-            2414
-          ],
           "17": [
             2230,
             2230
+          ],
+          "12": [
+            2739,
+            2739
+          ],
+          "21": [
+            2653,
+            2653
+          ],
+          "16": [
+            1766,
+            1766
+          ],
+          "11": [
+            3403,
+            3403
+          ],
+          "20": [
+            3240,
+            3248
+          ],
+          "15": [
+            2413,
+            2414
           ],
           "1": [
             33,
@@ -7891,14 +8707,6 @@ export const LAB_SUPPORT_DATA = {
             1454,
             1454
           ],
-          "12": [
-            2739,
-            2739
-          ],
-          "21": [
-            2653,
-            2653
-          ],
           "14": [
             2560,
             2560
@@ -7907,10 +8715,6 @@ export const LAB_SUPPORT_DATA = {
             3121,
             3121
           ],
-          "16": [
-            1766,
-            1766
-          ],
           "0": [
             3113,
             3113
@@ -7918,13 +8722,33 @@ export const LAB_SUPPORT_DATA = {
           "9": [
             2855,
             2855
-          ],
-          "11": [
-            3403,
-            3403
           ]
         },
         "2026-05-28": {
+          "16": [
+            706,
+            706
+          ],
+          "11": [
+            1423,
+            1423
+          ],
+          "20": [
+            1509,
+            1509
+          ],
+          "15": [
+            1707,
+            1708
+          ],
+          "10": [
+            2044,
+            2044
+          ],
+          "19": [
+            3275,
+            3275
+          ],
           "14": [
             1518,
             1519
@@ -7932,10 +8756,6 @@ export const LAB_SUPPORT_DATA = {
           "23": [
             3249,
             3249
-          ],
-          "16": [
-            706,
-            706
           ],
           "0": [
             2987,
@@ -7949,14 +8769,6 @@ export const LAB_SUPPORT_DATA = {
             2279,
             2279
           ],
-          "11": [
-            1423,
-            1423
-          ],
-          "20": [
-            1509,
-            1509
-          ],
           "13": [
             3266,
             3266
@@ -7965,21 +8777,9 @@ export const LAB_SUPPORT_DATA = {
             3585,
             3585
           ],
-          "15": [
-            1707,
-            1708
-          ],
           "17": [
             2541,
             2541
-          ],
-          "10": [
-            2044,
-            2044
-          ],
-          "19": [
-            3275,
-            3275
           ],
           "12": [
             2940,
@@ -7991,25 +8791,25 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-29": {
+          "14": [
+            3550,
+            3550
+          ],
+          "0": [
+            2834,
+            2834
+          ],
           "23": [
             3554,
             3554
           ],
-          "16": [
-            2919,
-            2919
+          "9": [
+            2362,
+            2362
           ],
           "18": [
             2173,
             2173
-          ],
-          "11": [
-            3257,
-            3257
-          ],
-          "20": [
-            3108,
-            3108
           ],
           "13": [
             3276,
@@ -8019,13 +8819,33 @@ export const LAB_SUPPORT_DATA = {
             2659,
             2659
           ],
-          "15": [
-            2832,
-            2832
-          ],
           "17": [
             934,
             934
+          ],
+          "12": [
+            3441,
+            3441
+          ],
+          "21": [
+            3127,
+            3127
+          ],
+          "16": [
+            2919,
+            2919
+          ],
+          "11": [
+            3257,
+            3257
+          ],
+          "20": [
+            3108,
+            3108
+          ],
+          "15": [
+            2832,
+            2832
           ],
           "1": [
             23,
@@ -8038,26 +8858,6 @@ export const LAB_SUPPORT_DATA = {
           "19": [
             3022,
             3026
-          ],
-          "12": [
-            3441,
-            3441
-          ],
-          "21": [
-            3127,
-            3127
-          ],
-          "14": [
-            3550,
-            3550
-          ],
-          "0": [
-            2834,
-            2834
-          ],
-          "9": [
-            2362,
-            2362
           ]
         },
         "2026-05-30": {
@@ -8075,26 +8875,6 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-06-01": {
-          "22": [
-            3472,
-            3472
-          ],
-          "15": [
-            1366,
-            1366
-          ],
-          "17": [
-            2990,
-            2990
-          ],
-          "10": [
-            3074,
-            3074
-          ],
-          "19": [
-            2345,
-            2345
-          ],
           "12": [
             3334,
             3334
@@ -8103,25 +8883,9 @@ export const LAB_SUPPORT_DATA = {
             3098,
             3098
           ],
-          "14": [
-            3410,
-            3410
-          ],
-          "23": [
-            3090,
-            3091
-          ],
           "16": [
             3259,
             3259
-          ],
-          "9": [
-            2754,
-            2754
-          ],
-          "18": [
-            1746,
-            1746
           ],
           "11": [
             3131,
@@ -8131,6 +8895,34 @@ export const LAB_SUPPORT_DATA = {
             3264,
             3264
           ],
+          "15": [
+            1366,
+            1366
+          ],
+          "10": [
+            3074,
+            3074
+          ],
+          "19": [
+            2345,
+            2345
+          ],
+          "14": [
+            3410,
+            3410
+          ],
+          "23": [
+            3090,
+            3091
+          ],
+          "9": [
+            2754,
+            2754
+          ],
+          "18": [
+            1746,
+            1746
+          ],
           "13": [
             3556,
             3556
@@ -8138,33 +8930,17 @@ export const LAB_SUPPORT_DATA = {
           "8": [
             0,
             0
+          ],
+          "22": [
+            3472,
+            3472
+          ],
+          "17": [
+            2990,
+            2990
           ]
         },
         "2026-06-02": {
-          "23": [
-            3221,
-            3221
-          ],
-          "16": [
-            3250,
-            3250
-          ],
-          "9": [
-            2602,
-            2602
-          ],
-          "18": [
-            1785,
-            1785
-          ],
-          "11": [
-            3330,
-            3330
-          ],
-          "20": [
-            3119,
-            3119
-          ],
           "13": [
             3100,
             3100
@@ -8173,21 +8949,9 @@ export const LAB_SUPPORT_DATA = {
             2852,
             2852
           ],
-          "15": [
-            3114,
-            3114
-          ],
           "17": [
             3379,
             3379
-          ],
-          "10": [
-            3206,
-            3208
-          ],
-          "19": [
-            3262,
-            3264
           ],
           "12": [
             3150,
@@ -8197,31 +8961,67 @@ export const LAB_SUPPORT_DATA = {
             3156,
             3156
           ],
+          "16": [
+            3250,
+            3250
+          ],
+          "11": [
+            3330,
+            3330
+          ],
+          "20": [
+            3119,
+            3119
+          ],
+          "15": [
+            3114,
+            3114
+          ],
+          "10": [
+            3206,
+            3208
+          ],
+          "19": [
+            3262,
+            3264
+          ],
           "14": [
             3107,
             3107
           ],
+          "23": [
+            3221,
+            3221
+          ],
           "0": [
             3433,
             3433
+          ],
+          "9": [
+            2602,
+            2602
+          ],
+          "18": [
+            1785,
+            1785
           ]
         },
         "2026-06-03": {
-          "15": [
-            3112,
-            3112
+          "18": [
+            2782,
+            2782
+          ],
+          "13": [
+            3248,
+            3250
+          ],
+          "22": [
+            3304,
+            3304
           ],
           "17": [
             2731,
             2731
-          ],
-          "10": [
-            2905,
-            2905
-          ],
-          "19": [
-            3149,
-            3149
           ],
           "12": [
             2786,
@@ -8231,29 +9031,9 @@ export const LAB_SUPPORT_DATA = {
             3507,
             3507
           ],
-          "14": [
-            3539,
-            3539
-          ],
-          "23": [
-            968,
-            968
-          ],
           "16": [
             1181,
             1181
-          ],
-          "0": [
-            3240,
-            3240
-          ],
-          "9": [
-            1458,
-            1458
-          ],
-          "18": [
-            2782,
-            2782
           ],
           "11": [
             1763,
@@ -8263,40 +9043,36 @@ export const LAB_SUPPORT_DATA = {
             3509,
             3509
           ],
-          "13": [
-            3248,
-            3250
+          "15": [
+            3112,
+            3112
           ],
-          "22": [
-            3304,
-            3304
+          "10": [
+            2905,
+            2905
+          ],
+          "19": [
+            3149,
+            3149
+          ],
+          "14": [
+            3539,
+            3539
+          ],
+          "23": [
+            968,
+            968
+          ],
+          "0": [
+            3240,
+            3240
+          ],
+          "9": [
+            1458,
+            1458
           ]
         },
         "2026-06-04": {
-          "21": [
-            3433,
-            3433
-          ],
-          "14": [
-            2835,
-            2835
-          ],
-          "23": [
-            3471,
-            3471
-          ],
-          "16": [
-            449,
-            449
-          ],
-          "9": [
-            1415,
-            1415
-          ],
-          "18": [
-            2078,
-            2078
-          ],
           "11": [
             2763,
             2765
@@ -8305,21 +9081,9 @@ export const LAB_SUPPORT_DATA = {
             3139,
             3139
           ],
-          "13": [
-            3277,
-            3277
-          ],
-          "22": [
-            3569,
-            3569
-          ],
           "15": [
             2342,
             2342
-          ],
-          "17": [
-            3149,
-            3149
           ],
           "10": [
             3295,
@@ -8329,63 +9093,63 @@ export const LAB_SUPPORT_DATA = {
             3088,
             3088
           ],
-          "12": [
-            2581,
-            2581
+          "14": [
+            2835,
+            2835
+          ],
+          "23": [
+            3471,
+            3471
           ],
           "0": [
             2025,
             2025
+          ],
+          "9": [
+            1415,
+            1415
+          ],
+          "18": [
+            2078,
+            2078
+          ],
+          "13": [
+            3277,
+            3277
+          ],
+          "22": [
+            3569,
+            3569
+          ],
+          "17": [
+            3149,
+            3149
+          ],
+          "12": [
+            2581,
+            2581
+          ],
+          "21": [
+            3433,
+            3433
+          ],
+          "16": [
+            449,
+            449
           ]
         },
         "2026-06-05": {
-          "16": [
-            2285,
-            2285
-          ],
-          "18": [
-            1483,
-            1483
-          ],
-          "11": [
-            2999,
-            2999
-          ],
-          "20": [
-            1685,
-            1685
-          ],
-          "13": [
-            2225,
-            2225
-          ],
-          "15": [
-            3250,
-            3250
-          ],
-          "17": [
-            3268,
-            3268
-          ],
-          "1": [
-            1,
-            1
-          ],
-          "10": [
-            2667,
-            2667
-          ],
           "19": [
             3118,
             3118
           ],
-          "12": [
-            3336,
-            3336
-          ],
           "14": [
             3305,
             3305
+          ],
+          "23": [
+            2352,
+            2352
           ],
           "0": [
             3198,
@@ -8394,167 +9158,383 @@ export const LAB_SUPPORT_DATA = {
           "9": [
             2866,
             2866
+          ],
+          "18": [
+            1483,
+            1483
+          ],
+          "13": [
+            2225,
+            2225
+          ],
+          "22": [
+            3303,
+            3303
+          ],
+          "17": [
+            3268,
+            3268
+          ],
+          "12": [
+            3336,
+            3336
+          ],
+          "21": [
+            2858,
+            2858
+          ],
+          "16": [
+            2285,
+            2285
+          ],
+          "11": [
+            2999,
+            2999
+          ],
+          "20": [
+            3262,
+            3262
+          ],
+          "15": [
+            3250,
+            3250
+          ],
+          "1": [
+            1,
+            1
+          ],
+          "10": [
+            2667,
+            2667
+          ]
+        },
+        "2026-06-06": {
+          "0": [
+            2939,
+            2939
+          ],
+          "13": [
+            162,
+            162
+          ]
+        },
+        "2026-06-08": {
+          "11": [
+            3333,
+            3333
+          ],
+          "20": [
+            3502,
+            3502
+          ],
+          "15": [
+            2805,
+            2805
+          ],
+          "10": [
+            2817,
+            2819
+          ],
+          "19": [
+            3287,
+            3287
+          ],
+          "14": [
+            3211,
+            3211
+          ],
+          "9": [
+            2938,
+            2938
+          ],
+          "23": [
+            3070,
+            3072
+          ],
+          "18": [
+            3094,
+            3094
+          ],
+          "13": [
+            2345,
+            2345
+          ],
+          "22": [
+            3239,
+            3239
+          ],
+          "17": [
+            2698,
+            2698
+          ],
+          "12": [
+            1692,
+            1692
+          ],
+          "21": [
+            3487,
+            3487
+          ],
+          "16": [
+            2393,
+            2393
+          ]
+        },
+        "2026-06-09": {
+          "23": [
+            3382,
+            3382
+          ],
+          "9": [
+            671,
+            671
+          ],
+          "18": [
+            3014,
+            3014
+          ],
+          "13": [
+            3407,
+            3407
+          ],
+          "22": [
+            3418,
+            3418
+          ],
+          "17": [
+            3156,
+            3156
+          ],
+          "12": [
+            2695,
+            2695
+          ],
+          "21": [
+            2502,
+            2502
+          ],
+          "16": [
+            3139,
+            3139
+          ],
+          "11": [
+            2784,
+            2786
+          ],
+          "20": [
+            3114,
+            3114
+          ],
+          "15": [
+            2934,
+            2936
+          ],
+          "1": [
+            10,
+            10
+          ],
+          "10": [
+            2804,
+            2806
+          ],
+          "19": [
+            2851,
+            2851
+          ],
+          "14": [
+            3272,
+            3272
+          ],
+          "0": [
+            3551,
+            3551
+          ]
+        },
+        "2026-06-10": {
+          "19": [
+            3257,
+            3257
+          ],
+          "14": [
+            2690,
+            2690
+          ],
+          "23": [
+            3072,
+            3072
+          ],
+          "0": [
+            3300,
+            3300
+          ],
+          "9": [
+            2991,
+            2991
+          ],
+          "18": [
+            1869,
+            1869
+          ],
+          "13": [
+            2604,
+            2604
+          ],
+          "22": [
+            2669,
+            2669
+          ],
+          "17": [
+            2968,
+            2968
+          ],
+          "12": [
+            3170,
+            3172
+          ],
+          "21": [
+            1885,
+            1885
+          ],
+          "16": [
+            3143,
+            3143
+          ],
+          "11": [
+            2719,
+            2719
+          ],
+          "20": [
+            3146,
+            3146
+          ],
+          "15": [
+            1400,
+            1400
+          ],
+          "10": [
+            3575,
+            3575
+          ]
+        },
+        "2026-06-11": {
+          "19": [
+            2847,
+            2847
+          ],
+          "14": [
+            3449,
+            3449
+          ],
+          "0": [
+            3315,
+            3315
+          ],
+          "9": [
+            3048,
+            3048
+          ],
+          "18": [
+            2818,
+            2818
+          ],
+          "13": [
+            3037,
+            3037
+          ],
+          "22": [
+            8,
+            8
+          ],
+          "17": [
+            1388,
+            1388
+          ],
+          "12": [
+            3236,
+            3236
+          ],
+          "21": [
+            6,
+            6
+          ],
+          "11": [
+            2597,
+            2597
+          ],
+          "20": [
+            657,
+            657
+          ],
+          "15": [
+            2978,
+            2978
+          ],
+          "10": [
+            3117,
+            3117
+          ]
+        },
+        "2026-06-12": {
+          "20": [
+            94,
+            94
+          ],
+          "15": [
+            2304,
+            2304
+          ],
+          "10": [
+            3308,
+            3308
+          ],
+          "19": [
+            3363,
+            3363
+          ],
+          "14": [
+            3226,
+            3226
+          ],
+          "9": [
+            1303,
+            1303
+          ],
+          "18": [
+            1660,
+            1660
+          ],
+          "13": [
+            3144,
+            3144
+          ],
+          "17": [
+            3016,
+            3016
+          ],
+          "12": [
+            3093,
+            3093
+          ],
+          "16": [
+            3526,
+            3526
+          ],
+          "11": [
+            3085,
+            3085
           ]
         }
       },
       "gen2-105": {
-        "2026-04-27": {
-          "13": [
-            182,
-            2319
-          ],
-          "17": [
-            1213,
-            2615
-          ],
-          "12": [
-            0,
-            1905
-          ],
-          "16": [
-            2457,
-            3131
-          ],
-          "11": [
-            49,
-            2635
-          ],
-          "15": [
-            538,
-            3128
-          ],
-          "10": [
-            0,
-            2860
-          ],
-          "14": [
-            1162,
-            2116
-          ],
-          "9": [
-            269,
-            2312
-          ]
-        },
-        "2026-04-28": {
-          "9": [
-            32,
-            459
-          ],
-          "8": [
-            264,
-            264
-          ],
-          "12": [
-            399,
-            399
-          ],
-          "16": [
-            611,
-            611
-          ],
-          "20": [
-            1032,
-            1032
-          ],
-          "15": [
-            1608,
-            1608
-          ],
-          "10": [
-            15,
-            179
-          ],
-          "19": [
-            1880,
-            1880
-          ]
-        },
-        "2026-04-29": {
-          "10": [
-            138,
-            138
-          ],
-          "9": [
-            319,
-            319
-          ],
-          "18": [
-            1063,
-            1063
-          ],
-          "8": [
-            107,
-            107
-          ],
-          "17": [
-            900,
-            900
-          ],
-          "12": [
-            64,
-            64
-          ],
-          "16": [
-            226,
-            226
-          ],
-          "11": [
-            956,
-            956
-          ]
-        },
-        "2026-04-30": {
-          "8": [
-            170,
-            170
-          ],
-          "17": [
-            115,
-            115
-          ],
-          "11": [
-            320,
-            320
-          ],
-          "10": [
-            720,
-            720
-          ],
-          "9": [
-            352,
-            352
-          ]
-        },
-        "2026-05-01": {
-          "10": [
-            224,
-            224
-          ],
-          "14": [
-            366,
-            942
-          ],
-          "13": [
-            27,
-            158
-          ],
-          "11": [
-            188,
-            188
-          ],
-          "15": [
-            2,
-            195
-          ]
-        },
-        "2026-05-02": {
-          "16": [
-            104,
-            506
-          ]
-        },
         "2026-05-04": {
+          "10": [
+            45,
+            259
+          ],
+          "9": [
+            295,
+            295
+          ],
           "13": [
             4,
             201
@@ -8590,14 +9570,6 @@ export const LAB_SUPPORT_DATA = {
           "11": [
             259,
             553
-          ],
-          "10": [
-            45,
-            259
-          ],
-          "9": [
-            295,
-            295
           ]
         },
         "2026-05-05": {
@@ -8631,22 +9603,6 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-06": {
-          "10": [
-            0,
-            3028
-          ],
-          "19": [
-            0,
-            3002
-          ],
-          "23": [
-            0,
-            2848
-          ],
-          "18": [
-            0,
-            2550
-          ],
           "22": [
             0,
             3424
@@ -8678,9 +9634,53 @@ export const LAB_SUPPORT_DATA = {
           "15": [
             495,
             495
+          ],
+          "10": [
+            0,
+            3028
+          ],
+          "19": [
+            0,
+            3002
+          ],
+          "23": [
+            0,
+            2848
+          ],
+          "18": [
+            0,
+            2550
           ]
         },
         "2026-05-07": {
+          "22": [
+            2520,
+            2520
+          ],
+          "17": [
+            274,
+            309
+          ],
+          "12": [
+            0,
+            2560
+          ],
+          "21": [
+            2602,
+            2602
+          ],
+          "16": [
+            1413,
+            1659
+          ],
+          "11": [
+            0,
+            3206
+          ],
+          "20": [
+            3333,
+            3333
+          ],
           "15": [
             309,
             320
@@ -8716,64 +9716,12 @@ export const LAB_SUPPORT_DATA = {
           "13": [
             231,
             1361
-          ],
-          "22": [
-            2520,
-            2520
-          ],
-          "17": [
-            274,
-            309
-          ],
-          "12": [
-            0,
-            2560
-          ],
-          "21": [
-            2602,
-            2602
-          ],
-          "16": [
-            1413,
-            1659
-          ],
-          "11": [
-            0,
-            3206
-          ],
-          "20": [
-            3333,
-            3333
           ]
         },
         "2026-05-08": {
-          "15": [
-            599,
-            804
-          ],
-          "10": [
-            2788,
-            3305
-          ],
-          "19": [
-            1600,
-            1600
-          ],
-          "14": [
-            1936,
-            2324
-          ],
           "23": [
             2212,
             2212
-          ],
-          "0": [
-            3339,
-            3339
-          ],
-          "9": [
-            1827,
-            2276
           ],
           "18": [
             3,
@@ -8783,13 +9731,13 @@ export const LAB_SUPPORT_DATA = {
             2337,
             2841
           ],
-          "8": [
-            823,
-            823
-          ],
           "22": [
             3230,
             3230
+          ],
+          "8": [
+            823,
+            823
           ],
           "17": [
             2801,
@@ -8814,6 +9762,30 @@ export const LAB_SUPPORT_DATA = {
           "20": [
             3214,
             3214
+          ],
+          "15": [
+            599,
+            804
+          ],
+          "10": [
+            2788,
+            3305
+          ],
+          "19": [
+            1600,
+            1600
+          ],
+          "14": [
+            1936,
+            2324
+          ],
+          "0": [
+            3339,
+            3339
+          ],
+          "9": [
+            1827,
+            2276
           ]
         },
         "2026-05-09": {
@@ -8823,6 +9795,26 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-11": {
+          "14": [
+            150,
+            150
+          ],
+          "23": [
+            2425,
+            2425
+          ],
+          "9": [
+            70,
+            70
+          ],
+          "18": [
+            2675,
+            2688
+          ],
+          "22": [
+            2048,
+            2048
+          ],
           "8": [
             4,
             4
@@ -8846,29 +9838,21 @@ export const LAB_SUPPORT_DATA = {
           "19": [
             3450,
             3450
-          ],
-          "14": [
-            150,
-            150
-          ],
-          "23": [
-            2425,
-            2425
-          ],
-          "9": [
-            70,
-            70
-          ],
-          "18": [
-            2675,
-            2688
-          ],
-          "22": [
-            2048,
-            2048
           ]
         },
         "2026-05-12": {
+          "16": [
+            945,
+            945
+          ],
+          "11": [
+            3030,
+            3030
+          ],
+          "20": [
+            1681,
+            2786
+          ],
           "15": [
             1736,
             1736
@@ -8885,13 +9869,13 @@ export const LAB_SUPPORT_DATA = {
             2065,
             2883
           ],
-          "23": [
-            3228,
-            3465
-          ],
           "0": [
             3037,
             3037
+          ],
+          "23": [
+            3228,
+            3465
           ],
           "9": [
             2182,
@@ -8916,24 +9900,36 @@ export const LAB_SUPPORT_DATA = {
           "21": [
             2480,
             3248
-          ],
-          "16": [
-            945,
-            945
-          ],
-          "11": [
-            3030,
-            3030
-          ],
-          "20": [
-            1681,
-            2786
           ]
         },
         "2026-05-13": {
+          "20": [
+            3334,
+            3334
+          ],
+          "15": [
+            2700,
+            2700
+          ],
+          "10": [
+            2568,
+            2568
+          ],
+          "19": [
+            3342,
+            3342
+          ],
+          "14": [
+            2951,
+            2952
+          ],
           "23": [
             3478,
             3478
+          ],
+          "0": [
+            3417,
+            3417
           ],
           "9": [
             898,
@@ -8970,30 +9966,6 @@ export const LAB_SUPPORT_DATA = {
           "11": [
             3255,
             3255
-          ],
-          "20": [
-            3334,
-            3334
-          ],
-          "15": [
-            2700,
-            2700
-          ],
-          "10": [
-            2568,
-            2568
-          ],
-          "19": [
-            3342,
-            3342
-          ],
-          "14": [
-            2951,
-            2952
-          ],
-          "0": [
-            3417,
-            3417
           ]
         },
         "2026-05-14": {
@@ -9063,22 +10035,6 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-15": {
-          "10": [
-            766,
-            836
-          ],
-          "19": [
-            2845,
-            2845
-          ],
-          "0": [
-            3412,
-            3412
-          ],
-          "9": [
-            1171,
-            1171
-          ],
           "18": [
             2888,
             3016
@@ -9118,9 +10074,45 @@ export const LAB_SUPPORT_DATA = {
           "20": [
             3463,
             3463
+          ],
+          "10": [
+            766,
+            836
+          ],
+          "19": [
+            2845,
+            2845
+          ],
+          "0": [
+            3412,
+            3412
+          ],
+          "9": [
+            1171,
+            1171
           ]
         },
         "2026-05-18": {
+          "11": [
+            0,
+            0
+          ],
+          "20": [
+            2796,
+            2796
+          ],
+          "15": [
+            2464,
+            2531
+          ],
+          "10": [
+            596,
+            1231
+          ],
+          "19": [
+            2561,
+            2566
+          ],
           "14": [
             2414,
             2414
@@ -9160,29 +10152,25 @@ export const LAB_SUPPORT_DATA = {
           "16": [
             3030,
             3109
-          ],
-          "11": [
-            0,
-            0
-          ],
-          "20": [
-            2796,
-            2796
-          ],
-          "15": [
-            2464,
-            2531
-          ],
-          "10": [
-            596,
-            1231
-          ],
-          "19": [
-            2561,
-            2566
           ]
         },
         "2026-05-19": {
+          "16": [
+            1109,
+            1349
+          ],
+          "11": [
+            3045,
+            3269
+          ],
+          "15": [
+            1883,
+            2205
+          ],
+          "10": [
+            1655,
+            2293
+          ],
           "14": [
             2527,
             2691
@@ -9206,33 +10194,9 @@ export const LAB_SUPPORT_DATA = {
           "12": [
             2003,
             2003
-          ],
-          "16": [
-            1109,
-            1349
-          ],
-          "11": [
-            3045,
-            3269
-          ],
-          "15": [
-            1883,
-            2205
-          ],
-          "10": [
-            1655,
-            2293
           ]
         },
         "2026-05-20": {
-          "17": [
-            2168,
-            2168
-          ],
-          "12": [
-            2801,
-            2802
-          ],
           "16": [
             1208,
             1208
@@ -9260,21 +10224,17 @@ export const LAB_SUPPORT_DATA = {
           "13": [
             2277,
             2277
+          ],
+          "17": [
+            2168,
+            2168
+          ],
+          "12": [
+            2801,
+            2802
           ]
         },
         "2026-05-21": {
-          "9": [
-            1422,
-            1422
-          ],
-          "13": [
-            2860,
-            2860
-          ],
-          "12": [
-            2701,
-            2701
-          ],
           "11": [
             520,
             520
@@ -9290,13 +10250,21 @@ export const LAB_SUPPORT_DATA = {
           "14": [
             1517,
             1517
+          ],
+          "9": [
+            1422,
+            1422
+          ],
+          "13": [
+            2860,
+            2860
+          ],
+          "12": [
+            2701,
+            2701
           ]
         },
         "2026-05-22": {
-          "13": [
-            2762,
-            2762
-          ],
           "22": [
             3089,
             3089
@@ -9340,19 +10308,47 @@ export const LAB_SUPPORT_DATA = {
           "18": [
             25,
             25
+          ],
+          "13": [
+            2762,
+            2762
           ]
         },
         "2026-05-23": {
-          "1": [
-            1,
-            1
-          ],
           "0": [
             2905,
             2905
+          ],
+          "1": [
+            1,
+            1
           ]
         },
         "2026-05-26": {
+          "17": [
+            609,
+            609
+          ],
+          "12": [
+            1892,
+            2000
+          ],
+          "21": [
+            283,
+            347
+          ],
+          "16": [
+            1027,
+            1291
+          ],
+          "11": [
+            588,
+            634
+          ],
+          "20": [
+            198,
+            198
+          ],
           "15": [
             1097,
             1504
@@ -9384,65 +10380,9 @@ export const LAB_SUPPORT_DATA = {
           "13": [
             2374,
             2917
-          ],
-          "17": [
-            609,
-            609
-          ],
-          "12": [
-            1892,
-            2000
-          ],
-          "21": [
-            283,
-            347
-          ],
-          "16": [
-            1027,
-            1291
-          ],
-          "11": [
-            588,
-            634
-          ],
-          "20": [
-            198,
-            198
           ]
         },
         "2026-05-27": {
-          "20": [
-            540,
-            540
-          ],
-          "15": [
-            0,
-            0
-          ],
-          "1": [
-            0,
-            0
-          ],
-          "19": [
-            2085,
-            2085
-          ],
-          "14": [
-            0,
-            0
-          ],
-          "23": [
-            2723,
-            2723
-          ],
-          "0": [
-            0,
-            0
-          ],
-          "4": [
-            0,
-            0
-          ],
           "18": [
             2087,
             2087
@@ -9480,6 +10420,38 @@ export const LAB_SUPPORT_DATA = {
             0
           ],
           "11": [
+            0,
+            0
+          ],
+          "20": [
+            540,
+            540
+          ],
+          "15": [
+            0,
+            0
+          ],
+          "1": [
+            0,
+            0
+          ],
+          "19": [
+            2085,
+            2085
+          ],
+          "14": [
+            0,
+            0
+          ],
+          "23": [
+            2723,
+            2723
+          ],
+          "0": [
+            0,
+            0
+          ],
+          "4": [
             0,
             0
           ]
@@ -9543,9 +10515,21 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-29": {
+          "14": [
+            225,
+            254
+          ],
+          "0": [
+            2811,
+            2811
+          ],
           "23": [
             3034,
             3034
+          ],
+          "9": [
+            2086,
+            2154
           ],
           "18": [
             337,
@@ -9582,18 +10566,6 @@ export const LAB_SUPPORT_DATA = {
           "10": [
             1763,
             1763
-          ],
-          "14": [
-            225,
-            254
-          ],
-          "0": [
-            2811,
-            2811
-          ],
-          "9": [
-            2086,
-            2154
           ]
         },
         "2026-05-30": {
@@ -9607,20 +10579,16 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-31": {
-          "14": [
-            3,
-            3
-          ],
           "15": [
             531,
             531
+          ],
+          "14": [
+            3,
+            3
           ]
         },
         "2026-06-01": {
-          "22": [
-            1860,
-            1860
-          ],
           "21": [
             2054,
             2054
@@ -9664,21 +10632,13 @@ export const LAB_SUPPORT_DATA = {
           "13": [
             1084,
             1084
+          ],
+          "22": [
+            1860,
+            1860
           ]
         },
         "2026-06-02": {
-          "23": [
-            2662,
-            2662
-          ],
-          "9": [
-            793,
-            798
-          ],
-          "18": [
-            1465,
-            1470
-          ],
           "13": [
             3107,
             3134
@@ -9727,32 +10687,24 @@ export const LAB_SUPPORT_DATA = {
             3384,
             3412
           ],
+          "23": [
+            2662,
+            2662
+          ],
           "0": [
             1839,
             1847
+          ],
+          "9": [
+            793,
+            798
+          ],
+          "18": [
+            1465,
+            1470
           ]
         },
         "2026-06-03": {
-          "15": [
-            2834,
-            2927
-          ],
-          "10": [
-            2705,
-            2799
-          ],
-          "14": [
-            3209,
-            3277
-          ],
-          "0": [
-            3253,
-            3253
-          ],
-          "9": [
-            2881,
-            2924
-          ],
           "13": [
             3404,
             3487
@@ -9772,9 +10724,49 @@ export const LAB_SUPPORT_DATA = {
           "11": [
             2334,
             2379
+          ],
+          "15": [
+            2834,
+            2927
+          ],
+          "10": [
+            2705,
+            2799
+          ],
+          "14": [
+            3209,
+            3277
+          ],
+          "0": [
+            3253,
+            3253
+          ],
+          "9": [
+            2881,
+            2924
           ]
         },
         "2026-06-04": {
+          "11": [
+            2433,
+            2433
+          ],
+          "20": [
+            2908,
+            2908
+          ],
+          "15": [
+            3111,
+            3112
+          ],
+          "10": [
+            1058,
+            1058
+          ],
+          "19": [
+            3340,
+            3340
+          ],
           "14": [
             2898,
             2910
@@ -9814,29 +10806,29 @@ export const LAB_SUPPORT_DATA = {
           "16": [
             3038,
             3048
-          ],
-          "11": [
-            2433,
-            2433
-          ],
-          "20": [
-            2908,
-            2908
-          ],
-          "15": [
-            3111,
-            3112
-          ],
-          "10": [
-            1058,
-            1058
-          ],
-          "19": [
-            3340,
-            3340
           ]
         },
         "2026-06-05": {
+          "19": [
+            3356,
+            3356
+          ],
+          "14": [
+            3390,
+            3428
+          ],
+          "23": [
+            3178,
+            3178
+          ],
+          "0": [
+            2659,
+            2659
+          ],
+          "9": [
+            2617,
+            2643
+          ],
           "18": [
             2602,
             2602
@@ -9844,6 +10836,10 @@ export const LAB_SUPPORT_DATA = {
           "13": [
             3352,
             3380
+          ],
+          "22": [
+            3335,
+            3335
           ],
           "17": [
             2415,
@@ -9853,6 +10849,10 @@ export const LAB_SUPPORT_DATA = {
             3201,
             3219
           ],
+          "21": [
+            3543,
+            3543
+          ],
           "16": [
             2316,
             2321
@@ -9860,6 +10860,10 @@ export const LAB_SUPPORT_DATA = {
           "11": [
             1045,
             1106
+          ],
+          "20": [
+            2907,
+            2907
           ],
           "15": [
             2934,
@@ -9872,277 +10876,361 @@ export const LAB_SUPPORT_DATA = {
           "10": [
             2513,
             2515
+          ]
+        },
+        "2026-06-06": {
+          "0": [
+            2730,
+            2730
+          ]
+        },
+        "2026-06-07": {
+          "12": [
+            763,
+            763
+          ]
+        },
+        "2026-06-08": {
+          "11": [
+            3505,
+            3522
+          ],
+          "20": [
+            2776,
+            2776
+          ],
+          "15": [
+            3036,
+            3059
+          ],
+          "10": [
+            2651,
+            2665
           ],
           "19": [
-            3356,
-            3356
+            3419,
+            3419
           ],
           "14": [
-            3390,
-            3428
-          ],
-          "0": [
-            2659,
-            2659
+            3410,
+            3410
           ],
           "9": [
-            2617,
-            2643
+            2658,
+            2668
+          ],
+          "23": [
+            3173,
+            3173
+          ],
+          "18": [
+            2596,
+            2600
+          ],
+          "13": [
+            3529,
+            3535
+          ],
+          "22": [
+            3208,
+            3208
+          ],
+          "17": [
+            3197,
+            3231
+          ],
+          "12": [
+            3386,
+            3462
+          ],
+          "21": [
+            3315,
+            3315
+          ],
+          "16": [
+            3536,
+            3559
+          ]
+        },
+        "2026-06-09": {
+          "23": [
+            3259,
+            3259
+          ],
+          "9": [
+            2651,
+            2652
+          ],
+          "18": [
+            2923,
+            2925
+          ],
+          "13": [
+            3522,
+            3529
+          ],
+          "22": [
+            3555,
+            3555
+          ],
+          "8": [
+            283,
+            283
+          ],
+          "17": [
+            3470,
+            3485
+          ],
+          "12": [
+            3192,
+            3192
+          ],
+          "21": [
+            3239,
+            3239
+          ],
+          "16": [
+            3558,
+            3573
+          ],
+          "11": [
+            3472,
+            3498
+          ],
+          "20": [
+            3325,
+            3325
+          ],
+          "15": [
+            2789,
+            2790
+          ],
+          "10": [
+            1614,
+            1619
+          ],
+          "19": [
+            3088,
+            3088
+          ],
+          "14": [
+            3138,
+            3146
+          ],
+          "0": [
+            3423,
+            3423
+          ]
+        },
+        "2026-06-10": {
+          "19": [
+            3306,
+            3306
+          ],
+          "14": [
+            3441,
+            3456
+          ],
+          "23": [
+            3316,
+            3316
+          ],
+          "0": [
+            3302,
+            3302
+          ],
+          "9": [
+            671,
+            754
+          ],
+          "18": [
+            1992,
+            1992
+          ],
+          "13": [
+            3056,
+            3089
+          ],
+          "22": [
+            3282,
+            3282
+          ],
+          "17": [
+            3256,
+            3312
+          ],
+          "12": [
+            2672,
+            2709
+          ],
+          "21": [
+            3345,
+            3345
+          ],
+          "16": [
+            2900,
+            2975
+          ],
+          "11": [
+            1445,
+            1527
+          ],
+          "20": [
+            3252,
+            3252
+          ],
+          "15": [
+            2997,
+            3044
+          ],
+          "10": [
+            1518,
+            1699
+          ]
+        },
+        "2026-06-11": {
+          "19": [
+            3250,
+            3250
+          ],
+          "14": [
+            3438,
+            3451
+          ],
+          "23": [
+            3564,
+            3564
+          ],
+          "0": [
+            3117,
+            3117
+          ],
+          "9": [
+            3254,
+            3317
+          ],
+          "18": [
+            3220,
+            3220
+          ],
+          "13": [
+            3446,
+            3524
+          ],
+          "22": [
+            2974,
+            2974
+          ],
+          "17": [
+            2961,
+            2965
+          ],
+          "12": [
+            3402,
+            3421
+          ],
+          "21": [
+            3138,
+            3138
+          ],
+          "16": [
+            3600,
+            3600
+          ],
+          "11": [
+            2833,
+            2862
+          ],
+          "20": [
+            3340,
+            3340
+          ],
+          "15": [
+            3401,
+            3444
+          ],
+          "10": [
+            2924,
+            2979
+          ]
+        },
+        "2026-06-12": {
+          "15": [
+            3136,
+            3181
+          ],
+          "10": [
+            3416,
+            3485
+          ],
+          "19": [
+            3501,
+            3501
+          ],
+          "14": [
+            3416,
+            3446
+          ],
+          "0": [
+            3163,
+            3163
+          ],
+          "9": [
+            1621,
+            1631
+          ],
+          "18": [
+            1365,
+            1365
+          ],
+          "13": [
+            3238,
+            3279
+          ],
+          "17": [
+            3364,
+            3399
+          ],
+          "12": [
+            3352,
+            3370
+          ],
+          "16": [
+            3375,
+            3434
+          ],
+          "11": [
+            3000,
+            3107
           ]
         }
       },
       "gen2-104": {
-        "2026-04-27": {
-          "13": [
-            0,
-            2879
-          ],
-          "17": [
-            0,
-            1656
-          ],
-          "12": [
-            0,
-            3018
-          ],
-          "16": [
-            0,
-            2933
-          ],
-          "11": [
-            1,
-            3106
-          ],
-          "15": [
-            0,
-            2763
-          ],
-          "10": [
-            0,
-            2724
-          ],
-          "14": [
-            0,
-            3208
-          ],
-          "23": [
-            5,
-            1192
-          ],
-          "9": [
-            0,
-            2142
-          ]
-        },
-        "2026-04-28": {
-          "14": [
-            0,
-            2732
-          ],
-          "9": [
-            0,
-            2070
-          ],
-          "13": [
-            0,
-            1689
-          ],
-          "22": [
-            0,
-            68
-          ],
-          "17": [
-            0,
-            2903
-          ],
-          "12": [
-            0,
-            2892
-          ],
-          "21": [
-            0,
-            592
-          ],
-          "16": [
-            0,
-            1750
-          ],
-          "11": [
-            0,
-            2439
-          ],
-          "20": [
-            0,
-            1353
-          ],
-          "15": [
-            0,
-            3085
-          ],
-          "10": [
-            0,
-            2882
-          ]
-        },
-        "2026-04-29": {
-          "10": [
-            0,
-            1468
-          ],
-          "19": [
-            0,
-            3347
-          ],
-          "14": [
-            0,
-            2745
-          ],
-          "23": [
-            0,
-            2899
-          ],
-          "18": [
-            0,
-            2254
-          ],
-          "13": [
-            0,
-            1308
-          ],
-          "22": [
-            1375,
-            3179
-          ],
-          "17": [
-            0,
-            1889
-          ],
-          "12": [
-            0,
-            3521
-          ],
-          "21": [
-            0,
-            2776
-          ],
-          "16": [
-            28,
-            974
-          ],
-          "11": [
-            0,
-            3492
-          ],
-          "20": [
-            0,
-            3443
-          ],
-          "15": [
-            0,
-            2492
-          ]
-        },
-        "2026-04-30": {
-          "13": [
-            0,
-            2666
-          ],
-          "22": [
-            0,
-            2802
-          ],
-          "17": [
-            0,
-            2829
-          ],
-          "12": [
-            0,
-            3421
-          ],
-          "21": [
-            0,
-            3080
-          ],
-          "16": [
-            39,
-            792
-          ],
-          "11": [
-            0,
-            3389
-          ],
-          "20": [
-            226,
-            3226
-          ],
-          "15": [
-            0,
-            2114
-          ],
-          "10": [
-            0,
-            3318
-          ],
-          "19": [
-            0,
-            3517
-          ],
-          "14": [
-            0,
-            2591
-          ],
-          "23": [
-            0,
-            1835
-          ],
-          "0": [
-            0,
-            1546
-          ],
-          "9": [
-            0,
-            1783
-          ],
-          "18": [
-            0,
-            2298
-          ]
-        },
-        "2026-05-01": {
-          "14": [
-            1,
-            1149
-          ],
-          "0": [
-            0,
-            2936
-          ],
-          "18": [
-            0,
-            0
-          ],
-          "13": [
-            0,
-            3129
-          ],
-          "17": [
-            0,
-            533
-          ],
-          "12": [
-            0,
-            1692
-          ],
-          "16": [
-            0,
-            1783
-          ],
-          "15": [
-            0,
-            1616
-          ]
-        },
         "2026-05-04": {
+          "15": [
+            0,
+            3289
+          ],
+          "10": [
+            7,
+            280
+          ],
+          "19": [
+            0,
+            3352
+          ],
+          "14": [
+            0,
+            2050
+          ],
+          "23": [
+            0,
+            2986
+          ],
+          "9": [
+            0,
+            211
+          ],
           "18": [
             0,
             1312
@@ -10178,30 +11266,6 @@ export const LAB_SUPPORT_DATA = {
           "20": [
             0,
             3010
-          ],
-          "15": [
-            0,
-            3289
-          ],
-          "10": [
-            7,
-            280
-          ],
-          "19": [
-            0,
-            3352
-          ],
-          "14": [
-            0,
-            2050
-          ],
-          "23": [
-            0,
-            2986
-          ],
-          "9": [
-            0,
-            211
           ]
         },
         "2026-05-05": {
@@ -10279,38 +11343,6 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-06": {
-          "10": [
-            45,
-            2189
-          ],
-          "19": [
-            0,
-            3476
-          ],
-          "14": [
-            0,
-            3040
-          ],
-          "23": [
-            0,
-            1685
-          ],
-          "0": [
-            0,
-            2154
-          ],
-          "9": [
-            0,
-            2925
-          ],
-          "18": [
-            0,
-            1476
-          ],
-          "13": [
-            0,
-            3123
-          ],
           "22": [
             0,
             3291
@@ -10342,9 +11374,69 @@ export const LAB_SUPPORT_DATA = {
           "15": [
             244,
             2759
+          ],
+          "10": [
+            45,
+            2189
+          ],
+          "19": [
+            0,
+            3476
+          ],
+          "14": [
+            0,
+            3040
+          ],
+          "23": [
+            0,
+            1685
+          ],
+          "0": [
+            0,
+            2154
+          ],
+          "9": [
+            0,
+            2925
+          ],
+          "18": [
+            0,
+            1476
+          ],
+          "13": [
+            0,
+            3123
           ]
         },
         "2026-05-07": {
+          "22": [
+            2134,
+            2152
+          ],
+          "17": [
+            2671,
+            2671
+          ],
+          "12": [
+            0,
+            3365
+          ],
+          "21": [
+            2261,
+            2261
+          ],
+          "16": [
+            2074,
+            2074
+          ],
+          "11": [
+            0,
+            3252
+          ],
+          "20": [
+            2699,
+            2701
+          ],
           "15": [
             2727,
             2727
@@ -10380,64 +11472,12 @@ export const LAB_SUPPORT_DATA = {
           "13": [
             484,
             2233
-          ],
-          "22": [
-            2134,
-            2152
-          ],
-          "17": [
-            2671,
-            2671
-          ],
-          "12": [
-            0,
-            3365
-          ],
-          "21": [
-            2261,
-            2261
-          ],
-          "16": [
-            2074,
-            2074
-          ],
-          "11": [
-            0,
-            3252
-          ],
-          "20": [
-            2699,
-            2701
           ]
         },
         "2026-05-08": {
-          "15": [
-            2854,
-            2854
-          ],
-          "10": [
-            2795,
-            2795
-          ],
-          "19": [
-            3397,
-            3397
-          ],
-          "14": [
-            1701,
-            1701
-          ],
           "23": [
             3135,
             3135
-          ],
-          "0": [
-            3393,
-            3393
-          ],
-          "9": [
-            3448,
-            3448
           ],
           "18": [
             2483,
@@ -10447,13 +11487,13 @@ export const LAB_SUPPORT_DATA = {
             2754,
             2764
           ],
-          "8": [
-            9,
-            9
-          ],
           "22": [
             2754,
             2760
+          ],
+          "8": [
+            9,
+            9
           ],
           "17": [
             3069,
@@ -10478,6 +11518,30 @@ export const LAB_SUPPORT_DATA = {
           "20": [
             2610,
             2610
+          ],
+          "15": [
+            2854,
+            2854
+          ],
+          "10": [
+            2795,
+            2795
+          ],
+          "19": [
+            3397,
+            3397
+          ],
+          "14": [
+            1701,
+            1701
+          ],
+          "0": [
+            3393,
+            3393
+          ],
+          "9": [
+            3448,
+            3448
           ]
         },
         "2026-05-09": {
@@ -10487,6 +11551,30 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-11": {
+          "14": [
+            2817,
+            2817
+          ],
+          "23": [
+            2922,
+            2922
+          ],
+          "9": [
+            2499,
+            2499
+          ],
+          "18": [
+            2624,
+            2624
+          ],
+          "13": [
+            3126,
+            3126
+          ],
+          "22": [
+            2458,
+            2655
+          ],
           "17": [
             3476,
             3476
@@ -10522,33 +11610,17 @@ export const LAB_SUPPORT_DATA = {
           "19": [
             2779,
             2779
-          ],
-          "14": [
-            2817,
-            2817
-          ],
-          "23": [
-            2922,
-            2922
-          ],
-          "9": [
-            2499,
-            2499
-          ],
-          "18": [
-            2624,
-            2624
-          ],
-          "13": [
-            3126,
-            3126
-          ],
-          "22": [
-            2458,
-            2655
           ]
         },
         "2026-05-12": {
+          "16": [
+            0,
+            0
+          ],
+          "11": [
+            2051,
+            2052
+          ],
           "15": [
             362,
             362
@@ -10584,17 +11656,21 @@ export const LAB_SUPPORT_DATA = {
           "12": [
             3291,
             3291
-          ],
-          "16": [
-            0,
-            0
-          ],
-          "11": [
-            2051,
-            2052
           ]
         },
         "2026-05-13": {
+          "20": [
+            3210,
+            3210
+          ],
+          "15": [
+            635,
+            635
+          ],
+          "19": [
+            3433,
+            3433
+          ],
           "23": [
             2967,
             2967
@@ -10622,18 +11698,6 @@ export const LAB_SUPPORT_DATA = {
           "11": [
             0,
             0
-          ],
-          "20": [
-            3210,
-            3210
-          ],
-          "15": [
-            635,
-            635
-          ],
-          "19": [
-            3433,
-            3433
           ]
         },
         "2026-05-14": {
@@ -10703,34 +11767,6 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-15": {
-          "15": [
-            2731,
-            2731
-          ],
-          "10": [
-            1913,
-            1913
-          ],
-          "19": [
-            3077,
-            3077
-          ],
-          "14": [
-            2422,
-            2422
-          ],
-          "23": [
-            3466,
-            3466
-          ],
-          "0": [
-            3341,
-            3341
-          ],
-          "9": [
-            2914,
-            2914
-          ],
           "18": [
             3331,
             3331
@@ -10766,6 +11802,34 @@ export const LAB_SUPPORT_DATA = {
           "20": [
             3074,
             3075
+          ],
+          "15": [
+            2731,
+            2731
+          ],
+          "10": [
+            1913,
+            1913
+          ],
+          "19": [
+            3077,
+            3077
+          ],
+          "14": [
+            2422,
+            2422
+          ],
+          "23": [
+            3466,
+            3466
+          ],
+          "0": [
+            3341,
+            3341
+          ],
+          "9": [
+            2914,
+            2914
           ]
         },
         "2026-05-16": {
@@ -10775,6 +11839,26 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-18": {
+          "11": [
+            3160,
+            3160
+          ],
+          "20": [
+            3290,
+            3290
+          ],
+          "15": [
+            2727,
+            2727
+          ],
+          "10": [
+            2399,
+            2399
+          ],
+          "19": [
+            3323,
+            3323
+          ],
           "14": [
             2647,
             2647
@@ -10814,29 +11898,33 @@ export const LAB_SUPPORT_DATA = {
           "16": [
             1694,
             1694
-          ],
-          "11": [
-            3160,
-            3160
-          ],
-          "20": [
-            3290,
-            3290
-          ],
-          "15": [
-            2727,
-            2727
-          ],
-          "10": [
-            2399,
-            2399
-          ],
-          "19": [
-            3323,
-            3323
           ]
         },
         "2026-05-19": {
+          "21": [
+            2760,
+            2760
+          ],
+          "16": [
+            2613,
+            2613
+          ],
+          "11": [
+            2817,
+            2817
+          ],
+          "20": [
+            2585,
+            2585
+          ],
+          "15": [
+            3178,
+            3178
+          ],
+          "10": [
+            3093,
+            3093
+          ],
           "19": [
             2938,
             2938
@@ -10845,13 +11933,13 @@ export const LAB_SUPPORT_DATA = {
             2665,
             2665
           ],
-          "23": [
-            2764,
-            2764
-          ],
           "0": [
             2658,
             2658
+          ],
+          "23": [
+            2764,
+            2764
           ],
           "9": [
             2599,
@@ -10876,49 +11964,9 @@ export const LAB_SUPPORT_DATA = {
           "12": [
             2783,
             2783
-          ],
-          "21": [
-            2760,
-            2760
-          ],
-          "16": [
-            2613,
-            2613
-          ],
-          "11": [
-            2817,
-            2817
-          ],
-          "20": [
-            2585,
-            2585
-          ],
-          "15": [
-            3178,
-            3178
-          ],
-          "10": [
-            3093,
-            3093
           ]
         },
         "2026-05-20": {
-          "22": [
-            3543,
-            3543
-          ],
-          "17": [
-            2897,
-            2897
-          ],
-          "12": [
-            3357,
-            3357
-          ],
-          "21": [
-            3340,
-            3340
-          ],
           "16": [
             3144,
             3144
@@ -10970,37 +12018,25 @@ export const LAB_SUPPORT_DATA = {
           "13": [
             2532,
             2532
+          ],
+          "22": [
+            3543,
+            3543
+          ],
+          "17": [
+            2897,
+            2897
+          ],
+          "12": [
+            3357,
+            3357
+          ],
+          "21": [
+            3340,
+            3340
           ]
         },
         "2026-05-21": {
-          "0": [
-            2810,
-            2810
-          ],
-          "9": [
-            3037,
-            3037
-          ],
-          "18": [
-            2751,
-            2751
-          ],
-          "13": [
-            3257,
-            3257
-          ],
-          "22": [
-            2059,
-            2059
-          ],
-          "17": [
-            2998,
-            2998
-          ],
-          "12": [
-            3294,
-            3294
-          ],
           "21": [
             3226,
             3226
@@ -11036,13 +12072,37 @@ export const LAB_SUPPORT_DATA = {
           "23": [
             2330,
             2330
+          ],
+          "0": [
+            2810,
+            2810
+          ],
+          "9": [
+            3037,
+            3037
+          ],
+          "18": [
+            2751,
+            2751
+          ],
+          "13": [
+            3257,
+            3257
+          ],
+          "22": [
+            2059,
+            2059
+          ],
+          "17": [
+            2998,
+            2998
+          ],
+          "12": [
+            3294,
+            3294
           ]
         },
         "2026-05-22": {
-          "13": [
-            3168,
-            3168
-          ],
           "22": [
             3219,
             3219
@@ -11102,19 +12162,51 @@ export const LAB_SUPPORT_DATA = {
           "18": [
             2894,
             2894
+          ],
+          "13": [
+            3168,
+            3168
           ]
         },
         "2026-05-23": {
-          "1": [
-            22,
-            22
-          ],
           "0": [
             3094,
             3094
+          ],
+          "1": [
+            22,
+            22
           ]
         },
         "2026-05-26": {
+          "22": [
+            2908,
+            2908
+          ],
+          "17": [
+            2911,
+            2911
+          ],
+          "12": [
+            2063,
+            2065
+          ],
+          "21": [
+            3004,
+            3004
+          ],
+          "16": [
+            3067,
+            3067
+          ],
+          "11": [
+            2042,
+            2042
+          ],
+          "20": [
+            3264,
+            3264
+          ],
           "15": [
             2395,
             2395
@@ -11146,69 +12238,9 @@ export const LAB_SUPPORT_DATA = {
           "13": [
             2979,
             2979
-          ],
-          "22": [
-            2908,
-            2908
-          ],
-          "17": [
-            2911,
-            2911
-          ],
-          "12": [
-            2063,
-            2065
-          ],
-          "21": [
-            3004,
-            3004
-          ],
-          "16": [
-            3067,
-            3067
-          ],
-          "11": [
-            2042,
-            2042
-          ],
-          "20": [
-            3264,
-            3264
           ]
         },
         "2026-05-27": {
-          "20": [
-            3440,
-            3440
-          ],
-          "15": [
-            2944,
-            2944
-          ],
-          "10": [
-            2657,
-            2657
-          ],
-          "19": [
-            2789,
-            2806
-          ],
-          "14": [
-            2839,
-            2839
-          ],
-          "23": [
-            2656,
-            2656
-          ],
-          "0": [
-            3352,
-            3352
-          ],
-          "9": [
-            997,
-            997
-          ],
           "18": [
             1899,
             1899
@@ -11240,6 +12272,38 @@ export const LAB_SUPPORT_DATA = {
           "11": [
             2289,
             2289
+          ],
+          "20": [
+            3440,
+            3440
+          ],
+          "15": [
+            2944,
+            2944
+          ],
+          "10": [
+            2657,
+            2657
+          ],
+          "19": [
+            2789,
+            2806
+          ],
+          "14": [
+            2839,
+            2839
+          ],
+          "23": [
+            2656,
+            2656
+          ],
+          "0": [
+            3352,
+            3352
+          ],
+          "9": [
+            997,
+            997
           ]
         },
         "2026-05-28": {
@@ -11309,6 +12373,14 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-29": {
+          "14": [
+            3399,
+            3399
+          ],
+          "0": [
+            0,
+            0
+          ],
           "23": [
             2882,
             2890
@@ -11372,14 +12444,6 @@ export const LAB_SUPPORT_DATA = {
           "19": [
             3434,
             3436
-          ],
-          "14": [
-            3399,
-            3399
-          ],
-          "0": [
-            0,
-            0
           ]
         },
         "2026-05-30": {
@@ -11397,14 +12461,6 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-06-01": {
-          "22": [
-            3071,
-            3073
-          ],
-          "17": [
-            3233,
-            3233
-          ],
           "12": [
             1406,
             1406
@@ -11456,21 +12512,17 @@ export const LAB_SUPPORT_DATA = {
           "13": [
             3366,
             3373
+          ],
+          "22": [
+            3071,
+            3073
+          ],
+          "17": [
+            3233,
+            3233
           ]
         },
         "2026-06-02": {
-          "23": [
-            3127,
-            3131
-          ],
-          "9": [
-            2715,
-            2715
-          ],
-          "18": [
-            2179,
-            2179
-          ],
           "13": [
             1470,
             1502
@@ -11519,40 +12571,24 @@ export const LAB_SUPPORT_DATA = {
             2448,
             2448
           ],
+          "23": [
+            3127,
+            3131
+          ],
           "0": [
             3382,
             3382
+          ],
+          "9": [
+            2715,
+            2715
+          ],
+          "18": [
+            2179,
+            2179
           ]
         },
         "2026-06-03": {
-          "15": [
-            2682,
-            2682
-          ],
-          "10": [
-            3583,
-            3583
-          ],
-          "19": [
-            2410,
-            2410
-          ],
-          "14": [
-            3257,
-            3257
-          ],
-          "23": [
-            455,
-            455
-          ],
-          "0": [
-            3470,
-            3470
-          ],
-          "9": [
-            1880,
-            1880
-          ],
           "18": [
             3064,
             3064
@@ -11588,9 +12624,57 @@ export const LAB_SUPPORT_DATA = {
           "20": [
             3154,
             3154
+          ],
+          "15": [
+            2682,
+            2682
+          ],
+          "10": [
+            3583,
+            3583
+          ],
+          "19": [
+            2410,
+            2410
+          ],
+          "14": [
+            3257,
+            3257
+          ],
+          "23": [
+            455,
+            455
+          ],
+          "0": [
+            3470,
+            3470
+          ],
+          "9": [
+            1880,
+            1880
           ]
         },
         "2026-06-04": {
+          "11": [
+            3021,
+            3021
+          ],
+          "20": [
+            3066,
+            3066
+          ],
+          "15": [
+            333,
+            333
+          ],
+          "10": [
+            2495,
+            2495
+          ],
+          "19": [
+            2828,
+            2828
+          ],
           "14": [
             1382,
             1382
@@ -11598,6 +12682,10 @@ export const LAB_SUPPORT_DATA = {
           "23": [
             0,
             0
+          ],
+          "0": [
+            2728,
+            2728
           ],
           "9": [
             2548,
@@ -11630,33 +12718,25 @@ export const LAB_SUPPORT_DATA = {
           "16": [
             8,
             8
-          ],
-          "11": [
-            3021,
-            3021
-          ],
-          "20": [
-            3066,
-            3066
-          ],
-          "15": [
-            333,
-            333
-          ],
-          "10": [
-            2495,
-            2495
-          ],
-          "19": [
-            2828,
-            2828
-          ],
-          "0": [
-            2728,
-            2728
           ]
         },
         "2026-06-05": {
+          "19": [
+            3449,
+            3449
+          ],
+          "14": [
+            3567,
+            3567
+          ],
+          "23": [
+            3227,
+            3227
+          ],
+          "0": [
+            0,
+            0
+          ],
           "18": [
             3404,
             3404
@@ -11664,6 +12744,10 @@ export const LAB_SUPPORT_DATA = {
           "13": [
             3532,
             3532
+          ],
+          "22": [
+            3275,
+            3275
           ],
           "17": [
             3499,
@@ -11673,21 +12757,25 @@ export const LAB_SUPPORT_DATA = {
             2899,
             2899
           ],
-          "2": [
-            0,
-            0
+          "21": [
+            3286,
+            3286
           ],
           "16": [
             3414,
             3414
+          ],
+          "2": [
+            0,
+            0
           ],
           "11": [
             3588,
             3588
           ],
           "20": [
-            2375,
-            2375
+            3413,
+            3413
           ],
           "15": [
             3399,
@@ -11700,224 +12788,282 @@ export const LAB_SUPPORT_DATA = {
           "10": [
             2931,
             2931
+          ]
+        },
+        "2026-06-06": {
+          "0": [
+            3274,
+            3274
+          ]
+        },
+        "2026-06-08": {
+          "11": [
+            1474,
+            1474
           ],
-          "19": [
-            3449,
-            3449
+          "15": [
+            43,
+            43
+          ],
+          "10": [
+            3229,
+            3229
           ],
           "14": [
-            3567,
-            3567
-          ],
-          "0": [
             0,
             0
-          ]
-        }
-      },
-      "gen2-103": {
-        "2026-04-27": {
+          ],
+          "9": [
+            3591,
+            3591
+          ],
           "13": [
             0,
-            3512
+            0
           ],
-          "15": [
-            0,
-            6
+          "8": [
+            209,
+            209
+          ],
+          "17": [
+            946,
+            946
+          ],
+          "12": [
+            94,
+            94
+          ],
+          "16": [
+            288,
+            288
+          ]
+        },
+        "2026-06-09": {
+          "23": [
+            3500,
+            3500
+          ],
+          "13": [
+            897,
+            897
+          ],
+          "22": [
+            3477,
+            3477
           ],
           "17": [
             0,
-            1766
+            0
           ],
-          "10": [
-            0,
-            1742
-          ],
-          "12": [
-            0,
-            3326
-          ],
-          "14": [
-            0,
-            154
+          "21": [
+            3071,
+            3071
           ],
           "16": [
-            0,
+            1896,
+            1898
+          ],
+          "15": [
+            1149,
+            1153
+          ],
+          "19": [
+            503,
+            503
+          ],
+          "14": [
+            1902,
+            1902
+          ]
+        },
+        "2026-06-10": {
+          "19": [
+            3023,
+            3023
+          ],
+          "14": [
+            3377,
+            3377
+          ],
+          "23": [
+            2453,
+            2454
+          ],
+          "0": [
+            3363,
+            3363
+          ],
+          "9": [
+            2714,
+            2714
+          ],
+          "18": [
+            1523,
+            1523
+          ],
+          "13": [
+            2624,
+            2624
+          ],
+          "22": [
+            2706,
+            2706
+          ],
+          "17": [
+            3198,
+            3198
+          ],
+          "12": [
+            1490,
+            1490
+          ],
+          "21": [
+            3387,
+            3387
+          ],
+          "16": [
+            2609,
+            2609
+          ],
+          "11": [
+            2761,
+            2761
+          ],
+          "20": [
+            2619,
+            2619
+          ],
+          "15": [
+            3180,
+            3180
+          ],
+          "10": [
+            3338,
+            3338
+          ]
+        },
+        "2026-06-11": {
+          "19": [
+            3438,
+            3438
+          ],
+          "14": [
+            986,
+            986
+          ],
+          "23": [
+            3201,
+            3201
+          ],
+          "0": [
+            2784,
+            2784
+          ],
+          "9": [
+            1520,
             1520
           ],
-          "9": [
-            0,
-            2145
-          ],
-          "11": [
-            0,
-            2582
-          ]
-        },
-        "2026-04-28": {
-          "14": [
-            0,
-            2770
-          ],
-          "16": [
-            0,
-            2799
-          ],
-          "9": [
-            0,
-            1915
-          ],
-          "11": [
-            0,
-            2950
+          "18": [
+            2572,
+            2572
           ],
           "13": [
-            0,
-            3215
+            282,
+            282
           ],
-          "15": [
-            0,
-            3284
+          "22": [
+            1601,
+            1601
           ],
           "17": [
-            0,
-            2138
-          ],
-          "10": [
-            14,
-            3113
+            2006,
+            2006
           ],
           "12": [
-            0,
-            3555
-          ]
-        },
-        "2026-04-29": {
-          "10": [
-            0,
-            3286
+            3365,
+            3365
           ],
-          "12": [
-            0,
-            3565
-          ],
-          "14": [
-            0,
-            1089
+          "21": [
+            2531,
+            2531
           ],
           "16": [
-            0,
-            6
-          ],
-          "9": [
-            0,
-            463
+            1662,
+            1662
           ],
           "11": [
-            0,
-            2543
+            1659,
+            1659
           ],
-          "13": [
-            1,
-            679
-          ],
-          "15": [
-            0,
-            2965
-          ]
-        },
-        "2026-04-30": {
-          "13": [
-            0,
-            328
+          "20": [
+            2638,
+            2638
           ],
           "15": [
-            0,
-            2999
-          ],
-          "17": [
-            0,
-            2366
+            3400,
+            3400
           ],
           "10": [
-            0,
-            1634
-          ],
-          "12": [
-            0,
-            2597
-          ],
-          "14": [
-            0,
-            715
-          ],
-          "16": [
-            0,
-            1946
-          ],
-          "9": [
-            0,
-            45
-          ],
-          "11": [
-            0,
-            2998
+            1877,
+            1878
           ]
         },
-        "2026-05-01": {
-          "17": [
-            36,
-            962
+        "2026-06-12": {
+          "15": [
+            3170,
+            3170
           ],
           "10": [
-            0,
-            3360
+            2811,
+            2811
           ],
-          "12": [
-            0,
-            3003
+          "19": [
+            142,
+            142
           ],
           "14": [
-            0,
-            3093
+            2888,
+            2888
           ],
-          "16": [
-            0,
-            1727
+          "0": [
+            3463,
+            3463
           ],
           "9": [
-            0,
-            2092
+            774,
+            774
           ],
-          "11": [
-            0,
-            3424
-          ],
-          "13": [
-            0,
-            3395
-          ],
-          "15": [
-            0,
-            2177
-          ]
-        },
-        "2026-05-04": {
           "18": [
             0,
             0
           ],
-          "20": [
-            0,
-            0
+          "13": [
+            1762,
+            1762
           ],
+          "17": [
+            1424,
+            1424
+          ],
+          "12": [
+            3254,
+            3254
+          ],
+          "16": [
+            3070,
+            3070
+          ],
+          "11": [
+            2501,
+            2501
+          ]
+        }
+      },
+      "gen2-103": {
+        "2026-05-04": {
           "15": [
             0,
             646
-          ],
-          "17": [
-            0,
-            0
           ],
           "10": [
             0,
@@ -11931,23 +13077,47 @@ export const LAB_SUPPORT_DATA = {
             0,
             481
           ],
+          "9": [
+            0,
+            880
+          ],
+          "18": [
+            0,
+            0
+          ],
+          "17": [
+            0,
+            0
+          ],
           "16": [
             0,
             67
           ],
-          "9": [
+          "20": [
             0,
-            880
+            0
           ]
         },
         "2026-05-05": {
-          "14": [
-            0,
-            2720
-          ],
           "16": [
             0,
             2806
+          ],
+          "11": [
+            286,
+            1235
+          ],
+          "15": [
+            0,
+            2505
+          ],
+          "10": [
+            0,
+            87
+          ],
+          "14": [
+            0,
+            2720
           ],
           "9": [
             0,
@@ -11957,25 +13127,13 @@ export const LAB_SUPPORT_DATA = {
             0,
             23
           ],
-          "11": [
-            286,
-            1235
-          ],
           "13": [
             0,
             3428
           ],
-          "15": [
-            0,
-            2505
-          ],
           "17": [
             0,
             3340
-          ],
-          "10": [
-            0,
-            87
           ],
           "12": [
             0,
@@ -11987,63 +13145,67 @@ export const LAB_SUPPORT_DATA = {
             0,
             3008
           ],
-          "10": [
-            0,
-            3002
-          ],
           "12": [
             0,
             3189
-          ],
-          "14": [
-            0,
-            2370
           ],
           "16": [
             598,
             2104
           ],
-          "9": [
-            0,
-            1433
-          ],
           "11": [
             62,
             1911
           ],
-          "13": [
-            0,
-            3226
-          ],
           "15": [
             0,
             3333
-          ]
-        },
-        "2026-05-07": {
-          "15": [
-            3070,
-            3070
-          ],
-          "17": [
-            3196,
-            3196
           ],
           "10": [
             0,
-            3395
+            3002
+          ],
+          "14": [
+            0,
+            2370
+          ],
+          "9": [
+            0,
+            1433
+          ],
+          "13": [
+            0,
+            3226
+          ]
+        },
+        "2026-05-07": {
+          "17": [
+            3196,
+            3196
           ],
           "12": [
             41,
             1560
           ],
-          "14": [
-            3453,
-            3453
-          ],
           "16": [
             3491,
             3491
+          ],
+          "11": [
+            0,
+            931
+          ],
+          "15": [
+            3070,
+            3070
+          ],
+          "10": [
+            0,
+            3395
+          ],
+          "14": [
+            3453,
+            3453
           ],
           "9": [
             0,
@@ -12053,57 +13215,61 @@ export const LAB_SUPPORT_DATA = {
             69,
             69
           ],
-          "11": [
-            0,
-            931
-          ],
           "13": [
             424,
             1298
           ]
         },
         "2026-05-08": {
-          "15": [
-            3345,
-            3345
+          "13": [
+            3516,
+            3516
           ],
           "17": [
             3126,
             3126
           ],
-          "10": [
-            2897,
-            2897
-          ],
           "12": [
             2917,
             2917
-          ],
-          "14": [
-            1669,
-            1669
           ],
           "16": [
             3066,
             3066
           ],
-          "9": [
-            1483,
-            1483
-          ],
           "11": [
             3440,
             3440
           ],
-          "13": [
-            3516,
-            3516
+          "15": [
+            3345,
+            3345
+          ],
+          "10": [
+            2897,
+            2897
+          ],
+          "14": [
+            1669,
+            1669
+          ],
+          "9": [
+            1483,
+            1483
           ]
         },
         "2026-05-11": {
-          "15": [
-            2883,
-            2883
+          "14": [
+            2791,
+            2791
+          ],
+          "9": [
+            1578,
+            1578
+          ],
+          "13": [
+            3285,
+            3285
           ],
           "8": [
             0,
@@ -12113,17 +13279,9 @@ export const LAB_SUPPORT_DATA = {
             2905,
             2905
           ],
-          "10": [
-            2502,
-            2502
-          ],
           "12": [
             3035,
             3035
-          ],
-          "14": [
-            2791,
-            2791
           ],
           "7": [
             0,
@@ -12133,96 +13291,96 @@ export const LAB_SUPPORT_DATA = {
             2608,
             2608
           ],
-          "9": [
-            1578,
-            1578
-          ],
           "11": [
             3302,
             3302
           ],
-          "13": [
-            3285,
-            3285
+          "15": [
+            2883,
+            2883
+          ],
+          "10": [
+            2502,
+            2502
           ]
         },
         "2026-05-12": {
-          "13": [
-            2715,
-            2715
+          "16": [
+            2328,
+            2328
+          ],
+          "11": [
+            3415,
+            3415
           ],
           "15": [
             3440,
             3440
           ],
-          "17": [
-            2586,
-            2586
-          ],
           "10": [
             2505,
             2505
-          ],
-          "12": [
-            3500,
-            3500
           ],
           "14": [
             3386,
             3386
           ],
-          "16": [
-            2328,
-            2328
-          ],
           "9": [
             2231,
             2231
           ],
-          "11": [
-            3415,
-            3415
+          "13": [
+            2715,
+            2715
+          ],
+          "17": [
+            2586,
+            2586
+          ],
+          "12": [
+            3500,
+            3500
           ]
         },
         "2026-05-13": {
-          "23": [
-            2336,
-            2336
-          ],
-          "16": [
-            3080,
-            3080
-          ],
-          "9": [
-            941,
-            941
-          ],
-          "11": [
-            3412,
-            3414
-          ],
-          "13": [
-            3110,
-            3110
-          ],
           "15": [
             2937,
             2937
-          ],
-          "17": [
-            2420,
-            2420
           ],
           "10": [
             2332,
             2332
           ],
+          "14": [
+            3414,
+            3414
+          ],
+          "23": [
+            2336,
+            2336
+          ],
+          "9": [
+            941,
+            941
+          ],
+          "13": [
+            3110,
+            3110
+          ],
+          "17": [
+            2420,
+            2420
+          ],
           "12": [
             2961,
             2961
           ],
-          "14": [
-            3414,
+          "16": [
+            3080,
+            3080
+          ],
+          "11": [
+            3412,
             3414
           ]
         },
@@ -12231,101 +13389,81 @@ export const LAB_SUPPORT_DATA = {
             3294,
             3294
           ],
-          "13": [
-            2624,
-            2624
-          ],
           "15": [
             3131,
             3131
-          ],
-          "17": [
-            1531,
-            1531
           ],
           "10": [
             2411,
             2411
           ],
-          "12": [
-            2270,
-            2270
-          ],
           "14": [
             3173,
             3173
           ],
-          "16": [
-            3182,
-            3182
-          ],
           "9": [
             2244,
             2244
+          ],
+          "13": [
+            2624,
+            2624
+          ],
+          "17": [
+            1531,
+            1531
+          ],
+          "12": [
+            2270,
+            2270
+          ],
+          "16": [
+            3182,
+            3182
           ]
         },
         "2026-05-15": {
-          "15": [
-            3250,
-            3250
+          "13": [
+            3234,
+            3234
           ],
           "17": [
             2869,
             2869
           ],
-          "10": [
-            2672,
-            2672
-          ],
           "12": [
             3051,
             3051
-          ],
-          "14": [
-            3403,
-            3403
           ],
           "16": [
             3238,
             3238
           ],
-          "9": [
-            2341,
-            2341
-          ],
           "11": [
             3349,
             3349
           ],
-          "13": [
-            3234,
-            3234
+          "15": [
+            3250,
+            3250
+          ],
+          "10": [
+            2672,
+            2672
+          ],
+          "14": [
+            3403,
+            3403
+          ],
+          "9": [
+            2341,
+            2341
           ]
         },
         "2026-05-18": {
-          "14": [
-            165,
-            165
-          ],
-          "23": [
-            26,
-            26
-          ],
-          "16": [
-            0,
-            0
-          ],
-          "9": [
-            1896,
-            1896
-          ],
           "11": [
             1989,
             1989
-          ],
-          "13": [
-            1236,
-            1236
           ],
           "15": [
             0,
@@ -12335,43 +13473,63 @@ export const LAB_SUPPORT_DATA = {
             1300,
             1300
           ],
+          "14": [
+            165,
+            165
+          ],
+          "23": [
+            26,
+            26
+          ],
+          "9": [
+            1896,
+            1896
+          ],
+          "13": [
+            1236,
+            1236
+          ],
           "12": [
             871,
             871
+          ],
+          "16": [
+            0,
+            0
           ]
         },
         "2026-05-19": {
-          "14": [
-            3424,
-            3424
-          ],
           "16": [
             1811,
             1811
-          ],
-          "18": [
-            64,
-            64
           ],
           "11": [
             972,
             972
           ],
-          "13": [
-            1068,
-            1068
-          ],
           "15": [
             1637,
             1637
           ],
-          "17": [
-            3059,
-            3059
-          ],
           "10": [
             160,
             160
+          ],
+          "14": [
+            3424,
+            3424
+          ],
+          "18": [
+            64,
+            64
+          ],
+          "13": [
+            1068,
+            1068
+          ],
+          "17": [
+            3059,
+            3059
           ],
           "12": [
             2199,
@@ -12379,53 +13537,9 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-20": {
-          "22": [
-            3001,
-            3001
-          ],
-          "15": [
-            3288,
-            3288
-          ],
-          "17": [
-            3113,
-            3113
-          ],
-          "10": [
-            3491,
-            3491
-          ],
-          "19": [
-            1333,
-            1333
-          ],
-          "12": [
-            2042,
-            2042
-          ],
-          "21": [
-            3426,
-            3426
-          ],
-          "14": [
-            3029,
-            3029
-          ],
-          "23": [
-            2877,
-            2877
-          ],
           "16": [
             3176,
             3176
-          ],
-          "9": [
-            2474,
-            2474
-          ],
-          "18": [
-            2382,
-            2382
           ],
           "11": [
             3475,
@@ -12435,43 +13549,75 @@ export const LAB_SUPPORT_DATA = {
             3413,
             3413
           ],
+          "15": [
+            3288,
+            3288
+          ],
+          "10": [
+            3491,
+            3491
+          ],
+          "19": [
+            1333,
+            1333
+          ],
+          "14": [
+            3029,
+            3029
+          ],
+          "23": [
+            2877,
+            2877
+          ],
+          "9": [
+            2474,
+            2474
+          ],
+          "18": [
+            2382,
+            2382
+          ],
           "13": [
             2332,
             2332
+          ],
+          "22": [
+            3001,
+            3001
+          ],
+          "17": [
+            3113,
+            3113
+          ],
+          "12": [
+            2042,
+            2042
+          ],
+          "21": [
+            3426,
+            3426
           ]
         },
         "2026-05-21": {
-          "0": [
-            3554,
-            3554
+          "21": [
+            1243,
+            1243
           ],
-          "9": [
-            3062,
-            3062
+          "16": [
+            3417,
+            3417
           ],
           "11": [
             2347,
             2347
           ],
-          "18": [
-            3120,
-            3120
-          ],
           "20": [
             2740,
             2740
           ],
-          "13": [
-            2146,
-            2146
-          ],
           "15": [
             2731,
             2731
-          ],
-          "17": [
-            2870,
-            2870
           ],
           "1": [
             17,
@@ -12481,47 +13627,43 @@ export const LAB_SUPPORT_DATA = {
             2361,
             2361
           ],
-          "12": [
-            3470,
-            3470
-          ],
-          "21": [
-            1243,
-            1243
-          ],
           "14": [
             3126,
             3126
           ],
-          "16": [
-            3417,
-            3417
+          "0": [
+            3554,
+            3554
+          ],
+          "9": [
+            3062,
+            3062
+          ],
+          "18": [
+            3120,
+            3120
+          ],
+          "13": [
+            2146,
+            2146
+          ],
+          "17": [
+            2870,
+            2870
+          ],
+          "12": [
+            3470,
+            3470
           ]
         },
         "2026-05-22": {
-          "20": [
-            171,
-            171
-          ],
-          "13": [
-            3553,
-            3552
-          ],
           "22": [
             3027,
             3027
           ],
-          "15": [
-            3196,
-            3196
-          ],
           "17": [
             2359,
             2359
-          ],
-          "10": [
-            708,
-            708
           ],
           "12": [
             3025,
@@ -12531,6 +13673,26 @@ export const LAB_SUPPORT_DATA = {
             3088,
             3088
           ],
+          "16": [
+            3433,
+            3433
+          ],
+          "11": [
+            2714,
+            2714
+          ],
+          "20": [
+            171,
+            171
+          ],
+          "15": [
+            3196,
+            3196
+          ],
+          "10": [
+            708,
+            708
+          ],
           "14": [
             3540,
             3540
@@ -12539,27 +13701,23 @@ export const LAB_SUPPORT_DATA = {
             2344,
             2344
           ],
-          "16": [
-            3433,
-            3433
-          ],
           "9": [
             717,
             717
           ],
-          "11": [
-            2714,
-            2714
+          "13": [
+            3553,
+            3552
           ]
         },
         "2026-05-23": {
-          "1": [
-            18,
-            27
-          ],
           "0": [
             3450,
             3450
+          ],
+          "1": [
+            18,
+            27
           ]
         },
         "2026-05-26": {
@@ -12567,21 +13725,9 @@ export const LAB_SUPPORT_DATA = {
             3376,
             3376
           ],
-          "15": [
-            341,
-            341
-          ],
           "17": [
             2896,
             2896
-          ],
-          "10": [
-            340,
-            340
-          ],
-          "19": [
-            3199,
-            3204
           ],
           "12": [
             2183,
@@ -12591,25 +13737,9 @@ export const LAB_SUPPORT_DATA = {
             3120,
             3120
           ],
-          "14": [
-            686,
-            686
-          ],
-          "23": [
-            3509,
-            3509
-          ],
           "16": [
             2745,
             2745
-          ],
-          "9": [
-            2416,
-            2416
-          ],
-          "18": [
-            2847,
-            2847
           ],
           "11": [
             1920,
@@ -12618,6 +13748,34 @@ export const LAB_SUPPORT_DATA = {
           "20": [
             3462,
             3462
+          ],
+          "15": [
+            341,
+            341
+          ],
+          "10": [
+            340,
+            340
+          ],
+          "19": [
+            3199,
+            3204
+          ],
+          "14": [
+            686,
+            686
+          ],
+          "23": [
+            3509,
+            3509
+          ],
+          "9": [
+            2416,
+            2416
+          ],
+          "18": [
+            2847,
+            2847
           ],
           "13": [
             1350,
@@ -12629,10 +13787,6 @@ export const LAB_SUPPORT_DATA = {
             1848,
             1848
           ],
-          "20": [
-            3352,
-            3352
-          ],
           "13": [
             937,
             937
@@ -12641,13 +13795,33 @@ export const LAB_SUPPORT_DATA = {
             3458,
             3460
           ],
-          "15": [
-            387,
-            387
-          ],
           "17": [
             2272,
             2272
+          ],
+          "12": [
+            1098,
+            1098
+          ],
+          "21": [
+            3003,
+            3003
+          ],
+          "16": [
+            1587,
+            1587
+          ],
+          "11": [
+            2676,
+            2676
+          ],
+          "20": [
+            3352,
+            3352
+          ],
+          "15": [
+            387,
+            387
           ],
           "1": [
             20,
@@ -12661,14 +13835,6 @@ export const LAB_SUPPORT_DATA = {
             3378,
             3378
           ],
-          "12": [
-            1098,
-            1098
-          ],
-          "21": [
-            3003,
-            3003
-          ],
           "14": [
             1234,
             1234
@@ -12677,10 +13843,6 @@ export const LAB_SUPPORT_DATA = {
             3035,
             3035
           ],
-          "16": [
-            1587,
-            1587
-          ],
           "0": [
             3455,
             3455
@@ -12688,36 +13850,12 @@ export const LAB_SUPPORT_DATA = {
           "9": [
             151,
             152
-          ],
-          "11": [
-            2676,
-            2676
           ]
         },
         "2026-05-28": {
-          "14": [
-            422,
-            424
-          ],
-          "23": [
-            3331,
-            3333
-          ],
           "16": [
             149,
             149
-          ],
-          "0": [
-            2760,
-            2760
-          ],
-          "9": [
-            878,
-            880
-          ],
-          "18": [
-            2766,
-            2766
           ],
           "11": [
             1595,
@@ -12727,21 +13865,9 @@ export const LAB_SUPPORT_DATA = {
             2567,
             2579
           ],
-          "13": [
-            601,
-            601
-          ],
-          "22": [
-            3494,
-            3494
-          ],
           "15": [
             1836,
             1842
-          ],
-          "17": [
-            2514,
-            2514
           ],
           "1": [
             13,
@@ -12755,6 +13881,38 @@ export const LAB_SUPPORT_DATA = {
             2775,
             2775
           ],
+          "14": [
+            422,
+            424
+          ],
+          "23": [
+            3331,
+            3333
+          ],
+          "0": [
+            2760,
+            2760
+          ],
+          "9": [
+            878,
+            880
+          ],
+          "18": [
+            2766,
+            2766
+          ],
+          "13": [
+            601,
+            601
+          ],
+          "22": [
+            3494,
+            3494
+          ],
+          "17": [
+            2514,
+            2514
+          ],
           "12": [
             1611,
             1611
@@ -12765,17 +13923,41 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-29": {
+          "0": [
+            2955,
+            2955
+          ],
           "23": [
             3343,
             3343
           ],
-          "16": [
-            524,
-            524
+          "9": [
+            2113,
+            2114
           ],
           "18": [
             192,
             192
+          ],
+          "22": [
+            3346,
+            3346
+          ],
+          "17": [
+            1038,
+            1038
+          ],
+          "12": [
+            2472,
+            2472
+          ],
+          "21": [
+            3271,
+            3271
+          ],
+          "16": [
+            524,
+            524
           ],
           "11": [
             3154,
@@ -12785,17 +13967,9 @@ export const LAB_SUPPORT_DATA = {
             2888,
             2888
           ],
-          "22": [
-            3346,
-            3346
-          ],
           "15": [
             0,
             0
-          ],
-          "17": [
-            1038,
-            1038
           ],
           "1": [
             34,
@@ -12808,22 +13982,6 @@ export const LAB_SUPPORT_DATA = {
           "19": [
             3544,
             3544
-          ],
-          "12": [
-            2472,
-            2472
-          ],
-          "21": [
-            3271,
-            3271
-          ],
-          "0": [
-            2955,
-            2955
-          ],
-          "9": [
-            2113,
-            2114
           ]
         },
         "2026-05-30": {
@@ -12837,26 +13995,6 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-06-01": {
-          "22": [
-            3114,
-            3114
-          ],
-          "15": [
-            3312,
-            3312
-          ],
-          "17": [
-            2637,
-            2637
-          ],
-          "10": [
-            2741,
-            2741
-          ],
-          "19": [
-            3472,
-            3495
-          ],
           "12": [
             3163,
             3163
@@ -12865,25 +14003,9 @@ export const LAB_SUPPORT_DATA = {
             3118,
             3118
           ],
-          "14": [
-            3397,
-            3397
-          ],
-          "23": [
-            2827,
-            2827
-          ],
           "16": [
             2907,
             2907
-          ],
-          "9": [
-            2757,
-            2757
-          ],
-          "18": [
-            1510,
-            1534
           ],
           "11": [
             2859,
@@ -12893,36 +14015,48 @@ export const LAB_SUPPORT_DATA = {
             3422,
             3422
           ],
+          "15": [
+            3312,
+            3312
+          ],
+          "10": [
+            2741,
+            2741
+          ],
+          "19": [
+            3472,
+            3495
+          ],
+          "14": [
+            3397,
+            3397
+          ],
+          "23": [
+            2827,
+            2827
+          ],
+          "9": [
+            2757,
+            2757
+          ],
+          "18": [
+            1510,
+            1534
+          ],
           "13": [
             2051,
             2051
+          ],
+          "22": [
+            3114,
+            3114
+          ],
+          "17": [
+            2637,
+            2637
           ]
         },
         "2026-06-02": {
-          "23": [
-            3348,
-            3348
-          ],
-          "16": [
-            2964,
-            2965
-          ],
-          "9": [
-            2420,
-            2420
-          ],
-          "18": [
-            2416,
-            2416
-          ],
-          "11": [
-            0,
-            0
-          ],
-          "20": [
-            3442,
-            3442
-          ],
           "13": [
             3161,
             3161
@@ -12931,21 +14065,9 @@ export const LAB_SUPPORT_DATA = {
             3126,
             3126
           ],
-          "15": [
-            2796,
-            2796
-          ],
           "17": [
             3313,
             3313
-          ],
-          "10": [
-            901,
-            901
-          ],
-          "19": [
-            3188,
-            3188
           ],
           "12": [
             2957,
@@ -12955,39 +14077,87 @@ export const LAB_SUPPORT_DATA = {
             3119,
             3119
           ],
+          "16": [
+            2964,
+            2965
+          ],
+          "11": [
+            0,
+            0
+          ],
+          "20": [
+            3442,
+            3442
+          ],
+          "15": [
+            2796,
+            2796
+          ],
+          "10": [
+            901,
+            901
+          ],
+          "19": [
+            3188,
+            3188
+          ],
           "14": [
             3306,
             3306
           ],
+          "23": [
+            3348,
+            3348
+          ],
           "0": [
             2955,
             2955
+          ],
+          "9": [
+            2420,
+            2420
+          ],
+          "18": [
+            2416,
+            2416
           ]
         },
         "2026-06-03": {
-          "15": [
-            3360,
-            3360
+          "13": [
+            3123,
+            3123
           ],
           "17": [
             746,
             746
           ],
-          "10": [
-            3259,
-            3259
-          ],
           "12": [
             1798,
             1798
           ],
-          "14": [
-            3287,
-            3287
-          ],
           "16": [
             2348,
             2348
+          ],
+          "11": [
+            3158,
+            3158
+          ],
+          "20": [
+            1371,
+            1371
+          ],
+          "15": [
+            3360,
+            3360
+          ],
+          "10": [
+            3259,
+            3259
+          ],
+          "14": [
+            3287,
+            3287
           ],
           "0": [
             3295,
@@ -12996,21 +14166,21 @@ export const LAB_SUPPORT_DATA = {
           "9": [
             2656,
             2656
-          ],
-          "20": [
-            1371,
-            1371
-          ],
-          "11": [
-            3158,
-            3158
-          ],
-          "13": [
-            3123,
-            3123
           ]
         },
         "2026-06-04": {
+          "11": [
+            3298,
+            3298
+          ],
+          "15": [
+            1685,
+            1685
+          ],
+          "10": [
+            3374,
+            3376
+          ],
           "14": [
             2440,
             2440
@@ -13018,6 +14188,10 @@ export const LAB_SUPPORT_DATA = {
           "23": [
             2525,
             2525
+          ],
+          "0": [
+            877,
+            877
           ],
           "9": [
             1111,
@@ -13027,10 +14201,6 @@ export const LAB_SUPPORT_DATA = {
             367,
             367
           ],
-          "11": [
-            3298,
-            3298
-          ],
           "13": [
             3014,
             3014
@@ -13039,67 +14209,27 @@ export const LAB_SUPPORT_DATA = {
             1478,
             1478
           ],
-          "15": [
-            1685,
-            1685
-          ],
           "17": [
             184,
             196
           ],
-          "10": [
-            3374,
-            3376
-          ],
           "12": [
             3152,
             3152
-          ],
-          "0": [
-            877,
-            877
           ]
         },
         "2026-06-05": {
-          "16": [
-            3063,
-            3063
-          ],
-          "18": [
-            2965,
-            2965
-          ],
-          "11": [
-            1783,
-            1783
-          ],
-          "13": [
-            3268,
-            3268
-          ],
-          "15": [
-            2882,
-            2882
-          ],
-          "17": [
-            2431,
-            2431
-          ],
-          "10": [
-            3346,
-            3364
-          ],
           "19": [
             3556,
             3556
           ],
-          "12": [
-            3192,
-            3192
-          ],
           "14": [
             3413,
             3413
+          ],
+          "23": [
+            3439,
+            3439
           ],
           "0": [
             2771,
@@ -13108,79 +14238,391 @@ export const LAB_SUPPORT_DATA = {
           "9": [
             3032,
             3032
+          ],
+          "18": [
+            2965,
+            2965
+          ],
+          "13": [
+            3268,
+            3268
+          ],
+          "22": [
+            3409,
+            3409
+          ],
+          "17": [
+            2431,
+            2431
+          ],
+          "12": [
+            3192,
+            3192
+          ],
+          "21": [
+            2739,
+            2739
+          ],
+          "16": [
+            3063,
+            3063
+          ],
+          "11": [
+            1783,
+            1783
+          ],
+          "20": [
+            3121,
+            3121
+          ],
+          "15": [
+            2882,
+            2882
+          ],
+          "10": [
+            3346,
+            3364
+          ]
+        },
+        "2026-06-06": {
+          "0": [
+            2527,
+            2527
+          ]
+        },
+        "2026-06-08": {
+          "11": [
+            2983,
+            2983
+          ],
+          "20": [
+            3517,
+            3517
+          ],
+          "15": [
+            3585,
+            3585
+          ],
+          "10": [
+            3397,
+            3397
+          ],
+          "19": [
+            2678,
+            2678
+          ],
+          "14": [
+            3488,
+            3488
+          ],
+          "9": [
+            3383,
+            3383
+          ],
+          "23": [
+            3113,
+            3113
+          ],
+          "18": [
+            3290,
+            3290
+          ],
+          "13": [
+            3331,
+            3331
+          ],
+          "22": [
+            3507,
+            3507
+          ],
+          "17": [
+            1732,
+            1732
+          ],
+          "12": [
+            3370,
+            3370
+          ],
+          "21": [
+            3563,
+            3563
+          ],
+          "16": [
+            2793,
+            2793
+          ]
+        },
+        "2026-06-09": {
+          "23": [
+            3419,
+            3419
+          ],
+          "9": [
+            3531,
+            3531
+          ],
+          "18": [
+            2277,
+            2277
+          ],
+          "13": [
+            3239,
+            3239
+          ],
+          "22": [
+            3244,
+            3244
+          ],
+          "17": [
+            1855,
+            1855
+          ],
+          "12": [
+            3551,
+            3551
+          ],
+          "16": [
+            3207,
+            3207
+          ],
+          "11": [
+            3460,
+            3460
+          ],
+          "20": [
+            234,
+            234
+          ],
+          "15": [
+            3376,
+            3376
+          ],
+          "10": [
+            1060,
+            1060
+          ],
+          "19": [
+            1922,
+            1922
+          ],
+          "14": [
+            2847,
+            2847
+          ],
+          "0": [
+            3006,
+            3006
+          ]
+        },
+        "2026-06-10": {
+          "19": [
+            810,
+            810
+          ],
+          "14": [
+            3563,
+            3563
+          ],
+          "23": [
+            3392,
+            3392
+          ],
+          "0": [
+            3334,
+            3334
+          ],
+          "9": [
+            2714,
+            2714
+          ],
+          "18": [
+            887,
+            888
+          ],
+          "13": [
+            3536,
+            3536
+          ],
+          "22": [
+            3337,
+            3337
+          ],
+          "17": [
+            3411,
+            3411
+          ],
+          "12": [
+            3540,
+            3540
+          ],
+          "21": [
+            3412,
+            3412
+          ],
+          "16": [
+            3400,
+            3400
+          ],
+          "11": [
+            3495,
+            3495
+          ],
+          "20": [
+            3059,
+            3059
+          ],
+          "15": [
+            3559,
+            3559
+          ],
+          "10": [
+            2861,
+            2861
+          ]
+        },
+        "2026-06-11": {
+          "19": [
+            3520,
+            3520
+          ],
+          "14": [
+            3206,
+            3206
+          ],
+          "23": [
+            2917,
+            2917
+          ],
+          "0": [
+            2445,
+            2445
+          ],
+          "9": [
+            3510,
+            3510
+          ],
+          "18": [
+            1189,
+            1189
+          ],
+          "13": [
+            3353,
+            3353
+          ],
+          "22": [
+            3312,
+            3312
+          ],
+          "17": [
+            3515,
+            3515
+          ],
+          "12": [
+            3517,
+            3517
+          ],
+          "21": [
+            3129,
+            3129
+          ],
+          "16": [
+            1370,
+            1370
+          ],
+          "11": [
+            3571,
+            3571
+          ],
+          "20": [
+            3486,
+            3486
+          ],
+          "15": [
+            2569,
+            2569
+          ],
+          "10": [
+            3232,
+            3232
+          ]
+        },
+        "2026-06-12": {
+          "20": [
+            875,
+            875
+          ],
+          "15": [
+            3520,
+            3520
+          ],
+          "10": [
+            3502,
+            3502
+          ],
+          "19": [
+            1346,
+            1346
+          ],
+          "14": [
+            3407,
+            3407
+          ],
+          "0": [
+            3124,
+            3126
+          ],
+          "9": [
+            3487,
+            3487
+          ],
+          "18": [
+            2417,
+            2417
+          ],
+          "17": [
+            3190,
+            3190
+          ],
+          "12": [
+            2648,
+            2670
+          ],
+          "16": [
+            2686,
+            2686
+          ],
+          "11": [
+            3499,
+            3499
           ]
         }
       },
       "gen2-018": {
-        "2026-05-01": {
+        "2026-05-04": {
+          "15": [
+            0,
+            3450
+          ],
           "10": [
             0,
-            2642
+            1237
           ],
           "19": [
             0,
-            3261
+            3082
           ],
           "14": [
-            0,
-            3415
+            1229,
+            1644
           ],
           "23": [
-            0,
-            3333
+            24,
+            3232
           ],
           "9": [
             0,
-            2066
+            806
           ],
-          "18": [
-            0,
-            1937
-          ],
-          "13": [
-            0,
-            1933
-          ],
-          "22": [
-            0,
-            3391
-          ],
-          "17": [
-            0,
-            2173
-          ],
-          "12": [
-            0,
-            3421
-          ],
-          "21": [
-            0,
-            2618
-          ],
-          "16": [
-            0,
-            1976
-          ],
-          "11": [
-            0,
-            3338
-          ],
-          "20": [
-            0,
-            3030
-          ],
-          "15": [
-            0,
-            2195
-          ]
-        },
-        "2026-05-02": {
-          "0": [
-            0,
-            2335
-          ]
-        },
-        "2026-05-04": {
           "18": [
             0,
             1745
@@ -13216,30 +14658,6 @@ export const LAB_SUPPORT_DATA = {
           "20": [
             0,
             3428
-          ],
-          "15": [
-            0,
-            3450
-          ],
-          "10": [
-            0,
-            1237
-          ],
-          "19": [
-            0,
-            3082
-          ],
-          "14": [
-            1229,
-            1644
-          ],
-          "23": [
-            24,
-            3232
-          ],
-          "9": [
-            0,
-            806
           ]
         },
         "2026-05-05": {
@@ -13317,38 +14735,6 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-06": {
-          "10": [
-            0,
-            1516
-          ],
-          "19": [
-            0,
-            3395
-          ],
-          "14": [
-            0,
-            2291
-          ],
-          "23": [
-            494,
-            3113
-          ],
-          "0": [
-            539,
-            3196
-          ],
-          "9": [
-            0,
-            2615
-          ],
-          "18": [
-            0,
-            3222
-          ],
-          "13": [
-            0,
-            1018
-          ],
           "22": [
             0,
             3587
@@ -13380,9 +14766,57 @@ export const LAB_SUPPORT_DATA = {
           "15": [
             0,
             3320
+          ],
+          "10": [
+            0,
+            1516
+          ],
+          "19": [
+            0,
+            3395
+          ],
+          "14": [
+            0,
+            2291
+          ],
+          "23": [
+            494,
+            3113
+          ],
+          "0": [
+            539,
+            3196
+          ],
+          "9": [
+            0,
+            2615
+          ],
+          "18": [
+            0,
+            3222
+          ],
+          "13": [
+            0,
+            1018
           ]
         },
         "2026-05-07": {
+          "17": [
+            1398,
+            1398
+          ],
+          "12": [
+            0,
+            2489
+          ],
+          "16": [
+            29,
+            29
+          ],
+          "11": [
+            0,
+            3334
+          ],
           "15": [
             663,
             663
@@ -13410,48 +14844,12 @@ export const LAB_SUPPORT_DATA = {
           "13": [
             948,
             2756
-          ],
-          "17": [
-            1398,
-            1398
-          ],
-          "12": [
-            0,
-            2489
-          ],
-          "16": [
-            29,
-            29
-          ],
-          "11": [
-            0,
-            3334
           ]
         },
         "2026-05-08": {
-          "15": [
-            3008,
-            3008
-          ],
-          "10": [
-            0,
-            0
-          ],
-          "19": [
-            3102,
-            3102
-          ],
-          "14": [
-            3409,
-            3409
-          ],
           "23": [
             3365,
             3365
-          ],
-          "9": [
-            318,
-            318
           ],
           "18": [
             1782,
@@ -13488,6 +14886,26 @@ export const LAB_SUPPORT_DATA = {
           "20": [
             3181,
             3181
+          ],
+          "15": [
+            3008,
+            3008
+          ],
+          "10": [
+            0,
+            0
+          ],
+          "19": [
+            3102,
+            3102
+          ],
+          "14": [
+            3409,
+            3409
+          ],
+          "9": [
+            318,
+            318
           ]
         },
         "2026-05-09": {
@@ -13497,6 +14915,18 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-11": {
+          "14": [
+            3255,
+            3255
+          ],
+          "9": [
+            2284,
+            2284
+          ],
+          "13": [
+            3028,
+            3028
+          ],
           "17": [
             3364,
             3364
@@ -13520,21 +14950,21 @@ export const LAB_SUPPORT_DATA = {
           "10": [
             3403,
             3403
-          ],
-          "14": [
-            3255,
-            3255
-          ],
-          "9": [
-            2284,
-            2284
-          ],
-          "13": [
-            3028,
-            3028
           ]
         },
         "2026-05-12": {
+          "16": [
+            2900,
+            2900
+          ],
+          "11": [
+            2530,
+            2530
+          ],
+          "20": [
+            3291,
+            3291
+          ],
           "15": [
             3180,
             3180
@@ -13582,24 +15012,36 @@ export const LAB_SUPPORT_DATA = {
           "21": [
             3062,
             3062
-          ],
-          "16": [
-            2900,
-            2900
-          ],
-          "11": [
-            2530,
-            2530
-          ],
-          "20": [
-            3291,
-            3291
           ]
         },
         "2026-05-13": {
+          "20": [
+            3293,
+            3293
+          ],
+          "15": [
+            3173,
+            3173
+          ],
+          "10": [
+            2355,
+            2355
+          ],
+          "19": [
+            3329,
+            3329
+          ],
+          "14": [
+            2010,
+            2010
+          ],
           "23": [
             3168,
             3168
+          ],
+          "0": [
+            3450,
+            3450
           ],
           "9": [
             3034,
@@ -13636,30 +15078,6 @@ export const LAB_SUPPORT_DATA = {
           "11": [
             2028,
             2028
-          ],
-          "20": [
-            3293,
-            3293
-          ],
-          "15": [
-            3173,
-            3173
-          ],
-          "10": [
-            2355,
-            2355
-          ],
-          "19": [
-            3329,
-            3329
-          ],
-          "14": [
-            2010,
-            2010
-          ],
-          "0": [
-            3450,
-            3450
           ]
         },
         "2026-05-14": {
@@ -13729,34 +15147,6 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-15": {
-          "15": [
-            2648,
-            2648
-          ],
-          "10": [
-            1982,
-            1982
-          ],
-          "19": [
-            2694,
-            2694
-          ],
-          "14": [
-            3112,
-            3112
-          ],
-          "23": [
-            3353,
-            3353
-          ],
-          "0": [
-            3416,
-            3416
-          ],
-          "9": [
-            2082,
-            2082
-          ],
           "18": [
             3393,
             3393
@@ -13792,6 +15182,34 @@ export const LAB_SUPPORT_DATA = {
           "20": [
             3487,
             3487
+          ],
+          "15": [
+            2648,
+            2648
+          ],
+          "10": [
+            1982,
+            1982
+          ],
+          "19": [
+            2694,
+            2694
+          ],
+          "14": [
+            3112,
+            3112
+          ],
+          "23": [
+            3353,
+            3353
+          ],
+          "0": [
+            3416,
+            3416
+          ],
+          "9": [
+            2082,
+            2082
           ]
         },
         "2026-05-16": {
@@ -13801,6 +15219,26 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-18": {
+          "11": [
+            3511,
+            3511
+          ],
+          "20": [
+            2995,
+            2995
+          ],
+          "15": [
+            3270,
+            3270
+          ],
+          "10": [
+            1857,
+            1857
+          ],
+          "19": [
+            2508,
+            2508
+          ],
           "14": [
             3163,
             3163
@@ -13840,29 +15278,33 @@ export const LAB_SUPPORT_DATA = {
           "16": [
             3301,
             3301
-          ],
-          "11": [
-            3511,
-            3511
-          ],
-          "20": [
-            2995,
-            2995
-          ],
-          "15": [
-            3270,
-            3270
-          ],
-          "10": [
-            1857,
-            1857
-          ],
-          "19": [
-            2508,
-            2508
           ]
         },
         "2026-05-19": {
+          "21": [
+            965,
+            965
+          ],
+          "16": [
+            3327,
+            3327
+          ],
+          "11": [
+            3236,
+            3236
+          ],
+          "20": [
+            3441,
+            3441
+          ],
+          "15": [
+            2618,
+            2618
+          ],
+          "10": [
+            2499,
+            2499
+          ],
           "19": [
             2673,
             2673
@@ -13871,13 +15313,13 @@ export const LAB_SUPPORT_DATA = {
             2659,
             2659
           ],
-          "23": [
-            1665,
-            1665
-          ],
           "0": [
             3525,
             3525
+          ],
+          "23": [
+            1665,
+            1665
           ],
           "9": [
             827,
@@ -13902,49 +15344,9 @@ export const LAB_SUPPORT_DATA = {
           "12": [
             2701,
             2701
-          ],
-          "21": [
-            965,
-            965
-          ],
-          "16": [
-            3327,
-            3327
-          ],
-          "11": [
-            3236,
-            3236
-          ],
-          "20": [
-            3441,
-            3441
-          ],
-          "15": [
-            2618,
-            2618
-          ],
-          "10": [
-            2499,
-            2499
           ]
         },
         "2026-05-20": {
-          "22": [
-            2100,
-            2100
-          ],
-          "17": [
-            3351,
-            3351
-          ],
-          "12": [
-            3046,
-            3046
-          ],
-          "21": [
-            3406,
-            3406
-          ],
           "16": [
             2712,
             2712
@@ -13992,37 +15394,25 @@ export const LAB_SUPPORT_DATA = {
           "13": [
             1572,
             1572
+          ],
+          "22": [
+            2100,
+            2100
+          ],
+          "17": [
+            3351,
+            3351
+          ],
+          "12": [
+            3046,
+            3046
+          ],
+          "21": [
+            3406,
+            3406
           ]
         },
         "2026-05-21": {
-          "0": [
-            3346,
-            3346
-          ],
-          "9": [
-            2128,
-            2128
-          ],
-          "18": [
-            1856,
-            1856
-          ],
-          "13": [
-            3273,
-            3273
-          ],
-          "22": [
-            2321,
-            2321
-          ],
-          "17": [
-            1811,
-            1811
-          ],
-          "12": [
-            3257,
-            3257
-          ],
           "21": [
             2636,
             2636
@@ -14062,13 +15452,37 @@ export const LAB_SUPPORT_DATA = {
           "23": [
             3024,
             3024
+          ],
+          "0": [
+            3346,
+            3346
+          ],
+          "9": [
+            2128,
+            2128
+          ],
+          "18": [
+            1856,
+            1856
+          ],
+          "13": [
+            3273,
+            3273
+          ],
+          "22": [
+            2321,
+            2321
+          ],
+          "17": [
+            1811,
+            1811
+          ],
+          "12": [
+            3257,
+            3257
           ]
         },
         "2026-05-22": {
-          "13": [
-            1070,
-            1070
-          ],
           "17": [
             2276,
             2276
@@ -14124,6 +15538,10 @@ export const LAB_SUPPORT_DATA = {
           "18": [
             2376,
             2376
+          ],
+          "13": [
+            1070,
+            1070
           ]
         },
         "2026-05-23": {
@@ -14133,6 +15551,34 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-26": {
+          "22": [
+            2511,
+            2511
+          ],
+          "17": [
+            2543,
+            2543
+          ],
+          "12": [
+            1056,
+            1058
+          ],
+          "21": [
+            2761,
+            2761
+          ],
+          "16": [
+            2281,
+            2281
+          ],
+          "11": [
+            2570,
+            2570
+          ],
+          "20": [
+            2574,
+            2574
+          ],
           "15": [
             2461,
             2461
@@ -14164,69 +15610,9 @@ export const LAB_SUPPORT_DATA = {
           "13": [
             1763,
             1763
-          ],
-          "22": [
-            2511,
-            2511
-          ],
-          "17": [
-            2543,
-            2543
-          ],
-          "12": [
-            1056,
-            1058
-          ],
-          "21": [
-            2761,
-            2761
-          ],
-          "16": [
-            2281,
-            2281
-          ],
-          "11": [
-            2570,
-            2570
-          ],
-          "20": [
-            2574,
-            2574
           ]
         },
         "2026-05-27": {
-          "20": [
-            2128,
-            2128
-          ],
-          "15": [
-            2882,
-            2882
-          ],
-          "10": [
-            796,
-            796
-          ],
-          "19": [
-            3011,
-            3011
-          ],
-          "14": [
-            2890,
-            2890
-          ],
-          "23": [
-            3142,
-            3142
-          ],
-          "0": [
-            1753,
-            1753
-          ],
-          "9": [
-            1105,
-            1105
-          ],
           "18": [
             2653,
             2653
@@ -14258,6 +15644,38 @@ export const LAB_SUPPORT_DATA = {
           "11": [
             3199,
             3199
+          ],
+          "20": [
+            2128,
+            2128
+          ],
+          "15": [
+            2882,
+            2882
+          ],
+          "10": [
+            796,
+            796
+          ],
+          "19": [
+            3011,
+            3011
+          ],
+          "14": [
+            2890,
+            2890
+          ],
+          "23": [
+            3142,
+            3142
+          ],
+          "0": [
+            1753,
+            1753
+          ],
+          "9": [
+            1105,
+            1105
           ]
         },
         "2026-05-28": {
@@ -14327,9 +15745,21 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-29": {
+          "14": [
+            3213,
+            3213
+          ],
+          "0": [
+            3507,
+            3507
+          ],
           "23": [
             2,
             2
+          ],
+          "9": [
+            996,
+            996
           ],
           "18": [
             2381,
@@ -14382,18 +15812,6 @@ export const LAB_SUPPORT_DATA = {
           "19": [
             3289,
             3289
-          ],
-          "14": [
-            3213,
-            3213
-          ],
-          "0": [
-            3507,
-            3507
-          ],
-          "9": [
-            996,
-            996
           ]
         },
         "2026-05-30": {
@@ -14403,10 +15821,6 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-31": {
-          "0": [
-            0,
-            0
-          ],
           "3": [
             0,
             0
@@ -14416,6 +15830,10 @@ export const LAB_SUPPORT_DATA = {
             0
           ],
           "1": [
+            0,
+            0
+          ],
+          "0": [
             0,
             0
           ]
@@ -14443,30 +15861,6 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-06-03": {
-          "15": [
-            3201,
-            3201
-          ],
-          "10": [
-            1270,
-            1270
-          ],
-          "19": [
-            3056,
-            3056
-          ],
-          "14": [
-            770,
-            770
-          ],
-          "23": [
-            609,
-            609
-          ],
-          "9": [
-            936,
-            936
-          ],
           "18": [
             2272,
             2272
@@ -14502,9 +15896,53 @@ export const LAB_SUPPORT_DATA = {
           "20": [
             2928,
             2928
+          ],
+          "15": [
+            3201,
+            3201
+          ],
+          "10": [
+            1270,
+            1270
+          ],
+          "19": [
+            3056,
+            3056
+          ],
+          "14": [
+            770,
+            770
+          ],
+          "23": [
+            609,
+            609
+          ],
+          "9": [
+            936,
+            936
           ]
         },
         "2026-06-04": {
+          "11": [
+            2530,
+            2530
+          ],
+          "20": [
+            2244,
+            2244
+          ],
+          "15": [
+            1344,
+            1344
+          ],
+          "10": [
+            2346,
+            2350
+          ],
+          "19": [
+            3210,
+            3210
+          ],
           "14": [
             1195,
             1195
@@ -14512,6 +15950,10 @@ export const LAB_SUPPORT_DATA = {
           "23": [
             3497,
             3497
+          ],
+          "0": [
+            1838,
+            1838
           ],
           "9": [
             1680,
@@ -14544,33 +15986,29 @@ export const LAB_SUPPORT_DATA = {
           "16": [
             3140,
             3140
-          ],
-          "11": [
-            2530,
-            2530
-          ],
-          "20": [
-            2244,
-            2244
-          ],
-          "15": [
-            1344,
-            1344
-          ],
-          "10": [
-            2346,
-            2350
-          ],
-          "19": [
-            3210,
-            3210
-          ],
-          "0": [
-            1838,
-            1838
           ]
         },
         "2026-06-05": {
+          "19": [
+            3240,
+            3240
+          ],
+          "14": [
+            871,
+            871
+          ],
+          "23": [
+            3572,
+            3572
+          ],
+          "0": [
+            2504,
+            2504
+          ],
+          "9": [
+            63,
+            63
+          ],
           "18": [
             3250,
             3250
@@ -14578,6 +16016,10 @@ export const LAB_SUPPORT_DATA = {
           "13": [
             3078,
             3078
+          ],
+          "22": [
+            3143,
+            3143
           ],
           "17": [
             2670,
@@ -14587,6 +16029,10 @@ export const LAB_SUPPORT_DATA = {
             3056,
             3062
           ],
+          "21": [
+            3366,
+            3366
+          ],
           "16": [
             3343,
             3343
@@ -14594,6 +16040,10 @@ export const LAB_SUPPORT_DATA = {
           "11": [
             2835,
             2835
+          ],
+          "20": [
+            3371,
+            3371
           ],
           "15": [
             2105,
@@ -14606,197 +16056,327 @@ export const LAB_SUPPORT_DATA = {
           "10": [
             2011,
             2011
+          ]
+        },
+        "2026-06-06": {
+          "0": [
+            3414,
+            3414
+          ],
+          "13": [
+            88,
+            88
+          ]
+        },
+        "2026-06-08": {
+          "11": [
+            2407,
+            2411
+          ],
+          "20": [
+            3391,
+            3391
+          ],
+          "15": [
+            3351,
+            3351
+          ],
+          "10": [
+            1896,
+            1896
           ],
           "19": [
-            3240,
-            3240
+            1927,
+            1927
           ],
           "14": [
-            871,
-            871
-          ],
-          "0": [
-            2504,
-            2504
+            714,
+            714
           ],
           "9": [
-            63,
-            63
+            1898,
+            1898
+          ],
+          "23": [
+            3078,
+            3078
+          ],
+          "13": [
+            684,
+            684
+          ],
+          "22": [
+            3101,
+            3101
+          ],
+          "17": [
+            3200,
+            3200
+          ],
+          "21": [
+            1950,
+            1950
+          ],
+          "16": [
+            2807,
+            2809
+          ]
+        },
+        "2026-06-09": {
+          "23": [
+            3477,
+            3477
+          ],
+          "9": [
+            2971,
+            2971
+          ],
+          "18": [
+            1746,
+            1746
+          ],
+          "13": [
+            1387,
+            1387
+          ],
+          "22": [
+            3245,
+            3245
+          ],
+          "17": [
+            1506,
+            1506
+          ],
+          "12": [
+            2892,
+            2892
+          ],
+          "21": [
+            2971,
+            2971
+          ],
+          "16": [
+            3022,
+            3022
+          ],
+          "11": [
+            3396,
+            3398
+          ],
+          "20": [
+            2755,
+            2755
+          ],
+          "15": [
+            1866,
+            1868
+          ],
+          "10": [
+            3521,
+            3521
+          ],
+          "19": [
+            3087,
+            3087
+          ],
+          "14": [
+            3524,
+            3524
+          ],
+          "0": [
+            3306,
+            3306
+          ]
+        },
+        "2026-06-10": {
+          "19": [
+            2950,
+            2950
+          ],
+          "14": [
+            1872,
+            1872
+          ],
+          "23": [
+            0,
+            0
+          ],
+          "0": [
+            3247,
+            3247
+          ],
+          "9": [
+            2390,
+            2390
+          ],
+          "18": [
+            2027,
+            2027
+          ],
+          "13": [
+            3037,
+            3037
+          ],
+          "22": [
+            0,
+            0
+          ],
+          "17": [
+            2945,
+            2945
+          ],
+          "12": [
+            2653,
+            2653
+          ],
+          "21": [
+            0,
+            0
+          ],
+          "16": [
+            3116,
+            3116
+          ],
+          "11": [
+            1792,
+            1792
+          ],
+          "20": [
+            2360,
+            2360
+          ],
+          "15": [
+            2380,
+            2380
+          ],
+          "10": [
+            3184,
+            3185
+          ]
+        },
+        "2026-06-11": {
+          "19": [
+            2765,
+            2765
+          ],
+          "14": [
+            3368,
+            3368
+          ],
+          "23": [
+            3434,
+            3434
+          ],
+          "18": [
+            2692,
+            2692
+          ],
+          "13": [
+            2376,
+            2376
+          ],
+          "22": [
+            3162,
+            3162
+          ],
+          "17": [
+            1475,
+            1475
+          ],
+          "12": [
+            3097,
+            3097
+          ],
+          "21": [
+            3289,
+            3289
+          ],
+          "16": [
+            2902,
+            2902
+          ],
+          "11": [
+            2153,
+            2153
+          ],
+          "20": [
+            3263,
+            3263
+          ],
+          "15": [
+            2422,
+            2424
+          ],
+          "10": [
+            0,
+            0
+          ]
+        },
+        "2026-06-12": {
+          "20": [
+            716,
+            716
+          ],
+          "15": [
+            3144,
+            3144
+          ],
+          "10": [
+            3188,
+            3188
+          ],
+          "19": [
+            3200,
+            3200
+          ],
+          "14": [
+            2774,
+            2774
+          ],
+          "0": [
+            3267,
+            3267
+          ],
+          "9": [
+            2093,
+            2093
+          ],
+          "18": [
+            2412,
+            2412
+          ],
+          "13": [
+            921,
+            921
+          ],
+          "17": [
+            2615,
+            2615
+          ],
+          "12": [
+            2050,
+            2050
+          ],
+          "16": [
+            3372,
+            3372
+          ],
+          "11": [
+            3497,
+            3497
           ]
         }
       },
       "gen2-102": {
-        "2026-04-27": {
-          "13": [
-            0,
-            1325
-          ],
-          "17": [
-            0,
-            1967
-          ],
-          "12": [
-            0,
-            5
-          ],
-          "16": [
-            0,
-            2217
-          ],
-          "11": [
-            1,
-            163
-          ],
-          "15": [
-            0,
-            3207
-          ],
-          "14": [
-            0,
-            2599
-          ]
-        },
-        "2026-04-28": {
-          "14": [
-            0,
-            1831
-          ],
-          "9": [
-            0,
-            2963
-          ],
-          "13": [
-            0,
-            3333
-          ],
-          "17": [
-            0,
-            3367
-          ],
-          "12": [
-            0,
-            3383
-          ],
-          "16": [
-            0,
-            2966
-          ],
-          "11": [
-            0,
-            1857
-          ],
-          "15": [
-            0,
-            3019
-          ],
-          "10": [
-            0,
-            2482
-          ]
-        },
-        "2026-04-29": {
-          "10": [
-            0,
-            3438
-          ],
-          "14": [
-            0,
-            2906
-          ],
-          "9": [
-            0,
-            2985
-          ],
-          "13": [
-            0,
-            3077
-          ],
-          "17": [
-            0,
-            2151
-          ],
-          "12": [
-            0,
-            3138
-          ],
-          "16": [
-            0,
-            3045
-          ],
-          "11": [
-            0,
-            2305
-          ],
-          "15": [
-            0,
-            3069
-          ]
-        },
-        "2026-04-30": {
-          "13": [
-            0,
-            3061
-          ],
-          "17": [
-            0,
-            3023
-          ],
-          "12": [
-            0,
-            1443
-          ],
-          "16": [
-            0,
-            3296
-          ],
-          "11": [
-            0,
-            2349
-          ],
-          "15": [
-            0,
-            3295
-          ],
-          "10": [
-            0,
-            3177
-          ],
-          "14": [
-            0,
-            2219
-          ],
-          "9": [
-            0,
-            2121
-          ]
-        },
-        "2026-05-01": {
-          "10": [
-            0,
-            188
-          ],
-          "14": [
-            0,
-            2412
-          ],
-          "9": [
-            0,
-            2674
-          ],
-          "13": [
-            0,
-            2517
-          ],
-          "16": [
-            0,
-            429
-          ],
-          "15": [
-            0,
-            2789
-          ]
-        },
         "2026-05-04": {
+          "15": [
+            0,
+            1996
+          ],
+          "14": [
+            0,
+            3053
+          ],
           "18": [
             0,
             697
@@ -14812,14 +16392,6 @@ export const LAB_SUPPORT_DATA = {
           "16": [
             0,
             2799
-          ],
-          "15": [
-            0,
-            1996
-          ],
-          "14": [
-            0,
-            3053
           ]
         },
         "2026-05-05": {
@@ -14869,38 +16441,6 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-06": {
-          "10": [
-            0,
-            3232
-          ],
-          "19": [
-            0,
-            199
-          ],
-          "14": [
-            0,
-            1227
-          ],
-          "23": [
-            15,
-            1489
-          ],
-          "0": [
-            180,
-            2897
-          ],
-          "9": [
-            0,
-            2542
-          ],
-          "18": [
-            0,
-            2494
-          ],
-          "13": [
-            0,
-            3124
-          ],
           "22": [
             0,
             2705
@@ -14932,9 +16472,61 @@ export const LAB_SUPPORT_DATA = {
           "15": [
             0,
             1376
+          ],
+          "10": [
+            0,
+            3232
+          ],
+          "19": [
+            0,
+            199
+          ],
+          "14": [
+            0,
+            1227
+          ],
+          "23": [
+            15,
+            1489
+          ],
+          "0": [
+            180,
+            2897
+          ],
+          "9": [
+            0,
+            2542
+          ],
+          "18": [
+            0,
+            2494
+          ],
+          "13": [
+            0,
+            3124
           ]
         },
         "2026-05-07": {
+          "17": [
+            3372,
+            3372
+          ],
+          "12": [
+            0,
+            2053
+          ],
+          "21": [
+            483,
+            483
+          ],
+          "16": [
+            3034,
+            3034
+          ],
+          "11": [
+            0,
+            367
+          ],
           "15": [
             2995,
             2995
@@ -14958,45 +16550,9 @@ export const LAB_SUPPORT_DATA = {
           "13": [
             961,
             2058
-          ],
-          "17": [
-            3372,
-            3372
-          ],
-          "12": [
-            0,
-            2053
-          ],
-          "21": [
-            483,
-            483
-          ],
-          "16": [
-            3034,
-            3034
-          ],
-          "11": [
-            0,
-            367
           ]
         },
         "2026-05-08": {
-          "15": [
-            797,
-            797
-          ],
-          "10": [
-            1328,
-            1328
-          ],
-          "14": [
-            851,
-            851
-          ],
-          "9": [
-            2783,
-            2783
-          ],
           "13": [
             2729,
             2729
@@ -15016,9 +16572,37 @@ export const LAB_SUPPORT_DATA = {
           "11": [
             2826,
             2826
+          ],
+          "15": [
+            797,
+            797
+          ],
+          "10": [
+            1328,
+            1328
+          ],
+          "14": [
+            851,
+            851
+          ],
+          "9": [
+            2783,
+            2783
           ]
         },
         "2026-05-11": {
+          "14": [
+            3299,
+            3299
+          ],
+          "9": [
+            2831,
+            2831
+          ],
+          "13": [
+            3093,
+            3093
+          ],
           "17": [
             2305,
             2305
@@ -15042,21 +16626,17 @@ export const LAB_SUPPORT_DATA = {
           "10": [
             3191,
             3191
-          ],
-          "14": [
-            3299,
-            3299
-          ],
-          "9": [
-            2831,
-            2831
-          ],
-          "13": [
-            3093,
-            3093
           ]
         },
         "2026-05-12": {
+          "16": [
+            1739,
+            1752
+          ],
+          "11": [
+            2587,
+            2587
+          ],
           "15": [
             2584,
             2584
@@ -15096,17 +16676,29 @@ export const LAB_SUPPORT_DATA = {
           "12": [
             2509,
             2509
-          ],
-          "16": [
-            1739,
-            1752
-          ],
-          "11": [
-            2587,
-            2587
           ]
         },
         "2026-05-13": {
+          "15": [
+            2472,
+            2472
+          ],
+          "10": [
+            3328,
+            3328
+          ],
+          "19": [
+            705,
+            705
+          ],
+          "14": [
+            2047,
+            2047
+          ],
+          "0": [
+            0,
+            0
+          ],
           "9": [
             2977,
             2977
@@ -15134,26 +16726,6 @@ export const LAB_SUPPORT_DATA = {
           "11": [
             3203,
             3203
-          ],
-          "15": [
-            2472,
-            2472
-          ],
-          "10": [
-            3328,
-            3328
-          ],
-          "19": [
-            705,
-            705
-          ],
-          "14": [
-            2047,
-            2047
-          ],
-          "0": [
-            0,
-            0
           ]
         },
         "2026-05-14": {
@@ -15199,6 +16771,18 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-15": {
+          "13": [
+            3025,
+            3025
+          ],
+          "12": [
+            3087,
+            3087
+          ],
+          "11": [
+            2936,
+            2936
+          ],
           "15": [
             1531,
             1531
@@ -15214,21 +16798,25 @@ export const LAB_SUPPORT_DATA = {
           "9": [
             2495,
             2495
-          ],
-          "13": [
-            3025,
-            3025
-          ],
-          "12": [
-            3087,
-            3087
-          ],
-          "11": [
-            2936,
-            2936
           ]
         },
         "2026-05-18": {
+          "11": [
+            445,
+            445
+          ],
+          "20": [
+            193,
+            193
+          ],
+          "15": [
+            2326,
+            2326
+          ],
+          "10": [
+            1789,
+            1789
+          ],
           "14": [
             2258,
             2258
@@ -15264,25 +16852,33 @@ export const LAB_SUPPORT_DATA = {
           "16": [
             1313,
             1313
-          ],
-          "11": [
-            445,
-            445
-          ],
-          "20": [
-            193,
-            193
-          ],
-          "15": [
-            2326,
-            2326
-          ],
-          "10": [
-            1789,
-            1789
           ]
         },
         "2026-05-19": {
+          "21": [
+            3488,
+            3488
+          ],
+          "16": [
+            2974,
+            2974
+          ],
+          "11": [
+            2466,
+            2466
+          ],
+          "20": [
+            3468,
+            3468
+          ],
+          "15": [
+            2846,
+            2846
+          ],
+          "10": [
+            1522,
+            1522
+          ],
           "19": [
             3433,
             3433
@@ -15318,37 +16914,9 @@ export const LAB_SUPPORT_DATA = {
           "12": [
             184,
             184
-          ],
-          "21": [
-            3488,
-            3488
-          ],
-          "16": [
-            2974,
-            2974
-          ],
-          "11": [
-            2466,
-            2466
-          ],
-          "20": [
-            3468,
-            3468
-          ],
-          "15": [
-            2846,
-            2846
-          ],
-          "10": [
-            1522,
-            1522
           ]
         },
         "2026-05-20": {
-          "12": [
-            1576,
-            1576
-          ],
           "11": [
             3345,
             3345
@@ -15388,33 +16956,13 @@ export const LAB_SUPPORT_DATA = {
           "13": [
             291,
             291
+          ],
+          "12": [
+            1576,
+            1576
           ]
         },
         "2026-05-21": {
-          "0": [
-            2342,
-            2342
-          ],
-          "9": [
-            2468,
-            2468
-          ],
-          "13": [
-            3354,
-            3354
-          ],
-          "22": [
-            2534,
-            2534
-          ],
-          "17": [
-            2748,
-            2748
-          ],
-          "12": [
-            1983,
-            1983
-          ],
           "21": [
             3413,
             3413
@@ -15454,13 +17002,33 @@ export const LAB_SUPPORT_DATA = {
           "23": [
             2677,
             2677
+          ],
+          "0": [
+            2342,
+            2342
+          ],
+          "9": [
+            2468,
+            2468
+          ],
+          "13": [
+            3354,
+            3354
+          ],
+          "22": [
+            2534,
+            2534
+          ],
+          "17": [
+            2748,
+            2748
+          ],
+          "12": [
+            1983,
+            1983
           ]
         },
         "2026-05-22": {
-          "13": [
-            1508,
-            1508
-          ],
           "17": [
             2933,
             2933
@@ -15504,17 +17072,13 @@ export const LAB_SUPPORT_DATA = {
           "18": [
             2990,
             2990
+          ],
+          "13": [
+            1508,
+            1508
           ]
         },
         "2026-05-26": {
-          "15": [
-            0,
-            0
-          ],
-          "23": [
-            2665,
-            2665
-          ],
           "22": [
             3158,
             3158
@@ -15526,9 +17090,41 @@ export const LAB_SUPPORT_DATA = {
           "16": [
             159,
             159
+          ],
+          "15": [
+            0,
+            0
+          ],
+          "23": [
+            2665,
+            2665
           ]
         },
         "2026-05-27": {
+          "18": [
+            0,
+            0
+          ],
+          "13": [
+            3233,
+            3233
+          ],
+          "17": [
+            161,
+            161
+          ],
+          "12": [
+            3456,
+            3456
+          ],
+          "16": [
+            1573,
+            1573
+          ],
+          "11": [
+            89,
+            89
+          ],
           "20": [
             0,
             0
@@ -15556,30 +17152,6 @@ export const LAB_SUPPORT_DATA = {
           "9": [
             502,
             502
-          ],
-          "18": [
-            0,
-            0
-          ],
-          "13": [
-            3233,
-            3233
-          ],
-          "17": [
-            161,
-            161
-          ],
-          "12": [
-            3456,
-            3456
-          ],
-          "16": [
-            1573,
-            1573
-          ],
-          "11": [
-            89,
-            89
           ]
         },
         "2026-05-28": {
@@ -15641,9 +17213,21 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-29": {
+          "14": [
+            0,
+            0
+          ],
+          "0": [
+            2438,
+            2438
+          ],
           "23": [
             3413,
             3413
+          ],
+          "9": [
+            2559,
+            2560
           ],
           "18": [
             2801,
@@ -15692,18 +17276,6 @@ export const LAB_SUPPORT_DATA = {
           "19": [
             3312,
             3312
-          ],
-          "14": [
-            0,
-            0
-          ],
-          "0": [
-            2438,
-            2438
-          ],
-          "9": [
-            2559,
-            2560
           ]
         },
         "2026-05-30": {
@@ -15721,14 +17293,6 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-06-01": {
-          "22": [
-            1534,
-            1534
-          ],
-          "17": [
-            2644,
-            2644
-          ],
           "12": [
             3429,
             3429
@@ -15780,21 +17344,17 @@ export const LAB_SUPPORT_DATA = {
           "13": [
             2246,
             2246
+          ],
+          "22": [
+            1534,
+            1534
+          ],
+          "17": [
+            2644,
+            2644
           ]
         },
         "2026-06-02": {
-          "23": [
-            2583,
-            2585
-          ],
-          "9": [
-            2639,
-            2639
-          ],
-          "18": [
-            2629,
-            2629
-          ],
           "13": [
             1788,
             1788
@@ -15843,40 +17403,24 @@ export const LAB_SUPPORT_DATA = {
             2653,
             2696
           ],
+          "23": [
+            2583,
+            2585
+          ],
           "0": [
             3411,
             3411
+          ],
+          "9": [
+            2639,
+            2639
+          ],
+          "18": [
+            2629,
+            2629
           ]
         },
         "2026-06-03": {
-          "15": [
-            3202,
-            3202
-          ],
-          "10": [
-            2878,
-            2878
-          ],
-          "19": [
-            3100,
-            3100
-          ],
-          "14": [
-            3119,
-            3119
-          ],
-          "23": [
-            1020,
-            1020
-          ],
-          "0": [
-            3056,
-            3056
-          ],
-          "9": [
-            1650,
-            1650
-          ],
           "18": [
             3128,
             3128
@@ -15912,9 +17456,57 @@ export const LAB_SUPPORT_DATA = {
           "20": [
             3267,
             3267
+          ],
+          "15": [
+            3202,
+            3202
+          ],
+          "10": [
+            2878,
+            2878
+          ],
+          "19": [
+            3100,
+            3100
+          ],
+          "14": [
+            3119,
+            3119
+          ],
+          "23": [
+            1020,
+            1020
+          ],
+          "0": [
+            3056,
+            3056
+          ],
+          "9": [
+            1650,
+            1650
           ]
         },
         "2026-06-04": {
+          "11": [
+            3551,
+            3551
+          ],
+          "20": [
+            2196,
+            2196
+          ],
+          "15": [
+            3061,
+            3061
+          ],
+          "10": [
+            3466,
+            3466
+          ],
+          "19": [
+            3174,
+            3174
+          ],
           "14": [
             2848,
             2849
@@ -15922,6 +17514,10 @@ export const LAB_SUPPORT_DATA = {
           "23": [
             2991,
             2991
+          ],
+          "0": [
+            1903,
+            1903
           ],
           "9": [
             1468,
@@ -15954,33 +17550,29 @@ export const LAB_SUPPORT_DATA = {
           "16": [
             3304,
             3304
-          ],
-          "11": [
-            3551,
-            3551
-          ],
-          "20": [
-            2196,
-            2196
-          ],
-          "15": [
-            3061,
-            3061
-          ],
-          "10": [
-            3466,
-            3466
-          ],
-          "19": [
-            3174,
-            3174
-          ],
-          "0": [
-            1903,
-            1903
           ]
         },
         "2026-06-05": {
+          "19": [
+            3306,
+            3306
+          ],
+          "14": [
+            3003,
+            3003
+          ],
+          "23": [
+            2728,
+            2728
+          ],
+          "0": [
+            3341,
+            3341
+          ],
+          "9": [
+            2095,
+            2095
+          ],
           "18": [
             2141,
             2141
@@ -15989,6 +17581,10 @@ export const LAB_SUPPORT_DATA = {
             2945,
             2945
           ],
+          "22": [
+            3435,
+            3435
+          ],
           "17": [
             2128,
             2128
@@ -15996,6 +17592,10 @@ export const LAB_SUPPORT_DATA = {
           "12": [
             3506,
             3506
+          ],
+          "21": [
+            2045,
+            2045
           ],
           "16": [
             2922,
@@ -16006,8 +17606,8 @@ export const LAB_SUPPORT_DATA = {
             3546
           ],
           "20": [
-            91,
-            91
+            3467,
+            3467
           ],
           "15": [
             2323,
@@ -16020,303 +17620,327 @@ export const LAB_SUPPORT_DATA = {
           "10": [
             3311,
             3311
+          ]
+        },
+        "2026-06-06": {
+          "0": [
+            3139,
+            3139
+          ]
+        },
+        "2026-06-08": {
+          "11": [
+            2867,
+            2867
+          ],
+          "20": [
+            3366,
+            3366
+          ],
+          "15": [
+            2886,
+            2888
+          ],
+          "10": [
+            3362,
+            3362
           ],
           "19": [
-            3306,
-            3306
+            3425,
+            3425
           ],
           "14": [
-            3003,
-            3003
-          ],
-          "0": [
-            3341,
-            3341
+            2708,
+            2708
           ],
           "9": [
-            2095,
-            2095
+            2254,
+            2254
+          ],
+          "23": [
+            2770,
+            2770
+          ],
+          "18": [
+            2776,
+            2779
+          ],
+          "13": [
+            2924,
+            2924
+          ],
+          "22": [
+            3177,
+            3177
+          ],
+          "17": [
+            3177,
+            3177
+          ],
+          "12": [
+            3291,
+            3291
+          ],
+          "21": [
+            2274,
+            2274
+          ],
+          "16": [
+            3549,
+            3549
+          ]
+        },
+        "2026-06-09": {
+          "23": [
+            2756,
+            2756
+          ],
+          "9": [
+            1543,
+            1543
+          ],
+          "18": [
+            2321,
+            2321
+          ],
+          "13": [
+            2644,
+            2644
+          ],
+          "22": [
+            3437,
+            3437
+          ],
+          "17": [
+            2962,
+            2962
+          ],
+          "12": [
+            0,
+            0
+          ],
+          "21": [
+            3258,
+            3258
+          ],
+          "16": [
+            3474,
+            3474
+          ],
+          "11": [
+            2311,
+            2311
+          ],
+          "20": [
+            3285,
+            3285
+          ],
+          "15": [
+            2906,
+            2906
+          ],
+          "10": [
+            2565,
+            2565
+          ],
+          "19": [
+            3362,
+            3362
+          ],
+          "14": [
+            2540,
+            2540
+          ],
+          "0": [
+            2936,
+            2936
+          ]
+        },
+        "2026-06-10": {
+          "19": [
+            3310,
+            3310
+          ],
+          "14": [
+            1821,
+            1821
+          ],
+          "23": [
+            3375,
+            3375
+          ],
+          "0": [
+            3162,
+            3162
+          ],
+          "9": [
+            3142,
+            3142
+          ],
+          "18": [
+            1617,
+            1617
+          ],
+          "13": [
+            3548,
+            3548
+          ],
+          "22": [
+            3063,
+            3063
+          ],
+          "17": [
+            2825,
+            2825
+          ],
+          "12": [
+            3466,
+            3466
+          ],
+          "21": [
+            2869,
+            2869
+          ],
+          "16": [
+            3449,
+            3449
+          ],
+          "11": [
+            3446,
+            3446
+          ],
+          "20": [
+            3194,
+            3194
+          ],
+          "15": [
+            3525,
+            3525
+          ],
+          "10": [
+            3135,
+            3135
+          ]
+        },
+        "2026-06-11": {
+          "19": [
+            3078,
+            3078
+          ],
+          "14": [
+            3555,
+            3555
+          ],
+          "23": [
+            2421,
+            2845
+          ],
+          "0": [
+            2975,
+            2975
+          ],
+          "9": [
+            2090,
+            2090
+          ],
+          "18": [
+            2586,
+            2586
+          ],
+          "13": [
+            3449,
+            3449
+          ],
+          "22": [
+            3066,
+            3066
+          ],
+          "17": [
+            3481,
+            3481
+          ],
+          "12": [
+            3212,
+            3212
+          ],
+          "21": [
+            2877,
+            2877
+          ],
+          "16": [
+            3005,
+            3005
+          ],
+          "11": [
+            3137,
+            3137
+          ],
+          "20": [
+            3022,
+            3022
+          ],
+          "15": [
+            3297,
+            3297
+          ],
+          "10": [
+            2840,
+            2840
+          ]
+        },
+        "2026-06-12": {
+          "15": [
+            2857,
+            2857
+          ],
+          "10": [
+            3540,
+            3542
+          ],
+          "19": [
+            2651,
+            2651
+          ],
+          "14": [
+            3499,
+            3499
+          ],
+          "0": [
+            1997,
+            1997
+          ],
+          "9": [
+            2316,
+            2316
+          ],
+          "18": [
+            2851,
+            2851
+          ],
+          "13": [
+            3001,
+            3001
+          ],
+          "17": [
+            3537,
+            3537
+          ],
+          "12": [
+            3070,
+            3070
+          ],
+          "16": [
+            2618,
+            2618
+          ],
+          "11": [
+            2302,
+            2302
           ]
         }
       },
       "gen2-008": {
-        "2026-04-27": {
-          "13": [
-            0,
-            2809
-          ],
-          "15": [
-            0,
-            1851
-          ],
-          "17": [
-            0,
-            3263
-          ],
-          "10": [
-            0,
-            2706
-          ],
-          "12": [
-            0,
-            3316
-          ],
-          "14": [
-            0,
-            2704
-          ],
-          "16": [
-            0,
-            390
-          ],
-          "9": [
-            0,
-            2703
-          ],
-          "11": [
-            0,
-            2812
-          ]
-        },
-        "2026-04-28": {
-          "14": [
-            0,
-            3399
-          ],
-          "23": [
-            8,
-            2904
-          ],
-          "16": [
-            272,
-            3235
-          ],
-          "9": [
-            0,
-            3318
-          ],
-          "18": [
-            0,
-            2584
-          ],
-          "11": [
-            0,
-            2129
-          ],
-          "20": [
-            0,
-            3084
-          ],
-          "13": [
-            0,
-            3333
-          ],
-          "22": [
-            0,
-            984
-          ],
-          "15": [
-            0,
-            3297
-          ],
-          "17": [
-            0,
-            3080
-          ],
-          "10": [
-            0,
-            3419
-          ],
-          "19": [
-            0,
-            2492
-          ],
-          "12": [
-            0,
-            2937
-          ],
-          "21": [
-            0,
-            1576
-          ]
-        },
-        "2026-04-29": {
-          "10": [
-            10,
-            3396
-          ],
-          "19": [
-            16,
-            2453
-          ],
-          "12": [
-            0,
-            1907
-          ],
-          "21": [
-            0,
-            2675
-          ],
-          "14": [
-            0,
-            46
-          ],
-          "16": [
-            0,
-            1933
-          ],
-          "0": [
-            0,
-            3219
-          ],
-          "9": [
-            0,
-            2714
-          ],
-          "23": [
-            0,
-            3461
-          ],
-          "18": [
-            0,
-            2550
-          ],
-          "11": [
-            0,
-            2985
-          ],
-          "20": [
-            0,
-            3289
-          ],
-          "22": [
-            0,
-            3201
-          ],
-          "15": [
-            0,
-            299
-          ],
-          "17": [
-            0,
-            2964
-          ]
-        },
-        "2026-04-30": {
-          "15": [
-            0,
-            28
-          ],
-          "17": [
-            0,
-            727
-          ],
-          "10": [
-            0,
-            3519
-          ],
-          "16": [
-            0,
-            711
-          ],
-          "0": [
-            0,
-            2632
-          ],
-          "9": [
-            0,
-            2977
-          ],
-          "18": [
-            0,
-            34
-          ],
-          "11": [
-            0,
-            406
-          ]
-        },
-        "2026-05-01": {
-          "17": [
-            4,
-            2664
-          ],
-          "10": [
-            0,
-            3209
-          ],
-          "19": [
-            0,
-            3135
-          ],
-          "12": [
-            0,
-            586
-          ],
-          "21": [
-            0,
-            3090
-          ],
-          "14": [
-            0,
-            337
-          ],
-          "23": [
-            0,
-            3324
-          ],
-          "16": [
-            0,
-            3180
-          ],
-          "9": [
-            0,
-            2031
-          ],
-          "18": [
-            0,
-            1697
-          ],
-          "11": [
-            2,
-            1820
-          ],
-          "13": [
-            0,
-            950
-          ],
-          "20": [
-            0,
-            3474
-          ],
-          "22": [
-            0,
-            3008
-          ],
-          "15": [
-            0,
-            2461
-          ]
-        },
-        "2026-05-02": {
-          "0": [
-            0,
-            869
-          ]
-        },
         "2026-05-04": {
-          "18": [
-            0,
-            1024
-          ],
-          "11": [
-            0,
-            2453
-          ],
-          "20": [
-            0,
-            2740
-          ],
           "13": [
             14,
             307
@@ -16352,6 +17976,18 @@ export const LAB_SUPPORT_DATA = {
           "23": [
             0,
             3526
+          ],
+          "18": [
+            0,
+            1024
+          ],
+          "11": [
+            0,
+            2453
+          ],
+          "20": [
+            0,
+            2740
           ]
         },
         "2026-05-05": {
@@ -16393,6 +18029,18 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-06": {
+          "20": [
+            0,
+            3355
+          ],
+          "22": [
+            0,
+            3070
+          ],
+          "15": [
+            0,
+            2196
+          ],
           "17": [
             0,
             1263
@@ -16433,21 +18081,9 @@ export const LAB_SUPPORT_DATA = {
             0,
             0
           ],
-          "20": [
-            0,
-            3355
-          ],
           "13": [
             0,
             211
-          ],
-          "22": [
-            0,
-            3070
-          ],
-          "15": [
-            0,
-            2196
           ]
         },
         "2026-05-07": {
@@ -16517,6 +18153,30 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-08": {
+          "23": [
+            3342,
+            3342
+          ],
+          "16": [
+            3442,
+            3442
+          ],
+          "18": [
+            2003,
+            2003
+          ],
+          "11": [
+            3417,
+            3417
+          ],
+          "20": [
+            3405,
+            3405
+          ],
+          "13": [
+            2784,
+            2784
+          ],
           "22": [
             2947,
             2947
@@ -16549,14 +18209,6 @@ export const LAB_SUPPORT_DATA = {
             3442,
             3444
           ],
-          "23": [
-            3342,
-            3342
-          ],
-          "16": [
-            3442,
-            3442
-          ],
           "0": [
             3298,
             3299
@@ -16564,22 +18216,6 @@ export const LAB_SUPPORT_DATA = {
           "9": [
             2523,
             2523
-          ],
-          "18": [
-            2003,
-            2003
-          ],
-          "11": [
-            3417,
-            3417
-          ],
-          "20": [
-            3405,
-            3405
-          ],
-          "13": [
-            2784,
-            2784
           ]
         },
         "2026-05-09": {
@@ -16589,26 +18225,6 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-11": {
-          "15": [
-            2103,
-            2103
-          ],
-          "17": [
-            3206,
-            3206
-          ],
-          "10": [
-            3175,
-            3175
-          ],
-          "19": [
-            3195,
-            3195
-          ],
-          "12": [
-            2210,
-            2210
-          ],
           "21": [
             3279,
             3279
@@ -16652,9 +18268,53 @@ export const LAB_SUPPORT_DATA = {
           "22": [
             2785,
             2785
+          ],
+          "15": [
+            2103,
+            2103
+          ],
+          "17": [
+            3206,
+            3206
+          ],
+          "10": [
+            3175,
+            3175
+          ],
+          "19": [
+            3195,
+            3195
+          ],
+          "12": [
+            2210,
+            2210
           ]
         },
         "2026-05-12": {
+          "23": [
+            3484,
+            3484
+          ],
+          "16": [
+            3317,
+            3317
+          ],
+          "9": [
+            2174,
+            2174
+          ],
+          "18": [
+            1406,
+            1406
+          ],
+          "11": [
+            3567,
+            3567
+          ],
+          "20": [
+            3168,
+            3168
+          ],
           "13": [
             0,
             0
@@ -16691,55 +18351,15 @@ export const LAB_SUPPORT_DATA = {
             2237,
             2237
           ],
-          "23": [
-            3484,
-            3484
-          ],
-          "16": [
-            3317,
-            3317
-          ],
           "0": [
             3251,
             3251
-          ],
-          "9": [
-            2174,
-            2174
-          ],
-          "18": [
-            1406,
-            1406
-          ],
-          "11": [
-            3567,
-            3567
-          ],
-          "20": [
-            3168,
-            3168
           ]
         },
         "2026-05-13": {
-          "23": [
-            3330,
-            3330
-          ],
-          "16": [
-            3220,
-            3220
-          ],
-          "9": [
-            3278,
-            3278
-          ],
           "18": [
             3075,
             3075
-          ],
-          "11": [
-            2093,
-            2093
           ],
           "20": [
             3000,
@@ -16781,12 +18401,36 @@ export const LAB_SUPPORT_DATA = {
             2543,
             2543
           ],
+          "23": [
+            3330,
+            3330
+          ],
+          "16": [
+            3220,
+            3220
+          ],
           "0": [
             3462,
             3462
+          ],
+          "9": [
+            3278,
+            3278
+          ],
+          "11": [
+            2093,
+            2093
           ]
         },
         "2026-05-14": {
+          "0": [
+            3181,
+            3181
+          ],
+          "9": [
+            694,
+            694
+          ],
           "18": [
             3289,
             3289
@@ -16842,17 +18486,25 @@ export const LAB_SUPPORT_DATA = {
           "16": [
             3489,
             3489
-          ],
-          "0": [
-            3181,
-            3181
-          ],
-          "9": [
-            694,
-            694
           ]
         },
         "2026-05-15": {
+          "18": [
+            2823,
+            2823
+          ],
+          "11": [
+            1761,
+            1761
+          ],
+          "20": [
+            2723,
+            2723
+          ],
+          "13": [
+            3072,
+            3072
+          ],
           "22": [
             2382,
             2382
@@ -16900,22 +18552,6 @@ export const LAB_SUPPORT_DATA = {
           "9": [
             2168,
             2168
-          ],
-          "18": [
-            2823,
-            2823
-          ],
-          "11": [
-            1761,
-            1761
-          ],
-          "20": [
-            2723,
-            2723
-          ],
-          "13": [
-            3072,
-            3072
           ]
         },
         "2026-05-16": {
@@ -16925,22 +18561,6 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-18": {
-          "21": [
-            2347,
-            2347
-          ],
-          "14": [
-            2922,
-            2922
-          ],
-          "23": [
-            3307,
-            3307
-          ],
-          "16": [
-            3563,
-            3563
-          ],
           "9": [
             162,
             162
@@ -16984,20 +18604,28 @@ export const LAB_SUPPORT_DATA = {
           "12": [
             3388,
             3388
+          ],
+          "21": [
+            2347,
+            2347
+          ],
+          "14": [
+            2922,
+            2922
+          ],
+          "23": [
+            3307,
+            3307
+          ],
+          "16": [
+            3563,
+            3563
           ]
         },
         "2026-05-19": {
-          "19": [
-            3231,
-            3231
-          ],
           "21": [
             2511,
             2511
-          ],
-          "14": [
-            3436,
-            3438
           ],
           "23": [
             3155,
@@ -17006,10 +18634,6 @@ export const LAB_SUPPORT_DATA = {
           "16": [
             909,
             909
-          ],
-          "0": [
-            2621,
-            2621
           ],
           "9": [
             2294,
@@ -17047,48 +18671,24 @@ export const LAB_SUPPORT_DATA = {
             1865,
             1865
           ],
+          "19": [
+            3231,
+            3231
+          ],
           "12": [
             2783,
             2783
+          ],
+          "14": [
+            3436,
+            3438
+          ],
+          "0": [
+            2621,
+            2621
           ]
         },
         "2026-05-20": {
-          "22": [
-            2545,
-            2545
-          ],
-          "15": [
-            2536,
-            2536
-          ],
-          "8": [
-            63,
-            63
-          ],
-          "17": [
-            2883,
-            2883
-          ],
-          "1": [
-            19,
-            19
-          ],
-          "10": [
-            2817,
-            2817
-          ],
-          "19": [
-            3128,
-            3128
-          ],
-          "12": [
-            2664,
-            2664
-          ],
-          "21": [
-            3180,
-            3180
-          ],
           "14": [
             3125,
             3125
@@ -17124,9 +18724,65 @@ export const LAB_SUPPORT_DATA = {
           "13": [
             3542,
             3542
+          ],
+          "22": [
+            2545,
+            2545
+          ],
+          "15": [
+            2536,
+            2536
+          ],
+          "8": [
+            63,
+            63
+          ],
+          "17": [
+            2883,
+            2883
+          ],
+          "1": [
+            19,
+            19
+          ],
+          "10": [
+            2817,
+            2817
+          ],
+          "19": [
+            3128,
+            3128
+          ],
+          "12": [
+            2664,
+            2664
+          ],
+          "21": [
+            3180,
+            3180
           ]
         },
         "2026-05-21": {
+          "19": [
+            2370,
+            2370
+          ],
+          "21": [
+            3103,
+            3103
+          ],
+          "14": [
+            3089,
+            3089
+          ],
+          "23": [
+            2880,
+            2922
+          ],
+          "16": [
+            269,
+            270
+          ],
           "0": [
             4,
             4
@@ -17135,13 +18791,13 @@ export const LAB_SUPPORT_DATA = {
             2785,
             2785
           ],
-          "11": [
-            1019,
-            1019
-          ],
           "18": [
             3124,
             3124
+          ],
+          "11": [
+            1019,
+            1019
           ],
           "20": [
             3055,
@@ -17167,55 +18823,27 @@ export const LAB_SUPPORT_DATA = {
             2812,
             2813
           ],
-          "19": [
-            2370,
-            2370
-          ],
           "12": [
             1024,
             1024
-          ],
-          "21": [
-            3103,
-            3103
-          ],
-          "14": [
-            3089,
-            3089
-          ],
-          "23": [
-            2880,
-            2922
-          ],
-          "16": [
-            269,
-            270
           ]
         },
         "2026-05-22": {
-          "20": [
-            3047,
-            3047
+          "15": [
+            1006,
+            1006
           ],
-          "13": [
-            2538,
-            2538
+          "1": [
+            88,
+            88
           ],
           "22": [
             2680,
             2680
           ],
-          "15": [
-            1006,
-            1006
-          ],
           "17": [
             3054,
             3054
-          ],
-          "1": [
-            88,
-            88
           ],
           "10": [
             2820,
@@ -17260,19 +18888,35 @@ export const LAB_SUPPORT_DATA = {
           "11": [
             2390,
             2390
+          ],
+          "20": [
+            3047,
+            3047
+          ],
+          "13": [
+            2538,
+            2538
           ]
         },
         "2026-05-23": {
-          "1": [
-            9,
-            9
-          ],
           "0": [
             3532,
             3532
+          ],
+          "1": [
+            9,
+            9
           ]
         },
         "2026-05-26": {
+          "15": [
+            0,
+            0
+          ],
+          "17": [
+            0,
+            0
+          ],
           "10": [
             1905,
             1905
@@ -17281,6 +18925,14 @@ export const LAB_SUPPORT_DATA = {
             261,
             261
           ],
+          "14": [
+            0,
+            0
+          ],
+          "16": [
+            0,
+            0
+          ],
           "9": [
             1893,
             1893
@@ -17288,12 +18940,14 @@ export const LAB_SUPPORT_DATA = {
           "11": [
             2687,
             2687
+          ],
+          "13": [
+            0,
+            0
           ]
-        }
-      },
-      "gen2-117": {
-        "2026-05-22": {
-          "18": [
+        },
+        "2026-06-12": {
+          "15": [
             0,
             0
           ],
@@ -17301,7 +18955,23 @@ export const LAB_SUPPORT_DATA = {
             0,
             0
           ],
+          "16": [
+            0,
+            0
+          ]
+        }
+      },
+      "gen2-117": {
+        "2026-05-22": {
           "20": [
+            0,
+            0
+          ],
+          "17": [
+            0,
+            0
+          ],
+          "18": [
             0,
             0
           ],
@@ -17315,10 +18985,6 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-27": {
-          "19": [
-            475,
-            475
-          ],
           "21": [
             332,
             332
@@ -17326,6 +18992,10 @@ export const LAB_SUPPORT_DATA = {
           "18": [
             74,
             74
+          ],
+          "19": [
+            475,
+            475
           ]
         },
         "2026-05-28": {
@@ -17337,192 +19007,38 @@ export const LAB_SUPPORT_DATA = {
             108,
             108
           ]
+        },
+        "2026-06-10": {
+          "14": [
+            190,
+            190
+          ],
+          "17": [
+            433,
+            433
+          ],
+          "13": [
+            886,
+            886
+          ]
+        },
+        "2026-06-11": {
+          "12": [
+            712,
+            712
+          ],
+          "10": [
+            789,
+            791
+          ],
+          "11": [
+            49,
+            49
+          ]
         }
       },
       "gen2-004": {
-        "2026-04-27": {
-          "13": [
-            371,
-            3341
-          ],
-          "15": [
-            0,
-            2293
-          ],
-          "8": [
-            0,
-            1457
-          ],
-          "17": [
-            0,
-            2848
-          ],
-          "10": [
-            0,
-            1676
-          ],
-          "12": [
-            575,
-            1284
-          ],
-          "14": [
-            0,
-            3046
-          ],
-          "16": [
-            0,
-            2732
-          ],
-          "9": [
-            0,
-            2295
-          ],
-          "18": [
-            0,
-            1782
-          ],
-          "11": [
-            0,
-            2131
-          ]
-        },
-        "2026-04-28": {
-          "14": [
-            0,
-            386
-          ],
-          "9": [
-            0,
-            2814
-          ],
-          "11": [
-            0,
-            3469
-          ],
-          "13": [
-            129,
-            3510
-          ],
-          "15": [
-            0,
-            1225
-          ],
-          "8": [
-            0,
-            1689
-          ],
-          "17": [
-            0,
-            1029
-          ],
-          "10": [
-            0,
-            2584
-          ],
-          "12": [
-            10,
-            2943
-          ]
-        },
-        "2026-04-29": {
-          "10": [
-            0,
-            2676
-          ],
-          "12": [
-            0,
-            1568
-          ],
-          "9": [
-            0,
-            1072
-          ],
-          "11": [
-            0,
-            3410
-          ],
-          "8": [
-            0,
-            2988
-          ]
-        },
-        "2026-04-30": {
-          "13": [
-            631,
-            631
-          ],
-          "8": [
-            0,
-            1423
-          ],
-          "10": [
-            0,
-            3234
-          ],
-          "12": [
-            0,
-            216
-          ],
-          "14": [
-            488,
-            488
-          ],
-          "9": [
-            0,
-            2941
-          ],
-          "11": [
-            0,
-            3262
-          ]
-        },
-        "2026-05-01": {
-          "8": [
-            0,
-            846
-          ],
-          "17": [
-            0,
-            96
-          ],
-          "10": [
-            0,
-            1283
-          ],
-          "14": [
-            0,
-            3099
-          ],
-          "16": [
-            0,
-            3458
-          ],
-          "9": [
-            0,
-            2591
-          ],
-          "13": [
-            7,
-            3327
-          ],
-          "15": [
-            0,
-            3336
-          ]
-        },
         "2026-05-04": {
-          "18": [
-            0,
-            3501
-          ],
-          "11": [
-            0,
-            407
-          ],
-          "20": [
-            0,
-            1297
-          ],
           "13": [
             0,
             3483
@@ -17562,6 +19078,18 @@ export const LAB_SUPPORT_DATA = {
           "9": [
             0,
             2158
+          ],
+          "18": [
+            0,
+            3501
+          ],
+          "11": [
+            0,
+            407
+          ],
+          "20": [
+            0,
+            1297
           ]
         },
         "2026-05-05": {
@@ -17599,6 +19127,10 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-06": {
+          "8": [
+            0,
+            994
+          ],
           "10": [
             0,
             3288
@@ -17614,16 +19146,16 @@ export const LAB_SUPPORT_DATA = {
           "11": [
             535,
             2652
-          ],
-          "8": [
-            0,
-            994
           ]
         },
         "2026-05-07": {
           "15": [
             285,
             285
+          ],
+          "8": [
+            0,
+            2506
           ],
           "10": [
             0,
@@ -17640,13 +19172,21 @@ export const LAB_SUPPORT_DATA = {
           "11": [
             5,
             588
-          ],
-          "8": [
-            0,
-            2506
           ]
         },
         "2026-05-08": {
+          "11": [
+            695,
+            695
+          ],
+          "13": [
+            2745,
+            2745
+          ],
+          "8": [
+            1279,
+            1279
+          ],
           "10": [
             90,
             90
@@ -17662,25 +19202,9 @@ export const LAB_SUPPORT_DATA = {
           "9": [
             2720,
             2720
-          ],
-          "11": [
-            695,
-            695
-          ],
-          "13": [
-            2745,
-            2745
-          ],
-          "8": [
-            1279,
-            1279
           ]
         },
         "2026-05-11": {
-          "8": [
-            1734,
-            1734
-          ],
           "14": [
             14,
             14
@@ -17692,9 +19216,21 @@ export const LAB_SUPPORT_DATA = {
           "13": [
             1454,
             1454
+          ],
+          "8": [
+            1734,
+            1734
           ]
         },
         "2026-05-12": {
+          "9": [
+            2227,
+            2227
+          ],
+          "11": [
+            2034,
+            2034
+          ],
           "13": [
             2654,
             2654
@@ -17714,25 +19250,9 @@ export const LAB_SUPPORT_DATA = {
           "14": [
             9,
             9
-          ],
-          "9": [
-            2227,
-            2227
-          ],
-          "11": [
-            2034,
-            2034
           ]
         },
         "2026-05-13": {
-          "9": [
-            2848,
-            2848
-          ],
-          "11": [
-            3546,
-            3546
-          ],
           "13": [
             2201,
             2201
@@ -17756,9 +19276,21 @@ export const LAB_SUPPORT_DATA = {
           "14": [
             3227,
             3227
+          ],
+          "9": [
+            2848,
+            2848
+          ],
+          "11": [
+            3546,
+            3546
           ]
         },
         "2026-05-14": {
+          "9": [
+            2313,
+            2313
+          ],
           "11": [
             1939,
             1939
@@ -17786,13 +19318,17 @@ export const LAB_SUPPORT_DATA = {
           "14": [
             14,
             14
-          ],
-          "9": [
-            2313,
-            2313
           ]
         },
         "2026-05-15": {
+          "11": [
+            742,
+            742
+          ],
+          "13": [
+            3309,
+            3309
+          ],
           "15": [
             2162,
             2162
@@ -17812,25 +19348,9 @@ export const LAB_SUPPORT_DATA = {
           "9": [
             1966,
             1966
-          ],
-          "11": [
-            742,
-            742
-          ],
-          "13": [
-            3309,
-            3309
           ]
         },
         "2026-05-18": {
-          "14": [
-            2627,
-            2627
-          ],
-          "16": [
-            1370,
-            1370
-          ],
           "9": [
             2422,
             2422
@@ -17858,13 +19378,17 @@ export const LAB_SUPPORT_DATA = {
           "12": [
             1630,
             1630
+          ],
+          "14": [
+            2627,
+            2627
+          ],
+          "16": [
+            1370,
+            1370
           ]
         },
         "2026-05-19": {
-          "14": [
-            2708,
-            2708
-          ],
           "16": [
             3256,
             3256
@@ -17900,17 +19424,13 @@ export const LAB_SUPPORT_DATA = {
           "12": [
             3247,
             3247
+          ],
+          "14": [
+            2708,
+            2708
           ]
         },
         "2026-05-20": {
-          "10": [
-            2148,
-            2148
-          ],
-          "12": [
-            3313,
-            3313
-          ],
           "9": [
             2148,
             2148
@@ -17922,9 +19442,25 @@ export const LAB_SUPPORT_DATA = {
           "13": [
             3420,
             3420
+          ],
+          "10": [
+            2148,
+            2148
+          ],
+          "12": [
+            3313,
+            3313
           ]
         },
         "2026-05-21": {
+          "14": [
+            455,
+            559
+          ],
+          "16": [
+            365,
+            527
+          ],
           "9": [
             1718,
             1718
@@ -17952,21 +19488,9 @@ export const LAB_SUPPORT_DATA = {
           "12": [
             700,
             700
-          ],
-          "14": [
-            455,
-            559
-          ],
-          "16": [
-            365,
-            527
           ]
         },
         "2026-05-22": {
-          "13": [
-            3469,
-            3469
-          ],
           "8": [
             117,
             117
@@ -17990,6 +19514,10 @@ export const LAB_SUPPORT_DATA = {
           "11": [
             1704,
             1704
+          ],
+          "13": [
+            3469,
+            3469
           ]
         },
         "2026-05-24": {
@@ -18023,10 +19551,6 @@ export const LAB_SUPPORT_DATA = {
             991,
             991
           ],
-          "8": [
-            1303,
-            1303
-          ],
           "10": [
             2560,
             2560
@@ -18054,6 +19578,10 @@ export const LAB_SUPPORT_DATA = {
           "13": [
             2075,
             2075
+          ],
+          "8": [
+            1303,
+            1303
           ]
         },
         "2026-05-27": {
@@ -18125,6 +19653,14 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-29": {
+          "14": [
+            0,
+            0
+          ],
+          "9": [
+            770,
+            770
+          ],
           "11": [
             1931,
             1931
@@ -18148,14 +19684,6 @@ export const LAB_SUPPORT_DATA = {
           "12": [
             2418,
             2418
-          ],
-          "14": [
-            0,
-            0
-          ],
-          "9": [
-            770,
-            770
           ]
         },
         "2026-05-31": {
@@ -18173,10 +19701,6 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-06-01": {
-          "10": [
-            1793,
-            2031
-          ],
           "12": [
             2206,
             2206
@@ -18200,21 +19724,13 @@ export const LAB_SUPPORT_DATA = {
           "8": [
             849,
             1087
+          ],
+          "10": [
+            1793,
+            2031
           ]
         },
         "2026-06-02": {
-          "16": [
-            3461,
-            3461
-          ],
-          "9": [
-            1089,
-            1089
-          ],
-          "11": [
-            1795,
-            1884
-          ],
           "13": [
             538,
             538
@@ -18238,12 +19754,40 @@ export const LAB_SUPPORT_DATA = {
           "14": [
             1264,
             1264
+          ],
+          "16": [
+            3461,
+            3461
+          ],
+          "9": [
+            1089,
+            1089
+          ],
+          "11": [
+            1795,
+            1884
           ]
         },
         "2026-06-03": {
+          "18": [
+            0,
+            0
+          ],
+          "11": [
+            3204,
+            3204
+          ],
+          "13": [
+            3165,
+            3166
+          ],
           "15": [
             2119,
             2119
+          ],
+          "8": [
+            1176,
+            1176
           ],
           "17": [
             881,
@@ -18272,37 +19816,9 @@ export const LAB_SUPPORT_DATA = {
           "9": [
             2390,
             2390
-          ],
-          "18": [
-            0,
-            0
-          ],
-          "11": [
-            3204,
-            3204
-          ],
-          "13": [
-            3165,
-            3166
-          ],
-          "8": [
-            1176,
-            1176
           ]
         },
         "2026-06-04": {
-          "14": [
-            2051,
-            2051
-          ],
-          "16": [
-            99,
-            99
-          ],
-          "9": [
-            836,
-            1271
-          ],
           "18": [
             2309,
             2309
@@ -18334,9 +19850,29 @@ export const LAB_SUPPORT_DATA = {
           "12": [
             2004,
             2004
+          ],
+          "14": [
+            2051,
+            2051
+          ],
+          "16": [
+            99,
+            99
+          ],
+          "9": [
+            836,
+            1271
           ]
         },
         "2026-06-05": {
+          "12": [
+            677,
+            677
+          ],
+          "9": [
+            668,
+            668
+          ],
           "11": [
             1979,
             2184
@@ -18356,298 +19892,196 @@ export const LAB_SUPPORT_DATA = {
           "10": [
             171,
             178
+          ]
+        },
+        "2026-06-08": {
+          "9": [
+            1889,
+            1889
+          ],
+          "11": [
+            2805,
+            2805
+          ],
+          "13": [
+            1649,
+            1649
+          ],
+          "15": [
+            2565,
+            2565
+          ],
+          "8": [
+            1163,
+            1163
+          ],
+          "17": [
+            1033,
+            1033
+          ],
+          "10": [
+            2741,
+            2741
           ],
           "12": [
-            677,
-            677
+            2345,
+            2345
+          ],
+          "14": [
+            2571,
+            2571
+          ],
+          "16": [
+            3226,
+            3226
+          ]
+        },
+        "2026-06-09": {
+          "9": [
+            401,
+            572
+          ],
+          "11": [
+            1400,
+            1403
+          ],
+          "13": [
+            3359,
+            3359
+          ],
+          "8": [
+            1408,
+            1408
+          ],
+          "10": [
+            1341,
+            1790
+          ],
+          "12": [
+            2019,
+            2019
+          ],
+          "14": [
+            396,
+            396
+          ]
+        },
+        "2026-06-10": {
+          "12": [
+            1349,
+            1349
+          ],
+          "14": [
+            640,
+            640
           ],
           "9": [
-            668,
-            668
+            1482,
+            1482
+          ],
+          "11": [
+            491,
+            491
+          ],
+          "13": [
+            3307,
+            3307
+          ],
+          "8": [
+            1605,
+            1605
+          ],
+          "10": [
+            1999,
+            1999
+          ]
+        },
+        "2026-06-11": {
+          "14": [
+            2043,
+            2043
+          ],
+          "16": [
+            1204,
+            1451
+          ],
+          "9": [
+            1958,
+            1958
+          ],
+          "11": [
+            913,
+            913
+          ],
+          "13": [
+            0,
+            0
+          ],
+          "15": [
+            854,
+            866
+          ],
+          "8": [
+            2361,
+            2361
+          ],
+          "10": [
+            2810,
+            2810
+          ],
+          "12": [
+            0,
+            0
+          ]
+        },
+        "2026-06-12": {
+          "18": [
+            7,
+            7
+          ],
+          "13": [
+            11,
+            11
+          ],
+          "15": [
+            2031,
+            2031
+          ],
+          "8": [
+            1563,
+            1563
+          ],
+          "10": [
+            2802,
+            2802
+          ],
+          "12": [
+            1432,
+            1432
+          ],
+          "14": [
+            2193,
+            2193
+          ],
+          "16": [
+            185,
+            185
+          ],
+          "9": [
+            1988,
+            1988
+          ],
+          "11": [
+            2041,
+            2041
           ]
         }
       },
       "gen2-016": {
-        "2026-04-27": {
-          "13": [
-            0,
-            196
-          ],
-          "8": [
-            0,
-            673
-          ],
-          "17": [
-            0,
-            2151
-          ],
-          "12": [
-            84,
-            2625
-          ],
-          "16": [
-            0,
-            2937
-          ],
-          "11": [
-            0,
-            3252
-          ],
-          "15": [
-            0,
-            837
-          ],
-          "10": [
-            0,
-            3160
-          ],
-          "19": [
-            0,
-            861
-          ],
-          "14": [
-            118,
-            407
-          ],
-          "9": [
-            0,
-            1939
-          ],
-          "18": [
-            0,
-            2365
-          ]
-        },
-        "2026-04-28": {
-          "14": [
-            0,
-            2577
-          ],
-          "9": [
-            0,
-            256
-          ],
-          "18": [
-            0,
-            1468
-          ],
-          "13": [
-            0,
-            971
-          ],
-          "17": [
-            0,
-            2972
-          ],
-          "12": [
-            0,
-            2898
-          ],
-          "16": [
-            0,
-            2551
-          ],
-          "11": [
-            0,
-            2776
-          ],
-          "15": [
-            0,
-            3066
-          ],
-          "10": [
-            0,
-            3498
-          ]
-        },
-        "2026-04-29": {
-          "10": [
-            0,
-            3066
-          ],
-          "14": [
-            0,
-            3179
-          ],
-          "9": [
-            0,
-            789
-          ],
-          "13": [
-            0,
-            2118
-          ],
-          "8": [
-            0,
-            639
-          ],
-          "12": [
-            0,
-            133
-          ],
-          "16": [
-            0,
-            3250
-          ],
-          "11": [
-            0,
-            2889
-          ],
-          "15": [
-            0,
-            2430
-          ]
-        },
-        "2026-04-30": {
-          "13": [
-            0,
-            3443
-          ],
-          "17": [
-            0,
-            408
-          ],
-          "12": [
-            0,
-            3130
-          ],
-          "16": [
-            0,
-            3139
-          ],
-          "11": [
-            0,
-            1969
-          ],
-          "15": [
-            0,
-            2134
-          ],
-          "10": [
-            6,
-            2697
-          ],
-          "14": [
-            0,
-            2768
-          ],
-          "9": [
-            0,
-            243
-          ]
-        },
-        "2026-05-01": {
-          "10": [
-            0,
-            2807
-          ],
-          "19": [
-            0,
-            199
-          ],
-          "14": [
-            0,
-            1756
-          ],
-          "23": [
-            0,
-            0
-          ],
-          "9": [
-            0,
-            1836
-          ],
-          "18": [
-            0,
-            889
-          ],
-          "13": [
-            0,
-            2035
-          ],
-          "22": [
-            0,
-            0
-          ],
-          "17": [
-            0,
-            1277
-          ],
-          "12": [
-            0,
-            1102
-          ],
-          "21": [
-            0,
-            0
-          ],
-          "16": [
-            0,
-            3423
-          ],
-          "11": [
-            0,
-            1409
-          ],
-          "20": [
-            0,
-            0
-          ],
-          "15": [
-            0,
-            2063
-          ]
-        },
-        "2026-05-03": {
-          "10": [
-            0,
-            3575
-          ],
-          "14": [
-            0,
-            813
-          ],
-          "9": [
-            0,
-            2041
-          ],
-          "13": [
-            0,
-            2237
-          ],
-          "8": [
-            0,
-            172
-          ],
-          "12": [
-            0,
-            1547
-          ],
-          "11": [
-            0,
-            2645
-          ],
-          "15": [
-            0,
-            1014
-          ]
-        },
         "2026-05-04": {
-          "18": [
-            0,
-            370
-          ],
           "13": [
             2,
             1920
-          ],
-          "12": [
-            0,
-            2379
-          ],
-          "11": [
-            0,
-            2126
           ],
           "15": [
             0,
@@ -18657,28 +20091,24 @@ export const LAB_SUPPORT_DATA = {
             0,
             3035
           ],
+          "12": [
+            0,
+            2379
+          ],
           "14": [
             0,
             3303
-          ]
-        },
-        "2026-05-05": {
-          "16": [
+          ],
+          "18": [
             0,
-            2281
+            370
           ],
           "11": [
             0,
-            1884
-          ],
-          "15": [
-            0,
-            2382
-          ],
-          "10": [
-            0,
-            687
-          ],
+            2126
+          ]
+        },
+        "2026-05-05": {
           "19": [
             0,
             0
@@ -18686,6 +20116,10 @@ export const LAB_SUPPORT_DATA = {
           "14": [
             0,
             573
+          ],
+          "16": [
+            0,
+            2281
           ],
           "9": [
             0,
@@ -18695,13 +20129,25 @@ export const LAB_SUPPORT_DATA = {
             0,
             2391
           ],
+          "11": [
+            0,
+            1884
+          ],
           "13": [
             0,
             0
           ],
+          "15": [
+            0,
+            2382
+          ],
           "17": [
             0,
             2137
+          ],
+          "10": [
+            0,
+            687
           ],
           "12": [
             0,
@@ -18709,33 +20155,17 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-06": {
-          "10": [
-            0,
-            556
-          ],
-          "19": [
+          "20": [
             0,
             0
-          ],
-          "14": [
-            0,
-            2367
-          ],
-          "9": [
-            0,
-            1713
-          ],
-          "18": [
-            0,
-            2
-          ],
-          "13": [
-            0,
-            1211
           ],
           "22": [
             0,
             0
+          ],
+          "15": [
+            0,
+            3256
           ],
           "8": [
             0,
@@ -18745,6 +20175,14 @@ export const LAB_SUPPORT_DATA = {
             229,
             2888
           ],
+          "10": [
+            0,
+            556
+          ],
+          "19": [
+            0,
+            0
+          ],
           "12": [
             0,
             87
@@ -18753,21 +20191,29 @@ export const LAB_SUPPORT_DATA = {
             0,
             0
           ],
+          "14": [
+            0,
+            2367
+          ],
           "16": [
             0,
             1979
+          ],
+          "9": [
+            0,
+            1713
+          ],
+          "18": [
+            0,
+            2
           ],
           "11": [
             70,
             656
           ],
-          "20": [
+          "13": [
             0,
-            0
-          ],
-          "15": [
-            0,
-            3256
+            1211
           ]
         },
         "2026-05-07": {
@@ -18775,13 +20221,13 @@ export const LAB_SUPPORT_DATA = {
             3112,
             3112
           ],
-          "14": [
-            1777,
-            1777
-          ],
           "17": [
             2934,
             2934
+          ],
+          "14": [
+            1777,
+            1777
           ],
           "16": [
             2775,
@@ -18789,6 +20235,18 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-08": {
+          "16": [
+            2668,
+            2669
+          ],
+          "11": [
+            1942,
+            1942
+          ],
+          "13": [
+            1605,
+            1605
+          ],
           "15": [
             2245,
             2245
@@ -18797,6 +20255,10 @@ export const LAB_SUPPORT_DATA = {
             3084,
             3084
           ],
+          "12": [
+            2277,
+            2277
+          ],
           "14": [
             2031,
             2031
@@ -18804,98 +20266,54 @@ export const LAB_SUPPORT_DATA = {
           "9": [
             1436,
             1436
-          ],
-          "13": [
-            1605,
-            1605
-          ],
-          "12": [
-            2277,
-            2277
-          ],
-          "16": [
-            2668,
-            2669
-          ],
-          "11": [
-            1942,
-            1942
           ]
         },
         "2026-05-10": {
-          "12": [
-            2052,
-            2052
-          ],
-          "16": [
-            2563,
-            2563
-          ],
           "11": [
             2426,
             2426
-          ],
-          "15": [
-            2360,
-            2360
-          ],
-          "10": [
-            2915,
-            2915
-          ],
-          "14": [
-            2084,
-            2084
-          ],
-          "9": [
-            1170,
-            1170
           ],
           "13": [
             467,
             467
           ],
+          "15": [
+            2360,
+            2360
+          ],
           "17": [
             3305,
             3305
+          ],
+          "10": [
+            2915,
+            2915
+          ],
+          "12": [
+            2052,
+            2052
+          ],
+          "14": [
+            2084,
+            2084
+          ],
+          "16": [
+            2563,
+            2563
+          ],
+          "9": [
+            1170,
+            1170
           ]
         },
         "2026-05-11": {
-          "8": [
-            934,
-            934
-          ],
-          "17": [
-            3321,
-            3321
-          ],
-          "12": [
-            3437,
-            3437
+          "14": [
+            3150,
+            3150
           ],
           "16": [
             1937,
             1937
-          ],
-          "11": [
-            3221,
-            3221
-          ],
-          "15": [
-            2438,
-            2438
-          ],
-          "10": [
-            3326,
-            3326
-          ],
-          "19": [
-            2472,
-            2472
-          ],
-          "14": [
-            3150,
-            3150
           ],
           "9": [
             1402,
@@ -18905,23 +20323,43 @@ export const LAB_SUPPORT_DATA = {
             1990,
             1990
           ],
+          "11": [
+            3221,
+            3221
+          ],
           "13": [
             3214,
             3214
+          ],
+          "15": [
+            2438,
+            2438
+          ],
+          "8": [
+            934,
+            934
+          ],
+          "17": [
+            3321,
+            3321
+          ],
+          "10": [
+            3326,
+            3326
+          ],
+          "19": [
+            2472,
+            2472
+          ],
+          "12": [
+            3437,
+            3437
           ]
         },
         "2026-05-12": {
-          "15": [
-            3172,
-            3172
-          ],
-          "10": [
-            2697,
-            2697
-          ],
-          "14": [
-            3084,
-            3084
+          "16": [
+            960,
+            960
           ],
           "9": [
             2577,
@@ -18931,9 +20369,17 @@ export const LAB_SUPPORT_DATA = {
             1502,
             1502
           ],
+          "11": [
+            2941,
+            2941
+          ],
           "13": [
             3250,
             3250
+          ],
+          "15": [
+            3172,
+            3172
           ],
           "8": [
             562,
@@ -18943,63 +20389,79 @@ export const LAB_SUPPORT_DATA = {
             2337,
             2337
           ],
+          "10": [
+            2697,
+            2697
+          ],
           "12": [
             2995,
             2995
           ],
-          "16": [
-            960,
-            960
-          ],
-          "11": [
-            2941,
-            2941
+          "14": [
+            3084,
+            3084
           ]
         },
         "2026-05-13": {
-          "9": [
-            1180,
-            1180
-          ],
           "13": [
             1889,
             1893
-          ],
-          "17": [
-            994,
-            994
-          ],
-          "12": [
-            3303,
-            3303
-          ],
-          "16": [
-            3135,
-            3135
-          ],
-          "11": [
-            3449,
-            3449
           ],
           "15": [
             2966,
             2966
           ],
+          "17": [
+            994,
+            994
+          ],
           "10": [
             3095,
             3095
           ],
+          "12": [
+            3303,
+            3303
+          ],
           "14": [
             2485,
             2485
+          ],
+          "16": [
+            3135,
+            3135
+          ],
+          "9": [
+            1180,
+            1180
+          ],
+          "11": [
+            3449,
+            3449
           ]
         },
         "2026-05-14": {
+          "9": [
+            3045,
+            3045
+          ],
+          "18": [
+            0,
+            0
+          ],
           "11": [
             2178,
             2179
           ],
           "20": [
+            0,
+            0
+          ],
+          "13": [
+            2928,
+            2928
+          ],
+          "22": [
             0,
             0
           ],
@@ -19015,26 +20477,6 @@ export const LAB_SUPPORT_DATA = {
             0,
             0
           ],
-          "14": [
-            1893,
-            1893
-          ],
-          "9": [
-            3045,
-            3045
-          ],
-          "18": [
-            0,
-            0
-          ],
-          "13": [
-            2928,
-            2928
-          ],
-          "22": [
-            0,
-            0
-          ],
           "12": [
             2560,
             2560
@@ -19043,100 +20485,100 @@ export const LAB_SUPPORT_DATA = {
             0,
             0
           ],
+          "14": [
+            1893,
+            1893
+          ],
           "16": [
             162,
             162
           ]
         },
         "2026-05-15": {
-          "15": [
-            1996,
-            1996
-          ],
-          "10": [
-            3111,
-            3111
-          ],
-          "14": [
-            1384,
-            1384
-          ],
-          "9": [
-            849,
-            849
-          ],
           "18": [
             20,
             20
+          ],
+          "11": [
+            3298,
+            3298
           ],
           "13": [
             379,
             379
           ],
+          "15": [
+            1996,
+            1996
+          ],
           "17": [
             2158,
             2158
+          ],
+          "10": [
+            3111,
+            3111
           ],
           "12": [
             2736,
             2736
           ],
+          "14": [
+            1384,
+            1384
+          ],
           "16": [
             2119,
             2119
           ],
-          "11": [
-            3298,
-            3298
+          "9": [
+            849,
+            849
           ]
         },
         "2026-05-17": {
-          "14": [
-            2825,
-            3055
-          ],
-          "9": [
-            1764,
-            1764
-          ],
-          "13": [
-            1538,
-            1538
-          ],
           "8": [
             71,
             71
-          ],
-          "17": [
-            1190,
-            1190
-          ],
-          "12": [
-            3491,
-            3491
-          ],
-          "16": [
-            3038,
-            3038
-          ],
-          "11": [
-            2672,
-            2672
           ],
           "15": [
             3239,
             3262
           ],
+          "17": [
+            1190,
+            1190
+          ],
           "10": [
             1034,
             1034
+          ],
+          "12": [
+            3491,
+            3491
+          ],
+          "14": [
+            2825,
+            3055
+          ],
+          "16": [
+            3038,
+            3038
+          ],
+          "9": [
+            1764,
+            1764
+          ],
+          "11": [
+            2672,
+            2672
+          ],
+          "13": [
+            1538,
+            1538
           ]
         },
         "2026-05-18": {
-          "14": [
-            2096,
-            2096
-          ],
           "9": [
             2130,
             2130
@@ -19145,9 +20587,17 @@ export const LAB_SUPPORT_DATA = {
             3323,
             3323
           ],
+          "11": [
+            3455,
+            3455
+          ],
           "13": [
             2539,
             2539
+          ],
+          "15": [
+            2490,
+            2490
           ],
           "8": [
             2593,
@@ -19157,6 +20607,14 @@ export const LAB_SUPPORT_DATA = {
             2993,
             2993
           ],
+          "10": [
+            2953,
+            2953
+          ],
+          "19": [
+            2506,
+            2506
+          ],
           "12": [
             3001,
             3001
@@ -19165,47 +20623,27 @@ export const LAB_SUPPORT_DATA = {
             1323,
             1323
           ],
-          "11": [
-            3455,
-            3455
-          ],
-          "15": [
-            2490,
-            2490
-          ],
-          "10": [
-            2953,
-            2953
-          ],
-          "19": [
-            2506,
-            2506
+          "14": [
+            2096,
+            2096
           ]
         },
         "2026-05-19": {
-          "14": [
-            2366,
-            2366
+          "16": [
+            1684,
+            1684
           ],
           "9": [
             1835,
             1835
           ],
-          "13": [
-            2781,
-            2781
-          ],
-          "12": [
-            2297,
-            2297
-          ],
-          "16": [
-            1684,
-            1684
-          ],
           "11": [
             3258,
             3258
+          ],
+          "13": [
+            2781,
+            2781
           ],
           "15": [
             3292,
@@ -19214,100 +20652,100 @@ export const LAB_SUPPORT_DATA = {
           "10": [
             1905,
             1905
+          ],
+          "12": [
+            2297,
+            2297
+          ],
+          "14": [
+            2366,
+            2366
           ]
         },
         "2026-05-20": {
-          "12": [
-            1645,
-            1645
+          "9": [
+            6,
+            6
           ],
           "11": [
             2021,
             2021
           ],
-          "10": [
-            757,
-            757
-          ],
-          "9": [
-            6,
-            6
-          ],
           "13": [
             1910,
             1910
+          ],
+          "12": [
+            1645,
+            1645
+          ],
+          "10": [
+            757,
+            757
           ]
         },
         "2026-05-21": {
-          "9": [
-            714,
-            714
-          ],
-          "13": [
-            2979,
-            2979
-          ],
-          "17": [
-            216,
-            216
-          ],
-          "12": [
-            1094,
-            1094
+          "14": [
+            2927,
+            2927
           ],
           "16": [
             3075,
             3076
           ],
+          "9": [
+            714,
+            714
+          ],
           "11": [
             1657,
             1657
+          ],
+          "13": [
+            2979,
+            2979
           ],
           "15": [
             1289,
             1290
           ],
+          "17": [
+            216,
+            216
+          ],
           "10": [
             2953,
             2955
           ],
-          "14": [
-            2927,
-            2927
+          "12": [
+            1094,
+            1094
           ]
         },
         "2026-05-22": {
-          "13": [
-            2602,
-            2602
+          "15": [
+            3329,
+            3329
           ],
           "17": [
             3529,
             3529
           ],
-          "12": [
-            2397,
-            2397
-          ],
-          "16": [
-            2441,
-            2441
-          ],
-          "11": [
-            3151,
-            3151
-          ],
-          "15": [
-            3329,
-            3329
-          ],
           "10": [
             3303,
             3303
           ],
+          "12": [
+            2397,
+            2397
+          ],
           "14": [
             3124,
             3124
+          ],
+          "16": [
+            2441,
+            2441
           ],
           "9": [
             2363,
@@ -19316,6 +20754,14 @@ export const LAB_SUPPORT_DATA = {
           "18": [
             46,
             46
+          ],
+          "11": [
+            3151,
+            3151
+          ],
+          "13": [
+            2602,
+            2602
           ]
         },
         "2026-05-24": {
@@ -19323,25 +20769,21 @@ export const LAB_SUPPORT_DATA = {
             2447,
             2448
           ],
-          "9": [
-            854,
-            854
-          ],
-          "13": [
-            1228,
-            1228
-          ],
-          "12": [
-            3371,
-            3371
-          ],
           "16": [
             2231,
             2231
           ],
+          "9": [
+            854,
+            854
+          ],
           "11": [
             3459,
             3459
+          ],
+          "13": [
+            1228,
+            1228
           ],
           "15": [
             3132,
@@ -19350,50 +20792,58 @@ export const LAB_SUPPORT_DATA = {
           "10": [
             3346,
             3346
+          ],
+          "12": [
+            3371,
+            3371
           ]
         },
         "2026-05-25": {
-          "16": [
-            2058,
-            2058
-          ],
-          "11": [
-            2398,
-            2398
-          ],
-          "15": [
-            2397,
-            2397
-          ],
-          "10": [
-            2789,
-            2789
+          "12": [
+            1681,
+            1681
           ],
           "14": [
             3073,
             3073
           ],
+          "16": [
+            2058,
+            2058
+          ],
           "9": [
             2619,
             2622
+          ],
+          "11": [
+            2398,
+            2398
           ],
           "13": [
             2870,
             2870
           ],
+          "15": [
+            2397,
+            2397
+          ],
           "8": [
             1499,
             1499
           ],
-          "12": [
-            1681,
-            1681
+          "10": [
+            2789,
+            2789
           ]
         },
         "2026-05-26": {
           "15": [
             1645,
             1645
+          ],
+          "17": [
+            1593,
+            1593
           ],
           "10": [
             3411,
@@ -19403,9 +20853,17 @@ export const LAB_SUPPORT_DATA = {
             0,
             0
           ],
+          "12": [
+            1680,
+            1680
+          ],
           "14": [
             3173,
             3173
+          ],
+          "16": [
+            1719,
+            1719
           ],
           "9": [
             1851,
@@ -19415,51 +20873,39 @@ export const LAB_SUPPORT_DATA = {
             958,
             958
           ],
-          "13": [
-            3210,
-            3210
-          ],
-          "17": [
-            1593,
-            1593
-          ],
-          "12": [
-            1680,
-            1680
-          ],
-          "16": [
-            1719,
-            1719
-          ],
           "11": [
             3057,
             3059
+          ],
+          "13": [
+            3210,
+            3210
           ]
         },
         "2026-05-27": {
-          "15": [
-            3050,
-            3050
-          ],
-          "10": [
-            575,
-            575
-          ],
-          "14": [
-            3380,
-            3380
-          ],
           "13": [
             2129,
             2129
+          ],
+          "15": [
+            3050,
+            3050
           ],
           "17": [
             1713,
             1713
           ],
+          "10": [
+            575,
+            575
+          ],
           "12": [
             1731,
             1731
+          ],
+          "14": [
+            3380,
+            3380
           ],
           "16": [
             1891,
@@ -19475,9 +20921,17 @@ export const LAB_SUPPORT_DATA = {
             927,
             927
           ],
+          "9": [
+            2237,
+            2237
+          ],
           "11": [
             1665,
             1665
+          ],
+          "13": [
+            17,
+            17
           ],
           "15": [
             3561,
@@ -19487,25 +20941,33 @@ export const LAB_SUPPORT_DATA = {
             442,
             442
           ],
-          "14": [
-            197,
-            197
-          ],
-          "9": [
-            2237,
-            2237
-          ],
-          "13": [
-            17,
-            17
-          ],
           "12": [
             3286,
             3286
+          ],
+          "14": [
+            197,
+            197
           ]
         },
         "2026-05-29": {
+          "14": [
+            3220,
+            3220
+          ],
+          "16": [
+            2685,
+            2685
+          ],
+          "9": [
+            275,
+            275
+          ],
           "18": [
+            0,
+            0
+          ],
+          "20": [
             0,
             0
           ],
@@ -19513,25 +20975,13 @@ export const LAB_SUPPORT_DATA = {
             1201,
             1201
           ],
-          "17": [
-            989,
-            989
-          ],
-          "21": [
-            0,
-            0
-          ],
-          "16": [
-            2685,
-            2685
-          ],
-          "20": [
-            0,
-            0
-          ],
           "15": [
             2900,
             2900
+          ],
+          "17": [
+            989,
+            989
           ],
           "10": [
             1051,
@@ -19541,13 +20991,9 @@ export const LAB_SUPPORT_DATA = {
             0,
             0
           ],
-          "14": [
-            3220,
-            3220
-          ],
-          "9": [
-            275,
-            275
+          "21": [
+            0,
+            0
           ]
         },
         "2026-05-31": {
@@ -19555,51 +21001,55 @@ export const LAB_SUPPORT_DATA = {
             2991,
             2991
           ],
-          "14": [
-            2720,
-            2720
-          ],
-          "9": [
-            3098,
-            3098
-          ],
-          "13": [
-            3443,
-            3443
-          ],
-          "17": [
-            2517,
-            2517
-          ],
           "12": [
             3007,
             3007
+          ],
+          "14": [
+            2720,
+            2720
           ],
           "16": [
             3501,
             3500
           ],
+          "9": [
+            3098,
+            3098
+          ],
           "11": [
             3084,
             3084
           ],
+          "13": [
+            3443,
+            3443
+          ],
           "15": [
             2559,
             2559
+          ],
+          "17": [
+            2517,
+            2517
           ]
         },
         "2026-06-01": {
-          "17": [
-            2421,
-            2421
-          ],
           "12": [
             2862,
             2862
           ],
+          "14": [
+            3240,
+            3240
+          ],
           "16": [
             3391,
             3391
+          ],
+          "9": [
+            3077,
+            3077
           ],
           "11": [
             2649,
@@ -19609,22 +21059,6 @@ export const LAB_SUPPORT_DATA = {
             65,
             65
           ],
-          "15": [
-            2738,
-            2738
-          ],
-          "10": [
-            1063,
-            1063
-          ],
-          "14": [
-            3240,
-            3240
-          ],
-          "9": [
-            3077,
-            3077
-          ],
           "13": [
             2844,
             3032
@@ -19632,20 +21066,28 @@ export const LAB_SUPPORT_DATA = {
           "8": [
             456,
             456
+          ],
+          "15": [
+            2738,
+            2738
+          ],
+          "17": [
+            2421,
+            2421
+          ],
+          "10": [
+            1063,
+            1063
           ]
         },
         "2026-06-02": {
-          "9": [
-            2160,
-            2160
-          ],
-          "18": [
-            1248,
-            1248
-          ],
           "13": [
             1834,
             1834
+          ],
+          "15": [
+            2620,
+            2620
           ],
           "8": [
             103,
@@ -19655,128 +21097,120 @@ export const LAB_SUPPORT_DATA = {
             2726,
             2726
           ],
+          "10": [
+            3107,
+            3107
+          ],
           "12": [
             898,
             898
+          ],
+          "14": [
+            0,
+            0
           ],
           "16": [
             3298,
             3298
           ],
+          "9": [
+            2160,
+            2160
+          ],
+          "18": [
+            1248,
+            1248
+          ],
           "11": [
             3003,
             3003
-          ],
-          "15": [
-            2620,
-            2620
-          ],
-          "10": [
-            3107,
-            3107
-          ],
-          "14": [
-            0,
-            0
           ]
         },
         "2026-06-03": {
-          "15": [
-            3218,
-            3218
-          ],
-          "10": [
-            2591,
-            2591
-          ],
-          "14": [
-            3066,
-            3066
-          ],
-          "9": [
-            1983,
-            1983
-          ],
           "18": [
             20,
             20
+          ],
+          "11": [
+            3147,
+            3147
           ],
           "13": [
             3087,
             3087
           ],
+          "15": [
+            3218,
+            3218
+          ],
           "17": [
             1847,
             1847
+          ],
+          "10": [
+            2591,
+            2591
           ],
           "12": [
             3457,
             3457
           ],
+          "14": [
+            3066,
+            3066
+          ],
           "16": [
             3291,
             3291
           ],
-          "11": [
-            3147,
-            3147
+          "9": [
+            1983,
+            1983
           ]
         },
         "2026-06-04": {
-          "14": [
-            2281,
-            2281
-          ],
-          "9": [
-            3383,
-            3383
-          ],
           "18": [
             15,
             15
-          ],
-          "13": [
-            3576,
-            3576
-          ],
-          "17": [
-            3491,
-            3491
-          ],
-          "12": [
-            2988,
-            2988
-          ],
-          "16": [
-            3193,
-            3193
           ],
           "11": [
             2286,
             2286
           ],
+          "13": [
+            3576,
+            3576
+          ],
           "15": [
             1578,
             1578
           ],
+          "17": [
+            3491,
+            3491
+          ],
           "10": [
             3307,
             3307
+          ],
+          "12": [
+            2988,
+            2988
+          ],
+          "14": [
+            2281,
+            2281
+          ],
+          "16": [
+            3193,
+            3193
+          ],
+          "9": [
+            3383,
+            3383
           ]
         },
         "2026-06-05": {
-          "18": [
-            1535,
-            1535
-          ],
-          "13": [
-            1980,
-            1980
-          ],
-          "8": [
-            9,
-            9
-          ],
           "17": [
             2445,
             2445
@@ -19785,302 +21219,278 @@ export const LAB_SUPPORT_DATA = {
             3126,
             3126
           ],
+          "14": [
+            1212,
+            1212
+          ],
           "16": [
             2582,
             2582
+          ],
+          "9": [
+            2028,
+            2028
+          ],
+          "18": [
+            1535,
+            1535
           ],
           "11": [
             2478,
             2478
           ],
+          "13": [
+            1980,
+            1980
+          ],
           "15": [
             2714,
             2714
           ],
+          "8": [
+            9,
+            9
+          ],
           "10": [
             2607,
             2607
+          ]
+        },
+        "2026-06-07": {
+          "15": [
+            3478,
+            3478
+          ],
+          "8": [
+            38,
+            38
+          ],
+          "17": [
+            1919,
+            1919
+          ],
+          "10": [
+            3516,
+            3516
+          ],
+          "12": [
+            2717,
+            2719
           ],
           "14": [
-            1212,
-            1212
+            3230,
+            3230
+          ],
+          "16": [
+            3501,
+            3501
           ],
           "9": [
-            2028,
-            2028
+            3236,
+            3236
+          ],
+          "18": [
+            12,
+            12
+          ],
+          "11": [
+            3276,
+            3276
+          ],
+          "13": [
+            2366,
+            2366
+          ]
+        },
+        "2026-06-08": {
+          "9": [
+            3171,
+            3171
+          ],
+          "11": [
+            3030,
+            3030
+          ],
+          "13": [
+            3054,
+            3054
+          ],
+          "15": [
+            3480,
+            3480
+          ],
+          "8": [
+            2012,
+            2012
+          ],
+          "17": [
+            2066,
+            2066
+          ],
+          "10": [
+            3199,
+            3199
+          ],
+          "12": [
+            2936,
+            2936
+          ],
+          "14": [
+            2646,
+            2646
+          ],
+          "16": [
+            2796,
+            2796
+          ]
+        },
+        "2026-06-09": {
+          "16": [
+            2584,
+            2584
+          ],
+          "9": [
+            1120,
+            1120
+          ],
+          "11": [
+            2982,
+            2982
+          ],
+          "13": [
+            2960,
+            2960
+          ],
+          "15": [
+            2884,
+            2884
+          ],
+          "10": [
+            2700,
+            2700
+          ],
+          "12": [
+            3504,
+            3504
+          ],
+          "14": [
+            3553,
+            3553
+          ]
+        },
+        "2026-06-10": {
+          "12": [
+            1397,
+            1397
+          ],
+          "14": [
+            2298,
+            2298
+          ],
+          "16": [
+            3050,
+            3050
+          ],
+          "9": [
+            2337,
+            2337
+          ],
+          "11": [
+            3149,
+            3149
+          ],
+          "13": [
+            2322,
+            2322
+          ],
+          "15": [
+            2918,
+            2918
+          ],
+          "10": [
+            3431,
+            3431
+          ],
+          "17": [
+            1166,
+            1166
+          ]
+        },
+        "2026-06-11": {
+          "14": [
+            1903,
+            1903
+          ],
+          "16": [
+            3452,
+            3452
+          ],
+          "9": [
+            196,
+            196
+          ],
+          "18": [
+            773,
+            773
+          ],
+          "11": [
+            2844,
+            2844
+          ],
+          "13": [
+            3336,
+            3336
+          ],
+          "15": [
+            2889,
+            2889
+          ],
+          "17": [
+            2848,
+            2848
+          ],
+          "10": [
+            3425,
+            3425
+          ],
+          "12": [
+            2099,
+            2099
+          ]
+        },
+        "2026-06-12": {
+          "13": [
+            2045,
+            2045
+          ],
+          "15": [
+            557,
+            557
+          ],
+          "10": [
+            3471,
+            3471
+          ],
+          "12": [
+            3526,
+            3526
+          ],
+          "14": [
+            3090,
+            3090
+          ],
+          "9": [
+            1637,
+            1637
+          ],
+          "11": [
+            3412,
+            3412
           ]
         }
       },
       "gen2-020": {
-        "2026-04-27": {
-          "20": [
-            0,
-            2254
-          ],
-          "13": [
-            1572,
-            3438
-          ],
-          "22": [
-            0,
-            3517
-          ],
-          "15": [
-            0,
-            3178
-          ],
-          "17": [
-            0,
-            3332
-          ],
-          "10": [
-            0,
-            2749
-          ],
-          "12": [
-            2,
-            3013
-          ],
-          "21": [
-            0,
-            2989
-          ],
-          "14": [
-            0,
-            3558
-          ],
-          "23": [
-            0,
-            2848
-          ],
-          "16": [
-            0,
-            2910
-          ],
-          "9": [
-            0,
-            2374
-          ],
-          "11": [
-            0,
-            2718
-          ]
-        },
-        "2026-04-28": {
-          "14": [
-            0,
-            3315
-          ],
-          "23": [
-            0,
-            883
-          ],
-          "16": [
-            173,
-            3180
-          ],
-          "0": [
-            0,
-            3029
-          ],
-          "9": [
-            0,
-            2396
-          ],
-          "18": [
-            12,
-            1916
-          ],
-          "11": [
-            0,
-            3006
-          ],
-          "20": [
-            0,
-            3335
-          ],
-          "13": [
-            0,
-            3374
-          ],
-          "22": [
-            0,
-            3328
-          ],
-          "15": [
-            0,
-            3004
-          ],
-          "17": [
-            0,
-            3057
-          ],
-          "10": [
-            0,
-            3223
-          ],
-          "19": [
-            0,
-            3286
-          ],
-          "12": [
-            0,
-            3262
-          ],
-          "21": [
-            21,
-            2814
-          ]
-        },
-        "2026-04-29": {
-          "10": [
-            0,
-            3056
-          ],
-          "12": [
-            0,
-            3093
-          ],
-          "14": [
-            0,
-            3239
-          ],
-          "16": [
-            0,
-            3206
-          ],
-          "0": [
-            0,
-            2984
-          ],
-          "9": [
-            0,
-            3147
-          ],
-          "11": [
-            0,
-            3224
-          ],
-          "13": [
-            0,
-            2965
-          ],
-          "15": [
-            0,
-            3391
-          ],
-          "17": [
-            0,
-            2202
-          ]
-        },
-        "2026-04-30": {
-          "13": [
-            0,
-            3165
-          ],
-          "15": [
-            0,
-            2830
-          ],
-          "17": [
-            0,
-            2716
-          ],
-          "10": [
-            0,
-            3361
-          ],
-          "12": [
-            0,
-            2666
-          ],
-          "14": [
-            0,
-            3181
-          ],
-          "16": [
-            0,
-            3252
-          ],
-          "0": [
-            0,
-            523
-          ],
-          "9": [
-            0,
-            2979
-          ],
-          "11": [
-            0,
-            3373
-          ]
-        },
-        "2026-05-01": {
-          "17": [
-            0,
-            3204
-          ],
-          "10": [
-            0,
-            3397
-          ],
-          "12": [
-            4,
-            3447
-          ],
-          "21": [
-            0,
-            3144
-          ],
-          "14": [
-            0,
-            3282
-          ],
-          "23": [
-            0,
-            3395
-          ],
-          "16": [
-            0,
-            2370
-          ],
-          "9": [
-            0,
-            3301
-          ],
-          "11": [
-            0,
-            3455
-          ],
-          "13": [
-            0,
-            3388
-          ],
-          "20": [
-            0,
-            2898
-          ],
-          "22": [
-            0,
-            3075
-          ],
-          "15": [
-            0,
-            2137
-          ]
-        },
-        "2026-05-02": {
-          "0": [
-            0,
-            2712
-          ]
-        },
         "2026-05-04": {
-          "11": [
-            0,
-            2431
-          ],
           "13": [
             0,
             2946
@@ -20100,6 +21510,10 @@ export const LAB_SUPPORT_DATA = {
           "9": [
             0,
             2948
+          ],
+          "11": [
+            0,
+            2431
           ]
         },
         "2026-05-05": {
@@ -20121,6 +21535,14 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-06": {
+          "20": [
+            0,
+            27
+          ],
+          "15": [
+            0,
+            3282
+          ],
           "17": [
             0,
             3012
@@ -20153,17 +21575,9 @@ export const LAB_SUPPORT_DATA = {
             2382,
             3168
           ],
-          "20": [
-            0,
-            27
-          ],
           "13": [
             0,
             3133
-          ],
-          "15": [
-            0,
-            3282
           ]
         },
         "2026-05-07": {
@@ -20217,6 +21631,26 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-08": {
+          "23": [
+            2983,
+            2983
+          ],
+          "16": [
+            3274,
+            3274
+          ],
+          "11": [
+            2535,
+            2535
+          ],
+          "20": [
+            3415,
+            3415
+          ],
+          "13": [
+            1834,
+            1834
+          ],
           "22": [
             3277,
             3277
@@ -20249,29 +21683,9 @@ export const LAB_SUPPORT_DATA = {
             963,
             963
           ],
-          "23": [
-            2983,
-            2983
-          ],
-          "16": [
-            3274,
-            3274
-          ],
           "9": [
             3125,
             3125
-          ],
-          "11": [
-            2535,
-            2535
-          ],
-          "20": [
-            3415,
-            3415
-          ],
-          "13": [
-            1834,
-            1834
           ]
         },
         "2026-05-09": {
@@ -20281,26 +21695,6 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-11": {
-          "15": [
-            2800,
-            2800
-          ],
-          "17": [
-            1442,
-            1442
-          ],
-          "10": [
-            3091,
-            3091
-          ],
-          "19": [
-            3472,
-            3472
-          ],
-          "12": [
-            2054,
-            2054
-          ],
           "21": [
             1550,
             1550
@@ -20340,9 +21734,53 @@ export const LAB_SUPPORT_DATA = {
           "22": [
             1499,
             1499
+          ],
+          "15": [
+            2800,
+            2800
+          ],
+          "17": [
+            1442,
+            1442
+          ],
+          "10": [
+            3091,
+            3091
+          ],
+          "19": [
+            3472,
+            3472
+          ],
+          "12": [
+            2054,
+            2054
           ]
         },
         "2026-05-12": {
+          "23": [
+            3462,
+            3462
+          ],
+          "16": [
+            3582,
+            3582
+          ],
+          "9": [
+            2596,
+            2596
+          ],
+          "18": [
+            2926,
+            2926
+          ],
+          "11": [
+            3381,
+            3381
+          ],
+          "20": [
+            3451,
+            3451
+          ],
           "13": [
             2554,
             2554
@@ -20383,55 +21821,15 @@ export const LAB_SUPPORT_DATA = {
             1920,
             1920
           ],
-          "23": [
-            3462,
-            3462
-          ],
-          "16": [
-            3582,
-            3582
-          ],
           "0": [
             3543,
             3543
-          ],
-          "9": [
-            2596,
-            2596
-          ],
-          "18": [
-            2926,
-            2926
-          ],
-          "11": [
-            3381,
-            3381
-          ],
-          "20": [
-            3451,
-            3451
           ]
         },
         "2026-05-13": {
-          "23": [
-            680,
-            680
-          ],
-          "16": [
-            3573,
-            3573
-          ],
-          "9": [
-            2872,
-            2872
-          ],
           "18": [
             2567,
             2567
-          ],
-          "11": [
-            2481,
-            2481
           ],
           "20": [
             3450,
@@ -20473,12 +21871,36 @@ export const LAB_SUPPORT_DATA = {
             3041,
             3041
           ],
+          "23": [
+            680,
+            680
+          ],
+          "16": [
+            3573,
+            3573
+          ],
           "0": [
             3246,
             3246
+          ],
+          "9": [
+            2872,
+            2872
+          ],
+          "11": [
+            2481,
+            2481
           ]
         },
         "2026-05-14": {
+          "0": [
+            3500,
+            3500
+          ],
+          "9": [
+            1035,
+            1035
+          ],
           "18": [
             2683,
             2683
@@ -20530,17 +21952,25 @@ export const LAB_SUPPORT_DATA = {
           "23": [
             3199,
             3199
-          ],
-          "0": [
-            3500,
-            3500
-          ],
-          "9": [
-            1035,
-            1035
           ]
         },
         "2026-05-15": {
+          "18": [
+            1908,
+            1924
+          ],
+          "11": [
+            3136,
+            3136
+          ],
+          "20": [
+            3444,
+            3444
+          ],
+          "13": [
+            2908,
+            2908
+          ],
           "22": [
             3211,
             3211
@@ -20588,22 +22018,6 @@ export const LAB_SUPPORT_DATA = {
           "9": [
             2673,
             2673
-          ],
-          "18": [
-            1908,
-            1924
-          ],
-          "11": [
-            3136,
-            3136
-          ],
-          "20": [
-            3444,
-            3444
-          ],
-          "13": [
-            2908,
-            2908
           ]
         },
         "2026-05-16": {
@@ -20613,22 +22027,6 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-18": {
-          "21": [
-            0,
-            0
-          ],
-          "14": [
-            0,
-            0
-          ],
-          "23": [
-            0,
-            0
-          ],
-          "16": [
-            0,
-            0
-          ],
           "9": [
             3015,
             3015
@@ -20656,17 +22054,25 @@ export const LAB_SUPPORT_DATA = {
           "12": [
             471,
             471
-          ]
-        },
-        "2026-05-19": {
-          "19": [
-            351,
-            351
           ],
-          "0": [
+          "21": [
             0,
             0
           ],
+          "14": [
+            0,
+            0
+          ],
+          "23": [
+            0,
+            0
+          ],
+          "16": [
+            0,
+            0
+          ]
+        },
+        "2026-05-19": {
           "18": [
             99,
             99
@@ -20676,6 +22082,14 @@ export const LAB_SUPPORT_DATA = {
             0
           ],
           "1": [
+            0,
+            0
+          ],
+          "19": [
+            351,
+            351
+          ],
+          "0": [
             0,
             0
           ]
@@ -20721,10 +22135,6 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-28": {
-          "14": [
-            939,
-            939
-          ],
           "16": [
             29,
             29
@@ -20741,20 +22151,28 @@ export const LAB_SUPPORT_DATA = {
             38,
             38
           ],
-          "17": [
-            50,
-            50
-          ],
           "10": [
             2556,
             2556
           ],
+          "17": [
+            50,
+            50
+          ],
           "12": [
             1660,
             1668
+          ],
+          "14": [
+            939,
+            939
           ]
         },
         "2026-05-29": {
+          "9": [
+            1076,
+            1076
+          ],
           "11": [
             2596,
             2596
@@ -20766,26 +22184,138 @@ export const LAB_SUPPORT_DATA = {
           "12": [
             2,
             2
+          ]
+        },
+        "2026-06-08": {
+          "10": [
+            3186,
+            3186
+          ],
+          "12": [
+            11,
+            11
+          ]
+        },
+        "2026-06-09": {
+          "11": [
+            2586,
+            2586
+          ],
+          "13": [
+            2131,
+            2131
+          ],
+          "15": [
+            73,
+            73
+          ],
+          "10": [
+            2820,
+            2820
+          ],
+          "12": [
+            2493,
+            2493
+          ],
+          "14": [
+            1623,
+            1623
+          ]
+        },
+        "2026-06-10": {
+          "12": [
+            366,
+            366
           ],
           "9": [
-            1076,
-            1076
+            1323,
+            1323
+          ],
+          "11": [
+            1589,
+            1589
+          ],
+          "10": [
+            2194,
+            2194
+          ]
+        },
+        "2026-06-11": {
+          "14": [
+            166,
+            166
+          ],
+          "16": [
+            766,
+            766
+          ],
+          "9": [
+            727,
+            727
+          ],
+          "11": [
+            2858,
+            2858
+          ],
+          "13": [
+            3385,
+            3385
+          ],
+          "17": [
+            861,
+            861
+          ],
+          "10": [
+            980,
+            980
+          ],
+          "12": [
+            2388,
+            2390
+          ]
+        },
+        "2026-06-12": {
+          "8": [
+            3241,
+            3241
+          ],
+          "10": [
+            905,
+            905
+          ],
+          "9": [
+            2309,
+            2309
           ]
         }
       },
       "gen2-006": {
-        "2026-05-01": {
-          "17": [
-            0,
-            16
-          ]
-        },
         "2026-05-06": {
-          "18": [
+          "21": [
+            0,
+            0
+          ],
+          "14": [
             0,
             0
           ],
           "20": [
+            0,
+            0
+          ],
+          "16": [
+            0,
+            0
+          ],
+          "22": [
+            0,
+            0
+          ],
+          "18": [
+            0,
+            0
+          ],
+          "15": [
             0,
             0
           ],
@@ -20797,32 +22327,16 @@ export const LAB_SUPPORT_DATA = {
             0,
             0
           ],
-          "22": [
-            0,
-            0
-          ],
           "19": [
-            0,
-            0
-          ],
-          "15": [
-            0,
-            0
-          ],
-          "21": [
-            0,
-            0
-          ],
-          "14": [
-            0,
-            0
-          ],
-          "16": [
             0,
             0
           ]
         },
         "2026-05-07": {
+          "14": [
+            0,
+            0
+          ],
           "15": [
             0,
             0
@@ -20836,10 +22350,6 @@ export const LAB_SUPPORT_DATA = {
             0
           ],
           "12": [
-            0,
-            0
-          ],
-          "14": [
             0,
             0
           ]
@@ -20851,15 +22361,11 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-12": {
-          "13": [
-            0,
-            0
-          ],
-          "15": [
-            0,
-            0
-          ],
           "17": [
+            0,
+            0
+          ],
+          "16": [
             0,
             0
           ],
@@ -20867,12 +22373,24 @@ export const LAB_SUPPORT_DATA = {
             0,
             0
           ],
-          "16": [
+          "13": [
+            0,
+            0
+          ],
+          "15": [
             0,
             0
           ]
         },
         "2026-05-14": {
+          "18": [
+            0,
+            0
+          ],
+          "17": [
+            0,
+            0
+          ],
           "19": [
             0,
             0
@@ -20881,21 +22399,13 @@ export const LAB_SUPPORT_DATA = {
             0,
             0
           ],
-          "18": [
-            0,
-            0
-          ],
           "20": [
-            0,
-            0
-          ],
-          "17": [
             0,
             0
           ]
         },
         "2026-05-15": {
-          "13": [
+          "15": [
             0,
             0
           ],
@@ -20911,20 +22421,16 @@ export const LAB_SUPPORT_DATA = {
             0,
             0
           ],
-          "15": [
+          "11": [
             0,
             0
           ],
-          "11": [
+          "13": [
             0,
             0
           ]
         },
         "2026-05-18": {
-          "17": [
-            3,
-            3
-          ],
           "12": [
             0,
             0
@@ -20932,18 +22438,18 @@ export const LAB_SUPPORT_DATA = {
           "11": [
             0,
             0
+          ],
+          "17": [
+            3,
+            3
           ]
         },
         "2026-05-19": {
-          "20": [
+          "17": [
             0,
             0
           ],
           "19": [
-            0,
-            0
-          ],
-          "17": [
             0,
             0
           ],
@@ -20954,14 +22460,14 @@ export const LAB_SUPPORT_DATA = {
           "18": [
             0,
             0
+          ],
+          "20": [
+            0,
+            0
           ]
         },
         "2026-05-20": {
-          "19": [
-            0,
-            0
-          ],
-          "21": [
+          "20": [
             0,
             0
           ],
@@ -20973,17 +22479,25 @@ export const LAB_SUPPORT_DATA = {
             0,
             0
           ],
-          "20": [
+          "19": [
+            0,
+            0
+          ],
+          "21": [
             0,
             0
           ]
         },
         "2026-05-21": {
+          "19": [
+            0,
+            0
+          ],
           "17": [
             0,
             0
           ],
-          "19": [
+          "16": [
             0,
             0
           ],
@@ -20994,14 +22508,10 @@ export const LAB_SUPPORT_DATA = {
           "20": [
             0,
             0
-          ],
-          "16": [
-            0,
-            0
           ]
         },
         "2026-05-22": {
-          "19": [
+          "15": [
             0,
             0
           ],
@@ -21017,6 +22527,14 @@ export const LAB_SUPPORT_DATA = {
             0,
             0
           ],
+          "18": [
+            0,
+            0
+          ],
+          "11": [
+            0,
+            0
+          ],
           "20": [
             0,
             0
@@ -21025,7 +22543,37 @@ export const LAB_SUPPORT_DATA = {
             0,
             0
           ],
+          "19": [
+            0,
+            0
+          ]
+        },
+        "2026-05-28": {
+          "16": [
+            0,
+            0
+          ],
           "18": [
+            0,
+            0
+          ],
+          "11": [
+            0,
+            0
+          ],
+          "20": [
+            0,
+            0
+          ],
+          "17": [
+            0,
+            0
+          ],
+          "13": [
+            0,
+            0
+          ],
+          "19": [
             0,
             0
           ],
@@ -21033,13 +22581,11 @@ export const LAB_SUPPORT_DATA = {
             0,
             0
           ],
-          "11": [
+          "12": [
             0,
             0
-          ]
-        },
-        "2026-05-28": {
-          "17": [
+          ],
+          "21": [
             0,
             0
           ],
@@ -21050,6 +22596,16 @@ export const LAB_SUPPORT_DATA = {
           "10": [
             0,
             0
+          ]
+        },
+        "2026-06-01": {
+          "12": [
+            0,
+            0
+          ],
+          "14": [
+            636,
+            636
           ],
           "16": [
             0,
@@ -21059,36 +22615,6 @@ export const LAB_SUPPORT_DATA = {
             0,
             0
           ],
-          "11": [
-            0,
-            0
-          ],
-          "20": [
-            0,
-            0
-          ],
-          "13": [
-            0,
-            0
-          ],
-          "19": [
-            0,
-            0
-          ],
-          "15": [
-            0,
-            0
-          ],
-          "12": [
-            0,
-            0
-          ],
-          "21": [
-            0,
-            0
-          ]
-        },
-        "2026-06-01": {
           "11": [
             0,
             0
@@ -21112,22 +22638,6 @@ export const LAB_SUPPORT_DATA = {
           "19": [
             0,
             0
-          ],
-          "12": [
-            0,
-            0
-          ],
-          "14": [
-            636,
-            636
-          ],
-          "16": [
-            0,
-            0
-          ],
-          "18": [
-            0,
-            0
           ]
         },
         "2026-06-02": {
@@ -21141,11 +22651,7 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-06-05": {
-          "12": [
-            0,
-            0
-          ],
-          "14": [
+          "18": [
             0,
             0
           ],
@@ -21153,7 +22659,23 @@ export const LAB_SUPPORT_DATA = {
             0,
             0
           ],
+          "20": [
+            0,
+            0
+          ],
+          "17": [
+            0,
+            0
+          ],
           "13": [
+            0,
+            0
+          ],
+          "22": [
+            0,
+            0
+          ],
+          "19": [
             0,
             0
           ],
@@ -21161,7 +22683,15 @@ export const LAB_SUPPORT_DATA = {
             0,
             0
           ],
-          "17": [
+          "12": [
+            0,
+            0
+          ],
+          "21": [
+            0,
+            0
+          ],
+          "14": [
             0,
             0
           ],
@@ -21170,219 +22700,133 @@ export const LAB_SUPPORT_DATA = {
             0
           ],
           "16": [
+            0,
+            0
+          ]
+        },
+        "2026-06-08": {
+          "15": [
+            0,
+            0
+          ],
+          "17": [
+            0,
+            0
+          ],
+          "19": [
+            0,
+            0
+          ],
+          "21": [
+            0,
+            0
+          ],
+          "18": [
+            336,
+            336
+          ],
+          "14": [
+            0,
+            0
+          ],
+          "20": [
+            0,
+            0
+          ],
+          "16": [
+            0,
+            0
+          ],
+          "22": [
+            0,
+            0
+          ]
+        },
+        "2026-06-09": {
+          "17": [
+            0,
+            0
+          ],
+          "19": [
+            0,
+            0
+          ],
+          "16": [
+            0,
+            0
+          ],
+          "12": [
+            0,
+            0
+          ],
+          "18": [
+            0,
+            0
+          ],
+          "11": [
+            0,
+            0
+          ],
+          "20": [
+            0,
+            0
+          ],
+          "13": [
+            2,
+            2
+          ]
+        },
+        "2026-06-10": {
+          "22": [
+            0,
+            0
+          ],
+          "19": [
+            0,
+            0
+          ],
+          "15": [
+            0,
+            0
+          ],
+          "12": [
+            0,
+            0
+          ],
+          "21": [
+            0,
+            0
+          ],
+          "14": [
+            0,
+            0
+          ],
+          "23": [
+            0,
+            0
+          ],
+          "13": [
+            0,
+            0
+          ],
+          "11": [
+            0,
+            0
+          ],
+          "20": [
+            0,
+            0
+          ]
+        },
+        "2026-06-11": {
+          "0": [
             0,
             0
           ]
         }
       },
       "gen2-107": {
-        "2026-04-27": {
-          "13": [
-            1122,
-            3205
-          ],
-          "15": [
-            0,
-            2901
-          ],
-          "17": [
-            0,
-            2399
-          ],
-          "10": [
-            0,
-            2493
-          ],
-          "12": [
-            0,
-            2616
-          ],
-          "14": [
-            0,
-            3277
-          ],
-          "16": [
-            0,
-            2476
-          ],
-          "9": [
-            0,
-            2630
-          ],
-          "11": [
-            0,
-            361
-          ]
-        },
-        "2026-04-28": {
-          "14": [
-            0,
-            3412
-          ],
-          "16": [
-            0,
-            2905
-          ],
-          "9": [
-            0,
-            1612
-          ],
-          "11": [
-            0,
-            2046
-          ],
-          "13": [
-            0,
-            3080
-          ],
-          "15": [
-            0,
-            3398
-          ],
-          "17": [
-            0,
-            1141
-          ],
-          "10": [
-            0,
-            2752
-          ],
-          "12": [
-            0,
-            3272
-          ]
-        },
-        "2026-04-29": {
-          "10": [
-            0,
-            2856
-          ],
-          "12": [
-            0,
-            3166
-          ],
-          "14": [
-            0,
-            2022
-          ],
-          "16": [
-            0,
-            3031
-          ],
-          "9": [
-            0,
-            2064
-          ],
-          "11": [
-            0,
-            1792
-          ],
-          "13": [
-            0,
-            2687
-          ],
-          "15": [
-            0,
-            3121
-          ],
-          "17": [
-            0,
-            669
-          ]
-        },
-        "2026-04-30": {
-          "13": [
-            0,
-            3351
-          ],
-          "15": [
-            0,
-            2678
-          ],
-          "17": [
-            0,
-            1644
-          ],
-          "10": [
-            0,
-            3227
-          ],
-          "12": [
-            0,
-            3232
-          ],
-          "14": [
-            0,
-            3341
-          ],
-          "16": [
-            0,
-            2574
-          ],
-          "9": [
-            0,
-            2604
-          ],
-          "11": [
-            0,
-            3531
-          ]
-        },
-        "2026-05-01": {
-          "17": [
-            0,
-            2984
-          ],
-          "10": [
-            0,
-            2087
-          ],
-          "19": [
-            0,
-            2608
-          ],
-          "12": [
-            0,
-            3161
-          ],
-          "16": [
-            0,
-            2830
-          ],
-          "9": [
-            0,
-            38
-          ],
-          "18": [
-            0,
-            1674
-          ],
-          "11": [
-            0,
-            2850
-          ],
-          "13": [
-            0,
-            2817
-          ],
-          "20": [
-            0,
-            122
-          ],
-          "15": [
-            0,
-            1945
-          ]
-        },
         "2026-05-04": {
-          "18": [
-            0,
-            11
-          ],
-          "11": [
-            0,
-            2466
-          ],
           "13": [
             0,
             2740
@@ -21414,9 +22858,21 @@ export const LAB_SUPPORT_DATA = {
           "9": [
             0,
             237
+          ],
+          "18": [
+            0,
+            11
+          ],
+          "11": [
+            0,
+            2466
           ]
         },
         "2026-05-05": {
+          "19": [
+            0,
+            2706
+          ],
           "21": [
             0,
             2381
@@ -21468,10 +22924,6 @@ export const LAB_SUPPORT_DATA = {
           "10": [
             0,
             2747
-          ],
-          "19": [
-            0,
-            2706
           ],
           "12": [
             0,
@@ -21527,6 +22979,14 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-08": {
+          "11": [
+            3462,
+            3462
+          ],
+          "13": [
+            392,
+            392
+          ],
           "10": [
             2023,
             2023
@@ -21538,29 +22998,9 @@ export const LAB_SUPPORT_DATA = {
           "14": [
             1832,
             1832
-          ],
-          "11": [
-            3462,
-            3462
-          ],
-          "13": [
-            392,
-            392
           ]
         },
         "2026-05-11": {
-          "15": [
-            2269,
-            2269
-          ],
-          "10": [
-            3461,
-            3461
-          ],
-          "12": [
-            1185,
-            1185
-          ],
           "14": [
             3322,
             3322
@@ -21576,9 +23016,33 @@ export const LAB_SUPPORT_DATA = {
           "13": [
             2347,
             2347
+          ],
+          "15": [
+            2269,
+            2269
+          ],
+          "10": [
+            3461,
+            3461
+          ],
+          "12": [
+            1185,
+            1185
           ]
         },
         "2026-05-12": {
+          "16": [
+            442,
+            442
+          ],
+          "9": [
+            12,
+            12
+          ],
+          "11": [
+            3408,
+            3408
+          ],
           "13": [
             1974,
             1974
@@ -21598,29 +23062,9 @@ export const LAB_SUPPORT_DATA = {
           "14": [
             2597,
             2597
-          ],
-          "16": [
-            442,
-            442
-          ],
-          "9": [
-            12,
-            12
-          ],
-          "11": [
-            3408,
-            3408
           ]
         },
         "2026-05-13": {
-          "9": [
-            0,
-            0
-          ],
-          "11": [
-            3389,
-            3389
-          ],
           "13": [
             2032,
             2032
@@ -21640,6 +23084,14 @@ export const LAB_SUPPORT_DATA = {
           "14": [
             3207,
             3207
+          ],
+          "9": [
+            0,
+            0
+          ],
+          "11": [
+            3389,
+            3389
           ]
         },
         "2026-05-14": {
@@ -21673,6 +23125,14 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-15": {
+          "11": [
+            3144,
+            3144
+          ],
+          "13": [
+            3008,
+            3008
+          ],
           "10": [
             3417,
             3417
@@ -21688,25 +23148,9 @@ export const LAB_SUPPORT_DATA = {
           "9": [
             170,
             170
-          ],
-          "11": [
-            3144,
-            3144
-          ],
-          "13": [
-            3008,
-            3008
           ]
         },
         "2026-05-18": {
-          "14": [
-            2480,
-            2480
-          ],
-          "16": [
-            585,
-            585
-          ],
           "9": [
             498,
             498
@@ -21730,13 +23174,17 @@ export const LAB_SUPPORT_DATA = {
           "12": [
             3279,
             3279
+          ],
+          "14": [
+            2480,
+            2480
+          ],
+          "16": [
+            585,
+            585
           ]
         },
         "2026-05-19": {
-          "14": [
-            1306,
-            1306
-          ],
           "11": [
             3228,
             3228
@@ -21752,21 +23200,13 @@ export const LAB_SUPPORT_DATA = {
           "12": [
             3448,
             3448
+          ],
+          "14": [
+            1306,
+            1306
           ]
         },
         "2026-05-20": {
-          "15": [
-            1428,
-            1428
-          ],
-          "10": [
-            3334,
-            3334
-          ],
-          "12": [
-            2596,
-            2596
-          ],
           "14": [
             3422,
             3422
@@ -21782,9 +23222,29 @@ export const LAB_SUPPORT_DATA = {
           "13": [
             3400,
             3400
+          ],
+          "15": [
+            1428,
+            1428
+          ],
+          "10": [
+            3334,
+            3334
+          ],
+          "12": [
+            2596,
+            2596
           ]
         },
         "2026-05-21": {
+          "14": [
+            3322,
+            3322
+          ],
+          "16": [
+            2647,
+            2648
+          ],
           "9": [
             2506,
             2506
@@ -21812,21 +23272,9 @@ export const LAB_SUPPORT_DATA = {
           "12": [
             3413,
             3413
-          ],
-          "14": [
-            3322,
-            3322
-          ],
-          "16": [
-            2647,
-            2648
           ]
         },
         "2026-05-22": {
-          "13": [
-            0,
-            0
-          ],
           "8": [
             492,
             492
@@ -21850,6 +23298,10 @@ export const LAB_SUPPORT_DATA = {
           "11": [
             0,
             0
+          ],
+          "13": [
+            0,
+            0
           ]
         },
         "2026-05-25": {
@@ -21871,14 +23323,6 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-06-01": {
-          "15": [
-            534,
-            534
-          ],
-          "17": [
-            2938,
-            2938
-          ],
           "16": [
             2229,
             2229
@@ -21886,25 +23330,17 @@ export const LAB_SUPPORT_DATA = {
           "18": [
             1747,
             1747
+          ],
+          "15": [
+            534,
+            534
+          ],
+          "17": [
+            2938,
+            2938
           ]
         },
         "2026-06-02": {
-          "16": [
-            3015,
-            3015
-          ],
-          "9": [
-            2093,
-            2093
-          ],
-          "18": [
-            639,
-            639
-          ],
-          "11": [
-            2125,
-            2125
-          ],
           "13": [
             2021,
             2025
@@ -21928,9 +23364,33 @@ export const LAB_SUPPORT_DATA = {
           "14": [
             3187,
             3187
+          ],
+          "16": [
+            3015,
+            3015
+          ],
+          "9": [
+            2093,
+            2093
+          ],
+          "18": [
+            639,
+            639
+          ],
+          "11": [
+            2125,
+            2125
           ]
         },
         "2026-06-03": {
+          "11": [
+            2540,
+            2540
+          ],
+          "13": [
+            1671,
+            1671
+          ],
           "15": [
             3463,
             3463
@@ -21958,29 +23418,9 @@ export const LAB_SUPPORT_DATA = {
           "9": [
             1387,
             1387
-          ],
-          "11": [
-            2540,
-            2540
-          ],
-          "13": [
-            1671,
-            1671
           ]
         },
         "2026-06-04": {
-          "14": [
-            802,
-            802
-          ],
-          "16": [
-            2342,
-            2342
-          ],
-          "9": [
-            614,
-            614
-          ],
           "11": [
             3516,
             3516
@@ -22008,12 +23448,40 @@ export const LAB_SUPPORT_DATA = {
           "12": [
             3482,
             3482
+          ],
+          "14": [
+            802,
+            802
+          ],
+          "16": [
+            2342,
+            2342
+          ],
+          "9": [
+            614,
+            614
           ]
         },
         "2026-06-05": {
+          "17": [
+            2650,
+            2650
+          ],
+          "12": [
+            3110,
+            3110
+          ],
+          "14": [
+            2986,
+            2986
+          ],
           "16": [
             2706,
             2706
+          ],
+          "9": [
+            1932,
+            1932
           ],
           "18": [
             2027,
@@ -22035,248 +23503,168 @@ export const LAB_SUPPORT_DATA = {
             2405,
             2405
           ],
-          "17": [
-            2650,
-            2650
-          ],
           "10": [
             3064,
             3064
+          ]
+        },
+        "2026-06-08": {
+          "9": [
+            2882,
+            2882
+          ],
+          "18": [
+            10,
+            10
+          ],
+          "11": [
+            3301,
+            3301
+          ],
+          "13": [
+            3284,
+            3284
+          ],
+          "15": [
+            3183,
+            3183
+          ],
+          "8": [
+            2474,
+            2474
+          ],
+          "17": [
+            2950,
+            2950
+          ],
+          "10": [
+            3479,
+            3479
           ],
           "12": [
-            3110,
-            3110
+            3124,
+            3124
           ],
           "14": [
-            2986,
-            2986
+            3158,
+            3158
+          ],
+          "16": [
+            2558,
+            2558
+          ]
+        },
+        "2026-06-09": {
+          "9": [
+            2600,
+            2608
+          ],
+          "11": [
+            2988,
+            2989
+          ],
+          "13": [
+            3071,
+            3071
+          ],
+          "15": [
+            949,
+            949
+          ],
+          "8": [
+            2260,
+            2260
+          ],
+          "10": [
+            3212,
+            3212
+          ],
+          "12": [
+            2821,
+            2821
+          ],
+          "14": [
+            2251,
+            2251
+          ]
+        },
+        "2026-06-10": {
+          "12": [
+            3041,
+            3041
+          ],
+          "14": [
+            2710,
+            2710
+          ],
+          "16": [
+            1616,
+            1616
           ],
           "9": [
-            1932,
-            1932
+            762,
+            762
+          ],
+          "18": [
+            8,
+            8
+          ],
+          "11": [
+            3034,
+            3034
+          ],
+          "13": [
+            645,
+            645
+          ],
+          "15": [
+            2721,
+            2721
+          ],
+          "8": [
+            3330,
+            3337
+          ],
+          "10": [
+            3494,
+            3494
+          ],
+          "17": [
+            3081,
+            3081
+          ]
+        },
+        "2026-06-11": {
+          "9": [
+            2521,
+            2521
+          ],
+          "11": [
+            8,
+            8
+          ],
+          "13": [
+            6,
+            6
+          ],
+          "8": [
+            2159,
+            2159
+          ],
+          "10": [
+            1179,
+            1179
+          ]
+        },
+        "2026-06-12": {
+          "11": [
+            18,
+            18
           ]
         }
       },
       "gen2-106": {
-        "2026-04-27": {
-          "13": [
-            0,
-            3290
-          ],
-          "15": [
-            0,
-            2586
-          ],
-          "17": [
-            0,
-            2864
-          ],
-          "12": [
-            0,
-            2206
-          ],
-          "14": [
-            0,
-            3372
-          ],
-          "16": [
-            0,
-            3290
-          ]
-        },
-        "2026-04-28": {
-          "14": [
-            0,
-            2905
-          ],
-          "23": [
-            0,
-            135
-          ],
-          "16": [
-            0,
-            3194
-          ],
-          "9": [
-            0,
-            7
-          ],
-          "18": [
-            0,
-            1334
-          ],
-          "11": [
-            0,
-            1912
-          ],
-          "20": [
-            0,
-            33
-          ],
-          "13": [
-            0,
-            2720
-          ],
-          "22": [
-            0,
-            534
-          ],
-          "15": [
-            0,
-            2868
-          ],
-          "17": [
-            0,
-            2776
-          ],
-          "10": [
-            0,
-            1506
-          ],
-          "19": [
-            0,
-            535
-          ],
-          "12": [
-            0,
-            2515
-          ]
-        },
-        "2026-04-29": {
-          "10": [
-            0,
-            2818
-          ],
-          "12": [
-            0,
-            3044
-          ],
-          "14": [
-            0,
-            2669
-          ],
-          "16": [
-            0,
-            2508
-          ],
-          "9": [
-            0,
-            2626
-          ],
-          "11": [
-            0,
-            2968
-          ],
-          "13": [
-            13,
-            2928
-          ],
-          "15": [
-            0,
-            2831
-          ],
-          "17": [
-            0,
-            1814
-          ]
-        },
-        "2026-04-30": {
-          "13": [
-            0,
-            3037
-          ],
-          "15": [
-            0,
-            3225
-          ],
-          "17": [
-            0,
-            3259
-          ],
-          "10": [
-            0,
-            2391
-          ],
-          "12": [
-            0,
-            2994
-          ],
-          "14": [
-            0,
-            3422
-          ],
-          "16": [
-            0,
-            3164
-          ],
-          "9": [
-            0,
-            1455
-          ],
-          "11": [
-            0,
-            2760
-          ]
-        },
-        "2026-05-01": {
-          "8": [
-            0,
-            0
-          ],
-          "17": [
-            0,
-            3404
-          ],
-          "10": [
-            0,
-            2535
-          ],
-          "12": [
-            0,
-            1914
-          ],
-          "21": [
-            0,
-            30
-          ],
-          "14": [
-            0,
-            3274
-          ],
-          "16": [
-            0,
-            2666
-          ],
-          "0": [
-            0,
-            538
-          ],
-          "9": [
-            0,
-            2520
-          ],
-          "11": [
-            0,
-            3148
-          ],
-          "13": [
-            0,
-            2964
-          ],
-          "15": [
-            0,
-            2990
-          ]
-        },
         "2026-05-04": {
-          "18": [
-            0,
-            495
-          ],
-          "11": [
-            0,
-            2210
-          ],
           "13": [
             0,
             2975
@@ -22312,6 +23700,14 @@ export const LAB_SUPPORT_DATA = {
           "9": [
             14,
             2287
+          ],
+          "18": [
+            0,
+            495
+          ],
+          "11": [
+            0,
+            2210
           ]
         },
         "2026-05-05": {
@@ -22357,6 +23753,14 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-06": {
+          "20": [
+            0,
+            36
+          ],
+          "15": [
+            0,
+            3066
+          ],
           "17": [
             0,
             1217
@@ -22389,17 +23793,9 @@ export const LAB_SUPPORT_DATA = {
             610,
             2721
           ],
-          "20": [
-            0,
-            36
-          ],
           "13": [
             0,
             2274
-          ],
-          "15": [
-            0,
-            3066
           ]
         },
         "2026-05-07": {
@@ -22449,9 +23845,25 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-08": {
+          "16": [
+            2806,
+            2806
+          ],
+          "18": [
+            258,
+            258
+          ],
+          "11": [
+            2027,
+            2027
+          ],
           "15": [
             1906,
             1907
+          ],
+          "8": [
+            17,
+            17
           ],
           "17": [
             3246,
@@ -22465,44 +23877,12 @@ export const LAB_SUPPORT_DATA = {
             1519,
             1519
           ],
-          "16": [
-            2806,
-            2806
-          ],
           "9": [
             2193,
             2193
-          ],
-          "18": [
-            258,
-            258
-          ],
-          "11": [
-            2027,
-            2027
-          ],
-          "8": [
-            17,
-            17
           ]
         },
         "2026-05-11": {
-          "15": [
-            2779,
-            2779
-          ],
-          "17": [
-            3107,
-            3107
-          ],
-          "10": [
-            0,
-            20
-          ],
-          "12": [
-            3159,
-            3159
-          ],
           "14": [
             3226,
             3226
@@ -22526,9 +23906,49 @@ export const LAB_SUPPORT_DATA = {
           "13": [
             3130,
             3130
+          ],
+          "15": [
+            2779,
+            2779
+          ],
+          "17": [
+            3107,
+            3107
+          ],
+          "10": [
+            0,
+            20
+          ],
+          "12": [
+            3159,
+            3159
           ]
         },
         "2026-05-12": {
+          "23": [
+            2693,
+            2693
+          ],
+          "16": [
+            3125,
+            3126
+          ],
+          "9": [
+            2083,
+            2083
+          ],
+          "18": [
+            1823,
+            1823
+          ],
+          "11": [
+            2938,
+            2938
+          ],
+          "20": [
+            3476,
+            3476
+          ],
           "13": [
             2606,
             2606
@@ -22564,52 +23984,12 @@ export const LAB_SUPPORT_DATA = {
           "14": [
             2719,
             2719
-          ],
-          "23": [
-            2693,
-            2693
-          ],
-          "16": [
-            3125,
-            3126
-          ],
-          "9": [
-            2083,
-            2083
-          ],
-          "18": [
-            1823,
-            1823
-          ],
-          "11": [
-            2938,
-            2938
-          ],
-          "20": [
-            3476,
-            3476
           ]
         },
         "2026-05-13": {
-          "23": [
-            3332,
-            3332
-          ],
-          "16": [
-            347,
-            347
-          ],
-          "9": [
-            2128,
-            2128
-          ],
           "18": [
             0,
             0
-          ],
-          "11": [
-            2983,
-            2985
           ],
           "20": [
             3543,
@@ -22651,12 +24031,36 @@ export const LAB_SUPPORT_DATA = {
             3123,
             3123
           ],
+          "23": [
+            3332,
+            3332
+          ],
+          "16": [
+            347,
+            347
+          ],
           "0": [
             3333,
             3333
+          ],
+          "9": [
+            2128,
+            2128
+          ],
+          "11": [
+            2983,
+            2985
           ]
         },
         "2026-05-14": {
+          "0": [
+            3036,
+            3036
+          ],
+          "9": [
+            2972,
+            2972
+          ],
           "18": [
             3569,
             3569
@@ -22716,17 +24120,25 @@ export const LAB_SUPPORT_DATA = {
           "16": [
             2462,
             2462
-          ],
-          "0": [
-            3036,
-            3036
-          ],
-          "9": [
-            2972,
-            2972
           ]
         },
         "2026-05-15": {
+          "18": [
+            2859,
+            2859
+          ],
+          "11": [
+            1882,
+            1882
+          ],
+          "20": [
+            3452,
+            3452
+          ],
+          "13": [
+            3437,
+            3437
+          ],
           "22": [
             3251,
             3251
@@ -22774,22 +24186,6 @@ export const LAB_SUPPORT_DATA = {
           "9": [
             2023,
             2023
-          ],
-          "18": [
-            2859,
-            2859
-          ],
-          "11": [
-            1882,
-            1882
-          ],
-          "20": [
-            3452,
-            3452
-          ],
-          "13": [
-            3437,
-            3437
           ]
         },
         "2026-05-16": {
@@ -22799,18 +24195,6 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-18": {
-          "21": [
-            0,
-            0
-          ],
-          "14": [
-            2867,
-            2869
-          ],
-          "16": [
-            1059,
-            1059
-          ],
           "9": [
             610,
             610
@@ -22850,16 +24234,28 @@ export const LAB_SUPPORT_DATA = {
           "12": [
             1967,
             1967
+          ],
+          "21": [
+            0,
+            0
+          ],
+          "14": [
+            2867,
+            2869
+          ],
+          "16": [
+            1059,
+            1059
           ]
         },
         "2026-05-19": {
-          "19": [
-            134,
-            134
-          ],
           "18": [
             597,
             597
+          ],
+          "19": [
+            134,
+            134
           ],
           "12": [
             0,
@@ -22911,10 +24307,6 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-28": {
-          "14": [
-            2126,
-            2130
-          ],
           "16": [
             2845,
             2845
@@ -22938,12 +24330,24 @@ export const LAB_SUPPORT_DATA = {
           "12": [
             1603,
             1603
+          ],
+          "14": [
+            2126,
+            2130
           ]
         },
         "2026-05-29": {
+          "14": [
+            1508,
+            1508
+          ],
           "16": [
             15,
             15
+          ],
+          "9": [
+            2114,
+            2114
           ],
           "11": [
             2574,
@@ -22956,25 +24360,9 @@ export const LAB_SUPPORT_DATA = {
           "12": [
             2106,
             2106
-          ],
-          "14": [
-            1508,
-            1508
-          ],
-          "9": [
-            2114,
-            2114
           ]
         },
         "2026-06-01": {
-          "15": [
-            23,
-            23
-          ],
-          "10": [
-            1216,
-            1216
-          ],
           "12": [
             1732,
             1732
@@ -22986,17 +24374,17 @@ export const LAB_SUPPORT_DATA = {
           "11": [
             1505,
             1505
+          ],
+          "15": [
+            23,
+            23
+          ],
+          "10": [
+            1216,
+            1216
           ]
         },
         "2026-06-02": {
-          "16": [
-            0,
-            0
-          ],
-          "18": [
-            0,
-            0
-          ],
           "20": [
             0,
             0
@@ -23014,6 +24402,14 @@ export const LAB_SUPPORT_DATA = {
             0
           ],
           "21": [
+            0,
+            0
+          ],
+          "16": [
+            0,
+            0
+          ],
+          "18": [
             0,
             0
           ]
@@ -23037,28 +24433,16 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-06-04": {
-          "9": [
-            2346,
-            2346
-          ],
           "10": [
             2833,
             2833
+          ],
+          "9": [
+            2346,
+            2346
           ]
         },
         "2026-06-05": {
-          "11": [
-            2547,
-            2547
-          ],
-          "13": [
-            1740,
-            1740
-          ],
-          "10": [
-            2650,
-            2650
-          ],
           "12": [
             3139,
             3139
@@ -23070,86 +24454,132 @@ export const LAB_SUPPORT_DATA = {
           "9": [
             690,
             690
+          ],
+          "11": [
+            2547,
+            2547
+          ],
+          "13": [
+            1740,
+            1740
+          ],
+          "10": [
+            2650,
+            2650
+          ]
+        },
+        "2026-06-08": {
+          "9": [
+            1944,
+            1944
+          ],
+          "10": [
+            336,
+            336
+          ]
+        },
+        "2026-06-09": {
+          "16": [
+            1471,
+            1471
+          ],
+          "9": [
+            3,
+            3
+          ],
+          "11": [
+            3303,
+            3303
+          ],
+          "13": [
+            913,
+            913
+          ],
+          "15": [
+            3135,
+            3135
+          ],
+          "10": [
+            1841,
+            1841
+          ],
+          "12": [
+            2489,
+            2489
+          ],
+          "14": [
+            2254,
+            2254
+          ]
+        },
+        "2026-06-10": {
+          "12": [
+            1706,
+            1706
+          ],
+          "9": [
+            870,
+            907
+          ],
+          "11": [
+            2272,
+            2272
+          ],
+          "13": [
+            3,
+            3
+          ],
+          "10": [
+            2117,
+            2117
+          ]
+        },
+        "2026-06-11": {
+          "14": [
+            1366,
+            1366
+          ],
+          "9": [
+            491,
+            491
+          ],
+          "11": [
+            2379,
+            2379
+          ],
+          "13": [
+            3387,
+            3387
+          ],
+          "10": [
+            1112,
+            1112
+          ],
+          "12": [
+            2094,
+            2094
+          ]
+        },
+        "2026-06-12": {
+          "10": [
+            527,
+            527
+          ],
+          "12": [
+            2022,
+            2022
+          ],
+          "14": [
+            7,
+            7
+          ],
+          "9": [
+            1913,
+            1913
           ]
         }
       },
       "gen2-015": {
-        "2026-04-27": {
-          "11": [
-            0,
-            317
-          ],
-          "10": [
-            0,
-            513
-          ],
-          "12": [
-            0,
-            562
-          ],
-          "13": [
-            0,
-            24
-          ]
-        },
-        "2026-04-28": {
-          "17": [
-            46,
-            46
-          ],
-          "14": [
-            8,
-            8
-          ],
-          "10": [
-            248,
-            248
-          ],
-          "15": [
-            48,
-            48
-          ]
-        },
-        "2026-04-29": {
-          "11": [
-            0,
-            978
-          ],
-          "16": [
-            198,
-            198
-          ],
-          "15": [
-            25,
-            25
-          ]
-        },
-        "2026-04-30": {
-          "17": [
-            0,
-            176
-          ],
-          "16": [
-            0,
-            195
-          ]
-        },
-        "2026-05-02": {
-          "12": [
-            0,
-            324
-          ]
-        },
-        "2026-05-03": {
-          "17": [
-            0,
-            1435
-          ],
-          "18": [
-            0,
-            1285
-          ]
-        },
         "2026-05-05": {
           "17": [
             84,
@@ -23163,13 +24593,13 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-08": {
-          "13": [
-            42,
-            42
-          ],
           "12": [
             183,
             183
+          ],
+          "13": [
+            42,
+            42
           ]
         },
         "2026-05-12": {
@@ -23195,23 +24625,23 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-21": {
-          "15": [
-            198,
-            198
-          ],
           "16": [
             694,
             694
+          ],
+          "15": [
+            198,
+            198
           ]
         },
         "2026-05-22": {
-          "16": [
-            2433,
-            2433
-          ],
           "15": [
             831,
             831
+          ],
+          "16": [
+            2433,
+            2433
           ]
         },
         "2026-05-26": {
@@ -23235,16 +24665,20 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-28": {
-          "18": [
-            96,
-            96
-          ],
           "19": [
             329,
             335
+          ],
+          "18": [
+            96,
+            96
           ]
         },
         "2026-05-29": {
+          "20": [
+            1207,
+            1209
+          ],
           "19": [
             781,
             789
@@ -23256,28 +24690,24 @@ export const LAB_SUPPORT_DATA = {
           "18": [
             133,
             133
-          ],
-          "20": [
-            1207,
-            1209
           ]
         },
         "2026-06-02": {
-          "16": [
-            143,
-            143
-          ],
           "14": [
             1777,
             1777
           ],
-          "13": [
-            311,
-            311
-          ],
           "17": [
             890,
             890
+          ],
+          "16": [
+            143,
+            143
+          ],
+          "13": [
+            311,
+            311
           ]
         },
         "2026-06-05": {
@@ -23285,259 +24715,47 @@ export const LAB_SUPPORT_DATA = {
             1727,
             1727
           ],
-          "15": [
-            2094,
-            2094
-          ],
           "16": [
             855,
             855
+          ],
+          "15": [
+            2094,
+            2094
+          ]
+        },
+        "2026-06-10": {
+          "17": [
+            48,
+            48
           ]
         }
       },
       "gen2-003": {
-        "2026-04-27": {
-          "11": [
-            0,
-            3012
-          ],
-          "20": [
-            0,
-            283
-          ],
-          "13": [
-            1707,
-            3509
-          ],
-          "15": [
-            0,
-            3150
-          ],
-          "17": [
-            0,
-            3256
-          ],
-          "10": [
-            0,
-            3324
-          ],
-          "19": [
-            0,
-            2766
-          ],
-          "12": [
-            0,
-            2777
-          ],
-          "14": [
-            0,
-            3251
-          ],
-          "16": [
-            0,
-            2170
-          ],
-          "9": [
-            0,
-            2813
-          ],
-          "18": [
-            0,
-            2985
-          ]
-        },
-        "2026-04-28": {
-          "14": [
-            8,
-            42
-          ],
-          "9": [
-            109,
-            1263
-          ],
-          "11": [
-            0,
-            1411
-          ],
-          "13": [
-            59,
-            510
-          ],
-          "10": [
-            135,
-            1959
-          ],
-          "12": [
-            0,
-            2534
-          ]
-        },
-        "2026-04-29": {
-          "19": [
-            1,
-            3009
-          ],
-          "21": [
-            0,
-            3115
-          ],
-          "14": [
-            0,
-            2119
-          ],
-          "16": [
-            0,
-            1562
-          ],
-          "23": [
-            0,
-            2564
-          ],
-          "18": [
-            2,
-            2227
-          ],
-          "20": [
-            0,
-            3541
-          ],
-          "22": [
-            0,
-            2655
-          ],
-          "15": [
-            14,
-            2627
-          ],
-          "17": [
-            0,
-            2436
-          ]
-        },
-        "2026-04-30": {
-          "13": [
-            0,
-            3280
-          ],
-          "22": [
-            0,
-            3274
-          ],
-          "15": [
-            0,
-            3325
-          ],
-          "17": [
-            0,
-            3066
-          ],
-          "10": [
-            0,
-            3072
-          ],
-          "19": [
-            0,
-            2644
-          ],
-          "12": [
-            0,
-            2954
-          ],
-          "21": [
-            0,
-            2193
-          ],
-          "14": [
-            0,
-            1482
-          ],
-          "23": [
-            0,
-            3384
-          ],
-          "16": [
-            0,
-            3334
-          ],
-          "0": [
-            6,
-            1346
-          ],
-          "9": [
-            0,
-            1508
-          ],
-          "18": [
-            0,
-            2052
-          ],
-          "11": [
-            0,
-            2798
-          ],
-          "20": [
-            0,
-            3516
-          ]
-        },
-        "2026-05-01": {
-          "17": [
-            0,
-            3171
-          ],
-          "10": [
-            0,
-            3091
-          ],
-          "12": [
-            1,
-            2727
-          ],
-          "14": [
-            0,
-            3519
-          ],
-          "16": [
-            0,
-            1702
-          ],
-          "0": [
-            0,
-            3030
-          ],
-          "9": [
-            0,
-            1086
-          ],
-          "11": [
-            0,
-            3234
-          ],
-          "13": [
-            0,
-            3097
-          ],
-          "15": [
-            0,
-            2970
-          ]
-        },
         "2026-05-04": {
-          "18": [
+          "16": [
             0,
-            93
-          ],
-          "11": [
-            0,
-            1609
+            1235
           ],
           "13": [
             0,
             2876
           ],
+          "9": [
+            0,
+            642
+          ],
+          "18": [
+            0,
+            93
+          ],
           "15": [
             0,
             546
+          ],
+          "11": [
+            0,
+            1609
           ],
           "17": [
             0,
@@ -23554,29 +24772,9 @@ export const LAB_SUPPORT_DATA = {
           "14": [
             0,
             2725
-          ],
-          "16": [
-            0,
-            1235
-          ],
-          "9": [
-            0,
-            642
           ]
         },
         "2026-05-05": {
-          "16": [
-            0,
-            3010
-          ],
-          "9": [
-            0,
-            1570
-          ],
-          "18": [
-            0,
-            2677
-          ],
           "11": [
             0,
             1223
@@ -23589,29 +24787,21 @@ export const LAB_SUPPORT_DATA = {
             0,
             2063
           ],
-          "15": [
-            227,
-            3018
-          ],
-          "17": [
-            0,
-            2829
-          ],
-          "10": [
-            0,
-            0
-          ],
           "19": [
             0,
             896
           ],
-          "12": [
-            143,
-            2756
+          "15": [
+            227,
+            3018
           ],
           "21": [
             0,
             2581
+          ],
+          "17": [
+            0,
+            2829
           ],
           "14": [
             0,
@@ -23620,21 +24810,29 @@ export const LAB_SUPPORT_DATA = {
           "23": [
             39,
             671
-          ]
-        },
-        "2026-05-06": {
-          "17": [
-            0,
-            2977
           ],
           "10": [
             0,
-            3169
+            0
           ],
-          "19": [
+          "16": [
             0,
-            2227
+            3010
           ],
+          "12": [
+            143,
+            2756
+          ],
+          "9": [
+            0,
+            1570
+          ],
+          "18": [
+            0,
+            2677
+          ]
+        },
+        "2026-05-06": {
           "21": [
             537,
             3564
@@ -23647,9 +24845,17 @@ export const LAB_SUPPORT_DATA = {
             0,
             3313
           ],
+          "20": [
+            0,
+            3399
+          ],
           "16": [
             0,
             3328
+          ],
+          "22": [
+            1056,
+            3382
           ],
           "0": [
             598,
@@ -23663,35 +24869,79 @@ export const LAB_SUPPORT_DATA = {
             17,
             2881
           ],
+          "15": [
+            0,
+            3427
+          ],
           "11": [
             0,
             594
           ],
-          "20": [
+          "17": [
             0,
-            3399
+            2977
           ],
           "13": [
             0,
             1114
           ],
-          "22": [
-            1056,
-            3382
-          ],
-          "15": [
+          "10": [
             0,
-            3427
+            3169
+          ],
+          "19": [
+            0,
+            2227
           ]
         },
         "2026-05-07": {
+          "14": [
+            1780,
+            1780
+          ],
+          "23": [
+            2710,
+            2710
+          ],
+          "16": [
+            3242,
+            3244
+          ],
+          "22": [
+            1151,
+            1151
+          ],
+          "0": [
+            0,
+            2915
+          ],
+          "9": [
+            0,
+            2921
+          ],
+          "18": [
+            2738,
+            2738
+          ],
           "15": [
             3157,
             3157
           ],
+          "11": [
+            0,
+            3030
+          ],
+          "20": [
+            3398,
+            3398
+          ],
           "17": [
             3368,
             3368
+          ],
+          "13": [
+            0,
+            1941
           ],
           "10": [
             0,
@@ -23708,49 +24958,17 @@ export const LAB_SUPPORT_DATA = {
           "21": [
             513,
             513
-          ],
-          "14": [
-            1780,
-            1780
-          ],
-          "23": [
-            2710,
-            2710
-          ],
-          "16": [
-            3242,
-            3244
-          ],
-          "0": [
-            0,
-            2915
-          ],
-          "9": [
-            0,
-            2921
-          ],
-          "18": [
-            2738,
-            2738
-          ],
-          "11": [
-            0,
-            3030
-          ],
-          "20": [
-            3398,
-            3398
-          ],
-          "13": [
-            0,
-            1941
-          ],
-          "22": [
-            1151,
-            1151
           ]
         },
         "2026-05-08": {
+          "0": [
+            3453,
+            3453
+          ],
+          "9": [
+            2420,
+            2420
+          ],
           "15": [
             3102,
             3102
@@ -23763,6 +24981,10 @@ export const LAB_SUPPORT_DATA = {
             2369,
             2369
           ],
+          "16": [
+            3113,
+            3113
+          ],
           "12": [
             2370,
             2370
@@ -23770,18 +24992,6 @@ export const LAB_SUPPORT_DATA = {
           "14": [
             2497,
             2497
-          ],
-          "16": [
-            3113,
-            3113
-          ],
-          "0": [
-            3453,
-            3453
-          ],
-          "9": [
-            2420,
-            2420
           ],
           "11": [
             1183,
@@ -23793,6 +25003,10 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-11": {
+          "14": [
+            1634,
+            1634
+          ],
           "10": [
             2908,
             2908
@@ -23800,10 +25014,6 @@ export const LAB_SUPPORT_DATA = {
           "12": [
             3331,
             3331
-          ],
-          "14": [
-            1634,
-            1634
           ],
           "9": [
             2537,
@@ -23821,6 +25031,10 @@ export const LAB_SUPPORT_DATA = {
       },
       "gen2-115": {
         "2026-05-27": {
+          "20": [
+            105,
+            105
+          ],
           "19": [
             47,
             47
@@ -23828,10 +25042,6 @@ export const LAB_SUPPORT_DATA = {
           "21": [
             54,
             54
-          ],
-          "20": [
-            105,
-            105
           ]
         },
         "2026-05-28": {
@@ -23853,328 +25063,108 @@ export const LAB_SUPPORT_DATA = {
             817,
             817
           ]
+        },
+        "2026-06-10": {
+          "12": [
+            754,
+            754
+          ],
+          "11": [
+            892,
+            892
+          ],
+          "17": [
+            674,
+            674
+          ],
+          "10": [
+            307,
+            307
+          ],
+          "13": [
+            277,
+            277
+          ]
+        },
+        "2026-06-11": {
+          "10": [
+            951,
+            951
+          ],
+          "13": [
+            107,
+            107
+          ],
+          "16": [
+            54,
+            54
+          ],
+          "12": [
+            87,
+            87
+          ],
+          "15": [
+            1567,
+            1567
+          ],
+          "11": [
+            112,
+            112
+          ],
+          "17": [
+            45,
+            45
+          ],
+          "14": [
+            473,
+            473
+          ]
         }
       },
       "gen2-012": {
-        "2026-04-27": {
-          "13": [
-            80,
-            1226
-          ],
-          "8": [
-            0,
-            421
-          ],
-          "17": [
-            53,
-            2352
-          ],
-          "12": [
-            0,
-            3494
-          ],
-          "16": [
-            0,
-            2190
-          ],
-          "11": [
-            6,
-            3157
-          ],
-          "15": [
-            0,
-            3269
-          ],
-          "10": [
-            0,
-            2445
-          ],
-          "19": [
-            0,
-            1244
-          ],
-          "14": [
-            0,
-            2347
-          ],
-          "9": [
-            0,
-            2333
-          ],
-          "18": [
-            1736,
-            3518
-          ]
-        },
-        "2026-04-28": {
-          "14": [
-            0,
-            2471
-          ],
-          "9": [
-            0,
-            294
-          ],
-          "18": [
-            0,
-            200
-          ],
-          "13": [
-            0,
-            1419
-          ],
-          "8": [
-            0,
-            75
-          ],
-          "17": [
-            0,
-            3112
-          ],
-          "12": [
-            0,
-            2865
-          ],
-          "16": [
-            0,
-            2760
-          ],
-          "11": [
-            0,
-            2622
-          ],
-          "15": [
-            0,
-            2903
-          ],
-          "10": [
-            0,
-            2925
-          ]
-        },
-        "2026-04-29": {
-          "10": [
-            0,
-            2401
-          ],
-          "14": [
-            0,
-            1141
-          ],
-          "9": [
-            0,
-            1320
-          ],
-          "13": [
-            0,
-            1032
-          ],
-          "17": [
-            0,
-            1275
-          ],
-          "12": [
-            0,
-            3118
-          ],
-          "16": [
-            0,
-            3458
-          ],
-          "11": [
-            0,
-            2840
-          ],
-          "15": [
-            0,
-            2605
-          ]
-        },
-        "2026-04-30": {
-          "13": [
-            23,
-            3266
-          ],
-          "12": [
-            570,
-            3319
-          ],
-          "16": [
-            0,
-            2079
-          ],
-          "11": [
-            0,
-            3224
-          ],
-          "15": [
-            0,
-            2742
-          ],
-          "10": [
-            0,
-            3143
-          ],
-          "14": [
-            0,
-            2862
-          ],
-          "9": [
-            0,
-            173
-          ]
-        },
-        "2026-05-01": {
-          "10": [
-            608,
-            2589
-          ],
-          "19": [
-            0,
-            3569
-          ],
-          "14": [
-            169,
-            2364
-          ],
-          "9": [
-            0,
-            255
-          ],
-          "18": [
-            0,
-            2269
-          ],
-          "13": [
-            0,
-            483
-          ],
-          "17": [
-            0,
-            1159
-          ],
-          "12": [
-            0,
-            3046
-          ],
-          "16": [
-            0,
-            2917
-          ],
-          "11": [
-            0,
-            2761
-          ],
-          "20": [
-            0,
-            513
-          ],
-          "15": [
-            0,
-            3200
-          ]
-        },
-        "2026-05-03": {
-          "10": [
-            0,
-            2828
-          ],
-          "14": [
-            0,
-            2357
-          ],
-          "9": [
-            0,
-            2708
-          ],
-          "13": [
-            0,
-            2064
-          ],
-          "8": [
-            0,
-            341
-          ],
-          "17": [
-            0,
-            978
-          ],
-          "12": [
-            0,
-            1432
-          ],
-          "16": [
-            0,
-            2538
-          ],
-          "11": [
-            0,
-            1969
-          ],
-          "15": [
-            0,
-            2872
-          ]
-        },
         "2026-05-04": {
-          "18": [
-            0,
-            107
-          ],
           "13": [
             0,
             1224
-          ],
-          "17": [
-            0,
-            2212
-          ],
-          "12": [
-            0,
-            2650
-          ],
-          "16": [
-            0,
-            1855
-          ],
-          "11": [
-            0,
-            2567
           ],
           "15": [
             0,
             2248
           ],
+          "17": [
+            0,
+            2212
+          ],
           "10": [
             0,
             2509
+          ],
+          "12": [
+            0,
+            2650
           ],
           "14": [
             0,
             2235
           ],
+          "16": [
+            0,
+            1855
+          ],
           "9": [
             0,
             577
-          ]
-        },
-        "2026-05-05": {
-          "16": [
+          ],
+          "18": [
             0,
-            964
+            107
           ],
           "11": [
             0,
-            3119
-          ],
-          "15": [
-            0,
-            45
-          ],
-          "10": [
-            93,
-            1792
-          ],
+            2567
+          ]
+        },
+        "2026-05-05": {
           "19": [
             0,
             134
@@ -24182,6 +25172,10 @@ export const LAB_SUPPORT_DATA = {
           "14": [
             0,
             375
+          ],
+          "16": [
+            0,
+            964
           ],
           "9": [
             11,
@@ -24191,13 +25185,25 @@ export const LAB_SUPPORT_DATA = {
             0,
             1855
           ],
+          "11": [
+            0,
+            3119
+          ],
           "13": [
             0,
             1024
           ],
+          "15": [
+            0,
+            45
+          ],
           "17": [
             0,
             3157
+          ],
+          "10": [
+            93,
+            1792
           ],
           "12": [
             0,
@@ -24205,29 +25211,9 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-06": {
-          "10": [
+          "15": [
             0,
-            2319
-          ],
-          "19": [
-            0,
-            1592
-          ],
-          "14": [
-            0,
-            3034
-          ],
-          "9": [
-            0,
-            3037
-          ],
-          "18": [
-            0,
-            3238
-          ],
-          "13": [
-            0,
-            2815
+            3217
           ],
           "8": [
             0,
@@ -24237,24 +25223,52 @@ export const LAB_SUPPORT_DATA = {
             0,
             2036
           ],
+          "10": [
+            0,
+            2319
+          ],
+          "19": [
+            0,
+            1592
+          ],
           "12": [
             0,
             3451
+          ],
+          "14": [
+            0,
+            3034
           ],
           "16": [
             0,
             3226
           ],
+          "9": [
+            0,
+            3037
+          ],
+          "18": [
+            0,
+            3238
+          ],
           "11": [
             0,
             1414
           ],
-          "15": [
+          "13": [
             0,
-            3217
+            2815
           ]
         },
         "2026-05-07": {
+          "8": [
+            0,
+            1819
+          ],
+          "17": [
+            3443,
+            3443
+          ],
           "10": [
             0,
             2682
@@ -24263,9 +25277,17 @@ export const LAB_SUPPORT_DATA = {
             12,
             12
           ],
+          "12": [
+            0,
+            2812
+          ],
           "14": [
             2352,
             2352
+          ],
+          "16": [
+            1254,
+            1254
           ],
           "9": [
             0,
@@ -24275,35 +25297,39 @@ export const LAB_SUPPORT_DATA = {
             2636,
             2636
           ],
-          "13": [
-            375,
-            964
-          ],
-          "8": [
-            0,
-            1819
-          ],
-          "17": [
-            3443,
-            3443
-          ],
-          "12": [
-            0,
-            2812
-          ],
-          "16": [
-            1254,
-            1254
-          ],
           "11": [
             0,
             2554
+          ],
+          "13": [
+            375,
+            964
           ]
         },
         "2026-05-08": {
+          "16": [
+            2468,
+            2468
+          ],
+          "18": [
+            3357,
+            3357
+          ],
+          "11": [
+            2732,
+            2732
+          ],
+          "13": [
+            2243,
+            2243
+          ],
           "15": [
             1130,
             1130
+          ],
+          "17": [
+            3495,
+            3495
           ],
           "10": [
             3009,
@@ -24313,6 +25339,10 @@ export const LAB_SUPPORT_DATA = {
             354,
             354
           ],
+          "12": [
+            2801,
+            2801
+          ],
           "14": [
             1642,
             1642
@@ -24320,106 +25350,54 @@ export const LAB_SUPPORT_DATA = {
           "9": [
             1060,
             1060
-          ],
-          "18": [
-            3357,
-            3357
-          ],
-          "13": [
-            2243,
-            2243
-          ],
-          "17": [
-            3495,
-            3495
-          ],
-          "12": [
-            2801,
-            2801
-          ],
-          "16": [
-            2468,
-            2468
-          ],
-          "11": [
-            2732,
-            2732
           ]
         },
         "2026-05-10": {
-          "12": [
-            3235,
-            3235
-          ],
-          "16": [
-            1972,
-            1972
-          ],
           "11": [
             3107,
             3107
-          ],
-          "15": [
-            2014,
-            2014
-          ],
-          "10": [
-            3179,
-            3179
-          ],
-          "14": [
-            3020,
-            3020
-          ],
-          "9": [
-            1278,
-            1278
           ],
           "13": [
             1057,
             1057
           ],
+          "15": [
+            2014,
+            2014
+          ],
           "17": [
             3000,
             3000
+          ],
+          "10": [
+            3179,
+            3179
+          ],
+          "12": [
+            3235,
+            3235
+          ],
+          "14": [
+            3020,
+            3020
+          ],
+          "16": [
+            1972,
+            1972
+          ],
+          "9": [
+            1278,
+            1278
           ]
         },
         "2026-05-11": {
-          "8": [
-            742,
-            742
-          ],
-          "17": [
-            2212,
-            2212
-          ],
-          "12": [
-            1180,
-            1180
+          "14": [
+            2243,
+            2243
           ],
           "16": [
             2929,
             2929
-          ],
-          "11": [
-            2922,
-            2922
-          ],
-          "15": [
-            948,
-            948
-          ],
-          "10": [
-            3419,
-            3419
-          ],
-          "19": [
-            138,
-            138
-          ],
-          "14": [
-            2243,
-            2243
           ],
           "9": [
             2972,
@@ -24429,23 +25407,43 @@ export const LAB_SUPPORT_DATA = {
             984,
             984
           ],
+          "11": [
+            2922,
+            2922
+          ],
           "13": [
             2779,
             2779
+          ],
+          "15": [
+            948,
+            948
+          ],
+          "8": [
+            742,
+            742
+          ],
+          "17": [
+            2212,
+            2212
+          ],
+          "10": [
+            3419,
+            3419
+          ],
+          "19": [
+            138,
+            138
+          ],
+          "12": [
+            1180,
+            1180
           ]
         },
         "2026-05-12": {
-          "15": [
-            2861,
-            2861
-          ],
-          "10": [
-            2942,
-            2942
-          ],
-          "14": [
-            3467,
-            3467
+          "16": [
+            2650,
+            2650
           ],
           "9": [
             3540,
@@ -24455,43 +25453,39 @@ export const LAB_SUPPORT_DATA = {
             406,
             406
           ],
+          "11": [
+            1998,
+            1998
+          ],
           "13": [
             2592,
             2592
+          ],
+          "15": [
+            2861,
+            2861
           ],
           "17": [
             2645,
             2645
           ],
+          "10": [
+            2942,
+            2942
+          ],
           "12": [
             2124,
             2124
           ],
-          "16": [
-            2650,
-            2650
-          ],
-          "11": [
-            1998,
-            1998
+          "14": [
+            3467,
+            3467
           ]
         },
         "2026-05-13": {
           "13": [
             2964,
             2964
-          ],
-          "12": [
-            3147,
-            3147
-          ],
-          "16": [
-            98,
-            98
-          ],
-          "11": [
-            3115,
-            3115
           ],
           "15": [
             2735,
@@ -24501,17 +25495,45 @@ export const LAB_SUPPORT_DATA = {
             3376,
             3376
           ],
+          "12": [
+            3147,
+            3147
+          ],
           "14": [
             2693,
             2693
+          ],
+          "16": [
+            98,
+            98
+          ],
+          "11": [
+            3115,
+            3115
           ]
         },
         "2026-05-14": {
+          "9": [
+            0,
+            0
+          ],
+          "18": [
+            0,
+            0
+          ],
           "11": [
             2995,
             2997
           ],
           "20": [
+            0,
+            0
+          ],
+          "13": [
+            3030,
+            3030
+          ],
+          "22": [
             0,
             0
           ],
@@ -24527,26 +25549,6 @@ export const LAB_SUPPORT_DATA = {
             0,
             0
           ],
-          "14": [
-            3015,
-            3015
-          ],
-          "9": [
-            0,
-            0
-          ],
-          "18": [
-            0,
-            0
-          ],
-          "13": [
-            3030,
-            3030
-          ],
-          "22": [
-            0,
-            0
-          ],
           "12": [
             2538,
             2538
@@ -24555,53 +25557,81 @@ export const LAB_SUPPORT_DATA = {
             0,
             0
           ],
+          "14": [
+            3015,
+            3015
+          ],
           "16": [
             330,
             330
           ]
         },
         "2026-05-15": {
-          "15": [
-            836,
-            836
-          ],
-          "10": [
-            3417,
-            3417
-          ],
-          "14": [
-            844,
-            844
-          ],
-          "9": [
-            838,
-            838
+          "11": [
+            2792,
+            2792
           ],
           "13": [
             344,
             344
           ],
+          "15": [
+            836,
+            836
+          ],
           "17": [
             2665,
             2665
+          ],
+          "10": [
+            3417,
+            3417
           ],
           "12": [
             3015,
             3015
           ],
+          "14": [
+            844,
+            844
+          ],
           "16": [
             2407,
             2407
           ],
-          "11": [
-            2792,
-            2792
+          "9": [
+            838,
+            838
           ]
         },
         "2026-05-17": {
+          "8": [
+            0,
+            0
+          ],
+          "15": [
+            2248,
+            2248
+          ],
+          "17": [
+            3061,
+            3061
+          ],
+          "10": [
+            1470,
+            1470
+          ],
+          "12": [
+            3228,
+            3228
+          ],
           "14": [
             1934,
             1934
+          ],
+          "16": [
+            2203,
+            2203
           ],
           "9": [
             0,
@@ -24611,48 +25641,16 @@ export const LAB_SUPPORT_DATA = {
             41,
             41
           ],
-          "13": [
-            1216,
-            1216
-          ],
-          "8": [
-            0,
-            0
-          ],
-          "17": [
-            3061,
-            3061
-          ],
-          "12": [
-            3228,
-            3228
-          ],
-          "16": [
-            2203,
-            2203
-          ],
           "11": [
             1509,
             1509
           ],
-          "15": [
-            2248,
-            2248
-          ],
-          "10": [
-            1470,
-            1470
+          "13": [
+            1216,
+            1216
           ]
         },
         "2026-05-18": {
-          "14": [
-            1120,
-            1120
-          ],
-          "23": [
-            0,
-            0
-          ],
           "9": [
             2708,
             2708
@@ -24660,34 +25658,6 @@ export const LAB_SUPPORT_DATA = {
           "18": [
             385,
             385
-          ],
-          "13": [
-            224,
-            224
-          ],
-          "22": [
-            0,
-            0
-          ],
-          "8": [
-            890,
-            890
-          ],
-          "17": [
-            1216,
-            1216
-          ],
-          "12": [
-            2191,
-            2191
-          ],
-          "21": [
-            0,
-            0
-          ],
-          "16": [
-            2013,
-            2013
           ],
           "11": [
             2435,
@@ -24697,9 +25667,25 @@ export const LAB_SUPPORT_DATA = {
             0,
             0
           ],
+          "13": [
+            224,
+            224
+          ],
+          "22": [
+            0,
+            0
+          ],
           "15": [
             2947,
             2947
+          ],
+          "8": [
+            890,
+            890
+          ],
+          "17": [
+            1216,
+            1216
           ],
           "10": [
             1629,
@@ -24708,6 +25694,26 @@ export const LAB_SUPPORT_DATA = {
           "19": [
             1541,
             1541
+          ],
+          "12": [
+            2191,
+            2191
+          ],
+          "16": [
+            2013,
+            2013
+          ],
+          "21": [
+            0,
+            0
+          ],
+          "14": [
+            1120,
+            1120
+          ],
+          "23": [
+            0,
+            0
           ]
         },
         "2026-05-19": {
@@ -24717,13 +25723,13 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-20": {
-          "12": [
-            0,
-            0
-          ],
           "11": [
             1972,
             1972
+          ],
+          "12": [
+            0,
+            0
           ],
           "10": [
             272,
@@ -24731,55 +25737,63 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-21": {
-          "9": [
-            913,
-            913
-          ],
-          "13": [
-            1737,
-            1738
-          ],
-          "17": [
-            710,
-            710
-          ],
-          "12": [
-            3093,
-            3093
+          "14": [
+            24,
+            24
           ],
           "16": [
             1174,
             1174
           ],
+          "9": [
+            913,
+            913
+          ],
           "11": [
             1791,
             1791
+          ],
+          "13": [
+            1737,
+            1738
           ],
           "15": [
             1114,
             1114
           ],
+          "17": [
+            710,
+            710
+          ],
           "10": [
             2202,
             2202
           ],
-          "14": [
-            24,
-            24
+          "12": [
+            3093,
+            3093
           ]
         },
         "2026-05-22": {
-          "13": [
-            1729,
-            1729
+          "15": [
+            1663,
+            1663
           ],
           "17": [
             1857,
             1857
           ],
+          "10": [
+            1526,
+            1526
+          ],
           "12": [
             1189,
             1189
+          ],
+          "14": [
+            1738,
+            1738
           ],
           "16": [
             2112,
@@ -24789,17 +25803,9 @@ export const LAB_SUPPORT_DATA = {
             1935,
             1939
           ],
-          "15": [
-            1663,
-            1663
-          ],
-          "10": [
-            1526,
-            1526
-          ],
-          "14": [
-            1738,
-            1738
+          "13": [
+            1729,
+            1729
           ]
         },
         "2026-05-24": {
@@ -24807,59 +25813,51 @@ export const LAB_SUPPORT_DATA = {
             1001,
             1001
           ],
-          "9": [
-            67,
-            67
-          ],
-          "13": [
-            1801,
-            1801
-          ],
-          "17": [
-            386,
-            386
-          ],
-          "12": [
-            814,
-            814
-          ],
           "16": [
             2230,
             2230
+          ],
+          "9": [
+            67,
+            67
           ],
           "11": [
             1754,
             1754
           ],
+          "13": [
+            1801,
+            1801
+          ],
           "15": [
             3165,
             3165
           ],
+          "17": [
+            386,
+            386
+          ],
           "10": [
             3297,
             3297
+          ],
+          "12": [
+            814,
+            814
           ]
         },
         "2026-05-25": {
-          "16": [
-            3140,
-            3140
-          ],
-          "11": [
-            3001,
-            3001
-          ],
-          "15": [
-            2853,
-            2853
-          ],
-          "10": [
-            1430,
-            1430
+          "12": [
+            3159,
+            3159
           ],
           "14": [
             2954,
             2954
+          ],
+          "16": [
+            3140,
+            3140
           ],
           "9": [
             198,
@@ -24869,9 +25867,17 @@ export const LAB_SUPPORT_DATA = {
             2448,
             2448
           ],
+          "11": [
+            3001,
+            3001
+          ],
           "13": [
             1780,
             1780
+          ],
+          "15": [
+            2853,
+            2853
           ],
           "8": [
             1421,
@@ -24881,17 +25887,29 @@ export const LAB_SUPPORT_DATA = {
             2707,
             2707
           ],
-          "12": [
-            3159,
-            3159
+          "10": [
+            1430,
+            1430
           ]
         },
         "2026-05-26": {
+          "17": [
+            0,
+            0
+          ],
           "10": [
             0,
             0
           ],
           "19": [
+            0,
+            0
+          ],
+          "12": [
+            0,
+            0
+          ],
+          "16": [
             0,
             0
           ],
@@ -24903,22 +25921,6 @@ export const LAB_SUPPORT_DATA = {
             0,
             0
           ],
-          "13": [
-            0,
-            0
-          ],
-          "17": [
-            0,
-            0
-          ],
-          "12": [
-            0,
-            0
-          ],
-          "16": [
-            0,
-            0
-          ],
           "11": [
             0,
             0
@@ -24926,32 +25928,36 @@ export const LAB_SUPPORT_DATA = {
           "20": [
             0,
             0
+          ],
+          "13": [
+            0,
+            0
           ]
         },
         "2026-05-27": {
-          "15": [
-            2703,
-            2703
-          ],
-          "10": [
-            215,
-            215
-          ],
-          "14": [
-            1271,
-            1484
-          ],
           "13": [
             2056,
             2056
+          ],
+          "15": [
+            2703,
+            2703
           ],
           "17": [
             2623,
             2623
           ],
+          "10": [
+            215,
+            215
+          ],
           "12": [
             3093,
             3093
+          ],
+          "14": [
+            1271,
+            1484
           ],
           "16": [
             3188,
@@ -24967,9 +25973,17 @@ export const LAB_SUPPORT_DATA = {
             801,
             801
           ],
+          "9": [
+            1126,
+            1126
+          ],
           "11": [
             3178,
             3178
+          ],
+          "13": [
+            1489,
+            1489
           ],
           "15": [
             2079,
@@ -24979,63 +25993,55 @@ export const LAB_SUPPORT_DATA = {
             2481,
             2481
           ],
-          "14": [
-            161,
-            163
-          ],
-          "9": [
-            1126,
-            1126
-          ],
-          "13": [
-            1489,
-            1489
-          ],
           "12": [
             805,
             805
+          ],
+          "14": [
+            161,
+            163
           ]
         },
         "2026-05-29": {
-          "18": [
-            24,
-            24
-          ],
-          "13": [
-            1470,
-            1470
-          ],
-          "17": [
-            2456,
-            2456
-          ],
-          "12": [
-            3463,
-            3463
+          "14": [
+            353,
+            353
           ],
           "16": [
             3213,
             3213
           ],
+          "9": [
+            1554,
+            1554
+          ],
+          "18": [
+            24,
+            24
+          ],
           "11": [
             3537,
             3537
+          ],
+          "13": [
+            1470,
+            1470
           ],
           "15": [
             2654,
             2654
           ],
+          "17": [
+            2456,
+            2456
+          ],
           "10": [
             2961,
             2961
           ],
-          "14": [
-            353,
-            353
-          ],
-          "9": [
-            1554,
-            1554
+          "12": [
+            3463,
+            3463
           ]
         },
         "2026-05-31": {
@@ -25043,67 +26049,51 @@ export const LAB_SUPPORT_DATA = {
             1977,
             1977
           ],
-          "14": [
-            3316,
-            3316
-          ],
-          "9": [
-            2307,
-            2307
-          ],
-          "13": [
-            3024,
-            3024
-          ],
-          "17": [
-            1297,
-            1297
-          ],
           "12": [
             309,
             309
+          ],
+          "14": [
+            3316,
+            3316
           ],
           "16": [
             2935,
             2935
           ],
+          "9": [
+            2307,
+            2307
+          ],
           "11": [
             2478,
             2478
           ],
+          "13": [
+            3024,
+            3024
+          ],
           "15": [
             2734,
             2734
+          ],
+          "17": [
+            1297,
+            1297
           ]
         },
         "2026-06-01": {
-          "17": [
-            2815,
-            2815
-          ],
           "12": [
             3048,
             3048
           ],
-          "16": [
-            3486,
-            3486
-          ],
-          "11": [
-            78,
-            78
-          ],
-          "15": [
-            3324,
-            3324
-          ],
-          "10": [
-            1111,
-            1111
-          ],
           "14": [
             3446,
             3446
+          ],
+          "16": [
+            3486,
+            3486
           ],
           "9": [
             2817,
@@ -25113,6 +26103,10 @@ export const LAB_SUPPORT_DATA = {
             2643,
             2643
           ],
+          "11": [
+            78,
+            78
+          ],
           "13": [
             3530,
             3530
@@ -25120,16 +26114,28 @@ export const LAB_SUPPORT_DATA = {
           "8": [
             1661,
             1661
+          ],
+          "15": [
+            3324,
+            3324
+          ],
+          "17": [
+            2815,
+            2815
+          ],
+          "10": [
+            1111,
+            1111
           ]
         },
         "2026-06-02": {
-          "9": [
-            2678,
-            2678
-          ],
           "13": [
             3490,
             3490
+          ],
+          "15": [
+            2147,
+            2355
           ],
           "8": [
             53,
@@ -25139,22 +26145,6 @@ export const LAB_SUPPORT_DATA = {
             3521,
             3521
           ],
-          "12": [
-            2849,
-            2849
-          ],
-          "16": [
-            3307,
-            3307
-          ],
-          "11": [
-            2955,
-            2955
-          ],
-          "15": [
-            2147,
-            2355
-          ],
           "10": [
             3119,
             3119
@@ -25163,85 +26153,85 @@ export const LAB_SUPPORT_DATA = {
             0,
             0
           ],
+          "12": [
+            2849,
+            2849
+          ],
           "14": [
             1699,
             1809
+          ],
+          "16": [
+            3307,
+            3307
+          ],
+          "9": [
+            2678,
+            2678
+          ],
+          "11": [
+            2955,
+            2955
           ]
         },
         "2026-06-03": {
-          "15": [
-            3545,
-            3545
-          ],
-          "10": [
-            3101,
-            3101
-          ],
-          "14": [
-            2838,
-            2838
-          ],
-          "9": [
-            943,
-            943
+          "11": [
+            2504,
+            2504
           ],
           "13": [
             1821,
             1821
           ],
+          "15": [
+            3545,
+            3545
+          ],
           "17": [
             3061,
             3061
+          ],
+          "10": [
+            3101,
+            3101
           ],
           "12": [
             3100,
             3100
           ],
+          "14": [
+            2838,
+            2838
+          ],
           "16": [
             2835,
             2836
           ],
-          "11": [
-            2504,
-            2504
+          "9": [
+            943,
+            943
           ]
         },
         "2026-06-04": {
-          "14": [
-            1206,
-            1206
-          ],
-          "9": [
-            2476,
-            2476
-          ],
           "18": [
             3358,
             3358
-          ],
-          "13": [
-            2821,
-            2821
-          ],
-          "17": [
-            2414,
-            2414
-          ],
-          "12": [
-            2409,
-            2409
-          ],
-          "16": [
-            3436,
-            3436
           ],
           "11": [
             2937,
             2937
           ],
+          "13": [
+            2821,
+            2821
+          ],
           "15": [
             1940,
             1940
+          ],
+          "17": [
+            2414,
+            2414
           ],
           "10": [
             2097,
@@ -25250,21 +26240,25 @@ export const LAB_SUPPORT_DATA = {
           "19": [
             932,
             932
+          ],
+          "12": [
+            2409,
+            2409
+          ],
+          "14": [
+            1206,
+            1206
+          ],
+          "16": [
+            3436,
+            3436
+          ],
+          "9": [
+            2476,
+            2476
           ]
         },
         "2026-06-05": {
-          "18": [
-            7,
-            7
-          ],
-          "13": [
-            339,
-            339
-          ],
-          "8": [
-            68,
-            68
-          ],
           "17": [
             3282,
             3282
@@ -25273,29 +26267,273 @@ export const LAB_SUPPORT_DATA = {
             3401,
             3401
           ],
+          "14": [
+            2555,
+            2555
+          ],
           "16": [
             2881,
             2881
+          ],
+          "9": [
+            2567,
+            2567
+          ],
+          "18": [
+            7,
+            7
           ],
           "11": [
             3359,
             3359
           ],
+          "13": [
+            339,
+            339
+          ],
           "15": [
             3141,
             3141
           ],
+          "8": [
+            68,
+            68
+          ],
           "10": [
             1978,
             1978
+          ]
+        },
+        "2026-06-07": {
+          "15": [
+            2748,
+            2748
+          ],
+          "8": [
+            15,
+            15
+          ],
+          "17": [
+            2998,
+            2998
+          ],
+          "10": [
+            3006,
+            3006
+          ],
+          "12": [
+            3043,
+            3043
           ],
           "14": [
-            2555,
-            2555
+            3386,
+            3386
+          ],
+          "16": [
+            3422,
+            3422
           ],
           "9": [
-            2567,
-            2567
+            2247,
+            2247
+          ],
+          "11": [
+            3349,
+            3349
+          ],
+          "13": [
+            3567,
+            3567
+          ]
+        },
+        "2026-06-08": {
+          "9": [
+            2009,
+            2009
+          ],
+          "11": [
+            3105,
+            3105
+          ],
+          "13": [
+            1548,
+            1548
+          ],
+          "15": [
+            1386,
+            1386
+          ],
+          "8": [
+            803,
+            803
+          ],
+          "17": [
+            1980,
+            1980
+          ],
+          "10": [
+            3398,
+            3400
+          ],
+          "12": [
+            2793,
+            2793
+          ],
+          "14": [
+            0,
+            0
+          ],
+          "16": [
+            2315,
+            2316
+          ]
+        },
+        "2026-06-09": {
+          "16": [
+            2864,
+            2864
+          ],
+          "9": [
+            1229,
+            1229
+          ],
+          "11": [
+            3038,
+            3038
+          ],
+          "13": [
+            903,
+            903
+          ],
+          "15": [
+            1810,
+            1810
+          ],
+          "10": [
+            2137,
+            2137
+          ],
+          "12": [
+            3182,
+            3182
+          ],
+          "14": [
+            2621,
+            2621
+          ]
+        },
+        "2026-06-10": {
+          "12": [
+            724,
+            724
+          ],
+          "14": [
+            3197,
+            3197
+          ],
+          "16": [
+            1832,
+            1832
+          ],
+          "9": [
+            2818,
+            2818
+          ],
+          "11": [
+            2864,
+            2864
+          ],
+          "13": [
+            3021,
+            3022
+          ],
+          "15": [
+            3213,
+            3213
+          ],
+          "10": [
+            3349,
+            3349
+          ],
+          "17": [
+            3015,
+            3015
+          ]
+        },
+        "2026-06-11": {
+          "14": [
+            2840,
+            2840
+          ],
+          "16": [
+            1854,
+            1854
+          ],
+          "9": [
+            2683,
+            2683
+          ],
+          "18": [
+            89,
+            89
+          ],
+          "11": [
+            1912,
+            1926
+          ],
+          "13": [
+            697,
+            697
+          ],
+          "15": [
+            3102,
+            3102
+          ],
+          "17": [
+            2461,
+            2461
+          ],
+          "10": [
+            2586,
+            2586
+          ],
+          "12": [
+            2671,
+            2672
+          ]
+        },
+        "2026-06-12": {
+          "13": [
+            1356,
+            1356
+          ],
+          "15": [
+            1012,
+            1012
+          ],
+          "8": [
+            0,
+            0
+          ],
+          "10": [
+            1804,
+            1804
+          ],
+          "12": [
+            3102,
+            3103
+          ],
+          "14": [
+            3492,
+            3492
+          ],
+          "9": [
+            464,
+            465
+          ],
+          "11": [
+            1196,
+            1196
           ]
         }
       },
@@ -25323,11 +26561,11 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-06-02": {
-          "18": [
+          "20": [
             0,
             0
           ],
-          "20": [
+          "18": [
             0,
             0
           ]
@@ -25341,6 +26579,28 @@ export const LAB_SUPPORT_DATA = {
             0,
             0
           ]
+        },
+        "2026-06-09": {
+          "17": [
+            0,
+            0
+          ]
+        },
+        "2026-06-10": {
+          "15": [
+            78,
+            78
+          ],
+          "17": [
+            627,
+            627
+          ]
+        },
+        "2026-06-11": {
+          "12": [
+            0,
+            0
+          ]
         }
       },
       "gen2-113": {
@@ -25349,11 +26609,11 @@ export const LAB_SUPPORT_DATA = {
             0,
             0
           ],
-          "4": [
+          "1": [
             0,
             0
           ],
-          "1": [
+          "4": [
             0,
             0
           ],
@@ -25409,10 +26669,6 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-27": {
-          "2": [
-            0,
-            0
-          ],
           "0": [
             0,
             0
@@ -25422,6 +26678,10 @@ export const LAB_SUPPORT_DATA = {
             0
           ],
           "1": [
+            0,
+            0
+          ],
+          "2": [
             0,
             0
           ]
@@ -25435,160 +26695,34 @@ export const LAB_SUPPORT_DATA = {
             997,
             997
           ]
+        },
+        "2026-06-10": {
+          "16": [
+            828,
+            828
+          ],
+          "14": [
+            39,
+            39
+          ],
+          "17": [
+            701,
+            701
+          ],
+          "15": [
+            512,
+            512
+          ]
+        },
+        "2026-06-11": {
+          "12": [
+            317,
+            317
+          ]
         }
       },
       "gen2-017": {
-        "2026-04-27": {
-          "13": [
-            0,
-            3511
-          ],
-          "15": [
-            0,
-            2231
-          ],
-          "10": [
-            0,
-            2991
-          ],
-          "12": [
-            25,
-            3577
-          ],
-          "14": [
-            0,
-            3366
-          ],
-          "16": [
-            0,
-            1877
-          ],
-          "9": [
-            7,
-            1621
-          ],
-          "11": [
-            2762,
-            3473
-          ]
-        },
-        "2026-04-28": {
-          "14": [
-            0,
-            2372
-          ],
-          "16": [
-            0,
-            2802
-          ],
-          "9": [
-            0,
-            958
-          ],
-          "11": [
-            0,
-            3492
-          ],
-          "13": [
-            2,
-            3005
-          ],
-          "15": [
-            0,
-            2922
-          ],
-          "17": [
-            0,
-            1471
-          ],
-          "10": [
-            0,
-            2718
-          ],
-          "12": [
-            0,
-            2971
-          ]
-        },
-        "2026-04-29": {
-          "10": [
-            0,
-            2036
-          ],
-          "12": [
-            0,
-            2585
-          ],
-          "14": [
-            0,
-            2002
-          ],
-          "16": [
-            0,
-            3348
-          ],
-          "9": [
-            0,
-            2168
-          ],
-          "11": [
-            0,
-            2193
-          ],
-          "13": [
-            0,
-            3396
-          ],
-          "15": [
-            0,
-            3070
-          ],
-          "17": [
-            0,
-            1838
-          ]
-        },
-        "2026-04-30": {
-          "13": [
-            0,
-            340
-          ],
-          "10": [
-            0,
-            1921
-          ],
-          "12": [
-            0,
-            406
-          ],
-          "9": [
-            0,
-            1891
-          ],
-          "11": [
-            0,
-            1111
-          ]
-        },
-        "2026-05-01": {
-          "10": [
-            0,
-            3409
-          ],
-          "9": [
-            0,
-            1073
-          ],
-          "11": [
-            0,
-            951
-          ]
-        },
         "2026-05-04": {
-          "11": [
-            0,
-            2248
-          ],
           "13": [
             0,
             2065
@@ -25612,6 +26746,10 @@ export const LAB_SUPPORT_DATA = {
           "9": [
             0,
             2482
+          ],
+          "11": [
+            0,
+            2248
           ]
         },
         "2026-05-05": {
@@ -25625,10 +26763,6 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-06": {
-          "10": [
-            0,
-            1622
-          ],
           "14": [
             0,
             189
@@ -25644,6 +26778,10 @@ export const LAB_SUPPORT_DATA = {
           "13": [
             0,
             1643
+          ],
+          "10": [
+            0,
+            1622
           ]
         },
         "2026-05-07": {
@@ -25669,28 +26807,16 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-08": {
-          "9": [
-            124,
-            124
-          ],
           "8": [
             1393,
             1393
+          ],
+          "9": [
+            124,
+            124
           ]
         },
         "2026-05-11": {
-          "8": [
-            1659,
-            1659
-          ],
-          "10": [
-            3553,
-            3553
-          ],
-          "12": [
-            3002,
-            3002
-          ],
           "16": [
             17,
             17
@@ -25706,9 +26832,29 @@ export const LAB_SUPPORT_DATA = {
           "13": [
             1075,
             1075
+          ],
+          "8": [
+            1659,
+            1659
+          ],
+          "10": [
+            3553,
+            3553
+          ],
+          "12": [
+            3002,
+            3002
           ]
         },
         "2026-05-12": {
+          "9": [
+            1874,
+            1874
+          ],
+          "11": [
+            1611,
+            1611
+          ],
           "8": [
             4,
             4
@@ -25720,25 +26866,9 @@ export const LAB_SUPPORT_DATA = {
           "12": [
             1301,
             1301
-          ],
-          "9": [
-            1874,
-            1874
-          ],
-          "11": [
-            1611,
-            1611
           ]
         },
         "2026-05-13": {
-          "16": [
-            1261,
-            1261
-          ],
-          "9": [
-            2935,
-            2935
-          ],
           "15": [
             1128,
             1128
@@ -25746,23 +26876,27 @@ export const LAB_SUPPORT_DATA = {
           "10": [
             1392,
             1392
+          ],
+          "16": [
+            1261,
+            1261
+          ],
+          "9": [
+            2935,
+            2935
           ]
         },
         "2026-05-14": {
-          "10": [
-            2338,
-            2338
-          ],
           "9": [
             2395,
             2395
+          ],
+          "10": [
+            2338,
+            2338
           ]
         },
         "2026-05-15": {
-          "8": [
-            521,
-            521
-          ],
           "9": [
             73,
             73
@@ -25770,17 +26904,13 @@ export const LAB_SUPPORT_DATA = {
           "11": [
             3084,
             3084
+          ],
+          "8": [
+            521,
+            521
           ]
         },
         "2026-05-18": {
-          "14": [
-            3522,
-            3522
-          ],
-          "16": [
-            904,
-            904
-          ],
           "13": [
             2494,
             2494
@@ -25788,13 +26918,17 @@ export const LAB_SUPPORT_DATA = {
           "15": [
             3535,
             3535
+          ],
+          "14": [
+            3522,
+            3522
+          ],
+          "16": [
+            904,
+            904
           ]
         },
         "2026-05-19": {
-          "11": [
-            297,
-            297
-          ],
           "8": [
             1218,
             1218
@@ -25802,33 +26936,33 @@ export const LAB_SUPPORT_DATA = {
           "12": [
             698,
             698
+          ],
+          "11": [
+            297,
+            297
           ]
         },
         "2026-05-20": {
-          "8": [
-            1142,
-            1142
-          ],
           "9": [
             902,
             902
+          ],
+          "8": [
+            1142,
+            1142
           ]
         },
         "2026-05-21": {
-          "8": [
-            1220,
-            1220
-          ],
           "14": [
             76,
             76
+          ],
+          "8": [
+            1220,
+            1220
           ]
         },
         "2026-05-22": {
-          "13": [
-            3173,
-            3173
-          ],
           "15": [
             127,
             127
@@ -25860,6 +26994,10 @@ export const LAB_SUPPORT_DATA = {
           "11": [
             2791,
             2791
+          ],
+          "13": [
+            3173,
+            3173
           ]
         },
         "2026-05-26": {
@@ -25935,10 +27073,6 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-28": {
-          "14": [
-            1394,
-            1394
-          ],
           "16": [
             812,
             812
@@ -25963,23 +27097,35 @@ export const LAB_SUPPORT_DATA = {
             2059,
             2059
           ],
-          "17": [
-            581,
-            581
-          ],
           "10": [
             2519,
             2519
           ],
+          "17": [
+            581,
+            581
+          ],
           "12": [
             3034,
             3034
+          ],
+          "14": [
+            1394,
+            1394
           ]
         },
         "2026-05-29": {
+          "14": [
+            3402,
+            3402
+          ],
           "16": [
             2867,
             2867
+          ],
+          "9": [
+            1632,
+            1632
           ],
           "13": [
             1946,
@@ -26000,25 +27146,9 @@ export const LAB_SUPPORT_DATA = {
           "10": [
             2064,
             2064
-          ],
-          "14": [
-            3402,
-            3402
-          ],
-          "9": [
-            1632,
-            1632
           ]
         },
         "2026-06-01": {
-          "15": [
-            2494,
-            2494
-          ],
-          "10": [
-            3081,
-            3081
-          ],
           "12": [
             3126,
             3126
@@ -26034,9 +27164,25 @@ export const LAB_SUPPORT_DATA = {
           "13": [
             3153,
             3153
+          ],
+          "15": [
+            2494,
+            2494
+          ],
+          "10": [
+            3081,
+            3081
           ]
         },
         "2026-06-02": {
+          "12": [
+            683,
+            683
+          ],
+          "14": [
+            3160,
+            3160
+          ],
           "9": [
             1917,
             1917
@@ -26056,17 +27202,17 @@ export const LAB_SUPPORT_DATA = {
           "10": [
             3244,
             3244
-          ],
-          "12": [
-            683,
-            683
-          ],
-          "14": [
-            3160,
-            3160
           ]
         },
         "2026-06-03": {
+          "11": [
+            2647,
+            2647
+          ],
+          "13": [
+            543,
+            543
+          ],
           "15": [
             794,
             794
@@ -26082,21 +27228,9 @@ export const LAB_SUPPORT_DATA = {
           "9": [
             2275,
             2275
-          ],
-          "11": [
-            2647,
-            2647
-          ],
-          "13": [
-            543,
-            543
           ]
         },
         "2026-06-04": {
-          "9": [
-            1367,
-            1367
-          ],
           "11": [
             1620,
             1620
@@ -26104,9 +27238,17 @@ export const LAB_SUPPORT_DATA = {
           "10": [
             3377,
             3377
+          ],
+          "9": [
+            1367,
+            1367
           ]
         },
         "2026-06-05": {
+          "9": [
+            3261,
+            3261
+          ],
           "13": [
             17,
             17
@@ -26118,311 +27260,137 @@ export const LAB_SUPPORT_DATA = {
           "10": [
             978,
             978
+          ]
+        },
+        "2026-06-08": {
+          "11": [
+            3398,
+            3398
           ],
-          "9": [
+          "13": [
+            2292,
+            2292
+          ],
+          "15": [
+            1765,
+            1765
+          ],
+          "10": [
+            1130,
+            1130
+          ],
+          "12": [
             3261,
             3261
+          ],
+          "14": [
+            2819,
+            2819
+          ],
+          "16": [
+            539,
+            539
+          ]
+        },
+        "2026-06-09": {
+          "15": [
+            291,
+            291
+          ],
+          "8": [
+            320,
+            320
+          ],
+          "17": [
+            2378,
+            2378
+          ],
+          "10": [
+            86,
+            86
+          ],
+          "12": [
+            1101,
+            1101
+          ],
+          "14": [
+            1918,
+            1918
+          ],
+          "16": [
+            450,
+            450
+          ],
+          "9": [
+            3341,
+            3341
+          ],
+          "11": [
+            13,
+            13
+          ],
+          "13": [
+            1162,
+            1162
+          ]
+        },
+        "2026-06-10": {
+          "14": [
+            6,
+            6
+          ],
+          "9": [
+            3321,
+            3321
+          ],
+          "11": [
+            1699,
+            1699
+          ],
+          "8": [
+            1279,
+            1279
+          ],
+          "10": [
+            1295,
+            1295
+          ]
+        },
+        "2026-06-11": {
+          "13": [
+            8,
+            8
+          ],
+          "8": [
+            1665,
+            1665
+          ],
+          "10": [
+            2561,
+            2561
+          ],
+          "9": [
+            3265,
+            3265
+          ],
+          "11": [
+            434,
+            434
+          ]
+        },
+        "2026-06-12": {
+          "9": [
+            1874,
+            1874
+          ],
+          "10": [
+            818,
+            818
           ]
         }
       },
       "gen2-013": {
-        "2026-04-27": {
-          "20": [
-            0,
-            3066
-          ],
-          "13": [
-            0,
-            3325
-          ],
-          "22": [
-            0,
-            3147
-          ],
-          "15": [
-            0,
-            3005
-          ],
-          "17": [
-            0,
-            3236
-          ],
-          "10": [
-            0,
-            3258
-          ],
-          "19": [
-            0,
-            1380
-          ],
-          "12": [
-            246,
-            2742
-          ],
-          "21": [
-            0,
-            3216
-          ],
-          "14": [
-            0,
-            3266
-          ],
-          "23": [
-            0,
-            3533
-          ],
-          "16": [
-            0,
-            3183
-          ],
-          "9": [
-            0,
-            2517
-          ],
-          "11": [
-            0,
-            2948
-          ]
-        },
-        "2026-04-28": {
-          "14": [
-            0,
-            2656
-          ],
-          "23": [
-            0,
-            3452
-          ],
-          "16": [
-            0,
-            2924
-          ],
-          "0": [
-            0,
-            3285
-          ],
-          "9": [
-            0,
-            2301
-          ],
-          "18": [
-            0,
-            1906
-          ],
-          "11": [
-            0,
-            3476
-          ],
-          "20": [
-            0,
-            671
-          ],
-          "13": [
-            0,
-            3095
-          ],
-          "22": [
-            0,
-            2962
-          ],
-          "15": [
-            0,
-            2905
-          ],
-          "17": [
-            0,
-            2739
-          ],
-          "10": [
-            0,
-            2674
-          ],
-          "19": [
-            0,
-            2758
-          ],
-          "12": [
-            0,
-            3266
-          ],
-          "21": [
-            0,
-            2999
-          ]
-        },
-        "2026-04-29": {
-          "10": [
-            0,
-            2785
-          ],
-          "12": [
-            0,
-            3181
-          ],
-          "14": [
-            0,
-            3318
-          ],
-          "16": [
-            0,
-            2871
-          ],
-          "0": [
-            0,
-            3042
-          ],
-          "9": [
-            0,
-            1945
-          ],
-          "11": [
-            0,
-            3513
-          ],
-          "13": [
-            0,
-            1279
-          ],
-          "15": [
-            0,
-            3082
-          ],
-          "8": [
-            0,
-            0
-          ],
-          "17": [
-            0,
-            2253
-          ]
-        },
-        "2026-04-30": {
-          "13": [
-            0,
-            1656
-          ],
-          "22": [
-            660,
-            3191
-          ],
-          "15": [
-            0,
-            3245
-          ],
-          "17": [
-            0,
-            3348
-          ],
-          "10": [
-            14,
-            1898
-          ],
-          "19": [
-            0,
-            2884
-          ],
-          "12": [
-            17,
-            2780
-          ],
-          "21": [
-            1,
-            2567
-          ],
-          "14": [
-            0,
-            1623
-          ],
-          "23": [
-            0,
-            2907
-          ],
-          "16": [
-            0,
-            3096
-          ],
-          "9": [
-            0,
-            2437
-          ],
-          "18": [
-            0,
-            2296
-          ],
-          "11": [
-            0,
-            3163
-          ],
-          "20": [
-            0,
-            3378
-          ]
-        },
-        "2026-05-01": {
-          "17": [
-            0,
-            1713
-          ],
-          "10": [
-            0,
-            3474
-          ],
-          "12": [
-            0,
-            3514
-          ],
-          "14": [
-            0,
-            3350
-          ],
-          "16": [
-            0,
-            3307
-          ],
-          "0": [
-            0,
-            1311
-          ],
-          "9": [
-            0,
-            764
-          ],
-          "18": [
-            0,
-            456
-          ],
-          "11": [
-            0,
-            3560
-          ],
-          "13": [
-            0,
-            3030
-          ],
-          "15": [
-            0,
-            3026
-          ]
-        },
-        "2026-05-02": {
-          "0": [
-            0,
-            13
-          ]
-        },
         "2026-05-04": {
-          "18": [
-            0,
-            1837
-          ],
-          "11": [
-            0,
-            2516
-          ],
-          "20": [
-            0,
-            2819
-          ],
           "13": [
             0,
             2918
@@ -26470,9 +27438,25 @@ export const LAB_SUPPORT_DATA = {
           "9": [
             0,
             2389
+          ],
+          "18": [
+            0,
+            1837
+          ],
+          "11": [
+            0,
+            2516
+          ],
+          "20": [
+            0,
+            2819
           ]
         },
         "2026-05-05": {
+          "19": [
+            11,
+            2986
+          ],
           "21": [
             384,
             1419
@@ -26529,16 +27513,16 @@ export const LAB_SUPPORT_DATA = {
             0,
             1771
           ],
-          "19": [
-            11,
-            2986
-          ],
           "12": [
             0,
             3364
           ]
         },
         "2026-05-06": {
+          "15": [
+            0,
+            3333
+          ],
           "10": [
             0,
             3485
@@ -26570,10 +27554,6 @@ export const LAB_SUPPORT_DATA = {
           "13": [
             0,
             3403
-          ],
-          "15": [
-            0,
-            3333
           ]
         },
         "2026-05-07": {
@@ -26583,6 +27563,10 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-08": {
+          "16": [
+            2548,
+            2548
+          ],
           "15": [
             1757,
             1757
@@ -26590,25 +27574,9 @@ export const LAB_SUPPORT_DATA = {
           "14": [
             548,
             548
-          ],
-          "16": [
-            2548,
-            2548
           ]
         },
         "2026-05-11": {
-          "15": [
-            2747,
-            2747
-          ],
-          "10": [
-            1749,
-            1749
-          ],
-          "12": [
-            955,
-            955
-          ],
           "14": [
             3344,
             3344
@@ -26624,9 +27592,29 @@ export const LAB_SUPPORT_DATA = {
           "13": [
             941,
             941
+          ],
+          "15": [
+            2747,
+            2747
+          ],
+          "10": [
+            1749,
+            1749
+          ],
+          "12": [
+            955,
+            955
           ]
         },
         "2026-05-12": {
+          "16": [
+            0,
+            0
+          ],
+          "11": [
+            3283,
+            3283
+          ],
           "13": [
             1567,
             1567
@@ -26650,21 +27638,9 @@ export const LAB_SUPPORT_DATA = {
           "14": [
             0,
             0
-          ],
-          "16": [
-            0,
-            0
-          ],
-          "11": [
-            3283,
-            3283
           ]
         },
         "2026-05-13": {
-          "11": [
-            2638,
-            2638
-          ],
           "13": [
             1580,
             1580
@@ -26684,6 +27660,10 @@ export const LAB_SUPPORT_DATA = {
           "14": [
             3449,
             3449
+          ],
+          "11": [
+            2638,
+            2638
           ]
         },
         "2026-05-14": {
@@ -26713,6 +27693,14 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-05-15": {
+          "11": [
+            2535,
+            2535
+          ],
+          "13": [
+            3072,
+            3072
+          ],
           "10": [
             2942,
             2942
@@ -26732,25 +27720,9 @@ export const LAB_SUPPORT_DATA = {
           "9": [
             708,
             708
-          ],
-          "11": [
-            2535,
-            2535
-          ],
-          "13": [
-            3072,
-            3072
           ]
         },
         "2026-05-18": {
-          "14": [
-            2632,
-            2632
-          ],
-          "16": [
-            1077,
-            1077
-          ],
           "9": [
             427,
             427
@@ -26774,13 +27746,17 @@ export const LAB_SUPPORT_DATA = {
           "12": [
             3556,
             3556
+          ],
+          "14": [
+            2632,
+            2632
+          ],
+          "16": [
+            1077,
+            1077
           ]
         },
         "2026-05-19": {
-          "14": [
-            1576,
-            1576
-          ],
           "11": [
             3395,
             3395
@@ -26796,17 +27772,13 @@ export const LAB_SUPPORT_DATA = {
           "12": [
             3372,
             3372
+          ],
+          "14": [
+            1576,
+            1576
           ]
         },
         "2026-05-20": {
-          "10": [
-            3503,
-            3503
-          ],
-          "12": [
-            3285,
-            3285
-          ],
           "14": [
             3009,
             3009
@@ -26822,20 +27794,44 @@ export const LAB_SUPPORT_DATA = {
           "13": [
             3558,
             3558
+          ],
+          "10": [
+            3503,
+            3503
+          ],
+          "12": [
+            3285,
+            3285
           ]
         },
         "2026-05-21": {
+          "19": [
+            0,
+            0
+          ],
+          "21": [
+            0,
+            0
+          ],
+          "14": [
+            2777,
+            2777
+          ],
+          "16": [
+            1360,
+            1360
+          ],
           "9": [
             2834,
             2834
           ],
-          "11": [
-            3516,
-            3516
-          ],
           "18": [
             0,
             0
+          ],
+          "11": [
+            3516,
+            3516
           ],
           "20": [
             0,
@@ -26857,32 +27853,12 @@ export const LAB_SUPPORT_DATA = {
             3551,
             3551
           ],
-          "19": [
-            0,
-            0
-          ],
           "12": [
             2430,
             2430
-          ],
-          "21": [
-            0,
-            0
-          ],
-          "14": [
-            2777,
-            2777
-          ],
-          "16": [
-            1360,
-            1360
           ]
         },
         "2026-05-22": {
-          "13": [
-            0,
-            0
-          ],
           "10": [
             0,
             0
@@ -26900,6 +27876,10 @@ export const LAB_SUPPORT_DATA = {
             37
           ],
           "11": [
+            0,
+            0
+          ],
+          "13": [
             0,
             0
           ]
@@ -26929,22 +27909,6 @@ export const LAB_SUPPORT_DATA = {
           ]
         },
         "2026-06-01": {
-          "15": [
-            1495,
-            1495
-          ],
-          "17": [
-            0,
-            0
-          ],
-          "10": [
-            3054,
-            3054
-          ],
-          "19": [
-            0,
-            0
-          ],
           "12": [
             22,
             22
@@ -26976,21 +27940,25 @@ export const LAB_SUPPORT_DATA = {
           "13": [
             2997,
             2997
-          ]
-        },
-        "2026-06-02": {
-          "16": [
-            3586,
-            3586
           ],
-          "18": [
-            660,
-            660
+          "15": [
+            1495,
+            1495
           ],
-          "11": [
+          "17": [
             0,
             0
           ],
+          "10": [
+            3054,
+            3054
+          ],
+          "19": [
+            0,
+            0
+          ]
+        },
+        "2026-06-02": {
           "13": [
             3531,
             3531
@@ -27014,9 +27982,29 @@ export const LAB_SUPPORT_DATA = {
           "14": [
             3215,
             3215
+          ],
+          "16": [
+            3586,
+            3586
+          ],
+          "18": [
+            660,
+            660
+          ],
+          "11": [
+            0,
+            0
           ]
         },
         "2026-06-03": {
+          "11": [
+            2845,
+            2845
+          ],
+          "13": [
+            2678,
+            2678
+          ],
           "15": [
             3356,
             3356
@@ -27044,29 +28032,9 @@ export const LAB_SUPPORT_DATA = {
           "9": [
             2066,
             2066
-          ],
-          "11": [
-            2845,
-            2845
-          ],
-          "13": [
-            2678,
-            2678
           ]
         },
         "2026-06-04": {
-          "14": [
-            802,
-            802
-          ],
-          "16": [
-            3388,
-            3388
-          ],
-          "9": [
-            3352,
-            3352
-          ],
           "11": [
             3591,
             3591
@@ -27094,12 +28062,36 @@ export const LAB_SUPPORT_DATA = {
           "12": [
             3271,
             3271
+          ],
+          "14": [
+            802,
+            802
+          ],
+          "16": [
+            3388,
+            3388
+          ],
+          "9": [
+            3352,
+            3352
           ]
         },
         "2026-06-05": {
+          "12": [
+            3271,
+            3271
+          ],
+          "14": [
+            1779,
+            1779
+          ],
           "16": [
             2816,
             2816
+          ],
+          "9": [
+            10,
+            10
           ],
           "11": [
             3541,
@@ -27120,29 +28112,460 @@ export const LAB_SUPPORT_DATA = {
           "10": [
             2915,
             2915
+          ]
+        },
+        "2026-06-08": {
+          "9": [
+            3419,
+            3419
+          ],
+          "11": [
+            3076,
+            3076
+          ],
+          "13": [
+            454,
+            454
+          ],
+          "15": [
+            3576,
+            3576
+          ],
+          "8": [
+            114,
+            114
+          ],
+          "17": [
+            1154,
+            1154
+          ],
+          "10": [
+            3527,
+            3527
           ],
           "12": [
-            3271,
-            3271
+            3240,
+            3240
           ],
           "14": [
-            1779,
-            1779
+            2510,
+            2514
+          ],
+          "16": [
+            2385,
+            2385
+          ]
+        },
+        "2026-06-09": {
+          "9": [
+            2745,
+            2745
+          ],
+          "11": [
+            3578,
+            3578
+          ],
+          "13": [
+            2767,
+            2767
+          ],
+          "15": [
+            1776,
+            1776
+          ],
+          "8": [
+            2395,
+            2395
+          ],
+          "10": [
+            3019,
+            3019
+          ],
+          "12": [
+            2883,
+            2883
+          ],
+          "14": [
+            3569,
+            3569
+          ]
+        },
+        "2026-06-10": {
+          "12": [
+            2236,
+            2236
+          ],
+          "14": [
+            2951,
+            2951
+          ],
+          "16": [
+            2245,
+            2245
           ],
           "9": [
-            10,
-            10
+            2123,
+            2123
+          ],
+          "18": [
+            857,
+            857
+          ],
+          "11": [
+            3138,
+            3138
+          ],
+          "13": [
+            2263,
+            2263
+          ],
+          "15": [
+            3210,
+            3210
+          ],
+          "8": [
+            2106,
+            2106
+          ],
+          "10": [
+            2847,
+            2847
+          ],
+          "17": [
+            3504,
+            3504
+          ]
+        },
+        "2026-06-11": {
+          "14": [
+            1268,
+            1268
+          ],
+          "16": [
+            3088,
+            3088
+          ],
+          "9": [
+            2271,
+            2271
+          ],
+          "11": [
+            1967,
+            1967
+          ],
+          "13": [
+            3272,
+            3272
+          ],
+          "15": [
+            2372,
+            2372
+          ],
+          "8": [
+            2878,
+            2878
+          ],
+          "17": [
+            17,
+            17
+          ],
+          "10": [
+            20,
+            20
+          ],
+          "12": [
+            2781,
+            2781
+          ]
+        },
+        "2026-06-12": {
+          "18": [
+            1798,
+            1798
+          ],
+          "13": [
+            3314,
+            3314
+          ],
+          "15": [
+            1196,
+            1196
+          ],
+          "8": [
+            944,
+            944
+          ],
+          "17": [
+            2865,
+            2865
+          ],
+          "10": [
+            1673,
+            1673
+          ],
+          "12": [
+            3122,
+            3122
+          ],
+          "14": [
+            1337,
+            1337
+          ],
+          "16": [
+            3185,
+            3185
+          ],
+          "9": [
+            2643,
+            2643
+          ],
+          "11": [
+            3339,
+            3339
+          ]
+        }
+      },
+      "gen2-114": {
+        "2026-06-11": {
+          "16": [
+            1,
+            1
+          ],
+          "12": [
+            134,
+            134
+          ],
+          "11": [
+            1,
+            1
+          ],
+          "17": [
+            139,
+            139
+          ],
+          "14": [
+            38,
+            38
+          ],
+          "13": [
+            686,
+            686
+          ]
+        }
+      },
+      "gen2-119": {
+        "2026-06-09": {
+          "21": [
+            0,
+            0
+          ],
+          "18": [
+            0,
+            0
+          ],
+          "17": [
+            51,
+            51
+          ],
+          "20": [
+            0,
+            0
+          ],
+          "19": [
+            0,
+            0
+          ]
+        },
+        "2026-06-11": {
+          "12": [
+            0,
+            0
+          ],
+          "15": [
+            0,
+            0
+          ],
+          "13": [
+            0,
+            0
+          ],
+          "11": [
+            0,
+            0
+          ],
+          "14": [
+            0,
+            0
+          ]
+        },
+        "2026-06-12": {
+          "14": [
+            742,
+            742
+          ],
+          "17": [
+            559,
+            559
+          ],
+          "19": [
+            2522,
+            2522
+          ],
+          "18": [
+            2073,
+            2073
+          ]
+        }
+      },
+      "gen2-121": {
+        "2026-06-09": {
+          "15": [
+            946,
+            946
+          ],
+          "21": [
+            1193,
+            1193
+          ],
+          "18": [
+            2972,
+            2972
+          ],
+          "20": [
+            3323,
+            3323
+          ],
+          "13": [
+            0,
+            0
+          ],
+          "19": [
+            3047,
+            3047
+          ]
+        },
+        "2026-06-10": {
+          "16": [
+            1993,
+            1993
+          ],
+          "19": [
+            3513,
+            3513
+          ],
+          "15": [
+            949,
+            949
+          ],
+          "9": [
+            2199,
+            2199
+          ],
+          "12": [
+            2239,
+            2239
+          ],
+          "18": [
+            131,
+            131
+          ],
+          "11": [
+            3562,
+            3562
+          ],
+          "14": [
+            4,
+            4
+          ],
+          "20": [
+            286,
+            286
+          ],
+          "17": [
+            3513,
+            3513
+          ],
+          "23": [
+            1726,
+            1726
+          ],
+          "10": [
+            2899,
+            2899
+          ],
+          "13": [
+            0,
+            0
+          ]
+        },
+        "2026-06-11": {
+          "10": [
+            2799,
+            2800
+          ],
+          "13": [
+            3455,
+            3455
+          ],
+          "16": [
+            32,
+            32
+          ],
+          "0": [
+            3198,
+            3198
+          ],
+          "12": [
+            2867,
+            2867
+          ],
+          "9": [
+            2513,
+            2515
+          ],
+          "15": [
+            2549,
+            2549
+          ],
+          "11": [
+            2491,
+            2491
+          ],
+          "14": [
+            961,
+            961
+          ]
+        }
+      },
+      "gen2-122": {
+        "2026-06-11": {
+          "19": [
+            0,
+            0
+          ]
+        },
+        "2026-06-12": {
+          "17": [
+            354,
+            354
+          ],
+          "16": [
+            944,
+            944
+          ],
+          "12": [
+            698,
+            698
+          ],
+          "18": [
+            162,
+            162
           ]
         }
       }
     },
     "faultBuckets": {
       "gen2-005": {
-        "2026-04-27": {
-          "17": {
-            "right_gripper_not_working": 38
-          }
-        },
         "2026-05-08": {
           "12": {
             "head_cam_out": 36
@@ -27181,6 +28604,13 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-18": {
+          "20": {
+            "left_arm_frozen": 36
+          },
+          "15": {
+            "right_arm_frozen": 35,
+            "head_cam_out": 40
+          },
           "23": {
             "right_arm_frozen": 86
           },
@@ -27189,13 +28619,6 @@ export const LAB_SUPPORT_DATA = {
           },
           "17": {
             "head_cam_out": 34
-          },
-          "20": {
-            "left_arm_frozen": 36
-          },
-          "15": {
-            "right_arm_frozen": 35,
-            "head_cam_out": 40
           }
         },
         "2026-05-19": {
@@ -27212,6 +28635,12 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-21": {
+          "21": {
+            "right_arm_frozen": 40
+          },
+          "23": {
+            "right_arm_frozen": 38
+          },
           "18": {
             "left_arm_frozen": 38,
             "left_gripper_not_working": 36
@@ -27223,20 +28652,9 @@ export const LAB_SUPPORT_DATA = {
           },
           "22": {
             "head_cam_out": 69
-          },
-          "21": {
-            "right_arm_frozen": 40
-          },
-          "23": {
-            "right_arm_frozen": 38
           }
         },
         "2026-05-22": {
-          "13": {
-            "right_arm_frozen": 35,
-            "head_cam_out": 73,
-            "left_gripper_not_working": 35
-          },
           "19": {
             "right_arm_frozen": 40
           },
@@ -27245,9 +28663,17 @@ export const LAB_SUPPORT_DATA = {
           },
           "9": {
             "head_cam_out": 35
+          },
+          "13": {
+            "right_arm_frozen": 35,
+            "head_cam_out": 73,
+            "left_gripper_not_working": 35
           }
         },
         "2026-05-23": {
+          "0": {
+            "right_arm_frozen": 3292
+          },
           "4": {
             "right_arm_frozen": 521
           },
@@ -27259,12 +28685,15 @@ export const LAB_SUPPORT_DATA = {
           },
           "1": {
             "right_arm_frozen": 3600
-          },
-          "0": {
-            "right_arm_frozen": 3292
           }
         },
         "2026-05-26": {
+          "12": {
+            "right_arm_frozen": 3600
+          },
+          "11": {
+            "right_arm_frozen": 3600
+          },
           "10": {
             "right_arm_frozen": 3600
           },
@@ -27273,12 +28702,6 @@ export const LAB_SUPPORT_DATA = {
           },
           "13": {
             "right_arm_frozen": 1164
-          },
-          "12": {
-            "right_arm_frozen": 3600
-          },
-          "11": {
-            "right_arm_frozen": 3600
           }
         },
         "2026-05-27": {
@@ -27293,6 +28716,10 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-29": {
+          "0": {
+            "right_arm_frozen": 35,
+            "chest_frozen": 77
+          },
           "23": {
             "right_arm_frozen": 352
           },
@@ -27313,10 +28740,6 @@ export const LAB_SUPPORT_DATA = {
           },
           "15": {
             "right_arm_frozen": 2170
-          },
-          "0": {
-            "right_arm_frozen": 35,
-            "chest_frozen": 77
           }
         },
         "2026-05-30": {
@@ -27325,9 +28748,6 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-06-01": {
-          "22": {
-            "chest_frozen": 40
-          },
           "12": {
             "right_arm_frozen": 75
           },
@@ -27344,6 +28764,9 @@ export const LAB_SUPPORT_DATA = {
           },
           "8": {
             "head_cam_out": 39
+          },
+          "22": {
+            "chest_frozen": 40
           }
         },
         "2026-06-02": {
@@ -27361,16 +28784,6 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-06-03": {
-          "10": {
-            "right_arm_frozen": 1121,
-            "left_arm_frozen": 2317,
-            "head_cam_out": 24
-          },
-          "9": {
-            "right_arm_frozen": 559,
-            "left_arm_frozen": 218,
-            "head_cam_out": 927
-          },
           "13": {
             "right_arm_frozen": 1281,
             "left_arm_frozen": 5
@@ -27381,20 +28794,36 @@ export const LAB_SUPPORT_DATA = {
           },
           "11": {
             "left_arm_frozen": 1557
+          },
+          "10": {
+            "right_arm_frozen": 1121,
+            "left_arm_frozen": 2317,
+            "head_cam_out": 24
+          },
+          "9": {
+            "right_arm_frozen": 559,
+            "left_arm_frozen": 218,
+            "head_cam_out": 927
           }
         },
         "2026-06-04": {
-          "16": {
-            "right_arm_frozen": 41
-          },
           "19": {
             "right_arm_frozen": 82
           },
           "0": {
             "right_arm_frozen": 39
+          },
+          "16": {
+            "right_arm_frozen": 41
           }
         },
         "2026-06-05": {
+          "19": {
+            "right_arm_frozen": 180
+          },
+          "0": {
+            "right_arm_frozen": 75
+          },
           "13": {
             "right_arm_frozen": 641,
             "neck_frozen": 44
@@ -27405,12 +28834,81 @@ export const LAB_SUPPORT_DATA = {
           },
           "10": {
             "neck_frozen": 43
+          }
+        },
+        "2026-06-08": {
+          "11": {
+            "right_arm_frozen": 36,
+            "chest_frozen": 36
           },
-          "19": {
-            "right_arm_frozen": 180
+          "15": {
+            "neck_frozen": 39
           },
-          "0": {
-            "right_arm_frozen": 75
+          "14": {
+            "head_cam_out": 102,
+            "neck_frozen": 46
+          },
+          "9": {
+            "right_arm_frozen": 35
+          },
+          "22": {
+            "right_arm_frozen": 37
+          },
+          "21": {
+            "head_cam_out": 20
+          }
+        },
+        "2026-06-09": {
+          "11": {
+            "right_arm_frozen": 38
+          },
+          "15": {
+            "neck_frozen": 43
+          },
+          "14": {
+            "neck_frozen": 44
+          }
+        },
+        "2026-06-10": {
+          "14": {
+            "neck_frozen": 88
+          },
+          "22": {
+            "right_arm_frozen": 39
+          },
+          "11": {
+            "right_arm_frozen": 41
+          },
+          "20": {
+            "head_cam_out": 36
+          }
+        },
+        "2026-06-11": {
+          "14": {
+            "head_cam_out": 38
+          },
+          "10": {
+            "head_cam_out": 1115,
+            "chest_frozen": 40,
+            "neck_frozen": 43
+          }
+        },
+        "2026-06-12": {
+          "10": {
+            "head_cam_out": 46,
+            "chest_frozen": 40,
+            "neck_frozen": 46
+          },
+          "17": {
+            "right_arm_frozen": 34,
+            "head_cam_out": 42,
+            "neck_frozen": 94
+          },
+          "16": {
+            "left_gripper_not_working": 34
+          },
+          "11": {
+            "right_arm_frozen": 34
           }
         }
       },
@@ -27421,12 +28919,12 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-12": {
+          "14": {
+            "other_robot_issue": 14
+          },
           "13": {
             "head_cam_out": 114,
             "other_robot_issue": 2823
-          },
-          "14": {
-            "other_robot_issue": 14
           }
         },
         "2026-05-13": {
@@ -27445,12 +28943,12 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-19": {
-          "23": {
-            "other_robot_issue": 165
-          },
           "16": {
             "right_arm_frozen": 39,
             "left_gripper_not_working": 36
+          },
+          "23": {
+            "other_robot_issue": 165
           },
           "18": {
             "head_cam_out": 45
@@ -27471,22 +28969,22 @@ export const LAB_SUPPORT_DATA = {
           "20": {
             "chest_frozen": 35
           },
+          "14": {
+            "head_cam_out": 39
+          },
           "13": {
             "head_cam_out": 36
           },
           "22": {
             "head_cam_out": 72
-          },
-          "14": {
-            "head_cam_out": 39
           }
         },
         "2026-05-22": {
-          "20": {
-            "left_arm_frozen": 74
-          },
           "8": {
             "head_cam_out": 118
+          },
+          "20": {
+            "left_arm_frozen": 74
           },
           "19": {
             "left_arm_frozen": 126
@@ -27502,9 +29000,6 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-26": {
-          "15": {
-            "right_arm_frozen": 3600
-          },
           "17": {
             "right_arm_frozen": 81,
             "other_robot_issue": 278
@@ -27512,11 +29007,14 @@ export const LAB_SUPPORT_DATA = {
           "21": {
             "right_arm_frozen": 275
           },
-          "14": {
-            "right_arm_frozen": 1327
-          },
           "16": {
             "right_arm_frozen": 1311
+          },
+          "15": {
+            "right_arm_frozen": 3600
+          },
+          "14": {
+            "right_arm_frozen": 1327
           }
         },
         "2026-05-27": {
@@ -27536,51 +29034,42 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-29": {
-          "18": {
-            "right_arm_frozen": 113,
-            "left_arm_frozen": 37
-          },
           "0": {
             "right_arm_frozen": 157
           },
           "9": {
             "right_arm_frozen": 219
+          },
+          "18": {
+            "right_arm_frozen": 113,
+            "left_arm_frozen": 37
           }
         },
         "2026-06-01": {
-          "22": {
-            "right_arm_frozen": 187
+          "12": {
+            "right_arm_frozen": 2293
+          },
+          "16": {
+            "head_cam_out": 37
+          },
+          "11": {
+            "right_arm_frozen": 326
           },
           "10": {
             "right_arm_frozen": 478,
             "head_cam_out": 285
           },
-          "12": {
-            "right_arm_frozen": 2293
-          },
           "14": {
             "right_arm_frozen": 570
-          },
-          "16": {
-            "head_cam_out": 37
           },
           "9": {
             "left_gripper_not_working": 40
           },
-          "11": {
-            "right_arm_frozen": 326
+          "22": {
+            "right_arm_frozen": 187
           }
         },
         "2026-06-02": {
-          "16": {
-            "right_arm_frozen": 294
-          },
-          "18": {
-            "right_arm_frozen": 59
-          },
-          "11": {
-            "head_cam_out": 39
-          },
           "22": {
             "right_arm_frozen": 35,
             "left_arm_frozen": 181
@@ -27589,29 +29078,32 @@ export const LAB_SUPPORT_DATA = {
             "right_arm_frozen": 124,
             "chest_frozen": 78
           },
+          "21": {
+            "left_gripper_not_working": 39
+          },
+          "16": {
+            "right_arm_frozen": 294
+          },
+          "11": {
+            "head_cam_out": 39
+          },
           "19": {
             "head_cam_out": 34
           },
-          "21": {
-            "left_gripper_not_working": 39
+          "18": {
+            "right_arm_frozen": 59
           }
         },
         "2026-06-03": {
-          "15": {
-            "right_arm_frozen": 3600
+          "13": {
+            "right_arm_frozen": 574
           },
           "17": {
             "right_arm_frozen": 3580
           },
-          "10": {
-            "left_arm_frozen": 40
-          },
           "12": {
             "right_arm_frozen": 724,
             "other_robot_issue": 1701
-          },
-          "14": {
-            "right_arm_frozen": 3600
           },
           "16": {
             "right_arm_frozen": 3600
@@ -27625,18 +29117,17 @@ export const LAB_SUPPORT_DATA = {
             "right_arm_frozen": 38,
             "chest_frozen": 38
           },
-          "13": {
-            "right_arm_frozen": 574
+          "15": {
+            "right_arm_frozen": 3600
+          },
+          "10": {
+            "left_arm_frozen": 40
+          },
+          "14": {
+            "right_arm_frozen": 3600
           }
         },
         "2026-06-05": {
-          "16": {
-            "right_arm_frozen": 348,
-            "head_cam_out": 40
-          },
-          "15": {
-            "right_arm_frozen": 103
-          },
           "14": {
             "right_arm_frozen": 40
           },
@@ -27645,21 +29136,99 @@ export const LAB_SUPPORT_DATA = {
           },
           "9": {
             "right_arm_frozen": 37
+          },
+          "16": {
+            "right_arm_frozen": 348,
+            "head_cam_out": 40
+          },
+          "15": {
+            "right_arm_frozen": 103
+          }
+        },
+        "2026-06-08": {
+          "11": {
+            "right_arm_frozen": 2527
+          },
+          "20": {
+            "left_arm_frozen": 46
+          },
+          "15": {
+            "neck_frozen": 2634
+          },
+          "10": {
+            "right_arm_frozen": 260,
+            "right_gripper_not_working": 42
+          },
+          "19": {
+            "right_arm_frozen": 117
+          },
+          "14": {
+            "head_cam_out": 75
+          },
+          "23": {
+            "right_arm_frozen": 69
+          },
+          "13": {
+            "right_arm_frozen": 42
+          },
+          "17": {
+            "right_arm_frozen": 1338,
+            "left_arm_frozen": 818
+          },
+          "21": {
+            "left_arm_frozen": 116,
+            "left_gripper_not_working": 37
+          },
+          "16": {
+            "left_arm_frozen": 715,
+            "neck_frozen": 2885
+          }
+        },
+        "2026-06-09": {
+          "18": {
+            "right_arm_frozen": 39
+          },
+          "13": {
+            "chest_frozen": 40
+          }
+        },
+        "2026-06-10": {
+          "14": {
+            "right_arm_frozen": 3600
+          },
+          "23": {
+            "right_arm_frozen": 85
+          },
+          "18": {
+            "left_arm_frozen": 39
+          },
+          "13": {
+            "right_arm_frozen": 468
+          },
+          "22": {
+            "right_arm_frozen": 41,
+            "left_arm_frozen": 36
+          },
+          "21": {
+            "right_arm_frozen": 158
+          },
+          "15": {
+            "right_arm_frozen": 2938
+          }
+        },
+        "2026-06-12": {
+          "15": {
+            "head_cam_out": 76
           }
         }
       },
       "gen2-007": {
-        "2026-04-28": {
-          "17": {
-            "other_robot_issue": 264
-          }
-        },
         "2026-05-04": {
-          "16": {
-            "right_gripper_not_working": 39
-          },
           "15": {
             "right_gripper_not_working": 219
+          },
+          "16": {
+            "right_gripper_not_working": 39
           }
         },
         "2026-05-05": {
@@ -27673,6 +29242,9 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-07": {
+          "16": {
+            "other_robot_issue": 1654
+          },
           "15": {
             "left_gripper_not_working": 37
           },
@@ -27681,9 +29253,6 @@ export const LAB_SUPPORT_DATA = {
           },
           "18": {
             "left_gripper_not_working": 36
-          },
-          "16": {
-            "other_robot_issue": 1654
           }
         },
         "2026-05-08": {
@@ -27695,12 +29264,12 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-11": {
+          "9": {
+            "head_cam_out": 106
+          },
           "11": {
             "left_gripper_not_working": 38,
             "other_robot_issue": 230
-          },
-          "9": {
-            "head_cam_out": 106
           }
         },
         "2026-05-12": {
@@ -27725,6 +29294,9 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-18": {
+          "19": {
+            "chest_frozen": 40
+          },
           "18": {
             "head_cam_out": 36
           },
@@ -27739,12 +29311,12 @@ export const LAB_SUPPORT_DATA = {
           },
           "21": {
             "right_arm_frozen": 89
-          },
-          "19": {
-            "chest_frozen": 40
           }
         },
         "2026-05-19": {
+          "16": {
+            "right_arm_frozen": 188
+          },
           "14": {
             "right_arm_frozen": 72,
             "left_arm_frozen": 15
@@ -27755,9 +29327,6 @@ export const LAB_SUPPORT_DATA = {
           "12": {
             "left_arm_frozen": 36,
             "left_gripper_not_working": 33
-          },
-          "16": {
-            "right_arm_frozen": 188
           }
         },
         "2026-05-20": {
@@ -27773,15 +29342,6 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-21": {
-          "0": {
-            "head_cam_out": 36
-          },
-          "22": {
-            "head_cam_out": 36
-          },
-          "8": {
-            "head_cam_out": 37
-          },
           "21": {
             "chest_frozen": 38
           },
@@ -27802,6 +29362,15 @@ export const LAB_SUPPORT_DATA = {
           },
           "23": {
             "chest_frozen": 37
+          },
+          "0": {
+            "head_cam_out": 36
+          },
+          "22": {
+            "head_cam_out": 36
+          },
+          "8": {
+            "head_cam_out": 37
           }
         },
         "2026-05-22": {
@@ -27813,6 +29382,13 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-26": {
+          "21": {
+            "right_arm_frozen": 48,
+            "left_arm_frozen": 35
+          },
+          "20": {
+            "left_gripper_not_working": 38
+          },
           "10": {
             "right_arm_frozen": 2047,
             "other_robot_issue": 149
@@ -27822,13 +29398,6 @@ export const LAB_SUPPORT_DATA = {
           },
           "13": {
             "head_cam_out": 37
-          },
-          "21": {
-            "right_arm_frozen": 48,
-            "left_arm_frozen": 35
-          },
-          "20": {
-            "left_gripper_not_working": 38
           }
         },
         "2026-05-27": {
@@ -27848,6 +29417,9 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-29": {
+          "0": {
+            "other_robot_issue": 175
+          },
           "23": {
             "left_arm_frozen": 38
           },
@@ -27860,9 +29432,6 @@ export const LAB_SUPPORT_DATA = {
           },
           "20": {
             "chest_frozen": 39
-          },
-          "0": {
-            "other_robot_issue": 175
           }
         },
         "2026-05-30": {
@@ -27876,20 +29445,17 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-06-01": {
-          "22": {
-            "right_arm_frozen": 229
-          },
           "23": {
             "left_arm_frozen": 2006
           },
           "18": {
             "other_robot_issue": 161
+          },
+          "22": {
+            "right_arm_frozen": 229
           }
         },
         "2026-06-02": {
-          "18": {
-            "head_cam_out": 40
-          },
           "3": {
             "left_arm_frozen": 1594
           },
@@ -27907,6 +29473,9 @@ export const LAB_SUPPORT_DATA = {
           },
           "0": {
             "left_arm_frozen": 3600
+          },
+          "18": {
+            "head_cam_out": 40
           }
         },
         "2026-06-04": {
@@ -27917,22 +29486,89 @@ export const LAB_SUPPORT_DATA = {
         "2026-06-05": {
           "0": {
             "right_arm_frozen": 799
+          },
+          "21": {
+            "left_gripper_not_working": 35
+          },
+          "20": {
+            "right_arm_frozen": 114
+          }
+        },
+        "2026-06-08": {
+          "19": {
+            "left_arm_frozen": 764,
+            "left_gripper_not_working": 35
+          },
+          "23": {
+            "left_arm_frozen": 3600
+          },
+          "22": {
+            "left_arm_frozen": 3600
+          },
+          "21": {
+            "left_arm_frozen": 3196
+          }
+        },
+        "2026-06-09": {
+          "9": {
+            "left_arm_frozen": 1339
+          },
+          "13": {
+            "right_arm_frozen": 872
+          },
+          "8": {
+            "left_arm_frozen": 1221
+          },
+          "0": {
+            "right_arm_frozen": 12,
+            "left_arm_frozen": 2382
+          }
+        },
+        "2026-06-10": {
+          "0": {
+            "left_arm_frozen": 40
+          },
+          "13": {
+            "right_arm_frozen": 1118
+          },
+          "12": {
+            "right_arm_frozen": 313
+          },
+          "21": {
+            "head_cam_out": 74
+          },
+          "15": {
+            "right_arm_frozen": 809
+          },
+          "10": {
+            "right_arm_frozen": 1404
+          }
+        },
+        "2026-06-12": {
+          "13": {
+            "right_gripper_not_working": 35
           }
         }
       },
       "gen2-110": {
         "2026-05-14": {
+          "9": {
+            "chest_frozen": 54
+          },
           "20": {
             "chest_frozen": 39
           },
           "16": {
             "neck_frozen": 47
-          },
-          "9": {
-            "chest_frozen": 54
           }
         },
         "2026-05-15": {
+          "11": {
+            "chest_frozen": 36
+          },
+          "13": {
+            "other_robot_issue": 2693
+          },
           "15": {
             "other_robot_issue": 3600
           },
@@ -27951,19 +29587,9 @@ export const LAB_SUPPORT_DATA = {
           "9": {
             "chest_frozen": 113,
             "neck_frozen": 46
-          },
-          "11": {
-            "chest_frozen": 36
-          },
-          "13": {
-            "other_robot_issue": 2693
           }
         },
         "2026-05-18": {
-          "23": {
-            "chest_frozen": 164,
-            "other_robot_issue": 821
-          },
           "9": {
             "head_cam_out": 71
           },
@@ -27976,6 +29602,10 @@ export const LAB_SUPPORT_DATA = {
           },
           "19": {
             "other_robot_issue": 88
+          },
+          "23": {
+            "chest_frozen": 164,
+            "other_robot_issue": 821
           }
         },
         "2026-05-19": {
@@ -27995,12 +29625,6 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-20": {
-          "19": {
-            "other_robot_issue": 889
-          },
-          "21": {
-            "right_arm_frozen": 34
-          },
           "23": {
             "right_gripper_not_working": 34
           },
@@ -28009,14 +29633,26 @@ export const LAB_SUPPORT_DATA = {
           },
           "13": {
             "right_gripper_not_working": 37
+          },
+          "19": {
+            "other_robot_issue": 889
+          },
+          "21": {
+            "right_arm_frozen": 34
           }
         },
         "2026-05-21": {
-          "11": {
-            "head_cam_out": 83
+          "19": {
+            "right_arm_frozen": 271
+          },
+          "14": {
+            "head_cam_out": 108
           },
           "18": {
             "right_arm_frozen": 46
+          },
+          "11": {
+            "head_cam_out": 83
           },
           "20": {
             "right_gripper_not_working": 169
@@ -28024,14 +29660,8 @@ export const LAB_SUPPORT_DATA = {
           "22": {
             "head_cam_out": 76
           },
-          "19": {
-            "right_arm_frozen": 271
-          },
           "12": {
             "left_arm_frozen": 37
-          },
-          "14": {
-            "head_cam_out": 108
           }
         },
         "2026-05-22": {
@@ -28069,13 +29699,13 @@ export const LAB_SUPPORT_DATA = {
             "head_cam_out": 34,
             "neck_frozen": 44
           },
-          "17": {
-            "head_cam_out": 39,
-            "other_robot_issue": 622
-          },
           "10": {
             "head_cam_out": 77,
             "neck_frozen": 42
+          },
+          "17": {
+            "head_cam_out": 39,
+            "other_robot_issue": 622
           },
           "12": {
             "head_cam_out": 75,
@@ -28083,47 +29713,37 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-06-01": {
+          "16": {
+            "other_robot_issue": 642
+          },
           "15": {
             "left_arm_frozen": 37,
             "other_robot_issue": 154
-          },
-          "16": {
-            "other_robot_issue": 642
           }
         },
         "2026-06-02": {
-          "23": {
-            "chest_frozen": 36
-          },
           "20": {
             "other_robot_issue": 58
+          },
+          "23": {
+            "chest_frozen": 36
           },
           "0": {
             "head_cam_out": 35
           }
         },
         "2026-06-03": {
+          "18": {
+            "head_cam_out": 38
+          },
           "23": {
             "left_arm_frozen": 35
           },
           "16": {
             "chest_frozen": 37
-          },
-          "18": {
-            "head_cam_out": 38
           }
         },
         "2026-06-04": {
-          "21": {
-            "left_arm_frozen": 167
-          },
-          "14": {
-            "left_gripper_not_working": 37
-          },
-          "23": {
-            "right_arm_frozen": 115,
-            "right_gripper_not_working": 35
-          },
           "13": {
             "chest_frozen": 61
           },
@@ -28138,19 +29758,55 @@ export const LAB_SUPPORT_DATA = {
           },
           "12": {
             "left_gripper_not_working": 35
+          },
+          "21": {
+            "left_arm_frozen": 167
+          },
+          "14": {
+            "left_gripper_not_working": 37
+          },
+          "23": {
+            "right_arm_frozen": 115,
+            "right_gripper_not_working": 35
           }
         },
         "2026-06-05": {
-          "18": {
-            "right_arm_frozen": 170,
-            "other_robot_issue": 34
-          },
           "0": {
             "right_arm_frozen": 123,
             "neck_frozen": 181
           },
           "9": {
             "right_gripper_not_working": 39
+          },
+          "18": {
+            "right_arm_frozen": 170,
+            "other_robot_issue": 34
+          }
+        },
+        "2026-06-11": {
+          "11": {
+            "other_robot_issue": 458
+          },
+          "13": {
+            "right_arm_frozen": 218
+          },
+          "10": {
+            "other_robot_issue": 1047
+          },
+          "12": {
+            "left_arm_frozen": 34,
+            "left_gripper_not_working": 35
+          }
+        },
+        "2026-06-12": {
+          "18": {
+            "right_arm_frozen": 16
+          },
+          "15": {
+            "head_cam_out": 36
+          },
+          "19": {
+            "right_arm_frozen": 105
           }
         }
       },
@@ -28164,12 +29820,11 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-12": {
-          "13": {
+          "11": {
             "left_arm_frozen": 3600
           },
-          "17": {
-            "right_arm_frozen": 115,
-            "left_arm_frozen": 647
+          "20": {
+            "right_arm_frozen": 3600
           },
           "10": {
             "left_arm_frozen": 393
@@ -28177,58 +29832,59 @@ export const LAB_SUPPORT_DATA = {
           "19": {
             "right_arm_frozen": 3600
           },
-          "12": {
-            "left_arm_frozen": 3600
-          },
-          "21": {
-            "right_arm_frozen": 3485
-          },
           "14": {
             "left_arm_frozen": 3207
           },
           "18": {
             "right_arm_frozen": 3600
           },
-          "11": {
+          "13": {
             "left_arm_frozen": 3600
           },
-          "20": {
-            "right_arm_frozen": 3600
+          "17": {
+            "right_arm_frozen": 115,
+            "left_arm_frozen": 647
+          },
+          "12": {
+            "left_arm_frozen": 3600
+          },
+          "21": {
+            "right_arm_frozen": 3485
           }
         },
         "2026-05-13": {
-          "11": {
-            "left_arm_frozen": 2574
+          "15": {
+            "right_arm_frozen": 2483
+          },
+          "10": {
+            "chest_frozen": 981
+          },
+          "14": {
+            "right_arm_frozen": 168,
+            "other_robot_issue": 455
           },
           "13": {
             "chest_frozen": 876
-          },
-          "15": {
-            "right_arm_frozen": 2483
           },
           "8": {
             "right_arm_frozen": 875,
             "left_arm_frozen": 1
           },
-          "10": {
-            "chest_frozen": 981
-          },
           "12": {
             "left_arm_frozen": 1590
           },
-          "14": {
-            "right_arm_frozen": 168,
-            "other_robot_issue": 455
+          "11": {
+            "left_arm_frozen": 2574
           }
         },
         "2026-05-14": {
-          "13": {
-            "left_arm_frozen": 121,
-            "chest_frozen": 41
-          },
           "14": {
             "left_arm_frozen": 171,
             "chest_frozen": 884
+          },
+          "13": {
+            "left_arm_frozen": 121,
+            "chest_frozen": 41
           }
         },
         "2026-05-15": {
@@ -28237,27 +29893,30 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-18": {
-          "14": {
-            "chest_frozen": 40
-          },
-          "23": {
-            "chest_frozen": 39
-          },
-          "16": {
-            "right_arm_frozen": 1453,
-            "left_arm_frozen": 1337
-          },
           "11": {
             "chest_frozen": 37
           },
           "15": {
             "right_arm_frozen": 689
           },
+          "14": {
+            "chest_frozen": 40
+          },
+          "23": {
+            "chest_frozen": 39
+          },
           "17": {
             "left_arm_frozen": 266
+          },
+          "16": {
+            "right_arm_frozen": 1453,
+            "left_arm_frozen": 1337
           }
         },
         "2026-05-19": {
+          "15": {
+            "chest_frozen": 40
+          },
           "19": {
             "right_arm_frozen": 110,
             "other_robot_issue": 102
@@ -28268,59 +29927,56 @@ export const LAB_SUPPORT_DATA = {
           "22": {
             "chest_frozen": 21
           },
-          "15": {
-            "chest_frozen": 40
-          },
           "12": {
             "chest_frozen": 40
           }
         },
         "2026-05-20": {
-          "22": {
-            "right_arm_frozen": 33
-          },
           "9": {
             "left_arm_frozen": 35,
             "chest_frozen": 37
+          },
+          "22": {
+            "right_arm_frozen": 33
           }
         },
         "2026-05-21": {
+          "16": {
+            "head_cam_out": 38
+          },
           "0": {
             "chest_frozen": 40
           },
           "13": {
             "head_cam_out": 76
-          },
-          "16": {
-            "head_cam_out": 38
           }
         },
         "2026-05-22": {
           "22": {
             "right_arm_frozen": 36
           },
-          "14": {
-            "other_robot_issue": 252
-          },
           "16": {
             "chest_frozen": 41
+          },
+          "14": {
+            "other_robot_issue": 252
           },
           "18": {
             "right_arm_frozen": 407
           }
         },
         "2026-05-27": {
-          "20": {
-            "neck_frozen": 45
-          },
           "22": {
             "chest_frozen": 38
           },
-          "19": {
-            "right_arm_frozen": 33
-          },
           "21": {
             "right_arm_frozen": 71
+          },
+          "20": {
+            "neck_frozen": 45
+          },
+          "19": {
+            "right_arm_frozen": 33
           }
         },
         "2026-05-28": {
@@ -28334,8 +29990,8 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-06-01": {
-          "17": {
-            "chest_frozen": 72
+          "20": {
+            "left_arm_frozen": 35
           },
           "9": {
             "chest_frozen": 39
@@ -28344,20 +30000,14 @@ export const LAB_SUPPORT_DATA = {
             "head_cam_out": 28,
             "chest_frozen": 87
           },
-          "20": {
-            "left_arm_frozen": 35
-          },
           "8": {
             "head_cam_out": 39
+          },
+          "17": {
+            "chest_frozen": 72
           }
         },
         "2026-06-02": {
-          "18": {
-            "other_robot_issue": 38
-          },
-          "20": {
-            "left_arm_frozen": 35
-          },
           "22": {
             "left_arm_frozen": 105
           },
@@ -28366,26 +30016,26 @@ export const LAB_SUPPORT_DATA = {
           },
           "21": {
             "other_robot_issue": 74
+          },
+          "20": {
+            "left_arm_frozen": 35
+          },
+          "18": {
+            "other_robot_issue": 38
           }
         },
         "2026-06-03": {
           "12": {
             "other_robot_issue": 541
           },
-          "23": {
-            "head_cam_out": 115
-          },
           "11": {
             "other_robot_issue": 1284
+          },
+          "23": {
+            "head_cam_out": 115
           }
         },
         "2026-06-04": {
-          "16": {
-            "right_arm_frozen": 2956
-          },
-          "18": {
-            "right_arm_frozen": 62
-          },
           "11": {
             "left_arm_frozen": 401
           },
@@ -28394,37 +30044,130 @@ export const LAB_SUPPORT_DATA = {
           },
           "15": {
             "right_arm_frozen": 1112
+          },
+          "18": {
+            "right_arm_frozen": 62
+          },
+          "16": {
+            "right_arm_frozen": 2956
           }
         },
         "2026-06-05": {
+          "23": {
+            "left_arm_frozen": 647
+          },
           "18": {
             "left_arm_frozen": 388
           },
           "12": {
             "left_arm_frozen": 29
+          },
+          "21": {
+            "left_arm_frozen": 461
+          }
+        },
+        "2026-06-06": {
+          "0": {
+            "left_arm_frozen": 68
+          }
+        },
+        "2026-06-08": {
+          "13": {
+            "left_arm_frozen": 687
+          },
+          "12": {
+            "left_arm_frozen": 1495
+          },
+          "16": {
+            "right_arm_frozen": 724
+          }
+        },
+        "2026-06-09": {
+          "21": {
+            "right_arm_frozen": 910
+          },
+          "16": {
+            "left_arm_frozen": 66
+          },
+          "11": {
+            "left_arm_frozen": 440
+          },
+          "20": {
+            "left_arm_frozen": 100
+          },
+          "15": {
+            "left_arm_frozen": 83
+          },
+          "14": {
+            "left_arm_frozen": 27
+          }
+        },
+        "2026-06-10": {
+          "14": {
+            "right_arm_frozen": 208
+          },
+          "22": {
+            "left_arm_frozen": 477
+          },
+          "17": {
+            "left_arm_frozen": 44
+          },
+          "12": {
+            "right_arm_frozen": 48
+          },
+          "21": {
+            "right_arm_frozen": 483,
+            "left_arm_frozen": 685
+          },
+          "16": {
+            "other_robot_issue": 154
+          },
+          "15": {
+            "right_arm_frozen": 82,
+            "other_robot_issue": 1126
+          }
+        },
+        "2026-06-11": {
+          "19": {
+            "other_robot_issue": 321
+          },
+          "17": {
+            "left_arm_frozen": 219
+          },
+          "12": {
+            "left_arm_frozen": 203
+          },
+          "11": {
+            "left_arm_frozen": 37,
+            "right_gripper_not_working": 38
+          },
+          "20": {
+            "left_arm_frozen": 39
+          },
+          "10": {
+            "chest_frozen": 40
+          }
+        },
+        "2026-06-12": {
+          "15": {
+            "left_arm_frozen": 875,
+            "head_cam_out": 73
+          },
+          "10": {
+            "left_arm_frozen": 39
+          },
+          "18": {
+            "left_arm_frozen": 1078
+          },
+          "17": {
+            "left_arm_frozen": 480
+          },
+          "11": {
+            "right_arm_frozen": 37
           }
         }
       },
       "gen2-105": {
-        "2026-04-27": {
-          "13": {
-            "head_cam_out": 48
-          },
-          "17": {
-            "left_arm_frozen": 42
-          },
-          "12": {
-            "other_robot_issue": 498
-          }
-        },
-        "2026-04-28": {
-          "9": {
-            "other_robot_issue": 312
-          },
-          "10": {
-            "right_arm_frozen": 157
-          }
-        },
         "2026-05-06": {
           "23": {
             "chest_frozen": 128
@@ -28483,6 +30226,19 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-18": {
+          "11": {
+            "left_arm_frozen": 3600
+          },
+          "20": {
+            "left_arm_frozen": 161
+          },
+          "15": {
+            "left_arm_frozen": 774
+          },
+          "10": {
+            "left_arm_frozen": 1367,
+            "left_gripper_not_working": 36
+          },
           "9": {
             "left_arm_frozen": 116,
             "head_cam_out": 49
@@ -28502,40 +30258,21 @@ export const LAB_SUPPORT_DATA = {
           },
           "16": {
             "left_arm_frozen": 85
-          },
-          "11": {
-            "left_arm_frozen": 3600
-          },
-          "20": {
-            "left_arm_frozen": 161
-          },
-          "15": {
-            "left_arm_frozen": 774
-          },
-          "10": {
-            "left_arm_frozen": 1367,
-            "left_gripper_not_working": 36
           }
         },
         "2026-05-19": {
-          "13": {
-            "right_arm_frozen": 45,
-            "left_arm_frozen": 38
-          },
           "16": {
             "left_arm_frozen": 1602
           },
           "15": {
             "left_arm_frozen": 782
+          },
+          "13": {
+            "right_arm_frozen": 45,
+            "left_arm_frozen": 38
           }
         },
         "2026-05-20": {
-          "17": {
-            "right_arm_frozen": 117
-          },
-          "12": {
-            "right_gripper_not_working": 38
-          },
           "16": {
             "right_arm_frozen": 73
           },
@@ -28551,18 +30288,24 @@ export const LAB_SUPPORT_DATA = {
           },
           "13": {
             "right_arm_frozen": 124
+          },
+          "17": {
+            "right_arm_frozen": 117
+          },
+          "12": {
+            "right_gripper_not_working": 38
           }
         },
         "2026-05-21": {
-          "9": {
-            "right_arm_frozen": 278
-          },
           "15": {
             "right_arm_frozen": 83,
             "head_cam_out": 48
           },
           "14": {
             "right_arm_frozen": 80
+          },
+          "9": {
+            "right_arm_frozen": 278
           }
         },
         "2026-05-22": {
@@ -28598,6 +30341,20 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-26": {
+          "12": {
+            "left_arm_frozen": 433
+          },
+          "21": {
+            "right_arm_frozen": 35
+          },
+          "16": {
+            "other_robot_issue": 1504
+          },
+          "20": {
+            "right_arm_frozen": 38,
+            "left_arm_frozen": 465,
+            "right_gripper_not_working": 36
+          },
           "15": {
             "right_arm_frozen": 119,
             "other_robot_issue": 1032
@@ -28618,42 +30375,9 @@ export const LAB_SUPPORT_DATA = {
             "left_arm_frozen": 77,
             "right_gripper_not_working": 37,
             "other_robot_issue": 40
-          },
-          "12": {
-            "left_arm_frozen": 433
-          },
-          "21": {
-            "right_arm_frozen": 35
-          },
-          "16": {
-            "other_robot_issue": 1504
-          },
-          "20": {
-            "right_arm_frozen": 38,
-            "left_arm_frozen": 465,
-            "right_gripper_not_working": 36
           }
         },
         "2026-05-27": {
-          "15": {
-            "right_arm_frozen": 3600
-          },
-          "1": {
-            "left_arm_frozen": 3600
-          },
-          "14": {
-            "right_arm_frozen": 1669
-          },
-          "23": {
-            "right_arm_frozen": 89,
-            "right_gripper_not_working": 42
-          },
-          "0": {
-            "left_arm_frozen": 3523
-          },
-          "4": {
-            "left_arm_frozen": 77
-          },
           "18": {
             "right_arm_frozen": 161
           },
@@ -28681,6 +30405,25 @@ export const LAB_SUPPORT_DATA = {
           },
           "11": {
             "right_arm_frozen": 1169
+          },
+          "15": {
+            "right_arm_frozen": 3600
+          },
+          "1": {
+            "left_arm_frozen": 3600
+          },
+          "14": {
+            "right_arm_frozen": 1669
+          },
+          "23": {
+            "right_arm_frozen": 89,
+            "right_gripper_not_working": 42
+          },
+          "0": {
+            "left_arm_frozen": 3523
+          },
+          "4": {
+            "left_arm_frozen": 77
           }
         },
         "2026-05-28": {
@@ -28713,16 +30456,16 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-29": {
+          "0": {
+            "left_arm_frozen": 139,
+            "left_gripper_not_working": 40,
+            "other_robot_issue": 164
+          },
           "13": {
             "left_arm_frozen": 532
           },
           "12": {
             "left_arm_frozen": 90
-          },
-          "0": {
-            "left_arm_frozen": 139,
-            "left_gripper_not_working": 40,
-            "other_robot_issue": 164
           }
         },
         "2026-05-30": {
@@ -28731,9 +30474,6 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-06-01": {
-          "22": {
-            "left_arm_frozen": 118
-          },
           "21": {
             "left_arm_frozen": 328
           },
@@ -28749,15 +30489,12 @@ export const LAB_SUPPORT_DATA = {
           },
           "18": {
             "left_arm_frozen": 51
+          },
+          "22": {
+            "left_arm_frozen": 118
           }
         },
         "2026-06-02": {
-          "23": {
-            "left_arm_frozen": 50
-          },
-          "18": {
-            "left_arm_frozen": 320
-          },
           "22": {
             "left_arm_frozen": 51
           },
@@ -28776,8 +30513,14 @@ export const LAB_SUPPORT_DATA = {
           "19": {
             "left_arm_frozen": 35
           },
+          "23": {
+            "left_arm_frozen": 50
+          },
           "0": {
             "left_arm_frozen": 434
+          },
+          "18": {
+            "left_arm_frozen": 320
           }
         },
         "2026-06-03": {
@@ -28790,20 +30533,14 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-06-04": {
-          "12": {
+          "11": {
             "chest_frozen": 39
           },
-          "11": {
+          "12": {
             "chest_frozen": 39
           }
         },
         "2026-06-05": {
-          "17": {
-            "left_arm_frozen": 82
-          },
-          "16": {
-            "right_arm_frozen": 1089
-          },
           "0": {
             "right_arm_frozen": 210,
             "left_arm_frozen": 179,
@@ -28811,92 +30548,61 @@ export const LAB_SUPPORT_DATA = {
           },
           "9": {
             "left_arm_frozen": 160
+          },
+          "17": {
+            "left_arm_frozen": 82
+          },
+          "16": {
+            "right_arm_frozen": 1089
+          }
+        },
+        "2026-06-06": {
+          "0": {
+            "right_arm_frozen": 193
+          }
+        },
+        "2026-06-10": {
+          "18": {
+            "left_arm_frozen": 41
+          },
+          "12": {
+            "head_cam_out": 38
+          },
+          "11": {
+            "head_cam_out": 38
+          },
+          "10": {
+            "head_cam_out": 117
+          }
+        },
+        "2026-06-11": {
+          "19": {
+            "left_arm_frozen": 88
+          },
+          "20": {
+            "left_arm_frozen": 40
+          }
+        },
+        "2026-06-12": {
+          "9": {
+            "head_cam_out": 35
+          },
+          "18": {
+            "right_arm_frozen": 78,
+            "left_arm_frozen": 109
           }
         }
       },
       "gen2-104": {
-        "2026-04-27": {
-          "17": {
-            "left_arm_frozen": 316
-          },
-          "10": {
-            "head_cam_out": 49
-          },
-          "23": {
-            "head_cam_out": 97
-          }
-        },
-        "2026-04-28": {
-          "14": {
-            "right_arm_frozen": 171,
-            "right_gripper_not_working": 119
-          },
-          "13": {
-            "head_cam_out": 34,
-            "other_robot_issue": 1331
-          },
-          "22": {
-            "head_cam_out": 46
-          },
-          "17": {
-            "other_robot_issue": 210
-          },
-          "12": {
-            "head_cam_out": 8
-          },
-          "11": {
-            "head_cam_out": 41
-          }
-        },
-        "2026-04-29": {
-          "23": {
-            "right_arm_frozen": 92
-          },
-          "21": {
-            "other_robot_issue": 122
-          },
-          "16": {
-            "head_cam_out": 78
-          }
-        },
-        "2026-04-30": {
-          "22": {
-            "right_gripper_not_working": 176
-          },
-          "17": {
-            "head_cam_out": 36,
-            "other_robot_issue": 181
-          },
-          "16": {
-            "other_robot_issue": 1076
-          },
-          "14": {
-            "right_arm_frozen": 175
-          },
-          "23": {
-            "right_gripper_not_working": 1080
-          }
-        },
-        "2026-05-01": {
-          "14": {
-            "right_arm_frozen": 173,
-            "left_arm_frozen": 1170
-          },
-          "18": {
-            "right_arm_frozen": 392
-          },
-          "17": {
-            "right_arm_frozen": 97
-          },
-          "16": {
-            "other_robot_issue": 64
-          },
-          "15": {
-            "left_arm_frozen": 1125,
-            "other_robot_issue": 164
-          }
-        },
         "2026-05-04": {
+          "10": {
+            "right_arm_frozen": 35,
+            "left_arm_frozen": 199,
+            "neck_frozen": 1676
+          },
+          "9": {
+            "left_arm_frozen": 166
+          },
           "22": {
             "right_arm_frozen": 56
           },
@@ -28905,14 +30611,6 @@ export const LAB_SUPPORT_DATA = {
           },
           "11": {
             "neck_frozen": 953
-          },
-          "10": {
-            "right_arm_frozen": 35,
-            "left_arm_frozen": 199,
-            "neck_frozen": 1676
-          },
-          "9": {
-            "left_arm_frozen": 166
           }
         },
         "2026-05-05": {
@@ -28967,21 +30665,24 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-11": {
-          "21": {
-            "right_gripper_not_working": 164
-          },
-          "19": {
-            "chest_frozen": 138
-          },
           "23": {
             "left_arm_frozen": 170,
             "left_gripper_not_working": 116
           },
           "22": {
             "left_gripper_not_working": 7
+          },
+          "21": {
+            "right_gripper_not_working": 164
+          },
+          "19": {
+            "chest_frozen": 138
           }
         },
         "2026-05-12": {
+          "16": {
+            "right_arm_frozen": 2660
+          },
           "15": {
             "right_arm_frozen": 1571
           },
@@ -28993,9 +30694,6 @@ export const LAB_SUPPORT_DATA = {
           },
           "17": {
             "right_arm_frozen": 244
-          },
-          "16": {
-            "right_arm_frozen": 2660
           }
         },
         "2026-05-13": {
@@ -29012,18 +30710,21 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-15": {
-          "15": {
-            "head_cam_out": 46,
-            "neck_frozen": 46
-          },
           "13": {
             "head_cam_out": 46
           },
           "11": {
             "other_robot_issue": 336
+          },
+          "15": {
+            "head_cam_out": 46,
+            "neck_frozen": 46
           }
         },
         "2026-05-18": {
+          "19": {
+            "chest_frozen": 39
+          },
           "23": {
             "right_arm_frozen": 104,
             "chest_frozen": 38
@@ -29043,24 +30744,21 @@ export const LAB_SUPPORT_DATA = {
           },
           "16": {
             "right_arm_frozen": 1484
-          },
-          "19": {
-            "chest_frozen": 39
           }
         },
         "2026-05-19": {
-          "23": {
-            "right_arm_frozen": 380
+          "21": {
+            "left_arm_frozen": 228,
+            "chest_frozen": 114
           },
           "0": {
             "right_arm_frozen": 190
           },
+          "23": {
+            "right_arm_frozen": 380
+          },
           "22": {
             "chest_frozen": 35
-          },
-          "21": {
-            "left_arm_frozen": 228,
-            "chest_frozen": 114
           }
         },
         "2026-05-20": {
@@ -29069,10 +30767,6 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-21": {
-          "22": {
-            "right_arm_frozen": 166,
-            "chest_frozen": 37
-          },
           "16": {
             "head_cam_out": 94,
             "other_robot_issue": 376
@@ -29087,6 +30781,10 @@ export const LAB_SUPPORT_DATA = {
           "23": {
             "right_arm_frozen": 35,
             "neck_frozen": 45
+          },
+          "22": {
+            "right_arm_frozen": 166,
+            "chest_frozen": 37
           }
         },
         "2026-05-22": {
@@ -29095,6 +30793,16 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-26": {
+          "22": {
+            "right_arm_frozen": 308,
+            "chest_frozen": 40
+          },
+          "12": {
+            "head_cam_out": 48
+          },
+          "21": {
+            "chest_frozen": 36
+          },
           "15": {
             "other_robot_issue": 194
           },
@@ -29106,16 +30814,6 @@ export const LAB_SUPPORT_DATA = {
           },
           "23": {
             "chest_frozen": 39
-          },
-          "22": {
-            "right_arm_frozen": 308,
-            "chest_frozen": 40
-          },
-          "12": {
-            "head_cam_out": 48
-          },
-          "21": {
-            "chest_frozen": 36
           }
         },
         "2026-05-27": {
@@ -29159,6 +30857,9 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-29": {
+          "0": {
+            "right_arm_frozen": 3600
+          },
           "17": {
             "neck_frozen": 43
           },
@@ -29182,15 +30883,9 @@ export const LAB_SUPPORT_DATA = {
           },
           "10": {
             "right_arm_frozen": 1526
-          },
-          "0": {
-            "right_arm_frozen": 3600
           }
         },
         "2026-06-01": {
-          "22": {
-            "right_arm_frozen": 170
-          },
           "12": {
             "left_gripper_not_working": 168
           },
@@ -29214,12 +30909,12 @@ export const LAB_SUPPORT_DATA = {
           },
           "13": {
             "chest_frozen": 38
+          },
+          "22": {
+            "right_arm_frozen": 170
           }
         },
         "2026-06-02": {
-          "18": {
-            "right_arm_frozen": 550
-          },
           "13": {
             "right_arm_frozen": 796
           },
@@ -29229,20 +30924,39 @@ export const LAB_SUPPORT_DATA = {
           },
           "16": {
             "chest_frozen": 35
+          },
+          "18": {
+            "right_arm_frozen": 550
           }
         },
         "2026-06-03": {
-          "15": {
-            "right_gripper_not_working": 167
-          },
           "18": {
             "chest_frozen": 37
           },
           "17": {
             "chest_frozen": 38
+          },
+          "15": {
+            "right_gripper_not_working": 167
           }
         },
         "2026-06-04": {
+          "11": {
+            "right_arm_frozen": 157
+          },
+          "20": {
+            "right_arm_frozen": 173,
+            "left_arm_frozen": 173
+          },
+          "15": {
+            "left_arm_frozen": 3161
+          },
+          "10": {
+            "right_gripper_not_working": 1
+          },
+          "19": {
+            "right_arm_frozen": 168
+          },
           "14": {
             "right_arm_frozen": 503,
             "left_gripper_not_working": 294
@@ -29275,118 +30989,72 @@ export const LAB_SUPPORT_DATA = {
           },
           "16": {
             "left_arm_frozen": 3592
-          },
-          "11": {
-            "right_arm_frozen": 157
-          },
-          "20": {
-            "right_arm_frozen": 173,
-            "left_arm_frozen": 173
-          },
-          "15": {
-            "left_arm_frozen": 3161
-          },
-          "10": {
-            "right_gripper_not_working": 1
-          },
-          "19": {
-            "right_arm_frozen": 168
           }
         },
         "2026-06-05": {
+          "0": {
+            "right_arm_frozen": 3600
+          },
           "2": {
             "right_arm_frozen": 1496
           },
           "1": {
             "right_arm_frozen": 3600
+          }
+        },
+        "2026-06-08": {
+          "11": {
+            "right_arm_frozen": 1562,
+            "right_gripper_not_working": 169
           },
-          "0": {
+          "10": {
+            "head_cam_out": 51,
+            "chest_frozen": 37
+          },
+          "14": {
+            "right_arm_frozen": 603
+          },
+          "13": {
             "right_arm_frozen": 3600
+          },
+          "12": {
+            "right_arm_frozen": 2956
+          },
+          "16": {
+            "right_arm_frozen": 501
+          }
+        },
+        "2026-06-09": {
+          "17": {
+            "left_arm_frozen": 2976
+          }
+        },
+        "2026-06-10": {
+          "13": {
+            "head_cam_out": 49
+          }
+        },
+        "2026-06-11": {
+          "14": {
+            "right_arm_frozen": 2311
+          },
+          "13": {
+            "right_arm_frozen": 677
+          }
+        },
+        "2026-06-12": {
+          "18": {
+            "right_arm_frozen": 2626
+          },
+          "17": {
+            "right_arm_frozen": 307
           }
         }
       },
       "gen2-103": {
-        "2026-04-27": {
-          "15": {
-            "right_arm_frozen": 359
-          },
-          "17": {
-            "right_arm_frozen": 344
-          },
-          "12": {
-            "right_gripper_not_working": 32
-          },
-          "14": {
-            "right_arm_frozen": 341
-          },
-          "16": {
-            "right_arm_frozen": 1541
-          },
-          "11": {
-            "right_gripper_not_working": 481
-          }
-        },
-        "2026-04-28": {
-          "9": {
-            "right_arm_frozen": 170
-          },
-          "17": {
-            "right_arm_frozen": 236
-          },
-          "10": {
-            "head_cam_out": 54
-          }
-        },
-        "2026-04-29": {
-          "16": {
-            "right_gripper_not_working": 229
-          },
-          "15": {
-            "right_gripper_not_working": 279
-          }
-        },
-        "2026-04-30": {
-          "13": {
-            "right_arm_frozen": 342
-          },
-          "15": {
-            "other_robot_issue": 191
-          },
-          "17": {
-            "right_arm_frozen": 558
-          },
-          "12": {
-            "right_arm_frozen": 173
-          },
-          "16": {
-            "right_arm_frozen": 329,
-            "other_robot_issue": 886
-          }
-        },
-        "2026-05-01": {
-          "17": {
-            "right_gripper_not_working": 166
-          },
-          "16": {
-            "right_arm_frozen": 274
-          },
-          "15": {
-            "right_arm_frozen": 546,
-            "right_gripper_not_working": 64
-          }
-        },
         "2026-05-04": {
-          "18": {
-            "other_robot_issue": 3600
-          },
-          "20": {
-            "other_robot_issue": 1826
-          },
           "15": {
             "other_robot_issue": 1923
-          },
-          "17": {
-            "other_robot_issue": 3600
           },
           "10": {
             "right_arm_frozen": 208
@@ -29397,19 +31065,28 @@ export const LAB_SUPPORT_DATA = {
           "14": {
             "right_arm_frozen": 1408
           },
+          "18": {
+            "other_robot_issue": 3600
+          },
+          "17": {
+            "other_robot_issue": 3600
+          },
           "16": {
             "other_robot_issue": 3387
+          },
+          "20": {
+            "other_robot_issue": 1826
           }
         },
         "2026-05-05": {
-          "14": {
-            "left_arm_frozen": 171
-          },
           "11": {
             "right_arm_frozen": 127
           },
           "10": {
             "right_arm_frozen": 3271
+          },
+          "14": {
+            "left_arm_frozen": 171
           }
         },
         "2026-05-06": {
@@ -29429,14 +31106,15 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-11": {
+          "9": {
+            "right_arm_frozen": 169,
+            "head_cam_out": 37
+          },
           "8": {
             "head_cam_out": 288
           },
           "17": {
             "right_arm_frozen": 338
-          },
-          "10": {
-            "right_arm_frozen": 308
           },
           "7": {
             "head_cam_out": 495
@@ -29444,9 +31122,8 @@ export const LAB_SUPPORT_DATA = {
           "16": {
             "head_cam_out": 37
           },
-          "9": {
-            "right_arm_frozen": 169,
-            "head_cam_out": 37
+          "10": {
+            "right_arm_frozen": 308
           }
         },
         "2026-05-14": {
@@ -29458,32 +31135,16 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-15": {
-          "10": {
-            "right_arm_frozen": 171
-          },
           "12": {
             "right_arm_frozen": 172
+          },
+          "10": {
+            "right_arm_frozen": 171
           }
         },
         "2026-05-18": {
-          "14": {
-            "right_arm_frozen": 3229
-          },
-          "23": {
-            "right_arm_frozen": 667
-          },
-          "16": {
-            "right_arm_frozen": 1158,
-            "left_arm_frozen": 1327
-          },
-          "9": {
-            "right_arm_frozen": 169
-          },
           "11": {
             "right_arm_frozen": 1407
-          },
-          "13": {
-            "right_arm_frozen": 903
           },
           "15": {
             "right_arm_frozen": 1960,
@@ -29492,19 +31153,35 @@ export const LAB_SUPPORT_DATA = {
           "10": {
             "right_arm_frozen": 2026
           },
+          "14": {
+            "right_arm_frozen": 3229
+          },
+          "23": {
+            "right_arm_frozen": 667
+          },
+          "9": {
+            "right_arm_frozen": 169
+          },
+          "13": {
+            "right_arm_frozen": 903
+          },
           "12": {
             "right_arm_frozen": 188
+          },
+          "16": {
+            "right_arm_frozen": 1158,
+            "left_arm_frozen": 1327
           }
         },
         "2026-05-19": {
           "16": {
             "left_arm_frozen": 775
           },
-          "13": {
-            "other_robot_issue": 1948
-          },
           "15": {
             "left_arm_frozen": 704
+          },
+          "13": {
+            "other_robot_issue": 1948
           },
           "17": {
             "right_arm_frozen": 63
@@ -29517,27 +31194,27 @@ export const LAB_SUPPORT_DATA = {
           "19": {
             "other_robot_issue": 843
           },
-          "12": {
-            "other_robot_issue": 664
-          },
           "18": {
             "other_robot_issue": 741
           },
           "13": {
             "other_robot_issue": 506
+          },
+          "12": {
+            "other_robot_issue": 664
           }
         },
         "2026-05-21": {
-          "13": {
-            "head_cam_out": 75,
-            "other_robot_issue": 366
-          },
           "21": {
             "chest_frozen": 36,
             "right_gripper_not_working": 35
           },
           "14": {
             "head_cam_out": 72
+          },
+          "13": {
+            "head_cam_out": 75,
+            "other_robot_issue": 366
           }
         },
         "2026-05-22": {
@@ -29580,12 +31257,6 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-28": {
-          "14": {
-            "left_arm_frozen": 905
-          },
-          "0": {
-            "right_arm_frozen": 35
-          },
           "11": {
             "head_cam_out": 72
           },
@@ -29595,11 +31266,21 @@ export const LAB_SUPPORT_DATA = {
           "19": {
             "right_arm_frozen": 198
           },
+          "14": {
+            "left_arm_frozen": 905
+          },
+          "0": {
+            "right_arm_frozen": 35
+          },
           "21": {
             "other_robot_issue": 475
           }
         },
         "2026-05-29": {
+          "0": {
+            "left_arm_frozen": 231,
+            "chest_frozen": 42
+          },
           "23": {
             "chest_frozen": 40
           },
@@ -29611,30 +31292,29 @@ export const LAB_SUPPORT_DATA = {
           },
           "15": {
             "head_cam_out": 944
-          },
-          "0": {
-            "left_arm_frozen": 231,
-            "chest_frozen": 42
           }
         },
         "2026-06-01": {
-          "22": {
-            "right_arm_frozen": 69
+          "21": {
+            "right_arm_frozen": 128
+          },
+          "16": {
+            "right_arm_frozen": 33
+          },
+          "11": {
+            "right_arm_frozen": 158
+          },
+          "20": {
+            "right_arm_frozen": 39
           },
           "15": {
             "left_gripper_not_working": 36
-          },
-          "21": {
-            "right_arm_frozen": 128
           },
           "14": {
             "neck_frozen": 41
           },
           "23": {
             "right_arm_frozen": 69
-          },
-          "16": {
-            "right_arm_frozen": 33
           },
           "9": {
             "right_arm_frozen": 79
@@ -29643,25 +31323,22 @@ export const LAB_SUPPORT_DATA = {
             "right_arm_frozen": 69,
             "other_robot_issue": 410
           },
-          "11": {
-            "right_arm_frozen": 158
-          },
-          "20": {
-            "right_arm_frozen": 39
+          "22": {
+            "right_arm_frozen": 69
           }
         },
         "2026-06-02": {
-          "23": {
-            "right_arm_frozen": 36
-          },
-          "11": {
-            "right_arm_frozen": 3600
-          },
           "22": {
             "right_arm_frozen": 74
           },
           "17": {
             "head_cam_out": 42
+          },
+          "12": {
+            "right_arm_frozen": 352
+          },
+          "11": {
+            "right_arm_frozen": 3600
           },
           "10": {
             "right_arm_frozen": 2177
@@ -29670,8 +31347,8 @@ export const LAB_SUPPORT_DATA = {
             "right_arm_frozen": 33,
             "right_gripper_not_working": 37
           },
-          "12": {
-            "right_arm_frozen": 352
+          "23": {
+            "right_arm_frozen": 36
           },
           "0": {
             "left_arm_frozen": 35,
@@ -29679,11 +31356,11 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-06-03": {
-          "9": {
-            "right_arm_frozen": 45
-          },
           "13": {
             "right_arm_frozen": 14
+          },
+          "9": {
+            "right_arm_frozen": 45
           }
         },
         "2026-06-04": {
@@ -29693,54 +31370,75 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-06-05": {
-          "16": {
-            "right_arm_frozen": 43
+          "0": {
+            "left_arm_frozen": 155
           },
           "18": {
             "left_arm_frozen": 36
           },
+          "16": {
+            "right_arm_frozen": 43
+          },
           "11": {
             "neck_frozen": 88
           },
+          "20": {
+            "right_arm_frozen": 35
+          }
+        },
+        "2026-06-06": {
           "0": {
-            "left_arm_frozen": 155
+            "left_arm_frozen": 176
+          }
+        },
+        "2026-06-08": {
+          "19": {
+            "other_robot_issue": 103
+          },
+          "13": {
+            "neck_frozen": 45
+          },
+          "17": {
+            "right_arm_frozen": 1137
+          },
+          "16": {
+            "left_gripper_not_working": 71
+          }
+        },
+        "2026-06-09": {
+          "18": {
+            "right_arm_frozen": 550
+          },
+          "17": {
+            "other_robot_issue": 584
+          },
+          "15": {
+            "chest_frozen": 34
+          },
+          "19": {
+            "right_arm_frozen": 83
+          }
+        },
+        "2026-06-10": {
+          "20": {
+            "right_arm_frozen": 37,
+            "right_gripper_not_working": 36
+          }
+        },
+        "2026-06-11": {
+          "18": {
+            "neck_frozen": 44
+          },
+          "17": {
+            "neck_frozen": 1
+          },
+          "15": {
+            "right_arm_frozen": 500
           }
         }
       },
       "gen2-018": {
-        "2026-05-01": {
-          "9": {
-            "head_cam_out": 45
-          },
-          "18": {
-            "left_gripper_not_working": 168
-          },
-          "13": {
-            "head_cam_out": 49
-          },
-          "21": {
-            "right_arm_frozen": 95,
-            "head_cam_out": 147
-          },
-          "15": {
-            "right_arm_frozen": 341
-          }
-        },
-        "2026-05-02": {
-          "0": {
-            "right_arm_frozen": 74
-          }
-        },
         "2026-05-04": {
-          "18": {
-            "neck_frozen": 820
-          },
-          "21": {
-            "head_cam_out": 103
-          },
-          "16": {
-            "head_cam_out": 94
-          },
           "10": {
             "head_cam_out": 91,
             "right_gripper_not_working": 128
@@ -29754,6 +31452,15 @@ export const LAB_SUPPORT_DATA = {
           },
           "9": {
             "right_arm_frozen": 1063
+          },
+          "18": {
+            "neck_frozen": 820
+          },
+          "21": {
+            "head_cam_out": 103
+          },
+          "16": {
+            "head_cam_out": 94
           }
         },
         "2026-05-05": {
@@ -29778,24 +31485,18 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-06": {
-          "13": {
-            "right_arm_frozen": 1456
-          },
           "11": {
             "left_gripper_not_working": 170
           },
           "20": {
             "right_arm_frozen": 180,
             "left_arm_frozen": 43
+          },
+          "13": {
+            "right_arm_frozen": 1456
           }
         },
         "2026-05-07": {
-          "15": {
-            "left_arm_frozen": 1635
-          },
-          "14": {
-            "head_cam_out": 51
-          },
           "17": {
             "left_arm_frozen": 997,
             "head_cam_out": 42,
@@ -29806,6 +31507,12 @@ export const LAB_SUPPORT_DATA = {
           },
           "16": {
             "left_arm_frozen": 3462
+          },
+          "15": {
+            "left_arm_frozen": 1635
+          },
+          "14": {
+            "head_cam_out": 51
           }
         },
         "2026-05-08": {
@@ -29834,6 +31541,15 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-13": {
+          "20": {
+            "right_arm_frozen": 170
+          },
+          "10": {
+            "right_gripper_not_working": 170
+          },
+          "14": {
+            "right_arm_frozen": 171
+          },
           "23": {
             "right_arm_frozen": 190
           },
@@ -29847,15 +31563,6 @@ export const LAB_SUPPORT_DATA = {
           "11": {
             "right_arm_frozen": 752,
             "right_gripper_not_working": 169
-          },
-          "20": {
-            "right_arm_frozen": 170
-          },
-          "10": {
-            "right_gripper_not_working": 170
-          },
-          "14": {
-            "right_arm_frozen": 171
           }
         },
         "2026-05-14": {
@@ -29911,6 +31618,13 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-19": {
+          "21": {
+            "right_arm_frozen": 204,
+            "other_robot_issue": 798
+          },
+          "16": {
+            "right_arm_frozen": 69
+          },
           "19": {
             "right_arm_frozen": 171,
             "left_arm_frozen": 138,
@@ -29934,13 +31648,6 @@ export const LAB_SUPPORT_DATA = {
           },
           "17": {
             "right_arm_frozen": 95
-          },
-          "21": {
-            "right_arm_frozen": 204,
-            "other_robot_issue": 798
-          },
-          "16": {
-            "right_arm_frozen": 69
           }
         },
         "2026-05-20": {
@@ -29982,21 +31689,33 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-26": {
-          "15": {
-            "right_arm_frozen": 168
-          },
-          "19": {
-            "left_arm_frozen": 161
-          },
           "22": {
             "right_arm_frozen": 173,
             "chest_frozen": 39
           },
           "17": {
             "right_arm_frozen": 244
+          },
+          "15": {
+            "right_arm_frozen": 168
+          },
+          "19": {
+            "left_arm_frozen": 161
           }
         },
         "2026-05-27": {
+          "22": {
+            "right_arm_frozen": 167
+          },
+          "17": {
+            "neck_frozen": 44
+          },
+          "12": {
+            "neck_frozen": 45
+          },
+          "11": {
+            "left_arm_frozen": 134
+          },
           "20": {
             "right_arm_frozen": 139
           },
@@ -30009,18 +31728,6 @@ export const LAB_SUPPORT_DATA = {
           },
           "0": {
             "right_arm_frozen": 393
-          },
-          "22": {
-            "right_arm_frozen": 167
-          },
-          "17": {
-            "neck_frozen": 44
-          },
-          "12": {
-            "neck_frozen": 45
-          },
-          "11": {
-            "left_arm_frozen": 134
           }
         },
         "2026-05-28": {
@@ -30042,6 +31749,9 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-29": {
+          "14": {
+            "neck_frozen": 44
+          },
           "22": {
             "right_arm_frozen": 1411
           },
@@ -30053,9 +31763,6 @@ export const LAB_SUPPORT_DATA = {
           },
           "11": {
             "right_arm_frozen": 186
-          },
-          "14": {
-            "neck_frozen": 44
           }
         },
         "2026-05-30": {
@@ -30064,9 +31771,6 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-31": {
-          "0": {
-            "right_arm_frozen": 3600
-          },
           "3": {
             "right_arm_frozen": 824
           },
@@ -30075,9 +31779,18 @@ export const LAB_SUPPORT_DATA = {
           },
           "1": {
             "right_arm_frozen": 3600
+          },
+          "0": {
+            "right_arm_frozen": 3600
           }
         },
         "2026-06-03": {
+          "13": {
+            "left_arm_frozen": 891
+          },
+          "12": {
+            "left_arm_frozen": 1630
+          },
           "10": {
             "left_arm_frozen": 591
           },
@@ -30086,49 +31799,70 @@ export const LAB_SUPPORT_DATA = {
           },
           "9": {
             "left_arm_frozen": 8
-          },
-          "13": {
-            "left_arm_frozen": 891
-          },
-          "12": {
-            "left_arm_frozen": 1630
           }
         },
         "2026-06-05": {
-          "10": {
-            "right_arm_frozen": 521
-          },
           "9": {
             "right_arm_frozen": 1309
+          },
+          "10": {
+            "right_arm_frozen": 521
+          }
+        },
+        "2026-06-08": {
+          "15": {
+            "right_arm_frozen": 53
+          }
+        },
+        "2026-06-09": {
+          "13": {
+            "left_arm_frozen": 85,
+            "head_cam_out": 51
+          },
+          "21": {
+            "left_arm_frozen": 390
+          }
+        },
+        "2026-06-10": {
+          "23": {
+            "left_arm_frozen": 91
+          },
+          "22": {
+            "left_arm_frozen": 3600
+          },
+          "21": {
+            "left_arm_frozen": 3073
+          },
+          "10": {
+            "head_cam_out": 51
+          }
+        },
+        "2026-06-11": {
+          "16": {
+            "right_arm_frozen": 169
+          },
+          "11": {
+            "left_arm_frozen": 149
+          },
+          "10": {
+            "left_arm_frozen": 689
+          }
+        },
+        "2026-06-12": {
+          "14": {
+            "head_cam_out": 35,
+            "other_robot_issue": 115
+          },
+          "9": {
+            "right_arm_frozen": 170,
+            "chest_frozen": 37
+          },
+          "13": {
+            "left_gripper_not_working": 171
           }
         }
       },
       "gen2-102": {
-        "2026-04-27": {
-          "12": {
-            "right_arm_frozen": 1619
-          },
-          "11": {
-            "right_arm_frozen": 963
-          }
-        },
-        "2026-04-30": {
-          "11": {
-            "left_arm_frozen": 151
-          },
-          "10": {
-            "left_arm_frozen": 242
-          }
-        },
-        "2026-05-01": {
-          "10": {
-            "right_arm_frozen": 207,
-            "right_gripper_not_working": 197
-          },
-          "16": {
-            "right_arm_frozen": 167
-          }
-        },
         "2026-05-04": {
           "13": {
             "head_cam_out": 47
@@ -30140,21 +31874,18 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-06": {
+          "20": {
+            "left_arm_frozen": 327
+          },
           "19": {
             "left_arm_frozen": 2677
           },
           "23": {
             "right_arm_frozen": 1154,
             "left_arm_frozen": 125
-          },
-          "20": {
-            "left_arm_frozen": 327
           }
         },
         "2026-05-07": {
-          "10": {
-            "right_arm_frozen": 454
-          },
           "12": {
             "other_robot_issue": 1216
           },
@@ -30162,6 +31893,9 @@ export const LAB_SUPPORT_DATA = {
             "right_arm_frozen": 1062,
             "left_arm_frozen": 207,
             "other_robot_issue": 467
+          },
+          "10": {
+            "right_arm_frozen": 454
           }
         },
         "2026-05-08": {
@@ -30190,15 +31924,6 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-13": {
-          "13": {
-            "right_arm_frozen": 2310
-          },
-          "12": {
-            "right_arm_frozen": 1406
-          },
-          "11": {
-            "right_arm_frozen": 167
-          },
           "19": {
             "right_arm_frozen": 168
           },
@@ -30208,6 +31933,15 @@ export const LAB_SUPPORT_DATA = {
           },
           "0": {
             "right_arm_frozen": 1
+          },
+          "13": {
+            "right_arm_frozen": 2310
+          },
+          "12": {
+            "right_arm_frozen": 1406
+          },
+          "11": {
+            "right_arm_frozen": 167
           }
         },
         "2026-05-14": {
@@ -30228,6 +31962,9 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-15": {
+          "13": {
+            "right_arm_frozen": 172
+          },
           "15": {
             "right_arm_frozen": 142,
             "left_arm_frozen": 171,
@@ -30235,12 +31972,21 @@ export const LAB_SUPPORT_DATA = {
           },
           "10": {
             "right_arm_frozen": 334
-          },
-          "13": {
-            "right_arm_frozen": 172
           }
         },
         "2026-05-18": {
+          "11": {
+            "right_arm_frozen": 1276
+          },
+          "20": {
+            "right_arm_frozen": 271
+          },
+          "15": {
+            "right_arm_frozen": 169
+          },
+          "10": {
+            "right_arm_frozen": 655
+          },
           "9": {
             "right_arm_frozen": 201
           },
@@ -30261,35 +32007,20 @@ export const LAB_SUPPORT_DATA = {
           },
           "16": {
             "right_arm_frozen": 174
-          },
-          "11": {
-            "right_arm_frozen": 1276
-          },
-          "20": {
-            "right_arm_frozen": 271
-          },
-          "15": {
-            "right_arm_frozen": 169
-          },
-          "10": {
-            "right_arm_frozen": 655
           }
         },
         "2026-05-19": {
-          "19": {
-            "other_robot_issue": 57
-          },
           "11": {
             "right_arm_frozen": 338
           },
           "10": {
             "right_arm_frozen": 904
+          },
+          "19": {
+            "other_robot_issue": 57
           }
         },
         "2026-05-20": {
-          "12": {
-            "right_arm_frozen": 26
-          },
           "15": {
             "right_arm_frozen": 379
           },
@@ -30307,14 +32038,17 @@ export const LAB_SUPPORT_DATA = {
           },
           "13": {
             "right_arm_frozen": 442
+          },
+          "12": {
+            "right_arm_frozen": 26
           }
         },
         "2026-05-21": {
-          "0": {
-            "head_cam_out": 34
-          },
           "23": {
             "head_cam_out": 38
+          },
+          "0": {
+            "head_cam_out": 34
           }
         },
         "2026-05-22": {
@@ -30340,6 +32074,15 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-27": {
+          "18": {
+            "right_arm_frozen": 3600
+          },
+          "17": {
+            "right_arm_frozen": 2398
+          },
+          "16": {
+            "right_arm_frozen": 847
+          },
           "20": {
             "right_arm_frozen": 819
           },
@@ -30352,15 +32095,6 @@ export const LAB_SUPPORT_DATA = {
           },
           "14": {
             "chest_frozen": 64
-          },
-          "18": {
-            "right_arm_frozen": 3600
-          },
-          "17": {
-            "right_arm_frozen": 2398
-          },
-          "16": {
-            "right_arm_frozen": 847
           }
         },
         "2026-05-28": {
@@ -30400,6 +32134,13 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-29": {
+          "14": {
+            "right_arm_frozen": 2074
+          },
+          "0": {
+            "right_arm_frozen": 274,
+            "right_gripper_not_working": 180
+          },
           "13": {
             "right_arm_frozen": 2968
           },
@@ -30414,21 +32155,9 @@ export const LAB_SUPPORT_DATA = {
           },
           "10": {
             "right_arm_frozen": 1926
-          },
-          "14": {
-            "right_arm_frozen": 2074
-          },
-          "0": {
-            "right_arm_frozen": 274,
-            "right_gripper_not_working": 180
           }
         },
         "2026-06-01": {
-          "22": {
-            "right_arm_frozen": 532,
-            "head_cam_out": 38,
-            "other_robot_issue": 59
-          },
           "21": {
             "right_arm_frozen": 375
           },
@@ -30452,6 +32181,11 @@ export const LAB_SUPPORT_DATA = {
           },
           "13": {
             "other_robot_issue": 808
+          },
+          "22": {
+            "right_arm_frozen": 532,
+            "head_cam_out": 38,
+            "other_robot_issue": 59
           }
         },
         "2026-06-02": {
@@ -30484,6 +32218,9 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-06-04": {
+          "20": {
+            "right_arm_frozen": 785
+          },
           "23": {
             "left_arm_frozen": 264
           },
@@ -30498,47 +32235,105 @@ export const LAB_SUPPORT_DATA = {
           },
           "12": {
             "right_arm_frozen": 1154
-          },
-          "20": {
-            "right_arm_frozen": 785
           }
         },
         "2026-06-05": {
+          "19": {
+            "left_arm_frozen": 165
+          },
+          "23": {
+            "right_arm_frozen": 169,
+            "left_arm_frozen": 508
+          },
           "16": {
             "left_arm_frozen": 257
           },
           "15": {
             "left_arm_frozen": 78
+          }
+        },
+        "2026-06-06": {
+          "0": {
+            "left_arm_frozen": 168
+          }
+        },
+        "2026-06-08": {
+          "11": {
+            "left_arm_frozen": 83
           },
-          "19": {
-            "left_arm_frozen": 165
+          "15": {
+            "right_arm_frozen": 342
+          },
+          "14": {
+            "left_arm_frozen": 341
+          },
+          "23": {
+            "right_arm_frozen": 471
+          },
+          "18": {
+            "other_robot_issue": 212
+          },
+          "22": {
+            "left_arm_frozen": 213
+          },
+          "12": {
+            "left_arm_frozen": 165,
+            "chest_frozen": 21
+          },
+          "21": {
+            "left_arm_frozen": 737
+          }
+        },
+        "2026-06-09": {
+          "9": {
+            "left_arm_frozen": 170
+          },
+          "12": {
+            "right_arm_frozen": 1688,
+            "left_arm_frozen": 925
+          },
+          "11": {
+            "right_arm_frozen": 1220
+          },
+          "10": {
+            "left_arm_frozen": 114
+          },
+          "0": {
+            "left_arm_frozen": 307
+          }
+        },
+        "2026-06-10": {
+          "9": {
+            "chest_frozen": 37
+          },
+          "18": {
+            "other_robot_issue": 200
+          },
+          "10": {
+            "right_arm_frozen": 268
+          }
+        },
+        "2026-06-11": {
+          "23": {
+            "other_robot_issue": 453
+          },
+          "11": {
+            "head_cam_out": 30
+          },
+          "20": {
+            "head_cam_out": 73
+          }
+        },
+        "2026-06-12": {
+          "15": {
+            "left_arm_frozen": 248
+          },
+          "12": {
+            "left_arm_frozen": 352
           }
         }
       },
       "gen2-008": {
-        "2026-04-27": {
-          "13": {
-            "head_cam_out": 267,
-            "neck_frozen": 42
-          },
-          "15": {
-            "right_arm_frozen": 131,
-            "other_robot_issue": 935
-          },
-          "10": {
-            "right_arm_frozen": 59,
-            "head_cam_out": 67
-          },
-          "14": {
-            "head_cam_out": 215
-          },
-          "16": {
-            "other_robot_issue": 2766
-          },
-          "11": {
-            "head_cam_out": 112
-          }
-        },
         "2026-05-04": {
           "13": {
             "head_cam_out": 99
@@ -30580,6 +32375,10 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-12": {
+          "20": {
+            "head_cam_out": 56,
+            "neck_frozen": 46
+          },
           "13": {
             "left_arm_frozen": 3240
           },
@@ -30589,10 +32388,6 @@ export const LAB_SUPPORT_DATA = {
           "14": {
             "right_arm_frozen": 622,
             "left_arm_frozen": 35
-          },
-          "20": {
-            "head_cam_out": 56,
-            "neck_frozen": 46
           }
         },
         "2026-05-13": {
@@ -30632,32 +32427,26 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-18": {
+          "9": {
+            "chest_frozen": 116
+          },
+          "20": {
+            "right_arm_frozen": 37
+          },
           "21": {
             "chest_frozen": 36,
             "right_gripper_not_working": 66
           },
           "23": {
             "left_arm_frozen": 35
-          },
-          "9": {
-            "chest_frozen": 116
-          },
-          "20": {
-            "right_arm_frozen": 37
           }
         },
         "2026-05-19": {
-          "19": {
-            "left_arm_frozen": 35
-          },
           "21": {
             "right_arm_frozen": 32
           },
           "23": {
             "right_arm_frozen": 35
-          },
-          "0": {
-            "left_arm_frozen": 35
           },
           "9": {
             "neck_frozen": 46
@@ -30674,17 +32463,15 @@ export const LAB_SUPPORT_DATA = {
           },
           "15": {
             "left_arm_frozen": 72
+          },
+          "19": {
+            "left_arm_frozen": 35
+          },
+          "0": {
+            "left_arm_frozen": 35
           }
         },
         "2026-05-20": {
-          "22": {
-            "right_arm_frozen": 93,
-            "left_arm_frozen": 34,
-            "chest_frozen": 71
-          },
-          "10": {
-            "left_arm_frozen": 76
-          },
           "14": {
             "left_arm_frozen": 106
           },
@@ -30702,9 +32489,30 @@ export const LAB_SUPPORT_DATA = {
           },
           "11": {
             "left_arm_frozen": 69
+          },
+          "22": {
+            "right_arm_frozen": 93,
+            "left_arm_frozen": 34,
+            "chest_frozen": 71
+          },
+          "10": {
+            "left_arm_frozen": 76
           }
         },
         "2026-05-21": {
+          "19": {
+            "left_arm_frozen": 35
+          },
+          "21": {
+            "chest_frozen": 38
+          },
+          "23": {
+            "left_arm_frozen": 39,
+            "chest_frozen": 38
+          },
+          "16": {
+            "other_robot_issue": 690
+          },
           "0": {
             "head_cam_out": 54
           },
@@ -30724,29 +32532,11 @@ export const LAB_SUPPORT_DATA = {
           "10": {
             "left_arm_frozen": 79
           },
-          "19": {
-            "left_arm_frozen": 35
-          },
           "12": {
             "left_arm_frozen": 22
-          },
-          "21": {
-            "chest_frozen": 38
-          },
-          "23": {
-            "left_arm_frozen": 39,
-            "chest_frozen": 38
-          },
-          "16": {
-            "other_robot_issue": 690
           }
         },
         "2026-05-22": {
-          "13": {
-            "left_arm_frozen": 34,
-            "head_cam_out": 55,
-            "neck_frozen": 15
-          },
           "10": {
             "left_arm_frozen": 36
           },
@@ -30775,27 +32565,62 @@ export const LAB_SUPPORT_DATA = {
             "head_cam_out": 57,
             "neck_frozen": 50,
             "other_robot_issue": 14
+          },
+          "13": {
+            "left_arm_frozen": 34,
+            "head_cam_out": 55,
+            "neck_frozen": 15
           }
         },
         "2026-05-26": {
+          "15": {
+            "right_arm_frozen": 3600
+          },
+          "17": {
+            "left_arm_frozen": 1065
+          },
           "10": {
             "left_arm_frozen": 68
           },
+          "12": {
+            "right_arm_frozen": 1713
+          },
+          "14": {
+            "right_arm_frozen": 3600
+          },
+          "16": {
+            "right_arm_frozen": 1887,
+            "left_arm_frozen": 1713
+          },
           "9": {
             "left_arm_frozen": 34
+          },
+          "13": {
+            "right_arm_frozen": 3600
+          }
+        },
+        "2026-06-12": {
+          "15": {
+            "right_arm_frozen": 2160
+          },
+          "17": {
+            "right_arm_frozen": 3544
+          },
+          "16": {
+            "right_arm_frozen": 3600
           }
         }
       },
       "gen2-117": {
         "2026-05-22": {
-          "18": {
-            "right_arm_frozen": 3600
+          "20": {
+            "right_arm_frozen": 1149
           },
           "17": {
             "right_arm_frozen": 3600
           },
-          "20": {
-            "right_arm_frozen": 1149
+          "18": {
+            "right_arm_frozen": 3600
           },
           "16": {
             "right_arm_frozen": 2451
@@ -30803,37 +32628,15 @@ export const LAB_SUPPORT_DATA = {
           "19": {
             "right_arm_frozen": 3600
           }
+        },
+        "2026-06-11": {
+          "11": {
+            "head_cam_out": 35
+          }
         }
       },
       "gen2-004": {
-        "2026-04-27": {
-          "10": {
-            "right_arm_frozen": 269
-          },
-          "14": {
-            "right_arm_frozen": 38
-          }
-        },
-        "2026-04-28": {
-          "8": {
-            "other_robot_issue": 434
-          }
-        },
-        "2026-04-29": {
-          "8": {
-            "head_cam_out": 57
-          }
-        },
         "2026-05-04": {
-          "18": {
-            "neck_frozen": 44
-          },
-          "11": {
-            "chest_frozen": 51
-          },
-          "20": {
-            "neck_frozen": 86
-          },
           "8": {
             "chest_frozen": 1299
           },
@@ -30842,6 +32645,15 @@ export const LAB_SUPPORT_DATA = {
           },
           "9": {
             "chest_frozen": 41
+          },
+          "18": {
+            "neck_frozen": 44
+          },
+          "11": {
+            "chest_frozen": 51
+          },
+          "20": {
+            "neck_frozen": 86
           }
         },
         "2026-05-05": {
@@ -30871,11 +32683,11 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-15": {
-          "9": {
-            "head_cam_out": 39
-          },
           "11": {
             "right_arm_frozen": 68
+          },
+          "9": {
+            "head_cam_out": 39
           }
         },
         "2026-05-19": {
@@ -30887,11 +32699,11 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-20": {
-          "10": {
-            "left_arm_frozen": 670
-          },
           "11": {
             "left_arm_frozen": 1436
+          },
+          "10": {
+            "left_arm_frozen": 670
           }
         },
         "2026-05-21": {
@@ -30943,11 +32755,11 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-29": {
-          "13": {
-            "right_arm_frozen": 895
-          },
           "14": {
             "right_arm_frozen": 2109
+          },
+          "13": {
+            "right_arm_frozen": 895
           }
         },
         "2026-06-01": {
@@ -30956,96 +32768,51 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-06-03": {
-          "19": {
-            "right_arm_frozen": 923
-          },
           "18": {
             "right_arm_frozen": 1236,
             "left_arm_frozen": 380
+          },
+          "19": {
+            "right_arm_frozen": 923
           }
         },
         "2026-06-04": {
           "18": {
             "left_arm_frozen": 36
           }
+        },
+        "2026-06-08": {
+          "14": {
+            "head_cam_out": 36
+          }
+        },
+        "2026-06-09": {
+          "8": {
+            "left_arm_frozen": 34
+          }
+        },
+        "2026-06-10": {
+          "10": {
+            "left_arm_frozen": 35
+          }
+        },
+        "2026-06-11": {
+          "14": {
+            "left_arm_frozen": 331
+          },
+          "11": {
+            "left_arm_frozen": 881
+          },
+          "13": {
+            "left_arm_frozen": 3600
+          },
+          "12": {
+            "left_arm_frozen": 3600
+          }
         }
       },
       "gen2-016": {
-        "2026-04-27": {
-          "13": {
-            "right_arm_frozen": 1496,
-            "other_robot_issue": 684
-          },
-          "12": {
-            "left_arm_frozen": 174,
-            "other_robot_issue": 141
-          },
-          "11": {
-            "left_arm_frozen": 39
-          },
-          "10": {
-            "left_arm_frozen": 38
-          },
-          "14": {
-            "right_arm_frozen": 931,
-            "left_arm_frozen": 307
-          }
-        },
-        "2026-04-30": {
-          "10": {
-            "neck_frozen": 46
-          }
-        },
-        "2026-05-01": {
-          "19": {
-            "right_arm_frozen": 3378
-          },
-          "14": {
-            "right_arm_frozen": 656
-          },
-          "23": {
-            "right_arm_frozen": 222
-          },
-          "18": {
-            "right_arm_frozen": 1530
-          },
-          "22": {
-            "right_arm_frozen": 3600
-          },
-          "17": {
-            "right_arm_frozen": 1980
-          },
-          "12": {
-            "right_arm_frozen": 1321
-          },
-          "21": {
-            "right_arm_frozen": 3600
-          },
-          "11": {
-            "right_arm_frozen": 2092
-          },
-          "20": {
-            "right_arm_frozen": 3600
-          },
-          "15": {
-            "right_arm_frozen": 39
-          }
-        },
-        "2026-05-03": {
-          "9": {
-            "left_arm_frozen": 43
-          }
-        },
         "2026-05-05": {
-          "11": {
-            "neck_frozen": 418
-          },
-          "15": {
-            "right_arm_frozen": 34
-          },
-          "10": {
-            "neck_frozen": 1623
-          },
           "19": {
             "neck_frozen": 45,
             "other_robot_issue": 76
@@ -31057,18 +32824,39 @@ export const LAB_SUPPORT_DATA = {
             "neck_frozen": 45,
             "other_robot_issue": 1003
           },
+          "11": {
+            "neck_frozen": 418
+          },
           "13": {
             "neck_frozen": 3600
+          },
+          "15": {
+            "right_arm_frozen": 34
+          },
+          "10": {
+            "neck_frozen": 1623
           },
           "12": {
             "neck_frozen": 13
           }
         },
         "2026-05-06": {
+          "20": {
+            "right_arm_frozen": 3600
+          },
+          "22": {
+            "right_arm_frozen": 1788
+          },
           "10": {
             "right_arm_frozen": 2627
           },
           "19": {
+            "right_arm_frozen": 3600
+          },
+          "12": {
+            "right_arm_frozen": 2128
+          },
+          "21": {
             "right_arm_frozen": 3600
           },
           "9": {
@@ -31077,23 +32865,11 @@ export const LAB_SUPPORT_DATA = {
           "18": {
             "right_arm_frozen": 1812
           },
-          "13": {
-            "right_arm_frozen": 862
-          },
-          "22": {
-            "right_arm_frozen": 1788
-          },
-          "12": {
-            "right_arm_frozen": 2128
-          },
-          "21": {
-            "right_arm_frozen": 3600
-          },
           "11": {
             "right_arm_frozen": 549
           },
-          "20": {
-            "right_arm_frozen": 3600
+          "13": {
+            "right_arm_frozen": 862
           }
         },
         "2026-05-11": {
@@ -31112,20 +32888,20 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-14": {
+          "18": {
+            "right_arm_frozen": 1236
+          },
           "11": {
             "neck_frozen": 88
           },
           "20": {
             "right_arm_frozen": 3600
           },
-          "19": {
-            "right_arm_frozen": 3600
-          },
-          "18": {
-            "right_arm_frozen": 1236
-          },
           "22": {
             "right_arm_frozen": 2364
+          },
+          "19": {
+            "right_arm_frozen": 3600
           },
           "21": {
             "right_arm_frozen": 3600
@@ -31148,18 +32924,18 @@ export const LAB_SUPPORT_DATA = {
           "15": {
             "right_arm_frozen": 1154
           },
-          "19": {
-            "left_arm_frozen": 2665
-          },
-          "18": {
-            "left_arm_frozen": 694
-          },
           "17": {
             "right_arm_frozen": 1233,
             "chest_frozen": 74
           },
+          "19": {
+            "left_arm_frozen": 2665
+          },
           "16": {
             "right_arm_frozen": 1577
+          },
+          "18": {
+            "left_arm_frozen": 694
           }
         },
         "2026-05-27": {
@@ -31180,38 +32956,38 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-28": {
-          "11": {
-            "right_arm_frozen": 1786
-          },
-          "10": {
-            "right_arm_frozen": 2521
-          },
-          "14": {
-            "left_arm_frozen": 2243
-          },
           "9": {
             "right_arm_frozen": 428
+          },
+          "11": {
+            "right_arm_frozen": 1786
           },
           "13": {
             "left_arm_frozen": 3583
           },
+          "10": {
+            "right_arm_frozen": 2521
+          },
           "12": {
             "left_arm_frozen": 25
+          },
+          "14": {
+            "left_arm_frozen": 2243
           }
         },
         "2026-05-29": {
+          "9": {
+            "head_cam_out": 58
+          },
           "18": {
+            "other_robot_issue": 3600
+          },
+          "20": {
             "other_robot_issue": 3600
           },
           "17": {
             "head_cam_out": 37,
             "other_robot_issue": 1479
-          },
-          "21": {
-            "other_robot_issue": 2107
-          },
-          "20": {
-            "other_robot_issue": 3600
           },
           "10": {
             "head_cam_out": 56
@@ -31219,16 +32995,16 @@ export const LAB_SUPPORT_DATA = {
           "19": {
             "other_robot_issue": 3600
           },
-          "9": {
-            "head_cam_out": 58
+          "21": {
+            "other_robot_issue": 2107
           }
         },
         "2026-06-01": {
-          "17": {
-            "right_arm_frozen": 874
-          },
           "11": {
             "left_gripper_not_working": 38
+          },
+          "17": {
+            "right_arm_frozen": 874
           },
           "10": {
             "head_cam_out": 38
@@ -31255,32 +33031,34 @@ export const LAB_SUPPORT_DATA = {
           "14": {
             "head_cam_out": 75
           }
+        },
+        "2026-06-07": {
+          "13": {
+            "neck_frozen": 46
+          }
+        },
+        "2026-06-08": {
+          "8": {
+            "head_cam_out": 40
+          }
+        },
+        "2026-06-09": {
+          "9": {
+            "head_cam_out": 40
+          }
+        },
+        "2026-06-10": {
+          "16": {
+            "right_arm_frozen": 34
+          }
+        },
+        "2026-06-11": {
+          "9": {
+            "head_cam_out": 73
+          }
         }
       },
       "gen2-020": {
-        "2026-04-27": {
-          "23": {
-            "head_cam_out": 46
-          }
-        },
-        "2026-04-28": {
-          "0": {
-            "neck_frozen": 65
-          },
-          "9": {
-            "head_cam_out": 49
-          }
-        },
-        "2026-04-29": {
-          "0": {
-            "head_cam_out": 87
-          }
-        },
-        "2026-04-30": {
-          "12": {
-            "other_robot_issue": 721
-          }
-        },
         "2026-05-04": {
           "12": {
             "left_arm_frozen": 396
@@ -31295,25 +33073,25 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-13": {
-          "23": {
-            "right_arm_frozen": 1247
-          },
           "22": {
             "right_arm_frozen": 173
           },
           "21": {
             "other_robot_issue": 63
+          },
+          "23": {
+            "right_arm_frozen": 1247
           }
         },
         "2026-05-14": {
+          "9": {
+            "head_cam_out": 521
+          },
           "11": {
             "head_cam_out": 36
           },
           "22": {
             "left_arm_frozen": 41
-          },
-          "9": {
-            "head_cam_out": 521
           }
         },
         "2026-05-15": {
@@ -31327,18 +33105,6 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-18": {
-          "21": {
-            "left_arm_frozen": 2040
-          },
-          "14": {
-            "right_arm_frozen": 3600
-          },
-          "23": {
-            "left_arm_frozen": 3600
-          },
-          "16": {
-            "right_arm_frozen": 936
-          },
           "13": {
             "right_arm_frozen": 3600
           },
@@ -31350,17 +33116,29 @@ export const LAB_SUPPORT_DATA = {
           },
           "12": {
             "right_arm_frozen": 2664
+          },
+          "21": {
+            "left_arm_frozen": 2040
+          },
+          "14": {
+            "right_arm_frozen": 3600
+          },
+          "23": {
+            "left_arm_frozen": 3600
+          },
+          "16": {
+            "right_arm_frozen": 936
           }
         },
         "2026-05-19": {
-          "0": {
-            "left_arm_frozen": 3600
-          },
           "15": {
             "left_arm_frozen": 578
           },
           "1": {
             "left_arm_frozen": 1560
+          },
+          "0": {
+            "left_arm_frozen": 3600
           }
         },
         "2026-05-26": {
@@ -31389,16 +33167,38 @@ export const LAB_SUPPORT_DATA = {
           "9": {
             "head_cam_out": 34
           }
+        },
+        "2026-06-08": {
+          "10": {
+            "head_cam_out": 38
+          }
         }
       },
       "gen2-006": {
         "2026-05-06": {
+          "21": {
+            "left_arm_frozen": 3600
+          },
+          "14": {
+            "left_arm_frozen": 3600
+          },
+          "20": {
+            "left_arm_frozen": 3600
+          },
+          "16": {
+            "right_arm_frozen": 3183,
+            "left_arm_frozen": 417
+          },
+          "22": {
+            "left_arm_frozen": 971
+          },
           "18": {
             "right_arm_frozen": 921,
             "left_arm_frozen": 2629
           },
-          "20": {
-            "left_arm_frozen": 3600
+          "15": {
+            "right_arm_frozen": 1153,
+            "left_arm_frozen": 2447
           },
           "17": {
             "right_arm_frozen": 3600
@@ -31406,28 +33206,14 @@ export const LAB_SUPPORT_DATA = {
           "13": {
             "left_arm_frozen": 107
           },
-          "22": {
-            "left_arm_frozen": 971
-          },
           "19": {
             "left_arm_frozen": 3600
-          },
-          "15": {
-            "right_arm_frozen": 1153,
-            "left_arm_frozen": 2447
-          },
-          "21": {
-            "left_arm_frozen": 3600
-          },
-          "14": {
-            "left_arm_frozen": 3600
-          },
-          "16": {
-            "right_arm_frozen": 3183,
-            "left_arm_frozen": 417
           }
         },
         "2026-05-07": {
+          "14": {
+            "left_arm_frozen": 3600
+          },
           "15": {
             "left_arm_frozen": 1694
           },
@@ -31439,9 +33225,6 @@ export const LAB_SUPPORT_DATA = {
           },
           "12": {
             "left_arm_frozen": 3600
-          },
-          "14": {
-            "left_arm_frozen": 3600
           }
         },
         "2026-05-11": {
@@ -31450,43 +33233,43 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-12": {
+          "17": {
+            "right_arm_frozen": 822,
+            "left_arm_frozen": 2656
+          },
+          "16": {
+            "right_arm_frozen": 3600
+          },
+          "14": {
+            "right_arm_frozen": 3600
+          },
           "13": {
             "right_arm_frozen": 2778
           },
           "15": {
             "right_arm_frozen": 3600
-          },
-          "17": {
-            "right_arm_frozen": 822,
-            "left_arm_frozen": 2656
-          },
-          "14": {
-            "right_arm_frozen": 3600
-          },
-          "16": {
-            "right_arm_frozen": 3600
           }
         },
         "2026-05-14": {
+          "18": {
+            "left_arm_frozen": 3600
+          },
+          "17": {
+            "left_arm_frozen": 31
+          },
           "19": {
             "left_arm_frozen": 3600
           },
           "21": {
             "left_arm_frozen": 3569
           },
-          "18": {
-            "left_arm_frozen": 3600
-          },
           "20": {
             "left_arm_frozen": 3600
-          },
-          "17": {
-            "left_arm_frozen": 31
           }
         },
         "2026-05-15": {
-          "13": {
-            "right_arm_frozen": 3600
+          "15": {
+            "right_arm_frozen": 2054
           },
           "10": {
             "right_arm_frozen": 1224
@@ -31497,11 +33280,11 @@ export const LAB_SUPPORT_DATA = {
           "14": {
             "right_arm_frozen": 3600
           },
-          "15": {
-            "right_arm_frozen": 2054
-          },
           "11": {
             "right_arm_frozen": 1546
+          },
+          "13": {
+            "right_arm_frozen": 3600
           }
         },
         "2026-05-18": {
@@ -31513,14 +33296,10 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-19": {
-          "20": {
-            "right_arm_frozen": 1950,
-            "left_arm_frozen": 70
-          },
-          "19": {
+          "17": {
             "right_arm_frozen": 3600
           },
-          "17": {
+          "19": {
             "right_arm_frozen": 3600
           },
           "16": {
@@ -31528,13 +33307,14 @@ export const LAB_SUPPORT_DATA = {
           },
           "18": {
             "right_arm_frozen": 3600
+          },
+          "20": {
+            "right_arm_frozen": 1950,
+            "left_arm_frozen": 70
           }
         },
         "2026-05-20": {
-          "19": {
-            "left_arm_frozen": 3600
-          },
-          "21": {
+          "20": {
             "left_arm_frozen": 3600
           },
           "22": {
@@ -31543,30 +33323,33 @@ export const LAB_SUPPORT_DATA = {
           "18": {
             "left_arm_frozen": 1432
           },
-          "20": {
+          "19": {
+            "left_arm_frozen": 3600
+          },
+          "21": {
             "left_arm_frozen": 3600
           }
         },
         "2026-05-21": {
+          "19": {
+            "left_arm_frozen": 3600
+          },
           "17": {
             "left_arm_frozen": 3600
           },
-          "19": {
-            "left_arm_frozen": 3600
+          "16": {
+            "left_arm_frozen": 2183
           },
           "18": {
             "left_arm_frozen": 3600
           },
           "20": {
             "left_arm_frozen": 1417
-          },
-          "16": {
-            "left_arm_frozen": 2183
           }
         },
         "2026-05-22": {
-          "19": {
-            "left_arm_frozen": 3600
+          "15": {
+            "left_arm_frozen": 2486
           },
           "12": {
             "left_arm_frozen": 3600
@@ -31577,32 +33360,23 @@ export const LAB_SUPPORT_DATA = {
           "14": {
             "left_arm_frozen": 3600
           },
+          "18": {
+            "left_arm_frozen": 2715
+          },
+          "11": {
+            "left_arm_frozen": 1114
+          },
           "20": {
             "left_arm_frozen": 2770
           },
           "13": {
             "left_arm_frozen": 3600
           },
-          "18": {
-            "left_arm_frozen": 2715
-          },
-          "15": {
-            "left_arm_frozen": 2486
-          },
-          "11": {
-            "left_arm_frozen": 1114
+          "19": {
+            "left_arm_frozen": 3600
           }
         },
         "2026-05-28": {
-          "17": {
-            "right_arm_frozen": 1599
-          },
-          "14": {
-            "left_arm_frozen": 3600
-          },
-          "10": {
-            "right_arm_frozen": 1969
-          },
           "16": {
             "left_arm_frozen": 3077
           },
@@ -31614,6 +33388,9 @@ export const LAB_SUPPORT_DATA = {
           },
           "20": {
             "right_arm_frozen": 3600
+          },
+          "17": {
+            "right_arm_frozen": 1599
           },
           "13": {
             "left_arm_frozen": 3600
@@ -31629,9 +33406,28 @@ export const LAB_SUPPORT_DATA = {
           },
           "21": {
             "right_arm_frozen": 2001
+          },
+          "14": {
+            "left_arm_frozen": 3600
+          },
+          "10": {
+            "right_arm_frozen": 1969
           }
         },
         "2026-06-01": {
+          "12": {
+            "left_arm_frozen": 3600
+          },
+          "14": {
+            "left_arm_frozen": 746
+          },
+          "16": {
+            "right_arm_frozen": 1306,
+            "left_arm_frozen": 1044
+          },
+          "18": {
+            "right_arm_frozen": 3600
+          },
           "11": {
             "left_arm_frozen": 2205
           },
@@ -31646,41 +33442,45 @@ export const LAB_SUPPORT_DATA = {
           },
           "19": {
             "right_arm_frozen": 3600
-          },
-          "12": {
-            "left_arm_frozen": 3600
-          },
-          "14": {
-            "left_arm_frozen": 746
-          },
-          "16": {
-            "right_arm_frozen": 1306,
-            "left_arm_frozen": 1044
-          },
-          "18": {
-            "right_arm_frozen": 3600
           }
         },
         "2026-06-05": {
-          "12": {
-            "right_arm_frozen": 1082,
-            "left_arm_frozen": 2518
-          },
-          "14": {
-            "right_arm_frozen": 3600
+          "18": {
+            "right_arm_frozen": 2037,
+            "left_arm_frozen": 78
           },
           "11": {
             "left_arm_frozen": 3600
+          },
+          "20": {
+            "right_arm_frozen": 3600
+          },
+          "17": {
+            "right_arm_frozen": 284,
+            "left_arm_frozen": 3316
           },
           "13": {
             "right_arm_frozen": 3335,
             "left_arm_frozen": 5
           },
+          "22": {
+            "right_arm_frozen": 1563
+          },
+          "19": {
+            "right_arm_frozen": 3600
+          },
           "15": {
             "right_arm_frozen": 3600
           },
-          "17": {
-            "right_arm_frozen": 284
+          "12": {
+            "right_arm_frozen": 1082,
+            "left_arm_frozen": 2518
+          },
+          "21": {
+            "right_arm_frozen": 3600
+          },
+          "14": {
+            "right_arm_frozen": 3600
           },
           "10": {
             "left_arm_frozen": 1068
@@ -31688,59 +33488,103 @@ export const LAB_SUPPORT_DATA = {
           "16": {
             "right_arm_frozen": 3600
           }
+        },
+        "2026-06-08": {
+          "15": {
+            "right_arm_frozen": 3600
+          },
+          "17": {
+            "right_arm_frozen": 1019,
+            "left_arm_frozen": 2581
+          },
+          "19": {
+            "right_arm_frozen": 3600
+          },
+          "21": {
+            "right_arm_frozen": 3600
+          },
+          "18": {
+            "right_arm_frozen": 965,
+            "left_arm_frozen": 1168
+          },
+          "14": {
+            "right_arm_frozen": 2950
+          },
+          "20": {
+            "right_arm_frozen": 3600
+          },
+          "16": {
+            "right_arm_frozen": 3600
+          },
+          "22": {
+            "right_arm_frozen": 2841
+          }
+        },
+        "2026-06-09": {
+          "17": {
+            "left_arm_frozen": 3600
+          },
+          "19": {
+            "left_arm_frozen": 3600
+          },
+          "16": {
+            "left_arm_frozen": 1709
+          },
+          "12": {
+            "left_arm_frozen": 3600
+          },
+          "18": {
+            "left_arm_frozen": 3600
+          },
+          "11": {
+            "left_arm_frozen": 876
+          },
+          "20": {
+            "left_arm_frozen": 1891
+          },
+          "13": {
+            "left_arm_frozen": 1677
+          }
+        },
+        "2026-06-10": {
+          "22": {
+            "right_arm_frozen": 3600
+          },
+          "19": {
+            "right_arm_frozen": 1983
+          },
+          "15": {
+            "right_arm_frozen": 582
+          },
+          "12": {
+            "right_arm_frozen": 3600
+          },
+          "21": {
+            "right_arm_frozen": 3600
+          },
+          "14": {
+            "right_arm_frozen": 3600
+          },
+          "23": {
+            "right_arm_frozen": 3600
+          },
+          "13": {
+            "right_arm_frozen": 3600
+          },
+          "11": {
+            "right_arm_frozen": 3018
+          },
+          "20": {
+            "right_arm_frozen": 2612
+          }
+        },
+        "2026-06-11": {
+          "0": {
+            "right_arm_frozen": 1425
+          }
         }
       },
       "gen2-107": {
-        "2026-04-27": {
-          "17": {
-            "left_arm_frozen": 35
-          },
-          "12": {
-            "right_gripper_not_working": 41
-          },
-          "11": {
-            "left_arm_frozen": 2030
-          }
-        },
-        "2026-04-28": {
-          "11": {
-            "left_arm_frozen": 40
-          },
-          "17": {
-            "right_arm_frozen": 422,
-            "left_arm_frozen": 100
-          }
-        },
-        "2026-04-29": {
-          "16": {
-            "left_arm_frozen": 27
-          },
-          "11": {
-            "right_arm_frozen": 1477
-          },
-          "17": {
-            "left_arm_frozen": 1871
-          }
-        },
-        "2026-04-30": {
-          "15": {
-            "right_arm_frozen": 38
-          }
-        },
-        "2026-05-01": {
-          "10": {
-            "right_arm_frozen": 743
-          },
-          "19": {
-            "left_arm_frozen": 206
-          },
-          "9": {
-            "right_arm_frozen": 2341
-          },
-          "20": {
-            "left_arm_frozen": 210
-          }
-        },
         "2026-05-04": {
           "13": {
             "right_arm_frozen": 40
@@ -31814,9 +33658,6 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-22": {
-          "13": {
-            "right_arm_frozen": 3600
-          },
           "10": {
             "right_arm_frozen": 509,
             "neck_frozen": 133
@@ -31830,15 +33671,18 @@ export const LAB_SUPPORT_DATA = {
           },
           "11": {
             "right_arm_frozen": 3600
+          },
+          "13": {
+            "right_arm_frozen": 3600
           }
         },
         "2026-06-01": {
+          "18": {
+            "neck_frozen": 176
+          },
           "17": {
             "left_arm_frozen": 398,
             "neck_frozen": 46
-          },
-          "18": {
-            "neck_frozen": 176
           }
         },
         "2026-06-03": {
@@ -31847,86 +33691,39 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-06-04": {
+          "15": {
+            "other_robot_issue": 165
+          },
           "14": {
             "head_cam_out": 38,
             "other_robot_issue": 1637
           },
           "16": {
             "neck_frozen": 42
-          },
-          "15": {
-            "other_robot_issue": 165
           }
         },
         "2026-06-05": {
           "10": {
             "neck_frozen": 43
           }
+        },
+        "2026-06-10": {
+          "12": {
+            "neck_frozen": 92
+          },
+          "9": {
+            "left_arm_frozen": 2658
+          },
+          "11": {
+            "neck_frozen": 44
+          },
+          "8": {
+            "left_arm_frozen": 26
+          }
         }
       },
       "gen2-106": {
-        "2026-04-27": {
-          "15": {
-            "left_gripper_not_working": 37
-          },
-          "17": {
-            "head_cam_out": 56
-          },
-          "12": {
-            "left_gripper_not_working": 163
-          },
-          "14": {
-            "left_gripper_not_working": 39
-          }
-        },
-        "2026-04-28": {
-          "18": {
-            "left_gripper_not_working": 36
-          },
-          "11": {
-            "left_gripper_not_working": 157
-          },
-          "22": {
-            "left_gripper_not_working": 37
-          },
-          "10": {
-            "right_gripper_not_working": 38,
-            "left_gripper_not_working": 42
-          },
-          "19": {
-            "right_gripper_not_working": 35
-          }
-        },
-        "2026-04-29": {
-          "10": {
-            "left_arm_frozen": 35,
-            "head_cam_out": 59
-          }
-        },
-        "2026-04-30": {
-          "11": {
-            "left_gripper_not_working": 6
-          }
-        },
-        "2026-05-01": {
-          "8": {
-            "head_cam_out": 223
-          },
-          "12": {
-            "left_arm_frozen": 1232
-          },
-          "0": {
-            "left_gripper_not_working": 40
-          },
-          "15": {
-            "left_arm_frozen": 114,
-            "head_cam_out": 61
-          }
-        },
         "2026-05-04": {
-          "18": {
-            "left_gripper_not_working": 78
-          },
           "15": {
             "head_cam_out": 58
           },
@@ -31935,6 +33732,9 @@ export const LAB_SUPPORT_DATA = {
           },
           "23": {
             "left_gripper_not_working": 68
+          },
+          "18": {
+            "left_gripper_not_working": 78
           }
         },
         "2026-05-05": {
@@ -31973,42 +33773,42 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-08": {
-          "15": {
-            "left_arm_frozen": 40
-          },
           "16": {
             "other_robot_issue": 182
           },
           "11": {
             "left_gripper_not_working": 46
           },
+          "15": {
+            "left_arm_frozen": 40
+          },
           "8": {
             "left_gripper_not_working": 39
           }
         },
         "2026-05-11": {
-          "15": {
-            "right_arm_frozen": 39
-          },
           "7": {
             "head_cam_out": 48
+          },
+          "15": {
+            "right_arm_frozen": 39
           }
         },
         "2026-05-12": {
-          "19": {
-            "left_arm_frozen": 27
-          },
           "23": {
             "other_robot_issue": 20
+          },
+          "19": {
+            "left_arm_frozen": 27
           }
         },
         "2026-05-13": {
+          "18": {
+            "head_cam_out": 115
+          },
           "23": {
             "left_arm_frozen": 38,
             "left_gripper_not_working": 36
-          },
-          "18": {
-            "head_cam_out": 115
           },
           "11": {
             "neck_frozen": 92
@@ -32020,6 +33820,9 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-15": {
+          "18": {
+            "chest_frozen": 35
+          },
           "15": {
             "head_cam_out": 46
           },
@@ -32028,9 +33831,6 @@ export const LAB_SUPPORT_DATA = {
           },
           "21": {
             "other_robot_issue": 45
-          },
-          "18": {
-            "chest_frozen": 35
           }
         },
         "2026-05-16": {
@@ -32039,9 +33839,6 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-18": {
-          "21": {
-            "right_arm_frozen": 2028
-          },
           "9": {
             "head_cam_out": 98
           },
@@ -32056,6 +33853,9 @@ export const LAB_SUPPORT_DATA = {
           },
           "19": {
             "right_arm_frozen": 3600
+          },
+          "21": {
+            "right_arm_frozen": 2028
           }
         },
         "2026-05-19": {
@@ -32064,11 +33864,6 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-28": {
-          "14": {
-            "right_arm_frozen": 56,
-            "left_arm_frozen": 18,
-            "head_cam_out": 33
-          },
           "11": {
             "head_cam_out": 156
           },
@@ -32078,6 +33873,11 @@ export const LAB_SUPPORT_DATA = {
           "12": {
             "right_arm_frozen": 578,
             "left_arm_frozen": 373
+          },
+          "14": {
+            "right_arm_frozen": 56,
+            "left_arm_frozen": 18,
+            "head_cam_out": 33
           }
         },
         "2026-05-29": {
@@ -32086,12 +33886,6 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-06-02": {
-          "16": {
-            "right_arm_frozen": 3600
-          },
-          "18": {
-            "right_arm_frozen": 3600
-          },
           "20": {
             "right_arm_frozen": 3600
           },
@@ -32106,63 +33900,33 @@ export const LAB_SUPPORT_DATA = {
           },
           "21": {
             "right_arm_frozen": 1039
+          },
+          "16": {
+            "right_arm_frozen": 3600
+          },
+          "18": {
+            "right_arm_frozen": 3600
+          }
+        },
+        "2026-06-09": {
+          "10": {
+            "head_cam_out": 39
+          },
+          "14": {
+            "right_gripper_not_working": 33
+          }
+        },
+        "2026-06-10": {
+          "9": {
+            "head_cam_out": 229
           }
         }
       },
       "gen2-003": {
-        "2026-04-27": {
-          "20": {
-            "left_arm_frozen": 74
-          },
-          "10": {
-            "head_cam_out": 51
-          }
-        },
-        "2026-04-28": {
-          "9": {
-            "left_arm_frozen": 38
-          },
-          "11": {
-            "left_arm_frozen": 78
-          },
-          "13": {
-            "other_robot_issue": 1460
-          },
-          "10": {
-            "left_arm_frozen": 245
-          }
-        },
-        "2026-04-29": {
-          "14": {
-            "right_arm_frozen": 299,
-            "left_gripper_not_working": 38
-          },
-          "16": {
-            "head_cam_out": 48
-          },
-          "22": {
-            "right_arm_frozen": 65
-          }
-        },
-        "2026-04-30": {
-          "22": {
-            "left_arm_frozen": 48
-          },
-          "10": {
-            "left_arm_frozen": 36
-          },
-          "19": {
-            "left_arm_frozen": 39
-          },
-          "0": {
-            "left_arm_frozen": 326,
-            "left_gripper_not_working": 37
-          },
-          "11": {
-            "left_arm_frozen": 42
-          }
-        },
         "2026-05-04": {
+          "16": {
+            "right_arm_frozen": 80
+          },
           "13": {
             "right_arm_frozen": 76
           },
@@ -32171,20 +33935,17 @@ export const LAB_SUPPORT_DATA = {
           },
           "14": {
             "right_arm_frozen": 182
-          },
-          "16": {
-            "right_arm_frozen": 80
           }
         },
         "2026-05-05": {
-          "9": {
-            "right_arm_frozen": 577
-          },
           "11": {
             "right_arm_frozen": 76
           },
           "13": {
             "right_arm_frozen": 39
+          },
+          "23": {
+            "left_arm_frozen": 491
           },
           "10": {
             "right_arm_frozen": 795
@@ -32193,26 +33954,26 @@ export const LAB_SUPPORT_DATA = {
             "right_arm_frozen": 114,
             "head_cam_out": 50
           },
-          "23": {
-            "left_arm_frozen": 491
+          "9": {
+            "right_arm_frozen": 577
           }
         },
         "2026-05-06": {
+          "11": {
+            "head_cam_out": 746
+          },
           "17": {
             "right_arm_frozen": 37
+          },
+          "13": {
+            "right_arm_frozen": 243,
+            "left_arm_frozen": 2
           },
           "10": {
             "head_cam_out": 109
           },
           "19": {
             "left_arm_frozen": 1042
-          },
-          "11": {
-            "head_cam_out": 746
-          },
-          "13": {
-            "right_arm_frozen": 243,
-            "left_arm_frozen": 2
           }
         },
         "2026-05-08": {
@@ -32237,27 +33998,6 @@ export const LAB_SUPPORT_DATA = {
         }
       },
       "gen2-012": {
-        "2026-04-28": {
-          "14": {
-            "right_arm_frozen": 37
-          },
-          "17": {
-            "left_arm_frozen": 18
-          },
-          "16": {
-            "left_arm_frozen": 28
-          }
-        },
-        "2026-04-29": {
-          "11": {
-            "right_arm_frozen": 37
-          }
-        },
-        "2026-05-01": {
-          "17": {
-            "chest_frozen": 2247
-          }
-        },
         "2026-05-05": {
           "10": {
             "right_arm_frozen": 713
@@ -32275,51 +34015,51 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-08": {
-          "9": {
-            "head_cam_out": 44
+          "16": {
+            "head_cam_out": 114
           },
           "12": {
             "left_gripper_not_working": 39
           },
-          "16": {
-            "head_cam_out": 114
+          "9": {
+            "head_cam_out": 44
           }
         },
         "2026-05-10": {
+          "10": {
+            "left_gripper_not_working": 35
+          },
           "12": {
             "left_arm_frozen": 159
           },
           "16": {
             "chest_frozen": 244
           },
-          "10": {
-            "left_gripper_not_working": 35
-          },
           "9": {
             "left_arm_frozen": 49
           }
         },
         "2026-05-11": {
-          "17": {
-            "right_arm_frozen": 708
-          },
           "16": {
             "right_arm_frozen": 323
+          },
+          "17": {
+            "right_arm_frozen": 708
           }
         },
         "2026-05-12": {
-          "10": {
-            "left_arm_frozen": 45,
-            "left_gripper_not_working": 36
+          "11": {
+            "left_arm_frozen": 1254
           },
           "17": {
             "left_arm_frozen": 213
           },
+          "10": {
+            "left_arm_frozen": 45,
+            "left_gripper_not_working": 36
+          },
           "12": {
             "left_arm_frozen": 1326
-          },
-          "11": {
-            "left_arm_frozen": 1254
           }
         },
         "2026-05-13": {
@@ -32328,11 +34068,20 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-14": {
+          "9": {
+            "head_cam_out": 102
+          },
+          "18": {
+            "right_arm_frozen": 1242
+          },
           "11": {
             "left_arm_frozen": 37
           },
           "20": {
             "right_arm_frozen": 3600
+          },
+          "22": {
+            "right_arm_frozen": 2358
           },
           "10": {
             "left_arm_frozen": 266
@@ -32340,35 +34089,38 @@ export const LAB_SUPPORT_DATA = {
           "19": {
             "right_arm_frozen": 3600
           },
-          "9": {
-            "head_cam_out": 102
-          },
-          "18": {
-            "right_arm_frozen": 1242
-          },
-          "22": {
-            "right_arm_frozen": 2358
-          },
           "21": {
             "right_arm_frozen": 3600
           }
         },
         "2026-05-15": {
-          "14": {
-            "right_gripper_not_working": 40,
-            "other_robot_issue": 726
-          },
           "17": {
             "left_arm_frozen": 47
           },
           "12": {
             "right_arm_frozen": 37
           },
+          "14": {
+            "right_gripper_not_working": 40,
+            "other_robot_issue": 726
+          },
           "16": {
             "left_arm_frozen": 468
           }
         },
         "2026-05-17": {
+          "8": {
+            "right_arm_frozen": 317
+          },
+          "15": {
+            "left_arm_frozen": 84
+          },
+          "10": {
+            "right_arm_frozen": 491
+          },
+          "12": {
+            "left_arm_frozen": 47
+          },
           "14": {
             "right_arm_frozen": 1116,
             "left_arm_frozen": 303
@@ -32379,31 +34131,18 @@ export const LAB_SUPPORT_DATA = {
           "13": {
             "right_arm_frozen": 23,
             "left_arm_frozen": 45
-          },
-          "8": {
-            "right_arm_frozen": 317
-          },
-          "12": {
-            "left_arm_frozen": 47
-          },
-          "15": {
-            "left_arm_frozen": 84
-          },
-          "10": {
-            "right_arm_frozen": 491
           }
         },
         "2026-05-18": {
-          "14": {
-            "left_arm_frozen": 35,
-            "other_robot_issue": 70
-          },
-          "23": {
-            "right_arm_frozen": 2602
-          },
           "18": {
             "right_arm_frozen": 524,
             "left_arm_frozen": 22
+          },
+          "11": {
+            "right_arm_frozen": 445
+          },
+          "20": {
+            "right_arm_frozen": 3600
           },
           "13": {
             "left_arm_frozen": 35
@@ -32415,22 +34154,6 @@ export const LAB_SUPPORT_DATA = {
             "right_arm_frozen": 645,
             "left_arm_frozen": 51
           },
-          "12": {
-            "left_gripper_not_working": 35
-          },
-          "21": {
-            "right_arm_frozen": 3600
-          },
-          "16": {
-            "right_arm_frozen": 33,
-            "left_arm_frozen": 36
-          },
-          "11": {
-            "right_arm_frozen": 445
-          },
-          "20": {
-            "right_arm_frozen": 3600
-          },
           "10": {
             "right_arm_frozen": 161
           },
@@ -32438,6 +34161,23 @@ export const LAB_SUPPORT_DATA = {
             "right_arm_frozen": 1194,
             "left_arm_frozen": 39,
             "chest_frozen": 37
+          },
+          "12": {
+            "left_gripper_not_working": 35
+          },
+          "16": {
+            "right_arm_frozen": 33,
+            "left_arm_frozen": 36
+          },
+          "21": {
+            "right_arm_frozen": 3600
+          },
+          "14": {
+            "left_arm_frozen": 35,
+            "other_robot_issue": 70
+          },
+          "23": {
+            "right_arm_frozen": 2602
           }
         },
         "2026-05-19": {
@@ -32446,11 +34186,11 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-20": {
-          "12": {
-            "right_arm_frozen": 2613
-          },
           "11": {
             "left_arm_frozen": 80
+          },
+          "12": {
+            "right_arm_frozen": 2613
           },
           "10": {
             "right_arm_frozen": 33,
@@ -32459,18 +34199,19 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-21": {
-          "13": {
-            "right_arm_frozen": 1322,
-            "left_gripper_not_working": 37
-          },
-          "12": {
-            "right_arm_frozen": 35
+          "14": {
+            "right_arm_frozen": 2516,
+            "left_arm_frozen": 34
           },
           "16": {
             "left_arm_frozen": 36
           },
           "11": {
             "right_arm_frozen": 14
+          },
+          "13": {
+            "right_arm_frozen": 1322,
+            "left_gripper_not_working": 37
           },
           "15": {
             "right_arm_frozen": 1744
@@ -32481,19 +34222,11 @@ export const LAB_SUPPORT_DATA = {
             "head_cam_out": 55,
             "chest_frozen": 36
           },
-          "14": {
-            "right_arm_frozen": 2516,
-            "left_arm_frozen": 34
+          "12": {
+            "right_arm_frozen": 35
           }
         },
         "2026-05-22": {
-          "16": {
-            "left_arm_frozen": 144
-          },
-          "11": {
-            "right_arm_frozen": 70,
-            "left_arm_frozen": 510
-          },
           "15": {
             "left_arm_frozen": 96
           },
@@ -32501,11 +34234,22 @@ export const LAB_SUPPORT_DATA = {
             "right_arm_frozen": 39,
             "left_arm_frozen": 36,
             "chest_frozen": 89
+          },
+          "16": {
+            "left_arm_frozen": 144
+          },
+          "11": {
+            "right_arm_frozen": 70,
+            "left_arm_frozen": 510
           }
         },
         "2026-05-24": {
           "14": {
             "right_arm_frozen": 10
+          },
+          "11": {
+            "right_arm_frozen": 411,
+            "other_robot_issue": 1252
           },
           "13": {
             "right_arm_frozen": 478,
@@ -32514,42 +34258,29 @@ export const LAB_SUPPORT_DATA = {
           "12": {
             "right_arm_frozen": 1125,
             "other_robot_issue": 51
-          },
-          "11": {
-            "right_arm_frozen": 411,
-            "other_robot_issue": 1252
           }
         },
         "2026-05-25": {
-          "10": {
-            "right_arm_frozen": 164,
-            "left_arm_frozen": 36,
-            "head_cam_out": 57
-          },
           "13": {
             "left_arm_frozen": 36
           },
           "17": {
             "left_gripper_not_working": 36
+          },
+          "10": {
+            "right_arm_frozen": 164,
+            "left_arm_frozen": 36,
+            "head_cam_out": 57
           }
         },
         "2026-05-26": {
+          "17": {
+            "right_arm_frozen": 3600
+          },
           "10": {
             "left_arm_frozen": 3600
           },
           "19": {
-            "right_arm_frozen": 3600
-          },
-          "9": {
-            "left_arm_frozen": 1526
-          },
-          "18": {
-            "right_arm_frozen": 3600
-          },
-          "13": {
-            "left_arm_frozen": 2047
-          },
-          "17": {
             "right_arm_frozen": 3600
           },
           "12": {
@@ -32558,11 +34289,20 @@ export const LAB_SUPPORT_DATA = {
           "16": {
             "right_arm_frozen": 3377
           },
+          "9": {
+            "left_arm_frozen": 1526
+          },
+          "18": {
+            "right_arm_frozen": 3600
+          },
           "11": {
             "left_arm_frozen": 3600
           },
           "20": {
             "right_arm_frozen": 223
+          },
+          "13": {
+            "left_arm_frozen": 2047
           }
         },
         "2026-05-27": {
@@ -32605,46 +34345,95 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-06-02": {
-          "12": {
-            "head_cam_out": 40
-          },
           "15": {
             "left_arm_frozen": 268
           },
           "19": {
             "left_arm_frozen": 271
           },
+          "12": {
+            "head_cam_out": 40
+          },
           "14": {
             "left_arm_frozen": 43
           }
         },
         "2026-06-03": {
-          "9": {
-            "head_cam_out": 2083
-          },
           "17": {
             "head_cam_out": 78
           },
           "16": {
             "head_cam_out": 39
+          },
+          "9": {
+            "head_cam_out": 2083
           }
         },
         "2026-06-04": {
-          "14": {
-            "left_arm_frozen": 739,
-            "head_cam_out": 38
+          "11": {
+            "left_arm_frozen": 117
           },
           "13": {
             "head_cam_out": 39
           },
+          "10": {
+            "left_arm_frozen": 1186
+          },
           "12": {
             "left_arm_frozen": 977
           },
-          "11": {
-            "left_arm_frozen": 117
+          "14": {
+            "left_arm_frozen": 739,
+            "head_cam_out": 38
+          }
+        },
+        "2026-06-07": {
+          "9": {
+            "head_cam_out": 937
+          }
+        },
+        "2026-06-08": {
+          "9": {
+            "left_arm_frozen": 1069
+          },
+          "13": {
+            "right_arm_frozen": 1985
+          },
+          "14": {
+            "right_arm_frozen": 1006
+          }
+        },
+        "2026-06-09": {
+          "9": {
+            "right_arm_frozen": 558
+          }
+        },
+        "2026-06-10": {
+          "12": {
+            "other_robot_issue": 857
+          },
+          "16": {
+            "other_robot_issue": 109
+          },
+          "15": {
+            "right_arm_frozen": 126
           },
           "10": {
-            "left_arm_frozen": 1186
+            "head_cam_out": 37
+          }
+        },
+        "2026-06-12": {
+          "8": {
+            "head_cam_out": 37
+          },
+          "10": {
+            "left_arm_frozen": 59
+          },
+          "9": {
+            "head_cam_out": 75
+          },
+          "11": {
+            "left_arm_frozen": 2255
           }
         }
       },
@@ -32667,12 +34456,12 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-06-02": {
-          "18": {
-            "right_arm_frozen": 204
-          },
           "20": {
             "right_arm_frozen": 205,
             "left_arm_frozen": 2
+          },
+          "18": {
+            "right_arm_frozen": 204
           }
         },
         "2026-06-03": {
@@ -32682,6 +34471,16 @@ export const LAB_SUPPORT_DATA = {
           "13": {
             "right_arm_frozen": 167
           }
+        },
+        "2026-06-09": {
+          "17": {
+            "right_arm_frozen": 203
+          }
+        },
+        "2026-06-11": {
+          "12": {
+            "head_cam_out": 74
+          }
         }
       },
       "gen2-113": {
@@ -32689,11 +34488,11 @@ export const LAB_SUPPORT_DATA = {
           "3": {
             "right_arm_frozen": 3600
           },
-          "4": {
-            "right_arm_frozen": 3600
-          },
           "1": {
             "right_arm_frozen": 3215
+          },
+          "4": {
+            "right_arm_frozen": 3600
           },
           "10": {
             "right_arm_frozen": 573
@@ -32733,9 +34532,6 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-27": {
-          "2": {
-            "left_arm_frozen": 3600
-          },
           "0": {
             "left_arm_frozen": 3600
           },
@@ -32744,45 +34540,33 @@ export const LAB_SUPPORT_DATA = {
           },
           "1": {
             "left_arm_frozen": 3600
+          },
+          "2": {
+            "left_arm_frozen": 3600
+          }
+        },
+        "2026-06-10": {
+          "14": {
+            "head_cam_out": 35,
+            "chest_frozen": 74
           }
         }
       },
       "gen2-017": {
-        "2026-04-28": {
-          "9": {
-            "head_cam_out": 67
-          }
-        },
-        "2026-04-29": {
-          "14": {
-            "neck_frozen": 175
-          },
-          "9": {
-            "left_arm_frozen": 539
-          },
-          "15": {
-            "neck_frozen": 37
-          }
-        },
-        "2026-04-30": {
-          "10": {
-            "neck_frozen": 42
-          }
-        },
         "2026-05-04": {
-          "11": {
-            "right_arm_frozen": 37
-          },
           "9": {
             "other_robot_issue": 147
+          },
+          "11": {
+            "right_arm_frozen": 37
           }
         },
         "2026-05-12": {
-          "8": {
-            "neck_frozen": 1232
-          },
           "9": {
             "neck_frozen": 333
+          },
+          "8": {
+            "neck_frozen": 1232
           }
         },
         "2026-05-20": {
@@ -32825,25 +34609,17 @@ export const LAB_SUPPORT_DATA = {
           "9": {
             "head_cam_out": 58
           }
+        },
+        "2026-06-09": {
+          "17": {
+            "other_robot_issue": 930
+          },
+          "16": {
+            "other_robot_issue": 2754
+          }
         }
       },
       "gen2-013": {
-        "2026-04-29": {
-          "8": {
-            "head_cam_out": 46
-          }
-        },
-        "2026-04-30": {
-          "10": {
-            "right_gripper_not_working": 36
-          },
-          "12": {
-            "left_arm_frozen": 49
-          },
-          "9": {
-            "right_arm_frozen": 24
-          }
-        },
         "2026-05-04": {
           "18": {
             "left_gripper_not_working": 650
@@ -32855,14 +34631,20 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-11": {
-          "15": {
-            "neck_frozen": 90
-          },
           "14": {
             "neck_frozen": 65
+          },
+          "15": {
+            "neck_frozen": 90
           }
         },
         "2026-05-12": {
+          "16": {
+            "neck_frozen": 3600
+          },
+          "11": {
+            "right_arm_frozen": 33
+          },
           "13": {
             "neck_frozen": 44
           },
@@ -32880,12 +34662,6 @@ export const LAB_SUPPORT_DATA = {
           },
           "14": {
             "neck_frozen": 3600
-          },
-          "16": {
-            "neck_frozen": 3600
-          },
-          "11": {
-            "right_arm_frozen": 33
           }
         },
         "2026-05-15": {
@@ -32899,11 +34675,21 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-05-21": {
-          "11": {
-            "neck_frozen": 28
+          "19": {
+            "neck_frozen": 3600
+          },
+          "21": {
+            "neck_frozen": 1214
+          },
+          "16": {
+            "right_arm_frozen": 8,
+            "other_robot_issue": 1252
           },
           "18": {
             "neck_frozen": 3600
+          },
+          "11": {
+            "neck_frozen": 28
           },
           "20": {
             "neck_frozen": 3600
@@ -32915,24 +34701,11 @@ export const LAB_SUPPORT_DATA = {
             "right_arm_frozen": 1058,
             "neck_frozen": 2386
           },
-          "19": {
-            "neck_frozen": 3600
-          },
           "12": {
             "neck_frozen": 15
-          },
-          "21": {
-            "neck_frozen": 1214
-          },
-          "16": {
-            "right_arm_frozen": 8,
-            "other_robot_issue": 1252
           }
         },
         "2026-05-22": {
-          "13": {
-            "right_arm_frozen": 3600
-          },
           "10": {
             "right_arm_frozen": 1389,
             "left_arm_frozen": 566
@@ -32945,18 +34718,12 @@ export const LAB_SUPPORT_DATA = {
           },
           "11": {
             "right_arm_frozen": 3600
+          },
+          "13": {
+            "right_arm_frozen": 3600
           }
         },
         "2026-06-01": {
-          "15": {
-            "right_arm_frozen": 93
-          },
-          "17": {
-            "other_robot_issue": 3600
-          },
-          "19": {
-            "other_robot_issue": 3600
-          },
           "16": {
             "right_arm_frozen": 1129,
             "left_arm_frozen": 193,
@@ -32970,22 +34737,31 @@ export const LAB_SUPPORT_DATA = {
           },
           "20": {
             "other_robot_issue": 3262
+          },
+          "15": {
+            "right_arm_frozen": 93
+          },
+          "17": {
+            "other_robot_issue": 3600
+          },
+          "19": {
+            "other_robot_issue": 3600
           }
         },
         "2026-06-02": {
-          "18": {
-            "neck_frozen": 44
-          },
-          "11": {
-            "right_arm_frozen": 1313,
-            "left_arm_frozen": 1
-          },
           "17": {
             "head_cam_out": 38,
             "neck_frozen": 225
           },
           "10": {
             "right_arm_frozen": 2301
+          },
+          "18": {
+            "neck_frozen": 44
+          },
+          "11": {
+            "right_arm_frozen": 1313,
+            "left_arm_frozen": 1
           }
         },
         "2026-06-03": {
@@ -32994,23 +34770,133 @@ export const LAB_SUPPORT_DATA = {
           }
         },
         "2026-06-04": {
-          "14": {
-            "neck_frozen": 45,
-            "other_robot_issue": 1654
-          },
           "15": {
             "other_robot_issue": 384
           },
           "8": {
             "right_gripper_not_working": 35
+          },
+          "14": {
+            "neck_frozen": 45,
+            "other_robot_issue": 1654
           }
         },
         "2026-06-05": {
-          "15": {
-            "left_arm_frozen": 1257
-          },
           "14": {
             "left_arm_frozen": 1786
+          },
+          "15": {
+            "left_arm_frozen": 1257
+          }
+        },
+        "2026-06-08": {
+          "17": {
+            "neck_frozen": 45
+          },
+          "10": {
+            "neck_frozen": 43
+          },
+          "12": {
+            "right_arm_frozen": 43
+          }
+        },
+        "2026-06-10": {
+          "10": {
+            "neck_frozen": 48
+          }
+        },
+        "2026-06-11": {
+          "15": {
+            "right_arm_frozen": 35
+          }
+        },
+        "2026-06-12": {
+          "18": {
+            "neck_frozen": 45
+          },
+          "17": {
+            "neck_frozen": 47
+          }
+        }
+      },
+      "gen2-114": {
+        "2026-06-11": {
+          "11": {
+            "right_arm_frozen": 1268
+          },
+          "14": {
+            "right_arm_frozen": 39
+          }
+        }
+      },
+      "gen2-119": {
+        "2026-06-09": {
+          "21": {
+            "right_arm_frozen": 2614
+          },
+          "18": {
+            "right_arm_frozen": 3600
+          },
+          "17": {
+            "right_arm_frozen": 935
+          },
+          "20": {
+            "right_arm_frozen": 3600
+          },
+          "19": {
+            "right_arm_frozen": 3600
+          }
+        },
+        "2026-06-11": {
+          "12": {
+            "right_arm_frozen": 3600
+          },
+          "15": {
+            "right_arm_frozen": 242
+          },
+          "13": {
+            "right_arm_frozen": 3600
+          },
+          "11": {
+            "right_arm_frozen": 3358
+          },
+          "14": {
+            "right_arm_frozen": 3600
+          }
+        },
+        "2026-06-12": {
+          "19": {
+            "head_cam_out": 36
+          }
+        }
+      },
+      "gen2-121": {
+        "2026-06-09": {
+          "13": {
+            "right_arm_frozen": 170
+          },
+          "19": {
+            "right_arm_frozen": 38
+          }
+        },
+        "2026-06-10": {
+          "12": {
+            "right_arm_frozen": 650
+          },
+          "13": {
+            "right_arm_frozen": 3193
+          }
+        },
+        "2026-06-11": {
+          "14": {
+            "left_arm_frozen": 774
+          }
+        }
+      },
+      "gen2-122": {
+        "2026-06-11": {
+          "19": {
+            "left_arm_frozen": 370
           }
         }
       }
